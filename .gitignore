@@ -149,6 +149,10 @@ __pycache__/
 !04-gmb/photos/**/*.json
 !**/*.template.json
 
+# Astro site's actual static assets — served directly from site/public, not
+# pipeline-generated media, so the blanket image-ignore rules above don't apply.
+!site/public/**
+
 
 # -----------------------------------------------------------------------------
 #  4. LOGS, CACHES, SCRATCH  —  runtime noise, not workflow
