@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Excavation & Site Prep', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/locations/springfield/excavation' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/locations/springfield/land-clearing' },
+  { title: 'Utility Excavation', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/services/utility-excavation' },
+  { title: 'Driveway Repair', description: 'Regrading and repairing driveways and access roads.', href: '/services/driveway-repair' },
+  { title: 'Trenching & Backfill', description: 'Opening trenches for utility or drainage work, then backfilling and compacting.', href: '/services/trenching-backfill' },
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/locations/springfield/septic' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation Contractor in Springfield, OR | D&D Land Works"
+	description="Excavation, grading, drainage, utility trenching, and DEQ certified septic work in Springfield, OR. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Springfield, Oregon"
+		headline="Excavation in Springfield, OR"
+		subheadline="Right across the river from Eugene, Springfield gets just as much attention. D&D Land Works runs jobs here regularly, from Thurston to Mohawk Valley."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Springfield, Oregon"
+		headlineHtml="Familiar <span class='text-brand-blue'>Ground in Springfield</span>, Same Schedule as Eugene"
+		descriptionHtml="<p>Springfield sits close enough to Eugene that it&rsquo;s covered on the same schedule, not treated as an add-on trip. That matters for anything time-sensitive, like a driveway that&rsquo;s washed out mid-winter or a septic system that&rsquo;s backing up. Neighborhoods out toward Thurston and up into the Mohawk Valley tend to have more acreage and steeper ground than the flatter parts of town near the Willamette, which changes what a job actually needs in terms of equipment and drainage planning.</p><p>Utility trenching and drainage work make up a steady share of Springfield calls, along with driveway regrading on rural routes that see more runoff than a paved city street. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, DEQ certified for septic work.</p>"
+	/>
+	<!-- Services -->
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			Services in Springfield
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+		<p class="mt-8 text-center text-slate-600">
+			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
+		</p>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Springfield, Oregon"
+		headline="Why Do Springfield Homeowners Trust D&D Land Works?"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works job site in Springfield, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic work &mdash; credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Springfield runs on the same schedule as Eugene, not as a separate dispatch.</p><p>David Deggelman scopes every job in person before quoting. If you need excavation, drainage, or septic work anywhere in Springfield or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Springfield"
+		subheadline="Same-schedule coverage as Eugene, no separate dispatch."
+	/>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const related = [
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/services/land-clearing' },
+  { title: 'Brush Clearing', description: 'Cutting back overgrowth for defensible space or usable acreage.', href: '/services/brush-clearing' },
+];
+---
+
+<BaseLayout
+	title="Land Clearing Cost Per Acre in Oregon | D&D Land Works"
+	description="Land clearing cost per acre in Oregon depends on vegetation density more than acreage. What drives the price, with real cost data. Free estimates."
+>
+	<Hero
+		eyebrow="Cost Guide"
+		headline="Land Clearing Cost Per Acre"
+		subheadline="An acre of pasture grass and an acre of second-growth timber are not the same job, and they're not close to the same price."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Get an Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Vegetation Density Sets the Price
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			<a href="https://www.angi.com/articles/how-much-does-it-cost-clear-land.htm" target="_blank" rel="noopener" class="text-brand-blue underline hover:text-brand-blue-dark">Angi's 2026 cost data</a> puts
+			land clearing nationally between $1,200 and $8,000 per acre, and the spread comes almost
+			entirely from what's actually growing on the land. Light brush and grass run closer to $600
+			to $1,300 an acre. Shrubs and small trees push that to $2,100 to $4,100. Heavy timber, the kind
+			of second-growth Douglas fir common around Cottage Grove and Oakridge, runs $3,600 to $6,100
+			or more. Some contractors price by the hour instead, typically $120 to $265.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			What Changes the Number Beyond Vegetation
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Blackberry and scotch broom, the two most common overgrowth problems on Lane County acreage,
+			clear faster than standing timber but layer thick enough after a few seasons to slow a brush
+			hog down. Slope matters too. A flat parcel out toward Junction City clears quicker than a
+			hillside lot near Oakridge, where equipment has to work more carefully around grade. What
+			happens to the material afterward, whether it gets hauled off, chipped, or burned where
+			permitted, adds its own cost on top of the clearing itself.
+		</p>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li>Vegetation type: grass and brush clear faster than standing timber</li>
+			<li>Density: overgrown blackberry can slow a job as much as small trees</li>
+			<li>Terrain: slope and soil stability affect equipment access</li>
+			<li>Debris handling: hauling, chipping, or burning each carry their own cost</li>
+			<li>Acreage: larger parcels often price slightly lower per acre than small ones</li>
+		</ul>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Getting an Accurate Number
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A per-acre average is a starting point, not a quote. David walks the property, looks at what's
+			actually growing on it, and prices the job based on that, not a spreadsheet formula. Licensed
+			and bonded under CCB #261742, serving Eugene, Springfield, and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get a Real Number for Your Property"
+		subheadline="Free on-site estimate for land or lot clearing."
+	/>
+</BaseLayout>

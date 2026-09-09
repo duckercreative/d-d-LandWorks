@@ -1,0 +1,150 @@
+{
+  "expectations": [
+    {
+      "text": "Exactly 3 post draft files produced",
+      "passed": false,
+      "evidence": "5 post .md files exist in the outputs directory (excluding RESEARCH_SWEEP.md and transcript.md): 2026-04-20_post-1-repair-vs-replace-houston.md, 2026-04-22_post-2-mini-split-katy-offer.md, 2026-04-22_post-2-minisplit-katy-offer.md, 2026-04-24_post-3-hvac-install-sugar-land.md, 2026-04-24_post-3-hvac-sugarland-late-april.md. Post 2 and Post 3 each have 2 versions. The transcript acknowledges two different slug formats for Post 2 as a 'batch file naming inconsistency' (Issue #4) but does not explain why both files were kept. The metrics.json files_created list references the 'minisplit' and 'sugarland-late-april' slugs as the canonical outputs, but all 5 files were copied to the eval outputs directory."
+    },
+    {
+      "text": "Post 1 = What's New (Mon), Post 2 = Offer (Wed), Post 3 = What's New or Event (Fri)",
+      "passed": true,
+      "evidence": "Canonical files (per transcript Step 4-6 and metrics.json): Post 1 (2026-04-20_post-1-repair-vs-replace-houston.md) has post_type: What's New, date 2026-04-20 (Monday). Post 2 (2026-04-22_post-2-minisplit-katy-offer.md) has post_type: Offer, date 2026-04-22 (Wednesday). Post 3 (2026-04-24_post-3-hvac-sugarland-late-april.md) has post_type: What's New, date 2026-04-24 (Friday). Cadence is correct. Both duplicate files also have matching post types."
+    },
+    {
+      "text": "No geo target repeated across the 3 posts",
+      "passed": true,
+      "evidence": "Canonical posts have geo_target: 'Houston, TX (city-wide)' (Post 1), 'Katy, TX (Cinco Ranch / Seven Meadows / Firethorne)' (Post 2), 'Sugar Land, TX (First Colony / Riverstone / Telfair)' (Post 3). Three distinct geos. Confirmed in RESEARCH_SWEEP.md Source 4 and metrics.json batch_variation.geo_varied field."
+    },
+    {
+      "text": "No primary keyword repeated across the 3 posts",
+      "passed": true,
+      "evidence": "Post 1: primary_keyword 'ac repair houston'. Post 2: primary_keyword 'mini split installation katy tx'. Post 3: primary_keyword 'hvac contractor sugar land tx'. All three are distinct service categories (repair vs. install vs. contractor/services). Confirmed in RESEARCH_SWEEP.md Summary Brief table and metrics.json batch_variation.keyword_categories_varied."
+    },
+    {
+      "text": "All templates used are NOT in queue.json.posted within last 40 days",
+      "passed": true,
+      "evidence": "Templates used: repair_vs_replace_houston_2026, mini_split_katy_offer, hvac_contractor_sugar_land_april. Checked queue.json at 04-gmb/posts/scheduled/queue.json — the posted dict contains 10 blocked templates (pre_summer_tune_up, pre_summer_filter, pre_summer_refrigerant, pre_summer_thermostat, pre_summer_inspection, pre_summer_duct_check, brands_we_service, signs_ac_failing, commercial_pre_summer_readiness, tune_up_offer). None of the 3 batch templates appear in posted. RESEARCH_SWEEP.md Source 2 lists all 10 blocked templates, and the 3 new templates are confirmed as new/unused in Source 7."
+    },
+    {
+      "text": "A single shared RESEARCH_SWEEP.md file exists AND individual post files do NOT contain a '## Research Notes' section — they have only a research_refs: frontmatter field",
+      "passed": false,
+      "evidence": "RESEARCH_SWEEP.md exists (6,000+ chars, well-structured, covers all 8 sources). However, both Post 2 (2026-04-22_post-2-minisplit-katy-offer.md) and Post 3 (2026-04-24_post-3-hvac-sugarland-late-april.md) contain a '## Research Notes' section in the post body, appended after the compliance tag. Post 2 research notes read: 'See RESEARCH_SWEEP.md for full Phase 1 audit trail. Key refs: GSC gap #2...' Post 3 reads similarly. Post 1 (repair-vs-replace-houston.md) correctly has only the research_refs frontmatter field and no ## Research Notes section. This is the defining behavioral difference the assertion targets — the old skill partially follows the rule but leaves research notes embedded in 2 of 3 post files."
+    },
+    {
+      "text": "Each post body is within 1200-1450 chars",
+      "passed": true,
+      "evidence": "Measured actual GBP-publishable body (## Post Body content, excluding compliance tag and ## Research Notes section): Post 1 = 1425 chars (within range), Post 2 = 1321 chars (within range), Post 3 = 1446 chars (within range). Note: the inline compliance tag in Post 2 claims 1321 chars — matches. Post 3 inline tag claims 1446 chars — matches measured value. The full ## Post Body section including the compliance tag and ## Research Notes section is 1537 chars for Post 3, but the publishable body itself passes. Transcript's error note documents that Post 1's first draft was 1850 chars, caught by pre-write checklist, revised before file was written."
+    },
+    {
+      "text": "Phone number does NOT appear in any of the 3 post bodies",
+      "passed": true,
+      "evidence": "Regex search for phone patterns (###-###-####, (###) ###-####) in ## Post Body sections of all 3 canonical files returns no matches. The phone number (713) 598-2737 does not appear in any post body. Metrics.json post_compliance confirms phone_in_body: false for all 3. Policy-compliant: phone appears in RESEARCH_SWEEP.md Source 1 (business facts) but not in the post bodies themselves."
+    },
+    {
+      "text": "Each post has first-line keyword + Houston/suburb",
+      "passed": true,
+      "evidence": "Post 1 first line: '🌡️ AC repair in Houston gets expensive fast when you're fixing the wrong system.' — contains 'AC repair' (keyword) + 'Houston'. Post 2 first line: 'Ductless mini-split installation in Katy TX is one of the most common calls we get...' — contains 'mini-split installation' + 'Katy TX'. Post 3 first line: 'HVAC contractor Sugar Land TX homeowners call most in late April...' — contains 'HVAC contractor' + 'Sugar Land TX'. All three pass. Inline compliance tags also confirm GEO+KW IN LINE 1: PASS."
+    },
+    {
+      "text": "Each post has a valid CTA button + URL pointing to a 75degreeac.com page",
+      "passed": true,
+      "evidence": "Post 1: cta_button: LEARN_MORE, cta_url: https://75degreeac.com/ac-repair-houston-tx/ (valid). Post 2: cta_button: BOOK, cta_url: https://75degreeac.com/ac-installation-houston-tx/ (valid). Post 3: cta_button: CALL, cta_url: https://75degreeac.com/ac-repair-houston-tx/ (valid). All three have CTA button type + URL on the 75degreeac.com domain. Button types are valid GBP CTA options (LEARN_MORE, BOOK, CALL)."
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 2,
+    "total": 10,
+    "pass_rate": 0.80
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 17,
+      "Write": 1,
+      "Edit": 2,
+      "Bash": 14,
+      "WebFetch": 1,
+      "WebSearch": 1,
+      "Grep": 0,
+      "Glob": 1,
+      "ToolSearch": 1
+    },
+    "total_tool_calls": 38,
+    "total_steps": 8,
+    "errors_encountered": 1,
+    "output_chars": 14407,
+    "transcript_chars": 8484
+  },
+  "timing": {
+    "executor_duration_seconds": 537.4,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 537.4
+  },
+  "claims": [
+    {
+      "claim": "Post 1 first draft was 1850 chars (over 1450 cap) and contained 3 em dashes; revised to pass before file was written",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json error_notes confirms: 'First draft of Post 1 was 1850 chars (over 1450 cap) and contained 3 em dashes. Caught by pre-write checklist greps. Fixed in one revision cycle before file was written.' Transcript Step 4 confirms: 'First draft was 1850 chars and contained em dashes. Revised to 1392 chars, all checks passed.' Final Post 1 file contains no em dashes and measures 1425 chars."
+    },
+    {
+      "claim": "All new templates were appended to post_templates.json",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json templates_appended_to_post_templates_json lists all 3 new template IDs. post_templates_updated.json is present in outputs (28,473 bytes). Transcript Step 7 describes adding new geo_targeted section with 3 template entries."
+    },
+    {
+      "claim": "No template reused within 40 days",
+      "type": "factual",
+      "verified": true,
+      "evidence": "queue.json.posted contains 10 blocked template IDs. None of the 3 batch templates (repair_vs_replace_houston_2026, mini_split_katy_offer, hvac_contractor_sugar_land_april) appear in the posted dict. These are confirmed new templates not previously used."
+    },
+    {
+      "claim": "Batch file naming inconsistency — two slug formats for Post 2",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Both 2026-04-22_post-2-mini-split-katy-offer.md and 2026-04-22_post-2-minisplit-katy-offer.md exist in outputs. Transcript Issue #4 acknowledges: 'Two slightly different slug formats were used for Post 2.' metrics.json files_created shows the minisplit (no hyphen) version as the canonical output. The executor did not remove the extra file, leaving 5 post files instead of 3."
+    },
+    {
+      "claim": "Post 3 char count is 1446 per compliance tag",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Inline compliance tag in Post 3 reads '[CHAR COUNT: 1446 | ...]'. Direct measurement of publishable body (excluding compliance tag and ## Research Notes section) = 1446 chars. The two counts agree. Note: total ## Post Body section including Research Notes = 1537 chars, but the GBP-publishable portion is 1446."
+    },
+    {
+      "claim": "RESEARCH_SWEEP.md already existed from a prior run; only header was updated rather than full overwrite",
+      "type": "process",
+      "verified": false,
+      "evidence": "Transcript Issue #1 claims this, but the RESEARCH_SWEEP.md in outputs is complete and well-structured with all 8 sources covering the April 20 batch. There is no way to verify from the available outputs whether this was a partial header-only update or a full rewrite. The content is internally consistent and appropriate for the batch — this claim cannot be confirmed or denied from the file contents alone."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [
+      "Two versions of Post 2 and Post 3 were copied to outputs — the canonical versions are minisplit-katy-offer.md and hvac-sugarland-late-april.md per transcript and metrics.json, but both versions were retained, causing assertion 1 to fail",
+      "Post 2 and Post 3 contain ## Research Notes sections in the post body — this is the behavior the new skill is designed to eliminate"
+    ],
+    "workarounds": [
+      "Post 1 first draft exceeded char limit (1850 chars); required one revision cycle before writing — expected old-skill behavior, pre-write checklist caught it"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Exactly 3 post draft files produced",
+        "reason": "The assertion as written fails because of leftover duplicate files from the execution process, not because the skill produced wrong content. A more discriminating assertion would be: 'Exactly 3 canonical post draft files produced (one per scheduled day, no duplicates per date)' — or the eval could be structured to check files in the official batch folder (04-gmb/posts/drafts/) rather than the eval outputs copy, where deduplication was not enforced. As written, the assertion can be gamed by simply not copying draft iterations to the outputs directory."
+      },
+      {
+        "reason": "No assertion checks whether the CTA URLs are live/reachable. Post 3 uses https://75degreeac.com/ac-repair-houston-tx/ as the CTA for an HVAC installation/services post — there is a potential content-URL mismatch (repair URL for a symptom-guide post). An assertion checking CTA URL relevance to post content would catch this."
+      },
+      {
+        "reason": "No assertion verifies that each post body is free of em dashes. The skill has an explicit em dash ban (they render as question marks in GBP), and the transcript notes Post 1's first draft had 3 em dashes that were caught and fixed. This is a high-value rule violation that goes unchecked by the current assertion set."
+      },
+      {
+        "assertion": "Each post body is within 1200-1450 chars",
+        "reason": "The assertion is ambiguous about what 'post body' means when the file contains a compliance tag and a ## Research Notes section appended to ## Post Body. The grader must decide whether to measure the raw section or the publishable content. This ambiguity should be resolved: specify 'GBP-publishable body (excluding any metadata tags and Research Notes appended in the file)'."
+      }
+    ],
+    "overall": "The assertion set correctly identifies the two main failure modes of the old skill (duplicate files + embedded Research Notes). The 8 passing assertions are meaningful and mostly discriminating. Four improvement opportunities exist: CTA URL relevance, em dash checking, file count precision, and char count definition clarity."
+  }
+}

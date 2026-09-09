@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const related = [
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/services/septic-install-repairs' },
+  { title: 'Oregon Septic Basics', description: 'How DEQ regulates septic systems in Lane County.', href: '/resources/oregon-septic-basics' },
+];
+---
+
+<BaseLayout
+	title="Septic Installation Cost in Oregon | D&D Land Works"
+	description="What a new septic system costs in Oregon: tank, drainfield, and permitting, and why soil conditions can double the price. DEQ certified, free estimates."
+>
+	<Hero
+		eyebrow="Cost Guide"
+		headline="Septic Installation Cost in Oregon"
+		subheadline="Two nearly identical houses can carry very different septic price tags once the soil underneath them is different."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Get an Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			The National Range, and Why Oregon Skews Higher
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			<a href="https://www.angi.com/articles/what-does-it-cost-install-septic-system.htm" target="_blank" rel="noopener" class="text-brand-blue underline hover:text-brand-blue-dark">Angi's 2026 data</a> puts
+			a new septic system nationally between $6,000 and $25,000, with most standard three-bedroom
+			homes landing in the $8,000 to $15,000 range. The tank itself is usually $1,000 to $4,000. The
+			drainfield is the variable piece, anywhere from $3,000 to $15,000 or more, and it's the line
+			item that determines whether a job comes in low or high. Oregon properties with poor
+			percolation or tight lot sizes can push well past the national average.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Soil Decides the Drainfield
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Oregon requires a soil evaluation, a perc test, before a drainfield gets designed. Sandy soil
+			near the coast drains fast and often needs a smaller field. Clay-heavy ground common around
+			Eugene drains slower and can require a larger drainfield or an alternative system entirely to
+			meet DEQ standards. That test result, not the size of the house, is usually what pushes a job
+			toward the top or bottom of the range.
+		</p>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li>Soil and perc test results: poor drainage often means a larger or alternative system</li>
+			<li>Lot size and setbacks: tight lots limit drainfield placement options</li>
+			<li>Bedroom count: DEQ sizing is based on estimated wastewater flow</li>
+			<li>Site access: a hard-to-reach lot adds equipment and time</li>
+			<li>Permitting: county sanitarian review and DEQ permit fees add to the total</li>
+		</ul>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			DEQ Certification Isn't Optional
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Only a DEQ-certified installer can legally put in or repair a septic system in Oregon. D&D
+			Land Works holds that certification along with a CCB #261742 license, and quotes septic jobs
+			after a site visit and soil check, not off a national average. Serving Eugene, Springfield,
+			and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{related.map((item) => <ServiceCard title={item.title} description={item.description} href={item.href} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get a Site-Specific Septic Quote"
+		subheadline="Free estimate, DEQ certified installer."
+	/>
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Land Clearing in Eugene, OR | D&D Land Works"
+	description="Land and lot clearing in Eugene, OR. South Hills infill lots, brush removal, and site clearing ahead of grading or construction. Licensed and bonded."
+>
+	<Hero
+		eyebrow="Eugene, Oregon"
+		headline="Land Clearing in Eugene, OR"
+		subheadline="Infill construction on wooded South Hills and Fox Hollow lots is one of the more common reasons for a land clearing call in Eugene. The ground has to be opened up before anything else can start."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Land Clearing"
+		ctaHref="/services/land-clearing"
+		eyebrow="Eugene, Oregon"
+		headlineHtml="City Lots With <span class='text-brand-blue'>Rural Overgrowth</span> in Eugene"
+		descriptionHtml="<p>A lot of Eugene&rsquo;s wooded lots, especially in the South Hills and along the fringe near Fox Hollow, sat undeveloped long enough to grow up in blackberry, scotch broom, and volunteer trees before a buyer decided to build. Clearing that ground for a new house pad or an addition takes equipment, not a weekend of yard work, and it has to happen before grading or foundation excavation can start.</p><p>Brush removal, hauling, and the rest of how a clearing job runs are covered on the <a href='/services/land-clearing' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>land clearing</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/eugene' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Eugene</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Eugene, Oregon"
+		headline="Why Do Eugene Homeowners Trust D&D Land Works for Land Clearing?"
+		image="/hero-bg-4.webp"
+		imageAlt="Cleared wooded lot in Eugene, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every clearing job starts with David walking the property, flagging what stays before anything&rsquo;s cut.</p><p>If a South Hills or Fox Hollow lot needs opening up for a build anywhere in Eugene, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Eugene Lot Cleared"
+		subheadline="Free estimate for land or lot clearing anywhere in Eugene."
+	/>
+</BaseLayout>

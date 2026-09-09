@@ -1,0 +1,142 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+land clearing eugene or,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,Primary page target keyword (topical map §5 P0 row)
+land clearing eugene oregon,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,Full state-name variant
+land clearing lane county or,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,County-wide variant
+land clearing lane county oregon,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,County-wide full-state variant
+land clearing springfield oregon,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,Tier 1 city variant
+land clearing services eugene or,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P1,"""Services"" variant"
+land clearing company eugene oregon,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P1,"""Company"" variant"
+land clearing contractor near me,serp,commercial,decision,n,scheduled,head,high,/land-clearing/,P0,High-volume device-located generic query
+lot clearing eugene oregon,serp,commercial,decision,y,scheduled,head,high,/land-clearing/,P1,Synonym term - "lot" phrasing
+property clearing eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/land-clearing/,P2,Synonym term - "property" phrasing
+vegetation removal eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/land-clearing/,P2,All Dirt's own page-title phrasing ("Vegetation Removal")
+clear wooded lot lane county,serp,commercial,consideration,y,scheduled,long,high,/land-clearing/,P1,Task-brief seed term - the heaviest-scope project type
+clear a lot for building eugene,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P0,Pre-construction project-type phrasing
+clearing land for new construction oregon,serp,commercial,decision,n,scheduled,long,high,/land-clearing/,P1,Project-type phrasing
+land clearing for house pad oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Project-type phrasing
+land clearing before building a house,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P2,Pre-purchase research phrasing
+tree and stump removal for building,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P1,"Scope-nuance term - ties directly to the ""tree/stump within a clearing job"" entity finding"
+acreage clearing cost oregon,serp,commercial investigation,consideration,n,browse,long,high,/land-clearing/,P0,Task-brief seed term
+acreage clearing lane county,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P1,Rural-acreage project-type variant
+clearing land for pasture,serp,commercial investigation,consideration,n,browse,long,medium,/land-clearing/,P0,Task-brief seed term - distinct project type/cost tier
+clearing land for hobby farm oregon,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P2,Rural project-type variant
+clearing overgrown acreage oregon,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P1,Matches current live page hero copy ("a parcel that's sat untouched for years")
+forestry mulching vs clearing,informational,informational,awareness,n,browse,long,low,/land-clearing/,P2,Task-brief seed term - adjacent-method comparison content
+forestry mulching vs land clearing cost,informational,informational,consideration,n,browse,long,low,/land-clearing/,P2,Cost-comparison informational query
+lot clearing cost per acre oregon,serp,commercial investigation,consideration,n,browse,long,high,/land-clearing/,P0,Task-brief seed term
+land clearing cost per acre,serp,commercial investigation,consideration,n,browse,mid,high,/land-clearing/,P0,National head term with strong Oregon-adjacent volume
+land clearing cost eugene oregon,serp,commercial investigation,consideration,y,browse,long,high,/land-clearing/,P0,Local cost-anchor query
+how much does it cost to clear land in oregon,serp,informational,consideration,n,browse,long,high,/land-clearing/,P1,Full-question phrasing
+how much does land clearing cost per acre,serp,informational,consideration,n,browse,long,high,/land-clearing/,P1,Full-question phrasing
+land clearing cost calculator,serp,informational,consideration,n,browse,mid,medium,/land-clearing/,P3,Tool-intent query - low direct-content match but high volume
+what does land clearing include,paa,informational,consideration,n,browse,mid,medium,/land-clearing/,P0,Direct PAA phrasing - Danco's own FAQ uses this exact question
+what is included in land clearing,paa,informational,consideration,n,browse,mid,medium,/land-clearing/,P1,PAA variant phrasing
+land clearing vs brush clearing,serp,informational,consideration,n,browse,mid,medium,/land-clearing/,P0,"Scope-boundary query - directly answers this pack's central finding; also relevant to /brush-clearing/"
+difference between land clearing and brush clearing,serp,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Full-phrase PAA variant
+land clearing vs tree removal,serp,informational,consideration,n,browse,mid,medium,/land-clearing/,P1,"Scope-boundary query against an adjacent, non-D&D-offered category"
+land clearing vs lot clearing,serp,informational,awareness,n,browse,mid,low,/land-clearing/,P3,Synonym-clarification query
+what happens to trees after land clearing,paa,informational,consideration,n,browse,long,medium,/land-clearing/,P0,Task-brief seed term - debris-disposal-method question
+what do contractors do with cleared debris,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Debris-disposal-method question
+does land clearing include stump removal,paa,informational,consideration,n,browse,long,medium,/land-clearing/,P0,Direct scope-nuance PAA question
+land clearing with stump grinding oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Scope-adjacent query
+do I need a permit to clear land in oregon,serp,informational,consideration,n,browse,long,high,/land-clearing/,P0,Task-brief seed term
+do I need a permit to clear trees in lane county,serp,informational,consideration,y,browse,long,high,/land-clearing/,P0,Task-brief seed term - Eugene/Springfield significant-tree ordinance angle
+eugene significant tree removal permit,serp,informational,consideration,y,browse,long,medium,/land-clearing/,P1,Direct authority-signal query (EC 9.6885)
+springfield tree felling permit,serp,informational,consideration,y,browse,long,medium,/land-clearing/,P1,Direct authority-signal query (Springfield permit)
+do you need a permit to remove trees on your own property oregon,serp,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Broader property-rights framing
+wetland restrictions land clearing oregon,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Task-brief seed term - DSL removal-fill angle
+riparian buffer clearing rules oregon,informational,informational,consideration,n,browse,long,low,/land-clearing/,P2,DSL/riparian authority-signal query
+can I clear land near a stream in oregon,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,DSL removal-fill practical-question phrasing
+burn permit for slash pile oregon,serp,informational,consideration,n,browse,long,medium,/land-clearing/,P0,Task-brief seed term - ODF slash-burn angle
+slash burning rules lane county,serp,informational,consideration,y,browse,long,medium,/land-clearing/,P0,Task-brief seed term - LRAPA/ODF multi-agency angle
+do I need a burn permit to burn brush in oregon,serp,informational,consideration,n,browse,long,medium,/land-clearing/,P1,DEQ backyard-burning angle
+can I burn debris after clearing land in oregon,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Combined ODF/DEQ/LRAPA framing question
+oregon department of forestry burn permit,serp,informational,consideration,n,browse,mid,low,/land-clearing/,P2,Direct authority entity query
+lane regional air protection agency burning rules,serp,informational,consideration,y,browse,long,low,/land-clearing/,P2,Direct authority entity query
+oregon forest practices act residential land clearing,informational,informational,awareness,n,browse,long,low,/land-clearing/,P2,Task-brief seed term - applicability-clarification content
+does forest practices act apply to my property oregon,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Applicability-clarification question
+clearing land for building vs clearing for pasture,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Task-brief seed term - project-type/cost distinction
+new build lot clearing eugene oregon,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Project-type variant
+rural land clearing oregon,serp,commercial,decision,n,scheduled,mid,medium,/land-clearing/,P1,Rural-acreage variant
+timber lot clearing oregon,serp,commercial,decision,n,scheduled,mid,medium,/land-clearing/,P2,Heavy-timber project-type variant
+clearing land with standing timber,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P2,Heavy-timber project-type variant
+how to clear a wooded lot,informational,informational,awareness,n,browse,mid,low,/land-clearing/,P2,DIY-adjacent informational query
+diy land clearing vs hire a contractor,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,DIY-vs-hire threshold query
+can I clear my own land in oregon,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P2,DIY-vs-hire threshold query
+rent an excavator to clear land,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,DIY-equipment-rental adjacent query
+land clearing equipment used,informational,informational,awareness,n,browse,mid,medium,/land-clearing/,P1,Equipment-transparency query
+what equipment is used for land clearing,paa,informational,consideration,n,browse,long,medium,/land-clearing/,P1,PAA variant phrasing
+excavator with grapple attachment land clearing,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Equipment-specificity query - matches current live page copy
+mulching head land clearing,informational,informational,awareness,n,browse,mid,low,/land-clearing/,P3,Equipment-specificity query
+how long does it take to clear an acre of land,paa,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Timeline PAA question
+land clearing timeline eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Local timeline query
+how does land clearing work step by step,informational,informational,consideration,n,browse,long,low,/land-clearing/,P2,Process-transparency query
+land clearing process explained,informational,informational,awareness,n,browse,mid,low,/land-clearing/,P3,Process-transparency query
+selective land clearing keep trees,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P1,Trust-building/tree-preservation query
+land clearing without removing all trees,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P2,Trust-building/tree-preservation query
+can a contractor save specific trees when clearing land,informational,commercial,consideration,n,browse,long,low,/land-clearing/,P3,Trust-building/tree-preservation query
+overgrown lot clearing eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P1,Matches current live page hero copy
+neglected property clearing oregon,informational,commercial,consideration,n,browse,long,low,/land-clearing/,P3,Matches current live page hero copy
+land clearing residential eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Audience-specific variant
+commercial land clearing eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Audience-specific variant
+land clearing for subdivision oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Commercial-audience project-type variant
+land clearing for adu oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,ADU project-type - reused gap from site-preparation pack
+licensed land clearing contractor lane county,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Trust-signal-plus-service query
+bonded land clearing company oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Trust-signal-plus-service query
+free estimate land clearing eugene,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Conversion-intent query - matches current live page CTA
+land clearing quote lane county,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Conversion-intent query
+himalayan blackberry removal oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,BRUSH-ADJACENT,Species-specific query — route to /brush-clearing/ unless job is full-parcel clearing
+scotch broom removal eugene oregon,serp,commercial,decision,y,scheduled,long,low,/land-clearing/,BRUSH-ADJACENT,Species-specific query — route to /brush-clearing/
+blackberry clearing lane county,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/ per scope-boundary finding unless full-parcel/timber job
+brush clearing eugene or,serp,commercial,decision,y,scheduled,head,high,/brush-clearing/,BRUSH-ADJACENT,"Sibling page's own primary keyword — included here ONLY for cross-reference/routing, not a target for THIS page"
+brush clearing cost per acre oregon,serp,commercial investigation,consideration,n,browse,long,medium,/brush-clearing/,BRUSH-ADJACENT,"Route to /brush-clearing/ — distinct, lower cost tier per entity-inventory.csv finding"
+brush hogging eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/brush-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/
+defensible space clearing oregon,serp,commercial,decision,n,scheduled,long,medium,/brush-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/ — SB 762/wildfire framing already lives on that page
+fence line brush clearing lane county,serp,commercial,decision,y,scheduled,long,medium,/brush-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/
+overgrowth removal eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/brush-clearing/,BRUSH-ADJACENT,"Ambiguous term - could route to either page depending on scope; default to /brush-clearing/ per Danco's own taxonomy unless standing timber is present"
+scrub clearing oregon,informational,commercial,consideration,n,browse,mid,low,/brush-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/
+wildfire fuel reduction clearing oregon,serp,commercial,decision,n,scheduled,long,medium,/brush-clearing/,BRUSH-ADJACENT,Route to /brush-clearing/ — SB 762 defensible-space context
+tree removal eugene oregon,serp,commercial,decision,y,scheduled,head,high,not-a-D&D-service,SCOPE-CAUTION,"Standalone single-tree-removal/arborist intent — NOT a D&D standalone service per business-info.md; do not target as a page keyword, only address the distinction in FAQ content"
+stump grinding eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,not-a-D&D-service,SCOPE-CAUTION,Standalone stump-grinding intent — same caution as above
+tree service eugene oregon,serp,commercial,decision,y,scheduled,head,high,not-a-D&D-service,SCOPE-CAUTION,Arborist/tree-service category query - out of scope
+forestry mulching eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,not-a-D&D-service-unless-confirmed,SCOPE-CAUTION,"Adjacent method not confirmed as a standalone D&D offering — see entity-inventory.csv Forestry Mulching row"
+land clearing eugene reddit,serp,informational,awareness,y,browse,long,low,/land-clearing/,P3,Reddit-proxy discovery query
+best land clearing company eugene oregon,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Comparison/best-of intent query
+top rated land clearing lane county,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Comparison/best-of intent query
+land clearing reviews eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Trust/review-seeking query
+land clearing before and after photos,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Visual-proof-seeking query
+land clearing eugene oregon cost per hour,serp,commercial investigation,consideration,y,browse,long,medium,/land-clearing/,P2,Pricing-model query
+land clearing hourly rate oregon,informational,commercial investigation,consideration,n,browse,long,medium,/land-clearing/,P2,Pricing-model query
+land clearing eugene oregon a,autocomplete,commercial,decision,y,scheduled,long,low,/land-clearing/,P3,Autocomplete alphabet-soup - placeholder pattern
+land clearing eugene oregon near,autocomplete,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Autocomplete "near me" completion pattern
+land clearing for driveway access oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Project-type variant - ties to future /driveway-repair/ page
+land clearing for septic system oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Project-type variant - ties to /septic/ page per topical map
+land clearing before septic installation,informational,commercial,consideration,n,browse,long,medium,/land-clearing/,P2,Cross-service sequencing query
+land clearing for utility access,informational,commercial,consideration,n,browse,long,low,/land-clearing/,P3,Project-type variant - ties to /utility-excavation/
+lane county land clearing regulations,serp,informational,consideration,y,browse,long,medium,/land-clearing/,P1,Authority/regulation-summary query
+oregon land clearing laws,informational,informational,consideration,n,browse,mid,medium,/land-clearing/,P1,Authority/regulation-summary query
+what trees are protected in oregon,informational,informational,awareness,n,browse,mid,medium,/land-clearing/,P2,Tree-ordinance-adjacent informational query
+heritage tree oregon definition,informational,informational,awareness,n,browse,mid,low,/land-clearing/,P3,Tree-ordinance-adjacent informational query
+land clearing cottage grove oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Tier 2 city variant
+land clearing junction city oregon,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Tier 2 city variant
+land clearing creswell oregon,serp,commercial,decision,y,scheduled,long,low,/land-clearing/,P3,Tier 2 city variant
+land clearing veneta oregon,serp,commercial,decision,y,scheduled,long,low,/land-clearing/,P3,Tier 2 city variant - All Dirt is based here
+land clearing florence oregon,serp,commercial,decision,y,scheduled,long,low,/land-clearing/,P3,Tier 3 city variant - coverage confirmed per business-info.md
+land clearing oakridge oregon,serp,commercial,decision,y,scheduled,long,low,/land-clearing/,P3,Tier 3 city variant
+willamette valley land clearing,informational,commercial,consideration,n,browse,mid,medium,/land-clearing/,P2,Regional/soil-context variant
+clay soil land clearing oregon,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Regional/soil-context variant
+best time of year to clear land oregon,informational,informational,consideration,n,browse,long,medium,/land-clearing/,P1,Seasonal-scheduling query - reused theme from homepage pack
+land clearing rainy season oregon,informational,informational,consideration,n,browse,long,low,/land-clearing/,P2,Seasonal-scheduling query
+land clearing summer vs winter oregon,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Seasonal-scheduling query
+land clearing eugene oregon reviews,serp,commercial,decision,y,scheduled,long,medium,/land-clearing/,P2,Trust-seeking variant
+who clears land near me,serp,commercial,decision,n,scheduled,mid,medium,/land-clearing/,P2,Generic near-me variant
+excavation company that clears land oregon,serp,commercial,decision,n,scheduled,long,medium,/land-clearing/,P2,Category-crossover query - excavation contractor doing clearing
+land clearing and grading eugene oregon,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Bundled-service query - matches "Often Paired With" section on current live page
+land clearing and site prep eugene oregon,serp,commercial,decision,y,scheduled,long,high,/land-clearing/,P1,Bundled-service query - matches "Often Paired With" section
+buying rural land oregon clearing needed,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Pre-purchase research query
+inherited property overgrown clearing oregon,informational,commercial,consideration,n,browse,long,low,/land-clearing/,P3,Matches current live page hero copy - "sat untouched for years"
+land clearing insurance liability oregon,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Trust/liability-adjacent query
+what size equipment for land clearing,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Equipment-sizing query
+mini excavator vs full size land clearing,informational,informational,awareness,n,browse,long,low,/land-clearing/,P3,Equipment-sizing query
+land clearing dump fees oregon,informational,commercial investigation,consideration,n,browse,long,low,/land-clearing/,P2,Cost-line-item query - hauling/disposal cost driver
+haul away timber cost oregon,informational,commercial investigation,consideration,n,browse,long,low,/land-clearing/,P3,Cost-line-item query

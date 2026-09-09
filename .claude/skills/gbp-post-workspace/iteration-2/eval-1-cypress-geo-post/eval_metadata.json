@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "cypress-geo-post",
+  "prompt": "Write a GBP post targeted at the Cypress TX service area. Focus on something a Cypress homeowner would care about right now — use real data to pick the angle, not a generic template.",
+  "assertions": [
+    {"text": "A draft .md file is written to 04-gmb/posts/drafts/"},
+    {"text": "First line of post body contains an AC/HVAC keyword + 'Cypress'"},
+    {"text": "Post body is between 1200 and 1450 characters"},
+    {"text": "Phone number (713) 598-2737 does NOT appear in the post body"},
+    {"text": "Research notes show GSC data was checked for Cypress-related queries"},
+    {"text": "CTA URL points to a Cypress-specific page or the most relevant Houston landing page"},
+    {"text": "No em dashes (—) appear in the post body"},
+    {"text": "No banned AI-slop phrases (ensure, seamless, top-notch, look no further, etc.)"}
+  ]
+}

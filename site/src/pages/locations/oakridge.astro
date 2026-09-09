@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+  { title: 'Driveway Repair', description: 'Regrading and repairing driveways and access roads.', href: '/services/driveway-repair' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation Contractor in Oakridge, OR | D&D Land Works"
+	description="Excavation, site prep, and driveway/access work for mountain properties in Oakridge, OR. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Oakridge, Oregon"
+		headline="Excavation in Oakridge, OR"
+		subheadline="About 40 minutes east of Eugene on Highway 58, Oakridge sits in the Cascade foothills surrounded by national forest. Steep, timbered ground and long access roads are the norm."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Oakridge, Oregon"
+		headlineHtml="Mountain Ground, <span class='text-brand-blue'>Not Valley Ground</span> in Oakridge"
+		descriptionHtml="<p>Oakridge properties tend to sit on a slope, backed by timber, with an access road or driveway that&rsquo;s seen better days. Site prep for a build or an outbuilding here means more attention to slope and drainage than a flat Willamette Valley lot, and a washed-out or rutted access road is a common reason for the call in the first place.</p><p>Land clearing scope varies more property to property up here depending on timber cover and terrain, so it&rsquo;s worth a call to walk through what a specific parcel needs before assuming it&rsquo;s covered. D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, covering Oakridge as part of the regular Lane County service area.</p>"
+	/>
+	<!-- Services -->
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			Services in Oakridge
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+		<p class="mt-8 text-center text-slate-600">
+			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
+		</p>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Oakridge, Oregon"
+		headline="Why Do Oakridge Property Owners Trust D&D Land Works?"
+		image="/hero-bg-4.webp"
+		imageAlt="D&D Land Works job site in Oakridge, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone.</p><p>David Deggelman scopes every job in person before quoting, so pricing accounts for Oakridge&rsquo;s slope, timber cover, and access, not a flat-valley average. If you need site prep, excavation, or driveway work anywhere in Oakridge, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Oakridge"
+		subheadline="Describe the site and access, and David will tell you what it takes."
+	/>
+</BaseLayout>

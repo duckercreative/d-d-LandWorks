@@ -1,0 +1,48 @@
+{
+  "skill_name": "google-ads-keywords",
+  "evals": [
+    {
+      "id": 0,
+      "name": "emergency-keyword-build",
+      "prompt": "Build me the keyword list for the Emergency AC Repair campaign at 75 Degree AC (Houston HVAC). I need ad groups defined, the actual keywords with match types, the campaign-level negative list, and ad-group-level negatives to prevent cross-contamination with maintenance and installation ad groups. We serve Houston + Katy + Sugar Land + Cypress + Richmond TX (note: Richmond TX, not VA). Also tell me what the brand-bidding strategy should be (do we bid on '75 degree ac' as a keyword?).",
+      "files": [],
+      "assertions": [
+        {"name": "produces_at_least_4_ad_groups", "check": "regex_count", "pattern": "(?im)^#{2,4}\\s*(?:AG|Ad\\s*Group|Group)\\s*[1-4]|^\\s*\\*\\*(?:AG|Ad\\s*Group)\\s*[1-4]", "min": 4},
+        {"name": "uses_phrase_and_exact_match_types", "check": "all_present", "patterns": ["[", "]", "\""]},
+        {"name": "includes_richmond_va_negative", "check": "regex_ci", "pattern": "richmond\\s*v(?:a|irginia)|virginia"},
+        {"name": "includes_diy_youtube_negative", "check": "regex_ci", "pattern": "youtube|how\\s*to|diy|tutorial"},
+        {"name": "includes_jobs_school_negative", "check": "regex_ci", "pattern": "\\bjobs?\\b|school|training|career|salary|hiring"},
+        {"name": "includes_window_or_portable_ac_negative", "check": "regex_ci", "pattern": "window\\s*ac|portable\\s*ac|car\\s*ac"},
+        {"name": "includes_dallas_or_austin_geo_negative", "check": "regex_ci", "pattern": "dallas|austin|san\\s*antonio|fort\\s*worth"},
+        {"name": "ad_group_level_negatives_present", "check": "regex_ci", "pattern": "(?:ad[\\s-]*group[\\s-]*level|cross[-\\s]*contamination|exclude.*maintenance|exclude.*install|exclude.*tune)"},
+        {"name": "covers_brand_bidding_strategy", "check": "regex_ci", "pattern": "(?:brand|75\\s*degree).*(?:bid|keyword|campaign|yes|defense)|bid\\s*on\\s*(?:your\\s*own\\s*)?brand"},
+        {"name": "includes_24_hour_emergency_keywords", "check": "regex_ci", "pattern": "24[\\s-]*hour|24/7|emergency"},
+        {"name": "includes_houston_keyword", "check": "regex_ci", "pattern": "houston"},
+        {"name": "includes_katy_or_sugar_land_keyword", "check": "regex_ci", "pattern": "katy|sugar\\s*land"},
+        {"name": "covers_phrase_match_as_workhorse", "check": "regex_ci", "pattern": "phrase\\s*(?:match|first|primary|workhorse|default)"},
+        {"name": "warns_about_close_variants", "check": "regex_ci", "pattern": "close\\s*variants?|exact\\s*(?:not\\s*exact|isn.?t\\s*exact|expand)"}
+      ]
+    },
+    {
+      "id": 1,
+      "name": "search-terms-triage",
+      "prompt": "Here's my Search Terms report from last week (Campaign 1 Emergency at 75 Degree AC, $1,840 spent, 22 conversions). For each search term, tell me which to add as exact keywords, which to add as negatives (campaign or ad-group level, specify which), and which to leave alone — and the rationale:\n- 'emergency ac repair houston' — 18 clicks, 4 conv, $32 CPL\n- 'ac repair near me' — 31 clicks, 3 conv, $58 CPL\n- 'how to fix my ac youtube' — 6 clicks, 0 conv\n- '24 hour ac repair katy tx' — 12 clicks, 3 conv, $24 CPL\n- 'hvac jobs houston' — 4 clicks, 0 conv\n- 'ac not cooling' — 22 clicks, 2 conv, $71 CPL\n- 'window ac repair' — 8 clicks, 0 conv\n- 'ac repair richmond va' — 3 clicks, 0 conv\n- 'emergency hvac dallas' — 5 clicks, 0 conv\n- 'ac repair school' — 2 clicks, 0 conv\n- 'ac tune up coupon' — 7 clicks, 0 conv\n- 'commercial ac repair downtown houston' — 4 clicks, 1 conv, $68 CPL\n- '75 degree ac houston' — 2 clicks, 1 conv, $14 CPL",
+      "files": [],
+      "assertions": [
+        {"name": "classifies_all_13_terms", "check": "regex_count", "pattern": "(?im)['\"]?(?:emergency\\s*ac\\s*repair\\s*houston|ac\\s*repair\\s*near\\s*me|how\\s*to\\s*fix\\s*my\\s*ac\\s*youtube|24\\s*hour\\s*ac\\s*repair\\s*katy|hvac\\s*jobs\\s*houston|ac\\s*not\\s*cooling|window\\s*ac\\s*repair|ac\\s*repair\\s*richmond\\s*va|emergency\\s*hvac\\s*dallas|ac\\s*repair\\s*school|ac\\s*tune\\s*up\\s*coupon|commercial\\s*ac\\s*repair\\s*downtown|75\\s*degree\\s*ac\\s*houston)['\"]?", "min": 10},
+        {"name": "youtube_term_classified_as_negative", "check": "regex_ci", "pattern": "(?:how\\s*to\\s*fix\\s*my\\s*ac\\s*)?youtube[\\s\\S]{0,300}negative"},
+        {"name": "richmond_va_classified_as_negative", "check": "regex_ci", "pattern": "richmond\\s*va[\\s\\S]{0,300}negative"},
+        {"name": "dallas_classified_as_geo_negative", "check": "regex_ci", "pattern": "(?:emergency\\s*hvac\\s*)?dallas[\\s\\S]{0,300}negative"},
+        {"name": "jobs_classified_as_negative", "check": "regex_ci", "pattern": "(?:hvac\\s*)?jobs[\\s\\S]{0,300}negative"},
+        {"name": "school_classified_as_negative", "check": "regex_ci", "pattern": "(?:ac\\s*repair\\s*)?school[\\s\\S]{0,300}negative"},
+        {"name": "window_ac_classified_as_negative", "check": "regex_ci", "pattern": "window\\s*ac[\\s\\S]{0,300}negative"},
+        {"name": "katy_term_classified_as_keyword_to_add", "check": "regex_ci", "pattern": "24\\s*hour\\s*ac\\s*repair\\s*katy[\\s\\S]{0,300}(?:add|exact|keyword|new)"},
+        {"name": "emergency_houston_already_keyword_or_keep", "check": "regex_ci", "pattern": "emergency\\s*ac\\s*repair\\s*houston[\\s\\S]{0,300}(?:already|leave|keep|good\\s*performer|exact)"},
+        {"name": "commercial_term_routed_to_campaign_5", "check": "regex_ci", "pattern": "commercial\\s*ac\\s*repair\\s*downtown[\\s\\S]{0,300}(?:campaign\\s*5|commercial\\s*campaign|move\\s*to|add.*commercial)"},
+        {"name": "brand_term_classified_as_keep_or_brand_campaign", "check": "regex_ci", "pattern": "75\\s*degree\\s*ac[\\s\\S]{0,300}(?:brand|keep|leave|already)"},
+        {"name": "specifies_negative_level_account_or_campaign", "check": "regex_ci", "pattern": "account[-\\s]*level|campaign[-\\s]*level|shared.*list"},
+        {"name": "explains_rationale_for_decisions", "check": "regex_count", "pattern": "(?im)because|reason|why|rationale|since", "min": 4}
+      ]
+    }
+  ]
+}

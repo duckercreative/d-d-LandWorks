@@ -1,0 +1,90 @@
+{
+  "eval_id": 0,
+  "eval_name": "account-launch-architecture",
+  "prompt": "I'm launching Google Ads for 75 Degree AC, a Houston HVAC contractor. Phone (713) 598-2737. Budget is $6,000/mo and we have zero conversion data so far. Walk me through the full account setup \u2014 how many campaigns, budget split, what bidding strategy to start with, location/device/schedule settings, and what tCPA targets I'll move to once data comes in. Should I run Performance Max and LSA from day one or wait? Also flag the 3 mistakes most HVAC managers make at launch so I avoid them.",
+  "assertions": [
+    {
+      "name": "recommends_5_campaign_search_structure",
+      "check": "regex_ci",
+      "pattern": "5\\s*campaigns?|five\\s*campaigns?"
+    },
+    {
+      "name": "specifies_40_25_20_10_5_or_similar_split",
+      "check": "regex_count",
+      "pattern": "(?im)40%|25%|20%|10%|5%",
+      "min": 4
+    },
+    {
+      "name": "recommends_max_conversions_at_launch",
+      "check": "regex_ci",
+      "pattern": "maximi(?:s|z)e\\s*conversions?"
+    },
+    {
+      "name": "warns_against_max_clicks",
+      "check": "regex_ci",
+      "pattern": "(?:not|don.?t|avoid|never)\\s*(?:use\\s*)?max(?:imi(?:s|z)e)?\\s*clicks|max(?:imi(?:s|z)e)?\\s*clicks.*(?:harmful|bad|avoid|don.?t)"
+    },
+    {
+      "name": "covers_pmax_decision",
+      "check": "regex_ci",
+      "pattern": "performance\\s*max|\\bpmax\\b"
+    },
+    {
+      "name": "recommends_pmax_after_30_conversions",
+      "check": "regex_ci",
+      "pattern": "(?:after|once|wait).*(?:30|thirty)\\s*conversions?|seed\\s*data|gate.*pmax"
+    },
+    {
+      "name": "covers_lsa",
+      "check": "regex_ci",
+      "pattern": "local\\s*services?\\s*ads|\\bLSA\\b"
+    },
+    {
+      "name": "specifies_location_targeting_presence",
+      "check": "regex_ci",
+      "pattern": "presence|people\\s*in\\s*(?:or\\s*regularly\\s*in)?|in\\s*(?:or\\s*regularly\\s*in)\\s*(?:your\\s*)?targeted"
+    },
+    {
+      "name": "warns_against_presence_or_interest",
+      "check": "regex_ci",
+      "pattern": "(?:not|never|don.?t|avoid).*(?:interest|searching\\s*for)|presence.*not.*interest"
+    },
+    {
+      "name": "specifies_search_partners_off",
+      "check": "regex_ci",
+      "pattern": "search\\s*partners?\\s*(?:off|disabled|turn\\s*off|opt\\s*out)"
+    },
+    {
+      "name": "specifies_display_network_off",
+      "check": "regex_ci",
+      "pattern": "display\\s*(?:network|partners?)?\\s*(?:off|disabled|turn\\s*off|opt\\s*out)"
+    },
+    {
+      "name": "specifies_mobile_bid_adjustment",
+      "check": "regex_ci",
+      "pattern": "mobile.*\\+\\s*\\d{1,2}%|mobile\\s*[+]\\s*\\d{1,2}|device.*mobile"
+    },
+    {
+      "name": "lists_at_least_3_launch_mistakes",
+      "check": "regex_count",
+      "pattern": "(?im)^\\s*(?:[-*\u2022]|\\d+[.)])\\s+",
+      "min": 3
+    },
+    {
+      "name": "mentions_tcpa_targets_per_campaign",
+      "check": "regex_count",
+      "pattern": "(?:tcpa|target\\s*cpa).*\\$\\d{2,3}",
+      "min": 2
+    },
+    {
+      "name": "covers_phase_progression",
+      "check": "regex_ci",
+      "pattern": "phase\\s*[12]|month\\s*[12]"
+    },
+    {
+      "name": "mentions_conversion_tracking_setup",
+      "check": "regex_ci",
+      "pattern": "callrail|conversion\\s*tracking|enhanced\\s*conversions|\\bGTM\\b"
+    }
+  ]
+}

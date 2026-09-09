@@ -1,0 +1,17 @@
+{
+  "eval_id": 0,
+  "run_config": "without_skill",
+  "note": "Baseline agent autonomously discovered and followed the skill — contamination. Output is near-identical quality to with-skill but took 167s vs 153s and 67k vs 77k tokens.",
+  "expectations": [
+    {"text": "Post body is within 1200-1450 chars", "passed": true, "evidence": "~1305 chars (author-declared)"},
+    {"text": "Primary keyword appears in first line of body", "passed": true, "evidence": "'AC tune up in Katy, TX — get yours done for $89...'"},
+    {"text": "Phone number (713) 598-2737 does NOT appear in post body", "passed": true, "evidence": "No phone in body"},
+    {"text": "At least 2 trust signals present", "passed": true, "evidence": "Since 2016, TACLA, Fully insured, 7 brands"},
+    {"text": "Template ID in queue.json.posted was NOT reused", "passed": true, "evidence": "New template pre_summer_tune_up_katy — existing pre_summer_tune_up correctly excluded"},
+    {"text": "CTA URL is a real 75degreeac.com page", "passed": true, "evidence": "/ac-tune-up-houston-tx/ confirmed against calendar"},
+    {"text": "Research notes block is included", "passed": true, "evidence": "Full research notes with GSC, queue, geo, competitor, weather"},
+    {"text": "Post type matches Wed=Offer", "passed": true, "evidence": "post_type: Offer, expiry Apr 30"},
+    {"text": "Body names a specific suburb", "passed": true, "evidence": "Katy, Cinco Ranch, Cross Creek Ranch"},
+    {"text": "No hashtags, no all-caps, 1-3 emojis max", "passed": false, "evidence": "8 ✅ checkmarks used as list anchors — exceeds 1-3 emoji cap. Agent flagged this explicitly as a borderline interpretation."}
+  ]
+}

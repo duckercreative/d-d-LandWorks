@@ -1,0 +1,148 @@
+{
+  "expectations": [
+    {
+      "text": "Exactly 3 post draft files produced",
+      "passed": true,
+      "evidence": "Outputs directory contains exactly 3 post .md files: 2026-04-20_post-1-repair-vs-replace-houston.md, 2026-04-22_post-2-mini-split-katy-offer.md, 2026-04-24_post-3-hvac-install-sugar-land.md. Plus RESEARCH_SWEEP.md, metrics.json, and transcript.md (non-post files)."
+    },
+    {
+      "text": "Post 1 = What's New (Mon), Post 2 = Offer (Wed), Post 3 = What's New or Event (Fri)",
+      "passed": true,
+      "evidence": "Post 1 frontmatter: date: 2026-04-20, post_type: What's New (Monday). Post 2 frontmatter: date: 2026-04-22, post_type: Offer (Wednesday). Post 3 frontmatter: date: 2026-04-24, post_type: What's New (Friday). All three match the required Mon/Wed/Fri cadence and type pattern."
+    },
+    {
+      "text": "No geo target repeated across the 3 posts",
+      "passed": true,
+      "evidence": "Post 1 geo_target: 'Houston, TX (city-wide)'. Post 2 geo_target: 'Katy, TX (Cinco Ranch, Kelliwood, Firethorne)'. Post 3 geo_target: 'Sugar Land, TX (Riverstone, First Colony, Telfair)'. All three are distinct geo targets. metrics.json also confirms: no_geo_repeated: true."
+    },
+    {
+      "text": "No primary keyword repeated across the 3 posts",
+      "passed": true,
+      "evidence": "Post 1 primary_keyword: 'ac repair houston'. Post 2 primary_keyword: 'ac installation katy tx'. Post 3 primary_keyword: 'hvac installation sugar land tx'. All three are unique keywords with no repetition. metrics.json confirms: primary_keywords array has all distinct values."
+    },
+    {
+      "text": "All templates used are NOT in queue.json.posted within last 40 days",
+      "passed": true,
+      "evidence": "RESEARCH_SWEEP.md Source 2 lists 10 blocked templates (pre_summer_tune_up, pre_summer_filter, pre_summer_refrigerant, pre_summer_thermostat, pre_summer_inspection, pre_summer_duct_check, brands_we_service, signs_ac_failing, commercial_pre_summer_readiness, tune_up_offer). The 3 templates used are newly created: repair_vs_replace_houston_2026, mini_split_katy_offer, hvac_install_sugar_land_2026 — none appear in the blocked list. metrics.json confirms: no_template_repeated_from_last_40d: true."
+    },
+    {
+      "text": "A single shared RESEARCH_SWEEP.md file exists AND individual post files do NOT contain a '## Research Notes' section — they have only a research_refs: frontmatter field",
+      "passed": true,
+      "evidence": "RESEARCH_SWEEP.md is present in the outputs directory. Reading all 3 post files confirms they contain only YAML frontmatter + '## Post Title' + '## Post Body' sections — no '## Research Notes' section exists in any of them. Each post file has a research_refs: field in frontmatter pointing to 'RESEARCH_SWEEP.md § ...' sections. metrics.json batch_mode_compliance explicitly shows: research_sweep_file_created: true, research_notes_in_post_1/2/3: false (all), research_refs_in_post_1/2/3: true (all). Transcript Step 7 also confirms: 'grep -l \"## Research Notes\" returned zero matches across all 3 post files.'"
+    },
+    {
+      "text": "Each post body is within 1200-1450 chars",
+      "passed": true,
+      "evidence": "Independent character count verification: Post 1 body = 1425 chars (including emoji prefix — confirmed by Python count). Post 2 body = 1376 chars. Post 3 body = 1245 chars. All three are within the 1200-1450 range. metrics.json post_quality_checks confirms these values with in_range: true for all three. Post 2 was trimmed from 1497 and Post 3 from 1674 during drafting."
+    },
+    {
+      "text": "Phone number does NOT appear in any of the 3 post bodies",
+      "passed": true,
+      "evidence": "Read all 3 post body sections in full. No instance of '(713) 598-2737', '713-598-2737', or any phone number pattern appears in any post body text. The phone number appears only in RESEARCH_SWEEP.md under business facts (correctly, as reference data only). metrics.json confirms phone_in_body: false for all three posts."
+    },
+    {
+      "text": "Each post has first-line keyword + Houston/suburb",
+      "passed": true,
+      "evidence": "Post 1 first line: '🌡️ AC repair in Houston gets expensive fast when you're fixing the wrong system.' — contains 'AC repair' + 'Houston'. Post 2 first line: 'AC installation in Katy, TX is booking up fast and April is the last easy week to get on the schedule.' — contains 'AC installation' + 'Katy, TX'. Post 3 first line: 'HVAC installation in Sugar Land, TX is one of our busiest calls every April.' — contains 'HVAC installation' + 'Sugar Land, TX'. All three satisfy keyword + geo in first line."
+    },
+    {
+      "text": "Each post has a valid CTA button + URL pointing to a 75degreeac.com page",
+      "passed": true,
+      "evidence": "Post 1: cta_button: LEARN_MORE, cta_url: https://75degreeac.com/ac-repair-houston-tx/. Post 2: cta_button: BOOK, cta_url: https://75degreeac.com/ac-installation-houston-tx/. Post 3: cta_button: BOOK, cta_url: https://75degreeac.com/ac-installation-houston-tx/. All three have valid GBP CTA button types and URLs pointing to 75degreeac.com domain. Note: Posts 2 and 3 share the same destination URL (both installation pages) but different button types and different post content — the assertion only requires the URL be a valid 75degreeac.com page, which it is."
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 9,
+      "Write": 9,
+      "Edit": 4,
+      "Bash": 12,
+      "WebFetch": 0,
+      "WebSearch": 0,
+      "Grep": 0,
+      "Glob": 0
+    },
+    "total_tool_calls": 34,
+    "total_steps": 8,
+    "errors_encountered": 5,
+    "output_chars": 13366,
+    "transcript_chars": 9593
+  },
+  "timing": {
+    "executor_duration_seconds": 480.9,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 480.9
+  },
+  "claims": [
+    {
+      "claim": "Old_skill snapshot interfered by adding ## Research Notes to Post 1 twice",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json errors_detail[4]: 'Old_skill linter interference: modified Post 1 twice adding ## Research Notes section — overwritten with clean version'. Transcript Step 4 notes: 'an external process (old_skill snapshot) modified Post 1 twice to add a ## Research Notes section and inline [CHAR COUNT:...] annotation.' Final output files are clean (no ## Research Notes section found in any post file on direct read)."
+    },
+    {
+      "claim": "Post 2 was trimmed from 1497 chars to 1376 chars to meet the 1450 ceiling",
+      "type": "factual",
+      "verified": true,
+      "evidence": "metrics.json errors_detail[1]: 'Post 2 draft: 1497 chars (over 1450 max) — trimmed to 1376'. Independent Python count of the final Post 2 body confirms 1376 chars."
+    },
+    {
+      "claim": "Post 3 was trimmed from 1674 chars to 1245 chars to meet the 1450 ceiling",
+      "type": "factual",
+      "verified": true,
+      "evidence": "metrics.json errors_detail[2]: 'Post 3 draft: 1674 chars (over 1450 max) — trimmed to 1245'. Independent Python count confirms 1245 chars. The trim is aggressive (429 chars removed) but the result at 1245 is still within the 1200 floor."
+    },
+    {
+      "claim": "All pre_summer_* templates were exhausted and could not be reused",
+      "type": "factual",
+      "verified": true,
+      "evidence": "RESEARCH_SWEEP.md Source 2 lists 6 pre_summer_* templates with posted dates ranging from 2026-04-20 to 2026-04-29, all within the 40-day block window as of the eval date 2026-04-20. The skill correctly identified these as blocked and created three new template IDs."
+    },
+    {
+      "claim": "GSC data was actually read (queries-202604.csv) to identify keyword gaps",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 2 explicitly lists '03-gsc/data/queries-202604.csv (first 200 rows)' as a source read. RESEARCH_SWEEP.md Source 3 contains a 9-row GSC table with specific impression counts, positions, and CTR values that could only come from that data file. The primary keyword selection ('ac repair houston' at 4,771 imp, pos 12.0) is directly grounded in this data."
+    },
+    {
+      "claim": "Post 2 and Post 3 share the same cta_url (ac-installation-houston-tx)",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Both Post 2 (mini-split Katy offer) and Post 3 (HVAC install Sugar Land) use cta_url: https://75degreeac.com/ac-installation-houston-tx/. This is technically acceptable (both posts are installation-focused and the page is a valid 75degreeac.com URL), but it would be stronger to use a Katy-specific or Sugar Land-specific location page URL if those pages exist. The assertion only requires the URL point to a 75degreeac.com page, which it does."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [
+      "Post 2 and Post 3 share the same cta_url (ac-installation-houston-tx) — consider whether geo-specific location page URLs exist and should be used instead"
+    ],
+    "workarounds": [
+      "Old_skill interference: Post 1 was overwritten twice by an external process to add ## Research Notes section; executor overwrote with clean version and verified final output"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "All templates used are NOT in queue.json.posted within last 40 days",
+        "reason": "The 3 templates used are newly created (repair_vs_replace_houston_2026, mini_split_katy_offer, hvac_install_sugar_land_2026) and thus trivially cannot be in the queue. The assertion passes by construction when the skill creates new IDs, even if an existing blocked template was renamed. A stronger version would verify the BASE template IDs (repair_vs_replace, summer_ductless_cool, seer2_explained) that these are derived from are also not in the 40-day window."
+      },
+      {
+        "assertion": "Each post has a valid CTA button + URL pointing to a 75degreeac.com page",
+        "reason": "This assertion passes if the URL domain is 75degreeac.com, but does not check whether the target page actually exists. Posts 2 and 3 both share the same generic installation page URL rather than geo-specific location pages. An assertion checking for unique destination URLs per post, or confirming the URL matches the geo target, would be more discriminating."
+      },
+      {
+        "reason": "No assertion checks the post title (## Post Title section). All 3 posts have a title that matches the primary keyword and geo, but a skill that produced a blank or incorrect title would pass all current assertions. Consider adding a check that each ## Post Title contains the primary keyword."
+      },
+      {
+        "reason": "No assertion checks for banned AI phrases or em dashes/semicolons in post bodies. The metrics.json reports these as clean but no eval assertion verifies it. Transcript Step 4 notes that a semicolon was fixed before writing and an em dash in Post 3 was also fixed — meaning these are real failure modes that went unasserted."
+      }
+    ],
+    "overall": "Strong eval set that catches the key structural requirement (assertion 6 — batch mode RESEARCH_SWEEP isolation). All 10 assertions passed with genuine substance, not surface compliance. Main gaps: no check on post title quality, no enforcement of unique CTA URLs per post, and the template-reuse check can be trivially satisfied by minting new IDs derived from blocked base templates."
+  }
+}

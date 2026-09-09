@@ -1,0 +1,22 @@
+[
+  {"query": "build me a keyword list for the maintenance campaign at 75 degree ac in houston", "should_trigger": true},
+  {"query": "search terms report shows 31 clicks on 'ac repair near me' last week with 3 conversions — keyword? negative? leave alone?", "should_trigger": true},
+  {"query": "should i use exact or phrase match for new keywords im adding to the install campaign?", "should_trigger": true},
+  {"query": "i keep seeing 'hvac jobs houston' clicks on my emergency campaign. how do i kill those across the whole account", "should_trigger": true},
+  {"query": "quality score for [emergency ac repair houston] is sitting at 5/10. what's wrong, and what do i fix?", "should_trigger": true},
+  {"query": "should we be bidding on '75 degree ac' as a keyword or is that wasted spend?", "should_trigger": true},
+  {"query": "i think 'ac repair houston' is showing for both my repair campaign and my install campaign, how do i sort it", "should_trigger": true},
+  {"query": "we serve katy + sugar land + cypress, do i build separate ad groups per city or one ad group with all the city keywords?", "should_trigger": true},
+  {"query": "looking for keyword ideas around the symptom 'ac freezing up' for the emergency campaign", "should_trigger": true},
+  {"query": "i bid on [ac repair houston] exact match but my search terms show 'ac fix in houston tx' — is that supposed to match?", "should_trigger": true},
+  {"query": "should we run performance max for HVAC?", "should_trigger": false},
+  {"query": "what's the right campaign structure for a $6k/mo budget", "should_trigger": false},
+  {"query": "write 4 ad descriptions for the emergency campaign", "should_trigger": false},
+  {"query": "landing page H1 doesn't match the ad headline, how bad is that for QS and CTR?", "should_trigger": false},
+  {"query": "set up CallRail on the emergency landing page", "should_trigger": false},
+  {"query": "negative audiences for my facebook campaign — should i exclude existing customers?", "should_trigger": false},
+  {"query": "what keywords should i target for the homepage SEO — not paid", "should_trigger": false},
+  {"query": "GBP keywords — what do i put in the google business profile description", "should_trigger": false},
+  {"query": "where should the phone number go on the emergency landing page", "should_trigger": false},
+  {"query": "how do i write a survey email to past clients", "should_trigger": false}
+]

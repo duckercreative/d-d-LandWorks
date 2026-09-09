@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Land Clearing in Springfield, OR | D&D Land Works"
+	description="Land and lot clearing in Springfield, OR. Mohawk Valley acreage, brush removal, and site clearing ahead of grading or construction. Licensed and bonded."
+>
+	<Hero
+		eyebrow="Springfield, Oregon"
+		headline="Land Clearing in Springfield, OR"
+		subheadline="Wooded acreage up in the Mohawk Valley and out toward Thurston grows up in brush and volunteer trees fast. Clearing it is usually step one, before anything else can happen on the property."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Land Clearing"
+		ctaHref="/services/land-clearing"
+		eyebrow="Springfield, Oregon"
+		headlineHtml="Clearing Ahead of the <span class='text-brand-blue'>Next Step</span> in Springfield"
+		descriptionHtml="<p>A new building site, a pasture that&rsquo;s grown up in blackberry and scotch broom, or a lot line that hasn&rsquo;t been maintained in years are the usual reasons for a land clearing call in this part of Springfield. It comes before grading, foundation excavation, or septic work can start, not instead of them.</p><p>Brush removal, hauling, and the rest of how a clearing job runs are covered on the <a href='/services/land-clearing' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>land clearing</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/springfield' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Springfield</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Springfield, Oregon"
+		headline="Why Do Springfield Homeowners Trust D&D Land Works for Land Clearing?"
+		image="/hero-bg-3.webp"
+		imageAlt="Cleared building site in Springfield, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every clearing job starts with David walking the property, flagging what stays before anything&rsquo;s cut.</p><p>If a Mohawk Valley or Thurston-area lot needs opening up anywhere in Springfield, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Springfield Lot Cleared"
+		subheadline="Free estimate for land or lot clearing anywhere in Springfield."
+	/>
+</BaseLayout>

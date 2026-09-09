@@ -1,0 +1,159 @@
+{
+  "expectations": [
+    {
+      "text": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+      "passed": true,
+      "evidence": "File '2026-04-22_ac-repair-katy-pre-summer-offer.md' is present in the outputs/ directory (3860 bytes, written 2026-05-06). Metrics.json shows the file was created at /tmp/gbp-eval-0-old/ and then copied to outputs/. The transcript claims it was written to 04-gmb/posts/drafts/ but the metrics path shows /tmp. The assertion's '(or copied to outputs/)' clause covers the actual outcome."
+    },
+    {
+      "text": "Post body is between 1200 and 1450 characters",
+      "passed": true,
+      "evidence": "Manually extracted post body (between '## Post Body' and '## Research Notes') and counted 1438 characters. This matches the char_count_verified: 1438 in metrics.json. Falls within the 1200-1450 range."
+    },
+    {
+      "text": "Phone number (713) 598-2737 does NOT appear anywhere in the post body",
+      "passed": true,
+      "evidence": "Grep of post body for '713' and '598-2737' returns no matches. metrics.json confirms phone_in_body: false."
+    },
+    {
+      "text": "First line of post body contains a primary keyword + 'Houston' or a named suburb",
+      "passed": true,
+      "evidence": "First line is: '🌡️ AC repair and tune-up in Katy, TX. If you haven't had your system looked at since last fall, now is the time.' Contains 'AC repair' (primary keyword component) and 'Katy, TX' (named suburb). Satisfies the requirement."
+    },
+    {
+      "text": "Post includes 2-3 trust signals (e.g. Licensed TACLA, Same-day, Since 2016)",
+      "passed": true,
+      "evidence": "Post body contains 4 trust signals: 'Licensed TACLA' (exact match), 'since 2016' (exact match), 'same day' (same-day service implied: 'if something needs repair same day, we handle it'), and 'Fully insured' (exact match). Exceeds the 2-3 minimum."
+    },
+    {
+      "text": "A valid CTA button type and URL to 75degreeac.com is specified",
+      "passed": true,
+      "evidence": "Frontmatter contains 'cta_button: BOOK' and 'cta_url: https://75degreeac.com/services/ac-tune-up-and-maintenance/'. Both are present and the URL points to 75degreeac.com. Transcript confirms the URL was verified against queue.json."
+    },
+    {
+      "text": "Research notes are present (GSC data check was performed, weather checked)",
+      "passed": true,
+      "evidence": "Post file contains a '## Research Notes' section with: GSC data ('ac repair houston — 4,771 impressions, position 12.0, 0.27% CTR'), weather notes ('mid-80s, sunny, shoulder season'), queue check (10 recent posts listed), GA4 geography data, and geo rotation rationale. Transcript Step 2 documents the actual file reads. Weather source was seasonal-houston.md fallback (no live WebFetch), which was acknowledged explicitly."
+    },
+    {
+      "text": "Template used is not pre_summer_tune_up (posted 4/20, within 40-day exclusion)",
+      "passed": true,
+      "evidence": "Template used is 'pre_summer_katy_offer' (a newly authored template). Research notes confirm pre_summer_tune_up was posted 4/20 — only 2 days before this post date of 4/22, well within the 40-day exclusion window. The skill correctly authored a new template rather than reusing any excluded one."
+    },
+    {
+      "text": "No em dashes (—) or semicolons appear in the post body",
+      "passed": true,
+      "evidence": "Grep of post body for '—' (em dash U+2014) and ';' returns zero matches. metrics.json confirms em_dash_in_body: false. Transcript notes the first draft had 3 em dashes which were caught and corrected in the pre-write check phase."
+    },
+    {
+      "text": "No banned AI-slop phrases present (ensure, seamless, elevate, unlock, etc.)",
+      "passed": true,
+      "evidence": "Checked post body against a list of 15 common banned phrases (ensure, seamless, elevate, unlock, leverage, comprehensive, innovative, cutting-edge, state-of-the-art, robust, streamline, optimize, revolutionize, transformative, game-changer) — zero matches found. metrics.json confirms ai_slop_phrases: 0."
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 11,
+      "Write": 4,
+      "Bash": 3,
+      "WebFetch": 0,
+      "WebSearch": 0,
+      "Grep": 0,
+      "Glob": 3
+    },
+    "total_tool_calls": 21,
+    "total_steps": 7,
+    "errors_encountered": 2,
+    "error_details": [
+      "First draft had em dashes (3 occurrences) — caught by pre-write check, fixed in revision",
+      "First draft was 1494 chars (over 1450 limit) — caught by pre-write check, trimmed to 1438"
+    ],
+    "output_chars": 3421,
+    "transcript_chars": 4891,
+    "char_count_verified": 1438,
+    "char_count_target": "1200-1450",
+    "char_count_pass": true
+  },
+  "timing": {
+    "executor_duration_seconds": 232.7,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 232.7,
+    "total_tokens": 78532
+  },
+  "claims": [
+    {
+      "claim": "Draft written to 04-gmb/posts/drafts/2026-04-22_ac-repair-katy-pre-summer-offer.md",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Transcript Step 7 states the draft was written to '04-gmb/posts/drafts/' but metrics.json shows files_created points to '/tmp/gbp-eval-0-old/' paths. The actual file at /Users/mac/Digital Marketing/Local SEO/Clients/75 Degree AC/04-gmb/posts/drafts/ does not exist. The file was written to /tmp and copied to outputs/. Claim is technically inaccurate, though the assertion passed because the '(or copied to outputs/)' clause applies."
+    },
+    {
+      "claim": "All pre_summer templates were exhausted (10 templates used in last ~40 days)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Research notes list 10 recent posts spanning 4/20–5/4, including all 6 pre_summer variants (tune_up, filter, refrigerant, thermostat, inspection, duct_check). Matches transcript Step 2 claim about queue.json read."
+    },
+    {
+      "claim": "Pre-write checks passed via Python script",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 6 lists 6 checks all passing. metrics.json independently confirms phone_in_body: false, em_dash_in_body: false, ai_slop_phrases: 0, first_line_has_keyword_and_geo: true, char_count_pass: true. Body inspection confirms these."
+    },
+    {
+      "claim": "CTA URL /services/ac-tune-up-and-maintenance/ confirmed live",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Claim is that the URL was confirmed live by cross-referencing queue.json (pre_summer_inspection entry). No actual HTTP check was performed (WebFetch: 0 in metrics). Indirect inference only — plausible but unverifiable from available data."
+    },
+    {
+      "claim": "First draft was 1494 chars, revised to 1438",
+      "type": "factual",
+      "verified": true,
+      "evidence": "metrics.json error_details confirms '1494 chars (over 1450 limit) — caught by pre-write check, trimmed to 1438'. Final body is 1438 chars, consistent."
+    },
+    {
+      "claim": "Weather source was seasonal-houston.md (no live WebFetch available)",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json: weather_source: 'seasonal-houston.md fallback (no live WebFetch)', WebFetch: 0, WebSearch: 0. Transcript Step 2 explicitly notes this limitation. Skill is credited for disclosing the fallback."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "No live weather data — used seasonal-houston.md fallback",
+      "GSC has no suburb-level Katy keywords — used Houston proxy + service-areas.md documented volumes",
+      "CTA URL 'confirmed live' via queue.json cross-reference only, not actual HTTP check"
+    ],
+    "needs_review": [
+      "Draft file path discrepancy: transcript claims 04-gmb/posts/drafts/ but metrics shows /tmp/gbp-eval-0-old/"
+    ],
+    "workarounds": [
+      "All pre_summer templates exhausted — authored new template pre_summer_katy_offer instead of reusing LRU"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+        "reason": "The '(or copied to outputs/)' escape clause makes this assertion too easy to satisfy. The actual draft was written to /tmp and never reached 04-gmb/posts/drafts/. The intent of the assertion is presumably that the skill stages the draft where the pipeline can find it — which didn't happen. Consider tightening to require either the real project path OR accept outputs/ only if the transcript confirms a copy step. A file existing in outputs/ alone does not prove pipeline-readiness."
+      },
+      {
+        "assertion": "Research notes are present (GSC data check was performed, weather checked)",
+        "reason": "The assertion passes on presence of notes, but weather was sourced from a static fallback file (seasonal-houston.md) rather than a live check. The skill's own policy requires WebFetch to weather.gov. No WebFetch or WebSearch calls were made (both 0 in metrics). Consider splitting into two assertions: one for GSC data check (verifiable) and one for live weather check (which would fail this run), or add a note that fallback disclosure is acceptable."
+      },
+      {
+        "reason": "No assertion verifies that the new template entry was correctly appended to post_templates.json. The skill authored a brand-new template (pre_summer_katy_offer) and claimed to append it to the JSON — a critical output for pipeline continuity — but no eval checks whether new_template_entry.json is valid JSON matching the expected template schema, or whether the append to post_templates.json actually happened in the project (it did not, given the /tmp path issue)."
+      },
+      {
+        "reason": "No assertion checks that the post date (2026-04-22) matches the expected next-post date given the schedule. The prompt says 'post for Wednesday' and the date is correctly set to 2026-04-22 (Wednesday), but this is unverified by any assertion. A wrong date would silently pass all 10 current assertions."
+      }
+    ],
+    "overall": "All 10 assertions pass on the actual output content. The post is well-crafted and mechanically clean. However, two structural issues go uncaught by the evals: (1) the draft was staged in /tmp rather than the real project path, and (2) live weather was not fetched despite the skill policy requiring it. The '(or copied to outputs/)' escape clause in assertion 1 masks the first issue. The eval suite would benefit from tightening assertion 1 and splitting the research-notes assertion to separately verify live vs fallback data sourcing."
+  }
+}

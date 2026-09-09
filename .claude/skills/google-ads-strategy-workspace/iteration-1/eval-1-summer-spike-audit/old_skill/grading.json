@@ -1,0 +1,75 @@
+{
+  "eval_id": 1,
+  "eval_name": "summer-spike-audit",
+  "config": "old_skill",
+  "expectations": [
+    {
+      "text": "flags_max_clicks_as_problem",
+      "passed": true,
+      "evidence": "Maximize Clicks"
+    },
+    {
+      "text": "flags_mixed_intent_campaign",
+      "passed": true,
+      "evidence": "split. Emergency should be getting $80/day of your $200; right now it's getting whatever's left after Display + maintenance shoppers + commercial tire-kickers eat the budget. |\n| 5 | **Location target"
+    },
+    {
+      "text": "flags_display_network_on_search",
+      "passed": true,
+      "evidence": "Display ON"
+    },
+    {
+      "text": "flags_location_interest_setting",
+      "passed": true,
+      "evidence": "people interested in Houston\" targeting\n**Symptom:** CPL $58 \u2192 $112 in ~4 weeks. Daily budget exhausting by 2pm.\n\nYou are running into the worst-case configuration at the worst possible time of year. "
+    },
+    {
+      "text": "addresses_summer_seasonality",
+      "passed": true,
+      "evidence": "June"
+    },
+    {
+      "text": "addresses_budget_exhausting",
+      "passed": true,
+      "evidence": "budget exhausting by 2pm.\n\nYou are running into the worst-case configuration at the worst possible time of year. The good news: every single problem in your account is on the SKILL methodology's \"10 C"
+    },
+    {
+      "text": "produces_priority_fix_order",
+      "passed": true,
+      "evidence": "order"
+    },
+    {
+      "text": "warns_against_lowering_bids",
+      "passed": true,
+      "evidence": "Never lower bids"
+    },
+    {
+      "text": "recommends_split_into_5_campaigns",
+      "passed": true,
+      "evidence": "emergency months) push CPCs another +30\u201350%. We need to act this week.\n\nBelow is the diagnosis, the prioritized fix order, the specific settings to change, and what to expect after each fix.\n\n---\n\n## "
+    },
+    {
+      "text": "recommends_max_conversions_or_tcpa",
+      "passed": true,
+      "evidence": "tCPA"
+    },
+    {
+      "text": "addresses_search_partners",
+      "passed": true,
+      "evidence": "Search Partners"
+    },
+    {
+      "text": "names_specific_outcome_or_metric",
+      "passed": true,
+      "evidence": "expect after each fix.\n\n---\n\n## 1. Diagnosis \u2014 What's Wrong (Mapped to Methodology)\n\nYour account violates **8 of the 10 documented common HVAC mistakes**. Listed in severity order:\n\n### Critical viol"
+    },
+    {
+      "text": "mentions_burn_protocol_or_pacing",
+      "passed": true,
+      "evidence": "exhaust"
+    }
+  ],
+  "passed_count": 13,
+  "total_count": 13,
+  "pass_rate": 1.0
+}

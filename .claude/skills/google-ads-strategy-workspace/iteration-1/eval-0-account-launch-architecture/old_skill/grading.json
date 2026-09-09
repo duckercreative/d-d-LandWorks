@@ -1,0 +1,90 @@
+{
+  "eval_id": 0,
+  "eval_name": "account-launch-architecture",
+  "config": "old_skill",
+  "expectations": [
+    {
+      "text": "recommends_5_campaign_search_structure",
+      "passed": true,
+      "evidence": "5 campaigns"
+    },
+    {
+      "text": "specifies_40_25_20_10_5_or_similar_split",
+      "passed": true,
+      "evidence": "found 32 (min 4)"
+    },
+    {
+      "text": "recommends_max_conversions_at_launch",
+      "passed": true,
+      "evidence": "Maximize Conversions"
+    },
+    {
+      "text": "warns_against_max_clicks",
+      "passed": true,
+      "evidence": "Maximize Clicks \u2014 it optimizes for irrelevant clicks\n- Do **NOT** set a tCPA target \u2014 you don't yet know the real market CPA, and a guessed-low tCPA puts the campaign in perpetual learning with no spe"
+    },
+    {
+      "text": "covers_pmax_decision",
+      "passed": true,
+      "evidence": "Performance Max"
+    },
+    {
+      "text": "recommends_pmax_after_30_conversions",
+      "passed": true,
+      "evidence": "after Emergency is stable and profitable.\n\n---\n\n## 1. Account Architecture \u2014 How Many Campaigns at Launch\n\nThe full target architecture is 5 Search campaigns. You do **not** launch all 5 on day one. T"
+    },
+    {
+      "text": "covers_lsa",
+      "passed": true,
+      "evidence": "LSA"
+    },
+    {
+      "text": "specifies_location_targeting_presence",
+      "passed": true,
+      "evidence": "People in or regularly in"
+    },
+    {
+      "text": "warns_against_presence_or_interest",
+      "passed": true,
+      "evidence": "not** launch all 5 on day one. The launch sequence is gated by performance.\n\n### Full Target Structure (final state, ~Month 4+)\n\n| # | Campaign | Final Budget Share | Ad Groups |\n|---|----------|-----"
+    },
+    {
+      "text": "specifies_search_partners_off",
+      "passed": true,
+      "evidence": "Search Partners OFF"
+    },
+    {
+      "text": "specifies_display_network_off",
+      "passed": true,
+      "evidence": "Display OFF"
+    },
+    {
+      "text": "specifies_mobile_bid_adjustment",
+      "passed": true,
+      "evidence": "Device Adjustments (apply at launch)\n| Device | Adjustment |\n|--------|-----------|\n| Mobile | **+20%** (70% of HVAC emergency searches are mobile) |\n| Desktop | 0% |\n| Tablet | -10% |\n\n---\n\n## 5. Per"
+    },
+    {
+      "text": "lists_at_least_3_launch_mistakes",
+      "passed": true,
+      "evidence": "found 60 (min 3)"
+    },
+    {
+      "text": "mentions_tcpa_targets_per_campaign",
+      "passed": true,
+      "evidence": "found 6 (min 2)"
+    },
+    {
+      "text": "covers_phase_progression",
+      "passed": true,
+      "evidence": "Phase 1"
+    },
+    {
+      "text": "mentions_conversion_tracking_setup",
+      "passed": true,
+      "evidence": "CallRail"
+    }
+  ],
+  "passed_count": 16,
+  "total_count": 16,
+  "pass_rate": 1.0
+}

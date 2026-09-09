@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Septic Install & Repair in Springfield, OR | D&D Land Works"
+	description="DEQ certified septic system install and repair in Springfield, OR. Thurston and Mohawk Valley properties on their own system. Licensed and bonded."
+>
+	<Hero
+		eyebrow="Springfield, Oregon"
+		headline="Septic Install & Repair in Springfield, OR"
+		subheadline="Out toward Thurston and up into the Mohawk Valley, more properties sit on acreage and their own septic system than in-town lots on city sewer."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Septic Install & Repair"
+		ctaHref="/services/septic-install-repairs"
+		eyebrow="Springfield, Oregon"
+		headlineHtml="Acreage Properties, <span class='text-brand-blue'>Aging Systems</span> in Springfield"
+		descriptionHtml="<p>A lot of the septic calls out toward Thurston and Mohawk Valley come from systems that were put in decades ago and are finally showing their age: slow drains, a saturated drainfield, or a tank that needs replacing. Steeper ground and heavier tree cover in that part of Springfield also changes what a new install looks like compared to a flatter in-town lot.</p><p>New installs, drainfield repair, and tank replacement are all covered on the <a href='/services/septic-install-repairs' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>septic install &amp; repair</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/springfield' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Springfield</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Springfield, Oregon"
+		headline="Why Do Springfield Homeowners Trust D&D Land Works for Septic Work?"
+		image="/hero-bg-4.webp"
+		imageAlt="Septic system work near Thurston, Springfield, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s and DEQ&rsquo;s own public license lookups before you ever pick up the phone.</p><p>David Deggelman scopes every job in person. If your septic system is failing anywhere in Springfield, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Springfield Septic System Checked"
+		subheadline="Free estimate for septic install or repair anywhere in Springfield."
+	/>
+</BaseLayout>

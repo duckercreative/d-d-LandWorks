@@ -1,0 +1,12 @@
+{
+  "_instructions": "Append this object to post_templates.json under the 'seasonal.pre_summer' array. Unique id confirmed not to collide with existing pre_summer template ids (pre_summer_tune_up, pre_summer_filter, pre_summer_inspection, pre_summer_refrigerant, pre_summer_thermostat, pre_summer_duct_check).",
+  "_season_key": "seasonal.pre_summer",
+  "template": {
+    "id": "pre_summer_tune_up_offer_katy",
+    "title": "AC Tune-Up Houston & Katy TX — $89 Before May 15",
+    "summary": "AC tune-up in Houston — and if you're in Katy, your system just hit its first 86°F day of the year and the weak parts are starting to show. Our $89 pre-summer tune-up covers a full 21-point inspection: refrigerant leak check, capacitor reading, condenser coil clean, blower amp draw, drain line flush, and thermostat calibration. 75 Degree AC has serviced Katy, Cinco Ranch, and Fulshear since 2016 — all major brands, licensed TACLA, fully insured. Offer good through May 15, 2026. Book before the summer rush starts.",
+    "call_to_action": "BOOK",
+    "cta_url": "https://75degreeac.com/ac-tune-up-houston-tx/",
+    "photo_hint": "75 Degree AC technician performing tune-up on outdoor condenser at a Katy home"
+  }
+}

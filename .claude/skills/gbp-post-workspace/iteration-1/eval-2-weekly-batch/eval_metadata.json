@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "eval_name": "weekly-batch",
+  "prompt": "Give me this week's 3 GBP posts (Mon/Wed/Fri cadence). Make sure the three posts vary in type, geo, and keyword target. Today is Monday April 20, 2026.",
+  "assertions": [
+    {"text": "Exactly 3 post draft files produced", "type": "quantitative"},
+    {"text": "Post 1 = What's New, Post 2 = Offer, Post 3 = What's New or Event (matches Mon/Wed/Fri cadence)", "type": "qualitative"},
+    {"text": "No geo target repeated across the 3 posts", "type": "quantitative"},
+    {"text": "No primary keyword repeated across the 3 posts", "type": "quantitative"},
+    {"text": "All templates used are NOT in queue.json.posted within last 40 days", "type": "quantitative"},
+    {"text": "Research notes block shown ONCE at top (not duplicated per post) per batch-mode rule", "type": "qualitative"},
+    {"text": "Each post body is within 1200-1450 chars", "type": "quantitative"},
+    {"text": "Phone number does NOT appear in any of the 3 post bodies", "type": "quantitative"},
+    {"text": "Each post has first-line keyword + Houston/suburb", "type": "qualitative"},
+    {"text": "Each post has a valid CTA button + URL pointing to a real 75degreeac.com page", "type": "qualitative"}
+  ]
+}

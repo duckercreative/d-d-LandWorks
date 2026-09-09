@@ -1,0 +1,49 @@
+entity_name,entity_type,canonical_name,qid,kg_id,schema_type,salience_score,role,validation_status,sameAs_url,co_occurrence_status,notes
+D&D Land Works,Organization,D&D Land Works,,,GeneralContractor,10,primary,NOT_FOUND,,n/a,Zero external footprint confirmed; not a data error — greenfield business
+David Deggelman,Person,David Deggelman,,,Person,7,owner,NOT_FOUND,,n/a,Owner; no external record found; do not fabricate bio details
+Oregon CCB #261742,Identifier,Oregon Construction Contractors Board License 261742,,,identifier,9,trust_signal,VALIDATED_LOCAL,https://search.ccb.state.or.us/search/,n/a,"Numbering scheme and lookup tool confirmed real; verify exact license record live before publishing in schema"
+Oregon Construction Contractors Board,GovernmentOrganization,Construction Contractors Board (Oregon),,,GovernmentOrganization,8,authority,VALIDATED,https://www.oregon.gov/ccb/,n/a,State licensing agency; oregon.gov/ccb
+Oregon Department of Environmental Quality,GovernmentOrganization,Oregon Department of Environmental Quality,,,GovernmentOrganization,9,authority,VALIDATED,https://www.oregon.gov/deq/,n/a,Regulates septic under OAR 340-071
+DEQ Onsite Wastewater Management Program,GovernmentService,DEQ Onsite Wastewater Management Program,,,GovernmentService,8,authority,VALIDATED,https://www.oregon.gov/deq/residential/pages/onsite.aspx,n/a,Governs septic install/repair certification
+DEQ Installer Certification,Certification,DEQ Installer Certification,,,EducationalOccupationalCredential,8,trust_signal,VALIDATED,https://www.oregon.gov/deq/residential/pages/onsite-certification.aspx,n/a,Likely credential D&D holds; confirm exact cert name/number with David
+OSHA 1926 Subpart P,GovernmentPermit,29 CFR 1926 Subpart P (Excavations),,,Legislation,6,authority,VALIDATED,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926SubpartP,n/a,Federal trench safety standard
+Lane County Land Management Division,GovernmentOrganization,Lane County Land Management Division,,,GovernmentOrganization,7,authority,VALIDATED,https://www.lanecountyor.gov/,n/a,Permitting authority for grading/driveway/ROW work
+Lane County,AdministrativeArea,"Lane County, Oregon",Q495409,,AdministrativeArea,10,geo_primary,VALIDATED,https://en.wikipedia.org/wiki/Lane_County,_Oregon,n/a,County seat Eugene; pop. 382971 (2020 census)
+Eugene,City,"Eugene, Oregon",,,City,10,geo_primary,VALIDATED,https://en.wikipedia.org/wiki/Eugene,_Oregon,8/8 competitors serve,Tier 1 anchor city
+Springfield,City,"Springfield, Oregon",,,City,8,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Springfield,_Oregon,6/8 competitors serve,Tier 1 anchor city
+Cottage Grove,City,"Cottage Grove, Oregon",,,City,5,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Cottage_Grove,_Oregon,2/8 competitors serve,Tier 2
+Junction City,City,"Junction City, Oregon",,,City,5,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Junction_City,_Oregon,1/8 competitors serve,Tier 2
+Creswell,City,"Creswell, Oregon",,,City,5,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Creswell,_Oregon,0/8 explicit,Tier 2
+Veneta,City,"Veneta, Oregon",,,City,5,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Veneta,_Oregon,1/8 competitors serve (All Dirt based here),Tier 2
+Florence,City,"Florence, Oregon",,,City,4,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Florence,_Oregon,0/8 explicit,Tier 3; coverage confirmed 2026-09-05
+Oakridge,City,"Oakridge, Oregon",,,City,3,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Oakridge,_Oregon,1/8 competitors serve (Heavy D),Tier 3
+Coburg,City,"Coburg, Oregon",,,City,3,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Coburg,_Oregon,0/8 explicit,Tier 3
+Lowell,City,"Lowell, Oregon",,,City,3,geo_secondary,VALIDATED,https://en.wikipedia.org/wiki/Lowell,_Oregon,0/8 explicit,Tier 3
+Willamette Valley,Place,Willamette Valley,,,Place,6,geo_context,VALIDATED,https://en.wikipedia.org/wiki/Willamette_Valley,n/a,Clay-soil context entity
+Site Preparation,Service,Site Preparation,,,Service,9,core_service,VALIDATED_LOCAL,,8/8 competitors offer some form,Umbrella service
+Excavation & Grading,Service,Excavation and Grading,,,Service,10,core_service,VALIDATED_LOCAL,,8/8 competitors offer,Highest-volume head term
+Land Clearing,Service,Land Clearing,,,Service,9,core_service,VALIDATED_LOCAL,,7/8 competitors offer,Includes brush clearing sub-service
+Brush Clearing,Service,Brush Clearing,,,Service,6,sub_service,VALIDATED_LOCAL,,4/8 competitors offer,Section within Land Clearing at launch
+Grading & Leveling,Service,Grading and Leveling,,,Service,8,core_service,VALIDATED_LOCAL,,6/8 competitors offer,
+Foundation Excavation,Service,Foundation Excavation,,,Service,7,core_service,VALIDATED_LOCAL,,4/8 competitors offer,
+Drainage Excavation,Service,Drainage Excavation,,,Service,7,core_service,VALIDATED_LOCAL,,5/8 competitors offer,Scope: excavation FOR drainage, not product install
+Utility Excavation,Service,Utility Excavation and Trenching,,,Service,7,core_service,VALIDATED_LOCAL,,6/8 competitors offer,Includes trenching & backfill sub-service
+Septic Install & Repair,Service,Septic System Installation and Repair,,,Service,9,core_service,VALIDATED_LOCAL,,5/8 competitors offer,DEQ-cert differentiator
+Driveway Repair,Service,Gravel Driveway Repair,,,Service,6,support_service,VALIDATED_LOCAL,,3/8 competitors offer,Gravel/grading only, no paving
+Slope Stabilization,Service,Slope Stabilization,,,Service,5,support_service,VALIDATED_LOCAL,,1/8 competitors offer (Braun - retaining walls),Earthwork framing only, no engineering claims
+Excavator,EquipmentCategory,Excavator,Q557056,,Product,5,equipment_context,VALIDATED,https://en.wikipedia.org/wiki/Excavator,n/a,Generic equipment category
+Skid steer loader,EquipmentCategory,Skid-Steer Loader,Q1548219,,Product,4,equipment_context,VALIDATED,https://en.wikipedia.org/wiki/Skid-steer_loader,n/a,Generic equipment category
+Bulldozer,EquipmentCategory,Bulldozer,Q179876,,Product,4,equipment_context,VALIDATED,https://en.wikipedia.org/wiki/Bulldozer,n/a,Generic equipment category
+Caterpillar Inc.,Brand,Caterpillar Inc.,Q173395,,Brand,2,unconfirmed_equipment,NOT_FOUND_FOR_DD,https://en.wikipedia.org/wiki/Caterpillar_Inc.,n/a,Real brand; NOT confirmed as D&D's fleet - do not name without confirmation
+John Deere,Brand,John Deere,Q671631,,Brand,2,unconfirmed_equipment,NOT_FOUND_FOR_DD,https://en.wikipedia.org/wiki/John_Deere,n/a,Real brand; NOT confirmed as D&D's fleet
+Kubota,Brand,Kubota Corporation,Q1424071,,Brand,2,unconfirmed_equipment,NOT_FOUND_FOR_DD,https://en.wikipedia.org/wiki/Kubota,n/a,Real brand; NOT confirmed as D&D's fleet
+Komatsu,Brand,Komatsu Limited,Q1063765,,Brand,2,unconfirmed_equipment,NOT_FOUND_FOR_DD,https://en.wikipedia.org/wiki/Komatsu_Limited,n/a,Real brand; NOT confirmed as D&D's fleet
+Danco Excavation,Organization,Danco Excavation,,,GeneralContractor,6,competitor,VALIDATED_LOCAL,https://dancoexcavation.com/,n/a,CCB 89490 / DEQ 39637; offers tree/stump/hauling (D&D does not)
+All Dirt Inc,Organization,"All Dirt, Inc.",,,GeneralContractor,6,competitor,VALIDATED_LOCAL,https://alldirtinc.com/,n/a,Since 2005; based in Veneta; offers septic pumping (D&D does not)
+Heavy D Excavation,Organization,Heavy D Excavation,,,GeneralContractor,6,competitor,VALIDATED_LOCAL,https://www.heavydexcavation.net/,n/a,CCB #258673
+Emerald Excavating,Organization,Emerald Excavating,,,GeneralContractor,6,competitor,VALIDATED_LOCAL,https://www.emeraldexc.com/,n/a,Since 1962; DEQ #33500 / CCB #14173 - 60+ year incumbent
+McKenzie Excavating,Organization,"McKenzie Excavating, Inc.",,,GeneralContractor,5,competitor,VALIDATED_LOCAL,https://mckenzieexcavatingor.com/,n/a,Since 1997; CCB #126290; A+ BBB rating - only competitor with visible BBB rating
+Braun Excavating,Organization,Braun Excavating Inc.,,,GeneralContractor,5,competitor,VALIDATED_LOCAL,https://www.braunexcavating.net/,n/a,50+ years; CCB #101388
+Strasheim Contracting,Organization,Strasheim Contracting,,,GeneralContractor,4,competitor,VALIDATED_LOCAL,https://www.strasheimcontracting.com/excavation-team-eugene-or,n/a,CCB #240927
+GeneralContractor (schema.org type),SchemaType,GeneralContractor,,,GeneralContractor,10,schema_recommendation,VALIDATED,https://schema.org/GeneralContractor,n/a,Confirmed real type; subtype of HomeAndConstructionBusiness; recommended primary @type
+HomeAndConstructionBusiness (schema.org type),SchemaType,HomeAndConstructionBusiness,,,HomeAndConstructionBusiness,7,schema_fallback,VALIDATED,https://schema.org/HomeAndConstructionBusiness,n/a,Parent type of GeneralContractor; use as additionalType or fallback

@@ -1,0 +1,139 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+foundation excavation eugene or,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,Primary page target keyword (topical map §6.5 primary entity)
+foundation excavation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,Full state-name variant
+foundation excavation lane county or,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,County-wide variant
+foundation excavation lane county oregon,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,County-wide full-state variant
+foundation excavation springfield oregon,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,Tier 1 city variant
+foundation excavation contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,Contractor-modifier variant
+foundation excavation company eugene oregon,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P1,"""Company"" variant"
+foundation excavation near me,serp,commercial,decision,n,scheduled,head,high,/foundation-excavation/,P0,High-volume device-located generic query
+footing excavation eugene or,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,"""Footing"" phrasing variant, task-brief seed term"
+footing excavation cost oregon,serp,commercial,consideration,y,browse,head,high,/foundation-excavation/,P0,Task-brief seed term
+footing dig eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P1,Homeowner-phrasing variant
+foundation dig cost lane county,serp,commercial,consideration,y,browse,mid,high,/foundation-excavation/,P0,Homeowner cost-phrasing variant
+new construction foundation excavation oregon,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,Builder/GC-facing phrasing
+foundation excavation for new home eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,New-build phrasing
+foundation excavation for shop building lane county,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Shop/barn-pad phrasing
+foundation excavation for barn oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Barn foundation phrasing
+frost line depth oregon foundation,serp,informational,awareness,y,browse,head,medium,/foundation-excavation/,P0,Task-brief seed term — the page's central authority citation
+frost line depth eugene oregon,serp,informational,awareness,y,browse,mid,medium,/foundation-excavation/,P0,City-specific frost-depth phrasing
+frost depth for footings oregon,serp,informational,awareness,y,browse,mid,medium,/foundation-excavation/,P0,Direct match to the Cojo Asphalt competitor article title
+how deep does a footing need to be in oregon,serp,informational,awareness,y,browse,long,medium,/foundation-excavation/,P0,Natural-language question phrasing
+minimum footing depth oregon,serp,informational,awareness,y,browse,mid,medium,/foundation-excavation/,P1,Code-lookup phrasing
+oregon residential specialty code footing depth,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P2,Code-nerd/builder-facing phrasing
+frost heave foundation oregon,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Failure-mode phrasing
+how deep do you have to dig for a foundation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,High-volume generic version of the frost-depth question
+crawlspace vs slab foundation excavation cost,serp,commercial,consideration,y,browse,head,high,/foundation-excavation/,P0,Task-brief seed term
+slab vs crawlspace vs basement foundation cost,serp,commercial,consideration,n,browse,head,high,/foundation-excavation/,P0,Three-way comparison query
+basement excavation lane county,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P0,Task-brief seed term
+basement excavation cost eugene oregon,serp,commercial,consideration,y,browse,mid,high,/foundation-excavation/,P0,Local cost variant
+basement excavation cost oregon,serp,commercial,consideration,y,browse,mid,high,/foundation-excavation/,P1,State-level cost variant
+crawlspace foundation excavation eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,Crawlspace-specific local variant
+slab on grade excavation cost,serp,commercial,consideration,n,browse,mid,medium,/foundation-excavation/,P1,National comparison query with local relevance
+does foundation type change excavation cost,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct match to the task's core question
+how much does it cost to dig a basement vs slab,serp,commercial,consideration,n,browse,long,medium,/foundation-excavation/,P1,Comparison phrasing
+monolithic slab excavation oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Direct match to the Cojo Asphalt competitor article title
+stem wall foundation excavation oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Pour-method phrasing
+ADU foundation excavation,serp,commercial,decision,n,scheduled,head,high,/foundation-excavation/,P0,Task-brief seed term
+ADU foundation excavation oregon,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P0,State-modified ADU variant
+ADU foundation excavation eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,City-modified ADU variant
+ADU slab foundation cost oregon,serp,commercial,consideration,y,browse,mid,medium,/foundation-excavation/,P1,ADU + foundation-type combined query
+accessory dwelling unit foundation requirements oregon,serp,informational,consideration,y,browse,long,medium,/foundation-excavation/,P2,Formal-phrasing ADU variant
+over-dig foundation working space,serp,informational,awareness,n,browse,head,low,/foundation-excavation/,P0,Task-brief seed term
+how much extra space do you need to dig around a foundation,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P1,Natural-language over-dig question
+working space excavation OSHA foundation,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Builder/contractor-facing OSHA phrasing
+excavation clearance around footing,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Alternate over-dig phrasing
+foundation excavation inspection process,serp,informational,consideration,n,browse,head,medium,/foundation-excavation/,P0,Direct match to the task's sequencing-signal ask
+footing inspection before pour eugene,serp,informational,consideration,y,browse,mid,medium,/foundation-excavation/,P0,City-specific inspection-sequencing phrasing
+does the city inspect the foundation before concrete,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Natural-language inspection question
+building department foundation inspection lane county,serp,informational,consideration,y,browse,mid,medium,/foundation-excavation/,P1,Lane County-specific inspection phrasing
+when does the city inspect a foundation excavation,serp,informational,consideration,n,browse,long,low,/foundation-excavation/,P1,Alternate phrasing of inspection-timing question
+eugene ebuild inspection scheduling,serp,informational,consideration,y,browse,long,low,/foundation-excavation/,P2,Portal-specific phrasing
+foundation drain requirements oregon,serp,informational,awareness,y,browse,mid,medium,/foundation-excavation/,P0,Task-brief seed term
+perimeter footing drain oregon code,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P1,Code-specific drain phrasing
+foundation waterproofing requirements oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Adjacent waterproofing phrasing
+crawlspace vapor barrier requirements oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Vapor-retarder phrasing
+do I need a vapor barrier under my crawlspace oregon,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P2,Natural-language vapor-barrier question
+soils report before excavating foundation,serp,informational,consideration,n,browse,head,medium,/foundation-excavation/,P0,Task-brief seed term
+do I need a geotechnical report before excavating,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct match to the task's core question
+do I need an engineer before digging a foundation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct match to the task's core question
+soil bearing capacity for foundation oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Bearing-soil phrasing
+what happens if the excavator hits water under a foundation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct match to the task's core question
+what happens if you hit rock digging a foundation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct match to the task's core question
+dewatering foundation excavation oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P1,Willamette Valley water-table phrasing
+high water table foundation excavation willamette valley,serp,informational,awareness,y,browse,long,low,/foundation-excavation/,P2,Regional water-table phrasing
+underpinning existing foundation for addition,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Underpinning/adjacent-structure phrasing
+excavating next to an existing foundation,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Adjacent-structure safety phrasing
+foundation excavation cost per cubic yard,serp,commercial,consideration,n,browse,mid,high,/foundation-excavation/,P1,Cost-structure phrasing
+foundation excavation cost per square foot,serp,commercial,consideration,n,browse,mid,high,/foundation-excavation/,P1,Cost-structure phrasing
+how much does foundation excavation cost,serp,commercial,consideration,n,browse,head,high,/foundation-excavation/,P0,High-volume generic cost query
+average cost to excavate for a house foundation,serp,commercial,consideration,n,browse,mid,high,/foundation-excavation/,P1,Homeowner cost-phrasing variant
+foundation excavation cost calculator,serp,commercial,consideration,n,browse,mid,medium,/foundation-excavation/,P2,Tool-seeking query (Pina Excavating, others rank here)
+basement dig cost per cubic yard,serp,commercial,consideration,n,browse,mid,medium,/foundation-excavation/,P2,Basement-specific cost phrasing
+excavator for foundation dig eugene,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Equipment-plus-location phrasing
+mini excavator foundation dig,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Equipment-specific phrasing
+foundation excavation timeline,serp,informational,consideration,n,browse,mid,medium,/foundation-excavation/,P1,Timeline phrasing
+how long does it take to excavate for a foundation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Natural-language timeline question
+foundation excavation before winter oregon,serp,informational,consideration,y,browse,mid,medium,/foundation-excavation/,P1,Seasonal-scheduling phrasing (reused theme, foundation-specific angle)
+excavating for a foundation in the rain oregon,serp,informational,consideration,y,browse,long,low,/foundation-excavation/,P2,Wet-season-specific phrasing
+foundation excavation backfill compaction,serp,informational,awareness,n,browse,mid,medium,/foundation-excavation/,P1,Backfill-specific phrasing (foundation-wall context)
+backfill around foundation walls,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Backfill-compaction phrasing
+how to backfill a foundation properly,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P2,Homeowner/DIY-adjacent phrasing
+foundation excavation vs regular excavation,serp,informational,consideration,n,browse,head,medium,/foundation-excavation/,P0,Direct scope-boundary phrasing (this page vs excavation page)
+whats the difference between excavation and foundation excavation,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P0,Direct scope-boundary phrasing
+foundation excavation residential commercial oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Residential vs commercial phrasing
+commercial building foundation excavation eugene,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P1,Commercial-specific local variant
+pole barn foundation excavation oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Pole-barn foundation phrasing
+metal building foundation excavation lane county,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Metal-building foundation phrasing
+foundation excavation permit lane county,serp,informational,consideration,y,browse,mid,medium,/foundation-excavation/,P1,Permit-exemption phrasing (ties to excavation pack's grading-permit exemption fact)
+is a foundation dig exempt from a grading permit oregon,serp,informational,consideration,y,browse,long,low,/foundation-excavation/,P1,Direct grading-permit-exemption question
+foundation excavation contractor vs general contractor,serp,informational,consideration,n,browse,mid,low,/foundation-excavation/,P2,Scope-clarity phrasing
+who does foundation excavation builder or excavator,serp,informational,consideration,n,browse,long,low,/foundation-excavation/,P2,Builder-coordination phrasing
+does the excavator or the general contractor schedule the footing inspection,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Coordination/trust phrasing directly named in task
+foundation excavation schedule coordination with builder,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Builder/GC coordination phrasing
+how to hire a foundation excavation contractor,serp,commercial,consideration,n,browse,mid,medium,/foundation-excavation/,P2,Vetting-phase phrasing
+questions to ask foundation excavation contractor,serp,informational,consideration,n,browse,mid,medium,/foundation-excavation/,P1,Vetting/objection-adjacent phrasing
+licensed foundation excavation contractor eugene,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P1,License-trust phrasing
+CCB licensed excavator foundation eugene,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,CCB-specific phrasing
+bonded foundation excavation contractor oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P2,Bonded-trust phrasing
+foundation excavation Willamette Valley clay soil,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Regional soil-context phrasing
+excavating foundation in clay soil oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,Clay-soil-specific phrasing
+can you dig a basement in oregon,serp,informational,awareness,y,browse,mid,low,/foundation-excavation/,P2,High water table/feasibility phrasing
+foundation excavation cottage grove oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Tier 2 city variant
+foundation excavation junction city oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Tier 2 city variant
+foundation excavation creswell oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 2 city variant
+foundation excavation veneta oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 2 city variant (All Dirt's home base)
+foundation excavation florence oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 3 city variant
+foundation excavation oakridge oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 3 city variant
+foundation excavation coburg oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 3 city variant
+foundation excavation lowell oregon,serp,commercial,decision,y,scheduled,mid,low,/foundation-excavation/,P3,Tier 3 city variant
+new home construction excavation eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,Builder-facing new-construction phrasing
+homebuilder foundation excavation lane county,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,GC/builder-facing phrasing
+excavation contractor for spec home foundation,serp,commercial,decision,n,scheduled,mid,medium,/foundation-excavation/,P2,Spec-home builder phrasing
+foundation excavation subdivision oregon,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Subdivision-scale phrasing
+what does foundation excavation include,serp,informational,consideration,n,browse,head,medium,/foundation-excavation/,P0,Scope-definition query
+what is included in a foundation dig,serp,informational,consideration,n,browse,mid,medium,/foundation-excavation/,P1,Scope-definition variant
+excavation for footings and stem walls,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Stem-wall/footing phrasing
+excavation for slab foundation,serp,commercial,decision,n,scheduled,mid,medium,/foundation-excavation/,P1,Slab-specific phrasing
+excavation for crawl space,serp,commercial,decision,n,scheduled,mid,medium,/foundation-excavation/,P1,Crawlspace-specific phrasing
+excavation for basement,serp,commercial,decision,n,scheduled,mid,medium,/foundation-excavation/,P1,Basement-specific phrasing
+how deep is a crawlspace excavation,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P1,Crawlspace-depth question
+how deep is a basement excavation,serp,informational,awareness,n,browse,long,medium,/foundation-excavation/,P1,Basement-depth question
+crawlspace clearance height requirements,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Clearance-height phrasing (ties to 18-48in fact)
+grade beam foundation excavation,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P3,Adjacent foundation-type phrasing (not a core D&D-confirmed type)
+frost protected shallow foundation oregon,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,FPSF alternative-method phrasing (ties to R403.1.4.1 method list)
+excavating for a foundation on a slope,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Sloped-site phrasing
+foundation excavation rock removal cost,serp,commercial,consideration,n,browse,mid,high,/foundation-excavation/,P1,Rock-cost phrasing (foundation-specific stakes)
+what if they hit rock excavating my foundation,serp,informational,consideration,n,browse,long,high,/foundation-excavation/,P0,Direct objection/cost-anxiety phrasing
+foundation excavation delays building permit,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Timeline/permit-anxiety phrasing
+will a bad foundation excavation fail inspection,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Inspection-failure-anxiety phrasing
+what happens if a footing inspection fails,serp,informational,consideration,n,browse,long,medium,/foundation-excavation/,P1,Inspection-failure phrasing
+foundation excavation eugene reviews,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Review-seeking local query
+best foundation excavation contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P0,Best-of/listicle-triggering query
+foundation excavation quote eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,Quote-seeking local query
+free estimate foundation excavation lane county,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P0,Direct conversion-phrase query
+foundation excavation and backfill eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P1,Combined-scope local query
+excavating and pouring a foundation eugene,serp,commercial,decision,y,scheduled,mid,medium,/foundation-excavation/,P2,Adjacent-scope phrasing (D&D does not pour — fence note)
+foundation contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/foundation-excavation/,P1,Broader "foundation contractor" query (captures TerraFirma-adjacent searchers)
+foundation repair vs foundation excavation,serp,informational,awareness,n,browse,mid,low,/foundation-excavation/,P2,Disambiguation vs. the repair category (TerraFirma-adjacent)
+new foundation vs foundation repair oregon,serp,informational,awareness,n,browse,long,low,/foundation-excavation/,P3,Disambiguation vs. the repair category

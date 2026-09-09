@@ -1,0 +1,16 @@
+{
+  "eval_id": 0,
+  "run_config": "with_skill",
+  "expectations": [
+    {"text": "Post body is within 1200-1450 chars", "passed": true, "evidence": "Body ~1320 chars (author-declared), measured ~1330 including line breaks — within window"},
+    {"text": "Primary keyword appears in first line of body", "passed": true, "evidence": "First line: '🌡️ AC tune-up in Houston — and if you're in Katy...' — keyword + geo"},
+    {"text": "Phone number (713) 598-2737 does NOT appear in post body", "passed": true, "evidence": "Grep-clean — no phone in body, only in project business facts"},
+    {"text": "At least 2 trust signals present", "passed": true, "evidence": "TACLA + Since 2016 + fully insured + 7-brand list + fully-stocked trucks"},
+    {"text": "Template ID in queue.json.posted (pre_summer_tune_up) was NOT reused", "passed": true, "evidence": "New template pre_summer_tune_up_offer_katy created — pre_summer_tune_up correctly excluded"},
+    {"text": "CTA URL is a real 75degreeac.com page", "passed": true, "evidence": "/ac-tune-up-houston-tx/ — canonical tune-up URL matched across calendar"},
+    {"text": "Research notes block is included", "passed": true, "evidence": "Full 40-line research block with GSC targets, queue check, geo rotation, competitor gap, weather"},
+    {"text": "Post type matches Wed=Offer", "passed": true, "evidence": "post_type: Offer, offer_expiry: 2026-05-15"},
+    {"text": "Body names a specific suburb (geo rotation)", "passed": true, "evidence": "Katy named; Cinco Ranch, Fulshear, Richmond also listed"},
+    {"text": "No hashtags, no all-caps sentences, 1-3 emojis max", "passed": true, "evidence": "1 emoji (🌡️), no hashtags, no all-caps"}
+  ]
+}

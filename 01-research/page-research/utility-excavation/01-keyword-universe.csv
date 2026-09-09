@@ -1,0 +1,128 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+utility excavation eugene or,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P0,Primary page target keyword
+utility excavation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P0,Full state-name variant
+utility excavation lane county or,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P0,County-wide variant
+utility excavation springfield oregon,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P1,Tier 1 city variant
+utility excavation contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P1,Contractor-suffix variant
+utility trenching eugene oregon,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P0,Core synonym head term
+utility trenching contractor lane county,serp,commercial,decision,y,scheduled,head,high,/utility-excavation/,P1,Contractor-suffix county variant
+underground utility installation eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Installation-phrasing variant (framed as excavation FOR, not installation of)
+underground utility trenching near me,serp,commercial,decision,n,scheduled,head,high,/utility-excavation/,P1,Near-me device-located generic query
+utility trench digging eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-excavation/,P2,Digging-phrasing variant
+water line trenching cost oregon,serp,commercial,consideration,y,browse,mid,high,/utility-excavation/,P0,Cost-intent seed term named in task
+water service line trenching eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Named utility type variant
+new water line installation cost eugene oregon,serp,commercial,consideration,y,browse,long,high,/utility-excavation/,P1,Cost + install combined query
+how deep does a water line need to be buried oregon,paa,informational,awareness,y,browse,long,medium,/utility-excavation/,P0,Depth-question seed term named in task
+water line burial depth requirements,serp,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,National depth-question phrasing
+water pipe frost depth oregon,serp,informational,awareness,y,browse,long,medium,/utility-excavation/,P1,Frost-depth-specific phrasing
+water service line depth lane county,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P0,Local depth-question phrasing
+sewer lateral installation cost,serp,commercial,consideration,n,browse,mid,high,/utility-excavation/,P0,Cost-intent seed term named in task
+sewer lateral installation cost oregon,serp,commercial,consideration,y,browse,long,high,/utility-excavation/,P1,Oregon-modified cost variant
+sewer lateral trenching eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Named utility type variant
+how deep does a sewer line need to be buried,paa,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,Depth-question phrasing
+sewer line burial depth oregon,serp,informational,awareness,y,browse,long,medium,/utility-excavation/,P0,Oregon-modified depth question
+sewer lateral depth requirements code,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P1,Code-specific phrasing
+new sewer connection cost eugene oregon,serp,commercial,consideration,y,browse,long,high,/utility-excavation/,P1,Connection-phrasing cost variant
+electrical conduit trenching,serp,commercial,consideration,n,browse,mid,high,/utility-excavation/,P0,Named utility type seed term named in task
+electrical conduit trenching eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Local variant
+underground electrical conduit depth requirements,serp,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,Depth-question phrasing
+how deep to bury electrical conduit,paa,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,PAA-style phrasing
+electrical conduit burial depth code oregon,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P0,Oregon code-specific phrasing
+nec table 300.5 residential burial depth,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Technical/code-lookup phrasing
+trenching for new electrical service eugene oregon,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P1,New-service-specific phrasing
+sub panel trenching cost shop,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Outbuilding-power buyer moment
+gas line trenching,serp,commercial,consideration,n,browse,mid,high,/utility-excavation/,P0,Named utility type seed term named in task
+gas line trenching eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Local variant
+gas line trench depth requirements oregon,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P0,Depth-question seed term named in task
+how deep does a gas line need to be buried,paa,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,PAA-style phrasing
+underground gas piping minimum cover,serp,informational,awareness,n,browse,long,medium,/utility-excavation/,P1,Code-phrasing variant
+new gas line installation cost eugene oregon,serp,commercial,consideration,y,browse,long,high,/utility-excavation/,P1,Install-cost combined query
+running gas line to house that never had one,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Utility-expansion buyer-moment phrasing
+communications line burial depth,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Fiber/comms depth seed term named in task
+fiber line trenching depth requirements,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Fiber-specific depth phrasing
+underground fiber conduit installation cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Fiber install-cost phrasing
+irrigation line trenching eugene oregon,serp,commercial,consideration,y,browse,long,medium,/utility-excavation/,P2,Adjacent utility type mentioned on current live page
+outdoor lighting circuit trenching,serp,commercial,consideration,n,browse,long,low,/utility-excavation/,P2,Adjacent utility type mentioned on current live page
+utility locate before digging,serp,informational,awareness,n,browse,mid,medium,/utility-excavation/,P0,Seed term named in task
+call before you dig utility line oregon,serp,informational,awareness,y,browse,long,medium,/utility-excavation/,P1,Oregon811-adjacent phrasing
+oregon811 utility trenching,serp,informational,awareness,y,browse,long,medium,/utility-excavation/,P1,Direct brand+topic combination
+who calls 811 utility company or contractor,paa,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,Coordination-role seed term named in task
+does the utility company or contractor dig the trench,paa,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,Coordination-role phrasing
+who pulls the permit for a new utility line,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P1,Permit-responsibility phrasing
+what happens if you hit an existing line,paa,informational,awareness,n,browse,long,medium,/utility-excavation/,P0,Seed term named in task
+hit unmarked utility line while digging,serp,informational,awareness,n,browse,long,medium,/utility-excavation/,P1,Failure-mode phrasing
+joint trench multiple utilities,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,Joint-trenching core concept term
+can water sewer electrical gas go in same trench,paa,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,PAA-style joint-trenching phrasing
+running multiple utilities in one trench to save money,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P1,Cost-saving-angle phrasing
+utility trench separation requirements,serp,informational,consideration,n,browse,long,low,/utility-excavation/,P2,Code-adjacent phrasing
+water and sewer line separation code,serp,informational,consideration,n,browse,long,low,/utility-excavation/,P1,Separation-specific code phrasing
+tracer wire requirements utility trench,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Small-detail differentiator term
+bedding sand for pipe trench,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Material-specific term
+utility trenching cost per foot,serp,commercial,consideration,n,browse,mid,high,/utility-excavation/,P0,Core cost-intent term
+utility trench cost driveway vs dirt,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P1,Hardscape-differential cost phrasing
+trenching under concrete driveway cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P1,Hardscape-specific phrasing
+trenching under asphalt cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Hardscape-specific phrasing
+new utility line to structure cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P1,New-structure buyer-moment phrasing
+utility hookup cost new construction,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,New-construction buyer-moment phrasing
+trench and bury water line myself,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,DIY-adjacent phrasing (objection-handling opportunity)
+diy utility trenching legal requirements,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,DIY-legality phrasing
+permit for new water service line lane county,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P1,Permit-specific local phrasing
+do i need a permit to run a new utility line,paa,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,PAA-style permit phrasing named in task
+ewb new water tap application,serp,navigational,consideration,y,browse,long,low,/utility-excavation/,P2,Utility-specific navigational query (EWEB)
+springfield utility board new service,serp,navigational,consideration,y,browse,long,low,/utility-excavation/,P2,Utility-specific navigational query (SUB)
+nw natural new gas service oregon,serp,navigational,consideration,y,browse,long,low,/utility-excavation/,P2,Utility-specific navigational query (NW Natural)
+adu utility hookup trenching eugene,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P1,ADU-specific project-type phrasing
+new construction utility trenching eugene or,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P1,New-construction buyer-moment phrasing
+utility trenching for shop or barn,serp,commercial,decision,y,scheduled,long,medium,/utility-excavation/,P2,Outbuilding buyer-moment phrasing
+utility trenching for detached garage,serp,commercial,decision,n,scheduled,long,medium,/utility-excavation/,P2,Outbuilding buyer-moment phrasing
+residential vs commercial utility trenching,serp,informational,consideration,n,browse,long,low,/utility-excavation/,P2,Reused framing pattern from excavation page
+trenching contractor near me,serp,commercial,decision,n,scheduled,head,high,/utility-excavation/,P1,Near-me generic head term
+underground utility contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Full-phrase variant
+underground utility installer oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-excavation/,P2,Installer-phrasing variant (framed as excavation FOR)
+utility line trenching mini excavator,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Equipment-specific phrasing
+utility trencher rental vs hire contractor,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,DIY-vs-hire threshold phrasing
+utility excavation vs trenching and backfill,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P0,Direct scope-boundary keyword (task's own named boundary question)
+trenching and backfill cost eugene oregon,serp,commercial,consideration,y,browse,long,medium,/trenching-backfill/,P2,Sibling-page keyword — logged here for the scope-boundary finding but NOT targeted by this page
+trenching backfill compaction lifts,serp,informational,awareness,n,browse,long,low,/trenching-backfill/,P2,Sibling-page keyword — general mechanics term
+backfill compaction testing requirement,serp,informational,awareness,n,browse,long,low,/trenching-backfill/,P2,Sibling-page keyword — general mechanics term
+oregon plumbing specialty code water service line,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P1,Code-lookup phrasing
+opsc 609.1 water service depth,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Exact code-section lookup phrasing
+orsc g2415.12 gas piping depth,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Exact code-section lookup phrasing
+lane county trenching for utilities,serp,informational,awareness,y,browse,long,medium,/utility-excavation/,P0,Direct match to the primary government source found in this pack
+lane county frost depth,serp,informational,awareness,y,browse,long,low,/utility-excavation/,P1,Frost-depth lookup phrasing
+water main tap application eugene,serp,navigational,consideration,y,browse,long,low,/utility-excavation/,P2,Tap-application navigational phrasing
+new sewer connection permit eugene,serp,informational,consideration,y,browse,long,medium,/utility-excavation/,P1,Permit-specific phrasing
+underground utility trenching springfield or,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Springfield city variant
+utility trenching cottage grove oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-excavation/,P2,Tier 2 city variant
+utility trenching junction city oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-excavation/,P2,Tier 2 city variant
+utility trenching creswell oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 2 city variant
+utility trenching veneta oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 2 city variant
+rural property new well and power trenching,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Rural-property buyer-moment phrasing
+trenching for propane line oregon,serp,commercial,consideration,y,browse,long,medium,/utility-excavation/,P2,Propane-specific variant (distinct from piped natural gas)
+propane line burial depth requirements,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Propane-specific depth phrasing
+utility trench restoration lawn driveway,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P2,Post-service restoration phrasing
+what does d&d land works charge for utility trenching,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P2,Brand + service combined query
+free estimate utility excavation eugene,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P0,Conversion-intent brand-adjacent term
+licensed bonded utility excavation contractor oregon,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P1,Trust-signal combined query
+ccb licensed excavator utility trenching,serp,commercial,decision,n,scheduled,long,medium,/utility-excavation/,P2,License-specific trust query
+water line replacement trenchless vs open trench,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P2,Trenchless-comparison phrasing (D&D does open-trench work; honest scope note opportunity)
+directional boring vs open trench utility,serp,informational,consideration,n,browse,long,low,/utility-excavation/,P2,Trenchless-method comparison phrasing
+utility trench safety requirements osha,serp,informational,awareness,n,browse,long,medium,/utility-excavation/,P1,OSHA-applied-to-utility-context phrasing
+how deep before osha requires shoring utility trench,paa,informational,awareness,n,browse,long,medium,/utility-excavation/,P1,OSHA-threshold-applied phrasing
+new water heater gas line trenching,serp,commercial,consideration,n,browse,long,low,/utility-excavation/,P2,Appliance-adjacent gas trenching phrasing
+outdoor kitchen gas line trenching,serp,commercial,consideration,n,browse,long,low,/utility-excavation/,P2,Appliance-adjacent gas trenching phrasing (ORSC G2415.12.1 shallow-depth exception applies)
+electrical trenching for pool or hot tub,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Amenity-adjacent electrical trenching phrasing
+generator sub panel trenching cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Backup-power buyer-moment phrasing
+ev charger trenching cost,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,EV-charger buyer-moment phrasing (modern electrical trenching demand driver)
+underground utility trenching for adu oregon,serp,commercial,decision,y,scheduled,long,high,/utility-excavation/,P1,ADU-specific phrasing, Oregon ADU-friendly-law context
+does d&d land works trench for fiber internet,serp,commercial,consideration,y,browse,long,medium,/utility-excavation/,P2,Fiber-specific brand-adjacent query
+comcast or century link trenching requirements,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P3,ISP-specific trenching-spec phrasing
+utility trench inspection before backfill,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P1,Inspection-timing phrasing
+open trench vs trenchless utility repair,serp,informational,consideration,n,browse,long,medium,/utility-excavation/,P2,Method-comparison phrasing
+cost to run power to a shop from the house,serp,commercial,consideration,n,browse,long,high,/utility-excavation/,P1,Outbuilding-power natural-language query
+cost to run water to a barn,serp,commercial,consideration,n,browse,long,medium,/utility-excavation/,P2,Rural outbuilding-water natural-language query
+how much does it cost to bury a gas line,serp,commercial,consideration,n,browse,long,high,/utility-excavation/,P0,Natural-language cost query
+utility excavation lowell oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 3 city variant
+utility excavation oakridge oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 3 city variant
+utility excavation coburg oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 3 city variant
+utility excavation florence oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-excavation/,P3,Tier 3 city variant (coverage confirmed per business-info.md)

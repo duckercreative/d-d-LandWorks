@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const related = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/services/foundation-excavation' },
+];
+---
+
+<BaseLayout
+	title="How to Prepare Land for Construction | D&D Land Works"
+	description="The order site work happens in before a foundation goes in: clearing, grading, drainage, and compaction. What to expect building in Lane County, OR."
+>
+	<Hero
+		eyebrow="How-To"
+		headline="How to Prepare Land for Construction"
+		subheadline="Site prep isn't one task, it's a sequence. Skip a step or do it out of order and the next trade inherits the problem."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			The Order Matters
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A lot that looks build-ready from the road usually isn't. Trees and brush have to come out
+			before anyone can see the actual grade. The grade has to get set before drainage gets figured
+			out, because water follows the slope, not the plans. And none of that holds up under a
+			foundation until it's compacted properly. Build out of order and you end up regrading a pad
+			that was already poured around, or trenching a drain line through ground that just got seeded.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			The Steps, in Order
+		</h2>
+		<ol class="mt-4 space-y-3 text-slate-700 list-decimal list-inside">
+			<li><strong>Clear the site.</strong> Trees, stumps, brush, and debris come out first. Nothing else can be measured accurately until the ground underneath is visible.</li>
+			<li><strong>Rough grade.</strong> Cut and fill get the site to the general elevation the plans call for, with material moved on-site or hauled if there's too much or too little.</li>
+			<li><strong>Plan for drainage.</strong> Swales, culverts, or a French drain get sited based on where water naturally wants to go once the rough grade is in.</li>
+			<li><strong>Compact.</strong> Loose fill settles unevenly under a foundation. Compaction equipment packs it down before anything gets built on top of it.</li>
+			<li><strong>Finish grade.</strong> A final pass sets the exact pad elevation and slope a foundation contractor or landscaper needs to start their part.</li>
+		</ol>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			What This Looks Like in Lane County
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A wooded South Hills lot in Eugene needs more clearing before anything else can start. A flat
+			ag parcel out toward Junction City might skip straight to grading. Every county building permit
+			assumes the pad underneath it is actually solid, not just leveled by eye. D&D Land Works handles
+			the sequence start to finish, licensed and bonded under CCB #261742, serving Eugene, Springfield,
+			and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Site Build-Ready"
+		subheadline="Free estimate for site preparation anywhere in Lane County."
+	/>
+</BaseLayout>

@@ -1,0 +1,393 @@
+{
+  "seasonal": {
+    "pre_summer": [
+      {
+        "id": "pre_summer_tune_up",
+        "title": "Get Your AC Ready Before the Houston Heat Hits",
+        "summary": "Houston summers are no joke — and a neglected AC will quit on the hottest day of the year. Book your annual AC tune-up now and avoid the summer rush. Our licensed technicians will inspect, clean, and calibrate your system so it runs efficiently all season. Same-day appointments available. Free estimates. Call (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/",
+        "photo_hint": "Technician performing AC tune-up outdoors"
+      },
+      {
+        "id": "pre_summer_filter",
+        "title": "Is Your AC Filter Costing You Money?",
+        "summary": "A dirty AC filter makes your system work 15% harder — driving up your energy bill and reducing lifespan. Replace filters every 1–3 months during cooling season. Not sure what filter you need? Our team can help. Call 75 Degree AC at (713) 598-2737 — serving all of Houston and surrounding areas.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Dirty vs clean AC filter comparison"
+      },
+      {
+        "id": "pre_summer_inspection",
+        "title": "Spring AC Inspection — Catch Problems Before They Cost You",
+        "summary": "Most major AC breakdowns are preventable. A spring inspection checks refrigerant levels, electrical connections, coil cleanliness, blower performance, and thermostat calibration. 75 Degree AC runs a full 21-point inspection starting at a flat rate. Book today — Houston techs standing by. (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/",
+        "photo_hint": "Technician inspecting outdoor condenser unit"
+      },
+      {
+        "id": "pre_summer_refrigerant",
+        "title": "Low on Refrigerant? Here's Why That's a Problem",
+        "summary": "Your AC doesn't consume refrigerant — if it's low, you have a leak. Running a low-charge system damages the compressor, which is the single most expensive part to replace. Get a leak check and recharge before summer. 75 Degree AC offers same-day refrigerant service in Houston. Call (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+        "photo_hint": "Refrigerant gauges on AC service kit"
+      },
+      {
+        "id": "pre_summer_thermostat",
+        "title": "Upgrade to a Smart Thermostat Before Summer",
+        "summary": "A programmable or smart thermostat can cut your Houston cooling bill 10–15% — which usually pays for itself in one summer. 75 Degree AC installs and configures Nest, Ecobee, Honeywell, and more. Professional install includes old thermostat removal, C-wire setup, and app pairing. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Smart thermostat mounted on wall"
+      },
+      {
+        "id": "pre_summer_duct_check",
+        "title": "Leaky Ducts = Cool Air Going to the Attic",
+        "summary": "The average Houston home loses 20–30% of cooling through leaks in the duct system — meaning you're paying to cool the attic. 75 Degree AC performs professional duct inspection, sealing, and cleaning. Lower bills, cleaner air, faster cooling. Free estimates. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/services/air-quality/",
+        "photo_hint": "Attic ductwork inspection"
+      },
+      {
+        "id": "pre_summer_katy_repair_offer",
+        "title": "AC Tune-Up in Katy TX — $89 Through April 30",
+        "summary": "AC repair in Katy, TX. Systems are running their first real load of the season and weak ones are already showing it. 75 Degree AC checks refrigerant, capacitor, coil, drain line, and thermostat on every Katy pre-summer visit. Most problems caught now cost $50-$150. Same problem in July costs four times that. Licensed TACLA, fully insured, serving Katy, Cinco Ranch, Firethorne, Seven Meadows, and Kelliwood since 2016. Book the $89 tune-up before April 30.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/",
+        "photo_hint": "Technician checking outdoor condenser unit in Katy suburban neighborhood"
+      },
+      {
+        "id": "pre_summer_cypress_tune_up",
+        "title": "AC Tune-Up Cypress TX: Last Chance Before Summer",
+        "summary": "AC tune-up time for Cypress, TX. Bridgeland, Fairfield, Blackhorse Ranch homes in 77429 and 77433 run large square footage with long duct runs and attics that hit 140F by June. What we find on Cypress calls: pollen-clogged drain lines, low-reading capacitors, refrigerant 5-10% low, dust-caked blower wheels. None expensive now. All expensive in August. 75 Degree AC serving Cypress since 2016. Licensed TACLA, insured. Carrier, Trane, Lennox, Goodman, Rheem. Same-day available.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/",
+        "photo_hint": "Technician checking refrigerant gauges on outdoor condenser unit in Cypress TX subdivision"
+      }
+    ],
+    "summer": [
+      {
+        "id": "summer_emergency",
+        "title": "AC Broke Down? We're Available 24/7",
+        "summary": "Houston summer + broken AC = emergency. 75 Degree AC has technicians ready around the clock for same-day emergency AC repair. We carry parts for all major brands — Carrier, Trane, Lennox, Goodman, Rheem, and more. Most repairs completed on the first visit. Call us now: (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/emergency-ac-repair-houston/",
+        "photo_hint": "Technician arriving at home in summer"
+      },
+      {
+        "id": "summer_efficiency",
+        "title": "Why Is My AC Running Constantly? 5 Causes",
+        "summary": "If your AC never shuts off, it could be: 1) Low refrigerant, 2) Dirty coils, 3) Undersized unit, 4) Air leaks, 5) Failing thermostat. All of these are fixable. 75 Degree AC offers free estimates and same-day diagnostics in Houston. Don't let a small problem become an expensive replacement. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+        "photo_hint": "AC unit running in summer heat"
+      },
+      {
+        "id": "summer_frozen_coil",
+        "title": "AC Frozen in 95°F Heat? Here's What It Means",
+        "summary": "A frozen evaporator coil in Houston summer points to one of three issues: restricted airflow (dirty filter or blocked return), low refrigerant, or a failing blower. Turn the unit off immediately to prevent compressor damage and call for service. 75 Degree AC, same-day response: (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+        "photo_hint": "Frozen evaporator coil with ice buildup"
+      },
+      {
+        "id": "summer_capacitor",
+        "title": "AC Humming But Not Cooling? Probably the Capacitor",
+        "summary": "Capacitors fail in Houston heat more than any other component — they store the jolt that starts the compressor. Sign it's failing: AC hums but doesn't start, or starts briefly and stops. A capacitor replacement typically takes under an hour. 75 Degree AC stocks them on every truck. Call (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+        "photo_hint": "AC capacitor being replaced"
+      },
+      {
+        "id": "summer_heat_wave_prep",
+        "title": "Houston Heat Wave Warning — Is Your AC Ready?",
+        "summary": "When temperatures hit triple digits, your AC runs near maximum capacity for days. Old or undermaintained units fail first. Signs yours is at risk: weak airflow, warm air from vents, ice on pipes, strange smells. Get a pre-heatwave check. 75 Degree AC — same-day in all of Houston. (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+        "photo_hint": "Houston skyline in summer heat"
+      },
+      {
+        "id": "summer_ductless_cool",
+        "title": "One Room Always Hot? Ductless Mini-Split Fixes That",
+        "summary": "Bonus rooms, converted garages, upstairs bedrooms — rooms away from the central return are often 5–10°F hotter in Houston summer. A ductless mini-split adds direct cooling to problem rooms without extending ductwork. Quiet, efficient, installed in a day. Free quote: (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Mini-split head mounted in bedroom"
+      },
+      {
+        "id": "summer_humidity",
+        "title": "Cold But Muggy? Your AC Isn't Handling Houston Humidity",
+        "summary": "A properly-sized AC should pull indoor humidity to 45–55%. If your thermostat shows 72°F but the air feels clammy, your system is likely oversized, short-cycling, or has a drainage issue. 75 Degree AC diagnoses dehumidification problems and installs whole-home solutions. (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/services/air-quality/",
+        "photo_hint": "Hygrometer showing high indoor humidity"
+      },
+      {
+        "id": "summer_energy_bill",
+        "title": "CenterPoint Bill Shock? 4 AC Fixes That Cut Costs",
+        "summary": "Houston summer cooling bills can top $400/mo for inefficient systems. Four quick wins: 1) Replace filter monthly, 2) Clean the outdoor coil, 3) Check duct insulation, 4) Consider a SEER2 16+ upgrade. 75 Degree AC offers free energy efficiency assessments. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "High electric bill in envelope"
+      }
+    ],
+    "pre_winter": [
+      {
+        "id": "pre_winter_heating",
+        "title": "Is Your Heater Ready for Houston Winter?",
+        "summary": "Houston winters are short but real — and a failing furnace will fail on the coldest night. Schedule a heating system tune-up now before the rush. 75 Degree AC services all heater types: gas, electric, and heat pumps. Licensed, insured, same-day available. Call (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Technician inspecting furnace"
+      },
+      {
+        "id": "pre_winter_heat_pump",
+        "title": "Heat Pump Not Switching to Heat Mode?",
+        "summary": "Houston homes run heat pumps hard in the mild winter, but the reversing valve can stick if unused all summer. Test yours by setting to HEAT when outdoor temps drop below 60°F. No warm air within 10 minutes = call for service. 75 Degree AC: (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/services/heat-pump-repair-houston/",
+        "photo_hint": "Heat pump outdoor unit"
+      },
+      {
+        "id": "pre_winter_furnace_safety",
+        "title": "Gas Furnace Safety Checks Before First Cold Snap",
+        "summary": "Before you turn on a gas furnace for the first time this season, we inspect: heat exchanger cracks (carbon monoxide risk), burner condition, gas pressure, flame sensor, pilot/ignition, and venting. 75 Degree AC is licensed and TACLA-certified. Schedule your safety check: (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Gas furnace being serviced"
+      },
+      {
+        "id": "pre_winter_thermostat_switch",
+        "title": "Simple Trick: Switch Your Thermostat Schedule This Week",
+        "summary": "If you have a programmable or smart thermostat, this is the week to update your heating schedule. Suggested Houston settings: 68°F when home, 62°F when asleep or away. Need help reprogramming? 75 Degree AC can optimize it during a visit. (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Programming a smart thermostat"
+      },
+      {
+        "id": "pre_winter_pipe_check",
+        "title": "Cold Snap Coming — Don't Skip the HVAC Winterization Check",
+        "summary": "Houston's freeze events damage exposed HVAC components fast. We check: outdoor unit clearance, refrigerant line insulation, condensate drainage, and attic ductwork integrity. A 30-minute winterization visit can prevent thousands in freeze damage. 75 Degree AC: (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Insulated refrigerant lines in winter"
+      }
+    ],
+    "winter": [
+      {
+        "id": "winter_no_heat",
+        "title": "No Heat in Houston? We're Out There 24/7",
+        "summary": "Heating failure in a Houston freeze is a real emergency — especially for homes with no fireplace or backup. 75 Degree AC dispatches emergency heating techs day and night. We service gas furnaces, heat pumps, electric heaters, and thermostats. Same-day guaranteed. Call (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Technician restoring heat at night"
+      },
+      {
+        "id": "winter_heat_pump_defrost",
+        "title": "Heat Pump Iced Over? That's Normal — Until It Isn't",
+        "summary": "Heat pumps periodically defrost themselves during Houston cold fronts — that's expected. What's NOT normal: the ice never melts, the unit runs constantly, or auxiliary heat kicks on every cycle. Those point to a failing defrost board or low charge. 75 Degree AC fixes both: (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/services/heat-pump-repair-houston/",
+        "photo_hint": "Heat pump in defrost cycle"
+      },
+      {
+        "id": "winter_safe_heater",
+        "title": "Don't Use a Space Heater Unsafely This Winter",
+        "summary": "Houston sees the most residential fires during cold snaps — 80% involve space heaters. If your main HVAC isn't keeping up, please don't overload portables. 75 Degree AC can upgrade under-sized central systems quickly, with financing. Stay warm safely. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Cozy family room with forced-air heat"
+      }
+    ],
+    "year_round": [
+      {
+        "id": "financing",
+        "title": "New AC System? We Offer Flexible Financing",
+        "summary": "Replacing an AC system is a major investment — but it doesn't have to be a financial burden. 75 Degree AC offers financing through multiple lenders with flexible payment options. Get a free estimate on a new central AC, ductless mini-split, or heat pump. Serving Houston and surrounding areas since 2016. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/ac-installation-houston-tx/",
+        "photo_hint": "New AC installation outside home"
+      },
+      {
+        "id": "reviews_cta",
+        "title": "Trusted by Hundreds of Houston Homeowners",
+        "summary": "Since 2016, 75 Degree AC has been keeping Houston families comfortable year-round. We're licensed (TACLA), fully insured, and committed to transparent pricing with no hidden fees. Our fully-stocked vehicles mean most repairs are completed on the first visit. See what our customers are saying — and join them. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Happy customer with technician"
+      },
+      {
+        "id": "indoor_air_quality",
+        "title": "Is the Air Inside Your Home Making You Sick?",
+        "summary": "Houston humidity creates ideal conditions for mold, allergens, and poor indoor air quality. 75 Degree AC offers indoor air quality testing, UV light systems, HEPA filtration, and whole-home air purifiers. Breathe easier — call us for a free assessment at (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/services/air-quality/",
+        "photo_hint": "Family breathing fresh air in home"
+      },
+      {
+        "id": "commercial",
+        "title": "Commercial HVAC in Houston — We Handle It All",
+        "summary": "From retail spaces to office buildings, 75 Degree AC provides commercial HVAC repair, installation, and maintenance across Houston. Minimise downtime with our fast-response commercial service team. Free estimates, licensed contractors, competitive rates. Call (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Commercial HVAC unit on rooftop"
+      },
+      {
+        "id": "maintenance_plan",
+        "title": "Join Our Maintenance Plan — Never Worry About HVAC Again",
+        "summary": "Our maintenance plan members get: priority scheduling, discounted repairs, twice-yearly tune-ups, and a 95% lower chance of breakdown. Plans start at an affordable flat monthly rate. Perfect for busy Houston homeowners. Ask about it when you call (713) 598-2737.",
+        "call_to_action": "SIGN_UP",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "Maintenance plan clipboard"
+      },
+      {
+        "id": "brands_we_service",
+        "title": "Carrier, Trane, Lennox, Goodman — We Service Them All",
+        "summary": "75 Degree AC is factory-trained on every major HVAC brand. Whether you need repair, maintenance, or warranty work, we have the parts, tools, and training. Our trucks stock parts for 40+ brands — most repairs finish on the first visit. Same-day service in Houston. (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "HVAC brand logos wall"
+      },
+      {
+        "id": "licensed_insured",
+        "title": "Licensed, Insured, and Houston-Local Since 2016",
+        "summary": "Not every HVAC contractor in Houston is fully licensed and insured — we are. TACLA-certified, bonded, and insured means you're protected if something goes wrong. Local ownership means we'll be here next season when you need us. Call 75 Degree AC: (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/",
+        "photo_hint": "TACLA license certificate"
+      },
+      {
+        "id": "free_estimates",
+        "title": "Free Estimates on HVAC Installation and Replacement",
+        "summary": "Most Houston HVAC companies charge for quotes — we don't. Schedule a free, no-obligation in-home estimate on AC installation, furnace replacement, heat pump upgrade, or ductless mini-split. Honest pricing, multiple brand options, flexible financing. Call (713) 598-2737.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/ac-installation-houston-tx/",
+        "photo_hint": "Technician providing in-home estimate"
+      },
+      {
+        "id": "commercial_pre_summer_readiness",
+        "title": "Commercial AC Repair Houston TX | Pre-Summer Inspections",
+        "summary": "Commercial AC repair in Houston before the building hits 78°F by 2pm. RTUs, split systems, VRF, and package units across Energy Corridor, Galleria, Westchase, Greenspoint, and the Medical Center corridor. Pre-summer inspection covers refrigerant, contactors, drain lines, economizers, filter MERV match, and load-balance review. Carrier, Trane, Lennox, Daikin, Goodman. TACLA-licensed and insured. Same-day service, 24/7 when a unit goes down mid-business-hours.",
+        "call_to_action": "BOOK",
+        "cta_url": "https://75degreeac.com/commercial-ac-repair-houston-tx/",
+        "photo_hint": "Commercial rooftop RTU with tech servicing, Houston commercial property visible"
+      }
+    ],
+    "educational": [
+      {
+        "id": "signs_ac_failing",
+        "title": "5 Signs Your AC Is About to Fail",
+        "summary": "1. Warm air blowing from vents\n2. Unusual noises (banging, squealing)\n3. High humidity indoors\n4. Frequent cycling on/off\n5. Skyrocketing energy bills\n\nIf you're seeing any of these, call 75 Degree AC before a small problem becomes a full replacement. Same-day service in Houston. (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/"
+      },
+      {
+        "id": "thermostat_tips",
+        "title": "Best Thermostat Settings for Houston Summer",
+        "summary": "Energy experts recommend 78°F when home, 85°F when away, and 82°F when sleeping. Every degree lower increases energy use by 3%. A programmable or smart thermostat can save 10–15% on cooling costs. Need help with thermostat installation or HVAC upgrades? Call 75 Degree AC: (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/"
+      },
+      {
+        "id": "repair_vs_replace",
+        "title": "AC Repair vs Replace — The $5,000 Rule",
+        "summary": "Rule of thumb: if the repair cost × the system's age is > $5,000, replacement is usually smarter. Example — a $600 repair on a 10-year-old unit = $6,000, so consider replacement. 75 Degree AC gives honest repair-or-replace advice, not upsells. Free evaluations: (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/"
+      },
+      {
+        "id": "seer2_explained",
+        "title": "SEER2 Rating Explained — Why It Matters for Houston",
+        "summary": "SEER2 measures AC efficiency under real-world conditions. Houston homes hit peak SEER2 benefit because our summers are long. A jump from SEER2 13 to SEER2 16 can cut cooling bills by 20%+ over the unit's life. 75 Degree AC explains options on every quote. Call (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/ac-installation-houston-tx/"
+      },
+      {
+        "id": "noises_diagnosis",
+        "title": "What Each AC Noise Means (And When to Worry)",
+        "summary": "• Hissing = refrigerant leak\n• Squealing = worn belt or motor bearing\n• Banging = loose part in blower\n• Clicking on startup = failing capacitor\n• Buzzing = electrical issue\n\nAny of these = call before it gets worse. 75 Degree AC, same-day Houston: (713) 598-2737.",
+        "call_to_action": "CALL",
+        "cta_url": "https://75degreeac.com/ac-repair-houston-tx/"
+      },
+      {
+        "id": "age_replace_guide",
+        "title": "How Old Is Your AC? Replacement Timeline for Houston Homes",
+        "summary": "Houston's heat pushes AC systems harder than most cities. Realistic lifespans: central AC 10–12 years, heat pumps 10–14 years, mini-splits 15–20 years. Past those marks, efficiency drops sharply. Not sure how old your system is? 75 Degree AC can check: (713) 598-2737.",
+        "call_to_action": "LEARN_MORE",
+        "cta_url": "https://75degreeac.com/"
+      }
+    ]
+  },
+  "offers": [
+    {
+      "id": "tune_up_offer",
+      "title": "AC Tune-Up Special — Book This Week",
+      "summary": "Regular AC maintenance reduces breakdown risk by 95% and extends system life by years. This week only: mention this post when you call and ask about our seasonal tune-up special. Licensed technicians, same-day available. Call 75 Degree AC: (713) 598-2737.",
+      "call_to_action": "BOOK",
+      "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/"
+    },
+    {
+      "id": "install_financing_offer",
+      "title": "New HVAC Install — Flexible Financing Available Now",
+      "summary": "Get a new central AC, heat pump, or furnace with payment plans that fit your budget — 0% options available for qualified buyers through our financing partners. 75 Degree AC offers free in-home quotes with brand and efficiency comparisons. Call (713) 598-2737.",
+      "call_to_action": "GET_OFFER",
+      "cta_url": "https://75degreeac.com/ac-installation-houston-tx/"
+    },
+    {
+      "id": "maintenance_plan_offer",
+      "title": "Lock In Priority Service — Our Maintenance Plan",
+      "summary": "Join the 75 Degree AC maintenance plan and get twice-yearly tune-ups, priority scheduling when Houston summer hits hardest, and repair discounts. Most members avoid the 24–48h wait during heat waves. Ask about pricing when you call (713) 598-2737.",
+      "call_to_action": "SIGN_UP",
+      "cta_url": "https://75degreeac.com/"
+    }
+  ],
+  "emergency": [
+    {
+      "id": "heatwave_alert",
+      "title": "Houston Heat Wave — Our Techs Are On Call",
+      "summary": "Triple-digit heat is hard on AC systems — breakdowns spike 400% during heat waves. 75 Degree AC has added evening shifts and weekend crews to keep response times under a few hours. If your AC is struggling, don't wait. Call now: (713) 598-2737.",
+      "call_to_action": "CALL",
+      "cta_url": "https://75degreeac.com/emergency-ac-repair-houston/"
+    },
+    {
+      "id": "freeze_alert",
+      "title": "Houston Hard Freeze — Protect Your HVAC Before Sunset",
+      "summary": "Before the freeze hits: 1) Cover exposed outdoor copper lines, 2) Replace the filter, 3) Set thermostat to HEAT (don't rely on 'auto'), 4) Open inside cabinets near plumbing. If your heat fails, call 75 Degree AC day or night: (713) 598-2737.",
+      "call_to_action": "CALL",
+      "cta_url": "https://75degreeac.com/"
+    }
+  ],
+  "geo_targeted": [
+    {
+      "id": "repair_vs_replace_houston_2026",
+      "title": "AC Repair Houston — Know When to Fix vs. Replace",
+      "summary": "AC repair in Houston gets expensive fast when fixing the wrong system. The honest math: repair cost x unit age. If that tops $5,000, replacement usually pencils out better. Houston heat shortens lifespans: central AC 10-12 years, heat pumps 10-14. Under 8 years with a single-component failure, fix it. Over 12 years on R-410A facing a compressor swap, replace it. 75 Degree AC gives straight repair-vs-replace guidance with no upsell. Licensed TACLA72152E. Free estimates on replacements.",
+      "call_to_action": "LEARN_MORE",
+      "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+      "photo_hint": "Technician inspecting outdoor AC condenser unit, Houston residential setting",
+      "geo": "Houston, TX",
+      "added": "2026-04-20"
+    },
+    {
+      "id": "mini_split_katy_offer",
+      "title": "Mini-Split Installation Katy TX — Spring Special",
+      "summary": "Ductless mini-split installation in Katy TX serves Cinco Ranch, Seven Meadows, and Firethorne homeowners with hot bonus rooms, converted garages, and sunrooms that central AC cannot reach. One outdoor unit, one indoor head, no ductwork, installed in a day. 75 Degree AC installs Carrier, Daikin, Lennox, and Goodman ductless systems. Qualifying SEER2 units eligible for 2026 federal tax credits. Free load-calculated in-home quote. Licensed TACLA72152E.",
+      "call_to_action": "BOOK",
+      "cta_url": "https://75degreeac.com/ac-installation-houston-tx/",
+      "photo_hint": "Ductless mini-split indoor head mounted in bright suburban room",
+      "geo": "Katy, TX",
+      "added": "2026-04-22"
+    },
+    {
+      "id": "hvac_contractor_sugar_land_april",
+      "title": "HVAC Contractor Sugar Land TX — April Warning Signs",
+      "summary": "HVAC contractor Sugar Land TX homeowners call most in late April when systems running first real heat show weakness. Watch for: slow temp pull-down (refrigerant or coil issue), lukewarm air from vents (check filter first), and electric bills up 15%+ over last April (dirty coil or degraded capacitor). Sugar Land homes from late 1990s/early 2000s are at the 20-25 year mark. 75 Degree AC serves First Colony, Riverstone, Telfair, and surrounding Fort Bend communities. Licensed TACLA72152E. Free estimates.",
+      "call_to_action": "CALL",
+      "cta_url": "https://75degreeac.com/ac-repair-houston-tx/",
+      "photo_hint": "HVAC technician servicing outdoor condenser unit in suburban Houston backyard",
+      "geo": "Sugar Land, TX",
+      "added": "2026-04-24"
+    }
+  ]
+}

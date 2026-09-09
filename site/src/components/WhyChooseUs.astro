@@ -1,0 +1,111 @@
+---
+interface WhyItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface Props {
+  descriptionHtml?: string;
+}
+
+const { descriptionHtml } = Astro.props;
+
+const items: WhyItem[] = [
+  {
+    title: 'On-Site Estimates',
+    description: 'Every quote follows a walkthrough of your property, priced for your actual soil, slope, and access.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
+  },
+  {
+    title: 'Residential & Commercial',
+    description: 'The same crew and equipment for homeowners, builders, and commercial development sites across Lane County.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+  },
+  {
+    title: 'Clean Job Sites',
+    description: 'Clear, grade, trench, compact, or install — whatever the job, the site gets left clean when it\'s done.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6" /><path stroke-linecap="round" stroke-linejoin="round" d="m15.5 3.5 2-2m1 4 2-2" />',
+  },
+  {
+    title: 'Direct Communication',
+    description: 'Call or message and reach the person who\'ll actually run the job, not a call center or a dispatcher relay.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-1.1 4.2L21 20l-4.5-1a8.4 8.4 0 1 1 4.5-7.5Z" />',
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-ink">
+	<img
+		src="/hero-bg-1.webp"
+		alt=""
+		aria-hidden="true"
+		class="absolute inset-0 h-full w-full object-cover opacity-25"
+		loading="lazy"
+	/>
+	<div class="absolute inset-0 bg-linear-to-r from-ink via-ink/95 to-ink/80"></div>
+
+	<div class="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+		<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+			<div>
+				<div class="mb-3 flex items-center gap-2">
+					<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+					<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">
+						Why Choose Us
+					</p>
+				</div>
+
+				<h2 class="font-display font-black uppercase tracking-tight text-3xl text-white md:text-4xl">
+					Why Lane County Trusts <span class="text-brand-blue-light">D&amp;D Land Works</span>
+				</h2>
+
+				{descriptionHtml ? (
+					<p class="mt-5 max-w-md text-slate-300 leading-relaxed" set:html={descriptionHtml} />
+				) : (
+					<p class="mt-5 max-w-md text-slate-300 leading-relaxed">
+						Every quote starts with David walking your property, not a phone-in estimate. One crew
+						handles excavation, grading, and site prep for homeowners and builders across Lane County,
+						and the site gets left clean when the work is done.
+					</p>
+				)}
+
+				<a href="/services" class="btn-pill mt-8 inline-flex">
+					Know More
+					<span class="btn-pill-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<div class="relative">
+				<div class="grid gap-6 sm:grid-cols-2">
+					{items.map((item) => (
+						<div class="card bg-white/95">
+							<span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+							</span>
+							<h3 class="mt-4 font-display font-bold uppercase tracking-wide text-base text-ink">
+								{item.title}
+							</h3>
+							<p class="mt-2 text-sm text-slate-600">
+								{item.description}
+							</p>
+						</div>
+					))}
+				</div>
+
+				<div class="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1 rounded-(--radius-brand-card) bg-brand-blue px-5 py-4 text-center text-white shadow-lg sm:flex">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 7h8m-8 3.5h5" />
+					</svg>
+					<p class="mt-1 font-display font-bold uppercase tracking-wide text-xs whitespace-nowrap">
+						Free Estimates
+					</p>
+					<p class="text-[11px] text-blue-100">Every job, on-site</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

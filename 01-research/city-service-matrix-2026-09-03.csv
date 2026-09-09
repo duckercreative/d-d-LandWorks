@@ -1,0 +1,11 @@
+City,Tier,Excavation/Site Prep,Grading,Land Clearing,Septic,Drainage,City Page,Notes
+Eugene,1,BUILD NOW,BUILD LATER,BUILD NOW,BUILD NOW,BUILD LATER,BUILD NOW,Largest market; highest competition and highest reward; anchor city
+Springfield,1,BUILD NOW,BUILD LATER,BUILD NOW,BUILD NOW,BUILD LATER,BUILD NOW,Co-targeted with Eugene by competitors; strong secondary anchor
+Cottage Grove,2,CITY ONLY,DO NOT BUILD,BUILD LATER,BUILD LATER,DO NOT BUILD,BUILD (Phase 3),Rural septic + land clearing demand; thinner competition
+Junction City,2,CITY ONLY,DO NOT BUILD,BUILD LATER,BUILD LATER,DO NOT BUILD,BUILD (Phase 3),Ag/rural land clearing + site prep angle
+Creswell,2,CITY ONLY,DO NOT BUILD,BUILD LATER,BUILD LATER,DO NOT BUILD,BUILD (Phase 3),Rural residential septic + driveway demand
+Veneta,2,CITY ONLY,DO NOT BUILD,BUILD LATER,BUILD LATER,DO NOT BUILD,BUILD (Phase 3),Rural; All Dirt HQ here - competitive; septic/land clearing
+Florence,3,CONFIRM,DO NOT BUILD,CONFIRM,CONFIRM,CONFIRM,CONFIRM COVERAGE,Coastal ~1hr from Eugene; likely outside routine radius - verify with David
+Oakridge,3,CITY ONLY,DO NOT BUILD,CONFIRM,DO NOT BUILD,DO NOT BUILD,BUILD (Phase 4),Mountain community; land clearing/driveway/access angle
+Coburg,3,CITY ONLY,DO NOT BUILD,DO NOT BUILD,DO NOT BUILD,DO NOT BUILD,BUILD (Phase 4),Small; close to Eugene; low volume but easy relevance
+Lowell,3,CITY ONLY,DO NOT BUILD,DO NOT BUILD,DO NOT BUILD,DO NOT BUILD,BUILD (Phase 4),Small rural; septic/land clearing only if served

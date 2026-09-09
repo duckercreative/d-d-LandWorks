@@ -1,0 +1,52 @@
+{
+  "tool_calls": {
+    "Read": 9,
+    "Write": 4,
+    "Bash": 5,
+    "WebFetch": 7,
+    "WebSearch": 3,
+    "Grep": 4,
+    "Glob": 1
+  },
+  "total_tool_calls": 33,
+  "total_steps": 8,
+  "files_created": [
+    "2026-05-03_ac-repair-cypress-tx-drain-pollen.md",
+    "new_template_entry.json",
+    "transcript.md",
+    "metrics.json"
+  ],
+  "errors_encountered": 5,
+  "errors_detail": [
+    "queries-202604.csv too large to read at once — used Grep instead",
+    "/hvac-contractor-cypress-tx/ → HTTP 404",
+    "/ac-repair-cypress-tx/ → HTTP 404",
+    "/ac-repair-houston-tx/ → HTTP 404 (unexpected)",
+    "/ac-tune-up-houston-tx/ → HTTP 404 (unexpected)",
+    "Post body draft 1: 1886 chars (over limit) + 3 dash violations — required 2 revision passes"
+  ],
+  "output_chars": 5459,
+  "transcript_chars": 10814,
+  "post_body_char_count": 1440,
+  "post_body_in_range": true,
+  "pre_write_checklist": {
+    "phone_in_body": "PASS",
+    "dash_violations": "PASS",
+    "ai_slop_phrases": "PASS",
+    "char_count": "PASS",
+    "first_line_keyword_geo": "PASS",
+    "cta_url_resolves": "PASS"
+  },
+  "new_template_authored": true,
+  "template_id": "pre_summer_cypress_drain_pollen",
+  "cta_url": "https://75degreeac.com/services/ac-tune-up-and-maintenance/",
+  "geo_target": "Cypress, TX",
+  "primary_keyword": "ac repair Cypress TX",
+  "notable_findings": [
+    "All 6 pre_summer templates exhausted in queue — new template required",
+    "No dedicated Cypress page exists on site (both Cypress URLs return 404) — post geo signal is infrastructure-building",
+    "GSC Cypress queries all at position 50+ with 0 CTR — explains why research had no 5-20 striking distance data for Cypress",
+    "Drain line / Cy-Fair pollen angle confirmed open — neither Air Depot nor Mr. Cool posting this angle",
+    "3 draft iterations needed to achieve 1200-1450 compliance (started at 1886)"
+  ]
+}

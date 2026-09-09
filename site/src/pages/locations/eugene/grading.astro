@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Grading & Leveling in Eugene, OR | D&D Land Works"
+	description="Site, yard, and driveway grading in Eugene, OR for drainage and building pads. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Eugene, Oregon"
+		headline="Grading & Leveling in Eugene, OR"
+		subheadline="Older Eugene neighborhoods were graded to a different standard decades ago, and it shows: yards that pool water after a hard rain, driveways that pitch the wrong way, lots that need a finish grade before anything gets built on them."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Grading & Leveling"
+		ctaHref="/services/grading-leveling"
+		eyebrow="Eugene, Oregon"
+		headlineHtml="Grading for the <span class='text-brand-blue'>Ground You Actually Have</span> in Eugene"
+		descriptionHtml="<p>A rough grade for a new house pad, a finish grade ahead of landscaping, or a regrade to stop water from pooling in the wrong spot all call for the same read of the site first: slope, soil, and where the water is actually trying to go. South Hills lots need more thought given to slope and drainage grading; flatter lots elsewhere in Eugene are more often about correcting a pitch that was never quite right to begin with.</p><p>The <a href='/services/grading-leveling' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>grading &amp; leveling</a> page walks through the rest of it, rough grade through finish grade. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/eugene' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Eugene</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Eugene, Oregon"
+		headline="Why Do Eugene Homeowners Trust D&D Land Works for Grading?"
+		image="/hero-bg-3.webp"
+		imageAlt="Freshly graded yard in Eugene, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every grading job starts with a read of the site&rsquo;s actual slope and soil.</p><p>David Deggelman scopes every job in person before quoting. If your yard slopes the wrong way or won&rsquo;t drain anywhere in Eugene, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Eugene Lot Graded"
+		subheadline="Free estimate for grading or leveling anywhere in Eugene."
+	/>
+</BaseLayout>

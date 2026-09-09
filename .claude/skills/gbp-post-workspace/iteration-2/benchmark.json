@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "skill_name": "gbp-post",
+    "skill_path": "/Users/mac/Digital Marketing/Local SEO/Clients/75 Degree AC/.claude/skills/gbp-post",
+    "executor_model": "claude-sonnet-4-6",
+    "analyzer_model": "claude-sonnet-4-6",
+    "timestamp": "2026-05-06T00:00:00Z",
+    "evals_run": ["todays-gbp-post", "cypress-geo-post", "weekly-batch"],
+    "runs_per_configuration": 1
+  },
+
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "todays-gbp-post",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "time_seconds": 374.1,
+        "tokens": 96022,
+        "tool_calls": 43,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Draft .md file written to 04-gmb/posts/drafts/", "passed": true, "evidence": "File at 04-gmb/posts/drafts/2026-04-22_ac-repair-katy-tx-spring-offer.md confirmed"},
+        {"text": "Post body 1200-1450 chars", "passed": true, "evidence": "1448 chars verified by Python len()"},
+        {"text": "No phone number in body", "passed": true, "evidence": "Regex search for '713' returned None"},
+        {"text": "First line keyword + suburb", "passed": true, "evidence": "Opens with 'AC repair in Katy, TX'"},
+        {"text": "2-3 trust signals", "passed": true, "evidence": "5 trust signals: since 2016, Licensed TACLA, Fully insured, Same-day slots, Stocked trucks"},
+        {"text": "Valid CTA button + URL", "passed": true, "evidence": "BOOK + /services/ac-tune-up-and-maintenance/ confirmed 200 OK"},
+        {"text": "Research notes with GSC data + weather", "passed": true, "evidence": "Full research block with GSC impression/position data present"},
+        {"text": "Template not pre_summer_tune_up", "passed": true, "evidence": "New template pre_summer_katy_repair_offer used"},
+        {"text": "No em dashes or semicolons", "passed": true, "evidence": "Regex verified zero instances; first draft had 5 em dashes, caught and rewritten"},
+        {"text": "No AI-slop phrases", "passed": true, "evidence": "14-term check returned zero matches"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "todays-gbp-post",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "time_seconds": 232.7,
+        "tokens": 78532,
+        "tool_calls": 29,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Draft .md file written to 04-gmb/posts/drafts/", "passed": true, "evidence": "Written to /tmp/, copied to outputs/ (OR clause satisfied)"},
+        {"text": "Post body 1200-1450 chars", "passed": true, "evidence": "1438 chars"},
+        {"text": "No phone number in body", "passed": true, "evidence": "No match"},
+        {"text": "First line keyword + suburb", "passed": true, "evidence": "'AC repair' + 'Katy, TX' on line 1"},
+        {"text": "2-3 trust signals", "passed": true, "evidence": "4 trust signals: TACLA, 2016, same-day, insured"},
+        {"text": "Valid CTA button + URL", "passed": true, "evidence": "BOOK + 75degreeac.com URL"},
+        {"text": "Research notes with GSC data + weather", "passed": true, "evidence": "Notes present with GSC data; weather from static fallback (no live WebFetch)"},
+        {"text": "Template not pre_summer_tune_up", "passed": true, "evidence": "New template pre_summer_katy_offer used"},
+        {"text": "No em dashes or semicolons", "passed": true, "evidence": "Zero in final body; pre-write check caught and fixed"},
+        {"text": "No AI-slop phrases", "passed": true, "evidence": "Clean check"}
+      ],
+      "notes": ["Weather sourced from static seasonal-houston.md fallback, not live weather.gov — skill's research policy calls for live check"]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "cypress-geo-post",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 387.6,
+        "tokens": 87405,
+        "tool_calls": 45,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Draft .md file written to 04-gmb/posts/drafts/", "passed": true, "evidence": "File confirmed at drafts path and copied to outputs/"},
+        {"text": "First line contains keyword + 'Cypress'", "passed": true, "evidence": "Opens with 'AC tune-up time for Cypress, TX'"},
+        {"text": "Post body 1200-1450 chars", "passed": true, "evidence": "1422 chars verified"},
+        {"text": "No phone number in body", "passed": true, "evidence": "Zero matches for '713' or '598-2737'"},
+        {"text": "GSC checked for Cypress queries", "passed": true, "evidence": "4 Cypress queries documented with positions from queries-202604.csv"},
+        {"text": "CTA URL points to Cypress page or best alternative", "passed": true, "evidence": "No Cypress page (404); /services/ac-tune-up-and-maintenance/ (200 OK) used — correct fallback"},
+        {"text": "No em dashes in body", "passed": true, "evidence": "Em dashes in first draft, caught by pre-write check, eliminated"},
+        {"text": "No AI-slop phrases", "passed": true, "evidence": "17+ phrase scan returned zero matches"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "cypress-geo-post",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 382.6,
+        "tokens": 82406,
+        "tool_calls": 43,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Draft .md file written to 04-gmb/posts/drafts/", "passed": true, "evidence": "Written to /tmp/, copied to outputs/"},
+        {"text": "First line contains keyword + 'Cypress'", "passed": true, "evidence": "'AC repair in Cypress, TX' on first line"},
+        {"text": "Post body 1200-1450 chars", "passed": true, "evidence": "1440 chars"},
+        {"text": "No phone number in body", "passed": true, "evidence": "Confirmed by substring search"},
+        {"text": "GSC checked for Cypress queries", "passed": true, "evidence": "4 Cypress queries documented with positions"},
+        {"text": "CTA URL points to Cypress page or best alternative", "passed": true, "evidence": "/services/ac-tune-up-and-maintenance/ (200 OK) — Cypress pages return 404"},
+        {"text": "No em dashes in body", "passed": true, "evidence": "Zero U+2014 in body; note: post TITLE contains em dash (not caught by assertions)"},
+        {"text": "No AI-slop phrases", "passed": true, "evidence": "Clean check"}
+      ],
+      "notes": ["Post title contains em dash: 'AC Repair Cypress TX — Drain Line...' — pre-write checklist only scanned body, missed title violation"]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "weekly-batch",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "time_seconds": 480.9,
+        "tokens": 97406,
+        "tool_calls": 43,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Exactly 3 post draft files produced", "passed": true, "evidence": "Exactly 3 .md post files in batch dir"},
+        {"text": "Post types match Mon/Wed/Fri cadence", "passed": true, "evidence": "What's New (Apr 20) / Offer (Apr 22) / What's New (Apr 24)"},
+        {"text": "No geo repeated", "passed": true, "evidence": "Houston / Katy TX / Sugar Land TX — all distinct"},
+        {"text": "No keyword repeated", "passed": true, "evidence": "ac repair houston / ac installation katy tx / hvac installation sugar land tx"},
+        {"text": "Templates not in 40-day queue", "passed": true, "evidence": "All 3 template IDs newly minted, absent from blocked list"},
+        {"text": "RESEARCH_SWEEP.md exists; per-post files have NO ## Research Notes", "passed": true, "evidence": "RESEARCH_SWEEP.md present; grep for '## Research Notes' in all 3 post files returned zero matches; each has research_refs: frontmatter only"},
+        {"text": "Each post body 1200-1450 chars", "passed": true, "evidence": "1425 / 1376 / 1245 — all within range"},
+        {"text": "No phone number in any post body", "passed": true, "evidence": "Confirmed by full read of all 3 bodies"},
+        {"text": "Each post first line: keyword + geo", "passed": true, "evidence": "All 3 posts open with exact keyword phrase + location name"},
+        {"text": "Each post has valid CTA + 75degreeac.com URL", "passed": true, "evidence": "All 3 have valid button types and 75degreeac.com URLs"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "weekly-batch",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 8,
+        "failed": 2,
+        "total": 10,
+        "time_seconds": 537.4,
+        "tokens": 113640,
+        "tool_calls": 56,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Exactly 3 post draft files produced", "passed": false, "evidence": "5 .md files found — Post 2 and Post 3 each have two naming variants; both copied to outputs without cleanup"},
+        {"text": "Post types match Mon/Wed/Fri cadence", "passed": true, "evidence": "What's New / Offer / What's New — correct"},
+        {"text": "No geo repeated", "passed": true, "evidence": "Houston / Katy TX / Sugar Land TX"},
+        {"text": "No keyword repeated", "passed": true, "evidence": "Distinct keywords across all 3 posts"},
+        {"text": "Templates not in 40-day queue", "passed": true, "evidence": "New template IDs used"},
+        {"text": "RESEARCH_SWEEP.md exists; per-post files have NO ## Research Notes", "passed": false, "evidence": "RESEARCH_SWEEP.md exists; but Post 2 (minisplit-katy-offer.md) and Post 3 (hvac-sugarland-late-april.md) both contain ## Research Notes sections after the compliance tag. Post 1 correctly uses research_refs: only."},
+        {"text": "Each post body 1200-1450 chars", "passed": true, "evidence": "All within range for publishable body"},
+        {"text": "No phone number in any post body", "passed": true, "evidence": "Confirmed clean"},
+        {"text": "Each post first line: keyword + geo", "passed": true, "evidence": "All 3 posts have keyword + location on line 1"},
+        {"text": "Each post has valid CTA + 75degreeac.com URL", "passed": true, "evidence": "Valid buttons and URLs on all 3"}
+      ],
+      "notes": ["Old skill produced 5 files instead of 3 due to naming collisions during iteration", "2 of 3 batch post files contain ## Research Notes appendix — the exact behavior the iteration-2 fix addresses"]
+    }
+  ],
+
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 414.2, "stddev": 47.5, "min": 374.1, "max": 480.9},
+      "tokens": {"mean": 93611, "stddev": 4424, "min": 87405, "max": 97406}
+    },
+    "old_skill": {
+      "pass_rate": {"mean": 0.933, "stddev": 0.094, "min": 0.8, "max": 1.0},
+      "time_seconds": {"mean": 384.2, "stddev": 124.4, "min": 232.7, "max": 537.4},
+      "tokens": {"mean": 91526, "stddev": 15717, "min": 78532, "max": 113640}
+    },
+    "delta": {
+      "pass_rate": "+0.067",
+      "time_seconds": "+30.0",
+      "tokens": "+2085"
+    }
+  },
+
+  "notes": [
+    "Eval-0 and eval-1 show identical pass rates across both configs — single-post workflow is robust in both versions",
+    "Eval-2 is the only discriminating eval: with_skill 10/10, old_skill 8/10 — directly measuring the batch mode fix",
+    "The batch RESEARCH_SWEEP.md assertion (assertion 6) is the highest-value discriminating check — it failed in 2/3 batch posts with old_skill",
+    "Grader identified title em dash in old_skill eval-1 (not caught by assertions) — pre-write checklist should cover post title not just body",
+    "Grader noted assertion 7 (research notes present) can be satisfied by static fallback; old_skill never called live weather.gov",
+    "Old_skill batch run took 537s (37% slower than with_skill) and 113k tokens (17% more) — likely because it iterated more with naming collisions"
+  ]
+}

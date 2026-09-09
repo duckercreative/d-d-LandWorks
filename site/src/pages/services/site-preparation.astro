@@ -1,0 +1,439 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/site-preparation-content.md).
+  Promoted from the /services/site-preparation-test draft after review.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const processSteps = [
+  { step: '1', title: 'Survey and plan', detail: 'A topographic survey establishes the lot’s existing grades, slopes, drainage patterns, and property lines before any equipment moves.' },
+  { step: '2', title: 'Clear', detail: 'Brush, trees, and debris come out of the build envelope.' },
+  { step: '3', title: 'Strip topsoil', detail: 'Topsoil gets stripped and stockpiled separately from the rest of the material, so it’s available to reuse for landscaping later.' },
+  { step: '4', title: 'Cut and fill to grade', detail: 'Material gets cut from high spots and filled into low spots to bring the pad to the design elevation.' },
+  { step: '5', title: 'Compact the subgrade', detail: 'The pad gets compacted to the density a foundation, driveway, or slab actually needs.' },
+  { step: '6', title: 'Stake corners and elevations', detail: 'Reference points go in so the build crew, surveyor, or inspector can verify the pad matches the plan.' },
+  { step: '7', title: 'Rough-grade for drainage', detail: 'The pad gets a final rough shape so water moves away from where the structure will sit, not toward it.' },
+];
+
+const buildTimeline = [
+  { label: 'Lot Purchased', active: false },
+  { label: 'Builder Hired, Permitting Begins', active: false },
+  { label: 'Site Prep', active: true },
+  { label: 'Foundation Excavation', active: false },
+];
+
+const permits = [
+  { name: 'Lane County Grading and Fill Permit', trigger: 'A Lane County permitting guide indicates this is generally required when a project moves more than roughly 50 cubic yards of earth, or creates a cut/fill slope steeper than roughly 2:1. Confirm the exact threshold for your project directly with Lane County’s Land Management Division before assuming either way.', admin: 'Lane County Land Management Division' },
+  { name: 'Erosion Prevention Permit (Type I / Type II)', trigger: 'Same sourcing caveat as above: Type I generally covers single-family homes or minor grading under 1 acre; Type II generally covers larger developments, steeper slopes, or more erodible sites. Confirm which tier (if any) applies with Lane County LMD.', admin: 'Lane County Land Management Division' },
+  { name: 'Oregon DEQ 1200-C Construction Stormwater Permit', trigger: 'Confirmed directly on oregon.gov: required when a project disturbs 1 acre or more, or is part of a larger common plan of development totaling 1 acre or more, even if your individual lot is smaller. A complete application is due at least 30 days before soil disturbance starts.', admin: 'Oregon DEQ' },
+];
+
+const costRows = [
+  { scope: 'Site preparation overall', range: '$8,000–$50,000+', affects: 'Lot size, vegetation density, access, soil, and how much cut/fill grading is needed' },
+  { scope: 'Cut and fill grading', range: '$0.11–$1.50+ / sq ft', affects: 'Volume of material moved, haul distance, slope' },
+  { scope: 'Standard excavation', range: '$5–$15 / cubic yard', affects: 'Baseline soil conditions, no rock or heavy clay encountered' },
+];
+
+const projectTypes = [
+  { title: 'New Home Build', detail: 'The standard case: a raw or partially-cleared residential lot gets prepped for a foundation crew.' },
+  { title: 'ADU', detail: 'A second, smaller residence on an existing lot has its own site-prep needs and its own permit questions worth confirming early.' },
+  { title: 'Shop or Barn Pad', detail: 'Rural and acreage properties often need a level, compacted pad before a metal-building crew arrives.' },
+  { title: 'Subdivision', detail: 'Multi-lot development brings the DEQ 1200-C "common plan of development" rule into play even if any single lot is under an acre.' },
+  { title: 'Commercial Site Development', detail: 'Larger commercial pads typically involve more grading volume and a higher likelihood of crossing the 1-acre DEQ threshold outright.' },
+];
+
+const faqs = [
+  { question: 'What’s the difference between site preparation and excavation?', answer: 'Site prep is everything that gets a raw lot build-ready: clearing, stripping topsoil, cutting and filling to grade, compacting, and staking. Excavation is the specific digging that follows for a foundation, utility line, or drainage feature, once the site is already prepped. They’re two phases of the same project, not interchangeable terms for the same task.' },
+  { question: 'Should site prep happen before or after I hire a builder?', answer: 'Site work typically starts once a builder is hired and permitting and design are already underway, ahead of vertical construction. The exact order depends on your specific project, so it’s worth confirming the sequence directly with your builder or general contractor.' },
+  { question: 'Do I need a survey before site prep can start?', answer: 'Yes, typically. A topographic survey establishing grades, slopes, drainage, and property lines is standard before a grading plan can be finalized. Confirm the exact requirement for your specific parcel with Lane County, since some smaller or simpler projects may have different expectations.' },
+  { question: 'Will site prep delay my building permit?', answer: 'Not necessarily, but the two permit tracks aren’t automatically the same thing. Foundation excavation done under an active building permit is generally exempt from a separate grading permit, but driveway or landscape grading usually isn’t. Confirm the specifics of your project with Lane County’s Land Management Division so nothing catches you off guard mid-project.' },
+  { question: 'Do I need a permit for site prep in Lane County?', answer: 'It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1 — confirm the exact figure for your project with Lane County LMD rather than treating that as an exact, guaranteed number. Larger projects may also need an Erosion Prevention Permit or Oregon DEQ’s 1200-C stormwater permit.' },
+  { question: 'What happens if the crew hits rock or bad soil partway through the job?', answer: 'It’s an honest, explainable cost driver, not a bait-and-switch. Standard excavation runs roughly $5–$15 per cubic yard; rock can push that to $50–$200 per cubic yard. A soil check before quoting is one real way to protect your budget against that kind of surprise.' },
+  { question: 'How much does site preparation typically cost in Lane County?', answer: 'General ranges run roughly $8,000–$50,000+ depending on complexity, or roughly $0.11–$1.50+ per square foot for grading specifically — but there’s no Lane-County-specific figure that applies to every lot, since scope, access, and soil vary too much. A free on-site estimate is the only accurate way to price a specific project.' },
+  { question: 'How long does site preparation take?', answer: 'A well-kept, already-open lot can sometimes be cleared in about a week. Overall residential site prep more commonly runs one to two months depending on vegetation, soil, and weather, with commercial or subdivision work following its own timeline based on scope.' },
+  { question: 'Does site prep need to happen before or after my septic system is evaluated?', answer: 'Before grading disturbs that specific area. The drainfield location needs to be evaluated and confirmed first, since cutting, filling, or otherwise disturbing an approved drainfield area afterward can void the county’s septic approval.' },
+];
+
+const related = [
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/services/land-clearing' },
+  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/services/grading-leveling' },
+  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/services/foundation-excavation' },
+  { title: 'Drainage Excavation', description: 'Excavation and grading to correct standing water and poor drainage.', href: '/services/drainage-excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/site-preparation/#service',
+      name: 'Site Preparation',
+      serviceType: 'Site Preparation',
+      description: 'Site preparation is the work that gets a raw or partially-cleared lot ready for construction: clearing brush and debris, stripping and stockpiling topsoil, cutting and filling to bring the pad to design grade, compacting the subgrade, and staking corners and elevations for the build crew. It is distinct from excavation, which is the specific digging done for a foundation, utility line, or drainage feature once the site is prepped.',
+      url: 'https://www.ddlandworks.com/services/site-preparation/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'What Does Site Preparation Include?',
+      description: 'The typical, ordered sequence a site-preparation project follows before construction can start.',
+      step: processSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.detail })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Site Preparation', item: 'https://www.ddlandworks.com/services/site-preparation/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Site Preparation in Eugene & Lane County, OR | D&D Land Works"
+	description="Site preparation vs. excavation, explained. Clearing, grading & permits for Lane County, OR lots. Licensed, bonded. Free estimate: 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Site Preparation in Eugene, Springfield & Lane County, Oregon"
+		subheadline="One licensed, bonded contractor for the clearing, grading, and staking that happens before a foundation crew ever shows up — and a clear answer to how site prep is actually different from excavation."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined: dense, self-contained fact paragraph, first 30% of page per brief -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		descriptionHtml="<p>Site preparation is the work that gets a raw or partially-cleared lot ready for construction &mdash; clearing brush and debris, stripping and stockpiling topsoil, cutting and filling to bring the pad to design grade, compacting the subgrade, and staking corners and elevations for the build crew. It&rsquo;s distinct from excavation, the specific digging done for a foundation, utility line, or drainage feature once the site is already prepped.</p><p>D&amp;D Land Works provides site preparation for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon &mdash; including new home builds, ADUs, shop and barn pads, subdivisions, and commercial site development &mdash; as part of a licensed, bonded (<strong class='font-semibold text-ink'>Oregon CCB #261742</strong>) full-service excavation company. Site work in Lane County may require a grading permit, an erosion-control permit, or Oregon <strong class='font-semibold text-ink'>DEQ&rsquo;s 1200-C</strong> stormwater permit depending on project size; D&amp;D can help confirm what applies before work begins.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Site Prep vs. Excavation"
+		headline="What's the Difference Between Site Preparation and Excavation?"
+		image="/hero-bg-2.webp"
+		imageAlt="Excavator preparing a graded lot in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="1 License"
+		badgeLabel="Both Phases Covered"
+		ctaLabel="See Excavation Services"
+		ctaHref="/services/excavation"
+		bodyHtml="<p>Site preparation gets a raw or partially-cleared lot ready to build on: clearing brush and trees, stripping and stockpiling topsoil, cutting and filling to bring the pad to grade, and compacting the subgrade so it holds weight. Excavation is the specific digging that follows once the pad is already prepped &mdash; a foundation footing, a utility trench, or a drainage line.</p><p>Think of site prep as getting the whole canvas ready, and excavation as the targeted cuts made on that canvas afterward. D&amp;D Land Works is licensed and bonded (Oregon CCB #261742) to handle both phases under one contract, so the transition between them doesn&rsquo;t require a second contractor or a second bid.</p>"
+	/>
+	<!-- What Does Site Preparation Include — process steps -->
+	<section class="bg-ink text-white">
+		<div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
+				What Does Site Preparation Include?
+			</h2>
+			<p class="mt-4 text-slate-300 leading-relaxed text-center max-w-2xl mx-auto">
+				The scope changes lot to lot (a wooded parcel outside Veneta needs more upfront clearing than an already-open lot in a Eugene subdivision), but the sequence itself is consistent.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{processSteps.map((item) => (
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
+						<span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+							{item.step}
+						</span>
+						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-400 text-center">
+				Steps 2, 5, and 7 lead into <a href="/services/land-clearing" class="text-brand-blue-light underline underline-offset-2">land clearing</a>, <a href="/services/grading-leveling" class="text-brand-blue-light underline underline-offset-2">grading &amp; leveling</a>, and <a href="/services/drainage-excavation" class="text-brand-blue-light underline underline-offset-2">drainage excavation</a> respectively, when a lot needs more dedicated work in those areas.
+			</p>
+		</div>
+	</section>
+	<!-- Before/after builder timing -->
+	<section class="bg-white border-b border-slate-200">
+		<div class="mx-auto max-w-5xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+				Should Site Prep Happen Before or After I Hire a Builder?
+			</h2>
+
+			<div class="mt-10 flex">
+				{buildTimeline.map((stop, i) => (
+					<div class="flex flex-1 flex-col items-center text-center">
+						<div class="flex w-full items-center">
+							<div class:list={["h-px flex-1", i === 0 ? "invisible" : "bg-slate-300"]}></div>
+							<div
+								class:list={[
+									"h-3.5 w-3.5 shrink-0 rounded-full border-2",
+									stop.active ? "border-brand-blue bg-brand-blue" : "border-slate-300 bg-white",
+								]}
+							></div>
+							<div class:list={["h-px flex-1", i === buildTimeline.length - 1 ? "invisible" : "bg-slate-300"]}></div>
+						</div>
+						<p class:list={[
+							"mt-3 px-1 text-xs leading-snug sm:text-sm",
+							stop.active ? "font-display font-bold text-brand-blue" : "text-slate-500",
+						]}>
+							{stop.label}
+						</p>
+					</div>
+				))}
+			</div>
+
+			<div class="mt-10 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+				<p class="text-slate-700 leading-relaxed">
+					Site prep typically starts once a builder is hired and permitting and design work is already underway &mdash; one of the first things that happens on the ground, ahead of vertical construction. The exact sequence depends on your builder&rsquo;s process and your specific permit situation, so it&rsquo;s worth confirming timing directly with your builder or general contractor before scheduling. As a rule, site prep comes early, and <a href="/services/foundation-excavation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">foundation excavation</a> follows once the pad is ready.
+				</p>
+				<div class="rounded-(--radius-brand-card) border-l-4 border-brand-blue bg-brand-blue-light/40 p-5">
+					<p class="font-display font-bold uppercase tracking-wide text-xs text-brand-blue-dark">
+						Worth Knowing
+					</p>
+					<p class="mt-2 text-sm text-ink leading-relaxed">
+						It&rsquo;s not unusual for a homeowner to close on a lot, sign with a builder, and only then get a call asking them to line up site work &mdash; a step nobody warned them about.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Permits -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Do I Need a Permit for Site Prep in Lane County?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				It depends on how much earth moves and how the project is scoped. There isn&rsquo;t one universal answer, but three specific permits are the ones to know about.
+			</p>
+			<div class="mt-10 grid gap-6 lg:grid-cols-3">
+				{permits.map((permit) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue">{permit.name}</p>
+						<p class="mt-3 text-sm text-slate-600 leading-relaxed">{permit.trigger}</p>
+						<p class="mt-3 text-xs text-slate-500">Administered by: {permit.admin}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto text-center">
+				Foundation excavation done under an active building permit is generally exempt from a separate grading permit, but driveway and landscape grading usually aren&rsquo;t. And a project under 1 acre can still need a local Type I erosion permit even when it&rsquo;s too small to trigger the state-level DEQ 1200-C. The two permit tiers don&rsquo;t always turn on at the same size. If your project is anywhere near either threshold, confirming with <a href="https://www.lanecounty.org/government/county_departments/public_works/land_management_division" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">Lane County LMD</a> before work starts is worth the phone call.
+			</p>
+		</div>
+	</section>
+	<!-- Project types -->
+	<section class="bg-white border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Kind of Project Is This For?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Site prep isn&rsquo;t just for new single-family homes, even though that&rsquo;s the project type most competitor sites default to describing.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{projectTypes.map((p) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{p.title}</p>
+						<p class="mt-2 text-sm text-slate-600">{p.detail}</p>
+					</div>
+				))}
+			</div>
+			<div class="mt-10 text-center">
+				<a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Cost -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Site Preparation Cost in Lane County?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 leading-relaxed">
+				There&rsquo;s no Lane-County-specific figure to point to here, and any site-prep contractor who quotes one sight-unseen is guessing. The ranges below are general industry figures, not a quote for your project.
+			</p>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Scope</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Affects Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{costRows.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.scope}</td>
+								<td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
+								<td class="py-3 text-slate-600">{row.affects}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center">
+				These are general, national/statewide ranges, not Lane County-specific pricing, and not a substitute for an actual site visit.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Timeline + rock/soil + septic — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="Timeline"
+		headline="How Long Does Site Preparation Take?"
+		image="/hero-bg-3.webp"
+		imageAlt="Graded and compacted building pad ready for a foundation crew"
+		imageSide="left"
+		badgeValue="1–2 Months"
+		badgeLabel="Typical Residential Timeline"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>A well-kept, already-open lot with easy access can sometimes be cleared and graded in about a week. Overall residential site preparation more commonly runs one to two months from start to a builder-ready pad, once vegetation, soil conditions, weather, and permitting are factored in.</p><p>Commercial or subdivision site work is a wider range &mdash; commonly one to three-plus weeks depending on scope, though larger multi-lot developments can extend well beyond that. Scheduling around Oregon&rsquo;s dry season (roughly May through October) also affects timeline, since wet-season grading in Willamette Valley clay soil generally moves slower.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Cost Drivers"
+		headline="What Happens If the Crew Hits Rock or Bad Soil?"
+		image="/hero-bg-4.webp"
+		imageAlt="Excavator bucket cutting through soil on a Lane County job site"
+		imageSide="right"
+		badgeValue="$5–$15"
+		badgeLabel="Per Cubic Yard, Standard Soil"
+		ctaLabel="Ask About Soil Conditions"
+		ctaHref="/contact"
+		bodyHtml="<p>It happens, and it&rsquo;s not a sign of a bad contractor or a bait-and-switch quote. It&rsquo;s a real cost driver that a site-prep contractor should explain honestly rather than bury in a change order. Standard excavation typically runs $5&ndash;$15 per cubic yard; hitting solid rock can push that to $50&ndash;$200 per cubic yard, and clay soil commonly adds another 25&ndash;50% on top of baseline cost.</p><p>A geotechnical soil study, usually in the $2,000&ndash;$5,000 range, is documented to typically prevent a real share of cost overruns on a difficult site by catching rock or bad soil before equipment is already committed. If your lot has any history of rock outcrops or notably heavy clay, asking about a soil check before quoting is a reasonable, budget-protecting question to raise, not an upsell.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Septic Sequencing"
+		headline="Site Prep and Your Septic System"
+		image="/hero-bg-1.webp"
+		imageAlt="Cleared and staked lot ready for septic and site work in Lane County"
+		imageSide="left"
+		badgeValue="DEQ Certified"
+		badgeLabel="Septic Install & Repair"
+		ctaLabel="Septic Install & Repair"
+		ctaHref="/services/septic-install-repairs"
+		bodyHtml="<p>If your project includes a septic system, sequencing matters more than it might seem. Lane County requires that once a drainfield location is proposed or approved through a test-pit evaluation, it can&rsquo;t be cut, filled, paved, or otherwise disturbed. Doing so can void the site&rsquo;s septic approval outright.</p><p>In practice, that means the area evaluated for your drainfield needs to be confirmed and flagged before general grading starts on the rest of the lot. If you&rsquo;re planning septic work alongside site prep, confirm with your septic evaluator or <a href='https://www.lanecounty.org/government/county_departments/public_works/land_management_division/on-_site_wastewater' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Lane County&rsquo;s On-Site Wastewater Program</a> that the drainfield area has been evaluated and marked before grading equipment moves near it.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Site Preparation in Lane County, OR"
+		headline="Why Lane County Homeowners and Builders Trust D&D Land Works for Site Prep"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works equipment grading a site-prep job in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the <a href='https://search.ccb.state.or.us/search/' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>CCB&rsquo;s own license lookup</a> before you ever pick up the phone.</p><p>David Deggelman owns the company and walks every site personally before quoting, so your estimate reflects your lot&rsquo;s actual soil, slope, and access, not a generic number. There&rsquo;s no subcontracted crew and no call-center handoff: the person who scopes your site-prep job is the one who runs the equipment on it. If you&rsquo;re planning a new build, ADU, or commercial pad anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every site-prep job starts with David walking the lot in person, not a phone-in estimate. One licensed, bonded crew handles the clearing, grading, and staking, and confirms which permits actually apply before equipment shows up."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Lot Scoped"
+		subheadline="Free estimate for site prep anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

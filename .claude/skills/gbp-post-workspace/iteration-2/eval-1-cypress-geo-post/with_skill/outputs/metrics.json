@@ -1,0 +1,37 @@
+{
+  "tool_calls": {
+    "Read": 10,
+    "Write": 3,
+    "Bash": 7,
+    "WebFetch": 5,
+    "WebSearch": 2,
+    "Grep": 4,
+    "Glob": 0,
+    "Edit": 2,
+    "ToolSearch": 1
+  },
+  "total_tool_calls": 34,
+  "total_steps": 14,
+  "files_created": [
+    "04-gmb/posts/drafts/2026-05-03_ac-tune-up-cypress-tx-pre-summer.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-1-cypress-geo-post/with_skill/outputs/2026-05-03_ac-tune-up-cypress-tx-pre-summer.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-1-cypress-geo-post/with_skill/outputs/transcript.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-1-cypress-geo-post/with_skill/outputs/metrics.json"
+  ],
+  "files_modified": [
+    "04-gmb/posts/templates/post_templates.json"
+  ],
+  "errors_encountered": 2,
+  "error_notes": [
+    "First draft had 2 em dashes (caught by pre-write check, rewritten before saving)",
+    "First Edit attempt failed (old_string mismatch due to em dash encoding); resolved by full file rewrite"
+  ],
+  "output_chars": 4847,
+  "transcript_chars": 8390,
+  "post_body_chars": 1422,
+  "post_body_in_range": true,
+  "all_pre_write_checks_passed": true,
+  "cta_url_verified_200": true,
+  "new_template_added": true,
+  "geo_rotation_satisfied": true
+}

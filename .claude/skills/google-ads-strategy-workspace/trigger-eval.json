@@ -1,0 +1,22 @@
+[
+  {"query": "ok i need to figure out how to structure my google ads account for 75 degree ac, we have $5k a month and im not sure if i should split into multiple campaigns", "should_trigger": true},
+  {"query": "my CPL has been going up over the last 3 weeks for our HVAC ads in houston — was 55 now its 89, what should i look at first?", "should_trigger": true},
+  {"query": "should i turn on performance max for the install campaign or stick with regular search? we're 2 months in", "should_trigger": true},
+  {"query": "ahh the LSA ranking is dropping fast. responded to a couple negative reviews late, dispute on a junk lead got denied. how do i fix", "should_trigger": true},
+  {"query": "we just hit 35 conversions in our emergency campaign last month. ready to switch from max conversions to tcpa or wait?", "should_trigger": true},
+  {"query": "july and august coming up for hvac in houston — what do i need to do to my google ads to prepare for the heat wave traffic spike", "should_trigger": true},
+  {"query": "client wants to double the budget from $4k to $8k starting next month for our google ads — how should i pace the increase without spiking CPL?", "should_trigger": true},
+  {"query": "lost IS budget is 38% — too high right? what should i do, lower the geo or increase budget", "should_trigger": true},
+  {"query": "google ads question — when do i actually launch the maintenance campaign for the HVAC client", "should_trigger": true},
+  {"query": "in performance max should i have one asset group for repair + install or split them?", "should_trigger": true},
+  {"query": "search terms report is full of 'window ac repair' clicks — i need to negative those right? account or campaign level?", "should_trigger": false},
+  {"query": "what's the keyword list for 75 degree ac's emergency campaign? need exact + phrase", "should_trigger": false},
+  {"query": "write me 15 RSA headlines for the maintenance campaign at 75 degree ac", "should_trigger": false},
+  {"query": "my landing page H1 is 'welcome to 75 degree ac' but my ad says emergency ac repair houston — quality score is tanking, what do i fix", "should_trigger": false},
+  {"query": "my facebook ads are stuck in learning phase forever, we have 3 ad sets running at $30/day each", "should_trigger": false},
+  {"query": "the 75 degree ac website has 86 pages with noindex tags, how do i fix that in WordPress?", "should_trigger": false},
+  {"query": "draft a google business profile post for this week — was thinking summer prep tips", "should_trigger": false},
+  {"query": "the emergency landing page has a 7-field form, should we cut it down? what fields do you keep for HVAC", "should_trigger": false},
+  {"query": "got a 1 star review on google about pricing — how should we respond", "should_trigger": false},
+  {"query": "set up my crm to send order confirmation emails when someone books", "should_trigger": false}
+]

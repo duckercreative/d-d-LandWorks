@@ -1,0 +1,31 @@
+{
+  "skill_name": "gbp-post",
+  "iteration": 1,
+  "configs": {
+    "with_skill": {
+      "pass_rate": 0.964,
+      "total_assertions": 28,
+      "assertions_passed": 27,
+      "mean_duration_seconds": 223.6,
+      "mean_tokens": 78932
+    },
+    "without_skill": {
+      "pass_rate": 0.607,
+      "total_assertions": 28,
+      "assertions_passed": 17,
+      "mean_duration_seconds": 121.0,
+      "mean_tokens": 49004
+    }
+  },
+  "delta": {
+    "pass_rate_delta": 0.357,
+    "time_cost_percent": 84.8,
+    "token_cost_percent": 61.1
+  },
+  "per_eval": [
+    {"eval": "eval-0-todays-gbp-post", "with_skill": "10/10", "without_skill": "9/10", "notes": "Baseline contaminated — autonomously followed skill"},
+    {"eval": "eval-1-cypress-geo-post", "with_skill": "8/8", "without_skill": "4/8", "notes": "Baseline: 540 char (wrong length), no CTA URL, no GSC check, too many emojis"},
+    {"eval": "eval-2-weekly-batch", "with_skill": "9/10", "without_skill": "4/10", "notes": "Baseline: phone in body on all 3 posts, wrong char lengths, broken URLs, flipped cadence"}
+  ],
+  "iteration_2_fix": "Clarify batch-mode output format: single RESEARCH_SWEEP.md + per-post files with refs, rather than per-post embedded research notes"
+}

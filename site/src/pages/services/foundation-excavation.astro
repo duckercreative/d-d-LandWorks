@@ -1,0 +1,385 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/foundation-excavation-content.md).
+  Promoted from the /services/foundation-excavation-test draft after review.
+
+  OPEN ITEM carried from the content file: the 12-inch frost-depth figure (ORSC
+  R403.1.4) rests on two agreeing secondary sources, not a direct primary-table
+  read (codes.iccsafe.org 403'd during research). Confirm with Lane County/
+  Eugene/Springfield's building department before treating it as final. Also
+  unconfirmed: whether D&D's scope includes foundation-drain/waterproofing
+  install, and the GC-schedule-coordination framing in the closing H2.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const foundationTypes = [
+  { type: 'Slab-on-grade', depth: 'Shallow topsoil strip, roughly 2–3 ft', drives: 'Minimal depth and haul-off; national range roughly $6–$16/sq ft' },
+  { type: 'Crawlspace', depth: 'Perimeter trench to footing depth plus stem-wall height, 18–48 in finished clearance', drives: 'Trench length and depth, stem-wall pour; national range roughly $8–$18/sq ft' },
+  { type: 'Full basement', depth: '8–10 ft, sloped or shored', drives: 'Shoring/benching, hundreds of cubic yards hauled off, often dewatering; national range roughly $75–$150/cu yd removed' },
+];
+
+const inspectionSteps = [
+  { step: '1', title: 'Excavate', detail: 'Excavate the trench or pad area to plan depth and footprint.' },
+  { step: '2', title: 'Clear loose material', detail: 'Clear loose material and mud out of the excavation.' },
+  { step: '3', title: 'Erect forms', detail: 'Erect and secure the forms.' },
+  { step: '4', title: 'Place rebar', detail: 'Place and secure the reinforcing steel.' },
+  { step: '5', title: 'Hold for inspection', detail: "Hold for the foundation/footing inspection — Eugene's eBuild system, or Lane County Building Safety for unincorporated jobs." },
+  { step: '6', title: 'Pour', detail: 'Pour concrete only after the inspection passes.' },
+];
+
+const drainageReqs = [
+  { name: 'Foundation drain (ORSC R405)', detail: 'Required around concrete or masonry foundations enclosing habitable or usable space, unless the foundation sits on well-drained or sand-gravel soil.' },
+  { name: 'Waterproofing or dampproofing (ORSC R406)', detail: 'Required on any wall that needs the R405 drain.' },
+  { name: 'Crawlspace vapor retarder (ORSC R408.1/R408.3)', detail: 'A Class I vapor retarder over exposed ground in both vented and unvented crawlspaces, with specific overlap and seal requirements.' },
+];
+
+const faqs = [
+  { question: 'How deep does a foundation footing need to be in Oregon?', answer: 'Not less than 12 inches below finished grade on undisturbed ground, per ORSC R403.1.4, a figure that also satisfies Lane County’s frost-protection depth under Table R301.2. This number rests on two agreeing secondary sources rather than a direct read of the primary code table, so it’s worth confirming with your local building department before treating it as final for your project.' },
+  { question: 'Does foundation type (slab, crawlspace, or basement) change the excavation cost?', answer: 'Yes, significantly. A slab needs only a shallow topsoil strip, a crawlspace needs a perimeter trench cut to footing depth, and a full basement requires an 8- to 10-foot excavation with far more material hauled off. National data puts a full basement dig 40–60% more expensive than a slab.' },
+  { question: 'What is "over-dig," and how much extra space does a crew need around a foundation?', answer: 'Over-dig is the extra excavation beyond the footing or wall lines a crew needs to physically work, forming, waterproofing, and backfilling. OSHA’s house-foundation/basement rule sets a minimum working width of 2 feet at the bottom of the excavation.' },
+  { question: 'Does the building department inspect a foundation before the concrete gets poured?', answer: 'Yes. In both Eugene and unincorporated Lane County, the foundation/footing inspection happens after the trench or pad is excavated, forms are erected, and rebar is placed, but before any concrete is poured. Skipping that step isn’t legal, and it’s a red flag if a contractor implies otherwise.' },
+  { question: 'What happens if the excavator hits rock or water while digging a foundation?', answer: 'It’s a real, explainable cost and schedule driver, not a bait-and-switch. The same rock-cost mechanics covered on the Excavation & Earthmoving page apply, but the stakes are higher on a foundation dig’s tighter construction timeline. Deeper digs in the Willamette Valley’s high winter water table sometimes require dewatering.' },
+  { question: 'Do I need a soils report or an engineer before excavating for a foundation?', answer: 'Not always required by code for a typical single-family foundation, but recommended. A $2,000–$5,000 geotechnical/soils study is credited with preventing 20–50% of cost overruns from unexpected rock or bad soil, and ORSC R403.1 requires footings to bear on undisturbed natural soil or engineered fill.' },
+  { question: 'Does an ADU need its own foundation excavation?', answer: 'Yes, an ADU built as a standalone structure needs its own footing and foundation dig, commonly a simpler slab-on-grade or monolithic-slab type. Excavating close to an existing house’s foundation triggers OSHA’s underpinning rule, 1926.652(b).' },
+  { question: 'Does Oregon require a drain around a foundation?', answer: 'Yes, for most. Per ORSC R405, a foundation drain is required around concrete or masonry foundations retaining earth and enclosing habitable space, unless the foundation sits on well-drained soil. This is a different system from a septic drainfield or a yard drainage swale, which happen to share the word "drain."' },
+  { question: 'Should foundation excavation happen before or after I hire a builder?', answer: 'Foundation excavation is almost always tied to an active building permit and a builder’s or GC’s schedule, not a standalone decision made in isolation. D&D coordinates around that schedule and the inspection process rather than treating the job as self-contained.' },
+];
+
+const related = [
+  { title: 'Excavation & Earthmoving', description: 'General cut-and-fill, backfill, and earthmoving mechanics.', href: '/services/excavation' },
+  { title: 'Site Preparation', description: 'Clearing, stripping topsoil, and grading a raw lot before excavation starts.', href: '/services/site-preparation' },
+  { title: 'Trenching & Backfill', description: 'Trenching and backfill for utility runs.', href: '/services/trenching-backfill' },
+  { title: 'Drainage Excavation', description: 'Yard-scale swales and drainage trenches, distinct from the code-required foundation drain.', href: '/services/drainage-excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/foundation-excavation/#service',
+      name: 'Foundation Excavation',
+      serviceType: 'Foundation Excavation',
+      description: "Foundation excavation is the precise digging that creates space for a footing and foundation wall or slab. In Lane County, Oregon, footings must be placed at least 12 inches below finished grade on undisturbed soil, per the Oregon Residential Specialty Code. D&D Land Works provides foundation excavation for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon.",
+      url: 'https://www.ddlandworks.com/services/foundation-excavation/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Foundation Excavation', item: 'https://www.ddlandworks.com/services/foundation-excavation/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Foundation Excavation in Eugene & Lane County, OR | D&D Land Works"
+	description="How deep must a footing be in Oregon? Foundation type, cost, and inspection timing for Lane County, OR. Licensed, bonded. Free estimate: 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Foundation Excavation in Eugene, Springfield & Lane County, Oregon"
+		subheadline="Footings, slabs, and basements all start with a hole cut to the right depth and grade. Get it wrong here and every trade after you inherits the problem."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Foundation Excavation in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Foundation Excavation</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>Foundation excavation is the precise digging that creates space for a footing and foundation wall or slab &mdash; a narrower, higher-stakes step within general excavation, since every trade that follows (forming, pouring, framing) depends on getting it right. Excavation scope differs by foundation type: a slab needs only a shallow topsoil strip, a crawlspace needs a perimeter trench to footing depth, and a full basement requires an 8&ndash;10 foot excavation with sloped or shored walls.</p><p>D&amp;D Land Works provides foundation excavation for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, coordinating the open excavation to be ready for the building department&rsquo;s footing inspection, which happens before concrete is poured, not after, under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
+	/>
+	<!-- Scope vs general excavation -->
+	<PhotoContentBlock
+		eyebrow="Foundation vs. General Excavation"
+		headline="How Is Foundation Excavation Different From General Excavation?"
+		image="/hero-bg-1.webp"
+		imageAlt="Excavated foundation trench with forms ready on a Lane County job site"
+		imageSide="left"
+		badgeValue="4 Factors"
+		badgeLabel="Specific to Foundation Digs"
+		ctaLabel="See Excavation & Earthmoving"
+		ctaHref="/services/excavation"
+		bodyHtml="<p>Foundation excavation is a specific application of general excavation, not a separate skill. General cut-and-fill mechanics, backfill and compaction as a concept, rock-removal cost basics, and the excavation-vs-grading distinction are covered on <a href='/services/excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Excavation &amp; Earthmoving</a> and aren&rsquo;t repeated here.</p><p>What&rsquo;s specific to a foundation dig is everything downstream of a building permit: the code-required footing depth, how foundation type changes scope and cost, the over-dig a crew needs to work safely, and the inspection a building department holds before concrete gets poured.</p>"
+	/>
+	<!-- Frost depth -->
+	<PhotoContentBlock
+		eyebrow="Footing Depth"
+		headline="How Deep Does a Foundation Footing Need to Be in Oregon?"
+		image="/hero-bg-2.webp"
+		imageAlt="Deep foundation trench excavated to code depth in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="12 in"
+		badgeLabel="Min. Footing Depth (ORSC R403.1.4)"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>In Lane County, footings must be placed not less than 12 inches below finished grade on undisturbed ground, per Oregon Residential Specialty Code Section <a href='https://up.codes/viewer/oregon/irc-2021/chapter/4/foundations' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>R403.1.4</a>. That same 12-inch figure also satisfies the state&rsquo;s frost-protection depth for Lane County&rsquo;s elevation under ORSC Table R301.2, since Eugene sits at roughly 430 feet, well under the 2,500-foot elevation where the required depth increases to 18 inches.</p><p>This figure rests on two independent secondary sources that agree with each other, not a direct read of the primary ICC-published table, so it&rsquo;s worth confirming with Lane County&rsquo;s, Eugene&rsquo;s, or Springfield&rsquo;s building department for your specific project before treating it as final.</p>"
+	/>
+	<!-- Foundation type -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Does Foundation Type Change the Excavation Scope or Cost?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Yes, significantly. National cost data puts a full basement dig 40&ndash;60% more expensive than a slab, driven by depth, shoring, and haul-off volume rather than any single line item. General national ranges, not Lane County pricing, a site visit is still the only way to price a specific project.
+			</p>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Foundation Type</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Excavation Depth</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Drives Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foundationTypes.map((f) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{f.type}</td>
+								<td class="py-3 pr-4 text-slate-600">{f.depth}</td>
+								<td class="py-3 text-slate-600">{f.drives}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center max-w-2xl mx-auto">
+				Two pour methods sit underneath these types: a monolithic slab pours the footing and floor together in one shot, favored for garages, shops, ADUs, and flat sites. A stem-wall foundation pours the footing first, then a short wall, then the floor: the sequence a crawlspace, basement, or deeper frost protection generally requires.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Over-dig -->
+	<PhotoContentBlock
+		eyebrow="Over-Dig"
+		headline='What Is "Over-Dig," and How Much Working Space Does a Crew Need?'
+		image="/hero-bg-3.webp"
+		imageAlt="Crew working the formwork inside an excavated foundation trench"
+		imageSide="left"
+		badgeValue="2 ft"
+		badgeLabel="Min. OSHA Working Width"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Over-dig is the extra excavation beyond the footing or wall lines a crew needs to physically work: forming, waterproofing, and backfilling.</p><p>For a house foundation or basement excavation under 7.5 feet deep, or properly benched, OSHA&rsquo;s <a href='https://www.osha.gov/laws-regs/standardinterpretations/1995-06-30' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>1995 interpretation</a> of 29 CFR 1926.652 sets a minimum working width of 2 feet at the bottom of the excavation, from the excavation face to the formwork.</p>"
+	/>
+	<!-- Inspection sequence -->
+	<section class="bg-ink text-white">
+		<div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
+				Does the Building Department Inspect a Foundation Before It&rsquo;s Poured?
+			</h2>
+			<p class="mt-4 text-slate-300 leading-relaxed text-center max-w-2xl mx-auto">
+				Yes. In both Eugene and unincorporated Lane County, concrete doesn&rsquo;t get poured until the building department signs off on the open excavation.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{inspectionSteps.map((item) => (
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
+						<span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+							{item.step}
+						</span>
+						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-400 text-center">
+				D&amp;D Land Works leaves the excavation open and ready for that inspection rather than rushing toward a pour.
+			</p>
+		</div>
+	</section>
+	<!-- Foundation drainage -->
+	<section class="bg-white border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink">
+				What Does Oregon Require for Foundation Drainage?
+			</h2>
+			<p class="mt-3 text-slate-700 leading-relaxed">
+				Oregon code requires three parallel things around most foundations that retain earth and enclose habitable space:
+			</p>
+			<div class="mt-6 grid gap-4">
+				{drainageReqs.map((d) => (
+					<div class="card">
+						<p class="font-display font-bold text-sm text-ink">{d.name}</p>
+						<p class="mt-1 text-sm text-slate-600">{d.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-6 text-sm text-slate-600 leading-relaxed">
+				This is a different system from a <a href="/services/septic-install-repairs" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">septic drainfield</a>, which disperses wastewater, and from a yard-scale swale or <a href="/services/drainage-excavation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">drainage excavation</a> that manages surface runoff. All three happen to share the word &ldquo;drain,&rdquo; but they don&rsquo;t share a purpose.
+			</p>
+		</div>
+	</section>
+	<!-- ADU + rock/water + builder timing — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="ADU Foundations"
+		headline="What About an ADU or a Foundation Near an Existing House?"
+		image="/hero-bg-4.webp"
+		imageAlt="Small slab-on-grade foundation excavated for an ADU in Lane County"
+		imageSide="right"
+		badgeValue="Own Footing"
+		badgeLabel="Every ADU Needs One"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Yes. An ADU built as its own structure needs its own footing and foundation excavation, commonly a simpler slab-on-grade or monolithic-slab type rather than a full basement.</p><p>Digging close to an existing house raises a separate issue: OSHA 1926.652(b) prohibits excavating below the level of an existing foundation or retaining wall&rsquo;s base unless underpinning is installed, or a registered professional engineer confirms the structure won&rsquo;t be affected.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Rock & Water"
+		headline="What Happens If the Crew Hits Rock or Water Under a Foundation?"
+		image="/hero-bg-1.webp"
+		imageAlt="Excavated foundation trench with visible groundwater in Lane County"
+		imageSide="left"
+		badgeValue="High Water Table"
+		badgeLabel="Winter Dewatering Sometimes Needed"
+		ctaLabel="See Excavation & Earthmoving"
+		ctaHref="/services/excavation"
+		bodyHtml="<p>It&rsquo;s a real, explainable cost and schedule driver, not a bait-and-switch. The same rock-cost mechanics covered on the <a href='/services/excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Excavation &amp; Earthmoving</a> page apply here too, though the stakes run higher on a foundation dig, since it sits on a tighter construction timeline than a standalone driveway or pond.</p><p>Deeper digs in the Willamette Valley&rsquo;s high winter water table sometimes call for dewatering: pumping groundwater out of the open excavation before work continues.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Builder Timing"
+		headline="Should Foundation Excavation Happen Before or After I Hire a Builder?"
+		image="/hero-bg-2.webp"
+		imageAlt="Foundation excavation coordinated with a builder's schedule in Lane County"
+		imageSide="right"
+		badgeValue="1 Schedule"
+		badgeLabel="Coordinated With Your Builder"
+		ctaLabel="See Site Preparation"
+		ctaHref="/services/site-preparation"
+		bodyHtml="<p>Foundation excavation is almost always tied to an active building permit and a builder&rsquo;s or GC&rsquo;s schedule, not a standalone decision made on its own.</p><p>D&amp;D Land Works coordinates around that schedule and the <a href='/services/site-preparation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>site preparation</a> and inspection process rather than treating the dig as a self-contained job.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Foundation Excavation in Lane County, OR"
+		headline="Why Do Lane County Builders and Homeowners Trust D&D Land Works for Foundation Excavation?"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works excavating a foundation trench in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every foundation dig is left open and ready for the building department&rsquo;s inspection rather than rushed toward a pour.</p><p>David Deggelman scopes every job in person and coordinates around your builder&rsquo;s schedule, not the other way around. If you&rsquo;re planning a foundation dig for a new build, ADU, or addition anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every foundation dig gets cut to code depth, held open for the building department's inspection before concrete is poured, and coordinated around your builder's schedule from day one."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Foundation Excavation Scoped"
+		subheadline="Footings, slabs, and basements all start with a hole cut to the right depth and grade, held for inspection before anything gets poured. Free estimate for foundation excavation anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

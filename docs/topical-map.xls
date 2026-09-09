@@ -1,0 +1,1262 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Title>D&amp;D Land Works — Topical Map &amp; SEO Architecture</Title>
+  <Author>Ducker Creative</Author>
+  <Created>2026-09-04T00:00:00Z</Created>
+ </DocumentProperties>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#1A1A1A"/>
+  </Style>
+  <Style ss:ID="sTitle">
+   <Font ss:FontName="Calibri" ss:Size="16" ss:Bold="1" ss:Color="#1F3A5F"/>
+   <Alignment ss:Vertical="Center"/>
+  </Style>
+  <Style ss:ID="sSub">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Italic="1" ss:Color="#555555"/>
+  </Style>
+  <Style ss:ID="sHeader">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1" ss:Color="#FFFFFF"/>
+   <Interior ss:Color="#1F3A5F" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Center" ss:Horizontal="Left" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#FFFFFF"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="sWrap">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E0E0E0"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="sP0">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1" ss:Color="#FFFFFF"/>
+   <Interior ss:Color="#C0392B" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Top" ss:Horizontal="Center"/>
+  </Style>
+  <Style ss:ID="sP1">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1" ss:Color="#FFFFFF"/>
+   <Interior ss:Color="#E67E22" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Top" ss:Horizontal="Center"/>
+  </Style>
+  <Style ss:ID="sP2">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#1A1A1A"/>
+   <Interior ss:Color="#F1C40F" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Top" ss:Horizontal="Center"/>
+  </Style>
+  <Style ss:ID="sP3">
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#1A1A1A"/>
+   <Interior ss:Color="#D5DBDB" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Top" ss:Horizontal="Center"/>
+  </Style>
+  <Style ss:ID="sNum">
+   <Alignment ss:Vertical="Top" ss:Horizontal="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E0E0E0"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="sBuildNow">
+   <Font ss:Bold="1" ss:Color="#1E8449"/>
+   <Interior ss:Color="#D4EFDF" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+  </Style>
+  <Style ss:ID="sBuildLater">
+   <Interior ss:Color="#FCF3CF" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+  </Style>
+  <Style ss:ID="sCityOnly">
+   <Interior ss:Color="#EBF5FB" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+  </Style>
+  <Style ss:ID="sConfirm">
+   <Font ss:Color="#B9770E"/>
+   <Interior ss:Color="#FDEBD0" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+  </Style>
+  <Style ss:ID="sDoNot">
+   <Font ss:Color="#7B7D7D"/>
+   <Interior ss:Color="#F2F3F4" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+  </Style>
+  <Style ss:ID="sPhase">
+   <Font ss:Bold="1" ss:Size="12" ss:Color="#FFFFFF"/>
+   <Interior ss:Color="#2E4053" ss:Pattern="Solid"/>
+   <Alignment ss:Vertical="Center"/>
+  </Style>
+  <Style ss:ID="sSection">
+   <Font ss:Bold="1" ss:Size="12" ss:Color="#1F3A5F"/>
+  </Style>
+  <Style ss:ID="sFence">
+   <Font ss:Bold="1" ss:Color="#C0392B"/>
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="sRel">
+   <Font ss:Bold="1" ss:Color="#1F3A5F"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E0E0E0"/>
+   </Borders>
+  </Style>
+ </Styles>
+
+ <!-- ============ SHEET 1: MASTER TOPICAL MAP ============ -->
+ <Worksheet ss:Name="Master Topical Map">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="45"/>
+   <Column ss:Width="70"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="95"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="130"/>
+   <Column ss:Width="210"/>
+   <Column ss:Width="175"/>
+   <Column ss:Width="250"/>
+   <Column ss:Width="210"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="45"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">D&amp;D Land Works — Master Topical Map</Data></Cell>
+   </Row>
+   <Row ss:Height="16">
+    <Cell ss:StyleID="sSub"><Data ss:Type="String">Excavation &amp; Landworks Contractor · Lane County, OR · Ducker Creative · 2026-09-04 · All pages RECOMMENDED (greenfield). Business Value 1–5.</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="30">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Priority</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Cluster</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Parent</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Page</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Page Type</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Search Intent</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Primary Entity</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Supporting Entities</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Primary Keyword</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Secondary Keywords</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Recommended URL</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Status</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Val</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Brand</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">-</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation Contractor in Lane County OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; landworks contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site work, earthmoving, land development, Lane County, licensed contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor lane county / eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation companies eugene or; site work contractor lane county; dirt work eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Prep</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Preparation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Construction site preparation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing, grading, compaction, house pad, building permit, access road</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site preparation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep contractor eugene; construction site preparation; build-ready land; house pad prep</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/site-preparation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">earthmoving, cut &amp; fill, backfill, rock removal, site access, erosion control</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavating contractor eugene; earthmoving eugene; dirt work; cut and fill</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading &amp; Leveling</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainage grading, slope, compaction, finish grade, pad</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land grading eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site grading eugene; yard leveling; lot grading; rough grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/grading-leveling/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing (incl. brush clearing)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">brush removal, vegetation, overgrowth, lot clearing, site access</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">lot clearing eugene; property clearing; brush clearing eugene; land clearing cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/land-clearing/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair (DEQ)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic system installation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainfield, septic tank, DEQ, wastewater, soil, permit</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic installation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic system installation eugene; septic repair eugene; drain field installation; DEQ septic</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/septic/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Conversion</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Contact / Free Estimate</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Conversion</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Transactional</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Free estimate</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">quote, estimate, service area, phone, contact</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">free excavation estimate eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation quote eugene; free estimate excavation; hire excavation contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/contact/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Service Areas hub</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">County/hub</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County service area</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene, Springfield, Lane County cities</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation lane county or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">areas we serve; excavation service areas lane county</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Service Areas</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">County page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene, Springfield, Willamette Valley</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor lane county</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor lane county or; site prep lane county; land clearing lane county</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/lane-county/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP0"><Data ss:Type="String">P0</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Willamette Valley, Lane County, Eugene neighborhoods</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavating eugene or; site prep eugene; grading eugene; land clearing eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">footings, backfill, new construction, house pad, basement</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">foundation excavation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">foundation digging eugene; footing excavation; house foundation excavation; basement excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/foundation-excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">swale, culvert, runoff, erosion, standing water</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainage excavation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">yard drainage eugene; french drain excavation; standing water solutions; property drainage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/drainage-excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation (incl. trenching &amp; backfill)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Core service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">trench, conduit, water line, sewer line, backfill, compaction</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">utility trenching eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">underground utility excavation; water line trenching; sewer line excavation; electrical trenching</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/utility-excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway Repair</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Support service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Gravel driveway repair</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">gravel, potholes, culvert, grading, washboarding</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">gravel driveway repair eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">driveway grading eugene; driveway regrading; driveway drainage; rural driveway repair</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/driveway-repair/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Audience</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Audience hub</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">developers, general contractor, subdivision, commercial pad</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">commercial excavation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">commercial site work eugene; commercial grading; developer excavation; commercial site prep</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/commercial-excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield, Lane County, Thurston, Willamette Valley</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation contractor springfield or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavating springfield or; site prep springfield; land clearing springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/springfield/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trust</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">About D&amp;D Land Works</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trust</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Navigational</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">David Deggelman, CCB 261742, DEQ, licensed &amp; bonded</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">-</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">d&amp;d land works; david deggelman excavation; licensed excavation contractor eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/about/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic - Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainfield, DEQ, septic tank, Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic installation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic repair eugene; drain field eugene; septic system eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/septic/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing - Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">brush, overgrowth, lot clearing, Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">lot clearing eugene; brush clearing eugene; property clearing eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/land-clearing/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP1"><Data ss:Type="String">P1</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Site Prep - Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">earthmoving, site prep, grading, Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavating eugene or; site prep eugene; dirt work eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope Stabilization</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Support service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope stabilization / erosion control</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">erosion, grading, drainage, hillside, soil</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">slope stabilization erosion control oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">erosion control eugene; hillside grading; slope grading; soil erosion repair</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/slope-stabilization/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching &amp; Backfill (graduate)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Sub-service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching and backfill</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">trench, backfill, compaction, utility line</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">trenching backfill eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">trenching services eugene; utility trench eugene; backfill compaction</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/trenching-backfill/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Brush Clearing (graduate)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Sub-service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Brush clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">brush, vegetation, overgrowth, lot prep</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">brush clearing eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">overgrowth removal eugene; brush removal eugene; property brush clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/brush-clearing/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading - Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site grading, leveling, drainage, Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">grading eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site grading eugene; yard leveling eugene; lot grading eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/grading/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage - Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">runoff, swale, standing water, Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainage eugene or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">yard drainage eugene; standing water eugene; drainage contractor eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/eugene/drainage/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic - Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainfield, DEQ, Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic springfield or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic installation springfield; septic repair springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/springfield/septic/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing - Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">brush, overgrowth, Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing springfield or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">lot clearing springfield; brush clearing springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/springfield/land-clearing/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x Svc</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation - Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City x service</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">earthmoving, site prep, Springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation springfield or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavating springfield or; site prep springfield</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/springfield/excavation/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cottage Grove</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cottage Grove OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">rural, Lane County, acreage, septic</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation cottage grove or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep cottage grove; septic cottage grove; land clearing cottage grove</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/cottage-grove/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Junction City</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Junction City OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">rural, ag land, Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation junction city or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing junction city; site prep junction city</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/junction-city/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Creswell</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Creswell OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">rural residential, septic, driveway</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation creswell or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic creswell; driveway repair creswell; site prep creswell</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/creswell/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Veneta</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Veneta OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">rural, Fern Ridge, acreage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation veneta or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing veneta; septic veneta; site prep veneta</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/veneta/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation cost Oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">cost, pricing, per hour, per yard, estimate</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation cost oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation cost per hour oregon; how much does excavation cost; site prep cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/excavation-cost-oregon/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing cost per acre Oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">per acre, pricing, acreage, brush</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing cost per acre oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">cost to clear land oregon; brush clearing cost; lot clearing cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/land-clearing-cost-per-acre-oregon/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP2"><Data ss:Type="String">P2</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic installation cost Oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">cost, drainfield, DEQ permit, tank</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic installation cost oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic system cost oregon; drain field cost; new septic cost</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/septic-installation-cost-oregon/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Florence (confirm coverage)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Florence OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">coastal, Lane County, sandy soil</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation florence or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep florence; land clearing florence</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/florence/</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Oakridge</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Oakridge OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">mountain, access, Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation oakridge or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">land clearing oakridge; driveway repair oakridge</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/oakridge/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Coburg</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Coburg OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">small city, Lane County, near Eugene</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation coburg or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep coburg; grading coburg</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/coburg/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lowell</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">City page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Local commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lowell OR</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">small rural, Dexter, Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">excavation lowell or</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic lowell; land clearing lowell</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/service-areas/lowell/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Info</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">How to prepare land for construction</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Informational</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Project research</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Preparing land</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep, permits, clearing, grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">how to prepare land for building</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">site prep steps; clearing land for construction; getting land build-ready</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/preparing-land-for-construction/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Info</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Fix standing water / drainage problems</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/solution</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/solution</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Standing water</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">drainage, grading, runoff, swale</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">fix standing water in yard</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">yard drainage solutions; why does my yard flood; regrade yard for drainage</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/fix-standing-water-yard/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Info</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">How to choose an excavation contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Hiring</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial investigation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Choosing a contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">licensing, CCB, bonding, estimate, insured</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">how to choose excavation contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">questions to ask excavation contractor; hire excavation contractor tips</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/choosing-an-excavation-contractor/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sP3"><Data ss:Type="String">P3</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Info</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Resources</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Oregon septic basics (Lane County / DEQ)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Informational</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Informational</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Oregon septic</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">DEQ, permit, drainfield, soil test</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">septic system oregon rules</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">lane county septic permit; deq septic requirements; new septic oregon</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">/resources/oregon-septic-basics/</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">RECOMMENDED</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>4</SplitHorizontal>
+   <TopRowBottomPane>4</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+  <AutoFilter x:Range="R4C1:R4C13" xmlns="urn:schemas-microsoft-com:office:excel"/>
+ </Worksheet>
+
+ <!-- ============ SHEET 2: CITY x SERVICE MATRIX ============ -->
+ <Worksheet ss:Name="City x Service Matrix">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="95"/>
+   <Column ss:Width="40"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="320"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">City × Service Matrix</Data></Cell>
+   </Row>
+   <Row ss:Height="16">
+    <Cell ss:StyleID="sSub"><Data ss:Type="String">BUILD NOW = Phase 1–2 · BUILD LATER = Phase 3+ · CITY ONLY = no per-service page · CONFIRM = verify coverage · DO NOT BUILD = doorway/thin risk</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="30">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">City</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Tier</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Excavation / Site Prep</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Grading</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Land Clearing</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Septic</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Drainage</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">City Page</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Notes</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Largest market; highest competition and highest reward; anchor city</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Springfield</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildNow"><Data ss:Type="String">BUILD NOW</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Co-targeted with Eugene by competitors; strong secondary anchor</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cottage Grove</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P3)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Rural septic + land clearing demand; thinner competition</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Junction City</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P3)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Ag/rural land clearing + site prep angle</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Creswell</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P3)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Rural residential septic + driveway demand</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Veneta</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD LATER</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P3)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Rural; All Dirt HQ here (competitive); septic/land clearing</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Florence</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Coastal ~1hr from Eugene; likely outside routine radius - verify with David</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Oakridge</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sConfirm"><Data ss:Type="String">CONFIRM</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P4)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Mountain community; land clearing/driveway/access angle</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Coburg</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P4)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Small; close to Eugene; low volume but easy relevance</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lowell</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="sCityOnly"><Data ss:Type="String">CITY ONLY</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sDoNot"><Data ss:Type="String">DO NOT BUILD</Data></Cell>
+    <Cell ss:StyleID="sBuildLater"><Data ss:Type="String">BUILD (P4)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Small rural; septic/land clearing only if served</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>4</SplitHorizontal>
+   <TopRowBottomPane>4</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+ </Worksheet>
+
+ <!-- ============ SHEET 3: SERVICE CLUSTERS ============ -->
+ <Worksheet ss:Name="Service Clusters">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="150"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="300"/>
+   <Column ss:Width="260"/>
+   <Column ss:Width="55"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">Service-by-Service Clusters</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="30">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Service (Page)</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Primary Entity</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Intent</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Subtopics / Sections</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Scope Fence (do NOT claim)</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Prio</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Preparation (/site-preparation/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Construction site preparation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Residential/commercial site prep, lot/pad prep, clear-grade-drain sequence, access prep, construction-ready land</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">No permitting/engineering guarantees</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Grading (/excavation/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation contractor</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">General excavation, earthmoving, cut/fill, backfill &amp; compaction, rock removal, site access roads, erosion control</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">No hauling as standalone service unless verified</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading &amp; Leveling (/grading-leveling/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Site/lot/yard grading, rough vs finish grading, drainage grading, driveway grading, slope grading</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Leveling folded in - not a separate page</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing (/land-clearing/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Land clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Lot/property clearing, clearing for construction, clearing before grading/excavation, brush &amp; overgrowth removal, vegetation clearing</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">NO tree removal, stump grinding, forestry mulching, hauling</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair (/septic/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic system installation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic installation, septic repair, drainfield/tank excavation, septic site prep, DEQ-certified install</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">NO pumping, no inspection/cert claims beyond DEQ install, no soil/engineering claims</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation Excavation (/foundation-excavation/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Residential/commercial foundation excavation, new-construction excavation, foundation site prep, backfill, process/what to expect</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">No structural/engineering guarantees</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Excavation (/drainage-excavation/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage excavation</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage trenches, swales, channels, regrading for runoff, yard/property drainage, standing-water fixes</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">Frame as excavation/grading FOR drainage; confirm French drain/culvert product installs before claiming</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation (/utility-excavation/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility excavation / trenching</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Underground utility trenching, water/sewer/electrical/conduit trenching, residential vs commercial, trench prep + backfill/compaction</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">Excavation/trenching FOR utilities - NOT utility installation/connection</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway Repair (/driveway-repair/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Gravel driveway repair</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Gravel driveway repair/regrading, driveway drainage, driveway excavation/prep, potholes/washboarding, residential/commercial</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">NO asphalt paving, concrete, or sealing</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope Stabilization (/slope-stabilization/)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope stabilization / erosion control</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Problem/commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Sloped-property grading, erosion control, drainage on slopes, slope excavation/regrading, soil erosion</Data></Cell>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">NO structural guarantees or retaining-wall engineering claims</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Brush Clearing (section - graduate)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Brush clearing</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Overgrowth/brush removal, lot prep, clearing before grading/excavation - lives in Land Clearing until it earns its own page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Same fence as Land Clearing</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching &amp; Backfill (section - graduate)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching and backfill</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching, trench prep, backfill/compaction - lives in Utility Excavation until it earns its own page</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Same fence as Utility Excavation</Data></Cell>
+    <Cell ss:StyleID="sNum"><Data ss:Type="String">P2</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>3</SplitHorizontal>
+   <TopRowBottomPane>3</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+ </Worksheet>
+
+ <!-- ============ SHEET 4: ENTITY MAP ============ -->
+ <Worksheet ss:Name="Entity Map">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="200"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="320"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">Entity Relationship Map</Data></Cell>
+   </Row>
+   <Row ss:Height="16">
+    <Cell ss:StyleID="sSub"><Data ss:Type="String">Subject → Relationship → Object. Every service resolves back to the central entity; septic is a branch, not the trunk.</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Subject Entity</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Relationship</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Object Entity</Data></Cell>
+   </Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">is a</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Landworks Contractor (central entity)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">holds</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">CCB #261742 (Licensed &amp; Bonded)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">holds</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">DEQ Certification (septic)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">DEQ Certification</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">qualifies for</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">serves</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Residential customers</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">serves</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial customers / builders / developers</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">operates in</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County, Oregon (Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Preparation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Preparation</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">uses</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing + Grading + Drainage + Excavation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Grading</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Grading</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">enables</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation Excavation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">includes</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Brush Clearing</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading &amp; Leveling</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading &amp; Leveling</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">solves</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Uneven land / standing water</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Excavation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Excavation</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">solves</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Standing water / erosion</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">includes</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Trenching &amp; Backfill</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">is excavation FOR (not)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility installation/connection</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">includes</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainfield / tank excavation</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway Repair</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway Repair</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">uses (gravel only)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading + Drainage</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">D&amp;D Land Works</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">provides</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope Stabilization</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope Stabilization</Data></Cell><Cell ss:StyleID="sRel"><Data ss:Type="String">uses</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading + Drainage + Erosion control</Data></Cell></Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>4</SplitHorizontal>
+   <TopRowBottomPane>4</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+ </Worksheet>
+
+ <!-- ============ SHEET 5: INTERNAL LINKING ============ -->
+ <Worksheet ss:Name="Internal Linking">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="185"/>
+   <Column ss:Width="360"/>
+   <Column ss:Width="240"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">Internal Linking Architecture</Data></Cell>
+   </Row>
+   <Row ss:Height="16">
+    <Cell ss:StyleID="sSub"><Data ss:Type="String">Hub-and-spoke + geo + problem links. Every spoke links to its hub; every hub links down to 3+ spokes; vary anchor text (avoid exact-match stuffing).</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Page</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Links To</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Purpose</Data></Cell>
+   </Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Prep, Excavation, Grading, Land Clearing, Septic, Drainage, Utility, Driveway, Service-Areas hub, Contact</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Entity hub distributes authority to all P0 core services + local hub</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Site Preparation (umbrella)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">DOWN: Land Clearing, Grading, Foundation Excavation, Drainage · UP: Homepage · LOCAL: Eugene, Springfield</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Umbrella service links to its component services</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Excavation &amp; Grading</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Home · SIBLING: Grading-Leveling, Foundation Excavation · DOWN: Utility, Drainage · LOCAL: Eugene excavation</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Head service ties the excavation cluster together</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Grading &amp; Leveling</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Excavation · SIBLING: Drainage, Driveway, Slope Stabilization</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Cross-links resolve grading/drainage overlap</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Land Clearing</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Home / Site Prep · DOWN: Brush Clearing (when standalone) · LOCAL: Eugene/Springfield land-clearing</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Anchors the clearing cluster</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Foundation Excavation</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Excavation, Site Prep</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Feeds builder/new-construction intent up to hubs</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Drainage Excavation</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">SIBLING: Grading, Slope Stabilization · SUPPORT: "fix standing water" article</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Owns the water-management intent</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Utility Excavation</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Excavation · DOWN: Trenching &amp; Backfill (when standalone)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Holds trenching as a section until it graduates</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Septic Install &amp; Repair</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">UP: Home · LOCAL: Eugene/Springfield septic · SUPPORT: "Oregon septic basics"</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">DEQ cluster hub; informational feeds it</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway Repair</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">SIBLING: Grading, Drainage</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Shares earthwork context with grading/drainage</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope Stabilization</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">SIBLING: Grading, Drainage</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Erosion/earthwork context</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Commercial Excavation</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Each core service (commercial section) + Contact</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Audience hub routes developers to services</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Service-Areas hub</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County + every city page</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Geo hub distributes to all locations</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County page</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">All city pages</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">County anchor links down to cities</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">City page (e.g. Eugene)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Services offered there + adjacent city (Springfield) + its city×service pages</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene↔Springfield; Creswell↔Cottage Grove adjacency</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">City × Service page</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Parent city page + parent service page (BOTH directions)</Data></Cell><Cell ss:StyleID="sFence"><Data ss:Type="String">Critical: this is what stops city×service pages becoming orphaned doorways</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Cost / info article</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">The commercial service page it supports (e.g. excavation cost → /excavation/; standing water → /drainage-excavation/)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Informational passes equity to money pages</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">General rule (every service page)</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Its hub + 1-2 siblings + most relevant city×service + Contact</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Reinforces topical relationships, not random links</Data></Cell></Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>4</SplitHorizontal>
+   <TopRowBottomPane>4</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+ </Worksheet>
+
+ <!-- ============ SHEET 6: PUBLISHING ROADMAP ============ -->
+ <Worksheet ss:Name="Publishing Roadmap">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="150"/>
+   <Column ss:Width="450"/>
+   <Column ss:Width="260"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">Content Publishing Roadmap</Data></Cell>
+   </Row>
+   <Row/>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Phase</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Pages</Data></Cell>
+    <Cell ss:StyleID="sHeader"><Data ss:Type="String">Reason</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sPhase"><Data ss:Type="String">Phase 1 (wk 1-4)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Homepage, Site Preparation, Excavation &amp; Grading, Grading &amp; Leveling, Land Clearing, Septic, Foundation Excavation, Drainage, Utility Excavation, Driveway Repair, Contact, About, Commercial, Service-Areas hub, Lane County</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Establishes the central entity and captures highest-intent commercial demand. Parents before children.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sPhase"><Data ss:Type="String">Phase 2 (wk 4-7)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Eugene city page + Eugene x (Excavation, Land Clearing, Septic); Springfield city page + Springfield x (Septic, Land Clearing, Excavation)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Exploit the competitor city-page gap in the two biggest markets.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sPhase"><Data ss:Type="String">Phase 3 (wk 7-10)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cottage Grove, Junction City, Creswell, Veneta (city-only); add Eugene x (Grading, Drainage) + Springfield city x service if Phase 2 performs; Slope Stabilization</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Widen the county footprint where competition is thinner.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sPhase"><Data ss:Type="String">Phase 4 (wk 10-12)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Florence (confirm), Oakridge, Coburg, Lowell city pages - only where coverage verified</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Complete honest coverage; skip anything that would be a doorway page.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="sPhase"><Data ss:Type="String">Phase 5 (ongoing)</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Cost guides, problem/solution + hiring articles, FAQ, graduate Brush Clearing &amp; Trenching/Backfill to standalone pages, projects/gallery, reviews</Data></Cell>
+    <Cell ss:StyleID="sWrap"><Data ss:Type="String">Deepen topical authority and feed internal links to money pages.</Data></Cell>
+   </Row>
+   <Row/>
+   <Row>
+    <Cell ss:StyleID="sFence"><Data ss:Type="String">Every phase: publish parent before child · run all AI drafts through humanizer before shipping · default CMS to draft until reviewed.</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <!-- ============ SHEET 7: SCOPE & OPEN ITEMS ============ -->
+ <Worksheet ss:Name="Scope &amp; Open Items">
+  <Table ss:DefaultColumnWidth="90">
+   <Column ss:Width="300"/>
+   <Column ss:Width="360"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="sTitle"><Data ss:Type="String">Scope, Do-Not-Claim &amp; Open Items</Data></Cell>
+   </Row>
+   <Row/>
+   <Row><Cell ss:StyleID="sSection"><Data ss:Type="String">Verified (from business material)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Business: D&amp;D Land Works · Owner: David Deggelman</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">541-401-8726 · david@ddlandworks.com</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Credentials</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Licensed &amp; Bonded · CCB #261742 · DEQ Certified (septic)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Market</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Lane County, OR (primary); Linn, Douglas, Benton (secondary/phase 2)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Services</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Site prep, land clearing, brush clearing, grading &amp; leveling, foundation excavation, drainage excavation, utility excavation, trenching &amp; backfill, septic install/repair, driveway repair, slope stabilization</Data></Cell></Row>
+   <Row/>
+   <Row><Cell ss:StyleID="sSection"><Data ss:Type="String">Do NOT claim (fence out - not on verified list)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Tree removal · Stump grinding · Forestry mulching</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Competitors offer these; D&amp;D does not (unverified)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Debris/dirt hauling as standalone service</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Confirm before adding</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Asphalt paving · Concrete work</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Driveway = gravel/grading/drainage only</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Utility installation/connection</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Only excavation/trenching FOR utilities</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Septic pumping · Septic inspection/cert beyond DEQ install</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Install &amp; repair + excavation only</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sFence"><Data ss:Type="String">Structural / retaining-wall engineering guarantees</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String">Slope work = earthwork/grading/drainage framing</Data></Cell></Row>
+   <Row/>
+   <Row><Cell ss:StyleID="sSection"><Data ss:Type="String">Open items to confirm with David (gate Phase 1)</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">1. Exact base city within Lane County</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">2. ddlandworks.com status (registered/parked/unbuilt?) - did NOT resolve 2026-09-04</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">3. Google Business Profile - exists or create fresh?</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">4. Service radius - esp. Florence coverage (coastal, ~1hr)</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">5. Does drainage work include product installs (French drains/culverts) or excavation/grading only?</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">6. Logo file (logo.png) for site/GBP</Data></Cell><Cell ss:StyleID="sConfirm"><Data ss:Type="String">OPEN</Data></Cell></Row>
+   <Row/>
+   <Row><Cell ss:StyleID="sSection"><Data ss:Type="String">Schema note</Data></Cell></Row>
+   <Row><Cell ss:StyleID="sWrap"><Data ss:Type="String">Use GeneralContractor or HomeAndConstructionBusiness (LocalBusiness subtypes). Verify on schema.org - there is no ExcavationContractor type.</Data></Cell><Cell ss:StyleID="sWrap"><Data ss:Type="String"></Data></Cell></Row>
+  </Table>
+ </Worksheet>
+</Workbook>

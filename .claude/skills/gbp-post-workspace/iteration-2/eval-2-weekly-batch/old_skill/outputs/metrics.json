@@ -1,0 +1,89 @@
+{
+  "tool_calls": {
+    "Read": 17,
+    "Write": 1,
+    "Edit": 2,
+    "Bash": 14,
+    "WebFetch": 1,
+    "WebSearch": 1,
+    "Grep": 0,
+    "Glob": 1,
+    "ToolSearch": 1
+  },
+  "total_tool_calls": 38,
+  "total_steps": 8,
+  "files_created": [
+    "04-gmb/posts/drafts/2026-04-20_batch/RESEARCH_SWEEP.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-20_post-1-repair-vs-replace-houston.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-22_post-2-minisplit-katy-offer.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-24_post-3-hvac-sugarland-late-april.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/old_skill/outputs/transcript.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/old_skill/outputs/metrics.json",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/old_skill/outputs/post_templates_updated.json"
+  ],
+  "templates_appended_to_post_templates_json": [
+    "repair_vs_replace_houston_2026",
+    "mini_split_katy_offer",
+    "hvac_contractor_sugar_land_april"
+  ],
+  "errors_encountered": 1,
+  "error_notes": "First draft of Post 1 was 1850 chars (over 1450 cap) and contained 3 em dashes. Caught by pre-write checklist greps. Fixed in one revision cycle before file was written. No other rule violations across the batch.",
+  "output_chars": 14407,
+  "transcript_chars": 8484,
+  "post_compliance": {
+    "post_1": {
+      "date": "2026-04-20",
+      "type": "What's New",
+      "chars": 1426,
+      "phone_in_body": false,
+      "em_dash": false,
+      "ai_slop": false,
+      "geo_kw_in_line_1": true,
+      "pass": true
+    },
+    "post_2": {
+      "date": "2026-04-22",
+      "type": "Offer",
+      "chars": 1321,
+      "phone_in_body": false,
+      "em_dash": false,
+      "ai_slop": false,
+      "geo_kw_in_line_1": true,
+      "pass": true
+    },
+    "post_3": {
+      "date": "2026-04-24",
+      "type": "What's New",
+      "chars": 1446,
+      "phone_in_body": false,
+      "em_dash": false,
+      "ai_slop": false,
+      "geo_kw_in_line_1": true,
+      "pass": true
+    }
+  },
+  "batch_variation": {
+    "post_types_varied": true,
+    "geo_varied": ["Houston TX (city-wide)", "Katy TX (Cinco Ranch)", "Sugar Land TX (First Colony/Riverstone)"],
+    "keyword_categories_varied": ["ac repair (repair intent)", "mini-split installation (install intent)", "hvac services (service/trust intent)"],
+    "templates_all_new": true,
+    "no_template_reused_within_40d": true
+  },
+  "skill_issues_observed": [
+    {
+      "issue": "No collision detection for existing RESEARCH_SWEEP.md in batch folder",
+      "severity": "low",
+      "detail": "File existed from prior run; only header was updated rather than full overwrite"
+    },
+    {
+      "issue": "Phone numbers present in existing template summaries",
+      "severity": "low",
+      "detail": "Skill Critical Rule #1 is clear for post bodies; ambiguous for summary fields in post_templates.json"
+    },
+    {
+      "issue": "First draft char count exceeded 1450 ceiling",
+      "severity": "informational",
+      "detail": "Expected behavior — pre-write checklist is designed to catch this. One revision cycle needed."
+    }
+  ]
+}

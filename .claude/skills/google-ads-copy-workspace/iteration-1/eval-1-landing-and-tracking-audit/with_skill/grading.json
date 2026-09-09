@@ -1,0 +1,80 @@
+{
+  "eval_id": 1,
+  "eval_name": "landing-and-tracking-audit",
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "flags_h1_message_match_problem",
+      "passed": true,
+      "evidence": "H1, a buried phone number, and a 7-field form. The user paid the click, the LP wasted the intent.\n\n---\n\n## Section 1 \u2014 What's Broken (Inventory)\n\n### 1A. Ad Copy Issues\n\nRunning the skill's **12-Point"
+    },
+    {
+      "text": "flags_phone_in_footer_only",
+      "passed": true,
+      "evidence": "phone number, and a 7-field form. The user paid the click, the LP wasted the intent.\n\n---\n\n## Section 1 \u2014 What's Broken (Inventory)\n\n### 1A. Ad Copy Issues\n\nRunning the skill's **12-Point Copy Audit**"
+    },
+    {
+      "text": "flags_form_too_many_fields",
+      "passed": true,
+      "evidence": "75 Degree AC\n**Campaign:** Emergency Repair (Campaign 1)\n**Auditor methodology:** `google-ads-copy` skill (v2.0.0, May 2026)\n**Date:** 2026-05-02\n\n---\n\n## Executive Verdict\n\nThis flow is leaking money"
+    },
+    {
+      "text": "flags_lcp_too_slow",
+      "passed": true,
+      "evidence": "LCP 4.2s on mobile** \u2014 skill target is <2.5s | **CRITICAL** | LP Experience (direct QS hit per the QS Diagnostic Tree: \"QS = 1\u20133 \u2192 Landing page problem \u2192 Check LCP <2.5s\") |\n\nPer the QS Diagnostic Tre"
+    },
+    {
+      "text": "flags_no_call_tracking",
+      "passed": true,
+      "evidence": "CallRail"
+    },
+    {
+      "text": "flags_count_every_setting",
+      "passed": true,
+      "evidence": "count:** 75 Degree AC\n**Campaign:** Emergency Repair (Campaign 1)\n**Auditor methodology:** `google-ads-copy` skill (v2.0.0, May 2026)\n**Date:** 2026-05-02\n\n---\n\n## Executive Verdict\n\nThis flow is leak"
+    },
+    {
+      "text": "flags_90_day_window_too_long",
+      "passed": true,
+      "evidence": "Click-through window"
+    },
+    {
+      "text": "recommends_enhanced_conversions",
+      "passed": true,
+      "evidence": "Enhanced Conversions"
+    },
+    {
+      "text": "recommends_data_driven_attribution",
+      "passed": true,
+      "evidence": "Attribution model"
+    },
+    {
+      "text": "produces_priority_order",
+      "passed": true,
+      "evidence": "CRITICAL"
+    },
+    {
+      "text": "names_qs_or_cpc_impact",
+      "passed": true,
+      "evidence": "Landing Page Experience"
+    },
+    {
+      "text": "flags_review_count_missing",
+      "passed": true,
+      "evidence": "review count"
+    },
+    {
+      "text": "addresses_minimum_call_duration",
+      "passed": true,
+      "evidence": "Minimum call"
+    },
+    {
+      "text": "specific_h1_rewrite_or_recommendation",
+      "passed": true,
+      "evidence": "H1, a buried phone number, and a 7-field form. The user paid the click, the LP wasted the intent.\n\n---\n\n## Section 1 \u2014 What's Broken (Inventory)\n\n### 1A. Ad Copy Issues\n\nRunning the skill's **12-Point"
+    }
+  ],
+  "passed_count": 14,
+  "total_count": 14,
+  "pass_rate": 1.0
+}

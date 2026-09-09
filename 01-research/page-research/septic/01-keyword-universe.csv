@@ -1,0 +1,157 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+septic installation eugene or,topical_map,commercial,decision,y,scheduled,head,high,/services/septic-install-repairs/,P0,Core page target reused verbatim from home/01-keyword-universe.csv row 78
+septic installation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/services/septic-install-repairs/,P0,Full state-name variant
+septic system installation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Expanded head variant
+septic install lane county oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P0,County-wide variant
+septic system installer lane county,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Person/role-framed variant
+septic repair eugene oregon,topical_map,commercial,decision,y,scheduled,head,high,/services/septic-install-repairs/,P0,Core page target reused verbatim from home pack row 80
+septic system repair lane county,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P0,County-wide variant
+septic repair springfield oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/springfield/,P2,City x service
+septic company eugene oregon,serp,commercial,decision,y,scheduled,head,high,/services/septic-install-repairs/,P1,Generic company-framed head term
+septic contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/services/septic-install-repairs/,P1,Contractor-framed head term
+deq certified septic installer oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Reused verbatim from home pack row 84 — D&D's key differentiator
+deq licensed septic contractor lane county,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Reused verbatim from home pack row 85
+what does deq certified mean,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P0,Reused verbatim from home pack row 83 — must not contradict home-content.md's existing summary
+deq installer certification oregon,serp,informational,awareness,n,browse,mid,med,/services/septic-install-repairs/,P1,Certification-specificity — do not name D&D's exact tier without confirmation
+deq licensed installer vs pumper oregon,serp,informational,awareness,n,browse,long,low,/services/septic-install-repairs/,P2,Certification-category distinction — real DEQ license types
+deq maintenance provider certification oregon,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P2,Real DEQ credential category — relevant to ATT/sand-filter systems, not confirmed as D&D's own
+oregon sewage disposal service license,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Official DEQ terminology for the business license
+septic system installation cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Reused verbatim from home pack row 79 — real range found: $4173-$5963 avg / $1487-$10464 range (350 Eugene-area projects)
+septic system cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Broader state-level cost query
+new septic system cost lane county,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Reused verbatim from home pack row 88
+septic tank replacement cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Replacement-framed cost query
+septic tank installation cost,serp,commercial,consideration,n,browse,mid,high,/services/septic-install-repairs/,P1,Generic national cost query — high volume
+drainfield replacement cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Component-specific cost query
+drainfield excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Reused verbatim from home pack row 86
+septic tank excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Reused verbatim from home pack row 87
+leach field repair cost,serp,commercial,consideration,n,browse,mid,high,/services/septic-install-repairs/,P1,Real range found $2,000-$20,000 — wide range, needs on-page context
+septic tank repair cost,serp,commercial,consideration,n,browse,mid,high,/services/septic-install-repairs/,P1,Real range found $631-$3,026 avg; major repairs $6,000+
+septic pump repair cost,serp,commercial,consideration,n,browse,mid,med,/services/septic-install-repairs/,P2,Component-specific cost query — real range $250-$400
+conventional septic system cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Real range found $3,000-$10,000 — direct comparison-table anchor
+alternative treatment system cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Real range found $12,000-$30,000+ engineered/ATT systems — direct comparison-table anchor
+sand filter septic system cost,serp,commercial,consideration,n,browse,mid,high,/services/septic-install-repairs/,P1,Real range found $7,000-$18,000 intermittent / $10,000-$25,000 recirculating
+aerobic treatment unit cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Real range found $10,000-$20,000 plus ongoing monthly O&M cost — ATU is a subtype of ATT
+conventional vs alternative treatment system oregon,serp,informational,consideration,y,browse,long,high,/services/septic-install-repairs/,P0,Direct decision-stage comparison query — zero competitors explain this plainly
+advantex septic system oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P2,Named ATT brand — Braun Excavating names this specifically; verify before naming as D&D's own installed brand
+mound septic system oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P2,Alternative system type — Willamette Valley clay/shallow-soil relevance
+pressure distribution septic system,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Technical system-type term
+capping fill septic system oregon,serp,informational,awareness,y,browse,mid,low,/services/septic-install-repairs/,P3,Oregon-specific system type named in DEQ's own system-type list
+septic repair vs replace oregon,serp,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Reused verbatim from home pack row 81 — decision-stage FAQ candidate
+should i repair or replace my septic system,serp,informational,consideration,n,browse,long,high,/services/septic-install-repairs/,P0,Direct decision-stage question — 50%-of-replacement-cost rule of thumb
+signs you need a new septic system,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Reused verbatim from home pack row 82
+signs of a failing septic system,serp,informational,consideration,n,browse,mid,high,/services/septic-install-repairs/,P0,High-volume symptom query
+drainfield failure signs,serp,informational,consideration,n,browse,mid,high,/services/septic-install-repairs/,P0,High-volume symptom query, component-specific
+signs your drainfield is failing,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Variant phrasing
+septic backing up into house,serp,problem_solution,decision,n,scheduled,mid,high,/services/septic-install-repairs/,P0,Distressed-buyer/urgent query
+sewage smell in yard,serp,problem_solution,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Symptom-framed query
+soggy spot over drainfield,serp,problem_solution,consideration,n,browse,mid,med,/services/septic-install-repairs/,P2,Symptom-framed query
+green grass over septic tank meaning,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P2,Symptom-framed informational query
+slow drains septic system,serp,problem_solution,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Early-symptom query
+septic alarm going off what to do,serp,problem_solution,decision,n,scheduled,mid,med,/services/septic-install-repairs/,P2,ATT/pump-system-specific urgent query
+septic tank overflowing emergency,serp,problem_solution,decision,n,scheduled,mid,high,/services/septic-install-repairs/,P1,Urgent/distressed-buyer query
+emergency septic repair eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Urgency-modifier local query — verify D&D's actual response-time capability before claiming "emergency" service
+septic permit lane county,topical_map,informational,consideration,y,browse,mid,high,/services/septic-install-repairs/,P0,Direct process/authority query
+septic permit cost lane county oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P1,Real figure found: site evaluation fee ~$866-$998 (see 07-oregon-authority.md sourcing note)
+oregon septic permit cost,serp,informational,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Reused verbatim from home pack row 89
+how to get a septic permit in oregon,serp,informational,consideration,y,browse,long,med,/services/septic-install-repairs/,P1,Process-education query
+lane county septic site evaluation,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P1,Process-specific — test pit requirements
+septic test pit requirements oregon,serp,informational,awareness,y,browse,mid,low,/services/septic-install-repairs/,P2,Reused from site-preparation/07-oregon-authority.md §5 — 2-3 pits, 50-100ft apart, 2x4x5ft
+oregon septic system rules,topical_map,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P2,Reused verbatim from home pack row 90 — OAR 340-071
+oregon administrative rules 340-071,serp,informational,awareness,n,browse,long,low,/services/septic-install-repairs/,P3,Direct regulation citation query
+does lane county issue septic permits or does deq,serp,informational,awareness,y,browse,long,med,/services/septic-install-repairs/,P1,Direct answer to the task's core regulatory question — Lane County is a DEQ contract/agent county
+is lane county a deq agent county,serp,informational,awareness,y,browse,long,low,/services/septic-install-repairs/,P2,Direct regulatory-structure query
+septic inspection before selling house oregon,serp,informational,consideration,y,browse,mid,high,/services/septic-install-repairs/,P0,Direct task-brief query — verify state requirement vs lender/buyer practice
+do i need a septic inspection to sell my house in oregon,serp,informational,consideration,y,browse,long,high,/services/septic-install-repairs/,P0,Long-tail variant of above
+oregon seller disclosure septic system,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P1,ORS 105.465 / Seller's Property Disclosure Statement
+on-site sewage addendum oregon real estate,serp,informational,awareness,y,browse,long,low,/services/septic-install-repairs/,P2,Real estate transaction document — named entity
+septic inspection cost oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — inspection/certification beyond DEQ install authority not claimed per home pack row 92; do not target as D&D's own service
+how often should i pump my septic tank,serp,informational,awareness,n,browse,mid,high,/services/septic-install-repairs/,P1,High-volume maintenance query — real DEQ guidance found (3-5 yrs / 40% solids threshold)
+septic pumping frequency oregon,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P2,Oregon-specific framing of the same query
+septic pumping eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — reused verbatim from home pack row 91; D&D's DEQ cert covers install/repair only, not pumping
+can i build over my drainfield,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Direct task-brief query — ties to site-prep pack's sequencing finding
+can you pave over a septic drainfield,serp,informational,awareness,n,browse,long,low,/services/septic-install-repairs/,P2,Variant of above
+what can i plant over my drainfield,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Adjacent homeowner-maintenance query
+site prep and septic sequencing lane county,serp,informational,consideration,y,browse,long,med,/services/septic-install-repairs/,P1,Cross-reference to site-preparation pack's already-established sequencing finding — do not re-derive
+drainfield area must be evaluated before grading,serp,informational,awareness,y,browse,long,low,/services/septic-install-repairs/,P2,Direct citation of the site-prep pack's finding
+septic tank size for 3 bedroom house oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P2,Sizing/planning query
+septic system for new home lane county,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,New-construction framing
+new construction septic system oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,New-construction framing
+excavation for new septic system oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Reused verbatim from home pack row 186 — combined septic+excavation framing
+rural property septic system oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Rural/acreage framing — most Lane County septic customers are rural/unincorporated
+septic system for land outside city sewer eugene,serp,commercial,consideration,y,scheduled,long,med,/services/septic-install-repairs/,P2,Rural/no-sewer framing
+does my property need a septic system or can i connect to city sewer eugene,serp,informational,consideration,y,browse,long,med,/services/septic-install-repairs/,P2,Decision-stage sewer-vs-septic query
+septic system vs city sewer cost,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Comparison/education query
+distribution box septic system,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P2,Component entity query
+d-box repair septic,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Component entity query, colloquial term
+septic tank locating service eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Existing-system location/exposure query
+find septic tank location on my property,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P2,Homeowner self-help query, pre-call
+septic tank pump replacement,serp,commercial,consideration,n,browse,mid,med,/services/septic-install-repairs/,P2,Component repair query
+septic tank riser installation cost,serp,commercial,consideration,n,browse,mid,low,/services/septic-install-repairs/,P3,Component/upgrade query
+gravity fed vs pressure dosed septic,serp,informational,awareness,n,browse,long,low,/services/septic-install-repairs/,P3,Technical comparison query
+septic system for clay soil oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P1,Willamette Valley clay-soil relevance — clay commonly forces an alternative system
+willamette valley clay soil septic system,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P1,Soil-specific query tying to homepage's established clay-soil entity
+high water table septic system oregon,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P2,Soil/site-condition query — common alternative-system trigger
+perc test oregon septic,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P1,Site-evaluation-adjacent term (colloquial for percolation/site evaluation)
+percolation test cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Cost-framed variant
+soil test for septic system oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P2,Variant phrasing
+how long does a septic system last,serp,informational,awareness,n,browse,mid,high,/services/septic-install-repairs/,P1,High-volume lifespan query
+average lifespan of a septic system,serp,informational,awareness,n,browse,mid,med,/services/septic-install-repairs/,P2,Variant phrasing
+how long does drainfield last,serp,informational,awareness,n,browse,mid,med,/services/septic-install-repairs/,P2,Component-specific lifespan query
+what shortens the life of a septic system,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Maintenance-education query
+what not to flush septic system,serp,informational,awareness,n,browse,mid,med,/services/septic-install-repairs/,P3,Homeowner-maintenance query, low direct conversion value but strong trust/authority content
+garbage disposal septic system bad idea,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P3,Maintenance-education query
+septic system maintenance tips oregon,serp,informational,awareness,y,browse,mid,med,/services/septic-install-repairs/,P2,Post-service/ownership content
+how much does it cost to fix a failed septic system,quora,informational,consideration,n,browse,long,high,/services/septic-install-repairs/,P0,Direct Quora question title
+what are the signs that a septic system is failing and what can be done about it before replacing it,quora,informational,consideration,n,browse,long,high,/services/septic-install-repairs/,P0,Direct Quora question title
+is it possible to repair an old failing septic system or should one just replace it,quora,informational,consideration,n,browse,long,high,/services/septic-install-repairs/,P1,Direct Quora question title
+how long does it take to replace a failing septic system,quora,informational,consideration,n,browse,long,med,/services/septic-install-repairs/,P1,Direct Quora question title
+what are some alternatives to replacing a failing septic system,quora,informational,consideration,n,browse,long,med,/services/septic-install-repairs/,P2,Direct Quora question title
+if my septic system fails and theres no money to fix it what can i do,quora,informational,consideration,n,browse,long,low,/services/septic-install-repairs/,P2,Direct Quora question title — distressed-buyer/financial-anxiety signal, do not exploit but do address honestly
+who has used a good septic installer in eugene reddit,reddit_proxy,commercial,consideration,y,browse,long,med,/services/septic-install-repairs/,P2,Reddit/Nextdoor-style recommendation-ask phrasing (sourced via proxy, consistent with home pack methodology note)
+anyone recommend a septic company in lane county reddit,reddit_proxy,commercial,consideration,y,browse,long,med,/services/septic-install-repairs/,P2,Reddit-style phrasing
+septic system just failed what do i do reddit,reddit_proxy,problem_solution,decision,n,scheduled,long,high,/services/septic-install-repairs/,P1,Distressed/urgent Reddit-style phrasing — highest emotional-stakes query in this cluster
+is my septic guy trying to rip me off reddit,reddit_proxy,informational,consideration,n,browse,long,med,/services/septic-install-repairs/,P1,Objection/trust-killer Reddit-style phrasing — distressed-buyer exploitation fear
+septic company overcharged me reddit,reddit_proxy,informational,awareness,n,browse,long,low,/services/septic-install-repairs/,P2,Objection/trust-killer phrasing
+septic contractor scam signs,serp,informational,awareness,n,browse,mid,med,/services/septic-install-repairs/,P1,Objection/trust-killer content — distressed-buyer protection angle
+how to avoid septic scams,serp,informational,awareness,n,browse,mid,low,/services/septic-install-repairs/,P2,Objection/trust-killer content
+questions to ask a septic contractor,serp,informational,consideration,n,browse,mid,med,/services/septic-install-repairs/,P1,Hiring-decision content, pre_call
+what should i ask before hiring a septic company,serp,informational,consideration,n,browse,long,med,/services/septic-install-repairs/,P2,Hiring-decision content
+is my septic contractor licensed oregon,serp,informational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P1,Verification query — ties to DEQ business license search tool
+deq licensed installer search oregon,serp,navigational,consideration,y,browse,mid,med,/services/septic-install-repairs/,P1,DEQ's own installer/pumper business license search tool
+how to verify a septic installer is deq certified,serp,informational,consideration,y,browse,long,med,/services/septic-install-repairs/,P1,Direct trust-verification query
+septic and excavation company eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,Reused verbatim from home pack row 176 — bundled positioning
+excavation contractor that does septic too eugene,serp,commercial,decision,y,scheduled,long,med,/services/septic-install-repairs/,P1,Reused verbatim from home pack row 179
+one contractor for excavation and septic lane county,serp,commercial,decision,y,scheduled,long,med,/services/septic-install-repairs/,P2,Bundled-service positioning variant
+do i need a general contractor or a septic contractor,serp,informational,awareness,n,browse,long,med,/services/septic-install-repairs/,P1,Direct credential-distinction query — CCB vs DEQ
+difference between ccb license and deq certification,serp,informational,awareness,n,browse,long,med,/services/septic-install-repairs/,P1,Direct credential-distinction query — matches shipped astro page FAQ
+septic system cost vs city sewer connection oregon,serp,informational,consideration,y,browse,long,low,/services/septic-install-repairs/,P3,Comparison/decision content
+septic system for adu oregon,serp,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,ADU-specific project type (existing entity from site-prep pack)
+can an adu share an existing septic system oregon,serp,informational,consideration,y,browse,long,med,/services/septic-install-repairs/,P1,Direct ADU+septic capacity question — common Oregon-specific concern
+septic system capacity for additional bedroom oregon,serp,informational,consideration,y,browse,long,low,/services/septic-install-repairs/,P3,Capacity/expansion query
+septic tank finder cost eugene,serp,commercial,consideration,y,scheduled,mid,low,/services/septic-install-repairs/,P3,Existing-system location service query
+septic system repair springfield oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/springfield/septic/,P2,City x service
+septic installation springfield oregon,serp,commercial,decision,y,scheduled,mid,high,/service-areas/springfield/septic/,P2,Reused verbatim from home pack row 111
+septic installer cottage grove oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/cottage-grove/,P2,City target (Tier 2)
+septic installer creswell oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/creswell/,P2,City target (Tier 2) — rural septic angle per business-info.md
+septic installer veneta oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/veneta/,P2,City target (Tier 2) — All Dirt is based here and offers full septic line, verify competitive intensity
+septic installer junction city oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/junction-city/,P3,City target (Tier 2)
+septic installer florence oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/florence/,P3,City target (Tier 3)
+septic installer oakridge oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/oakridge/,P3,City target (Tier 3) — rural mountain community, likely no sewer access at all
+rural septic system oakridge oregon,serp,commercial,consideration,y,scheduled,long,low,/service-areas/oakridge/,P3,Tier 3 city, no-sewer-access framing
+septic installer coburg oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/coburg/,P3,City target (Tier 3)
+septic installer lowell oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/lowell/,P3,City target (Tier 3)
+best septic company eugene oregon,autocomplete,commercial,decision,y,scheduled,mid,high,/services/septic-install-repairs/,P1,"best" prefix mining — SERP is dominated by dedicated septic specialists (Oregon Septic, Best Septic, Westco) not excavation generalists
+top rated septic installer lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/services/septic-install-repairs/,P2,"top rated" prefix mining
+affordable septic installation eugene,autocomplete,commercial,decision,y,scheduled,mid,med,/services/septic-install-repairs/,P2,"affordable" prefix mining
+licensed septic installer oregon,autocomplete,commercial,consideration,y,scheduled,mid,high,/services/septic-install-repairs/,P0,Trust-modifier; maps directly to DEQ Installer Certification signal
+insured septic contractor eugene,autocomplete,commercial,consideration,y,scheduled,mid,med,/services/septic-install-repairs/,P2,Trust-modifier
+septic installer near me,autocomplete,commercial,decision,n,scheduled,head,high,/services/septic-install-repairs/,P0,High-volume generic local-intent query
+septic repair near me,autocomplete,commercial,decision,n,scheduled,head,high,/services/septic-install-repairs/,P0,High-volume generic local-intent query, often urgent
+septic company near me open now,autocomplete,transactional,decision,n,scheduled,mid,med,/services/septic-install-repairs/,P2,Urgency-adjacent — distressed-buyer signal
+24 hour septic service eugene,autocomplete,transactional,decision,y,scheduled,mid,med,n/a,P3,SCOPE-CAUTION — do not claim 24/7 emergency service unless confirmed true with David
+free septic estimate eugene oregon,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P0,Direct conversion query; matches "Free Estimates" USP
+get a quote for septic install lane county,autocomplete,transactional,decision,y,scheduled,long,high,/contact/,P1,Conversion variant
+call septic contractor eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion-intent
+septic contractor eugene oregon phone number,autocomplete,navigational,decision,y,scheduled,long,high,/contact/,P1,High-intent navigational tail query
+d&d land works septic,search_suggestion,navigational,decision,n,browse,mid,high,/services/septic-install-repairs/,P0,Brand + service term; zero volume today but must be owned once site/GBP exist
+david deggelman septic eugene,search_suggestion,navigational,decision,y,browse,long,med,/about/,P1,Owner-name + service query, supports E-E-A-T

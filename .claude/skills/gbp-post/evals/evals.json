@@ -1,0 +1,26 @@
+{
+  "skill_name": "gbp-post",
+  "evals": [
+    {
+      "id": 0,
+      "name": "todays-gbp-post",
+      "prompt": "Draft today's GBP post for 75 Degree AC. Today is Tuesday April 21, 2026. The pipeline is set up and we need a new post to publish Wednesday.",
+      "expected_output": "A draft post file in 04-gmb/posts/drafts/ with research notes appendix, 1200-1450 char body, primary keyword in first line, no phone in body, 2-3 trust signals, valid CTA button + URL, Houston-specific hook. Either a new template entry appended to post_templates.json OR reuse of an eligible existing template (excluding pre_summer_tune_up which was posted 4/20).",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "cypress-geo-post",
+      "prompt": "Write a GBP post targeted at the Cypress TX service area. Focus on something a Cypress homeowner would care about right now — use real data to pick the angle, not a generic template.",
+      "expected_output": "A post where the first line contains an AC/HVAC keyword + 'Cypress'. Body references something specific to Cypress or northwest Houston (e.g., neighborhood, local context). Research notes show GSC data check for cypress-related queries. CTA URL points to cypress-specific landing page if one exists, else the most relevant Houston page.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "weekly-batch",
+      "prompt": "Give me this week's 3 GBP posts (Mon/Wed/Fri cadence). Make sure the three posts vary in type, geo, and keyword target. Today is Monday April 20, 2026.",
+      "expected_output": "Three draft files. Post 1 = What's New (Mon). Post 2 = Offer (Wed). Post 3 = What's New or Event (Fri). No geo repeated across the three. No keyword repeated. All three templates eligible (not in queue.json.posted within last 40 days). Research notes at top showing the single research sweep that informed all 3.",
+      "files": []
+    }
+  ]
+}

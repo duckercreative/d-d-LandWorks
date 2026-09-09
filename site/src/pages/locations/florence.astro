@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/services/land-clearing' },
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/services/septic-install-repairs' },
+  { title: 'Drainage Excavation', description: 'Cutting swales and trenches to move water where it needs to go.', href: '/services/drainage-excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation Contractor in Florence, OR | D&D Land Works"
+	description="Excavation, land clearing, drainage, and DEQ certified septic work for coastal and dune-soil properties in Florence, OR. Licensed and bonded, CCB #261742."
+>
+	<Hero
+		eyebrow="Florence, Oregon"
+		headline="Excavation in Florence, OR"
+		subheadline="About an hour west of Eugene on Highway 126, Florence sits at the mouth of the Siuslaw River in dune country. Jobs out here get scheduled deliberately, not squeezed in on the way to somewhere else."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Florence, Oregon"
+		headlineHtml="Sandy Soil <span class='text-brand-blue'>Changes the Plan</span> in Florence"
+		descriptionHtml="<p>Ground around Florence behaves nothing like the clay-heavy valley soil D&amp;D Land Works sees most of the time. Sand from the surrounding dunes drains fast but shifts underfoot, and the water table sits close to the surface in a lot of spots near the river and the coast. That changes how a drainfield gets sited, how a foundation excavation gets cut, and how much a slope needs to be held back once it&rsquo;s disturbed.</p><p>Coastal properties tend to run older, and a fair number are still on their own septic system rather than city sewer. Salt air and constant damp also take a toll on drainage and grading work that was done decades ago and never revisited. D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong> and DEQ certified for septic, covering Florence as part of the Lane County service area.</p>"
+	/>
+	<!-- Services -->
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			Services in Florence
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+		<p class="mt-8 text-center text-slate-600">
+			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
+		</p>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Florence, Oregon"
+		headline="Why Do Florence Property Owners Trust D&D Land Works?"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works job site in Florence, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone.</p><p>David Deggelman scopes every job in person before quoting, so pricing accounts for Florence&rsquo;s sandy soil and high water table rather than a regional average. If you need excavation, drainage, or septic work anywhere in Florence, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Florence"
+		subheadline="Call ahead so the trip out gets scheduled with the rest of the week's jobs."
+	/>
+</BaseLayout>

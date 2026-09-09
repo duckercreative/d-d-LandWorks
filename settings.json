@@ -1,0 +1,23 @@
+{
+  "model": "claude-sonnet-4-6",
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(open:*)"
+    ]
+  },
+  "env": {
+    "PROJECT_ROOT": "d:/Duckers/D&D",
+    "CLIENT": "D&D Land Works",
+    "WEBSITE": "https://ddlandworks.com",
+    "PHONE": "541-401-8726"
+  }
+}

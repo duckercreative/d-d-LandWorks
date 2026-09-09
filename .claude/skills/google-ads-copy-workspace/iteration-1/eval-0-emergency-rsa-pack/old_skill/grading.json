@@ -1,0 +1,85 @@
+{
+  "eval_id": 0,
+  "eval_name": "emergency-rsa-pack",
+  "config": "old_skill",
+  "expectations": [
+    {
+      "text": "produces_exactly_15_headlines",
+      "passed": true,
+      "evidence": "found 34 (min 15)"
+    },
+    {
+      "text": "produces_4_descriptions",
+      "passed": true,
+      "evidence": "found 4 (min 4)"
+    },
+    {
+      "text": "headlines_categorized_by_formula",
+      "passed": true,
+      "evidence": "found 19 (min 5)"
+    },
+    {
+      "text": "lists_at_least_8_callouts",
+      "passed": true,
+      "evidence": "found 116 (min 8)"
+    },
+    {
+      "text": "lists_at_least_4_sitelinks",
+      "passed": true,
+      "evidence": "found 11 (min 4)"
+    },
+    {
+      "text": "includes_phone_in_call_asset_only",
+      "passed": true,
+      "evidence": "Call Asset"
+    },
+    {
+      "text": "phone_number_present_713_598_2737",
+      "passed": true,
+      "evidence": "(713) 598-2737"
+    },
+    {
+      "text": "tacla_license_referenced",
+      "passed": true,
+      "evidence": "TACLA72152E"
+    },
+    {
+      "text": "structured_snippets_present",
+      "passed": true,
+      "evidence": "Structured Snippet"
+    },
+    {
+      "text": "location_asset_referenced",
+      "passed": true,
+      "evidence": "Location Asset"
+    },
+    {
+      "text": "image_assets_referenced",
+      "passed": true,
+      "evidence": "Image Assets"
+    },
+    {
+      "text": "specifies_display_url_path",
+      "passed": true,
+      "evidence": "/emergency"
+    },
+    {
+      "text": "headlines_under_30_chars_acknowledged",
+      "passed": true,
+      "evidence": "30 char"
+    },
+    {
+      "text": "discusses_pinning_strategy",
+      "passed": true,
+      "evidence": "Pinning"
+    },
+    {
+      "text": "houston_in_at_least_one_headline",
+      "passed": true,
+      "evidence": "Houston"
+    }
+  ],
+  "passed_count": 15,
+  "total_count": 15,
+  "pass_rate": 1.0
+}

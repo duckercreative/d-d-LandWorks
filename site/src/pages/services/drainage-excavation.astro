@@ -1,0 +1,430 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/drainage-excavation-content.md).
+  Promoted from the /services/drainage-excavation-test draft after review.
+
+  #1 OPEN ITEM carried from the content file: whether D&D installs French drains,
+  curtain drains, dry wells, or catch basins as a confirmed standalone service is
+  NOT confirmed fact (business-info.md doesn't list it; the shipped grading-leveling
+  page calls it "not confirmed as a current D&D service"). The PRIOR live page
+  claimed "Installing French drains along foundations and retaining walls" as a
+  flat claim — that predated this research pipeline and was NOT treated as settled
+  fact here. This page uses the conservative framing throughout: D&D excavates and
+  trenches for buried drainage systems; specific product installation is confirmed
+  per job. Still needs David's explicit confirmation.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const compareTable = [
+  { label: 'Depth', french: '18–24 in. standard (4–6 ft near a footing)', curtain: 'About 2 ft' },
+  { label: 'Purpose', french: 'Intercepts water along its length at one consistent depth, often deep groundwater', curtain: 'Intercepts near-surface water spreading across a broader area' },
+  { label: 'Typical cost', french: 'Roughly $40–$100+/linear ft (national range)', curtain: 'Roughly $10–$25/linear ft (national range)' },
+  { label: 'Best use', french: 'A persistent wet spot or groundwater problem', curtain: 'A shallower, lower-cost fix for surface-level wetness' },
+];
+
+const destinations = [
+  { title: 'Daylight', detail: 'The pipe exits above ground at a lower point on the property, letting gravity carry the water the rest of the way. The most common option on a sloped Lane County lot, sometimes fitted with a pop-up emitter.' },
+  { title: 'A dry well', detail: 'An underground chamber that collects water and slowly releases it back into the surrounding soil. Usually paired with a French drain, not a substitute for one.' },
+  { title: 'A permitted storm-system tie-in', detail: 'A connection to the city’s public stormwater system, which requires a permit in both Eugene and Springfield.' },
+];
+
+const permits = [
+  { situation: 'Tying into Eugene’s storm system', detail: 'Requires a permit under Eugene Code §6.610, issued only to a property owner (own residence) or a licensed plumber or septic-tank-installation contractor.' },
+  { situation: 'Tying into Springfield’s storm system', detail: 'A similar connection permit under Springfield’s Development Code (Ordinance 6464, effective January 2024).' },
+  { situation: 'Unincorporated Lane County', detail: 'Lane County’s Stormwater Management Program is the authority to confirm rules for unincorporated property.' },
+];
+
+const materials = [
+  { name: 'Perforated pipe', detail: 'Rigid PVC resists crushing and holds its shape longer; flexible corrugated pipe costs less and bends more easily, but collapses and clogs sooner.' },
+  { name: 'Drain rock', detail: 'Clean, washed, angular gravel packed around the pipe so water moves through it freely instead of getting trapped in fine soil.' },
+  { name: 'Filter fabric', detail: 'Geotextile fabric wrapped around the gravel and pipe, keeping Willamette Valley’s silty clay from migrating in and clogging the system.' },
+];
+
+const costRows = [
+  { type: 'French drain', range: '$40–$100+/linear ft', affects: 'Depth (footing-level runs deeper and costs more), pipe material, soil conditions' },
+  { type: 'Curtain drain', range: '$10–$25/linear ft', affects: 'Shallower depth, less material, simpler trench' },
+  { type: 'Dry well', range: '$1,165–$4,420 installed', affects: 'Chamber size, depth, hand-dug vs. machine-dug' },
+  { type: 'Catch basin', range: '$1,000–$4,000 installed', affects: 'Basin size, pipe run length, tie-in complexity' },
+];
+
+const faqs = [
+  { question: 'What’s the difference between a French drain and a curtain drain?', answer: 'A French drain runs deeper, 18–24 inches standard, deeper still near a footing, and intercepts water along its length at a consistent depth. A curtain drain is shallower, about 2 feet, and less expensive, built to intercept near-surface water spreading across a broader area rather than deep groundwater at one point. Both are buried, perforated-pipe systems; which one fits depends on how deep the water problem actually sits.' },
+  { question: 'How deep does a French drain need to be?', answer: 'It depends on what it’s solving. Standard yard-drainage depth runs 18–24 inches. A drain handling only surface water can run as shallow as 8–12 inches. A drain tied to a footing’s own depth runs 4–6 feet. Depth is a real design decision made on-site, not a fixed number, based on where the water problem actually sits.' },
+  { question: 'How much does a French drain or yard drainage system cost?', answer: 'General national ranges run roughly $10–$100+ per linear foot depending on depth and type: shallow exterior drains around $10–$35/ft, deep footing-level drains around $45–$85/ft, curtain drains around $10–$25/ft. These aren’t Lane County numbers, no Lane-County-specific pricing exists yet. A free on-site estimate is the only way to price a specific yard.' },
+  { question: 'Where does the water from a French drain actually go?', answer: 'To one of three real destinations: daylight at a lower point on the property, a dry well that slowly infiltrates it back into the soil, or a permitted tie-in to the city storm system. A drain with none of these just relocates standing water to another spot underground, a known failure mode of a poorly designed system.' },
+  { question: 'Do I need a permit to tie a drain into the storm system in Eugene or Springfield?', answer: 'Yes, in both cities. Eugene requires a permit under Municipal Code §6.610, issued only to the property owner or a licensed plumber or septic-tank-installation contractor. Springfield requires a similar connection permit under its Development Code. Confirm the exact process and fees directly with each city’s engineering or public works department before a project starts.' },
+  { question: 'What’s the difference between a French drain and a dry well?', answer: 'They’re usually paired, not substitutes. A French drain conveys water continuously along a trench to an exit point; a dry well collects a volume of water and slowly releases it back into the surrounding soil. A French drain often discharges into a dry well rather than the two being alternative fixes for the same problem.' },
+  { question: 'My yard was already regraded and it’s still wet — what’s next?', answer: 'Not every water problem is a surface problem. Grading corrects the ground’s own slope; if water is collecting below or at grade, it needs a buried drain to carry it away instead. That’s not a sign the earlier grading work was done badly, it’s a different remedy for a different situation.' },
+  { question: 'Is a French drain the same as the drain required around my new foundation?', answer: 'Physically similar, legally different. The code-required foundation drain is the same basic technique, a perforated pipe in gravel, but it’s tied to a building permit and Oregon’s ORSC R405 requirement. A general yard or retaining-wall French drain not tied to a new foundation’s own code requirement is this page’s territory.' },
+  { question: 'Can a French drain make my drainage problem worse?', answer: 'A poorly built one can. A French drain with no real discharge destination doesn’t solve the problem, it just moves standing water to another spot, often underground where it’s harder to diagnose. That’s a known mistake with unlicensed or DIY installs, not an inherent flaw in a properly designed system.' },
+  { question: 'How long does a properly installed French drain last?', answer: '15–25 years or more for a properly built system with the right pipe, gravel, and filter fabric, a general industry figure, not a D&D-specific claim. What shortens that lifespan: no filter fabric, letting Willamette Valley clay silt up the system, the wrong pipe type, or no real discharge point.' },
+];
+
+const related = [
+  { title: 'Grading & Leveling', description: 'Surface swales, berms, and re-sloping an existing yard, no buried system involved.', href: '/services/grading-leveling' },
+  { title: 'Foundation Excavation', description: 'The code-required ORSC R405 foundation drain tied to a new build.', href: '/services/foundation-excavation' },
+  { title: 'Septic Install & Repair', description: 'A separate, DEQ-regulated wastewater-dispersal system.', href: '/services/septic-install-repairs' },
+  { title: 'Excavation & Earthmoving', description: 'General cut-and-fill, trenching, and earthmoving mechanics.', href: '/services/excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/drainage-excavation/#service',
+      name: 'Drainage Excavation',
+      serviceType: 'Drainage Excavation',
+      description: "Drainage excavation is the digging and trenching that installs a buried drainage system, a French drain, curtain drain, or catch-basin-and-pipe network, to move water away from a wet yard, a foundation, or a low spot that surface grading alone can't fix. D&D Land Works excavates and trenches for buried drainage systems for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon. Specific drainage product installation is confirmed per job.",
+      url: 'https://www.ddlandworks.com/services/drainage-excavation/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Drainage Excavation', item: 'https://www.ddlandworks.com/services/drainage-excavation/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Drainage Excavation in Eugene & Lane County, OR | D&D Land Works"
+	description="French drain & drainage trenching in Eugene, Springfield & Lane County, OR. Licensed, bonded, free estimates: 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Drainage Excavation in Eugene, Springfield & Lane County, Oregon"
+		subheadline="Willamette Valley winters mean months of rain on ground that doesn't always shed it well. D&D Land Works cuts the trenches and culvert lines that get water moving away from where it's causing problems."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Drainage Excavation in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Drainage Excavation</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>Drainage excavation is the digging and trenching that installs a buried drainage system &mdash; a French drain, curtain drain, or catch-basin-and-pipe network &mdash; to move water away from a wet yard, a foundation, or a low spot that surface grading alone can&rsquo;t fix. It&rsquo;s a different remedy than grading: grading reshapes the ground&rsquo;s own contour with a swale or a corrected slope, while drainage excavation buries a perforated pipe, wrapped in gravel and filter fabric, that collects and carries water to a discharge point.</p><p>D&amp;D Land Works excavates and trenches for buried drainage systems for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon, under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
+	/>
+	<!-- Scope -->
+	<PhotoContentBlock
+		eyebrow="What This Page Covers"
+		headline="Buried Drainage, Not Surface Grading: What This Page Covers"
+		image="/hero-bg-1.webp"
+		imageAlt="Drainage trench excavated along a yard in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="3 Systems"
+		badgeLabel="French Drains, Curtain Drains & Catch Basins"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>This page covers the buried, constructed side of drainage: French drains, curtain drains, catch basins, dry wells, and culverts, systems that carry water underground to a discharge point.</p><p><a href='/services/grading-leveling' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Grading &amp; Leveling</a> covers the surface side: swales, berms, and re-sloping that move water by reshaping the ground itself. A septic drainfield is a separate, DEQ-regulated wastewater system unrelated to yard or stormwater drainage. See <a href='/services/septic-install-repairs' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Septic Install &amp; Repair</a> for that.</p>"
+	/>
+	<!-- French drain basics -->
+	<PhotoContentBlock
+		eyebrow="French Drain Basics"
+		headline="What Is a French Drain, and How Deep Does It Need to Be?"
+		image="/hero-bg-2.webp"
+		imageAlt="French drain trench with gravel and perforated pipe in Lane County"
+		imageSide="right"
+		badgeValue="18–24 in"
+		badgeLabel="Standard French Drain Depth"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>A French drain is a buried trench: a perforated pipe surrounded by washed gravel that collects groundwater or surface water along its length and carries it to a discharge point. Standard yard-drainage depth runs 18&ndash;24 inches, as shallow as 8&ndash;12 inches for surface-water-only work, and 4&ndash;6 feet where a drain runs to a footing&rsquo;s own depth. Pipe slopes roughly 1%, about an inch of drop every 8&ndash;10 feet, to keep water moving.</p><p>Oregon811 requires two business days&rsquo; notice before any digging, and OSHA requires a protective system at 5 feet deep. D&amp;D Land Works excavates and trenches to that depth and slope; the specific product installed (pipe, fabric, and gravel backfill) is confirmed per job.</p>"
+	/>
+	<!-- French vs curtain -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				French Drain vs. Curtain Drain: Which Do You Need?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 leading-relaxed">
+				Both are buried, perforated-pipe systems, but they&rsquo;re sized for different problems.
+			</p>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4"></th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">French Drain</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">Curtain Drain</th>
+						</tr>
+					</thead>
+					<tbody>
+						{compareTable.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.label}</td>
+								<td class="py-3 pr-4 text-slate-600">{row.french}</td>
+								<td class="py-3 text-slate-600">{row.curtain}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<!-- Swale or french drain -->
+	<PhotoContentBlock
+		eyebrow="Swale vs. French Drain"
+		headline="Swale or French Drain: Which One Actually Fixes Your Yard?"
+		image="/hero-bg-3.webp"
+		imageAlt="Wet, saturated yard in Lane County before drainage excavation"
+		imageSide="left"
+		badgeValue="Below Grade"
+		badgeLabel="When Regrading Alone Won't Fix It"
+		ctaLabel="See Grading & Leveling"
+		ctaHref="/services/grading-leveling"
+		bodyHtml="<p>If water sits on top of the ground and a simple reshape would carry it away, that&rsquo;s a surface problem: a swale or a regrade; see <a href='/services/grading-leveling' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Grading &amp; Leveling&rsquo;s swale-vs-French-drain comparison</a> for that side of the decision.</p><p>If water is already below or at grade, saturating the soil rather than pooling on top of it, reshaping the surface won&rsquo;t fix it. That needs a buried pipe to carry it away instead. A regrade that didn&rsquo;t solve a wet yard often means the ground needed underground conveyance, not a different slope, and that&rsquo;s not a sign the earlier grading work was done badly.</p>"
+	/>
+	<!-- Water destination -->
+	<section class="bg-ink text-white">
+		<div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
+				Where Does the Water From a French Drain Actually Go?
+			</h2>
+			<p class="mt-4 text-slate-300 leading-relaxed text-center max-w-2xl mx-auto">
+				A drain has to end somewhere, or it isn&rsquo;t solving anything. There are three real destinations.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-3">
+				{destinations.map((d) => (
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-white">{d.title}</p>
+						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{d.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-400 text-center max-w-2xl mx-auto">
+				A drain with none of these three destinations doesn&rsquo;t actually drain anywhere. It just relocates standing water to another spot underground, a known failure mode of a poorly designed system, not an inherent flaw in a properly built one.
+			</p>
+		</div>
+	</section>
+	<!-- Storm permit -->
+	<section class="bg-white border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Do I Need a Permit to Tie Into the Storm Drain in Eugene or Springfield?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Yes, in both cities.
+			</p>
+			<div class="mt-8 grid gap-6 sm:grid-cols-3">
+				{permits.map((p) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{p.situation}</p>
+						<p class="mt-2 text-sm text-slate-600">{p.detail}</p>
+					</div>
+				))}
+			</div>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">We&rsquo;ll Walk You Through What&rsquo;s Required</a>
+			</div>
+		</div>
+	</section>
+	<!-- Foundation drain comparison -->
+	<PhotoContentBlock
+		eyebrow="Foundation Drain Comparison"
+		headline="Is This the Same Drain My New Foundation Is Required to Have?"
+		image="/hero-bg-4.webp"
+		imageAlt="Perimeter drain excavated around a foundation wall in Lane County"
+		imageSide="right"
+		badgeValue="ORSC R405"
+		badgeLabel="Code-Required Foundation Drain (Different Job)"
+		ctaLabel="See Foundation Excavation"
+		ctaHref="/services/foundation-excavation"
+		bodyHtml="<p>Physically similar, legally different. Oregon&rsquo;s code requires a foundation drain (ORSC R405) around most new foundations that retain earth and enclose habitable space, the same basic technique, a perforated pipe in gravel, but a code-triggered requirement tied to a building permit; see <a href='/services/foundation-excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Foundation Excavation</a> for that code education.</p><p>A perimeter drain run around a structure, retaining wall, or general yard problem that isn&rsquo;t tied to a new foundation&rsquo;s own code requirement is this page&rsquo;s territory instead.</p>"
+	/>
+	<!-- Materials -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+				What Materials Go Into a Properly Built Drain?
+			</h2>
+			<div class="mt-8 grid gap-4 sm:grid-cols-3">
+				{materials.map((m) => (
+					<div class="card">
+						<p class="font-display font-bold text-sm text-brand-blue">{m.name}</p>
+						<p class="mt-1 text-sm text-slate-600">{m.detail}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	<!-- Cost -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Drainage Excavation Cost?
+			</h2>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">System Type</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Affects Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{costRows.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.type}</td>
+								<td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
+								<td class="py-3 text-slate-600">{row.affects}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center">
+				General national ranges, not a Lane County quote. A free on-site estimate is the only way to price a specific yard.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Can it make worse -->
+	<PhotoContentBlock
+		eyebrow="Common Mistakes"
+		headline="Can a French Drain Make Drainage Worse?"
+		image="/hero-bg-1.webp"
+		imageAlt="Properly installed drain trench with pipe and gravel in Lane County"
+		imageSide="left"
+		badgeValue="Real Destination"
+		badgeLabel="What Separates a Fix From a Failure"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>A poorly built one can. A French drain with no real discharge destination (no daylight point, no dry well, no permitted tie-in) doesn&rsquo;t solve a wet yard.</p><p>It just moves standing water to a different spot, often underground where it&rsquo;s harder to diagnose than the original problem. That&rsquo;s a known mistake with unlicensed or DIY installs, not an inherent flaw in a properly designed system with a real destination for the water it collects.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Drainage Excavation in Lane County, OR"
+		headline="Why Do Lane County Homeowners Trust D&D Land Works for Drainage Excavation?"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works excavating a drainage trench in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every drainage job is excavated and trenched to the depth and slope the water problem actually needs, not a one-size-fits-all number.</p><p>David Deggelman scopes every job in person, confirms which discharge destination and materials actually fit your property, and calls Oregon 811 before equipment ever moves. If your yard, foundation, or retaining wall has a chronic wet spot anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every drainage job starts with David walking the site in person, confirming a real discharge destination before anything's dug, and calling Oregon 811 before equipment ever moves."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Drainage Problem Scoped"
+		subheadline="A chronic wet yard, a damp crawlspace, or a low spot that won't dry out is exactly what this page is for. Free estimate for drainage excavation anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

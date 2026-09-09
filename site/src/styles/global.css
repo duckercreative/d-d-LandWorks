@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Outfit — headings/display (modern geometric sans; matches competitor-analysis typography pass, see docs/design-system.md) */
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/outfit/900.css";
+
+/* Poppins — body/UI (geometric sans companion to Outfit, highly legible at small sizes) */
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+
+/*
+  Design tokens — see docs/design-system.md for the full rationale.
+  Brand colors come from the D&D Land Works logo (black / white / blue);
+  safety-orange is an added 4th accent for CTA urgency, not part of the logo.
+*/
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1c1c1c;
+
+  --color-brand-blue: #1f7dc3;
+  --color-brand-blue-dark: #19649c;
+  --color-brand-blue-light: #ddecf6;
+
+  --color-safety-orange: #ea580c;
+  --color-safety-orange-dark: #c2410c;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /*
+    Radius: kept tight (not pill-shaped/bubbly) — the logo's letterforms are
+    hard-edged and blocky, and a soft-rounded UI would fight that. Cards get
+    slightly more room than buttons/badges since they hold content, not just a label.
+  */
+  --radius-brand: 0.25rem;
+  --radius-brand-card: 0.5rem;
+}
+
+/*
+  Component classes — see docs/design-system.md "Components" for the full spec.
+  Reuse these instead of re-composing the same utility soup on every button/card.
+*/
+@layer components {
+  /* Base — always combine with one variant below, e.g. class="btn btn-primary" */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           font-display font-bold uppercase tracking-wide
+           rounded-(--radius-brand) px-6 py-3
+           transition-colors duration-150
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-brand-blue text-white hover:bg-brand-blue-dark focus-visible:ring-brand-blue;
+  }
+
+  .btn-cta {
+    @apply bg-safety-orange text-white hover:bg-safety-orange-dark focus-visible:ring-safety-orange;
+  }
+
+  .btn-outline {
+    @apply border-2 border-ink text-ink bg-transparent hover:bg-ink hover:text-white focus-visible:ring-ink;
+  }
+
+  .btn-sm { @apply px-4 py-2 text-sm; }
+  .btn-lg { @apply px-8 py-4 text-lg; }
+
+  .card {
+    @apply rounded-(--radius-brand-card) border border-slate-200 bg-white p-6 shadow-sm;
+  }
+
+  /*
+    Pill button with a trailing icon badge — used only in Hero.astro's
+    secondary CTA. Deliberately full-round + a floating badge instead of
+    the site's usual tight-radius .btn; see docs/design-system.md for why
+    this is scoped to the Hero and not a system-wide button style.
+  */
+  .btn-pill {
+    @apply inline-flex items-center gap-3 rounded-full bg-brand-blue pl-6 pr-1.5 py-1.5
+           font-display font-semibold uppercase tracking-wide text-white
+           transition-colors duration-150 hover:bg-brand-blue-dark
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-blue;
+  }
+
+  .btn-pill-icon {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-brand-blue;
+  }
+}

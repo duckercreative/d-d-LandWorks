@@ -1,0 +1,154 @@
+{
+  "expectations": [
+    {
+      "text": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+      "passed": true,
+      "evidence": "File confirmed at both locations: '04-gmb/posts/drafts/2026-04-22_ac-repair-katy-tx-spring-offer.md' (verified via ls) and copied to outputs/ directory. Transcript Step 9 documents Write tool calls to both paths."
+    },
+    {
+      "text": "Post body is between 1200 and 1450 characters",
+      "passed": true,
+      "evidence": "Python character count independently verified: 1448 characters. This matches the executor's own claim of 1448. metrics.json confirms post_body_chars: 1448. Within the 1200-1450 range."
+    },
+    {
+      "text": "Phone number (713) 598-2737 does NOT appear anywhere in the post body",
+      "passed": true,
+      "evidence": "Python regex search for '713' returned None. Post body text reviewed in full — no phone number present anywhere. Transcript Step 7 explicitly notes 'NO phone number' as a copy decision. metrics.json check no_phone_in_body: true."
+    },
+    {
+      "text": "First line of post body contains a primary keyword + 'Houston' or a named suburb",
+      "passed": true,
+      "evidence": "First line: '🌡️ AC repair in Katy, TX. Your system just ran its first real test of the season...' — contains primary keyword 'ac repair' plus named suburb 'Katy, TX'. Python check confirmed 'katy' in first_line.lower() = True."
+    },
+    {
+      "text": "Post includes 2-3 trust signals (e.g. Licensed TACLA, Same-day, Since 2016)",
+      "passed": true,
+      "evidence": "Post body contains: 'since 2016' (75 Degree AC has served Katy since 2016), 'Licensed TACLA', 'Fully insured', 'Same-day slots open most mornings', and 'Stocked trucks'. That is 5 trust signals — comfortably exceeds the 2-3 minimum. The assertion says '2-3' as the target; the post has more, which is a pass."
+    },
+    {
+      "text": "A valid CTA button type and URL to 75degreeac.com is specified",
+      "passed": true,
+      "evidence": "Frontmatter specifies cta_button: BOOK and cta_url: https://75degreeac.com/services/ac-tune-up-and-maintenance/. Transcript Step 4 confirms the URL was verified 200 OK via WebFetch. The rejected 404 URL (ac-repair-houston-tx/) was correctly replaced."
+    },
+    {
+      "text": "Research notes are present (GSC data check was performed, weather checked)",
+      "passed": true,
+      "evidence": "The output .md file contains a full Research Notes block (lines 40-89) documenting: GSC gap targets with impression/position data pulled from queries-202604.csv, weather context with NWS source note, queue exclusions, geo rotation logic, CTA URL validation results, and pre-write checklist. Both GSC data and weather were checked as required."
+    },
+    {
+      "text": "Template used is not pre_summer_tune_up (posted 4/20, within 40-day exclusion)",
+      "passed": true,
+      "evidence": "Template ID used is 'pre_summer_katy_repair_offer' — a newly created template. Research Notes confirm pre_summer_tune_up was excluded (posted 4/20, within 40-day window). Transcript Step 2 documents the full 10-post exclusion list including pre_summer_tune_up at 4/20."
+    },
+    {
+      "text": "No em dashes (—) or semicolons appear in the post body",
+      "passed": true,
+      "evidence": "Python regex search for em dash (—) and en dash (–) both returned None. Semicolon search returned None. Independent verification of full post body text confirms zero instances. Transcript Step 7 notes first draft had 5 em dashes and was rewritten. metrics.json confirms no_em_dashes: true, no_semicolons: true."
+    },
+    {
+      "text": "No banned AI-slop phrases present (ensure, seamless, elevate, unlock, etc.)",
+      "passed": true,
+      "evidence": "Python check against 14 common AI-slop terms (ensure, seamless, elevate, unlock, leverage, robust, cutting-edge, state-of-the-art, comprehensive, tailored, empower, transform, navigate, streamline) found zero matches. Post copy uses concrete, specific language: service call patterns, dollar figures, part names (capacitor, drain line, thermostat). metrics.json no_ai_slop_terms: true."
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 14,
+      "Write": 3,
+      "Bash": 5,
+      "WebFetch": 5,
+      "WebSearch": 2,
+      "Grep": 0,
+      "Glob": 2,
+      "Edit": 1,
+      "ToolSearch": 1
+    },
+    "total_tool_calls": 33,
+    "total_steps": 10,
+    "errors_encountered": 2,
+    "error_notes": [
+      "CTA URL https://75degreeac.com/ac-repair-houston-tx/ returned 404 — detected and replaced with confirmed-200 URL",
+      "First draft body was 1621 chars with 5 em dashes — detected via verification script, rewritten before output"
+    ],
+    "output_chars": 4850,
+    "transcript_chars": 11799,
+    "post_body_chars": 1448,
+    "checks_passed_all_7": true
+  },
+  "timing": {
+    "executor_duration_seconds": 374.1,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 374.1
+  },
+  "claims": [
+    {
+      "claim": "Character count is 1448",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Independent Python len() count of extracted post body text returned 1448. Matches executor claim exactly."
+    },
+    {
+      "claim": "Post body has 0 em dashes and 0 semicolons",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Regex search across full post body text found zero instances of em dash (—), en dash (–), or semicolon (;)."
+    },
+    {
+      "claim": "CTA URL resolves 200 OK",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript documents WebFetch confirmed 200 for https://75degreeac.com/services/ac-tune-up-and-maintenance/. The rejected 404 URL was documented and replaced, demonstrating the check was genuine."
+    },
+    {
+      "claim": "New template pre_summer_katy_repair_offer was appended to post_templates.json",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json lists post_templates.json under files_modified. Transcript Step 9 documents Edit tool call to append template. Cannot independently confirm JSON file contents without re-reading it, but process evidence is solid."
+    },
+    {
+      "claim": "Weather data was sourced from seasonal inference due to retroactive date",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 3 explicitly documents NWS returning May 2026 live data (cannot retrieve April 21 retroactively) and notes the fallback to seasonal-houston.md. Research Notes block in output file repeats this caveat. Transparent and appropriate handling."
+    },
+    {
+      "claim": "All 6 pre_summer templates were within the 40-day exclusion window",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Research Notes list 10 post entries with dates. Six pre_summer templates posted/scheduled between 4/20 and 4/29 — all within 40 days of April 22. New template creation was correctly triggered."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": [
+      "Live NWS weather unavailable for retroactive April 21 date — seasonal-houston.md reference used and explicitly flagged in research notes",
+      "First draft body exceeded char limit (1621) and contained 5 em dashes — caught by verification script and rewritten before output"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Post includes 2-3 trust signals (e.g. Licensed TACLA, Same-day, Since 2016)",
+        "reason": "The assertion says '2-3' but the post contains 5 trust signals. The assertion passes, but the wording implies a ceiling of 3 when the actual policy may allow more. Consider rewording to '2 or more trust signals' or specifying minimum count only, to avoid ambiguity about whether over-shooting is a quality concern."
+      },
+      {
+        "reason": "No assertion checks that the post title is within the 58-character limit documented in the skill's post-formulas.md. The title 'AC Tune-Up in Katy TX — $89 Through April 30' is 46 characters and compliant, but it went unchecked — a longer title could have failed silently."
+      },
+      {
+        "reason": "No assertion verifies the offer_expiry field is present and set to a future date relative to the post date. Offer posts without a valid expiry are a GBP policy edge case. The executor set it correctly (April 30), but this is not tested."
+      },
+      {
+        "assertion": "Research notes are present (GSC data check was performed, weather checked)",
+        "reason": "This assertion is satisfied by any text mentioning GSC data and weather. A stronger version would require actual GSC values (impressions, positions) and a specific weather data point to appear, making it harder to satisfy with a placeholder note."
+      }
+    ],
+    "overall": "All 10 assertions are met with genuine evidence, not surface compliance. The skill handled self-correction well (404 CTA, character overage, em dashes caught on first draft). The eval set is solid but misses title length, offer expiry validity, and has a slightly ambiguous trust-signal count bound."
+  }
+}

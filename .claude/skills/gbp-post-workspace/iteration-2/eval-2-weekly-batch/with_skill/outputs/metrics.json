@@ -1,0 +1,79 @@
+{
+  "tool_calls": {
+    "Read": 9,
+    "Write": 9,
+    "Edit": 4,
+    "Bash": 12,
+    "WebFetch": 0,
+    "WebSearch": 0,
+    "Grep": 0,
+    "Glob": 0
+  },
+  "total_tool_calls": 34,
+  "total_steps": 8,
+  "files_created": [
+    "04-gmb/posts/drafts/2026-04-20_batch/RESEARCH_SWEEP.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-20_post-1-repair-vs-replace-houston.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-22_post-2-mini-split-katy-offer.md",
+    "04-gmb/posts/drafts/2026-04-20_batch/2026-04-24_post-3-hvac-install-sugar-land.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/RESEARCH_SWEEP.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/2026-04-20_post-1-repair-vs-replace-houston.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/2026-04-22_post-2-mini-split-katy-offer.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/2026-04-24_post-3-hvac-install-sugar-land.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/transcript.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-2-weekly-batch/with_skill/outputs/metrics.json"
+  ],
+  "errors_encountered": 5,
+  "errors_detail": [
+    "Post 1 draft: semicolon in R-22 bullet — fixed before write",
+    "Post 2 draft: 1497 chars (over 1450 max) — trimmed to 1376",
+    "Post 3 draft: 1674 chars (over 1450 max) — trimmed to 1245",
+    "Post 3 draft: em dash in first line — fixed before write",
+    "Old_skill linter interference: modified Post 1 twice adding ## Research Notes section — overwritten with clean version"
+  ],
+  "output_chars": 13366,
+  "transcript_chars": 9593,
+  "batch_mode_compliance": {
+    "research_sweep_file_created": true,
+    "research_notes_in_post_1": false,
+    "research_notes_in_post_2": false,
+    "research_notes_in_post_3": false,
+    "research_refs_in_post_1": true,
+    "research_refs_in_post_2": true,
+    "research_refs_in_post_3": true
+  },
+  "post_quality_checks": {
+    "post_1": {
+      "char_count": 1425,
+      "in_range": true,
+      "phone_in_body": false,
+      "em_dash_semicolon": false,
+      "ai_slop_phrases": false,
+      "keyword_geo_in_line_1": true
+    },
+    "post_2": {
+      "char_count": 1376,
+      "in_range": true,
+      "phone_in_body": false,
+      "em_dash_semicolon": false,
+      "ai_slop_phrases": false,
+      "keyword_geo_in_line_1": true
+    },
+    "post_3": {
+      "char_count": 1245,
+      "in_range": true,
+      "phone_in_body": false,
+      "em_dash_semicolon": false,
+      "ai_slop_phrases": false,
+      "keyword_geo_in_line_1": true
+    }
+  },
+  "batch_diversity": {
+    "post_types": ["What's New", "Offer", "What's New"],
+    "geos": ["Houston TX", "Katy TX (Cinco Ranch)", "Sugar Land TX (Riverstone)"],
+    "primary_keywords": ["ac repair houston", "ac installation katy tx", "hvac installation sugar land tx"],
+    "service_categories": ["repair/replace", "installation/ductless", "installation/full-system"],
+    "no_geo_repeated": true,
+    "no_template_repeated_from_last_40d": true
+  }
+}

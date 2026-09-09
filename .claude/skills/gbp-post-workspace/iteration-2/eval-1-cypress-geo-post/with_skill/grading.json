@@ -1,0 +1,156 @@
+{
+  "expectations": [
+    {
+      "text": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+      "passed": true,
+      "evidence": "Confirmed both paths exist: 04-gmb/posts/drafts/2026-05-03_ac-tune-up-cypress-tx-pre-summer.md (os.path.exists = True) and the file is also present in outputs/ directory. metrics.json lists both under files_created."
+    },
+    {
+      "text": "First line of post body contains an AC/HVAC keyword + 'Cypress'",
+      "passed": true,
+      "evidence": "First line of post body: '🌡️ AC tune-up time for Cypress, TX. A cold front is rolling through mid-week, and after that clears, Houston's heat isn't going back down until October.' Contains 'AC' (HVAC keyword) and 'Cypress' together on the opening line."
+    },
+    {
+      "text": "Post body is between 1200 and 1450 characters",
+      "passed": true,
+      "evidence": "Character count verified programmatically: 1422 characters. Confirmed by metrics.json (post_body_chars: 1422, post_body_in_range: true) and transcript pre-write checklist (1422, within 1200-1450 — PASS)."
+    },
+    {
+      "text": "Phone number (713) 598-2737 does NOT appear in the post body",
+      "passed": true,
+      "evidence": "Programmatic check confirms no '713' or '598-2737' substring in post body. Transcript pre-write check: 'Phone in body: 0 matches — PASS'. Policy compliance confirmed."
+    },
+    {
+      "text": "Research notes show GSC data was checked for Cypress-related queries",
+      "passed": true,
+      "evidence": "Research notes in the output file explicitly list four Cypress GSC queries: 'professional ac tune-up cypress tx' (23 imp, pos 53.3), 'ac repair near me cypress tx' (19 imp, pos 1.0), 'cooling system tune-up cypress' (19 imp, pos 56.4), '24 hour ac repair cypress' (8 imp, pos 64.8). Transcript Step 3 describes grepping 03-gsc/data/queries-202604.csv for Cypress queries with the same values."
+    },
+    {
+      "text": "CTA URL points to a Cypress-specific page or the most relevant Houston landing page",
+      "passed": true,
+      "evidence": "cta_url in the output file: https://75degreeac.com/services/ac-tune-up-and-maintenance/ — a Cypress-specific page does not exist (both /ac-repair-cypress-tx/ and /hvac-contractor-cypress-tx/ return 404 per transcript Step 6 verification). The tune-up service page is the most relevant live 200 page and directly matches the post's seasonal angle. Decision is documented and justified in transcript."
+    },
+    {
+      "text": "No em dashes (—) appear in the post body",
+      "passed": true,
+      "evidence": "Programmatic check of the post body confirms 0 em dash characters (U+2014). Transcript notes the first draft had em dashes which were caught by pre-write check and rewritten before saving. Final output is clean."
+    },
+    {
+      "text": "No banned AI-slop phrases (ensure, seamless, top-notch, look no further, etc.)",
+      "passed": true,
+      "evidence": "Programmatic scan of post body for 17 known banned phrases (ensure, seamless, top-notch, look no further, comprehensive, tailored, robust, leverage, game-changing, cutting-edge, innovative, revolutionary, transformative, synergy, holistic, best-in-class, state-of-the-art) returned 0 matches. Transcript pre-write check: 'AI slop phrases: 0 matches — PASS'."
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 10,
+      "Write": 3,
+      "Bash": 7,
+      "WebFetch": 5,
+      "WebSearch": 2,
+      "Grep": 4,
+      "Glob": 0,
+      "Edit": 2,
+      "ToolSearch": 1
+    },
+    "total_tool_calls": 34,
+    "total_steps": 14,
+    "errors_encountered": 2,
+    "error_notes": [
+      "First draft had 2 em dashes (caught by pre-write check, rewritten before saving)",
+      "First Edit attempt failed (old_string mismatch due to em dash encoding); resolved by full file rewrite"
+    ],
+    "output_chars": 4847,
+    "transcript_chars": 8390,
+    "post_body_chars": 1422,
+    "post_body_in_range": true,
+    "all_pre_write_checks_passed": true,
+    "cta_url_verified_200": true,
+    "new_template_added": true,
+    "geo_rotation_satisfied": true
+  },
+  "timing": {
+    "executor_duration_seconds": 387.6,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 387.6,
+    "total_tokens": 87405,
+    "duration_ms": 387625
+  },
+  "claims": [
+    {
+      "claim": "Character count is 1422 characters",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Independent programmatic count of the post body text from the output .md file returns exactly 1422 characters, matching the claim in both transcript and metrics.json."
+    },
+    {
+      "claim": "Pre-write checks all passed (em dashes, phone, AI slop, char count, CTA 200, first line)",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Each pre-write check listed in the research notes was independently verified: em dash scan = 0, phone scan = 0, banned phrase scan = 0, char count = 1422, CTA URL confirmed 200, first line contains 'AC' + 'Cypress'."
+    },
+    {
+      "claim": "Cypress queries were pulled from 03-gsc/data/queries-202604.csv",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 3 explicitly states 'Grepped 03-gsc/data/queries-202604.csv for Cypress queries' and lists exact impression/position values that match those in the research notes of the output file — consistent internal corroboration."
+    },
+    {
+      "claim": "No dedicated Cypress page exists at /ac-repair-cypress-tx/ or /hvac-contractor-cypress-tx/",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 6 documents WebFetch + curl checks returning 404 for both URLs. Research notes in the output file confirm: '/ac-repair-cypress-tx/ returns 404' and '/hvac-contractor-cypress-tx/ returns 404'."
+    },
+    {
+      "claim": "CTA URL https://75degreeac.com/services/ac-tune-up-and-maintenance/ returns 200",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 6 shows both WebFetch and Bash curl confirming 200. metrics.json: cta_url_verified_200: true."
+    },
+    {
+      "claim": "Cypress geo was overdue in rotation (all recent history was hq/houston location)",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Transcript references queue.json showing location 'hq' or 'houston' for last 40 days. Cannot verify queue.json content directly (grader does not re-read source files outside outputs/ dir), but claim is internally consistent with research notes and supported by geo_rotation_satisfied: true in metrics.json."
+    },
+    {
+      "claim": "New template pre_summer_cypress_tune_up was added to post_templates.json",
+      "type": "process",
+      "verified": true,
+      "evidence": "metrics.json: new_template_added: true. 04-gmb/posts/templates/post_templates.json is listed under files_modified. Transcript Step 3 and Phase 2 analysis both document the template creation decision."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": [
+      "First draft had em dashes — caught by pre-write check, body rewritten before saving",
+      "First Edit call failed due to em dash encoding mismatch — resolved by full file rewrite via Write tool"
+    ]
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "No assertion checks that the post body actually appears human and locally specific — it could technically pass all 8 assertions with generic filler that happens to contain 'AC' and 'Cypress' on line 1. Adding an assertion like 'Post body mentions at least one named Cypress subdivision (Bridgeland, Fairfield, Blackhorse Ranch, Towne Lake, or Copperfield)' would guard against generic geo-stuffed output."
+      },
+      {
+        "assertion": "Research notes show GSC data was checked for Cypress-related queries",
+        "reason": "This assertion is satisfied even if GSC data was fabricated — the notes just need to show Cypress query strings and numbers. A stronger version would require the queries to have been sourced from a real file (e.g., 03-gsc/data/queries-*.csv) with the file path cited. The executor did actually read from the real CSV, but the assertion doesn't enforce this."
+      },
+      {
+        "assertion": "CTA URL points to a Cypress-specific page or the most relevant Houston landing page",
+        "reason": "The fallback qualifier 'or the most relevant Houston landing page' is broad enough that almost any 200-returning page would satisfy it. The assertion would be stronger with a tighter definition of relevance — e.g., 'must match the post's primary service angle (tune-up) OR be a geo-specific page.'"
+      },
+      {
+        "reason": "No assertion checks that the post was actually written to 04-gmb/posts/drafts/ AND that the file at that path contains the correct post (not just that any file exists there). The draft file path was verified to exist, but content identity between the drafts/ copy and the outputs/ copy was not asserted. A cross-file content diff assertion would catch cases where the executor creates a dummy file at the required path."
+      }
+    ],
+    "overall": "All 8 assertions pass cleanly and are substantively satisfied — the output is a well-researched, locally-specific GBP post that genuinely did the work. Minor gaps: no assertion enforces local specificity of content, no assertion enforces that GSC queries came from a real data file vs fabrication, and the CTA fallback clause is broad. Evals are solid but could be tightened to be more discriminating."
+  }
+}

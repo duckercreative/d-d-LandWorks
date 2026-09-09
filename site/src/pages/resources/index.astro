@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const articles = [
+  { title: 'Excavation Cost in Oregon', description: 'What actually drives the price of an excavation job, and why "per hour" rates only tell half the story.', href: '/resources/excavation-cost-oregon' },
+  { title: 'Land Clearing Cost Per Acre in Oregon', description: 'Why an acre of blackberry costs less to clear than an acre of Douglas fir, and what changes the number.', href: '/resources/land-clearing-cost-per-acre-oregon' },
+  { title: 'Septic Installation Cost in Oregon', description: 'Tank, drainfield, and permitting costs, and why the same house on a different lot can cost twice as much.', href: '/resources/septic-installation-cost-oregon' },
+  { title: 'How to Prepare Land for Construction', description: 'The order site work actually happens in, from clearing through final grade, before a foundation goes in.', href: '/resources/preparing-land-for-construction' },
+  { title: 'Fix Standing Water in Your Yard', description: 'Why a yard floods and what a swale, French drain, or regrade actually fixes versus just moves around.', href: '/resources/fix-standing-water-yard' },
+  { title: 'How to Choose an Excavation Contractor', description: 'What to check before hiring: license, bonding, certifications, and the questions worth asking upfront.', href: '/resources/choosing-an-excavation-contractor' },
+  { title: 'Oregon Septic Basics', description: 'How DEQ regulates septic systems in Lane County, from soil testing through permitting.', href: '/resources/oregon-septic-basics' },
+];
+---
+
+<BaseLayout
+	title="Resources | Excavation & Septic Guides — D&D Land Works"
+	description="Cost guides and how-to articles on excavation, land clearing, septic systems, and drainage for Lane County, OR property owners."
+>
+	<Hero
+		eyebrow="Resources"
+		headline="Guides & Cost Breakdowns"
+		subheadline="Straight answers on what excavation, land clearing, and septic work actually costs and involves, before you're standing in your yard with an estimate in hand."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+	/>
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{articles.map((article) => (
+				<a href={article.href} class="card block hover:shadow-md hover:border-brand-blue transition-all group">
+					<h3 class="font-display font-bold uppercase tracking-wide text-lg text-ink group-hover:text-brand-blue transition-colors">
+						{article.title}
+					</h3>
+					<p class="mt-2 text-sm text-slate-600">{article.description}</p>
+					<span class="mt-3 inline-block text-sm font-display font-semibold uppercase tracking-wide text-brand-blue">
+						Read more &rarr;
+					</span>
+				</a>
+			))}
+		</div>
+	</section>
+	<CTABlock
+		headline="Skip the Research, Just Ask"
+		subheadline="Describe the property and the job, and get a real number instead of a range."
+	/>
+</BaseLayout>

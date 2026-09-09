@@ -1,0 +1,87 @@
+{
+  "eval_id": 0,
+  "eval_name": "emergency-rsa-pack",
+  "prompt": "Write me the complete creative pack for the Emergency AC Repair campaign at 75 Degree AC. Business details: phone (713) 598-2737, license TACLA72152E, Houston HVAC contractor founded in 2016, serves Houston + Katy + Sugar Land + Cypress + Richmond TX. I need: full RSA \u2014 15 headlines (categorized by formula), 4 descriptions, plus all extensions: 8+ callouts, 4+ sitelinks with text/URL/2 descriptions each, structured snippets, call asset config, location asset config, image asset spec, and a recommended display URL path. Headlines must respect 30-char limit, descriptions 90-char.",
+  "assertions": [
+    {
+      "name": "produces_exactly_15_headlines",
+      "check": "regex_count",
+      "pattern": "(?im)^\\s*(?:H\\d+|\\d+[.):]?\\s|\\|\\s*\\d+\\s*\\|)",
+      "min": 15
+    },
+    {
+      "name": "produces_4_descriptions",
+      "check": "regex_count",
+      "pattern": "(?im)^\\s*(?:D\\d+|Description\\s*\\d+|\\|\\s*D\\d|\\b[Dd]escription\\s*\\d+)",
+      "min": 4
+    },
+    {
+      "name": "headlines_categorized_by_formula",
+      "check": "regex_count",
+      "pattern": "(?im)keyword|symptom|trust|cta|usp|offer|finance",
+      "min": 5
+    },
+    {
+      "name": "lists_at_least_8_callouts",
+      "check": "regex_count",
+      "pattern": "(?im)same.day|free\\s*estimat|licensed|insured|24/7|emergency|financing|since\\s*2016|first\\s*visit|all\\s*major\\s*brands|tacla|five.star|reviews|stocked",
+      "min": 8
+    },
+    {
+      "name": "lists_at_least_4_sitelinks",
+      "check": "regex_count",
+      "pattern": "(?im)/(?:ac-repair|ac-installation|ac-tune-up|maintenance|emergency|about|service-areas|booking|contact)",
+      "min": 4
+    },
+    {
+      "name": "includes_phone_in_call_asset_only",
+      "check": "regex_ci",
+      "pattern": "call\\s*asset|call\\s*extension"
+    },
+    {
+      "name": "phone_number_present_713_598_2737",
+      "check": "regex",
+      "pattern": "\\(?713\\)?\\s*[-.]?\\s*598\\s*[-.]?\\s*2737"
+    },
+    {
+      "name": "tacla_license_referenced",
+      "check": "regex_ci",
+      "pattern": "tacla(?:72152e)?|licensed"
+    },
+    {
+      "name": "structured_snippets_present",
+      "check": "regex_ci",
+      "pattern": "structured\\s*snippets?"
+    },
+    {
+      "name": "location_asset_referenced",
+      "check": "regex_ci",
+      "pattern": "location\\s*asset|gbp.*link|google\\s*business\\s*profile"
+    },
+    {
+      "name": "image_assets_referenced",
+      "check": "regex_ci",
+      "pattern": "image\\s*assets?|technician\\s*photo|service\\s*van|action\\s*shot"
+    },
+    {
+      "name": "specifies_display_url_path",
+      "check": "regex_ci",
+      "pattern": "(?:display\\s*)?(?:url\\s*)?path|emergency-ac-repair|/Emergency"
+    },
+    {
+      "name": "headlines_under_30_chars_acknowledged",
+      "check": "regex_ci",
+      "pattern": "30\\s*char|character\\s*limit"
+    },
+    {
+      "name": "discusses_pinning_strategy",
+      "check": "regex_ci",
+      "pattern": "pin(?:ning)?|pos(?:ition)?\\s*[12]"
+    },
+    {
+      "name": "houston_in_at_least_one_headline",
+      "check": "regex_ci",
+      "pattern": "houston"
+    }
+  ]
+}

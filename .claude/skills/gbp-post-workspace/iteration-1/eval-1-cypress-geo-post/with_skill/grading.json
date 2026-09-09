@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "run_config": "with_skill",
+  "expectations": [
+    {"text": "First line contains AC/HVAC keyword + 'Cypress'", "passed": true, "evidence": "'🌡️ AC repair in Cypress, TX — and if you're anywhere from Fairfield to Bridgeland...'"},
+    {"text": "Body references a Cypress-specific detail (not interchangeable)", "passed": true, "evidence": "Zips 77429/77433, Fairfield, Blackhorse Ranch, Cypress Creek Lakes, Towne Lake, Marvida, Bridgeland, Coles Crossing — hyper-specific"},
+    {"text": "Post body is within 1200-1450 chars", "passed": true, "evidence": "1433 chars (author-measured) — at upper bound"},
+    {"text": "Phone number (713) 598-2737 does NOT appear in post body", "passed": true, "evidence": "No phone in body"},
+    {"text": "Research notes show GSC data was consulted for cypress-related queries", "passed": true, "evidence": "5 Cypress queries listed with imp/pos/ctr; correctly diagnosed as entity-reinforcement play (no striking-distance wins)"},
+    {"text": "CTA URL points to a page that exists", "passed": true, "evidence": "Defaulted to homepage / after verifying /ac-repair-cypress-tx/ returns 404 (planned page). Flagged for future update. Correct handling."},
+    {"text": "At least 2 trust signals present", "passed": true, "evidence": "TACLA + Since 2016 + fully insured + same-day + 5-brand list"},
+    {"text": "No hashtags, no all-caps, 1-3 emojis max", "passed": true, "evidence": "2 emojis (🌡️ + ✅), no hashtags, no all-caps"}
+  ]
+}

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation Contractor in Lowell, OR | D&D Land Works"
+	description="Site preparation and excavation for Lowell, OR properties near Dexter Reservoir and Fall Creek. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Lowell, Oregon"
+		headline="Excavation in Lowell, OR"
+		subheadline="A small community near Dexter Reservoir and Fall Creek, east of Springfield along Highway 58, Lowell gets a small but steady share of rural site work."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Lowell, Oregon"
+		headlineHtml="Rural, Low-Volume, <span class='text-brand-blue'>Still Covered</span> in Lowell"
+		descriptionHtml="<p>Lowell doesn&rsquo;t get the job volume that Eugene or Springfield does, but it sits close enough to the shop that a site prep or excavation job out here runs on the same schedule as anything closer in. Properties tend to be rural residential, backed by timber or open pasture around Dexter and Fall Creek.</p><p>D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, covering Lowell as part of the regular Lane County service area. If the job is septic or land clearing rather than straight excavation, call first to confirm it&rsquo;s a fit before scheduling.</p>"
+	/>
+	<!-- Services -->
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			Services in Lowell
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+		<p class="mt-8 text-center text-slate-600">
+			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
+		</p>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Lowell, Oregon"
+		headline="Why Do Lowell Property Owners Trust D&D Land Works?"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works job site near Lowell, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Lowell runs on the same schedule as anything closer to the shop, not a separate trip.</p><p>David Deggelman scopes every job in person before quoting. If you need site prep or excavation anywhere in Lowell, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to confirm it&rsquo;s a fit and schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Lowell"
+		subheadline="Call and describe the property. David will confirm it's a fit before anything gets scheduled."
+	/>
+</BaseLayout>

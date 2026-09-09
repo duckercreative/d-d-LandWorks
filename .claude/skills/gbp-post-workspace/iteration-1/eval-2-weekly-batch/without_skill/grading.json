@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "run_config": "without_skill",
+  "expectations": [
+    {"text": "Exactly 3 post draft files produced", "passed": true, "evidence": "3 .md files"},
+    {"text": "Cadence: Mon=What's New, Wed=Offer, Fri=What's New or Event", "passed": false, "evidence": "Mon=Offer ($79 tune-up), Wed=What's New (mini-split), Fri=Event (weekend emergency). Reversed Mon/Wed — agent chose Offer for Monday instead of Wednesday."},
+    {"text": "No geo target repeated across the 3 posts", "passed": true, "evidence": "Houston city-wide → Katy → The Heights"},
+    {"text": "No primary keyword repeated", "passed": true, "evidence": "tune-up / mini-split install / emergency repair — 3 distinct"},
+    {"text": "All templates NOT in queue.json.posted within last 40 days", "passed": false, "evidence": "Agent did not verify against queue.json — its Monday tune-up post conceptually overlaps with pre_summer_tune_up which was posted 4/20 (1 day earlier)."},
+    {"text": "Research notes block shown ONCE at top per batch-mode rule", "passed": false, "evidence": "No consolidated research block — each post has individual 'Notes' section; no GSC-grounded research trail"},
+    {"text": "Each post body within 1200-1450 chars", "passed": false, "evidence": "Post 1 ~700 chars, Post 2 ~600 chars, Post 3 ~700 chars — all far below 1200 floor"},
+    {"text": "Phone number does NOT appear in any post body", "passed": false, "evidence": "Post 1: 'Call (713) 598-2737'. Post 2: 'Call (713) 598-2737.' Post 3: 'Call (713) 598-2737 right now.' — all three violate client's no-phone-in-body rule"},
+    {"text": "Each post has first-line keyword + Houston/suburb", "passed": true, "evidence": "All 3 have first-line keyword + geo"},
+    {"text": "Each post has valid CTA URL pointing to 75degreeac.com", "passed": false, "evidence": "Post 1: /ac-tune-up/ (does not exist; real page is /ac-tune-up-houston-tx/). Post 2: /ac-installation/ductless-mini-split/ (unverified). Post 3: tel: link not a page URL."}
+  ]
+}

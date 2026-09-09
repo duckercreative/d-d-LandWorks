@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import PhotoContentBlock from '../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const anchors = [
+  { name: 'Eugene', href: '/locations/eugene', note: 'County seat, home base for most jobs.' },
+  { name: 'Springfield', href: '/locations/springfield', note: 'Right next to Eugene, frequent job site.' },
+];
+
+const secondary = [
+  { name: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { name: 'Junction City', href: '/locations/junction-city' },
+  { name: 'Creswell', href: '/locations/creswell' },
+  { name: 'Veneta', href: '/locations/veneta' },
+];
+const roundOut = [
+  { name: 'Florence', href: '/locations/florence' },
+  { name: 'Oakridge', href: '/locations/oakridge' },
+  { name: 'Coburg', href: '/locations/coburg' },
+  { name: 'Lowell', href: '/locations/lowell' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Service Area | Lane County, OR Excavation Contractor — D&D Land Works"
+	description="D&D Land Works serves Eugene, Springfield, and Lane County, OR: excavation, grading, land clearing, drainage, utility work, and septic install/repair."
+>
+	<Hero
+		eyebrow="Lane County, Oregon"
+		headline="Where We Dig"
+		subheadline="Based in Lane County, working most often around Eugene and Springfield, with regular jobs further out. Not sure if your site's in range? Call and ask."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Service Area in Lane County, OR"
+		headlineHtml="Where <span class='text-brand-blue'>D&amp;D Land Works</span> Digs in Lane County, Oregon"
+		descriptionHtml="<p>D&amp;D Land Works is based in Lane County, Oregon, with Eugene and Springfield as primary coverage: that&rsquo;s where most jobs happen, and where a crew can usually get on-site fastest. From there, regular work extends out to Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell.</p><p>D&amp;D Land Works is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>, and DEQ certified for septic install and repair. Not sure if your address is in range? Call <strong class='font-semibold text-ink'>541-401-8726</strong> and ask &mdash; distance from Eugene isn&rsquo;t always a dealbreaker.</p>"
+	/>
+	<!-- Map + full directory -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County with licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Every Community We Serve
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<!-- Primary coverage spotlight -->
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Primary Coverage
+		</h2>
+		<p class="mt-2 text-slate-600 max-w-2xl">Most jobs are in these two cities.</p>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{anchors.map((city) => (
+				<a href={city.href} class="card block hover:shadow-md hover:border-brand-blue transition-all group">
+					<h3 class="font-display font-bold uppercase tracking-wide text-xl text-ink group-hover:text-brand-blue">
+						{city.name}
+					</h3>
+					<p class="mt-2 text-sm text-slate-600">{city.note}</p>
+					<span class="mt-3 inline-block text-sm font-display font-semibold uppercase tracking-wide text-brand-blue">
+						View {city.name} services &rarr;
+					</span>
+				</a>
+			))}
+		</div>
+	</section>
+	<!-- Why Eugene and Springfield -->
+	<PhotoContentBlock
+		eyebrow="Primary Coverage"
+		headline="Why Are Eugene and Springfield Our Primary Coverage?"
+		image="/hero-bg-1.webp"
+		imageAlt="D&D Land Works job site near Eugene, Oregon"
+		imageSide="left"
+		badgeValue="2 Cities"
+		badgeLabel="County Seat + Neighboring City"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Eugene is Lane County&rsquo;s seat and where most of D&amp;D Land Works&rsquo; jobs happen, so equipment and crew are already close by. Springfield sits right next to it and gets nearly as much regular work.</p><p>That proximity is what keeps scheduling tight and travel time short for both cities, which is part of why they&rsquo;re the primary coverage area rather than the outer edge of it.</p>"
+	/>
+	<!-- Also serving -->
+	<section class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Also Serving
+		</h2>
+		<p class="mt-2 text-slate-600 max-w-2xl">
+			Regular jobs further out in Lane County.
+		</p>
+		<div class="mt-6 flex flex-wrap gap-3">
+			{secondary.map((city) => (
+				<a href={city.href} class="rounded-(--radius-brand) bg-brand-blue-light px-4 py-2 text-sm font-display font-semibold uppercase tracking-wide text-brand-blue-dark hover:bg-brand-blue hover:text-white transition-colors">
+					{city.name}
+				</a>
+			))}
+		</div>
+	</section>
+	<!-- How far out -->
+	<PhotoContentBlock
+		eyebrow="How Far Out We Go"
+		headline="How Far Out Does D&D Land Works Go?"
+		image="/hero-bg-2.webp"
+		imageAlt="Rural acreage job site outside Eugene, Oregon"
+		imageSide="right"
+		badgeValue="8 Communities"
+		badgeLabel="Regular Jobs Across Lane County"
+		ctaLabel="Call 541-401-8726"
+		ctaHref="tel:5414018726"
+		bodyHtml="<p>Beyond Eugene and Springfield, D&amp;D Land Works takes regular jobs in Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell &mdash; and further out in Lane County when the project fits.</p><p>Beyond Lane County, D&amp;D Land Works is looking at Linn, Douglas, and Benton counties for future jobs. If you&rsquo;re just outside the map above, call anyway. Distance from Eugene isn&rsquo;t always a dealbreaker.</p>"
+	/>
+	<!-- Further out chips -->
+	<section class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink">
+			Further Out in Lane County
+		</h2>
+		<div class="mt-4 flex flex-wrap gap-3">
+			{roundOut.map((city) => (
+				<a href={city.href} class="rounded-(--radius-brand) bg-slate-100 px-4 py-2 text-sm font-display font-semibold uppercase tracking-wide text-slate-600 hover:bg-brand-blue hover:text-white transition-colors">
+					{city.name}
+				</a>
+			))}
+		</div>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Service Area in Lane County, OR"
+		headline="Why Do Lane County Property Owners Trust D&D Land Works?"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works equipment on a job site in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone.</p><p>David Deggelman walks every site in person before quoting, so pricing accounts for the actual soil, slope, and access on your property, not a regional average. If your project is anywhere in Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Equipment and crew are already local to Lane County, so a call from Eugene or Springfield gets the same fast response as one from further out &mdash; and every job starts with David walking the site in person."
+	/>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Not Sure If You're in Range?"
+		subheadline="Call with your address. If it's a fit, you'll get a free estimate scheduled."
+	/>
+</BaseLayout>

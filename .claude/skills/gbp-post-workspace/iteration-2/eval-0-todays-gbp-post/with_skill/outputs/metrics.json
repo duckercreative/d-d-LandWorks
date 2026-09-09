@@ -1,0 +1,47 @@
+{
+  "tool_calls": {
+    "Read": 14,
+    "Write": 3,
+    "Bash": 5,
+    "WebFetch": 5,
+    "WebSearch": 2,
+    "Grep": 0,
+    "Glob": 2,
+    "Edit": 1,
+    "ToolSearch": 1
+  },
+  "total_tool_calls": 33,
+  "total_steps": 10,
+  "files_created": [
+    "04-gmb/posts/drafts/2026-04-22_ac-repair-katy-tx-spring-offer.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-0-todays-gbp-post/with_skill/outputs/2026-04-22_ac-repair-katy-tx-spring-offer.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-0-todays-gbp-post/with_skill/outputs/transcript.md",
+    ".claude/skills/gbp-post-workspace/iteration-2/eval-0-todays-gbp-post/with_skill/outputs/metrics.json"
+  ],
+  "files_modified": [
+    "04-gmb/posts/templates/post_templates.json"
+  ],
+  "errors_encountered": 2,
+  "error_notes": [
+    "CTA URL https://75degreeac.com/ac-repair-houston-tx/ returned 404 — detected and replaced with confirmed-200 URL",
+    "First draft body was 1621 chars with 5 em dashes — detected via verification script, rewritten before output"
+  ],
+  "output_chars": 4850,
+  "transcript_chars": 11799,
+  "post_body_chars": 1448,
+  "post_body_status": "PASS — all 7 pre-write checks passed",
+  "checks_passed": {
+    "no_phone_in_body": true,
+    "no_em_dashes": true,
+    "no_semicolons": true,
+    "no_ai_slop_terms": true,
+    "first_line_keyword_plus_geo": true,
+    "char_count_1200_1450": true,
+    "cta_url_resolves_200": true
+  },
+  "weather_data_source": "seasonal_inference",
+  "weather_note": "NWS live data unavailable for April 21 2026 (retroactive date). Seasonal-houston.md reference used.",
+  "new_template_created": "pre_summer_katy_repair_offer",
+  "queue_exclusions_applied": 10,
+  "geo_rotation_applied": "Katy (overdue — last 10 posts all Houston/hq)"
+}

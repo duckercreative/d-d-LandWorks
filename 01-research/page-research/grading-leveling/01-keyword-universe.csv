@@ -1,0 +1,142 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+land grading eugene or,topical_map,commercial,decision,y,scheduled,head,high,/grading-leveling/,P0,Primary page target per topical map §6.3
+land grading eugene oregon,serp,commercial,decision,y,scheduled,head,high,/grading-leveling/,P0,Full state-name variant
+grading contractor lane county oregon,serp,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P0,Verified competitor set generic; none offer standalone yard grading distinctly
+grading contractor lane county or,serp,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P1,Abbreviation variant
+land leveling contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,Synonym variant
+yard leveling eugene or,autocomplete,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P0,Task-brief seed term
+yard leveling eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P0,Full state-name variant
+yard regrading contractor eugene,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,Homeowner-language variant
+regrade yard for drainage,serp,problem_solution,consideration,n,scheduled,mid,med,/grading-leveling/,P0,Task-brief seed term
+re-grade sloped yard lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P0,Task-brief seed term
+regrade sloped yard eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,Local variant
+uneven yard grading eugene,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P1,Problem-framed; reused from home pack row 47
+level uneven yard oregon,autocomplete,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P0,Task-brief seed term
+fix uneven yard eugene oregon,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P1,Problem-framed
+lawn leveling cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/grading-leveling/,P0,Task-brief seed term; cost query
+lawn leveling cost eugene,serp,commercial,consideration,y,scheduled,mid,high,/grading-leveling/,P1,Local cost variant
+cost to level a yard oregon,serp,commercial,consideration,y,scheduled,mid,high,/grading-leveling/,P0,Cost query — real range found: $500-$1,000 small lawn, $1,000-$5,000 full backyard (HomeGuide)
+yard leveling cost lane county oregon,serp,commercial,consideration,y,scheduled,long,high,/grading-leveling/,P0,AI-citation test query candidate — see 06-ai-citation-audit.md
+cost to regrade backyard oregon,serp,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P1,Cost query variant
+average cost yard grading lane county,serp,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P2,Cost query, county-scoped
+lawn leveling cost per square foot,serp,commercial,consideration,n,browse,mid,med,/grading-leveling/,P2,Cost query — real range found: $0.40-$2.00/sq ft (HomeGuide)
+regrading 1000 sq ft yard cost,serp,commercial,consideration,n,browse,long,low,/grading-leveling/,P3,Cost query, size-specific — real range found: $1,500-$2,600 (HomeGuide)
+backyard grading contractor,autocomplete,commercial,decision,n,scheduled,head,high,/grading-leveling/,P0,Task-brief seed term
+backyard grading contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P0,Local variant
+contractor to level my backyard eugene,serp,commercial,decision,y,scheduled,long,med,/grading-leveling/,P1,Homeowner-language long-tail; reused from home pack row 188
+front yard leveling eugene oregon,serp,commercial,decision,y,scheduled,mid,low,/grading-leveling/,P2,Audience/area variant
+fix drainage slope yard,serp,problem_solution,consideration,n,scheduled,mid,med,/grading-leveling/,P0,Task-brief seed term
+fix yard drainage slope oregon,serp,problem_solution,consideration,y,scheduled,mid,med,/grading-leveling/,P1,Local variant
+my yard slopes toward my house,serp,problem_solution,consideration,n,browse,long,med,/grading-leveling/,P1,Real problem-framing found in cost-guide/landscaping literature
+yard slopes toward house fix,serp,problem_solution,consideration,n,browse,mid,med,/grading-leveling/,P1,Variant
+negative slope toward house landscaping,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Technical-term variant, found directly in sourced literature
+water pools in my yard after rain,serp,problem_solution,consideration,n,browse,long,med,/grading-leveling/,P1,Homeowner pain-point phrasing
+standing water in backyard eugene oregon,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P1,Local pain-point phrasing
+low spot in yard collects water,serp,problem_solution,consideration,n,browse,long,low,/grading-leveling/,P2,Problem-framed, "low spot" entity
+soggy yard fix oregon,serp,problem_solution,consideration,y,browse,mid,low,/grading-leveling/,P2,Problem-framed
+yard never drains right,serp,problem_solution,consideration,n,browse,long,low,/grading-leveling/,P3,Homeowner-language long-tail
+yard was never graded right since house was built,serp,problem_solution,consideration,n,browse,long,med,/grading-leveling/,P2,"""was never right"" buyer-mindset phrasing named in task brief"
+uneven lawn tripping hazard,serp,problem_solution,awareness,n,browse,mid,low,/grading-leveling/,P3,Problem-framed, minor safety angle
+regrade yard after flooding,serp,problem_solution,consideration,n,scheduled,long,med,/grading-leveling/,P1,Event-triggered buyer mindset (flooding) named in task brief
+yard flooded now what oregon,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P2,Event-triggered
+yard drainage problem after heavy rain eugene,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P1,Seasonal event-trigger, ties to Nov-Jan Eugene rainfall peak
+what is a positive drainage slope,serp,informational,awareness,n,browse,mid,med,/grading-leveling/,P0,Directly explains this page's central technical concept — zero competitors currently answer this
+positive drainage slope standard,serp,informational,awareness,n,browse,mid,med,/grading-leveling/,P1,Variant
+how much slope does a yard need for drainage,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P0,Answered directly: IRC/ORSC R401.3 — 6in/10ft near foundation (~5%), 2% minimum beyond
+2 percent slope yard drainage,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Code-standard variant
+6 inches in 10 feet drainage slope,serp,informational,awareness,n,browse,long,low,/grading-leveling/,P2,Exact code-figure variant — verify-before-cite candidate, verified directly this pass
+what does positive drainage mean,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Definitional
+what is a swale,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P1,Definitional — entity education
+swale vs french drain,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Comparison query — direct FAQ candidate
+drainage swale vs french drain which is right,serp,informational,consideration,n,browse,long,low,/grading-leveling/,P2,Comparison query variant
+do i need a swale or a french drain,serp,informational,consideration,n,browse,long,low,/grading-leveling/,P3,Comparison query, decision-framed
+lawn leveling vs regrading difference,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Direct disambiguation query
+topdressing vs regrading yard,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Direct disambiguation query — real severity-threshold answer found
+sand leveling lawn cost,serp,commercial,consideration,n,browse,mid,low,/grading-leveling/,P2,Cost query for the lighter-tier remedy — real range found ($40-$80/cu yd sand)
+when does topdressing not work for uneven lawn,serp,informational,consideration,n,browse,long,med,/grading-leveling/,P2,Severity-threshold query — real answer found (depressions over ~1 inch need a regrade, not topdressing)
+is this a landscaping job or an excavation job,serp,informational,consideration,n,browse,long,med,/grading-leveling/,P0,Task-brief-named disambiguation query — zero competitors answer this
+landscaper vs excavation contractor for yard grading,serp,informational,consideration,n,browse,long,med,/grading-leveling/,P1,Disambiguation variant
+who do i call to fix a sloped yard,serp,commercial,consideration,n,scheduled,long,med,/grading-leveling/,P1,Hiring-decision, homeowner-language
+lawn care company vs excavation contractor grading,serp,informational,consideration,n,browse,long,low,/grading-leveling/,P2,Disambiguation variant
+difference between grading and leveling,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Topical map explicitly folds leveling into grading — same intent, direct FAQ candidate
+what does regrading a yard mean,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P3,Definitional
+do i need a permit to grade my lawn oregon,serp,informational,consideration,y,browse,long,med,/grading-leveling/,P0,Task-brief-named permit query
+is a permit required to regrade a yard lane county,serp,informational,consideration,y,browse,long,med,/grading-leveling/,P0,Local permit variant
+how much land can i grade without a permit oregon,serp,informational,consideration,y,browse,long,med,/grading-leveling/,P1,Permit-threshold query — reused framing from home pack row 160, answered specifically for small-yard context here
+lane county grading permit cubic yards,serp,informational,consideration,y,browse,mid,med,/grading-leveling/,P1,Direct permit-threshold query — reused figure from site-prep pack (>50 cu yd or 2:1 slope)
+does regrading my yard need a permit,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Permit variant
+best time of year to regrade a lawn oregon,serp,informational,awareness,y,browse,mid,med,/grading-leveling/,P1,Seasonal query
+can you regrade a yard in the rain,serp,informational,consideration,y,browse,mid,med,/grading-leveling/,P1,Seasonal/objection-adjacent
+fall vs spring lawn leveling oregon,serp,informational,awareness,y,browse,mid,low,/grading-leveling/,P2,Seasonal comparison
+when is the best time to fix a drainage problem in my yard,serp,informational,awareness,n,browse,long,low,/grading-leveling/,P2,Seasonal, problem-framed
+can i level my own yard,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,DIY-vs-hire threshold
+diy yard leveling vs hire a pro,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,DIY-vs-hire threshold variant
+renting a landscape rake to level yard,serp,informational,awareness,n,browse,long,low,/grading-leveling/,P3,DIY-adjacent, equipment-rental query
+is it worth it to regrade a sloped yard,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Decision-stage, ROI-framed
+how do i know if my yard needs regrading,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Diagnostic/decision query
+signs your yard needs regrading,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P2,Diagnostic variant
+excavation vs grading yard leveling,serp,informational,awareness,n,browse,long,low,/grading-leveling/,P2,Disambiguation-adjacent
+what's the difference between excavation and grading,serp,informational,awareness,n,browse,mid,med,n/a,P3,FENCED — this exact disambiguation is already owned/answered on the shipped /excavation/ page; cross-link, don't re-answer from scratch here
+free estimate yard grading eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion query
+free quote lawn leveling lane county,autocomplete,transactional,decision,y,scheduled,mid,med,/contact/,P2,Conversion variant
+call someone to level my yard eugene,autocomplete,transactional,decision,y,scheduled,long,med,/contact/,P2,Conversion, homeowner-language
+licensed grading contractor oregon,autocomplete,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P1,Trust-modifier
+bonded yard grading contractor lane county,autocomplete,commercial,consideration,y,scheduled,mid,low,/grading-leveling/,P2,Trust-modifier
+small grading job contractor eugene,autocomplete,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,Job-size modifier — homeowners fear "too small a job," reused pattern from home/excavation packs
+residential yard grading eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,Audience modifier
+commercial site grading eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/site-preparation/,P3,"FENCED — commercial site grading tied to new development belongs on Site Preparation, not this page"
+rough grading before house build oregon,serp,commercial,consideration,y,scheduled,long,med,/site-preparation/,P3,FENCED — construction-tied grading belongs to Site Preparation
+cut and fill new home site oregon,serp,informational,consideration,y,browse,long,med,/excavation/,P3,FENCED — construction-tied cut/fill belongs to Excavation & Grading
+grading for building pad eugene,serp,commercial,decision,y,scheduled,mid,med,/excavation/,P3,FENCED — building-pad grading tied to new construction belongs to Excavation & Grading
+backfill and compaction after excavation,serp,informational,consideration,n,browse,mid,low,n/a,P3,FENCED — construction-tied backfill belongs to Excavation & Grading; do not target on this page
+french drain installation eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED — subsurface pipe-and-gravel installation is a distinct, unconfirmed service; not this page's default scope (see entity map)
+french drain cost oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED — same caution as above; mention conceptually for education only
+drainage trench excavation eugene,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P3,FENCED — dug drainage feature belongs to future Drainage Excavation page
+yard drainage system installation eugene,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P3,FENCED — full drainage system belongs to future Drainage Excavation page
+driveway regrading eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/driveway-repair/,P3,FENCED — driveway grading is a section of Driveway Repair per topical map §16, not this page
+gravel driveway leveling cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/driveway-repair/,P3,FENCED — belongs to Driveway Repair
+hillside erosion control retaining wall oregon,serp,commercial,consideration,y,scheduled,mid,med,/slope-stabilization/,P3,FENCED — structural/engineering-framed slope work belongs to Slope Stabilization
+sloped lot grading eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/slope-stabilization/,P3,FENCED per home pack row 101 — steep/structural slope work belongs to Slope Stabilization, not ordinary yard regrading
+building pad grading cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/excavation/,P3,FENCED — construction-tied
+land grading springfield oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/springfield/grading/,P1,City target (Tier 1) — matches topical map §9 planned city×service page
+yard leveling springfield oregon,serp,commercial,decision,y,scheduled,mid,med,/service-areas/springfield/grading/,P2,City variant
+lawn grading cottage grove oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/cottage-grove/,P2,City target (Tier 2)
+regrade yard junction city oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/junction-city/,P3,City target (Tier 2)
+level yard veneta oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/veneta/,P3,City target (Tier 2) — All Dirt is based here, verify competitive intensity
+yard grading creswell oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/creswell/,P3,City target (Tier 2)
+land leveling contractor florence oregon,serp,commercial,decision,y,scheduled,mid,low,/service-areas/florence/,P3,City target (Tier 3)
+grading contractor near me,autocomplete,commercial,decision,n,scheduled,head,high,/grading-leveling/,P1,High-volume generic local-intent query
+yard leveling near me,autocomplete,commercial,decision,n,scheduled,head,high,/grading-leveling/,P1,High-volume generic local-intent query
+regrading contractor near me,autocomplete,commercial,decision,n,scheduled,head,med,/grading-leveling/,P2,Variant
+lawn leveling service near me,autocomplete,commercial,decision,n,scheduled,head,med,/grading-leveling/,P2,Variant
+who fixes a yard that never drains right,reddit_proxy,problem_solution,consideration,n,browse,long,med,/grading-leveling/,P2,Reddit/homeowner-forum-style phrasing (sourced via proxy — see 02-question-mine.md methodology note)
+anyone regrade their yard reddit,autocomplete,informational,awareness,n,browse,long,low,/grading-leveling/,P3,Reddit cross-pollination query pattern
+how much did yard regrading cost you reddit,reddit_proxy,commercial,consideration,n,browse,long,med,/grading-leveling/,P2,Reddit-style cost-validation phrasing
+is it normal for a yard to slope toward the house reddit,reddit_proxy,informational,awareness,n,browse,long,med,/grading-leveling/,P2,Reddit/forum-style diagnostic phrasing
+my house has drainage issues reddit lane county,reddit_proxy,problem_solution,consideration,y,browse,long,med,/grading-leveling/,P2,Reddit-style local phrasing, homeowner mindset
+r/eugene who do you use for yard grading,reddit_proxy,commercial,consideration,y,browse,long,med,/grading-leveling/,P2,r/Eugene-style recommendation-ask phrasing
+excavator vs skid steer for yard leveling,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P3,Equipment-entity adjacent query
+what equipment is used to level a yard,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Equipment query — directly answered (excavator w/ smooth bucket + laser level for fine grading; dozer/skid steer for bulk shaping)
+laser level grading yard,serp,informational,awareness,n,browse,mid,low,/grading-leveling/,P3,Equipment-entity, precision-grading angle
+how long does it take to regrade a yard,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Timeline query
+how long does lawn leveling take,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P1,Timeline variant
+does grading kill my grass,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P2,Objection/practical concern query
+will i need to reseed after yard grading,serp,informational,consideration,n,browse,mid,med,/grading-leveling/,P2,Practical-concern variant
+does regrading damage my lawn,serp,informational,consideration,n,browse,mid,low,/grading-leveling/,P3,Objection variant
+what happens to my landscaping during a regrade,serp,informational,consideration,n,browse,long,low,/grading-leveling/,P3,Practical-concern variant
+grading contractor insurance requirements oregon,serp,informational,consideration,y,browse,mid,low,/about/,P3,Trust/verification query, reused pattern from home pack
+how to verify a grading contractor license oregon,serp,informational,consideration,y,browse,mid,low,/about/,P3,Ties to CCB lookup — trust-building content, reused pattern
+excavation contractor a,autocomplete_seed,navigational,awareness,n,browse,head,low,n/a,P3,A-Z autocomplete seed reused pattern — no unique grading-specific suggestion captured
+land grading e,autocomplete_seed,commercial,decision,y,scheduled,head,med,/grading-leveling/,P3,Autocomplete seed — resolves to "eugene or"
+yard leveling c,autocomplete_seed,commercial,consideration,n,browse,head,med,/grading-leveling/,P3,Autocomplete seed — resolves to cost queries already captured
+grading permit l,autocomplete_seed,informational,consideration,y,browse,head,med,/grading-leveling/,P3,Autocomplete seed — resolves to "lane county"
+regrade yard f,autocomplete_seed,problem_solution,consideration,n,browse,head,med,/grading-leveling/,P3,Autocomplete seed — resolves to "for drainage"
+david deggelman grading eugene,search_suggestion,navigational,decision,y,browse,long,med,/about/,P2,Owner-name + service query, supports E-E-A-T once site exists
+d&d land works grading leveling,search_suggestion,navigational,decision,y,browse,long,high,/grading-leveling/,P0,Brand + service term, must be owned once GBP/site exist
+grading and leveling eugene oregon d&d,search_suggestion,navigational,decision,y,browse,long,high,/grading-leveling/,P1,Brand + service variant
+homeadvisor landscape minor grading resloping eugene,serp,commercial,consideration,y,browse,long,low,/grading-leveling/,P3,Directory-taxonomy corroboration query — see entity map §4 for the market-split finding this surfaces
+excavation major grading resloping eugene,serp,commercial,consideration,y,browse,long,low,/excavation/,P3,FENCED — HomeAdvisor's own major-grading category maps to the Excavation page's scope, not this one
+top rated yard grading contractor lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,"""top rated"" prefix mining, reused pattern"
+best yard leveling company eugene or,autocomplete,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P1,"""best"" prefix mining, reused pattern"
+cheap yard leveling eugene,autocomplete,commercial,decision,y,scheduled,mid,low,/grading-leveling/,P2,"""cheap"" prefix mining; real search volume, low fit for premium positioning"
+affordable lawn regrading oregon,autocomplete,commercial,decision,y,scheduled,mid,low,/grading-leveling/,P2,"""affordable"" prefix mining"

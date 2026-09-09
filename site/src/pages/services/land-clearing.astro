@@ -1,0 +1,379 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/land-clearing-content.md).
+  Promoted from the /services/land-clearing-test draft after review.
+
+  IMPORTANT OPEN ITEM carried from the content file's own flags: the tree-felling/
+  stump-grubbing framing below (described only as steps within a whole-parcel job,
+  never as a standalone tree-removal/stump-grinding service) still needs David's
+  explicit sign-off — see land-clearing-content.md's top note for full detail.
+  Design/promotion approval does not cover this content-framing question.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const scope = [
+  'Felling and removing trees within the clearing footprint',
+  'Grubbing stumps and root balls within that same footprint, as part of opening up the parcel, not a standalone stump-grinding job on its own',
+  'Cutting and hauling brush, Himalayan blackberry, and scotch broom',
+  'Chipping or burning debris where permitted',
+  'Rough grading the cleared area to a usable, walkable state',
+  'Flagging and preserving trees or features you want kept, at the walk-through, before anything’s cut',
+];
+
+const disposal = [
+  { title: 'Hauled off-site', detail: 'The most straightforward option where there’s road access for a dump truck. It adds a haul cost but leaves nothing behind on the property.' },
+  { title: 'Chipped or mulched on-site', detail: 'Usually cheaper than hauling when the ground can take it, but it leaves material behind and changes how that part of the site looks and drains afterward.' },
+  { title: 'Burned where permitted', detail: 'Often the least expensive way to deal with slash piles from a clearing job, but only where a burn permit and the right conditions apply.' },
+];
+
+const costRows = [
+  { type: 'Pasture / acreage-reclamation clearing', detail: 'Toward the lower end of the vegetation-density ranges below. Stumps can be ground low rather than fully pulled, and the ground doesn’t need a finish-grade pass since it’s not going to be built on.' },
+  { type: 'Construction-grade clearing', detail: 'Toward the higher end of the same vegetation-density ranges. Full stump and root-ball extraction plus a finish-grade pass, because the ground has to end up buildable.' },
+];
+
+const permits = [
+  { situation: 'Removing a tree inside Eugene city limits', agency: 'City of Eugene (EC 9.6885)', detail: 'A permit to remove a "significant tree," 8+ inches DBH. An added tier applies to city-designated "exceptional" or landmark trees.' },
+  { situation: 'Removing a tree inside Springfield city limits', agency: 'City of Springfield', detail: 'Generally required over roughly 6" DBH, for right-of-way trees, or heritage/significant trees (commonly 24"+ DBH).' },
+  { situation: 'Burning slash on forestland', agency: 'Oregon Department of Forestry', detail: 'A burn permit, typically with about 7 days’ advance registration, plus ODF sign-off on weather and volume.' },
+  { situation: 'Burning forest slash inside the Eugene-Springfield UGB', agency: 'Lane Regional Air Protection Agency', detail: 'Prohibited outright inside the UGB; a letter permit applies in certain other LRAPA fire districts.' },
+  { situation: 'Ordinary backyard yard-debris burning', agency: 'Oregon DEQ', detail: 'Must be burned on the property of origin, attended at all times, with fire-extinguishing equipment on hand.' },
+  { situation: 'Clearing near a stream, wetland, or riparian buffer', agency: 'Oregon Dept. of State Lands', detail: 'A Removal-Fill permit for moving 50+ cubic yards in wetlands/waters of the state, or any amount within Essential Salmonid Habitat.' },
+];
+
+const faqs = [
+  { question: 'What’s the difference between land clearing and brush clearing?', answer: 'Land clearing is the full-parcel service, felling standing trees, grubbing stumps, and clearing to bare ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings, with no standing timber to fell and no stumps to grub. If your project is closer to that lighter case, see brush clearing instead.' },
+  { question: 'Does land clearing include stump removal?', answer: 'Yes, grubbing stumps and root balls within the footprint of a clearing job is part of the service. That’s different from hiring D&D for a standalone stump-grinding job on a single stump, independent of a broader clearing project. That’s not a service D&D offers on its own.' },
+  { question: 'How much does land clearing cost per acre?', answer: 'Per Angi’s 2026 data, land clearing nationally runs roughly $600–$1,300/acre for light brush and grass up to $3,600–$6,100 or more per acre for heavy timber. Construction-grade clearing (full stump extraction, finish grading) runs toward the higher end of any given vegetation tier compared to pasture/acreage-reclamation clearing at the same density.' },
+  { question: 'What’s the difference between clearing land for building versus for pasture?', answer: 'Construction-grade clearing removes stumps and roots completely and finish-grades to bare, buildable ground. Pasture and acreage-reclamation clearing can leave low-ground stumps and skip the finish-grade pass, at meaningfully lower cost, because the ground doesn’t need to be building-ready.' },
+  { question: 'What happens to the trees and brush after land clearing?', answer: 'Material gets hauled off-site, chipped or mulched on-site, or burned where permitted, each with different cost and site-condition implications. Which path makes sense depends on volume, site access, and what’s allowed on that property, and it gets scoped during the walk-through.' },
+  { question: 'Do I need a permit to clear trees in Lane County?', answer: 'It depends on whether the property is inside Eugene or Springfield city limits, where a tree-removal permit applies above a set trunk diameter, or in unincorporated Lane County, where this research found no equivalent county-wide tree ordinance. Confirm directly with Lane County for a specific parcel before assuming no permit applies.' },
+  { question: 'Do I need a burn permit to burn slash piles after clearing land?', answer: 'Yes, if the land is forestland within an Oregon Department of Forestry protection district, ODF requires a permit and typically 7-day advance registration. That’s separate from Lane Regional Air Protection Agency’s rules, which prohibit forest slash burning inside the Eugene-Springfield Urban Growth Boundary, and from Oregon DEQ’s backyard-burning rules for ordinary yard debris.' },
+  { question: 'Can I clear land near a stream or wetland in Oregon?', answer: 'Possibly not without a permit. Oregon Department of State Lands requires a Removal-Fill permit for moving 50 or more cubic yards of material in wetlands or waters of the state, and any amount within Essential Salmonid Habitat or a Scenic Waterway. Flag it during the walk-through if a stream, wetland, or riparian buffer is anywhere near the clearing area.' },
+  { question: 'Can a contractor preserve specific trees I want to keep?', answer: 'Yes, trees or features you want kept are flagged and preserved during the walk-through, before the quote is written, so nothing is decided or assumed on the day the crew shows up.' },
+];
+
+const related = [
+  { title: 'Brush Clearing', description: 'Cutting back overgrowth for defensible space or usable acreage, no standing timber involved.', href: '/services/brush-clearing' },
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/services/grading-leveling' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/land-clearing/#service',
+      name: 'Land Clearing',
+      serviceType: 'Land Clearing',
+      description: 'Land clearing removes trees, stumps, brush, and debris from a property to open it up for construction, pasture, or general use. D&D Land Works provides land clearing for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon.',
+      url: 'https://www.ddlandworks.com/services/land-clearing/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Land Clearing', item: 'https://www.ddlandworks.com/services/land-clearing/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Land Clearing in Eugene & Lane County, OR | D&D Land Works"
+	description="Land clearing for wooded lots, pastures & overgrown acreage in Eugene, Springfield & Lane County, OR. Licensed, bonded, free estimates: 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Land Clearing in Eugene, Springfield & Lane County, Oregon"
+		subheadline="D&D Land Works provides full-parcel land clearing and site-opening services in Eugene, Springfield & Lane County, OR. Our crew uses excavators, grapple attachments, and mulching heads for tree felling, stump grubbing, and debris removal so your project starts on solid, buildable ground."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Land Clearing in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Land Clearing</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>Land clearing removes trees, stumps, brush, and debris from a property to open it up for construction, pasture, or general use. It&rsquo;s a heavier-scope, more expensive service than brush clearing, which targets only smaller vegetation &mdash; blackberry, scotch broom, saplings &mdash; without felling standing timber or grubbing stumps.</p><p>D&amp;D Land Works provides land clearing for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon, including wooded lots being prepared for a new build, and overgrown or neglected acreage being reclaimed for pasture or general use. D&amp;D Land Works is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
+	/>
+	<!-- What does it include -->
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			What Does Land Clearing Include?
+		</h2>
+		<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+			Trees and features you want kept get flagged and preserved at the walk-through, before anything&rsquo;s cut. Everything else on the footprint goes through the same process.
+		</p>
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{scope.map((item) => (
+				<div class="card flex items-start gap-3">
+					<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+					</span>
+					<p class="text-sm text-slate-600">{item}</p>
+				</div>
+			))}
+		</div>
+	</section>
+	<!-- From overgrown to buildable -->
+	<PhotoContentBlock
+		eyebrow="Land Clearing in Lane County, OR"
+		headline="How Does D&D Turn Overgrown Land Into Buildable Ground?"
+		image="/hero-bg-1.webp"
+		imageAlt="Overgrown wooded parcel in Lane County, Oregon before land clearing"
+		imageSide="left"
+		badgeValue="6 Tasks"
+		badgeLabel="Included in Every Clearing Job"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Lane County has a lot of parcels that look nothing like the plat map once you&rsquo;re standing on them. Himalayan blackberry has taken over the fence line, alder has grown up along a drainage, and a decade of downed limbs sits in the understory. Before a foundation, a driveway, or even a survey crew can do useful work, that ground needs to be opened up.</p><p>Land clearing covers the full range, from a couple acres of blackberry and scrub to standing timber that needs to come down and get hauled or chipped. That range only gets pinned down after David walks the property, not from a phone call or a satellite photo.</p>"
+	/>
+	<!-- Land clearing vs brush clearing -->
+	<PhotoContentBlock
+		eyebrow="Land Clearing vs. Brush Clearing"
+		headline="What's the Difference Between Land Clearing and Brush Clearing?"
+		image="/hero-bg-2.webp"
+		imageAlt="Cleared parcel with felled timber staged for haul-off in Lane County"
+		imageSide="right"
+		badgeValue="2 Service Tiers"
+		badgeLabel="Matched to Your Property"
+		ctaLabel="See Brush Clearing"
+		ctaHref="/services/brush-clearing"
+		bodyHtml="<p>Land clearing is the full-parcel service: felling standing trees, grubbing stumps and root balls, and clearing to bare, buildable ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings: no standing timber to fell, no stumps to grub, and a lower cost tier to match.</p><p>If it&rsquo;s just brush, overgrowth, or scrub on your property, with no timber and no stumps involved, see <a href='/services/brush-clearing' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>brush clearing</a> instead of this page.</p>"
+	/>
+	<!-- Debris disposal -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Happens to the Trees, Stumps, and Debris?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Once trees are felled and stumps are grubbed, the material goes one of three ways, decided at the walk-through based on volume, site access, and what&rsquo;s permitted for that property.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-3">
+				{disposal.map((d) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue">{d.title}</p>
+						<p class="mt-2 text-sm text-slate-600">{d.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center max-w-2xl mx-auto">
+				None of this gets decided as a surprise mid-job. It&rsquo;s scoped and priced up front, during the walk-through.
+			</p>
+		</div>
+	</section>
+	<!-- Cost -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Land Clearing Cost?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 leading-relaxed">
+				Pasture reclamation and construction-grade clearing are priced differently for a reason: it&rsquo;s a real difference in how much stump and root work the job actually needs, not just a marketing tier.
+			</p>
+			<div class="mt-8 grid gap-6 sm:grid-cols-2">
+				{costRows.map((row) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{row.type}</p>
+						<p class="mt-2 text-sm text-slate-600">{row.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-6 text-sm text-slate-600 leading-relaxed text-center">
+				Per <a href="https://www.angi.com/articles/how-much-does-it-cost-clear-land.htm" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">Angi&rsquo;s 2026 cost data</a>, land clearing nationally runs $1,200 to $8,000 per acre: roughly $600&ndash;$1,300/acre for light brush and grass, $2,100&ndash;$4,100/acre for shrubs and small trees, and $3,600&ndash;$6,100 or more per acre for heavy timber. These are general estimates, not a Lane County&ndash;specific figure or a quote for your property. See <a href="/resources/land-clearing-cost-per-acre-oregon" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">our full land clearing cost breakdown</a> for the complete numbers.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Get a Free On-Site Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Permits -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Do I Need a Permit to Clear Trees or Burn Debris in Lane County?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				It depends on where the property is and what&rsquo;s happening to the debris. This is genuinely the most confusing part of land clearing in Lane County, because as many as five different agencies can apply, and each one governs something different.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{permits.map((p) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{p.situation}</p>
+						<p class="mt-1 text-xs font-semibold text-brand-blue">{p.agency}</p>
+						<p class="mt-2 text-sm text-slate-600">{p.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto text-center">
+				This research did not find a standalone Lane County ordinance governing tree removal on unincorporated rural acreage, the way Eugene&rsquo;s and Springfield&rsquo;s city-limits rules do. Confirm directly with Lane County Planning &amp; Development for a specific rural parcel before assuming no permit applies. No specific penalty dollar figure exists for unpermitted burning under any of the agencies above. We&rsquo;re not going to guess at one.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">We&rsquo;ll Walk It With You Before Anything&rsquo;s Quoted</a>
+			</div>
+		</div>
+	</section>
+	<!-- Equipment + residential/commercial — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="Equipment"
+		headline="What Equipment Shows Up on the Job?"
+		image="/hero-bg-3.webp"
+		imageAlt="Excavator with grapple attachment clearing brush and stumps"
+		imageSide="left"
+		badgeValue="2 Attachments"
+		badgeLabel="Grapple + Mulching Head"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>An excavator with a thumb or grapple attachment does most of the heavy lifting on a land-clearing job: pulling stumps, piling brush, loading debris. A brush hog or mulching head attachment handles lower growth without tearing up the topsoil underneath it, and is the secondary tool for clearing under standing timber, not the primary one.</p><p>Steep or wet ground changes which machine makes sense, which is part of why the walk-through happens before the quote.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Residential & Commercial"
+		headline="Do You Handle Both Residential and Commercial Land Clearing?"
+		image="/hero-bg-4.webp"
+		imageAlt="Cleared acreage ready for pasture or a new building envelope"
+		imageSide="right"
+		badgeValue="1 Walk-Through"
+		badgeLabel="Before Every Quote"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Homeowners call for a couple acres to open up a building envelope or a garden. Builders call for full parcels ahead of a subdivision or a commercial pad.</p><p>Either way, the scoping is the same: a real walk-through, not a phone-quoted guess. Licensed and bonded under CCB #261742, serving Eugene, Springfield, and the rest of Lane County.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Land Clearing in Lane County, OR"
+		headline="Why Do Lane County Homeowners and Builders Trust D&D Land Works for Land Clearing?"
+		image="/hero-bg-1.webp"
+		imageAlt="D&D Land Works clearing a wooded lot in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every clearing job starts with David walking the property in person, flagging trees and features you want kept before anything&rsquo;s cut.</p><p>There&rsquo;s no subcontracted crew and no phone-quoted guess: the person who scopes your land-clearing job is the one who runs the equipment on it. If you&rsquo;re opening up a wooded lot or reclaiming overgrown acreage anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every land-clearing job starts with David walking the property in person, flagging what stays before anything's cut, and confirming which of Lane County's permit rules actually apply to your parcel."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<p class="mt-3 text-center text-sm text-slate-600 max-w-2xl mx-auto">
+			Once a lot is cleared, most jobs move straight into site preparation or grading and leveling. And if your project doesn&rsquo;t actually need full land clearing, just overgrowth and scrub, brush clearing is the lighter, less expensive scope built for exactly that case.
+		</p>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Land Opened Up"
+		subheadline="Free estimate for land clearing anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

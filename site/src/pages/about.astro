@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Achievement from '../components/Achievement.astro';
+
+const featuredServices = [
+  {
+    title: 'Site Preparation',
+    description: 'Clearing, grading, and prepping your lot before the build starts.',
+    href: '/services/site-preparation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />',
+  },
+  {
+    title: 'Grading & Leveling',
+    description: 'Shaping land to the right slope for drainage and building.',
+    href: '/services/grading-leveling',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
+  },
+  {
+    title: 'Land Clearing',
+    description: 'Removing brush, trees, and debris to open up usable land.',
+    href: '/services/land-clearing',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />',
+  },
+  {
+    title: 'Foundation Excavation',
+    description: 'Digging and leveling for footings and foundations.',
+    href: '/services/foundation-excavation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />',
+  },
+];
+
+const serviceOptions = [
+  'Site Preparation',
+  'Land Clearing',
+  'Brush Clearing',
+  'Foundation Excavation',
+  'Driveway Repair',
+  'Grading & Leveling',
+  'Drainage Excavation',
+  'Utility Excavation',
+  'Trenching & Backfill',
+  'Septic Install & Repairs',
+  'Slope Stabilization',
+  'Not Sure / Other',
+];
+---
+
+<BaseLayout
+	title="About D&D Land Works | Excavation Contractor — Lane County, OR"
+	description="D&D Land Works is a licensed and bonded excavation contractor (CCB #261742) run by David Deggelman, serving Eugene, Springfield, and Lane County, OR. DEQ certified for septic work."
+>
+	<Hero
+		headline="About D&D Land Works"
+		subheadline="D&D Land Works is an owner-operated excavation and site-prep contractor based in Lane County, Oregon. David Deggelman handles land clearing, grading, drainage, utility trenching, driveway work, and DEQ certified septic install and repair, from the first site walkthrough to a build-ready pad. Licensed and bonded under CCB #261742, serving Eugene, Springfield, and the rest of Lane County."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Our Services', href: '/services' }}
+		backgroundImages={['/hero-bg-2.webp', '/hero-bg-4.webp']}
+	/>
+	<AboutSection ctaLabel="Get a Free Estimate" ctaHref="/contact" />
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+			<div>
+				<div class="mb-2 flex items-center gap-2">
+					<img src="/logo.png" alt="" class="h-5 w-auto" aria-hidden="true" />
+					<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+						Services
+					</p>
+				</div>
+				<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+					Our Excavation Services in Lane County, OR
+				</h2>
+			</div>
+			<div class="flex flex-wrap items-center gap-6 md:max-w-sm">
+				<p class="text-slate-600 leading-relaxed">
+					Professional excavation solutions designed to prepare your property for success.
+				</p>
+				<a href="/services" class="btn-pill shrink-0">
+					View All
+					<span class="btn-pill-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{featuredServices.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<Achievement />
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Licensed, Bonded, and DEQ Certified
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			D&D Land Works operates under Oregon CCB license #261742. That license covers site
+			preparation, grading, and general excavation work. On top of it, David holds DEQ
+			certification for septic system install and repair, which Oregon requires separately from
+			the general contractor license. A crew that only has the CCB number can grade your lot but
+			can't legally touch your septic system. D&D Land Works can do both without bringing in a
+			second contractor.
+		</p>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			The work is residential and commercial. A homeowner clearing brush for a new driveway gets
+			the same equipment and attention as a builder needing a foundation pad cut and compacted for
+			a multi-unit project. Free estimates apply either way.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			How a Job Actually Runs
+		</h2>
+		<ol class="mt-4 space-y-4 text-slate-700 leading-relaxed list-decimal list-inside">
+			<li>
+				<strong class="text-ink">Call or send a message.</strong> Describe the site, the goal, and
+				any access issues (steep slope, tight driveway, tree cover). A rough sense of scope up
+				front means a faster, more accurate estimate.
+			</li>
+			<li>
+				<strong class="text-ink">Walk the site.</strong> Grading, drainage, and septic work all
+				depend on soil, slope, and what's already buried out there. That gets checked in person
+				before a number goes on paper.
+			</li>
+			<li>
+				<strong class="text-ink">Free estimate.</strong> Scope, equipment needed, and timeline,
+				laid out plainly. No pressure to sign on the spot.
+			</li>
+			<li>
+				<strong class="text-ink">Do the work.</strong> Clear, grade, trench, compact, or install,
+				depending on the job. Site gets left clean when it's done.
+			</li>
+		</ol>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Where We Work
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			D&D Land Works is based in Lane County, Oregon, working primarily in and around Eugene and
+			Springfield, with jobs regularly out in Cottage Grove, Junction City, Creswell, and Veneta.
+			See the full <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">service area</a> for details, or just call to ask if your site's in range.
+		</p>
+	</section>
+	<section class="bg-slate-50 border-t border-slate-200 py-16 md:py-24">
+		<div class="mx-auto max-w-6xl px-4">
+			<div class="grid gap-8 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 bg-white shadow-sm lg:grid-cols-2">
+				<div class="p-8 md:p-10">
+					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink">
+						Get in Touch
+					</h2>
+					<p class="mt-3 text-slate-600 leading-relaxed">
+						Send a few details about the job and David will follow up to schedule a free, on-site
+						estimate.
+					</p>
+					<ul class="mt-6 flex flex-col gap-3 text-sm text-slate-700">
+						<li class="flex items-center gap-3">
+							<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" />
+								</svg>
+							</span>
+							<a href="tel:5414018726" class="font-semibold hover:text-brand-blue transition-colors">541-401-8726</a>
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+									<circle cx="12" cy="10.5" r="2.3" />
+								</svg>
+							</span>
+							Serving Eugene, Springfield &amp; all of Lane County, OR
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+									<circle cx="12" cy="12" r="9" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 2" />
+								</svg>
+							</span>
+							Estimates by appointment, call or message any time
+						</li>
+					</ul>
+					<div class="mt-6 aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200">
+						<iframe
+							title="D&D Land Works service area map, Lane County, Oregon"
+							src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+							width="100%"
+							height="100%"
+							style="border:0;"
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						></iframe>
+					</div>
+				</div>
+				<!--
+					Visual only for now — no submission backend wired yet (Phase 8 of
+					astro-site-build-plan.md: pick a form backend, e.g. Formspree or a
+					serverless function, before this goes live). The script below just
+					previews a "sent" state on submit.
+				-->
+				<form id="estimate-form" class="flex flex-col gap-4 bg-slate-50 p-8 md:p-10">
+					<input
+						type="text"
+						name="name"
+						required
+						placeholder="Your Name"
+						class="rounded-(--radius-brand) border border-slate-300 bg-white px-4 py-3 text-sm focus:border-brand-blue focus:outline-none"
+					/>
+					<input
+						type="email"
+						name="email"
+						required
+						placeholder="Email Address"
+						class="rounded-(--radius-brand) border border-slate-300 bg-white px-4 py-3 text-sm focus:border-brand-blue focus:outline-none"
+					/>
+					<input
+						type="tel"
+						name="phone"
+						placeholder="Phone Number"
+						class="rounded-(--radius-brand) border border-slate-300 bg-white px-4 py-3 text-sm focus:border-brand-blue focus:outline-none"
+					/>
+					<select
+						name="service"
+						class="rounded-(--radius-brand) border border-slate-300 bg-white px-4 py-3 text-sm text-slate-600 focus:border-brand-blue focus:outline-none"
+					>
+						<option value="">What do you need done?</option>
+						{serviceOptions.map((option) => <option value={option}>{option}</option>)}
+					</select>
+					<textarea
+						name="message"
+						rows={4}
+						placeholder="Tell us about the site and the job"
+						class="rounded-(--radius-brand) border border-slate-300 bg-white px-4 py-3 text-sm focus:border-brand-blue focus:outline-none"
+					></textarea>
+					<button type="submit" class="btn btn-primary btn-lg">Send</button>
+					<p id="estimate-form-status" class="hidden text-sm font-medium text-brand-blue" role="status"></p>
+				</form>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+<script>
+	const form = document.getElementById('estimate-form') as HTMLFormElement | null;
+	const status = document.getElementById('estimate-form-status');
+	form?.addEventListener('submit', (e) => {
+		e.preventDefault();
+		if (status) {
+			status.textContent = 'Thanks — this form preview isn\'t wired to send yet. Call 541-401-8726 in the meantime.';
+			status.classList.remove('hidden');
+		}
+	});
+</script>

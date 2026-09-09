@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const related = [
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+];
+---
+
+<BaseLayout
+	title="Excavation Cost in Oregon | D&D Land Works"
+	description="What excavation actually costs in Oregon and what drives the price up or down: soil, access, depth, and haul distance. Free estimates in Lane County."
+>
+	<Hero
+		eyebrow="Cost Guide"
+		headline="Excavation Cost in Oregon"
+		subheadline="Every excavation quote looks a little different because every site is different. Here's what's actually in that number."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Get an Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			What Excavation Runs, in General
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			According to <a href="https://www.angi.com/articles/excavation-costs.htm" target="_blank" rel="noopener" class="text-brand-blue underline hover:text-brand-blue-dark">Angi's 2026 cost data</a>,
+			hourly excavation rates nationally land somewhere between $100 and $300 an hour, operator and
+			equipment included. Basic clearing or shallow excavation priced by area runs $2 to $10 per
+			square foot depending on soil and grading needs. Those are national averages, not a quote.
+			D&D Land Works doesn't publish a flat rate, because two lots that look similar on paper can
+			cost very differently once the equipment is on-site.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			What Actually Moves the Number
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Soil type is the biggest factor. Clay-heavy ground in parts of Eugene digs slower and holds
+			water longer than the sandier soil out toward the coast, which changes both the time on-site
+			and the equipment needed. Rock is the other big one. A lot that looks clean on the surface can
+			hide basalt a few feet down, and once a bucket starts hitting rock instead of dirt, the job
+			slows down fast.
+		</p>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li>Soil type: clay, sand, and rocky ground all excavate at different speeds</li>
+			<li>Site access: a tight urban lot costs more to maneuver than open acreage</li>
+			<li>Depth and volume: a foundation dig moves more material than a shallow grade</li>
+			<li>Haul distance: spoil that has to leave the site adds trucking cost</li>
+			<li>Slope: a hillside cut needs more attention to erosion and stability than flat ground</li>
+		</ul>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Why D&D Land Works Quotes On-Site
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A number pulled from a national average can be off by thousands of dollars once actual soil
+			and access come into play. David walks the site, looks at what the job actually requires, and
+			gives a number based on that property, not a formula. Licensed and bonded under CCB #261742,
+			serving Eugene, Springfield, and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get a Real Number"
+		subheadline="Free on-site estimate, no obligation."
+	/>
+</BaseLayout>

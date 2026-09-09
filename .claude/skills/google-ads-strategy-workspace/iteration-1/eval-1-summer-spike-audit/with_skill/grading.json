@@ -1,0 +1,75 @@
+{
+  "eval_id": 1,
+  "eval_name": "summer-spike-audit",
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "flags_max_clicks_as_problem",
+      "passed": true,
+      "evidence": "Maximize Clicks"
+    },
+    {
+      "text": "flags_mixed_intent_campaign",
+      "passed": true,
+      "evidence": "split.\n5. **It's June in Houston and you're capped at $200/day** \u2014 Houston HVAC sees +30\u201350% CPCs from June through August. $200/day is the *recommended starter* for May; it is structurally insufficie"
+    },
+    {
+      "text": "flags_display_network_on_search",
+      "passed": true,
+      "evidence": "Display Network"
+    },
+    {
+      "text": "flags_location_interest_setting",
+      "passed": true,
+      "evidence": "people interested in Houston\"** \u2014 this is the \"Presence or interest\" setting, which serves your ads to Dallas, Austin, and out-of-state researchers who will never book. This is a top-3 budget waster o"
+    },
+    {
+      "text": "addresses_summer_seasonality",
+      "passed": true,
+      "evidence": "June"
+    },
+    {
+      "text": "addresses_budget_exhausting",
+      "passed": true,
+      "evidence": "budget exhausts by ~2pm.\n**Verdict:** This account is misconfigured against almost every 2026 platform reality. The good news: every single fault here has a known remediation, and the structure is sim"
+    },
+    {
+      "text": "produces_priority_fix_order",
+      "passed": true,
+      "evidence": "order"
+    },
+    {
+      "text": "warns_against_lowering_bids",
+      "passed": true,
+      "evidence": "never lower bids"
+    },
+    {
+      "text": "recommends_split_into_5_campaigns",
+      "passed": true,
+      "evidence": "Emergency Audit (June, Summer Spike)\n\n**Symptom:** CPL went from $58 in May to $112 in June; daily $200 budget exhausts by ~2pm.\n**Verdict:** This account is misconfigured against almost every 2026 pl"
+    },
+    {
+      "text": "recommends_max_conversions_or_tcpa",
+      "passed": true,
+      "evidence": "Maximize Conversions"
+    },
+    {
+      "text": "addresses_search_partners",
+      "passed": true,
+      "evidence": "Search Partners"
+    },
+    {
+      "text": "names_specific_outcome_or_metric",
+      "passed": true,
+      "evidence": "expect.\n\n---\n\n## TL;DR \u2014 The Five Things Killing Your CPL\n\n1. **Maximize Clicks bidding in 2026 is actively harmful for HVAC** \u2014 bot/scraper click farms have gotten good enough on HVAC keywords that t"
+    },
+    {
+      "text": "mentions_burn_protocol_or_pacing",
+      "passed": true,
+      "evidence": "exhaust"
+    }
+  ],
+  "passed_count": 13,
+  "total_count": 13,
+  "pass_rate": 1.0
+}

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/services/land-clearing' },
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/services/septic-install-repairs' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation Contractor in Cottage Grove, OR | D&D Land Works"
+	description="Excavation, land clearing, and DEQ certified septic work in Cottage Grove, OR. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Cottage Grove, Oregon"
+		headline="Excavation in Cottage Grove, OR"
+		subheadline="About 20 minutes south of Eugene on I-5, Cottage Grove runs more rural and more wooded than the city. Septic and land clearing calls make up a bigger share of the work out here."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Cottage Grove, Oregon"
+		headlineHtml="Timber Country, <span class='text-brand-blue'>Bigger Lots</span> in Cottage Grove"
+		descriptionHtml="<p>Cottage Grove grew up on timber, and a lot of that history shows in the ground: acreage properties along Row River Road and out toward London that were logged decades ago and have since grown back into brush and second-growth timber. Clearing a building site or just opening up usable ground here usually means dealing with more vegetation and rougher terrain than a typical Eugene city lot.</p><p>Septic work is common too. A good share of Cottage Grove properties sit outside any municipal sewer line, which means a failing drainfield or a new build both come back to DEQ-certified septic work. D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong> and DEQ certified for septic, covering Cottage Grove as part of the regular Lane County service area.</p>"
+	/>
+	<!-- Services -->
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			Services in Cottage Grove
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+		<p class="mt-8 text-center text-slate-600">
+			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
+		</p>
+	</section>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Cottage Grove, Oregon"
+		headline="Why Do Cottage Grove Property Owners Trust D&D Land Works?"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works job site in Cottage Grove, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone.</p><p>David Deggelman scopes every job in person before quoting. If you need land clearing, site prep, or septic work anywhere in Cottage Grove or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Cottage Grove"
+		subheadline="Site work, land clearing, or septic: call and describe the property."
+	/>
+</BaseLayout>

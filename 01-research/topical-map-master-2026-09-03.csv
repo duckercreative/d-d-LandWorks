@@ -1,0 +1,45 @@
+Priority,Cluster,Parent Topic,Page,Page Type,Search Intent,Primary Entity,Primary Keyword,Recommended URL,Status,Business Value
+P0,Brand,-,Excavation Contractor in Lane County OR,Homepage,Local commercial,Excavation & landworks contractor,excavation contractor lane county / eugene or,/,RECOMMENDED,5
+P0,Site Prep,Homepage,Site Preparation,Core service,Commercial,Construction site preparation,site preparation eugene or,/site-preparation/,RECOMMENDED,5
+P0,Excavation,Homepage,Excavation & Grading,Core service,Commercial,Excavation contractor,excavation contractor eugene or,/excavation/,RECOMMENDED,5
+P0,Grading,Excavation,Grading & Leveling,Core service,Commercial,Land grading,land grading eugene or,/grading-leveling/,RECOMMENDED,4
+P0,Clearing,Homepage,Land Clearing (incl brush clearing),Core service,Commercial,Land clearing,land clearing eugene or,/land-clearing/,RECOMMENDED,5
+P0,Septic,Homepage,Septic Install & Repair (DEQ),Core service,Commercial,Septic system installation,septic installation eugene or,/septic/,RECOMMENDED,5
+P0,Conversion,Homepage,Contact / Free Estimate,Conversion,Transactional,Free estimate,free excavation estimate eugene,/contact/,RECOMMENDED,5
+P0,Local,Homepage,Service Areas hub,County/hub,Local commercial,Lane County service area,excavation lane county or,/service-areas/,RECOMMENDED,4
+P0,Local,Service Areas,Lane County,County page,Local commercial,Lane County,excavation contractor lane county,/service-areas/lane-county/,RECOMMENDED,4
+P0,Local,Lane County,Eugene,City page,Local commercial,Eugene OR,excavation contractor eugene or,/service-areas/eugene/,RECOMMENDED,5
+P1,Excavation,Excavation,Foundation Excavation,Core service,Commercial,Foundation excavation,foundation excavation eugene or,/foundation-excavation/,RECOMMENDED,4
+P1,Drainage,Homepage,Drainage Excavation,Core service,Problem/commercial,Drainage excavation,drainage excavation eugene or,/drainage-excavation/,RECOMMENDED,4
+P1,Utility,Homepage,Utility Excavation (incl trenching & backfill),Core service,Commercial,Utility excavation,utility trenching eugene or,/utility-excavation/,RECOMMENDED,4
+P1,Driveway,Homepage,Driveway Repair,Support service,Problem/commercial,Gravel driveway repair,gravel driveway repair eugene or,/driveway-repair/,RECOMMENDED,4
+P1,Audience,Homepage,Commercial Excavation,Audience hub,Commercial investigation,Commercial excavation,commercial excavation eugene or,/commercial-excavation/,RECOMMENDED,4
+P1,Local,Lane County,Springfield,City page,Local commercial,Springfield OR,excavation contractor springfield or,/service-areas/springfield/,RECOMMENDED,5
+P1,Trust,Homepage,About D&D Land Works,Trust,Navigational,D&D Land Works,-,/about/,RECOMMENDED,3
+P1,City x Svc,Eugene,Septic - Eugene,City x service,Local commercial,Septic Eugene,septic installation eugene or,/service-areas/eugene/septic/,RECOMMENDED,5
+P1,City x Svc,Eugene,Land Clearing - Eugene,City x service,Local commercial,Land clearing Eugene,land clearing eugene or,/service-areas/eugene/land-clearing/,RECOMMENDED,4
+P1,City x Svc,Eugene,Excavation & Site Prep - Eugene,City x service,Local commercial,Excavation Eugene,excavation eugene or,/service-areas/eugene/excavation/,RECOMMENDED,5
+P2,Slope,Homepage,Slope Stabilization,Support service,Problem/commercial,Slope stabilization,slope stabilization erosion control oregon,/slope-stabilization/,RECOMMENDED,3
+P2,Utility,Utility Excavation,Trenching & Backfill (graduate),Sub-service,Commercial,Trenching and backfill,trenching backfill eugene or,/trenching-backfill/,RECOMMENDED,3
+P2,Clearing,Land Clearing,Brush Clearing (graduate),Sub-service,Commercial,Brush clearing,brush clearing eugene or,/brush-clearing/,RECOMMENDED,3
+P2,City x Svc,Eugene,Grading - Eugene,City x service,Local commercial,Grading Eugene,grading eugene or,/service-areas/eugene/grading/,RECOMMENDED,3
+P2,City x Svc,Eugene,Drainage - Eugene,City x service,Local commercial,Drainage Eugene,drainage eugene or,/service-areas/eugene/drainage/,RECOMMENDED,3
+P2,City x Svc,Springfield,Septic - Springfield,City x service,Local commercial,Septic Springfield,septic springfield or,/service-areas/springfield/septic/,RECOMMENDED,4
+P2,City x Svc,Springfield,Land Clearing - Springfield,City x service,Local commercial,Land clearing Springfield,land clearing springfield or,/service-areas/springfield/land-clearing/,RECOMMENDED,3
+P2,City x Svc,Springfield,Excavation - Springfield,City x service,Local commercial,Excavation Springfield,excavation springfield or,/service-areas/springfield/excavation/,RECOMMENDED,4
+P2,Local,Lane County,Cottage Grove,City page,Local commercial,Cottage Grove OR,excavation cottage grove or,/service-areas/cottage-grove/,RECOMMENDED,3
+P2,Local,Lane County,Junction City,City page,Local commercial,Junction City OR,excavation junction city or,/service-areas/junction-city/,RECOMMENDED,3
+P2,Local,Lane County,Creswell,City page,Local commercial,Creswell OR,excavation creswell or,/service-areas/creswell/,RECOMMENDED,3
+P2,Local,Lane County,Veneta,City page,Local commercial,Veneta OR,excavation veneta or,/service-areas/veneta/,RECOMMENDED,3
+P2,Cost,Resources,Excavation cost Oregon,Commercial investigation,Commercial investigation,Excavation cost,excavation cost oregon,/resources/excavation-cost-oregon/,RECOMMENDED,3
+P2,Cost,Resources,Site preparation cost,Commercial investigation,Commercial investigation,Site prep cost,site preparation cost,/resources/site-preparation-cost/,RECOMMENDED,3
+P2,Cost,Resources,Land clearing cost per acre Oregon,Commercial investigation,Commercial investigation,Land clearing cost,land clearing cost per acre oregon,/resources/land-clearing-cost-per-acre-oregon/,RECOMMENDED,3
+P2,Cost,Resources,Septic installation cost Oregon,Commercial investigation,Commercial investigation,Septic cost,septic installation cost oregon,/resources/septic-installation-cost-oregon/,RECOMMENDED,4
+P3,Local,Lane County,Florence (confirm coverage),City page,Local commercial,Florence OR,excavation florence or,/service-areas/florence/,RECOMMENDED-CONFIRM,2
+P3,Local,Lane County,Oakridge,City page,Local commercial,Oakridge OR,excavation oakridge or,/service-areas/oakridge/,RECOMMENDED,2
+P3,Local,Lane County,Coburg,City page,Local commercial,Coburg OR,excavation coburg or,/service-areas/coburg/,RECOMMENDED,2
+P3,Local,Lane County,Lowell,City page,Local commercial,Lowell OR,excavation lowell or,/service-areas/lowell/,RECOMMENDED,2
+P3,Info,Resources,How to prepare land for construction,Informational,Project research,Preparing land,how to prepare land for building,/resources/preparing-land-for-construction/,RECOMMENDED,2
+P3,Info,Resources,Fix standing water / drainage problems,Problem/solution,Problem/solution,Standing water,fix standing water in yard,/resources/fix-standing-water-yard/,RECOMMENDED,3
+P3,Info,Resources,How to choose an excavation contractor,Hiring,Commercial investigation,Choosing a contractor,how to choose excavation contractor,/resources/choosing-an-excavation-contractor/,RECOMMENDED,3
+P3,Info,Resources,Oregon septic basics (Lane County / DEQ),Informational,Informational,Oregon septic,septic system oregon rules,/resources/oregon-septic-basics/,RECOMMENDED,2

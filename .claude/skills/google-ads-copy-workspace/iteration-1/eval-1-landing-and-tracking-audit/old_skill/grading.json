@@ -1,0 +1,80 @@
+{
+  "eval_id": 1,
+  "eval_name": "landing-and-tracking-audit",
+  "config": "old_skill",
+  "expectations": [
+    {
+      "text": "flags_h1_message_match_problem",
+      "passed": true,
+      "evidence": "H1 does not match the ad.** \"Welcome to 75 Degree AC \u2013 Houston's Trusted HVAC Partner\" is exactly the example the SKILL forbids: *\"Never use 'Welcome to 75 Degree AC' as H1.\"* H1 must echo \"Emergency "
+    },
+    {
+      "text": "flags_phone_in_footer_only",
+      "passed": true,
+      "evidence": "phone \u2014 last-click attribution against form-only conversions is telling Google to optimize for the wrong action.\n\n---\n\n## Issue Inventory\n\n### Layer 1 \u2014 Ad Copy\n\n| # | Issue | Severity |\n|---|---|---|"
+    },
+    {
+      "text": "flags_form_too_many_fields",
+      "passed": true,
+      "evidence": "75 Degree AC\n**Campaign:** Emergency AC Repair\n**Audit framework:** `google-ads-copy` SKILL.md v1.0.0\n**Audit date:** 2026-05-02\n\n---\n\n## Executive Summary\n\nThis Emergency campaign has structural brea"
+    },
+    {
+      "text": "flags_lcp_too_slow",
+      "passed": true,
+      "evidence": "LCP \u2014 a combined drag worth roughly +25% to +67% on CPC vs. what this account should be paying.\n\n**The single biggest problem:** Calls are not tracked at all. For an HVAC emergency campaign \u2014 where th"
+    },
+    {
+      "text": "flags_no_call_tracking",
+      "passed": true,
+      "evidence": "CallRail"
+    },
+    {
+      "text": "flags_count_every_setting",
+      "passed": true,
+      "evidence": "counting leads by an estimated 50\u201370% (calls are invisible, every-count inflation, no Enhanced Conversions). Quality Score is being suppressed primarily by the landing page mismatch and 4.2s LCP \u2014 a c"
+    },
+    {
+      "text": "flags_90_day_window_too_long",
+      "passed": true,
+      "evidence": "Click-through window"
+    },
+    {
+      "text": "recommends_enhanced_conversions",
+      "passed": true,
+      "evidence": "Enhanced Conversions"
+    },
+    {
+      "text": "recommends_data_driven_attribution",
+      "passed": true,
+      "evidence": "Data-driven"
+    },
+    {
+      "text": "produces_priority_order",
+      "passed": true,
+      "evidence": "Critical"
+    },
+    {
+      "text": "names_qs_or_cpc_impact",
+      "passed": true,
+      "evidence": "Quality Score is being suppressed primarily by the landing page mismatch and 4.2s LCP \u2014 a combined drag worth roughly +25% to +67% on CPC vs. what this account should be paying.\n\n**The single biggest "
+    },
+    {
+      "text": "flags_review_count_missing",
+      "passed": true,
+      "evidence": "review count"
+    },
+    {
+      "text": "addresses_minimum_call_duration",
+      "passed": true,
+      "evidence": "Minimum call"
+    },
+    {
+      "text": "specific_h1_rewrite_or_recommendation",
+      "passed": true,
+      "evidence": "H1 does not match the ad.** \"Welcome to 75 Degree AC \u2013 Houston's Trusted HVAC Partner\" is exactly the example the SKILL forbids: *\"Never use 'Welcome to 75 Degree AC' as H1.\"* H1 must echo \"Emergency "
+    }
+  ],
+  "passed_count": 14,
+  "total_count": 14,
+  "pass_rate": 1.0
+}

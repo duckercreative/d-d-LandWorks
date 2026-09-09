@@ -1,0 +1,51 @@
+---
+/*
+  Credential strip for right below the hero — the placement Brynion (competitor)
+  uses for numeric achievement counters (years in business, jobs completed).
+  We don't have verified numbers for any of that yet (see business-info.md
+  Open Items), so this uses only confirmed facts instead of fabricated stats.
+*/
+interface TrustItem {
+  label: string;
+  detail?: string;
+  icon: 'shield' | 'certificate' | 'estimate' | 'building';
+}
+
+interface Props {
+  items?: TrustItem[];
+}
+
+const defaultItems: TrustItem[] = [
+  { label: 'Licensed & Bonded', detail: 'CCB #261742', icon: 'shield' },
+  { label: 'DEQ Certified', detail: 'Septic install & repair', icon: 'certificate' },
+  { label: 'Free Estimates', detail: 'On every job', icon: 'estimate' },
+  { label: 'Residential & Commercial', detail: 'One crew, both', icon: 'building' },
+];
+
+const { items = defaultItems } = Astro.props;
+
+const icons: Record<TrustItem['icon'], string> = {
+  shield: 'M12 2 4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3Z',
+  certificate: 'M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM7 21l2-5m8 5-2-5',
+  estimate: 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 7h8m-8 3.5h5',
+  building: 'M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4',
+};
+---
+
+<section class="border-b border-slate-200 bg-white">
+	<div class="mx-auto max-w-6xl px-4 py-8 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
+		{items.map((item) => (
+			<div class="flex flex-col items-center gap-2 text-center sm:flex-row sm:text-left">
+				<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+						<path stroke-linecap="round" stroke-linejoin="round" d={icons[item.icon]} />
+					</svg>
+				</span>
+				<div>
+					<p class="font-display font-bold uppercase tracking-wide text-sm text-ink leading-tight">{item.label}</p>
+					{item.detail && <p class="text-xs text-slate-500">{item.detail}</p>}
+				</div>
+			</div>
+		))}
+	</div>
+</section>

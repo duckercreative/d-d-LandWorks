@@ -1,0 +1,17 @@
+{
+  "eval_id": 0,
+  "eval_name": "todays-gbp-post",
+  "prompt": "Draft today's GBP post for 75 Degree AC. Today is Tuesday April 21, 2026. The pipeline is set up and we need a new post to publish Wednesday.",
+  "assertions": [
+    {"text": "A draft .md file is written to 04-gmb/posts/drafts/"},
+    {"text": "Post body is between 1200 and 1450 characters"},
+    {"text": "Phone number (713) 598-2737 does NOT appear anywhere in the post body"},
+    {"text": "First line of post body contains a primary keyword + 'Houston' or a named suburb"},
+    {"text": "Post includes 2-3 trust signals (e.g. Licensed TACLA, Same-day, Since 2016)"},
+    {"text": "A valid CTA button type and URL to 75degreeac.com is specified"},
+    {"text": "Research notes are present (GSC data check was performed, weather checked)"},
+    {"text": "Template used is not pre_summer_tune_up (posted 4/20, within 40-day exclusion)"},
+    {"text": "No em dashes (—) or semicolons appear in the post body"},
+    {"text": "No banned AI-slop phrases present (ensure, seamless, elevate, unlock, etc.)"}
+  ]
+}

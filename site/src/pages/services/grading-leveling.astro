@@ -1,0 +1,412 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/grading-leveling-content.md).
+  Promoted from the /services/grading-leveling-test draft after review.
+
+  Note: this page's scope deliberately DROPS "cutting building pads level and to
+  design elevation" — the research pack found that's construction-tied grading,
+  which belongs on the Excavation/Site Preparation pages, not this one. This page
+  covers standalone re-sloping/leveling for an EXISTING yard only.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const fixes = [
+  'Yards that slope toward the house instead of away from it',
+  'Low spots and standing water that never drain, even weeks after rain',
+  'Uneven or lumpy lawns that were never finish-graded right in the first place',
+  'Surface erosion from years of runoff cutting across an uncorrected slope',
+  'Drainage grading: shaping swales and berms so surface water moves where it needs to go',
+  'Cut-and-fill balancing within an existing yard, moving a high spot to fill a low one instead of trucking material off site',
+];
+
+const costRows = [
+  { type: 'Small lawn leveling / minor regrade', range: '$500–$1,000', affects: 'Square footage, depth of correction, site access' },
+  { type: 'Full backyard regrade', range: '$1,000–$5,000+', affects: 'Volume of material moved, slope severity, equipment access' },
+  { type: 'Drainage-focused regrade (swales/berms)', range: 'Varies by scope', affects: 'Whether swales or berms are shaped, how much material moves on-site' },
+];
+
+const faqs = [
+  { question: 'Is this a landscaping job or an excavation job?', answer: 'It’s a real, definable job with its own name, grading and leveling, that sits between the two. The distinction comes down to job size, equipment, and permanence, not which kind of company happens to answer the phone. A landscaper handles cosmetic fixes with hand tools; an excavation contractor digs new space with heavy equipment. Grading and leveling reshapes an existing surface with a skid steer or excavator and a grading attachment, with nothing new being dug.' },
+  { question: 'What is a positive drainage slope, and how much slope does my yard actually need?', answer: 'Oregon’s adopted residential code (ORSC §R401.3) sets the actual figure: a minimum 6-inch fall over the first 10 feet from your foundation, roughly a 5% slope, tapering to a 2% minimum for hard surfaces near the building and generally beyond it. That’s not a rule of thumb, it’s the code standard D&D grades to on every job.' },
+  { question: 'How much does it cost to level or regrade a yard in Lane County?', answer: 'General ranges run about $500–$1,000 for a small lawn-leveling job and $1,000–$5,000-plus for a full backyard regrade, depending on square footage, slope severity, and how much material has to move. No Lane-County-specific figure exists yet for yard-scale grading, so these are general national ranges, not a quote, a free on-site estimate is the only way to price your actual yard.' },
+  { question: 'Do I need a permit just to regrade my lawn in Lane County?', answer: 'Usually not, for an ordinary yard regrade. Lane County’s Grading and Fill Permit is generally triggered by moving more than 50 cubic yards of earth or a cut/fill slope steeper than 2:1, a threshold most yard-sized jobs stay well under. A large, deep full-property regrade could approach that threshold, so it’s worth confirming directly with Lane County’s Land Management Division for a bigger job.' },
+  { question: 'How do I know if my yard needs a full regrade versus just topdressing?', answer: 'If topdressing or sand-leveling doesn’t hold, or a depression is deeper than about an inch, that’s a sign the underlying grade needs correcting, not just topping off again. Minor cosmetic unevenness with no standing water is often a lawn-care fix; an actual slope or drainage problem is an earthwork job. We’ll tell you honestly which one your yard needs before quoting anything.' },
+  { question: 'What’s the difference between a swale and a French drain?', answer: 'A swale is a shallow, graded surface channel that moves water by shaping the ground itself, that’s grading work, and it’s D&D’s territory. A French drain is a buried, perforated-pipe-and-gravel subsurface system, a genuinely different remedy. If a French drain is specifically what your property needs, confirm that scope with us directly rather than assuming it’s included.' },
+  { question: 'Does D&D take on small residential yard-grading jobs, or mostly bigger projects?', answer: 'Yes. A yard-sized regrading job gets the same scoping attention and process as a larger excavation or site-prep project, a real site visit, a written estimate, and a crew that shows up ready for the scope actually in front of it.' },
+  { question: 'Will regrading damage my existing lawn or landscaping?', answer: 'Some disturbance to the lawn surface is normal, and reseeding or re-sodding the regraded area afterward is common. Established beds, sprinkler lines, and hardscape near the work area get walked and flagged before anything moves, not discovered mid-job. Mention any underground sprinklers or drip lines up front so they get mapped first.' },
+  { question: 'What’s the best time of year to regrade a yard in Oregon’s rainy climate?', answer: 'May through October is generally the preferred dry window, since Willamette Valley’s clay soil grades and compacts more predictably dry than during Eugene’s wettest months (November through January). A yard-sized job is far more schedule-flexible than a full excavation project, though, and can often be done outside that window if timing requires it.' },
+];
+
+const related = [
+  { title: 'Excavation', description: 'Cut-and-fill, backfill, and new digging for foundations, ponds, and utility trenches.', href: '/services/excavation' },
+  { title: 'Site Preparation', description: 'Clearing, stripping topsoil, and grading a raw lot before a new build.', href: '/services/site-preparation' },
+  { title: 'Driveway Repair', description: 'Regrading a driveway or access road that’s washed out or settled.', href: '/services/driveway-repair' },
+  { title: 'Slope Stabilization', description: 'Hillside erosion control and structural slope work, beyond ordinary surface regrading.', href: '/services/slope-stabilization' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/grading-leveling/#service',
+      name: 'Grading and Leveling',
+      serviceType: 'Grading and Leveling',
+      description: 'Grading and leveling corrects an existing yard\'s surface: re-sloping a lawn, fixing a low spot that collects water, or restoring a positive drainage slope away from a foundation, without digging a new excavation. D&D Land Works provides grading and leveling for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon.',
+      url: 'https://www.ddlandworks.com/services/grading-leveling/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Grading & Leveling', item: 'https://www.ddlandworks.com/services/grading-leveling/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Grading & Leveling in Eugene & Lane County, OR | D&D Land Works"
+	description="Yard grading, drainage correction & leveling in Eugene, Springfield & Lane County, OR. Licensed, bonded, free estimates. Call 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Grading & Leveling in Eugene, Springfield & Lane County, Oregon"
+		subheadline="A yard that ponds after every rain, a lawn that slopes toward the house, a low spot that never dries out: that's a real job with its own name. D&D Land Works grades and levels existing yards throughout Lane County, no new digging required."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Grading & Leveling in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Grading &amp; Leveling</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>Grading and leveling corrects an existing yard&rsquo;s surface: re-sloping a lawn, fixing a low spot that collects water, or restoring a positive drainage slope away from a foundation, without digging a new excavation.</p><p>D&amp;D Land Works provides grading and leveling for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon, correcting yards that slope the wrong way, fixing low spots and standing water, and shaping swales and berms to redirect surface water. The work follows Oregon&rsquo;s adopted residential drainage standard (ORSC &sect;R401.3). D&amp;D is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
+	/>
+	<!-- Landscaping vs excavation -->
+	<PhotoContentBlock
+		eyebrow="Landscaping vs. Excavation"
+		headline="Is This a Landscaping Job or an Excavation Job?"
+		image="/hero-bg-1.webp"
+		imageAlt="Skid steer regrading an existing yard in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="0 New Digging"
+		badgeLabel="Reshapes Existing Ground"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>It&rsquo;s neither, exactly. It&rsquo;s a job with its own name: grading and leveling. The line isn&rsquo;t which kind of company happens to answer the phone, it&rsquo;s job size, equipment, and permanence.</p><p>A landscaper regrades by hand with a few yards of soil for a cosmetic fix; an excavation contractor digs new space with heavy equipment. Grading and leveling sits between them, reshaping an existing surface with a skid steer or excavator and a grading attachment, with nothing new being dug.</p>"
+	/>
+	<!-- What it fixes -->
+	<section class="bg-white border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Does Grading &amp; Leveling Actually Fix?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Everything on this list is a problem with ground that already exists. None of it involves digging a new foundation, clearing a raw lot for <a href="/services/site-preparation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">site preparation</a>, or cutting a building pad. That work belongs on those pages instead.
+			</p>
+			<div class="mt-10 grid gap-4 sm:grid-cols-2">
+				{fixes.map((fix) => (
+					<div class="card flex gap-3">
+						<span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-blue"></span>
+						<p class="text-sm text-slate-700">{fix}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	<!-- Drainage slope standard -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+				What Is a Positive Drainage Slope?
+			</h2>
+			<p class="mt-4 text-slate-700 leading-relaxed">
+				A positive drainage slope means the ground actually falls away from your foundation instead of toward it. Oregon&rsquo;s adopted residential code, <a href="https://codes.iccsafe.org/s/ORRC2023P1/chapter-4-foundations/ORRC2023P1-Pt03-Ch04-SecR401.3" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">ORSC &sect;R401.3</a>, sets the real figure: a minimum 6-inch fall over the first 10 feet from the foundation, roughly a 5% slope, with a 2% minimum slope for patios, walks, and other hard surfaces nearby and generally beyond that zone. Where a lot line, wall, or other barrier makes the 6-inch fall impossible, the code allows a 5% slope plus a drain or swale instead. That&rsquo;s the standard D&amp;D grades to: a code figure, not a guess.
+			</p>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="card text-center">
+					<p class="font-display font-black text-3xl text-brand-blue">6&Prime; / 10 ft</p>
+					<p class="mt-1 text-sm text-slate-600">Minimum fall near the foundation (~5% slope)</p>
+				</div>
+				<div class="card text-center">
+					<p class="font-display font-black text-3xl text-brand-blue">2%</p>
+					<p class="mt-1 text-sm text-slate-600">Minimum slope for hard surfaces and beyond that zone</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Topdressing vs regrade -->
+	<PhotoContentBlock
+		eyebrow="Topdressing vs. Regrade"
+		headline="How Do I Know If I Need a Full Regrade or Just Topdressing?"
+		image="/hero-bg-2.webp"
+		imageAlt="Low spot in a Lane County yard being checked before regrading"
+		imageSide="right"
+		badgeValue="1 in"
+		badgeLabel="Depression Depth That Needs Regrading"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Sometimes the cheaper fix really is the right one. A thin layer of topdressing (sand or soil spread over the turf) can level out minor unevenness with no standing water; that&rsquo;s a lawn-care fix, not earthwork.</p><p>But if a depression runs deeper than about an inch, if water actually pools, or if a topdressing attempt already didn&rsquo;t hold, the underlying grade needs correcting, not topping off again. D&amp;D handles the earthwork tier, and we&rsquo;ll tell you honestly which one your yard needs before quoting anything.</p>"
+	/>
+	<!-- Swale vs french drain -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink">
+				Swale or French Drain &mdash; What&rsquo;s the Difference?
+			</h2>
+			<p class="mt-3 text-slate-700 leading-relaxed">
+				Both move water, but they&rsquo;re not the same fix, and conflating them leads to the wrong quote.
+			</p>
+			<div class="mt-6 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4"></th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Swale</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">French Drain</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-slate-200">
+							<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">What it is</td>
+							<td class="py-3 pr-4 text-slate-600">A shallow, graded channel shaped into the land itself</td>
+							<td class="py-3 text-slate-600">A buried, perforated pipe surrounded by gravel</td>
+						</tr>
+						<tr class="border-b border-slate-200">
+							<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">How it works</td>
+							<td class="py-3 pr-4 text-slate-600">Moves surface water by shaping the ground&rsquo;s own contour</td>
+							<td class="py-3 text-slate-600">Collects water and carries it away underground</td>
+						</tr>
+						<tr class="border-b border-slate-200">
+							<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">Is it a grading job?</td>
+							<td class="py-3 pr-4 text-brand-blue font-semibold">Yes &mdash; D&amp;D&rsquo;s territory</td>
+							<td class="py-3 text-slate-600">No &mdash; a subsurface system, not confirmed as a current D&amp;D service</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-4 text-sm text-slate-600">
+				A dedicated write-up on dug drainage systems is coming on our future <a href="/services/drainage-excavation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">drainage excavation</a> page; this page covers surface grading and swales. If a French drain is specifically what your property needs, confirm that scope with us directly rather than assuming it&rsquo;s included.
+			</p>
+		</div>
+	</section>
+	<!-- Permit -->
+	<PhotoContentBlock
+		eyebrow="Permits"
+		headline="Do I Need a Permit to Regrade My Yard in Lane County?"
+		image="/hero-bg-3.webp"
+		imageAlt="Regraded residential yard in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="50 cu yd"
+		badgeLabel="Grading Permit Threshold"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Usually not, for an ordinary yard regrade. Lane County&rsquo;s Grading and Fill Permit is generally triggered by moving more than 50 cubic yards of earth or a cut/fill slope steeper than 2:1, a threshold most yard-sized jobs stay well under. A typical 1,000-square-foot yard regraded 6 inches deep works out to roughly 18&ndash;19 cubic yards, nowhere close to that line.</p><p>A large, deep full-property regrade (a 5,000-square-foot backyard at the same depth runs 90-plus cubic yards) could approach or exceed it, worth confirming directly with <a href='https://www.lanecounty.org/government/county_departments/public_works/land_management_division' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Lane County&rsquo;s Land Management Division</a> before a bigger job starts.</p>"
+	/>
+	<!-- Cost -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Yard Grading or Leveling Cost?
+			</h2>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Job Type</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Affects Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{costRows.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink">{row.type}</td>
+								<td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
+								<td class="py-3 text-slate-600">{row.affects}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center">
+				These are general national ranges, not a Lane-County-specific figure or a quote. No independently sourced local cost data exists for yard-scale grading yet.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Equipment + lawn damage + season — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="Equipment"
+		headline="What Equipment Shows Up for a Grading Job?"
+		image="/hero-bg-4.webp"
+		imageAlt="Excavator with a laser level fine-grading a yard in Lane County"
+		imageSide="right"
+		badgeValue="2 Machines"
+		badgeLabel="Laser-Level Excavator + Dozer"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Depends on the job. Fine grading near a foundation or hardscape edge, where a couple of inches of precision actually matters, typically comes down to an excavator with a smooth bucket and a laser level to hold a consistent slope.</p><p>Bulk shaping a larger yard is more of a dozer or skid steer job, moving more material where exact precision matters less. Most yard jobs use both: bulk-shape first, then fine-grade the areas that need an exact slope.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Lawn & Landscaping"
+		headline="Will Regrading Damage My Lawn or Landscaping?"
+		image="/hero-bg-1.webp"
+		imageAlt="Re-sodded lawn area after a yard regrade in Lane County"
+		imageSide="left"
+		badgeValue="Flagged First"
+		badgeLabel="Beds, Sprinklers & Hardscape"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Some disturbance to the lawn surface is normal. Regrading works the dirt underneath the grass, so reseeding or re-sodding the worked area afterward is common and not a sign anything went wrong.</p><p>Established beds, sprinkler lines, and hardscape near the work area get walked and flagged before anything moves, so nothing gets discovered mid-job. If your yard has underground sprinklers or drip lines, mention them up front so they get mapped before equipment shows up.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Best Season"
+		headline="What's the Best Time of Year to Regrade a Yard in Oregon?"
+		image="/hero-bg-2.webp"
+		imageAlt="Dry-season yard grading job in the Willamette Valley"
+		imageSide="right"
+		badgeValue="May–Oct"
+		badgeLabel="Preferred Dry-Season Window"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>May through October is generally the better window. Willamette Valley&rsquo;s clay soil grades and compacts more predictably dry than during Eugene&rsquo;s wettest months, November through January.</p><p>That said, a yard-sized job is far more schedule-flexible than a full excavation or site-prep project. It doesn&rsquo;t carry the same compaction demands, so a smaller regrade can often get done outside the dry season if that&rsquo;s what timing requires.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Grading & Leveling in Lane County, OR"
+		headline="Why Do Lane County Homeowners Trust D&D Land Works for Grading and Leveling?"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works grading a residential yard in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every yard-sized job gets graded to Oregon&rsquo;s actual drainage code, not a rule of thumb.</p><p>David Deggelman walks the yard in person, flags what needs to be preserved, and tells you honestly whether the fix is topdressing or a full regrade. If your yard slopes the wrong way or won&rsquo;t drain anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every grading job starts with David walking the yard in person, grading to Oregon's actual drainage-slope code, and telling you honestly whether the fix is topdressing or a full regrade."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<p class="mt-3 text-center text-sm text-slate-600 max-w-2xl mx-auto">
+			Grading and leveling is often the whole job, but not always. Excavation covers grading tied to new digging (a foundation, a pond, a trench); site preparation grades a raw lot before construction. Neither is this page&rsquo;s scope.
+		</p>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Yard Scoped"
+		subheadline="A yard-sized job is exactly what this page is for. Free estimates for grading and leveling anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

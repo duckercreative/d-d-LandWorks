@@ -1,0 +1,139 @@
+{
+  "expectations": [
+    {
+      "text": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+      "passed": true,
+      "evidence": "The file 2026-05-03_ac-repair-cypress-tx-drain-pollen.md is present in the outputs/ directory with full post content. Transcript Step 8 shows the file was written to /tmp/gbp-eval-1-old/ and then copied to outputs/ by the eval harness. The file is NOT present at 04-gmb/posts/drafts/ (that directory contains a different Cypress post from a separate run), but the assertion's 'or copied to outputs/' clause is satisfied."
+    },
+    {
+      "text": "First line of post body contains an AC/HVAC keyword + 'Cypress'",
+      "passed": true,
+      "evidence": "First line of post body: '🌿 AC repair in Cypress, TX often starts the same way in May: a drain line clogged with Cy-Fair pollen and algae.' Contains 'AC repair' (HVAC keyword) and 'Cypress' (geo). Transcript Step 7 also explicitly confirms: 'First line: \"AC repair in Cypress, TX\" — PASS'."
+    },
+    {
+      "text": "Post body is between 1200 and 1450 characters",
+      "passed": true,
+      "evidence": "Measured post body (from '## Post Body' to '## Research Notes') is exactly 1440 characters. Confirmed by direct Python measurement, by metrics.json field 'post_body_char_count: 1440', and by transcript Step 7 which states 'Character count: 1440 — PASS (1200–1450)'."
+    },
+    {
+      "text": "Phone number (713) 598-2737 does NOT appear in the post body",
+      "passed": true,
+      "evidence": "Python substring search confirms neither '(713)' nor '598-2737' appears anywhere in the post body. The phone number does not appear in the full .md file either. Pre-write checklist in both transcript and metrics.json confirms 'phone_in_body: PASS'."
+    },
+    {
+      "text": "Research notes show GSC data was checked for Cypress-related queries",
+      "passed": true,
+      "evidence": "Research Notes section in the output .md explicitly lists four GSC Cypress queries with positions and impression counts: 'professional ac tune-up cypress tx' (23 impressions, pos 53.3), 'ac repair near me cypress tx' (19 impressions), 'cooling system tune-up cypress' (19 impressions, pos 56.4), '24 hour ac repair cypress' (8 impressions, pos 64.8). Transcript Step 3b documents the actual GSC file search in queries-202604.csv."
+    },
+    {
+      "text": "CTA URL points to a Cypress-specific page or the most relevant Houston landing page",
+      "passed": true,
+      "evidence": "CTA URL is https://75degreeac.com/services/ac-tune-up-and-maintenance/ — not a Cypress-specific page, but the transcript documents that both /hvac-contractor-cypress-tx/ and /ac-repair-cypress-tx/ return HTTP 404. The executor verified four candidate URLs and selected the only live (200 OK) page most relevant to the tune-up/drain-line angle. This is a defensible judgment under the 'most relevant' clause, given no Cypress or Houston AC landing pages existed. Research Notes in the output confirm: 'CTA URL verified live: https://75degreeac.com/services/ac-tune-up-and-maintenance/ — HTTP 200 confirmed'."
+    },
+    {
+      "text": "No em dashes (—) appear in the post body",
+      "passed": false,
+      "evidence": "The post BODY itself contains zero em dashes (confirmed by Python: em dash count = 0). However, the ## Post Title line directly above the body reads 'AC Repair Cypress TX — Drain Line Clogs Before Summer', which contains a Unicode em dash (U+2014). The assertion is strictly about the post body, which passes. However, this is a borderline case worth noting: the title em dash would violate the SKILL.md policy ('No em dashes, en dashes... in post title or body') even though the assertion only names the body. Grading strictly per assertion text: post body has zero em dashes — PASS. Note: title violation is flagged in eval_feedback."
+    },
+    {
+      "text": "No banned AI-slop phrases (ensure, seamless, top-notch, look no further, etc.)",
+      "passed": true,
+      "evidence": "Python search across all common banned phrases (ensure, seamless, top-notch, look no further, leverage, unlock, solutions, game-changer, cutting-edge) found zero matches in the post body. Pre-write checklist in transcript Step 7 and metrics.json both confirm 'ai_slop_phrases: PASS'. The body uses concrete HVAC-specific language: 'Cy-Fair pollen', 'condensate drain lines', 'cottonwood fluff', 'capacitors reading inside spec'."
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 9,
+      "Write": 4,
+      "Bash": 5,
+      "WebFetch": 7,
+      "WebSearch": 3,
+      "Grep": 4,
+      "Glob": 1
+    },
+    "total_tool_calls": 33,
+    "total_steps": 8,
+    "errors_encountered": 5,
+    "output_chars": 5459,
+    "transcript_chars": 10814
+  },
+  "timing": {
+    "executor_duration_seconds": 382.6,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 382.6
+  },
+  "claims": [
+    {
+      "claim": "Post body is exactly 1440 characters",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Independent Python measurement of the extracted post body confirms 1440 characters, matching the executor's self-reported count."
+    },
+    {
+      "claim": "All pre_summer templates were exhausted in the queue",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 3a lists six pre_summer template IDs all marked posted/scheduled within the past 40 days: pre_summer_tune_up (4/20), pre_summer_filter (4/21), pre_summer_refrigerant (4/22), pre_summer_thermostat (4/24), pre_summer_inspection (4/27), pre_summer_duct_check (4/29). Cannot independently verify the queue file, but the transcript documents the read and the conclusion is internally consistent."
+    },
+    {
+      "claim": "Both Cypress-specific pages return HTTP 404",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 3c documents WebFetch calls returning 404 for /hvac-contractor-cypress-tx/ and /ac-repair-cypress-tx/. Research Notes section in output .md repeats this finding. metrics.json lists these as errors_encountered."
+    },
+    {
+      "claim": "No competitor is posting about Cy-Fair pollen + condensate drain angle",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Transcript Step 3e documents live WebFetch checks of Air Depot and Mr. Cool GBP/site — both promoting discounts and thermostat deals, neither mentioning pollen/drain angle. Research Notes in output confirm: 'No Cypress competitor posting about Cy-Fair pollen clogging condensate drain lines this week.' Cannot fully independently verify (no access to competitor pages), but the executor used WebFetch to check, not just asserted it."
+    },
+    {
+      "claim": "Draft required 3 iterations to reach compliance",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 6 documents: Draft 1 at 1886 chars with 3 dash violations, Revision 1 at 1525 chars (dashes fixed), Revision 2 at 1440 chars in range. metrics.json notable_findings confirms '3 draft iterations needed to achieve 1200-1450 compliance (started at 1886)'."
+    },
+    {
+      "claim": "Post title 'AC Repair Cypress TX — Drain Line Clogs Before Summer' uses an em dash",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Python check confirms the title contains a Unicode em dash (U+2014). This was not caught by the executor's pre-write checklist, which only checked the body. The SKILL.md requirement ('No em dashes... in post title or body') covers titles too. This is a compliance gap not covered by any assertion."
+    },
+    {
+      "claim": "Pre-write checklist confirmed zero em/en dashes",
+      "type": "process",
+      "verified": false,
+      "evidence": "The executor's pre-write checklist passed 'dash_violations: PASS' — but this appears to have only scanned the body, not the title. The title contains an em dash. The checklist claim is partially false: body passes, title fails."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "No em dashes (—) appear in the post body",
+        "reason": "The assertion scopes only to 'post body' but the SKILL.md policy bans em dashes from the title too. The output has an em dash in the Post Title ('AC Repair Cypress TX — Drain Line Clogs Before Summer') which the executor's grep checklist missed. Widening the assertion to 'post body and title' would catch this real violation. As written, the body-only check passes while a title violation goes undetected."
+      },
+      {
+        "assertion": "A draft .md file is written to 04-gmb/posts/drafts/ (or copied to outputs/)",
+        "reason": "The 'or copied to outputs/' escape clause makes this assertion very easy to satisfy without the skill actually writing to the intended production location. In this run, the skill wrote to /tmp/ and the eval harness copied to outputs/. The assertion passed, but the draft never reached 04-gmb/posts/drafts/ — the location that post_pipeline.py would read from. A stronger assertion would require the file to exist at 04-gmb/posts/drafts/ in addition to (or instead of) outputs/."
+      },
+      {
+        "reason": "No assertion checks that the post body contains a named Cypress community (Bridgeland, Towne Lake, Fairfield, etc.). The geo specificity is one of the most valuable aspects of a localized GBP post and the key differentiator from a generic template. This post does well on this dimension, but no eval catches it — meaning a post that mentioned only 'Cypress TX' and no neighborhood detail would also pass."
+      },
+      {
+        "reason": "No assertion verifies that the selected CTA URL is actually live (returns HTTP 200). The executor checked this and documented it, but there is no eval assertion forcing that check. A skill that hallucinated a plausible-looking URL without verifying it would pass all assertions. Adding 'CTA URL resolves HTTP 200 when fetched' as a separate assertion would enforce this meaningfully."
+      }
+    ],
+    "overall": "All 8 assertions pass. The post is genuinely well-researched: real GSC data, live competitor checks, actual URL verification, 3-pass char-count compliance loop. The most meaningful gap uncovered is the em dash in the title that the executor's own checklist missed — an assertion covering the title (not just body) would have caught it. The CTA 'or most relevant' clause does real work here since no Cypress page exists, and that's a defensible pass."
+  }
+}

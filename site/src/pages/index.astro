@@ -1,0 +1,308 @@
+---
+/*
+  Homepage — built from the full deep-research → content-brief → content-create
+  → humanizer pipeline output (07-landing-pages/content/home-content.md).
+  Promoted from the /home-test draft after side-by-side review against the
+  prior production homepage.
+
+  Includes two inline sections beyond the original homepage — Cost Factors and
+  Process — because the research pack flagged pricing/process transparency as
+  the biggest gap versus every Lane County competitor
+  (see 01-research/page-research/home/08-gap-analysis.md).
+*/
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import AboutSection from '../components/AboutSection.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Gallery from '../components/Gallery.astro';
+import Achievement from '../components/Achievement.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const services = [
+  { title: 'Site Preparation', description: 'Clearing, rough grading, and access prep before a builder or crew arrives.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
+  { title: 'Excavation', description: 'General earthwork for new construction, additions, and land improvements.', href: '/services/excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
+  { title: 'Land & Brush Clearing', description: 'Full clearing or lighter brush-clearing scopes for raw land.', href: '/services/land-clearing', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
+  { title: 'Foundation Excavation', description: 'Digging and prep for home, shop, barn, and ADU foundations.', href: '/services/foundation-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
+  { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope.', href: '/services/grading-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Drainage Excavation', description: 'Excavation and grading to correct standing water and poor yard drainage.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Utility Excavation', description: 'Trenching and backfill for water, sewer, and utility lines.', href: '/services/utility-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
+  { title: 'Septic Install & Repair', description: 'DEQ-certified septic system work, install and repair.', href: '/services/septic-install-repairs', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Gravel Driveway Repair', description: 'Regrading and re-rocking gravel driveways and access roads.', href: '/services/driveway-repair', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Slope Stabilization', description: 'Earthwork and grading to address erosion-prone or unstable slopes.', href: '/services/slope-stabilization', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+];
+
+const costFactors = [
+  { label: 'Project Scope', detail: 'A driveway regrade costs less than a full building-pad site prep — scope drives most of the variation.' },
+  { label: 'Site Access', detail: 'Tight, hard-to-reach lots or long haul distances for equipment and material add time and cost.' },
+  { label: 'Soil & Slope', detail: 'Willamette Valley clay soil and steep or unstable slopes can require extra passes, rock, or erosion control.' },
+  { label: 'Season', detail: 'Wet-season work (roughly November–April) often needs more rock and drainage work than the same job in summer.' },
+  { label: 'Permits', detail: 'Projects that require a Lane County or city permit add review time and fees on top of the excavation itself.' },
+  { label: 'Utility / Septic Scope', detail: 'Adding utility trenching or septic work to a grading job changes both timeline and cost.' },
+];
+
+const processSteps = [
+  { step: '1', title: 'Call or submit a request', detail: 'Reach D&D Land Works at 541-401-8726 or through the contact page with a general description of the project.' },
+  { step: '2', title: 'Site visit', detail: 'David Deggelman or the crew walks the property to see access, soil, slope, and scope firsthand. This isn’t estimated from a satellite photo.' },
+  { step: '3', title: 'Estimate', detail: 'You get a written estimate based on what was actually seen on-site, not a phone-quoted guess.' },
+  { step: '4', title: 'Scheduling', detail: 'Work gets scheduled around the project’s real timeline and, where possible, around Oregon’s dry-season window.' },
+  { step: '5', title: 'The work itself', detail: 'Excavation, grading, clearing, drainage, utility, or septic work is carried out to the agreed scope.' },
+  { step: '6', title: 'Cleanup', detail: 'The site is left graded and cleaned up, ready for the next phase of your project: the builder, the landscaper, or you.' },
+];
+
+const faqs = [
+  { question: 'Is D&D Land Works licensed and bonded in Oregon?', answer: 'Yes. D&D Land Works is licensed and bonded under the Oregon Construction Contractors Board, license #CCB 261742. You don’t have to take that on faith — look the license up yourself at the CCB’s own license search tool before you ever pick up the phone.' },
+  { question: 'What does DEQ Certified mean for septic work?', answer: '“DEQ Certified” means D&D Land Works holds a certification from the Oregon Department of Environmental Quality required to legally construct, install, or repair septic systems in the state, under Oregon Administrative Rules Chapter 340, Division 071. Without it, doing septic work in Oregon isn’t legal, full stop.' },
+  { question: 'Can one contractor really handle site prep, grading, drainage, and septic?', answer: 'Yes. D&D Land Works covers site preparation, land clearing, grading and leveling, drainage excavation, utility excavation, and DEQ-certified septic installation and repair under one Oregon CCB license, so a project that touches several of those doesn’t need to be split across separate contractors.' },
+  { question: 'How much does excavation or site prep typically cost in Lane County?', answer: 'It depends too much on scope, access, soil, and season to give an honest number without seeing the site — a small driveway regrade and a full building-pad site prep aren’t comparable jobs. D&D Land Works provides a free, written estimate after an on-site visit rather than a generic number that wouldn’t apply to your project anyway.' },
+  { question: 'What is the best time of year to excavate in Oregon’s rainy climate?', answer: 'May through October is the standard dry-season window for excavation and grading in the Willamette Valley. Wet-season work (November–April) is still doable and D&D Land Works does it, but it usually needs extra rock and erosion control and can move slower than the same job in summer.' },
+  { question: 'Do I need a permit to grade my land or clear brush in Lane County?', answer: 'It depends on the project. Foundation excavation done under an active building permit is generally exempt from a separate grading permit, but driveway and access work connecting to a county road usually isn’t. Lane County’s Land Management Division handles these determinations — confirm your specific project’s permit status with them or ask D&D Land Works for guidance during your estimate.' },
+  { question: 'How long does site preparation take before construction can start?', answer: 'Residential site preparation typically runs one to two months from start to a builder-ready lot, though the excavation itself is often just a matter of days once the project is scoped, permitted, and scheduled. Larger or commercial projects usually take longer depending on scope and permitting.' },
+  { question: 'What should I ask before hiring any excavation contractor?', answer: 'Ask to see their Oregon CCB license number and verify it yourself at search.ccb.state.or.us, ask for a written estimate rather than a verbal number, and ask for a realistic timeline before you sign anything. A contractor who’s comfortable with all three of those questions is generally a safer bet than one who isn’t.' },
+  { question: 'Does D&D Land Works serve my city in Lane County?', answer: 'Almost certainly. D&D Land Works serves Eugene and Springfield as its primary service areas, plus Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell. See the service areas page or call 541-401-8726 to confirm your address.' },
+];
+
+/*
+  DEMO/PLACEHOLDER content — not real reviews. Swap for the actual rating,
+  count, and reviews once the Google Business Profile exists and has real
+  reviews (see business-info.md open items / astro-site-build-plan Phase 8),
+  then remove this comment.
+*/
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  additionalType: 'https://schema.org/HomeAndConstructionBusiness',
+  '@id': 'https://www.ddlandworks.com/#business',
+  name: 'D&D Land Works',
+  url: 'https://www.ddlandworks.com/',
+  telephone: '+1-541-401-8726',
+  email: 'david@ddlandworks.com',
+  founder: { '@type': 'Person', name: 'David Deggelman' },
+  identifier: { '@type': 'PropertyValue', propertyID: 'Oregon CCB License', value: '261742' },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'certification',
+    name: 'DEQ Certified',
+    recognizedBy: { '@type': 'GovernmentOrganization', name: 'Oregon Department of Environmental Quality' },
+  },
+  address: { '@type': 'PostalAddress', addressRegion: 'OR', addressCountry: 'US' },
+  areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+};
+---
+
+<BaseLayout
+	title="Excavation Contractor in Lane County, OR | D&D Land Works"
+	description="Licensed, bonded excavation & site prep contractor serving Lane County, OR. Site prep, grading, septic & more. Free estimates: 541-401-8726."
+>
+	<Hero
+		eyebrow="Lane County, OR"
+		headline="Full-Service Excavation Contractor in Lane County, Oregon"
+		subheadline="D&D Land Works is a licensed, bonded (CCB #261742) excavation, grading, and site prep contractor serving Eugene, Springfield, and Lane County, Oregon. DEQ-certified for septic install and repair, we handle land clearing, drainage, utility work, and more. Free estimates: 541-401-8726."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Our Services', href: '#services' }}
+		backgroundImages={['/hero-bg-1.webp', '/hero-bg-2.webp', '/hero-bg-4.webp']}
+	/>
+	<TrustBar />
+	<!-- About + AI citation block combined: dense, self-contained fact paragraph (full service list, license, DEQ cert, area, contact) placed in the first 30% of the page per the content brief -->
+	<AboutSection
+		descriptionHtml="<p>D&amp;D Land Works is a full-service excavation, grading, and site preparation contractor based in Lane County, Oregon, serving Eugene, Springfield, and surrounding communities. David Deggelman owns the company and runs the equipment himself &mdash; no sales team, no subcontracted crew.</p><p>Licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>, and <strong class='font-semibold text-ink'>DEQ certified</strong> for septic install and repair, D&amp;D Land Works handles site preparation, land and brush clearing, foundation excavation, grading and leveling, drainage and utility excavation, septic installation and repair, driveway repair, and slope stabilization for residential and commercial customers. Free estimates are available for every project &mdash; call <strong class='font-semibold text-ink'>541-401-8726</strong> or email <strong class='font-semibold text-ink'>david@ddlandworks.com</strong>.</p>"
+	/>
+	<section id="services" class="relative">
+		<div class="relative bg-ink overflow-hidden">
+			<img src="/hero-bg-4.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-36 text-center md:pt-24 md:pb-44">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Services</p>
+				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+					One Licensed Contractor <span class="text-brand-blue-light">for Your Whole Project</span>
+				</h2>
+				<p class="mt-4 text-slate-300 leading-relaxed">
+					Most projects in Lane County touch more than one kind of dirt work: clearing, then grading, then drainage, then maybe septic. D&amp;D Land Works covers all of it under one Oregon CCB license, so a small residential lot gets the same attention as a larger commercial job.
+				</p>
+			</div>
+		</div>
+		<div class="relative mx-auto max-w-6xl px-4 -mt-28 pb-8 md:-mt-32">
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{services.map((service) => <ServiceCard {...service} />)}
+			</div>
+		</div>
+		<div class="mx-auto max-w-3xl px-4 pb-16 text-center">
+			<p class="text-sm text-slate-600 leading-relaxed">
+				D&amp;D Land Works keeps its scope honest rather than claiming to do everything: this company does not perform tree removal, stump grinding, forestry mulching, asphalt paving, concrete work, retaining-wall engineering, septic pumping, or septic inspection beyond DEQ install authority. If a project needs one of those, D&amp;D Land Works says so upfront instead of quietly subcontracting it out.
+			</p>
+			<a href="/contact" class="btn btn-cta mt-6 inline-flex">Get a Free Estimate</a>
+		</div>
+	</section>
+	<!-- Why Choose Us: AI citation-style dense fact paragraph swapped in via descriptionHtml -->
+	<WhyChooseUs
+		descriptionHtml="D&amp;D Land Works is a licensed and bonded (Oregon <strong class='font-semibold text-white'>CCB #261742</strong>) excavation and site prep contractor, <strong class='font-semibold text-white'>DEQ certified</strong> for septic install and repair. David Deggelman owns the company and personally handles every excavation, grading, land-clearing, drainage, utility, and septic job for homeowners, builders, and commercial clients across Eugene, Springfield, and the rest of Lane County, Oregon. Every estimate is free and based on an on-site walkthrough, not a phone quote."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<!-- Our Commitment: AI citation-style dense fact paragraph swapped in via descriptionHtml -->
+	<Achievement
+		descriptionHtml="Most crews that can grade a lot can&rsquo;t legally touch a septic system, and vice versa. D&amp;D Land Works holds both the Oregon <strong class='font-semibold text-ink'>CCB #261742</strong> general excavation license and <strong class='font-semibold text-ink'>DEQ certification</strong> for septic install and repair, so one contractor &mdash; owned and operated by David Deggelman &mdash; covers the full job from site prep through system install for homeowners and builders across Eugene, Springfield, and the rest of Lane County, Oregon."
+	/>
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<!-- Cost & What to Expect — fills the pricing-transparency gap no Lane County competitor covers -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<div class="mx-auto max-w-2xl text-center">
+				<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+					How Much Does Excavation or Site Prep Cost in Lane County?
+				</h2>
+				<p class="mt-4 text-slate-700 leading-relaxed">
+					There isn&rsquo;t an honest single number for this. Instead of publishing a generic dollar figure that would be wrong for most projects, D&amp;D Land Works gives every project a real, no-obligation estimate after seeing the site. Here&rsquo;s what actually moves the number:
+				</p>
+			</div>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{costFactors.map((factor) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue">{factor.label}</p>
+						<p class="mt-2 text-sm text-slate-600">{factor.detail}</p>
+					</div>
+				))}
+			</div>
+			<div class="mt-10 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Process -->
+	<section class="bg-ink text-white">
+		<div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
+				What Should You Expect During an Excavation or Grading Project?
+			</h2>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{processSteps.map((item) => (
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
+						<span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+							{item.step}
+						</span>
+						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	<!-- Best time to excavate -->
+	<section id="best-time-to-excavate" class="bg-white border-b border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				When Is the Best Time of Year to Excavate in Oregon?
+			</h2>
+			<div class="mt-8 grid gap-6 sm:grid-cols-3">
+				<div class="card text-center">
+					<p class="font-display font-black text-3xl text-brand-blue">May&ndash;Oct</p>
+					<p class="mt-1 text-sm text-slate-600">Standard dry-season window in the Willamette Valley</p>
+				</div>
+				<div class="card text-center">
+					<p class="font-display font-black text-3xl text-brand-blue">40.83&Prime;</p>
+					<p class="mt-1 text-sm text-slate-600">Eugene&rsquo;s average annual rainfall</p>
+				</div>
+				<div class="card text-center">
+					<p class="font-display font-black text-3xl text-brand-blue">Nov&ndash;Apr</p>
+					<p class="mt-1 text-sm text-slate-600">Wet-season work &mdash; still doable, usually needs extra rock &amp; erosion control</p>
+				</div>
+			</div>
+			<p class="mt-8 text-slate-700 leading-relaxed text-center max-w-2xl mx-auto">
+				Willamette Valley clay soil holds water poorly. It hardens when dry but turns sticky and rutted under equipment when wet, and won&rsquo;t compact reliably in that state &mdash; which is why D&amp;D Land Works recommends the dry-season window when a project&rsquo;s timeline allows for it, while still taking on wet-season work regularly.
+			</p>
+		</div>
+	</section>
+	<FAQ items={faqs} />
+	<CTABlock
+		headline="Get a Free Estimate From D&D Land Works"
+		subheadline="Site preparation, excavation and grading, land clearing, drainage, utility work, and DEQ-certified septic installation and repair — one licensed, bonded contractor for residential and commercial properties throughout Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

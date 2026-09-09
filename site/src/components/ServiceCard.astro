@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  icon?: string;
+}
+
+const { title, description, href, icon } = Astro.props;
+---
+
+<a href={href} class="card block hover:shadow-md hover:border-brand-blue transition-all group">
+	{icon && (
+		<span class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={icon} />
+		</span>
+	)}
+	<h3 class="font-display font-bold uppercase tracking-wide text-lg text-ink group-hover:text-brand-blue transition-colors">
+		{title}
+	</h3>
+	<p class="mt-2 text-sm text-slate-600">
+		{description}
+	</p>
+	<span class="mt-3 inline-block text-sm font-display font-semibold uppercase tracking-wide text-brand-blue">
+		Learn more &rarr;
+	</span>
+</a>

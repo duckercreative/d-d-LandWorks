@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Septic Install & Repair in Eugene, OR | D&D Land Works"
+	description="DEQ certified septic system install and repair in Eugene, OR. Drainfield work, tank replacement, and repairs for South Hills and rural Eugene properties."
+>
+	<Hero
+		eyebrow="Eugene, Oregon"
+		headline="Septic Install & Repair in Eugene, OR"
+		subheadline="Not every Eugene address runs on city sewer. South Hills lots, River Road properties, and pockets just outside the city limits still rely on a septic system, and DEQ certification is required to legally work on one."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Septic Install & Repair"
+		ctaHref="/services/septic-install-repairs"
+		eyebrow="Eugene, Oregon"
+		headlineHtml="Terrain <span class='text-brand-blue'>Changes the Job</span> in Eugene"
+		descriptionHtml="<p>Steep, clay-heavy ground in the South Hills makes drainfield siting more particular than a flatter lot near River Road, where the water table sits closer to the surface. Either way, a failing system usually shows up the same way: slow drains, a soggy patch over the drainfield, or a sewage smell near the tank. D&amp;D Land Works handles the full range, from a straightforward tank swap to a drainfield that needs to be re-sited because of the slope or soil it&rsquo;s sitting in.</p><p>DEQ certification is a separate credential from a general excavation license, and D&amp;D Land Works holds it. New installs, drainfield repair, and tank replacement are all covered on the <a href='/services/septic-install-repairs' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>septic install &amp; repair</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/eugene' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Eugene</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Eugene, Oregon"
+		headline="Why Do Eugene Homeowners Trust D&D Land Works for Septic Work?"
+		image="/hero-bg-1.webp"
+		imageAlt="Septic system work in a Eugene, Oregon yard"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s and DEQ&rsquo;s own public license lookups before you ever pick up the phone.</p><p>David Deggelman scopes every job in person. If your septic system is failing anywhere in Eugene, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Eugene Septic System Checked"
+		subheadline="Free estimate for septic install or repair anywhere in Eugene."
+	/>
+</BaseLayout>

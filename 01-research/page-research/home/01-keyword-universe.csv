@@ -1,0 +1,211 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+d&d land works,search_suggestion,navigational,decision,n,browse,head,high,/,P0,Brand term; zero volume today but must be owned once GBP/site exist
+ddlandworks,search_suggestion,navigational,decision,n,browse,head,high,/,P0,Brand/domain variant
+d&d land works eugene oregon,search_suggestion,navigational,decision,y,browse,mid,high,/,P0,Brand + geo once known
+excavation contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/,P0,Primary homepage target keyword (from topical map)
+excavation contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/,P0,Full state-name variant
+excavation contractor lane county or,serp,commercial,decision,y,scheduled,head,high,/,P0,County-wide homepage target
+excavation contractor lane county oregon,serp,commercial,decision,y,scheduled,head,high,/,P0,County-wide variant
+excavation company eugene oregon,serp,commercial,decision,y,scheduled,head,high,/,P0,"""Company"" variant of head term"
+excavating contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/,P0,Gerund variant
+local excavation contractor oregon,serp,commercial,consideration,y,scheduled,mid,med,/,P1,Modifier: local
+excavation contractor near me,autocomplete,commercial,decision,n,scheduled,head,high,/,P0,High-volume generic local-intent query (geo implied by device location)
+excavator near me,autocomplete,commercial,decision,n,scheduled,head,high,/,P1,Shorthand for excavation contractor
+excavating company near me,autocomplete,commercial,decision,n,scheduled,head,med,/,P1,Variant
+best excavation contractor eugene or,autocomplete,commercial,decision,y,scheduled,mid,high,/,P0,"""best"" prefix mining"
+best excavation company lane county,autocomplete,commercial,decision,y,scheduled,mid,high,/,P1,"""best"" prefix mining"
+best excavating contractor springfield oregon,autocomplete,commercial,decision,y,scheduled,mid,med,/service-areas/springfield/,P1,"""best"" prefix mining"
+cheap excavation contractor eugene,autocomplete,commercial,decision,y,scheduled,mid,med,/,P2,"""cheap"" prefix mining; low fit for premium positioning but real search volume"
+affordable excavation eugene oregon,autocomplete,commercial,decision,y,scheduled,mid,med,/,P2,"""affordable"" prefix mining"
+licensed excavation contractor oregon,autocomplete,commercial,consideration,y,scheduled,mid,high,/,P0,Trust-modifier; maps to CCB #261742 signal
+bonded excavation contractor lane county,autocomplete,commercial,consideration,y,scheduled,mid,med,/,P1,Trust-modifier
+insured excavation contractor eugene,autocomplete,commercial,consideration,y,scheduled,mid,med,/,P1,Trust-modifier
+family owned excavation company eugene,autocomplete,commercial,consideration,y,scheduled,mid,med,/about/,P2,Competitor positioning term (All Dirt/Emerald use this); D&D can only use if true — confirm with David
+top rated excavation company lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/,P1,"""top rated"" prefix mining"
+excavation contractor reviews eugene oregon,autocomplete,commercial,decision,y,scheduled,mid,med,/,P2,Review-research query; needs GBP reviews to capture
+excavation contractor eugene oregon bbb,autocomplete,commercial,decision,y,scheduled,mid,low,/about/,P3,Trust-verification query
+free estimate excavation eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P0,Direct conversion query; matches "Free Estimates" USP
+free excavation quote lane county,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion variant
+get a quote for land clearing eugene,autocomplete,transactional,decision,y,scheduled,long,high,/land-clearing/,P1,Conversion variant, service-specific
+residential excavation contractor eugene,serp,commercial,decision,y,scheduled,mid,high,/,P1,Audience modifier
+commercial excavation contractor eugene,serp,commercial,decision,y,scheduled,mid,high,/commercial-excavation/,P1,Audience modifier
+small excavation contractor eugene,autocomplete,commercial,decision,y,scheduled,mid,med,/,P2,Job-size modifier (homeowners fear "too small a job")
+excavation contractor for new home eugene,serp,commercial,consideration,y,scheduled,long,high,/site-preparation/,P1,Project-type modifier
+excavation contractor for shop building lane county,serp,commercial,consideration,y,scheduled,long,med,/site-preparation/,P2,Project-type modifier
+excavation contractor for adu oregon,serp,commercial,consideration,y,scheduled,long,med,/site-preparation/,P2,Project-type modifier (ADU = accessory dwelling unit, common Oregon term)
+excavation contractor for pole barn oregon,serp,commercial,consideration,y,scheduled,long,med,/site-preparation/,P3,Project-type modifier
+excavation contractor for subdivision lane county,serp,commercial,consideration,y,scheduled,long,med,/commercial-excavation/,P2,Developer-facing modifier
+site preparation eugene or,topical_map,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,Core service target (pulled from existing topical map)
+site prep cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,high,/site-preparation/,P1,Cost query — real range found: $10k-$50k+ (see 07-oregon-authority.md)
+what is included in site preparation,serp,informational,awareness,n,browse,mid,med,/site-preparation/,P2,Definitional/informational
+how long does site prep take,serp,informational,consideration,n,browse,mid,med,/site-preparation/,P1,Timeline query — real range found: 1-2 months residential
+how to prepare land for construction,topical_map,informational,awareness,n,browse,mid,low,/resources/preparing-land-for-construction/,P2,Informational/hiring-adjacent
+land grading eugene or,topical_map,commercial,decision,y,scheduled,head,high,/grading-leveling/,P0,Core service target
+grading contractor lane county oregon,serp,commercial,decision,y,scheduled,mid,high,/grading-leveling/,P1,Verified competitor set: Heavy D, A&D, Eagle Ridge, Tectonic
+land leveling contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P2,Synonym variant
+yard regrading contractor eugene,serp,commercial,decision,y,scheduled,mid,med,/grading-leveling/,P2,Homeowner-language variant
+uneven yard grading eugene,serp,problem_solution,consideration,y,scheduled,long,med,/grading-leveling/,P2,Problem-framed
+driveway grading cost eugene,serp,commercial,consideration,y,scheduled,mid,med,/driveway-repair/,P1,Cost query — real range found: $868-$999 (Lane County average per Homeyou-cited data)
+land clearing eugene or,topical_map,commercial,decision,y,scheduled,head,high,/land-clearing/,P0,Core service target
+land clearing lane county,serp,commercial,decision,y,scheduled,mid,high,/land-clearing/,P0,County-wide variant
+land clearing cost per acre oregon,serp,commercial,consideration,y,scheduled,mid,high,/land-clearing/,P0,Cost query — real range found: $1,000-$10,000+/acre light, $6,000-$40,000+/acre heavy (statewide; Portland/Central OR examples found, no Lane-County-specific figure)
+brush clearing eugene or,topical_map,commercial,decision,y,scheduled,mid,high,/land-clearing/,P1,Sub-service at launch per topical map
+overgrown lot clearing eugene oregon,serp,problem_solution,consideration,y,scheduled,long,med,/land-clearing/,P2,Problem-framed
+vegetation removal eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/land-clearing/,P2,Synonym
+clearing land for pasture oregon,serp,commercial,consideration,y,scheduled,long,low,/land-clearing/,P3,Rural/ag angle
+clearing land for a pond oregon,serp,commercial,consideration,y,scheduled,long,low,/land-clearing/,P3,Rural/ag angle
+brush hogging eugene oregon,serp,commercial,consideration,y,scheduled,mid,low,/land-clearing/,P3,Adjacent term; verify D&D scope before use (implies mowing equipment, not clearing)
+forestry mulching eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — competitors (Danco/All Dirt) offer this; D&D does not per topical map. Do not target.
+stump removal eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — not a verified D&D service. Do not target.
+tree removal eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — not a verified D&D service. Do not target.
+foundation excavation eugene or,topical_map,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P0,Core service target
+foundation excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/foundation-excavation/,P1,Cost query — real range found: $3,900-$6,800 basement dig-out, ~2.5 days
+excavation contractor for new build eugene,serp,commercial,decision,y,scheduled,mid,high,/foundation-excavation/,P2,Builder-facing variant
+basement dig out cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/foundation-excavation/,P2,Cost query, specific project type
+drainage excavation eugene or,topical_map,problem_solution,decision,y,scheduled,mid,high,/drainage-excavation/,P1,Core service target
+my yard floods every winter eugene oregon,serp,problem_solution,consideration,y,scheduled,long,med,/drainage-excavation/,P2,Homeowner pain-point phrasing; ties to Eugene's Nov-Jan rainfall peak
+fix standing water in yard oregon,topical_map,problem_solution,consideration,y,scheduled,mid,med,/resources/fix-standing-water-yard/,P2,Informational/problem-solution
+drainage contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P1,Direct variant
+yard drainage solutions eugene oregon,serp,problem_solution,consideration,y,scheduled,mid,med,/drainage-excavation/,P2,Variant
+french drain installation eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,SCOPE-CAUTION — topical map frames drainage as excavation/grading for drainage, not manufactured French-drain product install; confirm before using this exact phrase
+utility excavation eugene or,topical_map,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Core service target
+utility trenching contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-excavation/,P1,Verified competitor set: Braun, McKenzie, Professional Underground Services
+trenching and backfill contractor eugene,topical_map,commercial,decision,y,scheduled,mid,med,/utility-excavation/,P2,Sub-service at launch
+water line trenching cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/utility-excavation/,P2,Cost query
+sewer line excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/utility-excavation/,P2,Cost query
+electrical conduit trenching cost oregon,serp,commercial,consideration,y,scheduled,long,low,/utility-excavation/,P3,Cost query, niche
+how deep does a utility trench need to be,serp,informational,consideration,n,browse,mid,low,/utility-excavation/,P3,Informational/code-adjacent — ties to OSHA 4ft/5ft thresholds
+septic installation eugene or,topical_map,commercial,decision,y,scheduled,head,high,/septic/,P0,Core service target — DEQ differentiator
+septic system installation cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic/,P0,Cost query — real range found: $4,173-$5,963 avg, $1,487-$10,464 range (350 completed Eugene-area projects)
+septic repair eugene oregon,topical_map,commercial,decision,y,scheduled,mid,high,/septic/,P0,Core service target
+septic repair vs replace oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic/,P1,Decision-stage query — direct FAQ candidate
+signs you need a new septic system,serp,informational,consideration,n,browse,mid,med,/septic/,P1,Failure-mode query — direct FAQ candidate
+what does deq certified mean,serp,informational,consideration,n,browse,mid,med,/septic/,P0,Directly explains D&D's key differentiator — must be answered on-page
+deq certified septic installer oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic/,P0,Certification-modifier
+deq licensed septic contractor lane county,serp,commercial,decision,y,scheduled,mid,high,/septic/,P1,Certification-modifier, county-scoped
+drainfield excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/septic/,P2,Cost query, sub-service
+septic tank excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/septic/,P2,Cost query, sub-service
+new septic system cost lane county,serp,commercial,consideration,y,scheduled,mid,high,/septic/,P1,Cost query, county-scoped
+oregon septic permit cost,serp,informational,consideration,y,scheduled,mid,med,/septic/,P2,Permit/cost crossover
+oregon septic system rules,topical_map,informational,awareness,y,browse,mid,med,/resources/oregon-septic-basics/,P2,Informational/authority — OAR 340-071 (see 07-oregon-authority.md)
+septic pumping eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — All Dirt offers pumping; D&D's DEQ cert covers install/repair only per topical map. Do not target.
+septic inspection eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,FENCED OUT — inspection/certification beyond DEQ install authority not claimed. Do not target.
+driveway repair eugene or,topical_map,problem_solution,decision,y,scheduled,mid,high,/driveway-repair/,P1,Core support-service target
+gravel driveway repair eugene or,topical_map,problem_solution,decision,y,scheduled,mid,high,/driveway-repair/,P1,Primary keyword per topical map
+gravel driveway regrading eugene oregon,serp,problem_solution,decision,y,scheduled,mid,med,/driveway-repair/,P2,Variant
+driveway keeps washing out gravel eugene,serp,problem_solution,consideration,y,scheduled,long,med,/driveway-repair/,P2,Homeowner pain-point phrasing (rainy-season erosion)
+pothole driveway repair cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,low,/driveway-repair/,P3,Cost query, narrow
+driveway paving cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,n/a,P3,SCOPE-CAUTION — asphalt paving fenced out per topical map; only cite for cost-comparison context, do not offer
+slope stabilization oregon,topical_map,problem_solution,decision,y,scheduled,mid,med,/slope-stabilization/,P2,Support-service target
+hillside erosion control oregon,serp,problem_solution,consideration,y,scheduled,mid,med,/slope-stabilization/,P2,Variant
+sloped lot grading eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/slope-stabilization/,P3,Variant
+excavation contractor eugene oregon phone number,autocomplete,navigational,decision,y,scheduled,long,high,/contact/,P1,High-intent navigational tail query
+call excavation contractor eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion-intent
+excavation contractor eugene oregon hours,autocomplete,navigational,decision,y,scheduled,long,med,/contact/,P3,Navigational tail — business hours not yet confirmed (open item)
+excavation company near me open now,autocomplete,transactional,decision,n,scheduled,mid,med,/contact/,P3,Navigational/urgency-adjacent
+excavation contractor available this week,autocomplete,transactional,decision,n,scheduled,mid,med,/contact/,P3,Scheduling-intent
+service areas lane county excavation,topical_map,navigational,consideration,y,browse,mid,med,/service-areas/,P1,Hub-page target
+excavation contractor lane county cities served,serp,navigational,consideration,y,browse,long,low,/service-areas/,P2,Hub-page target
+excavation contractor springfield or,topical_map,commercial,decision,y,scheduled,head,high,/service-areas/springfield/,P1,City target (Tier 1)
+land clearing springfield oregon,serp,commercial,decision,y,scheduled,mid,high,/service-areas/springfield/land-clearing/,P2,City x service
+septic installation springfield oregon,serp,commercial,decision,y,scheduled,mid,high,/service-areas/springfield/septic/,P2,City x service
+excavation contractor cottage grove or,topical_map,commercial,decision,y,scheduled,mid,med,/service-areas/cottage-grove/,P2,City target (Tier 2)
+excavation contractor junction city or,topical_map,commercial,decision,y,scheduled,mid,med,/service-areas/junction-city/,P2,City target (Tier 2) — rural/ag land-clearing angle
+excavation contractor creswell or,topical_map,commercial,decision,y,scheduled,mid,med,/service-areas/creswell/,P2,City target (Tier 2) — rural septic angle
+excavation contractor veneta or,topical_map,commercial,decision,y,scheduled,mid,med,/service-areas/veneta/,P2,City target (Tier 2) — All Dirt is based here, verify competitive intensity
+excavation contractor florence or,topical_map,commercial,decision,y,scheduled,mid,low,/service-areas/florence/,P3,City target (Tier 3) — coverage confirmed 2026-09-05 per business-info.md
+excavation contractor oakridge or,topical_map,commercial,decision,y,scheduled,mid,low,/service-areas/oakridge/,P3,City target (Tier 3) — mountain community, driveway/access angle
+excavation contractor coburg or,topical_map,commercial,decision,y,scheduled,mid,low,/service-areas/coburg/,P3,City target (Tier 3) — low volume, easy relevance
+excavation contractor lowell or,topical_map,commercial,decision,y,scheduled,mid,low,/service-areas/lowell/,P3,City target (Tier 3) — small/rural
+excavation contractor near creswell oregon,serp,commercial,decision,y,scheduled,long,med,/service-areas/creswell/,P3,Long-tail near-me + city hybrid
+excavation contractor willamette valley,serp,commercial,consideration,y,scheduled,mid,med,/,P2,Regional variant, broader than county
+dirt work contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/,P1,Colloquial synonym for excavation
+dirt work willamette valley,serp,commercial,consideration,y,scheduled,mid,low,/,P2,Colloquial + regional
+general excavating eugene oregon,serp,commercial,decision,y,scheduled,mid,med,/,P2,Colloquial variant
+excavation and grading eugene oregon,topical_map,commercial,decision,y,scheduled,mid,high,/excavation/,P1,Core service target
+land development contractor lane county,serp,commercial,consideration,y,scheduled,mid,med,/commercial-excavation/,P2,Developer-facing
+site development contractor eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/commercial-excavation/,P2,Developer-facing
+commercial site development eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/commercial-excavation/,P2,Developer-facing
+developer excavation contractor eugene,serp,commercial,consideration,y,scheduled,long,med,/commercial-excavation/,P3,Developer-facing
+excavation subcontractor eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/commercial-excavation/,P2,GC-facing (subcontract relationship)
+general contractor referral excavation eugene,serp,commercial,consideration,y,scheduled,long,low,/commercial-excavation/,P3,GC-facing referral query
+excavator rental eugene oregon,serp,commercial,consideration,y,scheduled,mid,low,n/a,P3,ADJACENT — dry/bare rental intent, not a service D&D sells (D&D sells labor+equipment, not rental); useful only as an entity co-occurrence term
+mini excavator eugene oregon,serp,informational,awareness,y,browse,mid,low,n/a,P3,Equipment entity, not a direct conversion query
+skid steer service eugene oregon,serp,commercial,consideration,y,scheduled,mid,low,n/a,P3,Equipment-entity adjacent query
+bulldozer land clearing eugene,serp,commercial,consideration,y,scheduled,mid,low,/land-clearing/,P3,Equipment-entity adjacent query
+dump truck hauling eugene oregon,serp,commercial,consideration,y,scheduled,mid,low,n/a,P3,FENCED OUT — hauling not a verified D&D service. Do not target as own page; may mention "we can coordinate" only if verified.
+how to choose an excavation contractor,serp,informational,consideration,n,browse,mid,med,/resources/choosing-an-excavation-contractor/,P1,High-value hiring-decision content; PAA-style, drives trust
+questions to ask an excavation contractor,serp,informational,consideration,n,browse,mid,med,/resources/choosing-an-excavation-contractor/,P1,Hiring-decision content
+red flags excavation contractor,serp,informational,consideration,n,browse,mid,med,/resources/choosing-an-excavation-contractor/,P2,Objection/trust-killer content
+what to ask before hiring an excavating contractor,serp,informational,consideration,n,browse,long,med,/resources/choosing-an-excavation-contractor/,P2,Hiring-decision content (Quora-sourced phrasing)
+what should i know before hiring an excavation contractor,quora,informational,consideration,n,browse,long,med,/resources/choosing-an-excavation-contractor/,P1,Direct Quora question title
+difference between excavation contractor and general contractor,quora,informational,awareness,n,browse,long,low,/about/,P3,Definitional/educational
+excavation contractor insurance requirements oregon,serp,informational,consideration,y,browse,mid,med,/about/,P2,Trust/verification query
+general liability insurance excavation contractor,serp,informational,consideration,n,browse,mid,low,/about/,P3,Trust/verification query
+what does bonded mean contractor,serp,informational,awareness,n,browse,mid,low,/about/,P3,Definitional — supports "Licensed and Bonded" USP
+how to verify a contractor license in oregon,serp,informational,consideration,y,browse,mid,med,/about/,P2,Ties to CCB lookup — trust-building content
+oregon ccb license lookup,serp,navigational,consideration,y,browse,mid,med,/about/,P2,Authority tool reference
+is [contractor] licensed in oregon,serp,informational,consideration,y,browse,long,low,/about/,P3,Generic verification pattern query
+excavation contractor license number lane county,serp,informational,consideration,y,browse,mid,low,/about/,P3,Trust-verification
+best time to excavate in oregon,serp,informational,awareness,y,browse,mid,med,/,P2,Seasonal/scheduling — real finding: May-Oct dry window preferred
+can you excavate in the rain oregon,serp,informational,consideration,y,browse,mid,med,/,P2,Oregon-specific objection-adjacent
+can you excavate in winter oregon,serp,informational,consideration,y,browse,mid,med,/,P2,Seasonal query
+spring excavation projects oregon,serp,informational,awareness,y,browse,mid,low,/,P3,Seasonal
+fall land clearing oregon,serp,informational,awareness,y,browse,mid,low,/land-clearing/,P3,Seasonal
+winter excavation oregon rain,serp,informational,consideration,y,browse,mid,med,/,P2,Seasonal/objection-adjacent
+digging in clay soil oregon,serp,informational,awareness,y,browse,mid,med,/,P2,Soil-specific — Willamette Valley clay entity
+willamette valley clay soil excavation,serp,informational,awareness,y,browse,mid,med,/,P2,Soil-specific
+do i need a permit to grade my land in oregon,serp,informational,consideration,y,browse,long,med,/,P1,Permit/code query — Lane County-specific answer available
+do i need a permit for a driveway in lane county,serp,informational,consideration,y,browse,long,med,/driveway-repair/,P2,Permit/code query — Lane County driveway-permit finding
+how much land can i clear without a permit oregon,serp,informational,consideration,y,browse,long,med,/land-clearing/,P2,Permit/code query
+lane county excavation permit requirements,serp,informational,consideration,y,browse,mid,med,/,P1,Permit/code query — direct authority-page source found
+lane county grading permit,serp,informational,consideration,y,browse,mid,med,/,P2,Permit/code query
+lane county building permit guide,serp,informational,awareness,y,browse,mid,low,/,P3,Adjacent permit-education content
+what is a competent person osha trench,serp,informational,awareness,n,browse,long,low,/utility-excavation/,P3,Safety/authority-signal query, low volume but high trust value
+osha trench safety requirements,serp,informational,awareness,n,browse,mid,low,/utility-excavation/,P2,Safety/authority-signal query
+is it safe to dig a trench myself,serp,informational,awareness,n,browse,mid,low,n/a,P3,DIY-comparison query — positions "why hire a pro" content
+diy excavation vs hiring a contractor,serp,informational,consideration,n,browse,mid,med,/,P2,DIY-comparison, decision-stage
+can i rent an excavator and do it myself,serp,informational,consideration,n,browse,mid,med,/,P3,DIY-comparison
+excavation contractor eugene oregon vs portland,serp,informational,awareness,y,browse,long,low,/,P3,Comparison/geo-disambiguation query
+excavation companies eugene oregon list,serp,commercial,consideration,y,browse,mid,low,/,P3,Directory-style query (listicle-dominated SERP signal)
+top 10 excavation contractors eugene oregon,serp,commercial,consideration,y,browse,mid,med,/,P2,Listicle-style query — SERP is listicle-heavy (Angi, Yelp, BBB, HomeAdvisor, YellowPages all rank) — see 00-research-pack.md Flag A
+excavation contractor eugene oregon yelp,autocomplete,navigational,consideration,y,browse,long,low,/,P3,Directory navigational tail
+excavation contractor eugene oregon angi,autocomplete,navigational,consideration,y,browse,long,low,/,P3,Directory navigational tail
+excavation contractor eugene oregon google reviews,autocomplete,commercial,decision,y,browse,long,med,/,P2,Review-research query — GBP reviews needed
+how many reviews does [company] have eugene excavation,serp,commercial,decision,y,browse,long,low,/,P3,Review-verification pattern
+excavation and septic company eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/,P1,Combined-service query matching All Dirt/Emerald positioning
+full service excavation company oregon,topical_map,commercial,decision,y,scheduled,mid,high,/,P0,Matches D&D's own positioning line verbatim
+one stop excavation contractor lane county,serp,commercial,decision,y,scheduled,long,med,/,P2,Positioning-adjacent variant
+excavation contractor that does septic too eugene,serp,commercial,decision,y,scheduled,long,med,/,P1,Cross-service bundling query — differentiation angle
+land clearing and grading eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/,P1,Bundled-service query
+site prep and septic eugene oregon,serp,commercial,decision,y,scheduled,long,med,/,P2,Bundled-service query
+new construction excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,New-build framing
+rural land development lane county oregon,serp,commercial,consideration,y,scheduled,mid,med,/,P2,Rural/acreage framing (Tier 2/3 cities skew rural)
+acreage clearing lane county oregon,serp,commercial,consideration,y,scheduled,mid,med,/land-clearing/,P2,Rural/acreage framing
+preparing rural land for a house lane county,serp,commercial,consideration,y,scheduled,long,med,/site-preparation/,P2,Rural/acreage framing
+excavation for new septic system oregon,serp,commercial,decision,y,scheduled,mid,high,/septic/,P1,Combined septic+excavation framing
+who do i call to clear a wooded lot eugene oregon,serp,commercial,decision,y,scheduled,long,med,/land-clearing/,P2,Homeowner-language long-tail
+contractor to level my backyard eugene,serp,commercial,decision,y,scheduled,long,med,/grading-leveling/,P2,Homeowner-language long-tail
+need a trench dug for water line eugene,serp,commercial,decision,y,scheduled,long,med,/utility-excavation/,P2,Homeowner-language long-tail
+contractor for drainage problems in my yard eugene,serp,problem_solution,consideration,y,scheduled,long,med,/drainage-excavation/,P2,Homeowner-language long-tail
+cost to bring in fill dirt eugene oregon,serp,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P2,Cost query, material-specific
+cost to level a yard oregon,serp,commercial,consideration,y,scheduled,mid,med,/grading-leveling/,P2,Cost query
+cost to dig a trench oregon,serp,commercial,consideration,y,scheduled,mid,med,/utility-excavation/,P2,Cost query
+excavation contractor a,autocomplete_seed,navigational,awareness,n,browse,head,low,n/a,P3,A-Z autocomplete seed — returned generic directory results, no unique suggestion captured
+excavation contractor near,autocomplete_seed,commercial,decision,n,scheduled,head,high,/,P1,A-Z autocomplete seed — resolves to "near me"
+excavation eugene o,autocomplete_seed,commercial,decision,y,scheduled,head,high,/,P1,Autocomplete seed — resolves to "eugene or"/"eugene oregon"
+excavation cost e,autocomplete_seed,commercial,consideration,n,browse,head,med,/,P2,Autocomplete seed — resolves to cost queries already captured
+land clearing n,autocomplete_seed,commercial,decision,n,scheduled,head,med,/land-clearing/,P3,Autocomplete seed — resolves to "near me"
+septic install c,autocomplete_seed,commercial,consideration,n,browse,head,high,/septic/,P2,Autocomplete seed — resolves to "cost"
+grading contractor s,autocomplete_seed,commercial,decision,y,scheduled,head,med,/grading-leveling/,P3,Autocomplete seed — resolves to "springfield"
+excavation contractor eugene oregon reddit,autocomplete,commercial,consideration,y,browse,long,low,/,P3,Reddit-cross-pollination query pattern
+who has used a good excavator in eugene reddit,reddit_proxy,commercial,consideration,y,browse,long,med,/,P2,Reddit-style recommendation-ask phrasing (sourced via proxy — see 02-question-mine.md methodology note)
+anyone know a reliable excavation contractor lane county,reddit_proxy,commercial,consideration,y,browse,long,med,/,P2,Reddit/Nextdoor-style phrasing
+excavation contractor youtube eugene oregon,serp,informational,awareness,y,browse,long,low,/,P3,Video-intent query, visual/how-it's-done content opportunity
+watch excavator clear land video,serp,informational,awareness,n,browse,mid,low,n/a,P3,Visual/process-interest query, top-of-funnel only
+before and after land clearing photos oregon,serp,informational,awareness,y,browse,mid,med,/land-clearing/,P2,Visual-intent, photo-gallery opportunity (gap area — no photos yet)
+excavation project photos eugene oregon,serp,informational,awareness,y,browse,mid,low,/,P3,Visual-intent
+excavation contractor portfolio lane county,serp,commercial,consideration,y,browse,mid,low,/,P3,Portfolio/proof-of-work query
+excavation contractor eugene oregon instagram,autocomplete,navigational,awareness,y,browse,long,low,/,P3,Social-navigational — no D&D presence found, gap
+excavation contractor eugene oregon facebook,autocomplete,navigational,awareness,y,browse,long,low,/,P3,Social-navigational — no D&D presence found, gap
+david deggelman excavation eugene,search_suggestion,navigational,decision,y,browse,long,med,/about/,P1,Owner-name + brand query, supports E-E-A-T once site exists

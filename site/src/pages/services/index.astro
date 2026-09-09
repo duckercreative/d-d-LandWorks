@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const services = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rock removal.', href: '/services/excavation' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/services/land-clearing' },
+  { title: 'Brush Clearing', description: 'Cutting back overgrowth for defensible space or usable acreage.', href: '/services/brush-clearing' },
+  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/services/foundation-excavation' },
+  { title: 'Driveway Repair', description: 'Regrading and repairing driveways and access roads.', href: '/services/driveway-repair' },
+  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/services/grading-leveling' },
+  { title: 'Drainage Excavation', description: 'Cutting swales and trenches to move water where it needs to go.', href: '/services/drainage-excavation' },
+  { title: 'Utility Excavation', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/services/utility-excavation' },
+  { title: 'Trenching & Backfill', description: 'Opening trenches for utility or drainage work, then backfilling and compacting.', href: '/services/trenching-backfill' },
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/services/septic-install-repairs' },
+  { title: 'Slope Stabilization', description: 'Stabilizing unstable or eroding slopes.', href: '/services/slope-stabilization' },
+];
+---
+
+<BaseLayout
+	title="Excavation Services | D&D Land Works — Lane County, OR"
+	description="Site prep, land clearing, grading, drainage, utility excavation, and DEQ certified septic install/repair. Licensed and bonded, serving Lane County, OR."
+>
+	<Hero
+		eyebrow="What We Do"
+		headline="Full-Service Excavation"
+		subheadline="Twelve services, one contractor. From the first cut to the last inspection, D&D Land Works handles site prep, grading, drainage, utility work, and DEQ certified septic install and repair."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+	/>
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{services.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Not Sure Which Service You Need?"
+		subheadline="Describe the project and David will tell you what it actually takes."
+	/>
+</BaseLayout>

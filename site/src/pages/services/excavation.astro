@@ -1,0 +1,407 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const coverage = [
+  { title: 'Cut-and-fill earthmoving', detail: 'Cutting material from high points and filling low points to bring a site to design grade.' },
+  { title: 'Backfill and compaction', detail: 'Filling around a footing, foundation, or trench and compacting it in lifts, not dumping and walking away.' },
+  { title: 'Rock and debris removal', detail: 'Clearing rock, buried debris, and obstructions out of the work area.' },
+  { title: 'Site access roads and driveway cuts', detail: 'Cutting a driveway or access road into a lot that doesn’t have one yet.' },
+  { title: 'Rough grading for erosion control', detail: 'Shaping a site so it doesn’t sit exposed and eroding between phases.' },
+  { title: 'Pond, pad, and lot reshaping', detail: 'Digging a pond, leveling a building pad, or reshaping a lot’s overall contour.' },
+];
+
+const projectTypes = [
+  { title: 'Foundation Dig', detail: 'Digging and prepping the excavation for a home, shop, barn, or ADU foundation, following site preparation on the same lot.' },
+  { title: 'Pond', detail: 'Farm, decorative, and stormwater ponds all start with an excavation cut sized to the intended depth and shape. OWRD and DSL permitting can apply depending on size and proximity to a waterway.' },
+  { title: 'Building, Shop, or Barn Pad', detail: 'A level, compacted pad ahead of a metal-building or pole-barn crew.' },
+  { title: 'Driveway or Access Road', detail: 'Cutting a new driveway or access road into a lot that doesn’t have one, or re-cutting one that’s washed out.' },
+  { title: 'Utility Run', detail: 'Trenching for a water, sewer, or utility line to a new structure.' },
+];
+
+const costRows = [
+  { model: 'Hourly', range: '$100–$300/hr', drives: 'Machine size, job complexity, how much hands-on operator time it takes' },
+  { model: 'Per cubic yard — standard soil', range: '$2.50–$15/cu yd', drives: 'Volume of material moved, haul distance, access' },
+  { model: 'Per cubic yard — rock', range: '$50–$200/cu yd', drives: 'Whether the crew hits solid rock and needs ripping or blasting' },
+  { model: 'Flat per-project', range: 'Varies by scope', drives: 'Used for well-defined jobs like a single driveway cut or one pad' },
+];
+
+const resVsComm = [
+  { label: 'Typical equipment', res: 'Mini excavators, skid steers, smaller dozers', comm: 'Full-size excavators and dozers, multiple haul trucks' },
+  { label: 'Crew size', res: 'Often 1–2 operators', comm: 'Multiple crews, sometimes phased' },
+  { label: 'Material moved', res: 'Usually a few hundred cubic yards or less', comm: 'Measured in acres of grading, often thousands of cubic yards' },
+  { label: 'Timeline', res: 'Commonly days once permits and scheduling are settled', comm: '1 to 3-plus weeks, longer on multi-phase sites' },
+  { label: 'Regulatory complexity', res: 'Usually a single permit path', comm: 'More likely to cross Oregon DEQ 1200-C and multi-permit thresholds' },
+];
+
+const faqs = [
+  { question: 'What’s the difference between excavation and grading?', answer: 'Excavation removes earth to create space, a foundation, a pond, a trench. Grading shapes the surface for drainage and elevation once material is in place. On a real job they often happen as one continuous operation rather than two separate phases. If your project involves a new dig, this page covers it; for standalone re-sloping or yard leveling with nothing new being dug, see grading and leveling instead.' },
+  { question: 'How much does excavation cost?', answer: 'General ranges run roughly $1,400–$6,000 for a typical residential project, or $2.50–$15 per cubic yard for standard soil, clearly labeled as general and not a quote for your specific lot. Pricing comes in a few real forms, hourly, per-cubic-yard, or flat per-project, depending on how the job is scoped. A free on-site estimate is the only accurate way to price a specific project.' },
+  { question: 'What happens if the crew hits rock during excavation?', answer: 'It’s a real, explainable cost driver, not a bait-and-switch. Standard excavation runs roughly $5–$15 per cubic yard; hitting solid rock can push that to $50–$200 per cubic yard depending on whether it needs ripping or blasting. Knowing that upfront is the point, not finding out mid-job with no warning.' },
+  { question: 'What’s the difference between residential and commercial excavation?', answer: 'Residential jobs typically use compact machines, mini excavators and skid steers, moving at most a few hundred cubic yards. Commercial jobs are measured in acres, with full-size equipment and sometimes multiple crews working in phases. Either way, the process is the same: a real site visit and a written estimate, not a phone-quoted guess.' },
+  { question: 'What equipment is used for excavation work?', answer: 'An excavator handles digging and rock work, a dozer pushes and shapes material across larger cuts, and compaction equipment runs behind the fill. What shows up depends on the site, a tight in-town lot needs a smaller machine than an acreage parcel with a long haul road.' },
+  { question: 'Do I need to call 811 before digging in Oregon?', answer: 'Yes. Oregon811 (the Oregon Utility Notification Center) requires at least two business days’ advance notice before digging, and locate requests are free. D&D Land Works makes that call before starting any dig, as Oregon law requires.' },
+  { question: 'Do I need a permit to excavate in Lane County?', answer: 'It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1 — confirm the exact figure for your project with Lane County’s Land Management Division rather than treating that as an exact, guaranteed number. See site preparation for the fuller permit picture.' },
+  { question: 'How long does excavation take?', answer: 'Often just a few days for a residential job once permits and site prep are done. Commercial or multi-building excavation commonly runs 1 to 3-plus weeks depending on scope, access, and how much material has to move.' },
+  { question: 'Can you excavate for a pond, driveway, or utility line, or just foundations?', answer: 'Yes to all of them. D&D Land Works scopes foundation digs, ponds, driveways and access roads, and utility runs individually, walking each site rather than treating every job as the same generic dig.' },
+];
+
+const related = [
+  { title: 'Site Preparation', description: 'Clearing, stripping topsoil, and grading a raw lot before excavation starts.', href: '/services/site-preparation' },
+  { title: 'Grading & Leveling', description: 'Re-sloping and finish grading for an existing surface, no new digging involved.', href: '/services/grading-leveling' },
+  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/services/foundation-excavation' },
+  { title: 'Utility Excavation', description: 'Trenching and backfill for water, sewer, and utility lines.', href: '/services/utility-excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/excavation/#service',
+      name: 'Excavation',
+      serviceType: 'Excavation',
+      description: 'Excavation and grading is general earthmoving work: cutting material from high points, filling low points, and bringing a site to the elevation a project needs, whether that\'s a foundation, a pond, a driveway, a building pad, or a utility line trench. D&D Land Works provides excavation and grading for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, using an excavator, dozer, and compaction equipment matched to the site.',
+      url: 'https://www.ddlandworks.com/services/excavation/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Excavation', item: 'https://www.ddlandworks.com/services/excavation/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Excavation Contractor in Eugene & Lane County, OR | D&D Land Works"
+	description="Excavation vs. grading, explained. Cut/fill, ponds & utility trenching in Lane County, OR. Licensed, bonded, calls Oregon811. Free estimate: 541-401-8726."
+>
+	<Hero
+		eyebrow="Service"
+		headline="Excavation in Eugene, Springfield & Lane County, Oregon"
+		subheadline="General earthmoving for a defined purpose: cutting material from a high spot, filling a low spot, and bringing a site to the elevation a specific project needs — a foundation, a pond, a driveway, or a utility trench."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Excavation Services in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Excavation</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>Excavation and grading is general earthmoving work: cutting material from high points, filling low points, and bringing a site to the elevation a project needs &mdash; whether that&rsquo;s a foundation, a pond, a driveway, a building pad, or a utility line trench.</p><p>D&amp;D Land Works provides excavation and grading for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, including foundation digs, pond excavation, driveway and access-road cutting, and utility-run trenching, using an excavator, dozer, and compaction equipment matched to the site. D&amp;D is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>, calls <strong class='font-semibold text-ink'>Oregon 811</strong> at least two business days before digging on every job, and follows OSHA&rsquo;s excavation and trenching safety standard (29 CFR 1926 Subpart P) on jobs involving deeper cuts or trenches. Free estimates are available for both residential and commercial excavation work.</p>"
+	/>
+	<!-- What does it cover -->
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+			What Does Excavation Cover?
+		</h2>
+		<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+			Most excavation jobs come down to the same core moves, adapted to whatever the site actually needs. D&amp;D Land Works scopes the work by walking the site, not by guessing off a satellite photo or a floor plan.
+		</p>
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{coverage.map((item) => (
+				<div class="card">
+					<p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue">{item.title}</p>
+					<p class="mt-2 text-sm text-slate-600">{item.detail}</p>
+				</div>
+			))}
+		</div>
+		<p class="mt-8 text-sm text-slate-600 text-center max-w-2xl mx-auto">
+			Every item on that list is grading-to-elevation that happens because something is being dug, not a standalone re-sloping job. The next section draws that line explicitly.
+		</p>
+	</section>
+	<!-- Excavation vs grading -->
+	<PhotoContentBlock
+		eyebrow="Excavation vs. Grading"
+		headline="What's the Difference Between Excavation and Grading?"
+		image="/hero-bg-1.webp"
+		imageAlt="Excavator cutting a foundation footing on a Lane County job site"
+		imageSide="left"
+		badgeValue="1 Operation"
+		badgeLabel="Excavation + Grading"
+		ctaLabel="See Grading & Leveling"
+		ctaHref="/services/grading-leveling"
+		bodyHtml="<p>Excavation removes earth to create space: a foundation footing, a pond basin, a utility trench. Grading shapes the surface once material is in place, setting the finish elevation and drainage slope. On a real job the two usually happen as one continuous operation, excavation opens the space and grading finishes the surface, rather than two rigidly separate phases handled by different crews.</p><p>This page covers grading that happens <em>because</em> something is being dug: cut-and-fill to design grade, backfill and compaction after a trench or footing goes in, and rough grading that finishes an excavation project. Standalone re-sloping, yard leveling, or drainage-grading on ground where nothing new is being dug is a different job, covered on the <a href='/services/grading-leveling' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>grading and leveling</a> page instead.</p>"
+	/>
+	<!-- Project types -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Kind of Project Is This For?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Excavation covers a range of project types, not just foundations. Every project gets scoped individually on-site.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{projectTypes.map((p) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{p.title}</p>
+						<p class="mt-2 text-sm text-slate-600">{p.detail}</p>
+					</div>
+				))}
+			</div>
+			<div class="mt-10 text-center">
+				<a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Equipment -->
+	<PhotoContentBlock
+		eyebrow="Equipment"
+		headline="What Equipment Shows Up on the Job?"
+		image="/hero-bg-2.webp"
+		imageAlt="Excavator and dozer working a Lane County excavation site"
+		imageSide="right"
+		badgeValue="3 Machines"
+		badgeLabel="Excavator, Dozer, Compactor"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>An excavator handles the bulk of the digging and rock work. A dozer pushes and shapes material across larger cuts and fills. Compaction equipment runs behind the fill so it holds once something gets built on it.</p><p>What actually shows up depends on the site: a tight in-town lot needs a smaller machine and a different approach than an acreage parcel with a long haul road.</p>"
+	/>
+	<!-- Residential vs commercial -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+				Residential vs. Commercial Excavation
+			</h2>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4"></th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Residential</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">Commercial</th>
+						</tr>
+					</thead>
+					<tbody>
+						{resVsComm.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.label}</td>
+								<td class="py-3 pr-4 text-slate-600">{row.res}</td>
+								<td class="py-3 text-slate-600">{row.comm}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center max-w-2xl mx-auto">
+				Either way, a small driveway fix and a larger commercial pad get the same process: a real site visit and a written estimate.
+			</p>
+		</div>
+	</section>
+	<!-- Cost -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Excavation Cost?
+			</h2>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Pricing Model</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Drives It</th>
+						</tr>
+					</thead>
+					<tbody>
+						{costRows.map((row) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.model}</td>
+								<td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
+								<td class="py-3 text-slate-600">{row.drives}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center">
+				General national and Oregon-labor-adjusted ranges, not a quote for your project. Oregon&rsquo;s construction labor costs run roughly 20% above the national average. The only honest way to price a specific job is a site visit.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Oregon811 -->
+	<PhotoContentBlock
+		eyebrow="Oregon 811"
+		headline="Does D&D Call Before Digging?"
+		image="/hero-bg-3.webp"
+		imageAlt="Utility locate flags marking underground lines before excavation begins"
+		imageSide="left"
+		badgeValue="2 Business Days"
+		badgeLabel="Oregon 811 Locate Notice"
+		ctaLabel="Learn About Oregon 811"
+		ctaHref="https://digsafelyoregon.com/"
+		bodyHtml="<p>Yes. D&amp;D Land Works calls Oregon 811 (the Oregon Utility Notification Center) at least two business days before starting any dig, as Oregon law requires. Locate requests are free.</p><p>Once the call is made, affected utility operators have two business days to mark their underground lines with color-coded paint before equipment moves. That&rsquo;s a specific, checkable step you can verify yourself, and it&rsquo;s the same process <a href='https://digsafelyoregon.com/' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Oregon 811</a> recommends any homeowner or excavator confirm directly before digging on their own property, too.</p>"
+	/>
+	<!-- Permits, DIY, timeline — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="Permits"
+		headline="Do You Need a Permit to Excavate in Lane County?"
+		image="/hero-bg-4.webp"
+		imageAlt="Graded excavation site awaiting permit sign-off in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="50 cu yd"
+		badgeLabel="Grading Permit Threshold"
+		ctaLabel="Site Preparation Permits"
+		ctaHref="/services/site-preparation"
+		bodyHtml="<p>It depends on scope. A Lane County permitting guide indicates a Grading and Fill Permit is generally required when a project moves more than roughly 50 cubic yards of earth or creates a cut/fill slope steeper than roughly 2:1. Confirm the exact figure for your project directly with <a href='https://www.lanecounty.org/government/county_departments/public_works/land_management_division' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Lane County&rsquo;s Land Management Division</a> rather than treating that as a guaranteed number.</p><p>Foundation excavation done under an active building permit is generally exempt from a separate grading permit. See <a href='/services/site-preparation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>site preparation</a> for the fuller permit picture.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="DIY Excavation"
+		headline="Can I Rent an Excavator and Do This Myself?"
+		image="/hero-bg-1.webp"
+		imageAlt="Mini excavator working a small residential dig"
+		imageSide="left"
+		badgeValue="5 ft+"
+		badgeLabel="OSHA Trench Safety Depth"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>For some jobs, yes. A small, shallow dig with clear sightlines and no buried utilities nearby is a reasonable candidate for a rented mini excavator if you&rsquo;re comfortable operating one.</p><p>Foundation digs, utility trenches, and work near property lines are a different situation: trenching and excavation work follows OSHA 29 CFR 1926 Subpart P, which requires a protective system for trenches 5 feet deep or more and safe access within 25 feet of lateral travel for excavations 4 feet deep or more, and getting that wrong carries real liability, well beyond the cost of a redo. If your project involves a structure, a utility, or a property line, hiring it out is the safer call.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Timeline"
+		headline="How Long Does Excavation Take?"
+		image="/hero-bg-2.webp"
+		imageAlt="Completed excavation cut ready for the next phase of construction"
+		imageSide="right"
+		badgeValue="Few Days"
+		badgeLabel="Typical Residential Job"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>A residential excavation project, a foundation dig, a driveway cut, a single pond, often takes just a few days once permits and site prep are already handled.</p><p>Commercial or multi-building excavation is a different scale: commonly 1 to 3-plus weeks, and larger or phased commercial sites can run longer. Season matters too: Willamette Valley&rsquo;s wet months (roughly November through April) generally move slower than the May-through-October dry season.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Excavation in Lane County, OR"
+		headline="Why Lane County Homeowners and Builders Trust D&D Land Works for Excavation"
+		image="/hero-bg-3.webp"
+		imageAlt="D&D Land Works excavator on a job site in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, calls Oregon 811 before every dig, and follows OSHA&rsquo;s excavation and trenching safety standard on jobs that call for it &mdash; credentials and process you can verify yourself rather than take on faith.</p><p>David Deggelman owns the company and scopes every job in person, so your estimate is based on your site&rsquo;s actual access, soil, and scope. If you&rsquo;re planning a foundation dig, pond, driveway cut, or utility run anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every excavation job starts with David walking the site in person, calling Oregon 811 before equipment ever moves, and confirming which permits actually apply to your project."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Dirt Work Scoped"
+		subheadline="Free estimate for excavation and earthmoving anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

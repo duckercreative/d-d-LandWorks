@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "run_config": "without_skill",
+  "expectations": [
+    {"text": "First line contains AC/HVAC keyword + 'Cypress'", "passed": true, "evidence": "'☀️ AC tune-up in Cypress, TX — $89 before Houston's summer...'"},
+    {"text": "Body references a Cypress-specific detail", "passed": true, "evidence": "Bridgeland, Towne Lake, Fairfield, 77429/77433, 8-15 year home-age data"},
+    {"text": "Post body is within 1200-1450 chars", "passed": false, "evidence": "~540 chars per author — far below 1200 floor. Does not match client's long-form pipeline standard."},
+    {"text": "Phone number (713) 598-2737 does NOT appear in post body", "passed": true, "evidence": "No phone in body"},
+    {"text": "Research notes show GSC data was consulted", "passed": false, "evidence": "Research based on memory/calendar files and inferred home-age data — no explicit GSC query check shown"},
+    {"text": "CTA URL points to a page that exists", "passed": false, "evidence": "No CTA URL provided in output — only CTA button type (Book Online). Missing URL."},
+    {"text": "At least 2 trust signals present", "passed": true, "evidence": "TACLA, insured, since 2016"},
+    {"text": "No hashtags, no all-caps, 1-3 emojis max", "passed": false, "evidence": "1 ☀️ + 5 ✅ = 6 emojis total; exceeds 1-3 cap"}
+  ]
+}

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABlock from '../../components/CTABlock.astro';
+---
+
+<BaseLayout
+	title="How to Choose an Excavation Contractor | D&D Land Works"
+	description="What to check before hiring an excavation contractor in Oregon: CCB license, bonding, DEQ certification for septic, and questions worth asking upfront."
+>
+	<Hero
+		eyebrow="Hiring Guide"
+		headline="How to Choose an Excavation Contractor"
+		subheadline="Anyone can own a skid steer. Not everyone should be trusted with your foundation, your drainage, or your septic system."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Get an Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Check the License First
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Oregon requires excavation contractors to carry a CCB license through the Construction
+			Contractors Board, and that number is public. You can look it up on the CCB's website before a
+			contractor ever sets foot on your property, and you should. A license also means the contractor
+			carries the bonding and insurance the state requires, so you're not the one left covering
+			damage if something goes wrong.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Septic Work Needs a Separate Certification
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A general excavation license doesn't cover septic install or repair. Oregon's DEQ requires its
+			own certification for that, and a contractor without it legally can't do the work, no matter
+			how capable their crew looks with an excavator. If septic is part of the job, ask specifically
+			whether the contractor holds DEQ certification, not just a CCB number.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Questions Worth Asking Before You Hire
+		</h2>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li>What's your CCB license number, and how long have you held it?</li>
+			<li>Are you DEQ certified, if the job involves septic work?</li>
+			<li>Who actually runs the equipment on my job, you or a sub?</li>
+			<li>Will you walk the site before quoting, or price it off a description?</li>
+			<li>What happens if you hit rock, poor soil, or something unexpected mid-job?</li>
+		</ul>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A contractor who hesitates on the license and certification questions is worth walking away
+			from. A contractor who wants to see the site before committing to a number usually isn't
+			hiding anything, they're just being accurate.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Get Multiple Estimates, Compare the Same Scope
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Two bids that look far apart sometimes aren't quoting the same work. Make sure each estimate
+			covers the same scope, clearing, grading, drainage, compaction, before comparing the bottom
+			line. D&D Land Works is licensed and bonded under CCB #261742 and DEQ certified for septic,
+			and quotes are always based on a site visit, not a phone description.
+		</p>
+	</section>
+	<CTABlock
+		headline="Verify, Then Call"
+		subheadline="Check the license, then get a free on-site estimate."
+	/>
+</BaseLayout>

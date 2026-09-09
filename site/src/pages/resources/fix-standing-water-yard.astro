@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const related = [
+  { title: 'Drainage Excavation', description: 'Cutting swales and trenches to move water where it needs to go.', href: '/services/drainage-excavation' },
+  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/services/grading-leveling' },
+];
+---
+
+<BaseLayout
+	title="Fix Standing Water in Your Yard | D&D Land Works"
+	description="Why a yard floods and what actually fixes it: regrading, swales, French drains, and culverts. Drainage solutions for Eugene, Springfield, and Lane County, OR."
+>
+	<Hero
+		eyebrow="Problem / Solution"
+		headline="Fix Standing Water in Your Yard"
+		subheadline="A wet spot that won't drain isn't bad luck. Somewhere between your yard and wherever the water should end up, something's stopping it."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Why It's Pooling There and Not Somewhere Else
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Water moves downhill until something stops it: a low spot that was never graded out, compacted
+			clay soil that won't absorb it, a swale that's silted in, or a driveway culvert that's crushed
+			or clogged. Willamette Valley clay is part of the problem on its own. It holds water far longer
+			than sandier soil, so a yard that would drain fine somewhere else can stay soggy for days after
+			a normal Oregon rain.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Matching the Fix to the Actual Cause
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A regrade is usually the first thing to check: if the ground is pitched toward the house or
+			toward a low point with nowhere to go, no drain will out-perform bad grading for long. Past
+			that, the fix depends on what the water's doing.
+		</p>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li><strong>Sheet flow across a yard:</strong> a surface swale redirects it before it pools</li>
+			<li><strong>Water against a foundation:</strong> a French drain intercepts it before it reaches the wall</li>
+			<li><strong>A driveway that floods:</strong> a culvert moves water underneath instead of over the top</li>
+			<li><strong>A low spot with nowhere to drain:</strong> regrading changes the slope so water has somewhere to go</li>
+		</ul>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Sometimes it's one of these. Sometimes a yard needs two or three working together, especially
+			on a lot where the original grading was never quite right to begin with.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Getting the Slope Right the First Time
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			A drain that's cut a half-inch too flat won't move water any better than no drain at all. D&D
+			Land Works reads the site, figures out where the water actually wants to go, and cuts the
+			swale, trench, or culvert line to a slope that carries it there. Licensed and bonded under CCB
+			#261742, serving Eugene, Springfield, and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get the Water Moving"
+		subheadline="Free estimate for drainage work anywhere in Lane County."
+	/>
+</BaseLayout>

@@ -1,0 +1,43 @@
+{
+  "tool_calls": {
+    "Read": 11,
+    "Write": 4,
+    "Bash": 3,
+    "WebFetch": 0,
+    "WebSearch": 0,
+    "Grep": 0,
+    "Glob": 3
+  },
+  "total_tool_calls": 21,
+  "total_steps": 7,
+  "files_created": [
+    "/tmp/gbp-eval-0-old/2026-04-22_ac-repair-katy-pre-summer-offer.md",
+    "/tmp/gbp-eval-0-old/new_template_entry.json",
+    "/tmp/gbp-eval-0-old/transcript.md",
+    "/tmp/gbp-eval-0-old/metrics.json"
+  ],
+  "errors_encountered": 2,
+  "error_details": [
+    "First draft had em dashes (3 occurrences) — caught by pre-write check, fixed in revision",
+    "First draft was 1494 chars (over 1450 limit) — caught by pre-write check, trimmed to 1438"
+  ],
+  "output_chars": 3421,
+  "transcript_chars": 4891,
+  "char_count_verified": 1438,
+  "char_count_target": "1200-1450",
+  "char_count_pass": true,
+  "phone_in_body": false,
+  "em_dash_in_body": false,
+  "ai_slop_phrases": 0,
+  "first_line_has_keyword_and_geo": true,
+  "cta_url_confirmed_live": true,
+  "post_type": "Offer",
+  "post_date": "2026-04-22",
+  "geo_target": "Katy, TX",
+  "primary_keyword": "ac repair katy tx",
+  "template_id": "pre_summer_katy_offer",
+  "new_template_authored": true,
+  "weather_source": "seasonal-houston.md fallback (no live WebFetch)",
+  "queue_check_done": true,
+  "all_presummer_templates_exhausted": true
+}

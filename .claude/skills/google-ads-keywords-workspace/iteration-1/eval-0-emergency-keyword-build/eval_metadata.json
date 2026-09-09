@@ -1,0 +1,82 @@
+{
+  "eval_id": 0,
+  "eval_name": "emergency-keyword-build",
+  "prompt": "Build me the keyword list for the Emergency AC Repair campaign at 75 Degree AC (Houston HVAC). I need ad groups defined, the actual keywords with match types, the campaign-level negative list, and ad-group-level negatives to prevent cross-contamination with maintenance and installation ad groups. We serve Houston + Katy + Sugar Land + Cypress + Richmond TX (note: Richmond TX, not VA). Also tell me what the brand-bidding strategy should be (do we bid on '75 degree ac' as a keyword?).",
+  "assertions": [
+    {
+      "name": "produces_at_least_4_ad_groups",
+      "check": "regex_count",
+      "pattern": "(?im)^#{2,4}\\s*(?:AG|Ad\\s*Group|Group)\\s*[1-4]|^\\s*\\*\\*(?:AG|Ad\\s*Group)\\s*[1-4]",
+      "min": 4
+    },
+    {
+      "name": "uses_phrase_and_exact_match_types",
+      "check": "all_present",
+      "patterns": [
+        "[",
+        "]",
+        "\""
+      ]
+    },
+    {
+      "name": "includes_richmond_va_negative",
+      "check": "regex_ci",
+      "pattern": "richmond\\s*v(?:a|irginia)|virginia"
+    },
+    {
+      "name": "includes_diy_youtube_negative",
+      "check": "regex_ci",
+      "pattern": "youtube|how\\s*to|diy|tutorial"
+    },
+    {
+      "name": "includes_jobs_school_negative",
+      "check": "regex_ci",
+      "pattern": "\\bjobs?\\b|school|training|career|salary|hiring"
+    },
+    {
+      "name": "includes_window_or_portable_ac_negative",
+      "check": "regex_ci",
+      "pattern": "window\\s*ac|portable\\s*ac|car\\s*ac"
+    },
+    {
+      "name": "includes_dallas_or_austin_geo_negative",
+      "check": "regex_ci",
+      "pattern": "dallas|austin|san\\s*antonio|fort\\s*worth"
+    },
+    {
+      "name": "ad_group_level_negatives_present",
+      "check": "regex_ci",
+      "pattern": "(?:ad[\\s-]*group[\\s-]*level|cross[-\\s]*contamination|exclude.*maintenance|exclude.*install|exclude.*tune)"
+    },
+    {
+      "name": "covers_brand_bidding_strategy",
+      "check": "regex_ci",
+      "pattern": "(?:brand|75\\s*degree).*(?:bid|keyword|campaign|yes|defense)|bid\\s*on\\s*(?:your\\s*own\\s*)?brand"
+    },
+    {
+      "name": "includes_24_hour_emergency_keywords",
+      "check": "regex_ci",
+      "pattern": "24[\\s-]*hour|24/7|emergency"
+    },
+    {
+      "name": "includes_houston_keyword",
+      "check": "regex_ci",
+      "pattern": "houston"
+    },
+    {
+      "name": "includes_katy_or_sugar_land_keyword",
+      "check": "regex_ci",
+      "pattern": "katy|sugar\\s*land"
+    },
+    {
+      "name": "covers_phrase_match_as_workhorse",
+      "check": "regex_ci",
+      "pattern": "phrase\\s*(?:match|first|primary|workhorse|default)"
+    },
+    {
+      "name": "warns_about_close_variants",
+      "check": "regex_ci",
+      "pattern": "close\\s*variants?|exact\\s*(?:not\\s*exact|isn.?t\\s*exact|expand)"
+    }
+  ]
+}

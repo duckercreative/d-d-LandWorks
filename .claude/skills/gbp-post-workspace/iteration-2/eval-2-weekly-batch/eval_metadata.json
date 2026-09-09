@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "eval_name": "weekly-batch",
+  "prompt": "Give me this week's 3 GBP posts (Mon/Wed/Fri cadence). Make sure the three posts vary in type, geo, and keyword target. Today is Monday April 20, 2026.",
+  "assertions": [
+    {"text": "Exactly 3 post draft files produced"},
+    {"text": "Post 1 = What's New (Mon), Post 2 = Offer (Wed), Post 3 = What's New or Event (Fri)"},
+    {"text": "No geo target repeated across the 3 posts"},
+    {"text": "No primary keyword repeated across the 3 posts"},
+    {"text": "All templates used are NOT in queue.json.posted within last 40 days"},
+    {"text": "A single shared RESEARCH_SWEEP.md file exists and individual post files do NOT contain a full Research Notes appendix — only a research_refs: frontmatter field"},
+    {"text": "Each post body is within 1200-1450 chars"},
+    {"text": "Phone number does NOT appear in any of the 3 post bodies"},
+    {"text": "Each post has first-line keyword + Houston/suburb"},
+    {"text": "Each post has a valid CTA button + URL pointing to a real 75degreeac.com page"}
+  ]
+}

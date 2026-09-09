@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "wp-elementor": {
+      "command": "python3",
+      "args": [
+        "05-wordpress/mcp-server/server.py"
+      ],
+      "env": {
+        "WP_TARGET": "staging",
+        "ALLOW_PROD_WRITE": "0"
+      }
+    },
+    "elementor-mcp": {
+      "type": "http",
+      "url": "https://75degreeac.com/wp-json/mcp/elementor-mcp-server",
+      "headers": {
+        "Authorization": "Basic REPLACE_WITH_BASE64_OF_wpuser:wp_app_password"
+      }
+    },
+    "wp-abilities": {
+      "type": "http",
+      "url": "https://75degreeac.com/wp-json/mcp/mcp-adapter-default-server",
+      "headers": {
+        "Authorization": "Basic REPLACE_WITH_BASE64_OF_wpuser:wp_app_password"
+      }
+    }
+  }
+}

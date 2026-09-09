@@ -1,0 +1,135 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+site preparation eugene or,serp,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,Primary page target keyword
+site preparation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,Full state-name variant
+site preparation lane county or,serp,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,County-wide variant
+site preparation lane county oregon,serp,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,County-wide full-state variant
+site prep eugene or,autocomplete,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,Shorthand variant
+site prep eugene oregon,autocomplete,commercial,decision,y,scheduled,head,high,/site-preparation/,P0,Shorthand variant
+site prep company eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,"""company"" modifier"
+site prep contractor eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,"""contractor"" modifier"
+site preparation contractor lane county,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,"""contractor"" modifier"
+site preparation company lane county,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,"""company"" modifier"
+building site preparation eugene or,serp,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,"Matches All Dirt's exact page title language (""Building Site Prep"")"
+building site preparation springfield or,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Springfield geo variant
+construction site preparation lane county,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,"""construction"" modifier"
+land preparation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,"""land preparation"" phrasing variant"
+land prep for new construction lane county,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief seed keyword
+lot preparation eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,"""lot preparation"" phrasing variant"
+lot prep for house build oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief seed keyword
+lot clearing and grading for house build,systematic_variant,commercial,consideration,n,scheduled,long,high,/site-preparation/,P0,Task brief seed keyword
+site prep near me,autocomplete,commercial,decision,n,scheduled,head,high,/site-preparation/,P0,High-volume generic local-intent query
+site preparation near me,autocomplete,commercial,decision,n,scheduled,head,high,/site-preparation/,P0,Full-phrase near-me variant
+land prep near me,autocomplete,commercial,decision,n,scheduled,mid,med,/site-preparation/,P1,Near-me variant
+lot clearing and grading near me,autocomplete,commercial,decision,n,scheduled,mid,med,/site-preparation/,P1,Near-me variant
+building pad prep oregon,systematic_variant,commercial,consideration,y,scheduled,mid,high,/site-preparation/,P0,Task brief seed keyword
+building pad preparation eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Geo variant of pad-prep seed
+house pad preparation lane county,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Consumer phrasing of "building pad"
+what is site preparation,serp,informational,awareness,n,browse,mid,low,/site-preparation/,P0,"Quora-sourced definitional query — disambiguation-gap FAQ target"
+site preparation vs excavation,systematic_variant,informational,consideration,n,browse,mid,med,/site-preparation/,P0,"Core umbrella-hub disambiguation keyword per task brief's central gap"
+difference between site prep and excavation,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Long-tail disambiguation variant
+is site prep the same as grading,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P1,Disambiguation variant
+what does site prep include,systematic_variant,informational,consideration,n,browse,mid,med,/site-preparation/,P0,Scope-definition query
+what's included in site preparation,systematic_variant,informational,consideration,n,browse,mid,med,/site-preparation/,P1,Scope-definition variant
+site preparation checklist,serp,informational,consideration,n,browse,mid,low,/site-preparation/,P2,"Ranked by Level One Grading, Building's Guide — informational competitor content"
+steps in the site preparation process,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P1,Process-sequence query
+site preparation process for construction,serp,informational,consideration,n,browse,mid,low,/site-preparation/,P2,Ranked by Shilling Excavation
+rough grading vs finish grading,systematic_variant,informational,consideration,n,browse,mid,low,/grading-leveling/,P2,Down-link candidate — industry-standard distinction
+what is subgrade compaction,systematic_variant,informational,awareness,n,browse,mid,low,/site-preparation/,P2,Process-entity definitional query
+what is topsoil stripping,systematic_variant,informational,awareness,n,browse,mid,low,/site-preparation/,P3,Process-entity definitional query
+site preparation cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/site-preparation/,P0,Cost query — no Lane-County-specific figure found; use statewide/national ranges
+site preparation cost eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,Geo-scoped cost variant
+site preparation cost per acre oregon,serp,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief seed keyword
+how much does site preparation cost,serp,commercial,consideration,n,scheduled,mid,high,/site-preparation/,P0,"Ranked by Angi — answered: $8,000-$50,000+ depending on complexity"
+site prep cost per square foot,serp,commercial,consideration,n,scheduled,mid,med,/site-preparation/,P1,"Ranked by Saga Infrastructure — answered: $0.11-$1.50+/sq ft by difficulty tier"
+cost to clear and grade a lot oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P1,Cost variant
+cost to prepare land for building oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief-adjacent cost query
+minimum budget for site prep before construction,systematic_variant,commercial,consideration,n,scheduled,long,med,/site-preparation/,P2,"Answered: ~$5,000 baseline recommendation per cost-guide sources"
+cut and fill cost per cubic yard,serp,commercial,consideration,n,scheduled,mid,med,/site-preparation/,P2,"Answered: ~$2.25-$3.00/cubic yard for straightforward cut/fill"
+cost to excavate rock during site prep,systematic_variant,commercial,consideration,n,scheduled,long,med,/site-preparation/,P1,"Answered: rock runs $50-$200/cu yd vs $5-$15 standard — 10-40x jump"
+what does it cost if excavation hits rock,serp,commercial,consideration,n,scheduled,long,med,/site-preparation/,P1,Rock cost-overrun variant
+how much does clay soil add to excavation cost,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P1,"Answered: clay documented to add ~25-50% to excavation costs"
+is a geotechnical study worth it before building,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P2,"Answered: $2,000-$5,000 study typically prevents 20-50% cost overruns"
+site prep cost for ADU oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief seed keyword — ADU project type
+ADU site prep eugene,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,Task brief seed keyword
+ADU site preparation cost oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,ADU + cost combined variant
+accessory dwelling unit site prep lane county,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P1,Full-term ADU variant
+does ADU site prep cost less than a full house,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P2,Question-mine-sourced ADU nuance
+site prep for shop building oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief project-type seed
+site prep for barn pad lane county,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P1,Task brief project-type seed
+shop pad preparation eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Rural/acreage project-type variant
+barn pad preparation oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Rural/acreage project-type variant
+building pad for metal building oregon,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P2,Adjacent shop/barn pad query
+subdivision site development lane county,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P0,Task brief project-type seed — commercial converter angle
+subdivision site preparation oregon,systematic_variant,commercial,consideration,y,scheduled,long,high,/site-preparation/,P1,Subdivision variant
+commercial site preparation eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,Task brief project-type seed — commercial converter angle
+commercial site development lane county,systematic_variant,commercial,consideration,y,scheduled,mid,high,/site-preparation/,P0,Commercial project-type variant
+new home site prep eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,Primary residential project-type variant
+new construction site prep lane county,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P0,Primary residential project-type variant
+site prep before house build oregon,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P1,Sequencing-adjacent commercial query
+should site prep happen before or after hiring a builder,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Task brief-named highest-value anxiety-cluster query
+does site prep happen before the building permit,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Sequencing/anxiety query
+will site prep delay my building permit,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Sequencing/anxiety query
+do I need a survey before site prep,serp,informational,consideration,n,browse,long,med,/site-preparation/,P0,"Answered: yes typically, topographic survey precedes grading plan"
+do I need a land survey before grading,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Survey variant
+who pulls the permits for site prep,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P2,Responsibility/sequencing query
+do I need a permit to grade my land lane county,systematic_variant,informational,consideration,y,browse,long,high,/site-preparation/,P0,Oregon-specific permitting query
+lane county grading permit,serp,informational,consideration,y,browse,mid,high,/site-preparation/,P0,"Answered in 07-oregon-authority.md — >50 cubic yards or 2:1 slope trigger (verify exact figures)"
+lane county grading and fill permit,systematic_variant,informational,consideration,y,browse,mid,med,/site-preparation/,P1,Exact permit-name variant
+lane county erosion control permit,systematic_variant,informational,consideration,y,browse,mid,med,/site-preparation/,P0,"Answered — Type I/II erosion prevention permit"
+lane county erosion prevention permit type 1 vs type 2,systematic_variant,informational,consideration,y,browse,long,low,/site-preparation/,P2,Exact permit-tier variant
+DEQ 1200-C permit oregon,serp,informational,consideration,y,browse,mid,med,/site-preparation/,P0,"Confirmed directly on oregon.gov — 1-acre disturbance threshold"
+construction stormwater permit oregon 1 acre,systematic_variant,informational,consideration,y,browse,long,med,/site-preparation/,P1,1200-C threshold variant
+do I need a stormwater permit to clear my land,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,1200-C consumer-phrasing variant
+lane county site development permit,serp,informational,consideration,y,browse,mid,med,/site-preparation/,P2,Related permitting query surfaced during Lane County search pass
+how much land can I clear without a permit oregon,systematic_variant,informational,consideration,y,browse,long,med,/site-preparation/,P1,Reused/adapted from homepage question-mine, scoped to site prep
+does foundation excavation need a separate grading permit,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,"Answered — generally exempt under an active building permit"
+perc test before site prep lane county,systematic_variant,informational,consideration,y,browse,long,med,/site-preparation/,P0,Septic-sequencing seed keyword from task brief
+septic test pit requirements lane county,serp,informational,consideration,y,browse,mid,med,/site-preparation/,P1,"Answered — 2-3 pits, 50-100 ft apart, 2x4x5 ft"
+does grading affect my septic site evaluation,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,"Answered — disturbing an approved drainfield location can void approval"
+site prep for septic system oregon,systematic_variant,commercial,consideration,y,scheduled,mid,med,/site-preparation/,P1,Septic-adjacent commercial variant
+how long does site preparation take,serp,informational,consideration,n,scheduled,mid,med,/site-preparation/,P0,"Answered — ~1 week for an open lot; 1-2 months typical residential"
+site prep timeline for new home,systematic_variant,informational,consideration,n,scheduled,mid,med,/site-preparation/,P1,Timeline variant
+how long does it take to clear and grade a lot,systematic_variant,informational,consideration,n,scheduled,long,med,/site-preparation/,P1,Timeline variant
+how long does commercial site prep take,systematic_variant,informational,consideration,n,scheduled,mid,low,/site-preparation/,P2,"Answered — 1-3 weeks typical, longer for multi-building"
+what happens if site prep uncovers a problem,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Objection/anxiety query
+what if they find bad soil during site prep,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Task brief-named anxiety query verbatim
+signs of bad site prep,systematic_variant,informational,awareness,n,browse,mid,low,/site-preparation/,P2,Failure-mode/quality query
+does site prep affect foundation quality,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Failure-mode query — ties to compaction explanation
+what happens if a pad isn't compacted properly,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Failure-mode/compaction query
+can site prep need to be redone after rain,systematic_variant,informational,consideration,y,browse,long,low,/site-preparation/,P2,Oregon rainy-season failure-mode variant
+best time of year for site prep oregon,systematic_variant,informational,consideration,y,browse,mid,med,/site-preparation/,P1,Reused/adapted seasonal query from homepage pack
+site prep during rainy season oregon,systematic_variant,informational,consideration,y,browse,mid,low,/site-preparation/,P2,Seasonal variant
+excavation contractor for site prep eugene or,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,Cross-service commercial variant
+site prep and excavation company lane county,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,Bundled-service commercial variant
+can one contractor do site prep and excavation,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P0,Bundled-service/disambiguation crossover query
+free estimate site prep eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P0,Direct conversion query
+free site prep quote lane county,systematic_variant,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion variant
+get a quote for site preparation eugene,systematic_variant,transactional,decision,y,scheduled,long,high,/contact/,P1,Conversion variant
+residential site preparation contractor eugene,systematic_variant,commercial,decision,y,scheduled,mid,high,/site-preparation/,P1,Audience modifier
+commercial site preparation contractor eugene,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,Audience modifier
+licensed site prep contractor oregon,systematic_variant,commercial,consideration,y,scheduled,mid,med,/site-preparation/,P1,Trust-modifier — ties to CCB #261742
+bonded site preparation company lane county,systematic_variant,commercial,consideration,y,scheduled,mid,low,/site-preparation/,P2,Trust-modifier
+site prep for new build springfield or,systematic_variant,commercial,decision,y,scheduled,mid,med,/services/springfield/site-preparation/,P1,Springfield city×service down-link target (future page)
+site preparation cottage grove oregon,systematic_variant,commercial,decision,y,scheduled,mid,low,/services/cottage-grove/site-preparation/,P2,Tier-2 city×service down-link target
+site preparation junction city oregon,systematic_variant,commercial,decision,y,scheduled,mid,low,/services/junction-city/site-preparation/,P3,Tier-2 city×service down-link target
+site preparation veneta oregon,systematic_variant,commercial,decision,y,scheduled,mid,low,/services/veneta/site-preparation/,P2,"Tier-2 city×service — All Dirt is based here, competitive"
+land clearing and grading eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/land-clearing/,P1,Down-link crossover keyword
+grading and leveling for house pad oregon,systematic_variant,commercial,consideration,y,scheduled,long,med,/grading-leveling/,P1,Down-link crossover keyword
+foundation excavation after site prep,systematic_variant,informational,consideration,n,browse,long,med,/foundation-excavation/,P2,Down-link sequencing crossover keyword
+drainage grading during site prep,systematic_variant,informational,consideration,n,browse,long,med,/drainage-excavation/,P2,Down-link sequencing crossover keyword
+what equipment is used for site preparation,systematic_variant,informational,awareness,n,browse,mid,low,/site-preparation/,P2,Equipment-category query
+excavator for site prep near me,systematic_variant,commercial,consideration,n,scheduled,mid,low,/site-preparation/,P3,Equipment-adjacent commercial query
+site prep vs land clearing,systematic_variant,informational,consideration,n,browse,mid,low,/site-preparation/,P1,Secondary disambiguation query (site prep vs. a sub-service, not just vs. excavation)
+what is rough grading,systematic_variant,informational,awareness,n,browse,mid,low,/grading-leveling/,P2,Definitional down-link query
+what is a building pad,systematic_variant,informational,awareness,n,browse,mid,low,/site-preparation/,P3,Definitional query
+site preparation for pole barn oregon,systematic_variant,commercial,consideration,y,scheduled,long,med,/site-preparation/,P2,Shop/barn project-type variant
+site work contractor lane county oregon,systematic_variant,commercial,decision,y,scheduled,mid,med,/site-preparation/,P1,"""site work"" synonym variant"
+earthwork contractor for new construction eugene,systematic_variant,commercial,decision,y,scheduled,mid,low,/site-preparation/,P2,"""earthwork"" synonym variant"
+dirt work contractor eugene oregon,systematic_variant,commercial,decision,y,scheduled,mid,low,/site-preparation/,P2,"""dirt work"" colloquial variant"
+site prep quotes vary why,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Objection-adjacent price-variance query
+hidden costs in site preparation,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Objection query — permits/hauling/dewatering not in initial quote
+does site prep include hauling away dirt,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P2,Scope-boundary query
+does site prep include tree removal,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Scope-fence query — ties to topical map's land-clearing scope fence (no tree removal/stump grinding)
+is stump grinding part of site prep,systematic_variant,informational,consideration,n,browse,long,low,/site-preparation/,P2,Scope-fence query
+does site prep include a survey,systematic_variant,informational,consideration,n,browse,long,med,/site-preparation/,P1,Scope-boundary query tied to survey-prerequisite gap
+what's the difference between grading and leveling,systematic_variant,informational,consideration,n,browse,mid,low,/grading-leveling/,P2,Reused from homepage question-mine, down-link relevant

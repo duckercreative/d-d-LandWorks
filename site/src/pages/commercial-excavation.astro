@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const coreServices = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and prepping a pad before the build starts.', href: '/services/site-preparation' },
+  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/services/excavation' },
+  { title: 'Utility Excavation', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/services/utility-excavation' },
+  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/services/septic-install-repairs' },
+];
+---
+
+<BaseLayout
+	title="Commercial Excavation Contractor | Lane County, OR — D&D Land Works"
+	description="Commercial site prep, excavation, and grading for builders, developers, and general contractors in Eugene, Springfield, and Lane County, OR. Licensed and bonded, CCB #261742."
+>
+	<Hero
+		eyebrow="For Builders & Developers"
+		headline="Commercial Excavation"
+		subheadline="Subdivisions, commercial pads, and multi-phase sitework need a contractor who shows up on schedule and communicates directly, not through a dispatcher. That's David on your job, start to finish."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Request a Bid', href: '/contact' }}
+	/>
+	<section class="mx-auto max-w-4xl px-4 py-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Built for Phased and Larger-Scope Work
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Commercial and development sitework runs differently than a single homeowner's lot: more
+			acreage, more phases, and a schedule that other trades are stacked against. D&D Land Works
+			scopes the job the same way regardless of size — walk the site, understand the sequence, and
+			quote the actual work — but a commercial job typically means longer engagements, staged
+			mobilization, and direct coordination with the general contractor or developer's schedule.
+		</p>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Project types this covers:
+		</p>
+		<ul class="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+			<li>Subdivision and multi-lot site development</li>
+			<li>Commercial building pads and phased sitework</li>
+			<li>Shop, barn, and outbuilding pads for commercial use</li>
+			<li>Access road and utility corridor excavation for a development</li>
+			<li>Drainage and grading across larger commercial parcels</li>
+		</ul>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			How Commercial Jobs Get Scoped
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			Send plans and site details up front — civil drawings, grading plans, or a survey if there's
+			one available. David walks the site, confirms scope against the plans, and puts together a bid
+			that accounts for phasing, access, and any coordination the schedule requires. No sales team
+			or subcontracted crew relay: the person who bids the job runs the equipment on it.
+		</p>
+		<h2 class="mt-12 font-display font-bold uppercase tracking-tight text-3xl text-ink">
+			Licensed for the Full Scope
+		</h2>
+		<p class="mt-4 text-slate-700 leading-relaxed">
+			D&D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic
+			install and repair — a separate certification most excavation contractors don't carry. That
+			means site prep, grading, excavation, and septic work on the same commercial project can run
+			through one contractor instead of two. Serving Eugene, Springfield, and the rest of <a href="/service-area" class="text-brand-blue underline hover:text-brand-blue-dark">Lane County</a>.
+		</p>
+	</section>
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Core Services for Commercial Projects
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{coreServices.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get a Commercial Bid"
+		subheadline="Send your site plans and David will scope it directly — no middleman."
+	/>
+</BaseLayout>

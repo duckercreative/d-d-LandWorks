@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation & Site Prep in Springfield, OR | D&D Land Works"
+	description="Excavation, earthmoving, and site prep in Springfield, OR: Thurston, Mohawk Valley, and in-town lots. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Springfield, Oregon"
+		headline="Excavation & Site Prep in Springfield, OR"
+		subheadline="Springfield covers more ground than its city limits suggest: flatter lots near the Willamette, and steeper, more wooded acreage further out toward Thurston and the Mohawk Valley."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Excavation & Earthmoving"
+		ctaHref="/services/excavation"
+		eyebrow="Springfield, Oregon"
+		headlineHtml="Same Schedule as Eugene, <span class='text-brand-blue'>Different Ground</span> in Springfield"
+		descriptionHtml="<p>A house pad near the river is a different job than one up a graveled road in the Mohawk Valley, even though both are technically Springfield. The flatter, in-town parcels are more about straightforward cut-and-fill and access; the acreage further out usually adds more grading and drainage planning to account for slope and runoff. Springfield runs on the same schedule as Eugene, not as a separate dispatch.</p><p>Earthmoving, backfill, and erosion control are broken down in more depth on the <a href='/services/excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>excavation</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/springfield' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Springfield</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Springfield, Oregon"
+		headline="Why Do Springfield Homeowners Trust D&D Land Works for Excavation?"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works excavator on a job site in Springfield, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Springfield runs on the same schedule as Eugene, not a separate dispatch.</p><p>David Deggelman scopes every job in person before quoting. If you need excavation or site prep anywhere in Springfield, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Springfield"
+		subheadline="Same-schedule coverage as Eugene, no separate dispatch."
+	/>
+</BaseLayout>

@@ -1,0 +1,56 @@
+{
+  "skill_name": "meta-ads",
+  "evals": [
+    {
+      "id": 0,
+      "name": "creative-installation-pack",
+      "prompt": "I'm running Meta Ads for an HVAC company in Houston (75 Degree AC). The client wants to focus on Installation services only. Generate a creative brief pack — I need at least 8 distinct concepts I can hand to my designer with hook variants, format specs, visual direction, and copy. Also tell me what aspect ratios I need per concept and how many total ad files I'll end up producing.",
+      "files": [],
+      "assertions": [
+        {"name": "produces_at_least_8_distinct_concepts", "check": "regex_count", "pattern": "(?im)^#{2,4}\\s*(?:Concept|CONCEPT)\\b|^###?\\s*\\d+\\.\\s|Concept\\s*ID", "min": 8},
+        {"name": "specifies_three_aspect_ratios", "check": "all_present", "patterns": ["9:16", "1:1", "4:5"]},
+        {"name": "states_total_file_count", "check": "regex_ci", "pattern": "(?:24|25|36|45|126)\\s*(?:final\\s*)?(?:ad\\s*)?files?|total\\s*(?:files|ad\\s*files|finished\\s*files)|=\\s*\\d+\\s*(?:final\\s*)?files?"},
+        {"name": "mentions_entity_id_concept", "check": "regex_ci", "pattern": "entity\\s*id"},
+        {"name": "mentions_creative_similarity_score", "check": "regex_ci", "pattern": "(?:creative\\s*)?similarity\\s*score"},
+        {"name": "specifies_hook_timing_first_seconds", "check": "regex_ci", "pattern": "(?:1\\.5\\s*sec|first\\s*1\\.5|0\\.8\\s*sec|frame\\s*1)"},
+        {"name": "mentions_captions_burned_in", "check": "regex_ci", "pattern": "captions?\\s*(?:burned|burn(?:ed)?\\s*in)"},
+        {"name": "provides_hook_variants_per_concept", "check": "regex_count", "pattern": "(?im)hook\\s*(?:variants?|options?|angles?)|3\\s*hooks?\\b|three\\s*hooks?\\b", "min": 3}
+      ]
+    },
+    {
+      "id": 1,
+      "name": "campaign-structure-and-audiences",
+      "prompt": "I'm setting up a brand new Meta Ads account for 75 Degree AC (Houston HVAC, scope: Installation only — no repair/maintenance/commercial). Walk me through the campaign architecture and audience setup. How many campaigns, how many ad sets per campaign, how many ads per ad set, what bidding strategy, and what should my targeting actually look like? I'd also like to know what KPIs to track and the realistic CPL benchmarks at month 1 / 3 / 6.",
+      "files": [],
+      "assertions": [
+        {"name": "recommends_3_campaign_consolidated_structure", "check": "regex_ci", "pattern": "\\b3\\s*campaigns?\\b|three\\s*campaigns|3-campaign|3\\s*consolidated"},
+        {"name": "specifies_15_to_25_ads_per_ad_set", "check": "regex_ci", "pattern": "(?:15|20)\\s*[-–to]+\\s*(?:20|25)|20[-–]?25\\s*ads"},
+        {"name": "recommends_advantage_plus_audience", "check": "regex_ci", "pattern": "advantage\\+\\s*audience|advantage\\s*plus\\s*audience"},
+        {"name": "splits_cpl_targets_cold_vs_retargeting", "check": "regex_count", "pattern": "(?im)cold|retargeting|prospect", "min": 4},
+        {"name": "mentions_cost_per_closed_install_or_job", "check": "regex_ci", "pattern": "cost\\s*per\\s*closed\\s*(?:install|job)"},
+        {"name": "mentions_mer", "check": "regex", "pattern": "\\bMER\\b|Marketing\\s*Efficiency\\s*Ratio"},
+        {"name": "mentions_capi_or_conversions_api", "check": "regex_ci", "pattern": "\\bCAPI\\b|conversions\\s*api"},
+        {"name": "mentions_offline_conversion_upload", "check": "regex_ci", "pattern": "offline\\s*conversion"},
+        {"name": "covers_bidding_progression", "check": "regex_count", "pattern": "(?im)lowest\\s*cost|cost\\s*cap|tcpa|troas|target\\s*(?:cpa|roas)", "min": 2},
+        {"name": "mentions_hook_rate_or_hold_rate", "check": "regex_ci", "pattern": "hook\\s*rate|hold\\s*rate"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "andromeda-account-audit",
+      "prompt": "Audit my current Meta Ads account for problems. Here's what I have running: 5 campaigns (Emergency, AC Repair, Install, Maintenance, Commercial), each with 3 ad sets split by audience type, 4-5 ads per ad set. Frequency caps set to 3.5 across the board. Lookalike audience seeded from 200 customer rows. CPL is rising and I'm not sure why. Tell me what's wrong and prioritize the fixes.",
+      "files": [],
+      "assertions": [
+        {"name": "flags_15_ad_set_fragmentation", "check": "regex_ci", "pattern": "15\\s*ad\\s*sets?|fragment|consolidat"},
+        {"name": "flags_creative_starvation", "check": "regex_ci", "pattern": "(?:4|4-5|five|4\\s*to\\s*5|too\\s*few|insufficient|starv|under\\s*\\d+\\s*ads|below.*minimum)"},
+        {"name": "flags_200_row_lal_seed", "check": "regex_ci", "pattern": "200|seed.*(?:too\\s*small|insufficient|low|noise)|lal.*(?:too\\s*small|insufficient|low|noise|retire|kill|drop)"},
+        {"name": "flags_frequency_cap_problem", "check": "regex_ci", "pattern": "frequency\\s*(?:cap)?\\s*(?:3\\.5|too\\s*(?:loose|high)|tighten|lower|reduce|3\\.0|split)"},
+        {"name": "recommends_capi_verification", "check": "regex_ci", "pattern": "\\bCAPI\\b|conversions\\s*api"},
+        {"name": "recommends_offline_conversion_uploads", "check": "regex_ci", "pattern": "offline\\s*conversion"},
+        {"name": "uses_priority_queue", "check": "regex_ci", "pattern": "P0|P1|P2|priorit(?:y|ize)|critical|high|medium"},
+        {"name": "mentions_andromeda_or_entity_id", "check": "regex_ci", "pattern": "andromeda|entity\\s*id"},
+        {"name": "recommends_advantage_plus_or_lal_action", "check": "regex_ci", "pattern": "advantage\\+|advantage\\s*plus|retir(?:e|ing).*lal|kill.*lal|drop.*lal|pause.*lal|seed.*lal"}
+      ]
+    }
+  ]
+}

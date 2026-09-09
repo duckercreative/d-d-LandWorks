@@ -1,0 +1,77 @@
+{
+  "eval_id": 1,
+  "eval_name": "landing-and-tracking-audit",
+  "prompt": "Audit this ad \u2192 landing page \u2192 conversion tracking flow for the Emergency campaign at 75 Degree AC. Tell me what's broken, the priority order to fix, the expected QS / CPC impact of each, and exact what-to-do steps for the conversion tracking issues.\n\nAd headlines:\n- H1: 'Emergency AC Repair Houston'\n- H2: 'Same-Day Service \u00b7 Call 24/7'\n- H3: 'Licensed Houston HVAC'\n\nLanding page:\n- URL: /emergency-ac-repair/\n- H1: 'Welcome to 75 Degree AC \u2013 Houston's Trusted HVAC Partner'\n- Phone: in footer only, no header phone or sticky button\n- Form: 7 fields (name, email, phone, address, service type, preferred time, message)\n- Trust: no review count visible above the fold\n- LCP on mobile: 4.2s\n\nConversion tracking:\n- Only 'form submission' counted as a conversion\n- No call tracking (CallRail not installed)\n- Attribution model: last-click\n- Click-through window: 90 days\n- Conversion count setting: Every (not One)\n- No Enhanced Conversions for Leads",
+  "assertions": [
+    {
+      "name": "flags_h1_message_match_problem",
+      "check": "regex_ci",
+      "pattern": "h1.*(?:doesn.?t|does\\s*not|fails\\s*to|not).*match|message\\s*match|h1.*welcome"
+    },
+    {
+      "name": "flags_phone_in_footer_only",
+      "check": "regex_ci",
+      "pattern": "phone.*(?:footer|hero|header|sticky|prominent|visible)"
+    },
+    {
+      "name": "flags_form_too_many_fields",
+      "check": "regex_ci",
+      "pattern": "(?:7|seven|too\\s*many).*fields?|form.*(?:friction|long|reduce)"
+    },
+    {
+      "name": "flags_lcp_too_slow",
+      "check": "regex_ci",
+      "pattern": "(?:lcp|page\\s*speed|load).*(?:4\\.2|too\\s*slow|fix|2\\.5)|core\\s*web\\s*vitals"
+    },
+    {
+      "name": "flags_no_call_tracking",
+      "check": "regex_ci",
+      "pattern": "callrail|call\\s*tracking|no\\s*phone\\s*tracking|install\\s*callrail"
+    },
+    {
+      "name": "flags_count_every_setting",
+      "check": "regex_ci",
+      "pattern": "count.*one|count.*every|count\\s*setting|conversion\\s*count"
+    },
+    {
+      "name": "flags_90_day_window_too_long",
+      "check": "regex_ci",
+      "pattern": "90\\s*day|click[\\s-]*through\\s*window|attribution\\s*window|30\\s*day"
+    },
+    {
+      "name": "recommends_enhanced_conversions",
+      "check": "regex_ci",
+      "pattern": "enhanced\\s*conversions|enhanced.*leads"
+    },
+    {
+      "name": "recommends_data_driven_attribution",
+      "check": "regex_ci",
+      "pattern": "data[-\\s]*driven|attribution\\s*model"
+    },
+    {
+      "name": "produces_priority_order",
+      "check": "regex_ci",
+      "pattern": "priority|p0|p1|p2|first|step\\s*1|order|critical"
+    },
+    {
+      "name": "names_qs_or_cpc_impact",
+      "check": "regex_ci",
+      "pattern": "(?:quality\\s*score|qs).*(?:improve|drop|impact|lift)|cpc\\s*(?:reduction|drop|down|save)|landing\\s*page\\s*experience"
+    },
+    {
+      "name": "flags_review_count_missing",
+      "check": "regex_ci",
+      "pattern": "review\\s*count|trust\\s*signal|aggregaterating|five.star"
+    },
+    {
+      "name": "addresses_minimum_call_duration",
+      "check": "regex_ci",
+      "pattern": "60\\s*sec|minimum\\s*call|call\\s*duration"
+    },
+    {
+      "name": "specific_h1_rewrite_or_recommendation",
+      "check": "regex_ci",
+      "pattern": "(?:rewrite|change|update).*h1|h1.*(?:should|recommend|change\\s*to)|emergency\\s*ac\\s*repair\\s*houston"
+    }
+  ]
+}

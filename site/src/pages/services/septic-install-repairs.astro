@@ -1,0 +1,401 @@
+---
+/*
+  Built from the full deep-research → content-brief → content-create →
+  humanizer pipeline output (07-landing-pages/content/septic-content.md).
+  Promoted from the /services/septic-test draft after review.
+
+  OPEN ITEM carried from the content file: David's exact DEQ credential type/
+  number is unconfirmed. Everything below stays at the "DEQ Certified" claim
+  level already shipped on the homepage — it does not assert which license
+  category (Installer / Pumper / Combined) or certification (Installer /
+  Maintenance Provider) David holds. Confirm before treating this as final.
+  Also flagged: oregon-septic-basics.astro currently overstates the home-sale
+  inspection requirement versus this page's more accurate ORS 105.465 framing
+  — that resource page needs a matching correction.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import Gallery from '../../components/Gallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+
+const systemTypes = [
+  { type: 'Conventional (gravity-fed)', cost: '$3,000–$10,000', when: "Oregon's baseline system, used where soil, water table, and lot size support a standard gravity-fed design" },
+  { type: 'Sand filter (intermittent)', cost: '$7,000–$18,000', when: 'Used where soil conditions call for extra filtration before the drainfield' },
+  { type: 'Sand filter (recirculating)', cost: '$10,000–$25,000+', when: 'A more complex sand-filter variant for more challenging site conditions' },
+  { type: 'Aerobic treatment unit (ATU)', cost: '$10,000–$20,000+ w/ service contract', when: "Required where a conventional or sand-filter system won't meet site conditions" },
+];
+
+const costRows = [
+  { service: 'Conventional system installation', range: '$3,000–$10,000' },
+  { service: 'Alternative treatment system installation', range: '$12,000–$30,000+' },
+  { service: 'Tank repair', range: '~$600–$3,000 (avg. ~$1,828)' },
+  { service: 'Leach field / drainfield repair', range: '$2,000–$20,000' },
+];
+
+const signs = [
+  'Slow drains throughout the house, not just at one fixture',
+  'Soggy, spongy, or unusually green patches over the drainfield',
+  'Sewage odor near the tank or drainfield',
+  'Gurgling sounds from drains or toilets',
+  'Standing water or a sewage backup inside the house',
+  'A black, slimy substance surfacing near the tank or drainfield, a more advanced sign worth addressing without delay',
+];
+
+const permitSteps = [
+  { step: '1', title: 'Site evaluation', detail: "Lane County's Subsurface Sanitation Program evaluates the property's soil and water table, typically through test pits." },
+  { step: '2', title: 'Septic permit application', detail: 'Once the site evaluation is approved, a septic permit application goes in, commonly alongside a building permit.' },
+  { step: '3', title: 'Planning clearance', detail: "The application clears Lane County's planning review before final permits are issued." },
+  { step: '4', title: 'Construction', detail: 'Once permits are issued, installation begins. Physical construction typically takes a matter of days.' },
+];
+
+const faqs = [
+  { question: 'What’s the difference between a conventional and an alternative (ATT) septic system, and how do I know which one I need?', answer: 'A conventional (gravity-fed) system is Oregon’s baseline and the lower-cost option. An alternative treatment system (sand filter, aerobic treatment unit) is required where soil, water table, slope, or lot size don’t support a conventional design. Which one a property needs is decided by the site evaluation’s soil and water-table findings, not preference.' },
+  { question: 'Does Lane County or Oregon DEQ directly issue my septic permit?', answer: 'Lane County administers septic permitting locally, as an authorized agent of Oregon DEQ. DEQ directly manages permitting in only three Oregon counties (Curry, Jackson, Josephine); Lane County is one of the other 33 counties handling it locally through its Subsurface Sanitation Program.' },
+  { question: 'Should I repair or replace my failing septic system?', answer: 'If repairing costs more than roughly half of a full replacement, replacement is usually the smarter long-term call. That’s a calm, real decision based on the actual numbers for your system, not an automatic push toward the bigger job.' },
+  { question: 'What are the signs my septic system or drainfield is failing?', answer: 'Slow drains throughout the house, soggy or unusually green patches over the drainfield, sewage odor near the tank or drainfield, and gurgling drains are the core symptoms. Standing sewage or a black, slimy substance on the ground is a more advanced sign worth addressing without delay.' },
+  { question: 'How much does septic installation or repair typically cost in Lane County?', answer: 'Roughly $3,000–$10,000 for a conventional system, $12,000–$30,000+ for an alternative system, plus tank repair (averaging around $1,828) and leach field repair ($2,000–$20,000). These are general ranges, not quotes, a site evaluation determines the real number for a specific property.' },
+  { question: 'How often should I have my septic tank pumped?', answer: 'Oregon DEQ recommends roughly every 3–5 years depending on household size and tank capacity, or inspecting every 5–7 years and pumping once solids exceed about 40% of tank volume. D&D Land Works handles installation and repair, not routine pumping, so a pumping-specific need may call for a separate provider.' },
+  { question: 'Do I need a septic inspection before selling my house in Oregon?', answer: 'Oregon doesn’t require a septic-specific inspection by state law before a home sale, but sellers must disclose known septic problems under Oregon’s Seller’s Property Disclosure Statement law, and most lenders and buyers ask for an independent inspection anyway before closing.' },
+  { question: 'Can I build, pave, or grade over my drainfield?', answer: 'No. Once a drainfield location is proposed or approved through the site evaluation, it can’t be cut, filled, paved, or otherwise disturbed without risking the county’s septic approval, which can mean a second round of test pits, added cost, and real delay.' },
+  { question: 'What’s the difference between a general contractor’s CCB license and DEQ septic certification?', answer: 'They’re separate credentials. Oregon’s CCB license covers general contracting and excavation; DEQ certification is the separate state credential specifically required to legally install or repair a septic system. D&D Land Works holds both.' },
+  { question: 'How do I verify a septic contractor is actually DEQ licensed?', answer: 'Search Oregon DEQ’s own Sewage Disposal Service business license search tool, the same kind of public, self-checkable record as the CCB license lookup, rather than taking a contractor’s word for it.' },
+];
+
+const related = [
+  { title: 'Site Preparation', description: 'How D&D sequences grading and clearing around a drainfield location.', href: '/services/site-preparation' },
+  { title: 'Trenching & Backfill', description: 'Opening trenches for utility or drainage work, then backfilling and compacting.', href: '/services/trenching-backfill' },
+  { title: 'Utility Excavation', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/services/utility-excavation' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/services/septic-install-repairs/#service',
+      name: 'Septic Installation and Repair',
+      serviceType: 'Septic Installation and Repair',
+      description: 'D&D Land Works provides DEQ-certified septic system installation and repair throughout Eugene, Springfield, and Lane County, Oregon, as part of a full-service excavation company licensed and bonded under Oregon CCB #261742.',
+      url: 'https://www.ddlandworks.com/services/septic-install-repairs/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Septic Install & Repairs', item: 'https://www.ddlandworks.com/services/septic-install-repairs/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+	title="Septic Install & Repair in Eugene & Lane County, OR | D&D Land Works"
+	description="DEQ-certified septic installation & repair in Eugene, Springfield & Lane County, OR. Licensed, bonded, free estimates: 541-401-8726."
+>
+	<Hero
+		eyebrow="DEQ Certified"
+		headline="Septic Install & Repair in Eugene, Springfield & Lane County, Oregon"
+		subheadline="Septic work requires a separate, state-issued DEQ credential beyond general contracting licensure. D&D Land Works holds both: Oregon CCB #261742 and DEQ certification for septic work specifically."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About + AI citation block combined -->
+	<AboutSection
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		eyebrow="Septic Install & Repair in Lane County, OR"
+		headlineHtml="Professional <span class='text-brand-blue'>Septic Install &amp; Repair</span> in Eugene, Springfield &amp; Lane County"
+		descriptionHtml="<p>D&amp;D Land Works provides DEQ-certified septic system installation and repair throughout Eugene, Springfield, and Lane County, Oregon, as part of a full-service excavation company licensed and bonded under Oregon CCB #261742. In Oregon, general contracting authority (CCB) and septic system authority (Oregon DEQ certification, under Oregon Administrative Rules Chapter 340, Division 71) are separate credentials, and D&amp;D holds both.</p><p>Oregon septic systems fall into two broad categories: conventional (gravity-fed) systems, typically the lower-cost option where soil and site conditions allow, and DEQ-approved alternative treatment technologies, required on sites with more challenging soil, water table, or lot conditions. D&amp;D Land Works handles both installation and repair, though not routine pumping. Free estimates are available.</p>"
+	/>
+	<!-- Why DEQ matters -->
+	<PhotoContentBlock
+		eyebrow="Why DEQ Certification Matters"
+		headline="Why DEQ Certification Matters for Septic Work"
+		image="/hero-bg-1.webp"
+		imageAlt="Septic system excavation site in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="OAR 340-071"
+		badgeLabel="Governs All Septic Work in Oregon"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>&ldquo;DEQ Certified&rdquo; means D&amp;D Land Works holds an Oregon Department of Environmental Quality credential required to legally construct, install, or repair a septic system in this state. Septic work is governed statewide by Oregon Administrative Rules Chapter 340, Division 71, covering permitting, site evaluation, design and construction standards, and the certification required to do the work at all.</p><p>Without a DEQ credential, septic construction or repair isn&rsquo;t legal, regardless of a contractor&rsquo;s general excavation experience or equipment. D&amp;D Land Works holds this certification and can point you to the state&rsquo;s own verification tool rather than asking you to take that on faith.</p>"
+	/>
+	<!-- CCB vs DEQ -->
+	<PhotoContentBlock
+		eyebrow="CCB vs. DEQ"
+		headline="What's the Difference Between a CCB License and DEQ Certification?"
+		image="/hero-bg-2.webp"
+		imageAlt="Septic tank installation in progress in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="2 Agencies"
+		badgeLabel="CCB (Contracting) + DEQ (Septic)"
+		ctaLabel="Verify Our DEQ License"
+		ctaHref="https://www.oregon.gov/deq/residential/pages/onsite-search.aspx"
+		bodyHtml="<p>They&rsquo;re separate credentials, issued and enforced by two different state agencies. Oregon&rsquo;s Construction Contractors Board (CCB) license covers general contracting and excavation authority. That&rsquo;s the license D&amp;D Land Works holds as CCB #261742.</p><p>Septic work requires a separate credential from Oregon DEQ. D&amp;D Land Works holds DEQ certification, which qualifies it to install and repair septic systems under Oregon&rsquo;s onsite wastewater rules. You can verify any Oregon septic contractor&rsquo;s status directly through <a href='https://www.oregon.gov/deq/residential/pages/onsite-search.aspx' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>DEQ&rsquo;s own business license search</a>, the same kind of public record as the CCB lookup.</p>"
+	/>
+	<!-- Conventional vs alternative -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Conventional vs. Alternative Septic Systems: What&rsquo;s the Real Difference?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				A conventional septic system and an alternative treatment system aren&rsquo;t different price tiers of the same product: they&rsquo;re different technologies required by different site conditions, decided by the site evaluation&rsquo;s soil and water-table findings.
+			</p>
+			<div class="mt-8 overflow-x-auto">
+				<table class="w-full text-sm border-collapse">
+					<thead>
+						<tr class="border-b border-slate-300 text-left">
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">System Type</th>
+							<th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Cost</th>
+							<th class="py-2 font-display font-bold uppercase tracking-wide text-ink">When It&rsquo;s Required</th>
+						</tr>
+					</thead>
+					<tbody>
+						{systemTypes.map((s) => (
+							<tr class="border-b border-slate-200">
+								<td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{s.type}</td>
+								<td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{s.cost}</td>
+								<td class="py-3 text-slate-600">{s.when}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<!-- Cost -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-4xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				How Much Does Septic Installation or Repair Cost in Lane County?
+			</h2>
+			<div class="mt-8 grid gap-4 sm:grid-cols-2">
+				{costRows.map((row) => (
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{row.service}</p>
+						<p class="mt-2 text-brand-blue font-semibold">{row.range}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-6 text-sm text-slate-600 text-center max-w-2xl mx-auto">
+				General estimates, not quotes. A septic site evaluation is a separate, real Lane County government fee, confirm current fees directly with Lane County&rsquo;s Subsurface Sanitation Program.
+			</p>
+			<div class="mt-6 text-center">
+				<a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+			</div>
+		</div>
+	</section>
+	<!-- Signs of failure -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Is My Septic System Failing? Signs to Watch For
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				None of these signs automatically mean a full replacement. See below for how to think through repair versus replacement calmly.
+			</p>
+			<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				{signs.map((s) => (
+					<div class="card flex items-start gap-3">
+						<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+							</svg>
+						</span>
+						<p class="text-sm text-slate-600">{s}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	<!-- Repair vs replace -->
+	<PhotoContentBlock
+		eyebrow="Repair or Replace"
+		headline="Should You Repair or Replace a Failing System?"
+		image="/hero-bg-3.webp"
+		imageAlt="Septic system repair work in progress in Lane County, Oregon"
+		imageSide="left"
+		badgeValue="50% Rule"
+		badgeLabel="Repair Cost vs. Replacement Threshold"
+		ctaLabel="We'll Walk It With You, No Pressure"
+		ctaHref="/contact"
+		bodyHtml="<p>The industry rule of thumb: if repairing a failing system would cost more than roughly half of a full replacement, replacement is usually the more sensible long-term call. That&rsquo;s a real, calculable comparison, not an automatic push toward the bigger job. A few factors that tend to point toward one side or the other: the age of the system, whether it&rsquo;s a tank-side repair versus drainfield failure, and whether the problem is isolated or system-wide.</p><p>D&amp;D Land Works will walk through where your system falls on that line, based on what the diagnosis actually shows.</p>"
+	/>
+	<!-- Permit process -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				Does Lane County or Oregon DEQ Issue My Septic Permit?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				Lane County administers septic permitting locally, as an authorized agent of Oregon DEQ. DEQ directly manages septic permitting itself in only three Oregon counties: Curry, Jackson, and Josephine. Lane County is one of the other 33 counties handling it locally, through its own Subsurface Sanitation Program.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{permitSteps.map((item) => (
+					<div class="card">
+						<span class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue font-display font-bold text-white">
+							{item.step}
+						</span>
+						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-ink">{item.title}</p>
+						<p class="mt-2 text-sm text-slate-600">{item.detail}</p>
+					</div>
+				))}
+			</div>
+			<p class="mt-8 text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto text-center">
+				One sequencing detail worth knowing: once a drainfield location is proposed or approved through the site evaluation, it can&rsquo;t be cut, filled, paved, or otherwise disturbed. See <a href="/services/site-preparation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">site preparation</a> for how D&amp;D sequences grading and clearing work around that rule.
+			</p>
+		</div>
+	</section>
+	<!-- Inspection myth + pumping — each answer gets its own photo block, alternating sides -->
+	<PhotoContentBlock
+		eyebrow="Home Sale Inspections"
+		headline="Do I Need a Septic Inspection to Sell My House in Oregon?"
+		image="/hero-bg-4.webp"
+		imageAlt="Septic system near a home in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="ORS 105.465"
+		badgeLabel="Seller Disclosure, Not a State Inspection Mandate"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Oregon doesn&rsquo;t require a septic-specific inspection by state law before you sell your home. What Oregon law does require is a Seller&rsquo;s Property Disclosure Statement under ORS 105.465, which covers known material defects, including a septic problem the seller actually knows about. The legal standard is actual knowledge, not an obligation to go investigate one.</p><p>In practice, most lenders and buyers ask for an independent septic inspection anyway, and a sale agreement commonly includes an On-Site Sewage Addendum as standard practice. That&rsquo;s a real, common part of most transactions, but it&rsquo;s a transactional practice, not a state legal mandate.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Septic Pumping"
+		headline="How Often Should You Pump Your Septic Tank?"
+		image="/hero-bg-1.webp"
+		imageAlt="Septic tank access lid in a Lane County yard"
+		imageSide="left"
+		badgeValue="3–5 yrs"
+		badgeLabel="Recommended Pumping Interval"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>Oregon DEQ publishes two ways to think about it: on a fixed 3&ndash;5 year schedule adjusted for household size and tank capacity, or condition-based, inspecting every 5&ndash;7 years and pumping once solids reach roughly 40% of tank volume.</p><p>D&amp;D Land Works handles septic installation and repair, not routine pumping. If a pumping visit is what you need, a licensed pumper is the right call for that specific job.</p>"
+	/>
+	<PhotoContentBlock
+		eyebrow="Septic Install & Repair in Lane County, OR"
+		headline="Why Do Lane County Homeowners Trust D&D Land Works for Septic Work?"
+		image="/hero-bg-2.webp"
+		imageAlt="D&D Land Works septic installation site in Lane County, Oregon"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair &mdash; credentials you can verify yourself at the CCB&rsquo;s and DEQ&rsquo;s own public license lookups before you ever pick up the phone. Every septic job starts with a real site evaluation, not a guess.</p><p>David Deggelman scopes every job in person and walks you through repair-versus-replace decisions based on what the diagnosis actually shows, not a push toward the bigger job. If your septic system is failing or you&rsquo;re planning a new install anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs
+		descriptionHtml="Every septic job starts with a real site evaluation, not a guess, and every estimate is walked through in person so you know whether the honest call is repair or replacement."
+	/>
+	<!-- Service areas -->
+	<section class="bg-slate-50 border-b border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-16">
+			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+				What Areas of Lane County Does D&amp;D Land Works Serve?
+			</h2>
+			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+				D&amp;D Land Works is <strong class="text-brand-blue">based near Eugene, Oregon</strong>, and serves homeowners, builders, and developers across Lane County. From Eugene and Springfield to Cottage Grove, Junction City, Creswell, and Veneta, we handle licensed and bonded excavation, grading, and DEQ certified septic work.
+			</p>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+					<iframe
+						title="D&D Land Works service area map, Lane County, Oregon"
+						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+				<div class="flex flex-col gap-6">
+					<div class="card">
+						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+							Our Service Area Includes
+						</p>
+						<p class="leading-relaxed">
+							{anchorAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+									{i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+							<span class="text-slate-400"> &middot; </span>
+							{otherAreas.map((area, i) => (
+								<>
+									<a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+									{i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+								</>
+							))}
+						</p>
+					</div>
+					<p class="text-slate-700 leading-relaxed">
+						David walks every site in person before quoting, so pricing accounts for the actual
+						soil, slope, and access on your property, not a regional average. Licensed and bonded
+						under CCB #261742, DEQ certified for septic install and repair, with equipment and
+						crew already local to Lane County.
+					</p>
+					<a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+				</div>
+			</div>
+			<p class="mt-6 text-center text-sm text-slate-600">
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+			</p>
+		</div>
+	</section>
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<FAQ heading="Septic Install &amp; Repair — Common Questions" items={faqs} />
+	<section class="mx-auto max-w-6xl px-4 pb-16">
+		<h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
+			Related Services
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{related.map((service) => <ServiceCard {...service} />)}
+		</div>
+	</section>
+	<CTABlock
+		headline="Get Your Septic System Checked"
+		subheadline="Free estimate for septic install or repair anywhere in Lane County."
+	/>
+</BaseLayout>
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

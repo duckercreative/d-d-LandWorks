@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "run_config": "with_skill",
+  "expectations": [
+    {"text": "Exactly 3 post draft files produced", "passed": true, "evidence": "3 .md files + 1 new_templates.json"},
+    {"text": "Cadence: Mon=What's New, Wed=Offer, Fri=What's New or Event", "passed": true, "evidence": "Mon=What's New (Cypress refrigerant), Wed=Offer ($89 tune-up), Fri=What's New (Spring duct)"},
+    {"text": "No geo target repeated across the 3 posts", "passed": true, "evidence": "Cypress → Houston → Spring — 3 distinct geos"},
+    {"text": "No primary keyword repeated", "passed": true, "evidence": "ac repair cypress tx / ac tune up houston / hvac maintenance spring tx"},
+    {"text": "All templates NOT in queue.json.posted within last 40 days", "passed": true, "evidence": "pre_summer_refrigerant ✓, NEW pre_summer_tune_up_offer_april ✓, pre_summer_duct_check ✓ — pre_summer_tune_up correctly excluded"},
+    {"text": "Research notes block shown ONCE at top per batch-mode rule", "passed": false, "evidence": "Each post has its own research notes appendix rather than a single shared block. Functional but not strictly matching the batch-mode efficiency instruction."},
+    {"text": "Each post body within 1200-1450 chars", "passed": true, "evidence": "~1320, ~1290, ~1330 — all within window"},
+    {"text": "Phone number does NOT appear in any post body", "passed": true, "evidence": "All 3 posts clean"},
+    {"text": "Each post has first-line keyword + Houston/suburb", "passed": true, "evidence": "Cypress ✓, Houston ✓, Spring ✓"},
+    {"text": "Each post has valid CTA URL pointing to 75degreeac.com", "passed": true, "evidence": "/ac-repair-cypress-tx/ (flagged for verify), /ac-tune-up-houston-tx/, /services/air-quality/"}
+  ]
+}

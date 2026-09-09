@@ -1,0 +1,12 @@
+{
+  "_instructions": "Append this template to 04-gmb/posts/templates/post_templates.json under seasonal.pre_summer. Do NOT modify the real file from this eval run.",
+  "_season_key": "seasonal.pre_summer",
+  "template": {
+    "id": "pre_summer_cypress_first_load",
+    "title": "AC Repair Cypress TX — First-Load Warning Signs This Week",
+    "summary": "AC repair in Cypress, TX — if you're anywhere from Fairfield to Bridgeland, your system is getting its first real workout of 2026. Houston just hit 86°F and most Cypress systems haven't run above a light load since October. That first-load stretch is where refrigerant leaks, weakened capacitors, pollen-clogged drains, and install-era defects in newer Marvida and Bridgeland homes show themselves — before June heat buries them. 75 Degree AC has been the Cypress HVAC contractor locals call since 2016. Licensed TACLA, fully insured, same-day diagnostics on every major brand.",
+    "call_to_action": "CALL",
+    "cta_url": "https://75degreeac.com/",
+    "photo_hint": "Technician checking outdoor condenser at a Cypress TX home — suburban two-story backdrop"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "eval_id": 1,
+  "eval_name": "summer-spike-audit",
+  "prompt": "Help me audit my Google Ads account for 75 Degree AC (Houston HVAC). It's June, CPL has gone from $58 in May to $112 this week, ads are pausing by 2pm because budget exhausts. Currently running: 1 'AC Repair' campaign with all keywords mixed (emergency + repair + maintenance + commercial), Maximize Clicks bidding, $200/day budget, Search + Display Network both ON, location set to 'people interested in Houston'. What's wrong, what's the priority fix order, and what should I expect to see after the fixes?",
+  "assertions": [
+    {
+      "name": "flags_max_clicks_as_problem",
+      "check": "regex_ci",
+      "pattern": "max(?:imi(?:s|z)e)?\\s*clicks"
+    },
+    {
+      "name": "flags_mixed_intent_campaign",
+      "check": "regex_ci",
+      "pattern": "mix(?:ed)?\\s*(?:intent|keywords|emergency|maintenance)|separate\\s*campaigns?|split.*campaign|too\\s*many\\s*intents?"
+    },
+    {
+      "name": "flags_display_network_on_search",
+      "check": "regex_ci",
+      "pattern": "display\\s*(?:network|on|turn\\s*off|disable|off)"
+    },
+    {
+      "name": "flags_location_interest_setting",
+      "check": "regex_ci",
+      "pattern": "(?:people\\s*interested|interest|searching\\s*for).*(?:wrong|fix|change|presence)|presence|presence.*regularly"
+    },
+    {
+      "name": "addresses_summer_seasonality",
+      "check": "regex_ci",
+      "pattern": "season|summer|peak|june|july|august|heat\\s*wave"
+    },
+    {
+      "name": "addresses_budget_exhausting",
+      "check": "regex_ci",
+      "pattern": "budget.*(?:exhaust|increase|raise|cap|run\\s*out|burn)|increase\\s*(?:daily\\s*)?budget"
+    },
+    {
+      "name": "produces_priority_fix_order",
+      "check": "regex_ci",
+      "pattern": "(?:priority|p0|p1|p2|first|order|step\\s*1)"
+    },
+    {
+      "name": "warns_against_lowering_bids",
+      "check": "regex_ci",
+      "pattern": "(?:don.?t|never|not)\\s*(?:lower|reduce|decrease)\\s*bids?|lower\\s*bids?.*(?:bad|wrong|don.?t)"
+    },
+    {
+      "name": "recommends_split_into_5_campaigns",
+      "check": "regex_ci",
+      "pattern": "5\\s*campaigns?|five\\s*campaigns?|emergency.*general.*install|separate.*emergency"
+    },
+    {
+      "name": "recommends_max_conversions_or_tcpa",
+      "check": "regex_ci",
+      "pattern": "maximi(?:s|z)e\\s*conversions?|tcpa|target\\s*cpa"
+    },
+    {
+      "name": "addresses_search_partners",
+      "check": "regex_ci",
+      "pattern": "search\\s*partners?"
+    },
+    {
+      "name": "names_specific_outcome_or_metric",
+      "check": "regex_ci",
+      "pattern": "(?:expect|after|once).*(?:cpl|cpc|impression\\s*share|conversion|cvr|ctr|qs|quality\\s*score)"
+    },
+    {
+      "name": "mentions_burn_protocol_or_pacing",
+      "check": "regex_ci",
+      "pattern": "burn\\s*protocol|pacing|exhaust|noon|2pm|peak\\s*hours"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "i need 15 headlines and 4 descriptions for the maintenance campaign at 75 degree ac", "should_trigger": true},
+  {"query": "should i pin 'emergency ac repair houston' to position 1 on the emergency RSA?", "should_trigger": true},
+  {"query": "my ad strength is showing 'average' on all 3 RSAs — how do i get to good or excellent?", "should_trigger": true},
+  {"query": "what sitelinks should i set up for the install campaign at 75 degree ac", "should_trigger": true},
+  {"query": "give me 8-10 callout extensions for the emergency hvac campaign", "should_trigger": true},
+  {"query": "callrail isn't firing conversions in google ads — what's broken in my GTM setup", "should_trigger": true},
+  {"query": "what's enhanced conversions for leads and do i need to set it up for HVAC?", "should_trigger": true},
+  {"query": "what's the right conversion value to put on a phone call from a paid search lead?", "should_trigger": true},
+  {"query": "audit my emergency RSA — is it any good?", "should_trigger": true},
+  {"query": "should call duration be 30 sec or 60 sec for the conversion to fire?", "should_trigger": true},
+  {"query": "should we add a commercial campaign or focus the budget on emergency", "should_trigger": false},
+  {"query": "what's the right way to scale the budget from $5k to $10k", "should_trigger": false},
+  {"query": "what negatives do i need at account level", "should_trigger": false},
+  {"query": "build a keyword list for emergency", "should_trigger": false},
+  {"query": "should i bid on competitor brand keywords", "should_trigger": false},
+  {"query": "ad copy for facebook advantage+ campaign for HVAC install", "should_trigger": false},
+  {"query": "write a blog post about ac maintenance tips", "should_trigger": false},
+  {"query": "how do i respond to a 5-star review", "should_trigger": false},
+  {"query": "GBP description rewrite for 75 degree ac", "should_trigger": false},
+  {"query": "send me an example email signup form for our newsletter", "should_trigger": false}
+]

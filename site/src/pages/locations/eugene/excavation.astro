@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Excavation & Site Prep in Eugene, OR | D&D Land Works"
+	description="Excavation, earthmoving, and site prep in Eugene, OR: South Hills, River Road, and infill lots. Licensed and bonded, CCB #261742. Free estimates."
+>
+	<Hero
+		eyebrow="Eugene, Oregon"
+		headline="Excavation & Site Prep in Eugene, OR"
+		subheadline="Eugene's terrain shifts more than people expect inside the same city limits: rolling, wooded ground in the South Hills, flatter parcels out toward River Road and the airport, and older neighborhoods with drainage or driveways that haven't aged well."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Excavation & Earthmoving"
+		ctaHref="/services/excavation"
+		eyebrow="Eugene, Oregon"
+		headlineHtml="Local Crew, <span class='text-brand-blue'>Local Terrain</span> in Eugene"
+		descriptionHtml="<p>Cut-and-fill work, rock removal, and access road grading come up on almost every job, but how much of each depends on where in Eugene the site sits. A South Hills lot usually means more cut into a slope and more attention to where the spoil goes; a River Road parcel is more about managing a higher water table and softer ground. Being based in Eugene means less windshield time between the shop and the job, and a faster look before an estimate goes out.</p><p>Earthmoving, backfill, and erosion control are broken down in more depth on the <a href='/services/excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>excavation</a> page. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/eugene' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Eugene</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Eugene, Oregon"
+		headline="Why Do Eugene Homeowners Trust D&D Land Works for Excavation?"
+		image="/hero-bg-1.webp"
+		imageAlt="D&D Land Works excavator on a job site in Eugene, Oregon"
+		imageSide="left"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Being based in Eugene means the crew already knows the terrain, from South Hills slopes to River Road water tables.</p><p>David Deggelman scopes every job in person before quoting. If you need excavation or site prep anywhere in Eugene, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get a Free Estimate in Eugene"
+		subheadline="Local crew, local equipment, no dispatch delay from out of town."
+	/>
+</BaseLayout>

@@ -1,0 +1,75 @@
+{
+  "eval_id": 1,
+  "eval_name": "search-terms-triage",
+  "config": "with_skill",
+  "expectations": [
+    {
+      "text": "classifies_all_13_terms",
+      "passed": true,
+      "evidence": "found 63 (min 10)"
+    },
+    {
+      "text": "youtube_term_classified_as_negative",
+      "passed": true,
+      "evidence": "how to fix my ac youtube | 6 | 0 | \u2014 | **NEGATIVE \u2014 Account level (shared list)** | Add `youtube`, `how to fix`, `how to` |\n| 4 | 24 hour ac repair katy tx | 12 | 3 | $24 | **ADD as Exact (top perform"
+    },
+    {
+      "text": "richmond_va_classified_as_negative",
+      "passed": true,
+      "evidence": "richmond va | 3 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Add `richmond va`, `virginia`, `va` |\n| 9 | emergency hvac dallas | 5 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `dallas` is on shared li"
+    },
+    {
+      "text": "dallas_classified_as_geo_negative",
+      "passed": true,
+      "evidence": "emergency hvac dallas | 5 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `dallas` is on shared list (it is) |\n| 10 | ac repair school | 2 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `school` is"
+    },
+    {
+      "text": "jobs_classified_as_negative",
+      "passed": true,
+      "evidence": "hvac jobs houston | 4 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `jobs` is on shared list (it is) |\n| 6 | ac not cooling | 22 | 2 | $71 | **ADD as Phrase, AND fix ad group** | C1 / AG2 \u2014 `\"ac no"
+    },
+    {
+      "text": "school_classified_as_negative",
+      "passed": true,
+      "evidence": "ac repair school | 2 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `school` is on shared list (it is) |\n| 11 | ac tune up coupon | 7 | 0 | \u2014 | **NEGATIVE"
+    },
+    {
+      "text": "window_ac_classified_as_negative",
+      "passed": true,
+      "evidence": "window ac repair | 8 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `window ac` is on shared list (it is) |\n| 8 | ac repair richmond va | 3 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Add `richmond va`"
+    },
+    {
+      "text": "katy_term_classified_as_keyword_to_add",
+      "passed": true,
+      "evidence": "24 hour ac repair katy tx | 12 | 3 | $24 | **ADD as Exact (top performer)** | C1 / AG1 \u2014 `[24 hour ac repair katy tx]` |\n| 5 | hvac jobs houston | 4 | 0 | \u2014 | **NEGATIVE \u2014 Account level** | Confirm `j"
+    },
+    {
+      "text": "emergency_houston_already_keyword_or_keep",
+      "passed": true,
+      "evidence": "emergency ac repair houston | 18 | 4 | $32 | **ADD as Exact (already core)** | C1 / AG1 \u2014 `[emergency ac repair houston]` |\n| 2 | ac repair near me | 31 | 3 | $58 | **ADD as Exact"
+    },
+    {
+      "text": "commercial_term_routed_to_campaign_5",
+      "passed": true,
+      "evidence": "commercial ac repair downtown houston | 4 | 1 | $68 | **ADD as Exact in Campaign 5 + Campaign-level neg in C1** | C5 \u2014 `[commercial ac repair downtown houston]`; C1 add `-commercial` |\n| 13 | 75 degre"
+    },
+    {
+      "text": "brand_term_classified_as_keep_or_brand_campaign",
+      "passed": true,
+      "evidence": "75 degree ac houston | 2 | 1 | $14 | **ADD as Exact in Brand Campaign + Account-level neg `[75 degree ac]` in C1** | Brand \u2014 `[75 degree ac houston]`; C1 add brand"
+    },
+    {
+      "text": "specifies_negative_level_account_or_campaign",
+      "passed": true,
+      "evidence": "Account level"
+    },
+    {
+      "text": "explains_rationale_for_decisions",
+      "passed": true,
+      "evidence": "found 20 (min 4)"
+    }
+  ],
+  "passed_count": 13,
+  "total_count": 13,
+  "pass_rate": 1.0
+}

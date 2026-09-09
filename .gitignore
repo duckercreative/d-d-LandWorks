@@ -1,0 +1,188 @@
+# =============================================================================
+#  75 Degree AC — repository ignore rules
+#
+#  Two jobs:
+#    1. Keep every live credential out of git history (git history is forever).
+#    2. Keep the clone small — no build output, no generated media.
+#
+#  Anything ignored here that a teammate genuinely needs is documented in
+#  TEAM-SETUP.md with a matching *.template file committed alongside it.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+#  1. SECRETS  —  never commit. See TEAM-SETUP.md to recreate locally.
+# -----------------------------------------------------------------------------
+
+# Environment files (templates are explicitly allowed further down)
+.env
+.env.*
+*.env
+
+# MCP server config — embeds a WordPress REST app password in a Basic auth header
+.mcp.json
+
+# Google OAuth: GSC / GA4 / GBP / Google Ads
+03-gsc/auth/*.json
+04-gmb/auth/*.json
+05-google-ads/ads-toolkit/auth/*.json
+05-google-ads/ads-toolkit/ads-credentials.json
+**/token*.json
+**/credentials.json
+**/client_secret*.json
+**/ads-credentials.json
+
+# Google Ads API client config — holds client_secret + developer_token + refresh_token
+google-ads.yaml
+**/google-ads.yaml
+
+# Expired / rotated token backups
+**/token*.json.expired-*
+**/*.expired-*
+
+# WordPress SSH + REST credentials
+05-wordpress/auth/wp_config.json
+
+# MCP server runtime cache (holds live tokens)
+05-wordpress/mcp-server/cache/
+
+# Social platform app configs + OAuth tokens
+09-social-media/auth/*.json
+09-social-media/platforms/*/auth/*.json
+
+# Discord webhook / channel / approver IDs
+**/discord_*.json
+
+# Google Drive folder mapping
+**/drive_config.json
+
+# Browser session state — live logged-in cookies (Playwright)
+**/browser_state.json
+**/storage_state.json
+**/auth/snapshots/
+
+# Portal secrets
+portal/secrets/
+
+# Local Claude Code settings (machine-specific, may embed paths/tokens)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Generic key material
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*service-account*.json
+
+# ---- Explicit ALLOW-LIST: templates must survive the rules above ----
+!*.template
+!*.template.json
+!*.template.js
+!*.template.yml
+!.env.template
+!.env.example
+!**/*.template.json
+!**/*.env.template
+!**/*.tmpl
+
+
+# -----------------------------------------------------------------------------
+#  2. DEPENDENCIES & BUILD OUTPUT  —  regenerate with npm install / pip install
+# -----------------------------------------------------------------------------
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+.astro/
+.vercel/
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+
+# -----------------------------------------------------------------------------
+#  3. GENERATED MEDIA  —  excluded to keep the clone fast.
+#     GBP photos are mirrored in Google Drive; ad creatives are regenerated
+#     from their committed manifests + briefs via the KIE AI pipeline.
+# -----------------------------------------------------------------------------
+
+# Raster / video assets
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.avif
+*.svg
+*.mp4
+*.mov
+*.psd
+
+# Bulk media directories (scripts, manifests and data inside are re-allowed below)
+04-gmb/photos/
+09-social-media/photos/
+11-site-images/
+06-meta-ads/creatives/**/*.png
+07-landing-pages/pages/**/*.jpg
+07-landing-pages/pages/**/*.png
+
+# PDF reports (large binary deliverables — share via Drive)
+*.pdf
+
+# ---- Explicit ALLOW-LIST: brand assets + code the pipelines need ----
+!logo.png
+!06-meta-ads/creatives/logo.png
+!07-landing-pages/_assets/**
+!04-gmb/photos/**/*.py
+!04-gmb/photos/**/*.json
+!**/*.template.json
+
+
+# -----------------------------------------------------------------------------
+#  4. LOGS, CACHES, SCRATCH  —  runtime noise, not workflow
+# -----------------------------------------------------------------------------
+04-gmb/logs/
+*.log
+logs/
+.playwright-mcp/
+scratchpad_audit/
+tmp/
+temp/
+.cache/
+
+# Local dev databases
+*.sqlite
+*.sqlite3
+*.db
+portal/data/
+
+# Response-code exports / crawl dumps (regenerate from Screaming Frog / GSC)
+response_codes_*.csv
+
+
+# -----------------------------------------------------------------------------
+#  5. OS / EDITOR CRUFT
+# -----------------------------------------------------------------------------
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-workspace

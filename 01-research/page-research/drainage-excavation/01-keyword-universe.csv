@@ -1,0 +1,138 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+french drain installation eugene or,serp,commercial,decision,y,scheduled,head,high,/drainage-excavation/,P0,Primary page target
+french drain installation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/drainage-excavation/,P0,Full state-name variant
+french drain installation lane county,serp,commercial,decision,y,scheduled,head,high,/drainage-excavation/,P0,County-wide framing
+french drain contractor eugene or,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Contractor-language variant
+french drain installers near me,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Device-located generic
+french drain company springfield oregon,serp,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P1,City variant
+yard drainage trench cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/drainage-excavation/,P0,Task-brief seed term
+drainage trench installation cost,homeguide,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Cost query
+french drain cost per linear foot,homeguide,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Real sourced range available ($10-100/ft)
+french drain cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/drainage-excavation/,P0,Local cost variant
+how much does a french drain cost,angi,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Head cost query
+cost to install french drain around house,serp,commercial,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Foundation-adjacent variant
+dry well installation lane county,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Task-brief seed term
+dry well installation cost,lawnlove,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Real sourced range ($1,165-$4,420)
+dry well cost eugene oregon,serp,commercial,consideration,y,scheduled,long,med,/drainage-excavation/,P1,Local cost variant
+catch basin installation cost,homeguide,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Task-brief seed term
+catch basin installation eugene or,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P1,Local variant
+catch basin drainage yard,autocomplete,informational,awareness,n,browse,mid,low,/drainage-excavation/,P2,Definitional intent
+drainage pipe installation cost per foot,serp,commercial,consideration,n,scheduled,mid,high,/drainage-excavation/,P0,Task-brief seed term
+underground drain pipe installation cost,serp,commercial,consideration,n,scheduled,mid,med,/drainage-excavation/,P1,Synonym variant
+standing water in yard french drain,serp,problem_solution,consideration,n,scheduled,long,med,/drainage-excavation/,P0,Task-brief seed term
+standing water in backyard after rain oregon,serp,problem_solution,consideration,y,scheduled,long,med,/drainage-excavation/,P1,Problem-framed local
+soggy backyard fix,autocomplete,problem_solution,awareness,n,browse,mid,med,/drainage-excavation/,P1,Homeowner-language problem
+yard floods every winter eugene,serp,problem_solution,consideration,y,scheduled,long,med,/drainage-excavation/,P1,Willamette Valley seasonal problem framing
+flooded crawlspace drainage solution,serp,problem_solution,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Foundation-adjacent problem (not code-triggered)
+wet spot in lawn wont dry,autocomplete,problem_solution,awareness,n,browse,mid,low,/drainage-excavation/,P2,Homeowner-language
+water pooling next to foundation,serp,problem_solution,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Foundation-adjacent, cross-links to foundation-excavation
+curtain drain vs french drain,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Task-brief seed term — zero competitor coverage
+what is a curtain drain,autocomplete,informational,awareness,n,browse,mid,low,/drainage-excavation/,P1,Definitional
+french drain vs dry well,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Genuine decision-stage comparison
+french drain vs swale,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Cross-links to grading-leveling's existing table
+dry well vs catch basin,serp,informational,consideration,n,browse,mid,low,/drainage-excavation/,P1,Comparison, low competitor coverage
+does a french drain need a permit,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Task-brief seed term
+do i need a permit for a drainage trench,serp,informational,consideration,y,browse,mid,med,/drainage-excavation/,P0,Task-brief seed term
+french drain permit oregon,serp,informational,consideration,y,browse,mid,med,/drainage-excavation/,P0,Local permit variant
+storm drain connection permit eugene,serp,informational,consideration,y,browse,mid,high,/drainage-excavation/,P0,Real, sourced (EC 6.610) — zero competitor coverage
+can i tie into the city storm drain,autocomplete,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Real, checkable municipal question
+tie french drain into storm drain,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P0,Task-brief seed term
+where does french drain water go,serp,informational,awareness,n,browse,mid,high,/drainage-excavation/,P0,Task-brief seed term — trust/expertise signal
+french drain daylight discharge,serp,informational,awareness,n,browse,mid,med,/drainage-excavation/,P1,Definitional
+how deep does a french drain need to be,serp,informational,awareness,n,browse,mid,high,/drainage-excavation/,P0,Task-brief seed term
+french drain depth requirements,serp,informational,awareness,n,browse,mid,med,/drainage-excavation/,P1,Depth specificity
+how wide does a french drain trench need to be,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P2,Depth/width specificity
+french drain slope requirements,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P1,1% grade fact
+corrugated vs pvc pipe french drain,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P1,Material-specificity gap
+what kind of gravel for french drain,autocomplete,informational,awareness,n,browse,mid,low,/drainage-excavation/,P2,Material detail
+french drain filter fabric necessary,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P2,Material detail — Willamette clay context
+why is my french drain not working,serp,problem_solution,consideration,n,browse,mid,med,/drainage-excavation/,P0,Objection/failure-mode — trust signal opportunity
+french drain moving water to another wet spot,serp,problem_solution,consideration,n,browse,long,med,/drainage-excavation/,P0,Task-brief-named amateur-mistake angle
+french drain clogged with silt,serp,problem_solution,awareness,n,browse,long,low,/drainage-excavation/,P2,Failure mode
+how long does a french drain last,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P1,Longevity/trust
+french drain installation eugene oregon cost,serp,commercial,decision,y,scheduled,long,high,/drainage-excavation/,P0,Combined local + cost
+yard drainage contractor lane county,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Generic local contractor query
+drainage excavation contractor oregon,serp,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Head term matching page name
+drainage contractor near me,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Device-located generic
+underground drainage system installation eugene,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P1,Local variant
+buried drainage pipe eugene oregon,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Local variant matching page's scope language
+drainage solutions for wet yard oregon,serp,problem_solution,consideration,y,browse,long,med,/drainage-excavation/,P1,Problem + local
+culvert installation cost,homeguide,commercial,consideration,n,scheduled,mid,med,/drainage-excavation/,P1,Task-brief-adjacent (live page names culverts)
+culvert installation driveway eugene or,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Local driveway-culvert variant
+driveway washed out drainage fix,autocomplete,problem_solution,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Cross-links to Driveway Repair
+sump pump vs french drain,serp,informational,consideration,n,browse,mid,low,/drainage-excavation/,P2,Adjacent-scope disambiguation
+does d&d land works install sump pumps,brand,informational,awareness,y,browse,long,low,/drainage-excavation/,P3,Brand-specific — flag as open item, do not answer with a fabricated yes
+perimeter drain around house cost,serp,commercial,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Perimeter-drain-specific
+retaining wall drainage pipe installation,serp,commercial,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Retaining-wall-adjacent buried drainage
+retaining wall weep hole drainage,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P2,Related retaining-wall drainage concept
+french drain around foundation vs regular yard drain,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P0,Directly probes the foundation-drain scope boundary
+is a french drain the same as a foundation drain,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P0,Directly probes the scope boundary vs. foundation-excavation
+oregon residential specialty code foundation drain,serp,informational,awareness,y,browse,long,low,/foundation-excavation/,P3,Belongs to foundation-excavation, noted for cross-link only
+pop up drain emitter installation,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P2,Detail-level term
+yard drainage system cost eugene oregon,serp,commercial,decision,y,scheduled,long,high,/drainage-excavation/,P0,Combined local + cost
+lane county drainage permit,autocomplete,informational,consideration,y,browse,mid,med,/drainage-excavation/,P1,Local permit variant
+springfield oregon storm drain permit,serp,informational,consideration,y,browse,mid,med,/drainage-excavation/,P0,Real, sourced (Springfield connection requirement)
+eugene municipal code stormwater connection,serp,informational,awareness,y,browse,long,med,/drainage-excavation/,P0,Real code citation (EC 6.610)
+who can pull a storm drain connection permit oregon,serp,informational,awareness,y,browse,long,med,/drainage-excavation/,P1,Real, checkable fact (property owner or licensed plumber/septic installer only in Eugene)
+does dsl regulate a french drain that drains to a ditch,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P2,DSL Removal-Fill cross-reference
+oregon dsl removal fill permit drainage,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P2,Cross-reference to excavation pack's pond-permitting research
+willamette valley clay soil drainage problems,serp,informational,awareness,y,browse,mid,med,/drainage-excavation/,P1,Reused geo/soil context
+why does my yard stay wet after it stops raining,autocomplete,problem_solution,awareness,n,browse,long,med,/drainage-excavation/,P1,Clay-soil problem framing
+best drainage solution for clay soil,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P1,Soil-specific comparison intent
+excavator for french drain rental vs hire,serp,commercial,consideration,n,browse,long,low,/drainage-excavation/,P2,DIY-vs-hire objection
+diy french drain vs professional installation,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P1,DIY-vs-hire decision content
+french drain installation process steps,serp,informational,awareness,n,browse,mid,med,/drainage-excavation/,P1,Process-transparency content
+how long does french drain installation take,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P1,Timeline
+french drain installation eugene reviews,brand,commercial,decision,y,scheduled,long,low,/drainage-excavation/,P3,Trust-signal query, zero reviews at launch — do not fabricate
+licensed drainage contractor oregon ccb,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Trust/license query
+drainage excavation eugene or,topical_map,commercial,decision,y,scheduled,head,high,/drainage-excavation/,P0,Primary page target per topical map §6.6
+drainage excavation lane county oregon,serp,commercial,decision,y,scheduled,head,high,/drainage-excavation/,P0,County-wide framing
+water management excavation contractor,serp,commercial,decision,n,scheduled,mid,med,/drainage-excavation/,P1,Synonym variant
+commercial stormwater conveyance contractor eugene,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Reused from current live page's commercial framing
+commercial drainage trenching lane county,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Commercial variant
+parking lot drainage installation oregon,serp,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P2,Commercial-scale drainage
+downspout drainage extension underground,serp,commercial,consideration,n,scheduled,mid,med,/drainage-excavation/,P1,Downspout-to-daylight system
+underground downspout drain installation cost,homeguide,commercial,consideration,n,scheduled,mid,med,/drainage-excavation/,P1,Real sourced range ($150-350/downspout)
+gutter drainage extension underground pipe,serp,commercial,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Downspout system variant
+how to fix a yard that doesn't drain,autocomplete,problem_solution,consideration,n,browse,mid,med,/drainage-excavation/,P1,Broad problem query
+best way to drain a wet yard,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P1,Broad decision query
+swale or french drain which do i need,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P0,Task-brief-named decision content, cross-links grading-leveling
+what's the difference between a swale and a drain,autocomplete,informational,awareness,n,browse,mid,med,/drainage-excavation/,P1,Cross-links grading-leveling's existing table
+neighbor water runoff dispute oregon,serp,problem_solution,consideration,y,browse,long,med,/drainage-excavation/,P1,Task-brief-named pain point
+water running onto neighbor's property oregon law,serp,informational,consideration,y,browse,long,med,/drainage-excavation/,P1,Legal-adjacent pain point, general education only
+oregon surface water drainage law neighbors,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P2,General legal-education angle, no legal-advice claims
+regrading didn't fix drainage problem,serp,problem_solution,consideration,n,browse,long,med,/drainage-excavation/,P0,Task-brief-named "previous fix didn't work" angle
+grading not enough for wet yard,serp,problem_solution,consideration,n,browse,long,med,/drainage-excavation/,P1,Same angle, alternate phrasing
+french drain vs regrading yard,serp,informational,consideration,n,browse,mid,med,/drainage-excavation/,P0,Direct decision comparison
+how to tell if you need a french drain or just better grading,serp,informational,consideration,n,browse,long,med,/drainage-excavation/,P0,Task-brief-named decision-from-buyer's-side content
+drainage trench excavation eugene,autocomplete,commercial,decision,y,scheduled,mid,high,/drainage-excavation/,P0,Local head variant
+drainage trenching contractor springfield or,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P1,City variant
+lane county drainage company,autocomplete,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P1,County-wide generic
+cottage grove drainage contractor,serp,commercial,decision,y,scheduled,mid,low,/drainage-excavation/,P2,Tier-2 city variant
+junction city yard drainage,serp,commercial,decision,y,scheduled,mid,low,/drainage-excavation/,P2,Tier-2 city variant
+veneta drainage excavation,serp,commercial,decision,y,scheduled,mid,low,/drainage-excavation/,P2,Tier-2 city variant, rural-lot context
+rural property drainage oregon,serp,commercial,consideration,y,browse,long,med,/drainage-excavation/,P2,Acreage/rural framing
+basement flooding drainage solution oregon,serp,problem_solution,consideration,y,browse,long,med,/drainage-excavation/,P1,Foundation-adjacent, not code-triggered
+crawlspace water intrusion drainage fix,serp,problem_solution,consideration,n,browse,long,med,/drainage-excavation/,P1,Foundation-adjacent, cross-links foundation-excavation
+water table high oregon drainage,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P2,Willamette Valley winter water table context
+winter rain drainage problems oregon,serp,informational,awareness,y,browse,long,med,/drainage-excavation/,P1,Seasonal framing
+best time of year to install french drain oregon,serp,informational,consideration,y,browse,long,med,/drainage-excavation/,P1,Seasonal timing, consistent with sibling pages
+french drain maintenance oregon,serp,informational,awareness,n,browse,mid,low,/drainage-excavation/,P2,Post-service/maintenance content
+how to clean a clogged french drain,autocomplete,informational,awareness,n,browse,mid,low,/drainage-excavation/,P3,DIY maintenance, low commercial value but real search volume
+french drain repair cost,serp,commercial,consideration,n,scheduled,mid,med,/drainage-excavation/,P1,Repair vs. new-install distinction
+existing french drain not draining repair,serp,problem_solution,consideration,n,scheduled,long,med,/drainage-excavation/,P1,Repair-specific query
+drainage easement oregon property,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P3,Legal/property-boundary adjacent, general education only
+drain rock cost per yard oregon,serp,commercial,awareness,y,browse,long,low,/drainage-excavation/,P2,Material cost detail
+3/4 inch drain rock,autocomplete,informational,awareness,n,browse,long,low,/drainage-excavation/,P3,Material specificity
+perforated pipe vs solid pipe drainage,serp,informational,awareness,n,browse,mid,low,/drainage-excavation/,P2,Material education
+dry creek bed drainage landscaping,serp,informational,consideration,n,browse,mid,low,/drainage-excavation/,P2,Adjacent landscape-drainage hybrid (named by M4 Landworks)
+how does a dry well work,autocomplete,informational,awareness,n,browse,mid,med,/drainage-excavation/,P1,Definitional
+dry well percolation test oregon,serp,informational,awareness,y,browse,long,low,/drainage-excavation/,P2,Site-suitability detail
+catch basin vs dry well which is better,serp,informational,consideration,n,browse,mid,low,/drainage-excavation/,P1,Comparison intent
+commercial parking lot catch basin installation,serp,commercial,decision,n,scheduled,long,med,/drainage-excavation/,P2,Commercial-scale
+what happens if you don't fix yard drainage,serp,informational,awareness,n,browse,long,low,/drainage-excavation/,P2,Consequence/urgency framing
+drainage problems causing foundation damage,serp,problem_solution,consideration,n,browse,long,med,/drainage-excavation/,P1,Trust/urgency, cross-links foundation-excavation
+mold crawlspace moisture drainage fix,serp,problem_solution,consideration,n,browse,long,low,/drainage-excavation/,P2,Health-adjacent motivator
+excavation contractor for drainage eugene,serp,commercial,decision,y,scheduled,mid,med,/drainage-excavation/,P1,Blended service+problem query
+free estimate drainage excavation lane county,brand,commercial,decision,y,scheduled,long,high,/drainage-excavation/,P0,Direct conversion query
+call for french drain quote eugene,brand,commercial,decision,y,scheduled,long,med,/drainage-excavation/,P1,Direct conversion query

@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import { posts, images } from '../../data/blog-posts';
+
+const pageSize = 6;
+const pages = Array.from({ length: Math.ceil(posts.length / pageSize) }, (_, i) =>
+  posts.slice(i * pageSize, i * pageSize + pageSize)
+);
+---
+
+<BaseLayout
+	title="Blog | D&D Land Works — Excavation & Site Prep, Lane County, OR"
+	description="Guides and project notes on excavation, grading, drainage, and septic work for property owners in Lane County, Oregon."
+>
+	<Hero
+		headline="Blog"
+		subheadline="Guides, cost breakdowns, and site-prep notes for property owners across Lane County, Oregon."
+		backgroundImages={images}
+	/>
+	<section class="mx-auto max-w-6xl px-4 py-16">
+		<div class="mt-2">
+			{pages.map((page, i) => (
+				<div class="blog-page grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-page={i} style={i === 0 ? '' : 'display:none'}>
+					{page.map((post) => (
+						<a href={`/blog/${post.slug}`} class="card overflow-hidden p-0 block hover:shadow-md hover:border-brand-blue transition-all group">
+							<img
+								src={post.image}
+								alt=""
+								class="h-48 w-full object-cover"
+								loading="lazy"
+							/>
+							<div class="p-5">
+								<span class="font-display font-semibold uppercase tracking-wide text-xs text-brand-blue">
+									{post.category}
+								</span>
+								<h3 class="mt-1 font-display font-bold text-lg text-brand-blue group-hover:text-brand-blue-dark transition-colors">
+									{post.title}
+								</h3>
+								<p class="mt-2 text-sm text-slate-600 line-clamp-3">
+									{post.excerpt}
+								</p>
+								<span class="mt-3 inline-block text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+									Read More &raquo;
+								</span>
+								<p class="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-400">
+									{post.date}
+								</p>
+							</div>
+						</a>
+					))}
+				</div>
+			))}
+		</div>
+
+		{pages.length > 1 && (
+			<div class="mt-10 flex items-center justify-center gap-2" id="blog-pagination">
+				<button type="button" class="blog-page-prev btn btn-outline btn-sm">&laquo; Previous</button>
+				{pages.map((_, i) => (
+					<button
+						type="button"
+						class:list={["blog-page-dot flex h-9 w-9 items-center justify-center rounded-(--radius-brand) font-display font-semibold text-sm border", i === 0 ? 'bg-brand-blue text-white border-brand-blue' : 'text-slate-500 border-slate-200 hover:bg-slate-50']}
+						data-page-target={i}
+					>
+						{i + 1}
+					</button>
+				))}
+				<button type="button" class="blog-page-next btn btn-outline btn-sm">Next &raquo;</button>
+			</div>
+		)}
+	</section>
+	<CTABlock
+		headline="Have a Question We Haven't Covered?"
+		subheadline="Skip the search and ask David directly, it's faster than digging through articles."
+	/>
+</BaseLayout>
+<script>
+	const nav = document.getElementById('blog-pagination');
+	if (nav) {
+		const pageEls = Array.from(document.querySelectorAll<HTMLElement>('.blog-page'));
+		const dots = Array.from(nav.querySelectorAll<HTMLButtonElement>('.blog-page-dot'));
+		let current = 0;
+
+		function show(index: number) {
+			current = (index + pageEls.length) % pageEls.length;
+			pageEls.forEach((el, i) => { el.style.display = i === current ? '' : 'none'; });
+			dots.forEach((dot, i) => {
+				dot.classList.toggle('bg-brand-blue', i === current);
+				dot.classList.toggle('text-white', i === current);
+				dot.classList.toggle('border-brand-blue', i === current);
+				dot.classList.toggle('text-slate-500', i !== current);
+				dot.classList.toggle('border-slate-200', i !== current);
+			});
+			window.scrollTo({ top: nav!.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+		}
+
+		dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+		nav.querySelector('.blog-page-prev')?.addEventListener('click', () => show(current - 1));
+		nav.querySelector('.blog-page-next')?.addEventListener('click', () => show(current + 1));
+	}
+</script>

@@ -1,0 +1,72 @@
+---
+interface GalleryItem {
+  image: string;
+  caption: string;
+}
+
+interface Props {
+  items?: GalleryItem[];
+}
+
+/*
+  Placeholder photos from early concrete/site-prep jobs, standing in until real
+  before/after project photography is shot (see business-info.md Open Items —
+  photography is a confirmed gap, not yet scheduled).
+*/
+const defaultItems: GalleryItem[] = [
+  { image: '/hero-bg-1.webp', caption: 'Site Prep' },
+  { image: '/hero-bg-2.webp', caption: 'Concrete Flat Work' },
+  { image: '/hero-bg-3.webp', caption: 'Concrete Repair' },
+  { image: '/hero-bg-4.webp', caption: 'Driveway Repair' },
+];
+
+const { items = defaultItems } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+	<div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+		<div>
+			<div class="mb-2 flex items-center gap-2">
+				<img src="/logo.png" alt="" class="h-5 w-auto" aria-hidden="true" />
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+					Projects
+				</p>
+			</div>
+			<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+				Our Projects Gallery
+			</h2>
+		</div>
+
+		<div class="flex flex-wrap items-center gap-6 md:max-w-sm">
+			<p class="text-slate-600 leading-relaxed">
+				A look at recent excavation and site prep work across
+				<a href="/service-area" class="font-semibold text-brand-blue hover:text-brand-blue-dark">Lane County, Oregon</a>.
+			</p>
+			<a href="/contact" class="btn-pill shrink-0">
+				Know More
+				<span class="btn-pill-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+					</svg>
+				</span>
+			</a>
+		</div>
+	</div>
+
+	{items.length > 0 ? (
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{items.map((item) => (
+				<div class="card overflow-hidden p-0">
+					<img src={item.image} alt={item.caption} class="h-56 w-full object-cover" loading="lazy" />
+					<p class="p-4 font-display font-bold uppercase tracking-wide text-sm text-ink">
+						{item.caption}
+					</p>
+				</div>
+			))}
+		</div>
+	) : (
+		<p class="mt-10 text-center text-slate-500">
+			Project photos coming soon.
+		</p>
+	)}
+</section>

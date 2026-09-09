@@ -1,0 +1,80 @@
+{
+  "eval_id": 0,
+  "eval_name": "emergency-keyword-build",
+  "config": "old_skill",
+  "expectations": [
+    {
+      "text": "produces_at_least_4_ad_groups",
+      "passed": true,
+      "evidence": "found 6 (min 4)"
+    },
+    {
+      "text": "uses_phrase_and_exact_match_types",
+      "passed": true,
+      "evidence": "all present"
+    },
+    {
+      "text": "includes_richmond_va_negative",
+      "passed": true,
+      "evidence": "richmond virginia"
+    },
+    {
+      "text": "includes_diy_youtube_negative",
+      "passed": true,
+      "evidence": "DIY"
+    },
+    {
+      "text": "includes_jobs_school_negative",
+      "passed": true,
+      "evidence": "Jobs"
+    },
+    {
+      "text": "includes_window_or_portable_ac_negative",
+      "passed": true,
+      "evidence": "window ac"
+    },
+    {
+      "text": "includes_dallas_or_austin_geo_negative",
+      "passed": true,
+      "evidence": "dallas"
+    },
+    {
+      "text": "ad_group_level_negatives_present",
+      "passed": true,
+      "evidence": "Ad-Group-Level"
+    },
+    {
+      "text": "covers_brand_bidding_strategy",
+      "passed": true,
+      "evidence": "75 Degree AC, Houston)\n\nBuilt strictly from the `google-ads-keywords` SKILL.md methodology (6 intent categories, match-type progression, layered negatives, Texas-specific high-value list, keyword mapp"
+    },
+    {
+      "text": "includes_24_hour_emergency_keywords",
+      "passed": true,
+      "evidence": "Emergency"
+    },
+    {
+      "text": "includes_houston_keyword",
+      "passed": true,
+      "evidence": "Houston"
+    },
+    {
+      "text": "includes_katy_or_sugar_land_keyword",
+      "passed": true,
+      "evidence": "Katy"
+    },
+    {
+      "text": "covers_phrase_match_as_workhorse",
+      "passed": true,
+      "evidence": "Phrase first"
+    },
+    {
+      "text": "warns_about_close_variants",
+      "passed": false,
+      "evidence": "no match"
+    }
+  ],
+  "passed_count": 13,
+  "total_count": 14,
+  "pass_rate": 0.929
+}

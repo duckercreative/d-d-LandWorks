@@ -1,0 +1,141 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+excavation contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,Primary page target keyword (topical map §6.2 primary entity)
+excavation contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,Full state-name variant
+excavation contractor lane county or,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,County-wide variant
+excavation contractor lane county oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,County-wide full-state variant
+excavation contractor springfield oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,Tier 1 city variant
+excavating contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P1,Gerund variant - real search behavior
+excavation company eugene oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P1,"""Company"" variant"
+excavation services eugene oregon,serp,commercial,decision,y,scheduled,head,high,/excavation/,P1,"""Services"" variant"
+excavation contractor near me,serp,commercial,decision,n,scheduled,head,high,/excavation/,P0,High-volume device-located generic query
+excavating company near me,serp,commercial,decision,n,scheduled,head,medium,/excavation/,P2,Near-me variant
+land excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/excavation/,P1,"""Land excavation"" phrasing variant"
+earthwork contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,DownToBid listing category phrasing (75 verified commercial earthwork contractors Eugene)
+earthmoving contractor lane county,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Industry-synonym term
+general excavation eugene oregon,serp,commercial,consideration,y,browse,mid,medium,/excavation/,P2,Disambiguates from site-prep umbrella term
+excavation and grading eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/excavation/,P0,Exact page-name phrase - Danco uses this as a combined service heading
+excavation and earthmoving lane county,serp,commercial,consideration,y,browse,long,medium,/excavation/,P1,Recommended H1 framing phrase per cannibalization note (vs Grading & Leveling)
+full service excavation company oregon,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Matches D&D's own positioning line
+small excavation jobs eugene oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P1,Addresses "too small for a contractor" objection found in question mine
+excavation contractor for small projects,serp,commercial,consideration,n,browse,long,medium,/excavation/,P2,Same objection theme
+excavation cost eugene oregon,serp,commercial,consideration,y,browse,mid,high,/excavation/,P0,Cost-modified head term
+how much does excavation cost,serp,informational,consideration,n,browse,mid,high,/excavation/,P0,National-volume cost question - AI Overview magnet
+excavation cost per cubic yard oregon,serp,informational,consideration,y,browse,long,high,/excavation/,P0,"Answered: $2.50-$15/cu yd national baseline; Oregon-specific BLS labor data shows Oregon labor ~20% above national average"
+excavation cost per hour oregon,serp,informational,consideration,y,browse,long,high,/excavation/,P0,"Answered: $100-$300/hr with operator+equipment; $50-$150/hr operator only"
+excavator rental cost with operator,serp,informational,consideration,n,browse,long,medium,/excavation/,P1,"Answered: $70-$110+/hr mini excavator, $120-$150/hr medium, $200-$300+/hr large"
+cost to hire an excavator per hour,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Duplicate-intent variant of above
+rock excavation cost per cubic yard,serp,informational,consideration,n,browse,long,high,/excavation/,P0,"Answered: $50-$200/cu yd storing on-site, $220-$250/cu yd hauling offsite - 10-40x standard cost"
+rock removal excavation eugene,serp,commercial,consideration,y,browse,long,high,/excavation/,P0,Seed term from task brief - Lane County clay/rock-specific
+cost to remove rock during excavation,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Objection/cost-overrun angle
+excavation blasting cost per cubic yard,serp,informational,awareness,n,browse,long,low,/excavation/,P3,Niche - unlikely D&D scope but useful cost-context data point
+driveway excavation cost oregon,serp,commercial,consideration,y,browse,long,high,/excavation/,P1,"Answered: $4-$20+/sq ft depending on depth/haul-off; $8,000-$25,000+ for 500ft driveway easy terrain"
+driveway excavation cost per foot,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Duplicate-intent variant
+gravel driveway excavation eugene oregon,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Cross-links to future /driveway-repair/ page - excavation phase only
+pond excavation cost per acre,serp,informational,consideration,n,browse,long,high,/excavation/,P0,"Answered: $5,000-$25,000/acre for farm ponds; small decorative 1/4 acre $4,000-$8,000"
+pond excavation lane county,serp,commercial,decision,y,scheduled,head,high,/excavation/,P0,Seed term from task brief - genuine project-type gap (0/9 competitors detail ponds except McKenzie/BBC name it)
+pond digging eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P1,Consumer phrasing variant ("digging" not "excavation")
+farm pond construction cost oregon,serp,informational,consideration,y,browse,long,medium,/excavation/,P2,Rural/acreage buyer variant
+pond permit oregon do i need one,serp,informational,consideration,y,browse,long,medium,/excavation/,P1,"Answered: OWRD water-rights permit if fed by stream/spring or >9.2 acre-feet; DSL if near wetlands/salmon-bearing water; small rain-fed ponds under threshold generally exempt"
+utility trenching cost per foot,serp,informational,consideration,n,browse,long,high,/excavation/,P1,"Answered: $5-$12/linear ft standard; $13-$40/ft difficult (rock, depth, restricted access)"
+water line trenching cost,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,"Answered: $15-$25/ft"
+sewer line trenching cost,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,"Answered: $25-$40/ft (deeper than water lines)"
+electrical trenching cost per foot,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,"Answered: $10-$18/ft"
+utility excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Down-link target to future /utility-excavation/ page - this page covers the excavation phase generally
+foundation excavation cost,serp,informational,consideration,n,browse,mid,high,/excavation/,P1,"Answered: $2,500-$7,300 (basement/foundation); $3,900-$6,800 for ~2.5-day dig per homeblue"
+basement excavation cost,serp,informational,consideration,n,browse,mid,medium,/excavation/,P2,Sub-variant of foundation excavation
+foundation excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P1,Down-link target to future /foundation-excavation/ page
+how deep can an excavator dig,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,"Answered: mini excavators 7-12ft depending on class, some to 14-16ft with extendable dipper; standard footing depth 4-5ft"
+how deep is a basement excavation,serp,informational,awareness,n,browse,long,low,/excavation/,P3,"Answered: standard residential basements 8-10ft"
+building pad excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P1,Project type from topical map §6.2 ("pads")
+house pad excavation lane county,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Consumer phrasing variant
+shop pad excavation oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Rural/acreage project type - shared with site-prep pack's project-type gap
+barn pad excavation oregon,serp,commercial,consideration,y,browse,long,low,/excavation/,P3,Rural/acreage project type
+cut and fill grading oregon,serp,informational,consideration,y,browse,mid,high,/excavation/,P0,Seed term from task brief - process entity central to this page's scope
+cut and fill earthwork,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,"Answered (Wikipedia + industry): redistributing soil - cut from high ground, fill to low ground, to reach design grade"
+cut and fill definition construction,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Definitional query - good for a short glossary-style passage
+backfill and compaction excavation,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,All Dirt-validated inclusion per topical map §6.2
+soil compaction after excavation,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Ties to "why compaction matters" trust content
+erosion control excavation eugene,serp,commercial,consideration,y,browse,long,medium,/excavation/,P1,All Dirt-validated inclusion; ties to DEQ 1200-C content already sourced in site-prep pack
+site access road construction oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P1,All Dirt-validated inclusion ("site access roads")
+access road cutting rural property,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Rural/acreage variant
+driveway access road excavation,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Overlaps with future /driveway-repair/ - this page covers the initial cut only
+excavation vs grading difference,serp,informational,awareness,n,browse,mid,high,/excavation/,P0,"Answered: grading shapes the surface; excavation removes earth to create space below it - core disambiguation for the sibling-page cannibalization note"
+difference between excavation and grading,serp,informational,awareness,n,browse,mid,high,/excavation/,P0,Duplicate-intent phrasing of above
+grading vs excavation what's the difference,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,Duplicate-intent phrasing
+is grading the same as excavation,serp,informational,awareness,n,browse,long,medium,/excavation/,P1,Yes/no-framed variant
+excavation vs leveling,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Ties to future Grading & Leveling page's cannibalization boundary
+residential vs commercial excavation,serp,informational,consideration,n,browse,mid,high,/excavation/,P0,Seed term from task brief - directly named in topical map §6.2 FAQ list
+residential excavation vs commercial excavation,serp,informational,consideration,n,browse,mid,high,/excavation/,P1,Duplicate-intent phrasing
+what does an excavation contractor do,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,Quora-sourced definitional question
+what equipment does an excavation company use,serp,informational,awareness,n,browse,mid,medium,/excavation/,P0,Seed term from task brief ("equipment used")
+excavation equipment list,serp,informational,awareness,n,browse,mid,low,/excavation/,P2,Supporting equipment-education query
+excavator vs bulldozer difference,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Equipment-education query
+skid steer vs excavator,serp,informational,awareness,n,browse,long,low,/excavation/,P3,Equipment-education query
+mini excavator vs standard excavator,serp,informational,awareness,n,browse,long,low,/excavation/,P3,Equipment-education query
+excavator rental eugene oregon,serp,commercial,consideration,y,browse,mid,low,/excavation/,P3,DIY-adjacent query; low priority since D&D sells labor not rentals
+skid steer rental lane county,serp,commercial,consideration,y,browse,mid,low,/excavation/,P3,Same DIY-adjacent caveat
+can i rent an excavator and do it myself,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Objection-adjacent - DIY-vs-hire threshold question from question mine
+do i need an excavation contractor or can i diy,serp,informational,consideration,n,browse,long,medium,/excavation/,P1,DIY-vs-hire threshold - decision-triggering
+oregon811,serp,informational,awareness,y,scheduled,head,medium,/excavation/,P0,"Verified official name: Oregon Utility Notification Center (OUNC), operating as ""Oregon 811"" - digsafelyoregon.com"
+call before you dig oregon,serp,informational,awareness,y,scheduled,mid,medium,/excavation/,P0,Same entity as Oregon811 - consumer phrasing
+call 811 before you dig,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,National campaign phrasing that also applies in Oregon
+how many days notice for 811 locate oregon,serp,informational,awareness,y,browse,long,medium,/excavation/,P1,"Answered: at least 2 business days before digging, per oregon.gov/puc and digsafelyoregon.com"
+is calling 811 free,serp,informational,awareness,n,browse,long,low,/excavation/,P2,"Answered: yes, free locate requests"
+utility locate before digging oregon,serp,informational,consideration,y,browse,long,medium,/excavation/,P1,Consumer phrasing variant of Oregon811
+what happens if you dig without calling 811,serp,informational,awareness,n,browse,long,medium,/excavation/,P1,"Answered directionally: PUC enforces violations; specific penalty $ amounts not found in this pass - do not invent a figure"
+excavation permit lane county oregon,serp,informational,consideration,y,browse,mid,high,/excavation/,P0,Reuses site-prep pack's Lane County Grading and Fill Permit finding (>50 cu yd or slope steeper than 2:1) - do not re-derive
+do i need a permit to dig on my property oregon,serp,informational,consideration,y,browse,long,high,/excavation/,P1,"Answered directionally: varies by county/city; Lane County threshold reused from site-prep pack; foundation excavation under an active building permit is generally exempt"
+excavation without a permit oregon consequences,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Objection/liability-fear angle
+trench safety requirements osha,serp,informational,awareness,n,browse,mid,medium,/excavation/,P1,Reuses homepage pack's OSHA 1926 Subpart P finding verbatim - do not re-derive
+osha trench depth requirements,serp,informational,awareness,n,browse,long,medium,/excavation/,P2,"Answered (reused): 5ft+ requires protective system; 4ft+ requires safe access within 25ft"
+how deep before a trench needs shoring,serp,informational,awareness,n,browse,long,medium,/excavation/,P1,Consumer phrasing of OSHA Subpart P threshold
+is excavation dangerous,serp,informational,awareness,n,browse,long,low,/excavation/,P3,Ties to trench-safety trust content
+utility strike liability homeowner oregon,serp,informational,consideration,y,browse,long,medium,/excavation/,P1,Liability-fear angle named in task brief
+who pays if excavation crew hits a gas line,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Liability-fear angle, objection-adjacent
+excavation contractor cottage grove oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Tier 2 city variant
+excavation contractor junction city oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Tier 2 city variant
+excavation contractor creswell oregon,serp,commercial,decision,y,scheduled,mid,low,/excavation/,P3,Tier 2 city variant
+excavation contractor veneta oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Tier 2 city variant - All Dirt is based here
+excavation contractor florence oregon,serp,commercial,decision,y,scheduled,mid,low,/excavation/,P3,Tier 3 city variant - coverage confirmed 2026-09-05
+excavation contractor oakridge oregon,serp,commercial,decision,y,scheduled,mid,low,/excavation/,P3,Tier 3 city variant
+excavation contractor coburg oregon,serp,commercial,decision,y,scheduled,mid,low,/excavation/,P3,Tier 3 city variant
+excavation contractor lowell oregon,serp,commercial,decision,y,scheduled,mid,low,/excavation/,P3,Tier 3 city variant
+commercial excavation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/excavation/,P1,Commercial-audience variant per topical map §9 (residential default, commercial as a section not separate URL)
+commercial earthwork contractor lane county,serp,commercial,decision,y,scheduled,long,high,/excavation/,P2,Commercial-audience variant
+subdivision excavation oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Commercial/developer project type
+land development excavation lane county,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Commercial/developer project type
+excavation contractor for pole barn foundation,serp,commercial,consideration,n,browse,long,medium,/excavation/,P2,Rural project-type long-tail
+excavation for shop building oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Rural project-type long-tail
+excavation contractor for adu oregon,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Cross-references site-prep pack's ADU content gap; excavation-specific framing (foundation dig, not full site prep)
+how long does excavation take,serp,informational,consideration,n,browse,mid,high,/excavation/,P0,"Answered (reused from homepage pack Horst Excavating sourcing): often just a few days once site prep/permits are done; commercial 1-3 weeks"
+how long does a residential excavation job take,serp,informational,consideration,n,browse,long,medium,/excavation/,P1,Duplicate-intent phrasing
+excavation timeline for foundation,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Sub-variant
+why do excavation quotes vary so much,serp,informational,consideration,n,browse,mid,medium,/excavation/,P1,Objection-adjacent - reused theme from homepage/site-prep packs, scoped to excavation pricing variance
+excavation hourly rate vs flat rate,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Pricing-structure education query
+what's included in an excavation quote,serp,informational,consideration,n,browse,long,medium,/excavation/,P1,Objection-adjacent - hidden-cost fear
+hidden costs excavation project,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Objection-adjacent
+excavation contractor eugene oregon reviews,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Trust-verification query - directory-dominated per AI citation audit
+best excavation contractor lane county,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Listicle-dominated query per Flag A
+licensed excavation contractor oregon,serp,commercial,consideration,y,browse,mid,medium,/excavation/,P2,Trust-signal query, ties to CCB verification content reused from homepage pack
+excavation contractor ccb license oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Trust-signal query
+free excavation estimate eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P1,USP-matching query
+excavation contractor free estimate lane county,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Duplicate-intent phrasing
+excavation contractor willamette valley clay,serp,informational,consideration,y,browse,long,medium,/excavation/,P2,Reuses homepage/site-prep pack's clay-soil authority signal, scoped to excavation cost-overrun content
+best time of year to excavate oregon,serp,informational,consideration,y,browse,mid,medium,/excavation/,P1,Reused finding (May-October dry window) from homepage pack §5 - cite, don't re-derive
+excavating in winter oregon,serp,informational,consideration,y,browse,long,medium,/excavation/,P2,Seasonal variant
+does rain stop excavation work,serp,informational,awareness,y,browse,long,low,/excavation/,P3,Seasonal variant
+excavation and grading contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/excavation/,P1,Combined-term head variant matching several competitors' own heading style (Danco)
+land grading and excavation lane county,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Combined-term variant
+dirt work contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P2,Informal industry-synonym term ("dirt work")
+excavation and earthmoving eugene,serp,commercial,decision,y,scheduled,mid,medium,/excavation/,P1,Recommended H1-adjacent framing phrase
+excavator with operator eugene oregon,serp,commercial,consideration,y,browse,mid,medium,/excavation/,P2,Equipment+labor bundled query
+mini excavator services eugene oregon,serp,commercial,consideration,y,browse,mid,low,/excavation/,P3,Equipment-specific query
+does d&d land works do excavation,search_suggestion,navigational,decision,y,scheduled,long,high,/excavation/,P0,Brand+service term to own once GBP/site exist - reused brand-ownership logic from homepage pack
+d&d land works excavation eugene,search_suggestion,navigational,decision,y,scheduled,long,high,/excavation/,P0,Brand+service+geo term
+what size job is too small for an excavator,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Objection theme reused from homepage question mine, scoped to excavation
+excavation contractor that does small residential jobs,serp,commercial,decision,y,scheduled,long,medium,/excavation/,P2,Duplicate-intent phrasing
+does excavation include hauling away dirt,serp,informational,consideration,n,browse,long,medium,/excavation/,P1,Scope-clarity question - ties to fencing rules on debris hauling
+what happens to the dirt after excavation,serp,informational,awareness,n,browse,long,low,/excavation/,P2,Related scope-clarity question
+excavation for swimming pool cost,serp,informational,awareness,n,browse,long,low,/excavation/,P3,Adjacent project type; low priority (D&D scope unconfirmed for pool excavation specifically)
+retention pond excavation cost,serp,informational,consideration,n,browse,long,medium,/excavation/,P2,Commercial/stormwater project type - ties to DEQ 1200-C content
+stormwater pond excavation oregon,serp,commercial,consideration,y,browse,long,medium,/excavation/,P2,Commercial/stormwater project type

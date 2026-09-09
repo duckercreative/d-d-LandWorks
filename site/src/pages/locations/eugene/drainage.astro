@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import AboutSection from '../../../components/AboutSection.astro';
+import PhotoContentBlock from '../../../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../../../components/WhyChooseUs.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+];
+---
+
+<BaseLayout
+	title="Drainage Excavation in Eugene, OR | D&D Land Works"
+	description="Drainage excavation and standing-water fixes in Eugene, OR. Swales, trenches, and regrading for older neighborhoods with clay soil. Licensed and bonded."
+>
+	<Hero
+		eyebrow="Eugene, Oregon"
+		headline="Drainage Excavation in Eugene, OR"
+		subheadline="Clay-heavy soil in parts of Eugene doesn't drain the way sandier or gravelly ground does, and it's a common reason a yard or crawlspace stays wet long after everyone else's has dried out."
+		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+	/>
+	<!-- About -->
+	<AboutSection
+		ctaLabel="See Drainage Excavation"
+		ctaHref="/services/drainage-excavation"
+		eyebrow="Eugene, Oregon"
+		headlineHtml="Standing Water <span class='text-brand-blue'>Has a Cause</span> in Eugene"
+		descriptionHtml="<p>A swale that no longer carries water where it&rsquo;s supposed to, a low spot that was never regraded, or a trench that needs to be cut to move runoff away from a foundation are the usual culprits behind a soggy yard. Older Eugene neighborhoods, where drainage was graded to a different standard decades ago, see more of this than newer development on the edges of town.</p><p>The <a href='/services/drainage-excavation' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>drainage excavation</a> page covers swales, trenching, and regrading in more depth. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, serving <a href='/locations/eugene' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Eugene</a> and the rest of Lane County.</p>"
+	/>
+	<!-- Trust -->
+	<PhotoContentBlock
+		eyebrow="Eugene, Oregon"
+		headline="Why Do Eugene Homeowners Trust D&D Land Works for Drainage?"
+		image="/hero-bg-2.webp"
+		imageAlt="Drainage trench excavated in a Eugene, Oregon yard"
+		imageSide="right"
+		badgeValue="CCB #261742"
+		badgeLabel="Licensed & Bonded"
+		ctaLabel="Get a Free Estimate"
+		ctaHref="/contact"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every drainage job is scoped to Eugene&rsquo;s actual soil and slope, not a generic fix.</p><p>David Deggelman scopes every job in person before quoting. If your yard or crawlspace stays wet anywhere in Eugene, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+	/>
+	<WhyChooseUs />
+	<Gallery />
+	<Testimonials
+		businessName="D&D Land Works"
+		rating={4.83}
+		reviewCount={demoReviews.length}
+		reviews={demoReviews}
+	/>
+	<CTABlock
+		headline="Get Your Eugene Drainage Fixed"
+		subheadline="Free estimate for drainage excavation anywhere in Eugene."
+	/>
+</BaseLayout>
