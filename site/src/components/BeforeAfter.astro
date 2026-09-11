@@ -1,0 +1,51 @@
+---
+/*
+  Before/after project comparisons — drag-to-reveal sliders, adapted from the
+  before/after portfolio pattern on kitchenssunderland.co.uk (competitor
+  research, 2026-09-10). Image pairs below are AI-generated illustrative
+  examples (2026-09-12), not documented real jobs — each pair was prompted
+  with matching background elements (same fence/trees/mountain) so it reads
+  as one consistent location. Swap for real matched before/after photos of
+  an actual job once David shoots a pair (see business-info.md Open Items).
+*/
+import BeforeAfterSlider from './BeforeAfterSlider.astro';
+
+interface ComparisonItem {
+  before: string;
+  after: string;
+  caption: string;
+}
+
+interface Props {
+  items?: ComparisonItem[];
+}
+
+const defaultItems: ComparisonItem[] = [
+  { before: '/before-lot.webp', after: '/after-lot.webp', caption: 'Overgrown Lot to Build-Ready Site' },
+  { before: '/before-driveway.webp', after: '/after-driveway.webp', caption: 'Driveway Regrade' },
+];
+
+const { items = defaultItems } = Astro.props;
+---
+
+<section class="bg-slate-50 border-b border-slate-200">
+	<div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+		<div class="mx-auto max-w-2xl text-center">
+			<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+				Before &amp; After
+			</p>
+			<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+				See the Difference
+			</h2>
+			<p class="mt-4 text-slate-700 leading-relaxed">
+				Drag the slider to compare a site before and after D&amp;D Land Works clears, grades, or excavates it.
+			</p>
+		</div>
+
+		<div class="mt-10 grid gap-6 sm:grid-cols-2">
+			{items.map((item, i) => (
+				<BeforeAfterSlider before={item.before} after={item.after} caption={item.caption} id={`${i}`} />
+			))}
+		</div>
+	</div>
+</section>

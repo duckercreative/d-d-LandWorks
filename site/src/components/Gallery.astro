@@ -9,15 +9,16 @@ interface Props {
 }
 
 /*
-  Placeholder photos from early concrete/site-prep jobs, standing in until real
-  before/after project photography is shot (see business-info.md Open Items —
-  photography is a confirmed gap, not yet scheduled).
+  Real project photos supplied by David Deggelman (client photo drop,
+  2026-09-11), replacing the earlier stock/placeholder set.
 */
 const defaultItems: GalleryItem[] = [
-  { image: '/hero-bg-1.webp', caption: 'Site Prep' },
-  { image: '/hero-bg-2.webp', caption: 'Concrete Flat Work' },
-  { image: '/hero-bg-3.webp', caption: 'Concrete Repair' },
-  { image: '/hero-bg-4.webp', caption: 'Driveway Repair' },
+  { image: '/project-excavation-bucket.webp', caption: 'Excavation Work' },
+  { image: '/project-grading-driveway.webp', caption: 'Driveway Grading' },
+  { image: '/project-site-excavation.webp', caption: 'Site Excavation' },
+  { image: '/project-driveway-repair.webp', caption: 'Gravel Driveway Resurfacing' },
+  { image: '/project-site-layout-survey.webp', caption: 'Site Layout & Grading' },
+  { image: '/project-finished-grading.webp', caption: 'Finished Site Grading' },
 ];
 
 const { items = defaultItems } = Astro.props;

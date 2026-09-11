@@ -17,6 +17,7 @@ import AboutSection from '../components/AboutSection.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import Gallery from '../components/Gallery.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
 import Achievement from '../components/Achievement.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
@@ -127,7 +128,7 @@ const businessSchema = {
 		subheadline="D&D Land Works is a licensed, bonded (CCB #261742) excavation, grading, and site prep contractor serving Eugene, Springfield, and Lane County, Oregon. DEQ-certified for septic install and repair, we handle land clearing, drainage, utility work, and more. Free estimates: 541-401-8726."
 		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
 		secondaryCta={{ label: 'Our Services', href: '#services' }}
-		backgroundImages={['/hero-bg-1.webp', '/hero-bg-2.webp', '/hero-bg-4.webp']}
+		backgroundImages={['/project-excavation-bucket.webp', '/project-grading-driveway.webp', '/project-finished-grading.webp']}
 	/>
 	<TrustBar />
 	<!-- About + AI citation block combined: dense, self-contained fact paragraph (full service list, license, DEQ cert, area, contact) placed in the first 30% of the page per the content brief -->
@@ -136,7 +137,7 @@ const businessSchema = {
 	/>
 	<section id="services" class="relative">
 		<div class="relative bg-ink overflow-hidden">
-			<img src="/hero-bg-4.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+			<img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
 			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
 			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-36 text-center md:pt-24 md:pb-44">
 				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Services</p>
@@ -221,6 +222,7 @@ const businessSchema = {
 		</div>
 	</section>
 	<Gallery />
+	<BeforeAfter />
 	<!-- Our Commitment: AI citation-style dense fact paragraph swapped in via descriptionHtml -->
 	<Achievement
 		descriptionHtml="Most crews that can grade a lot can&rsquo;t legally touch a septic system, and vice versa. D&amp;D Land Works holds both the Oregon <strong class='font-semibold text-ink'>CCB #261742</strong> general excavation license and <strong class='font-semibold text-ink'>DEQ certification</strong> for septic install and repair, so one contractor &mdash; owned and operated by David Deggelman &mdash; covers the full job from site prep through system install for homeowners and builders across Eugene, Springfield, and the rest of Lane County, Oregon."

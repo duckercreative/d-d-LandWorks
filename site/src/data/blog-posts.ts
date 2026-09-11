@@ -4,10 +4,15 @@
   Replace with a real Astro content collection once actual posts exist (see
   CLAUDE.md's content workflow: /deep-research → /content-brief →
   content-create → humanizer → Astro content collection, astro-site-build-
-  plan Phase 7). Images reuse the site's existing job-site photos on
-  rotation, same as Gallery.astro. Only the first post has a full `body` /
-  `faqs`, to demonstrate the single-post template — the rest render with
-  just their excerpt until real content is written.
+  plan Phase 7). Only the first post has a full `body` / `faqs`, to
+  demonstrate the single-post template — the rest render with just their
+  excerpt until real content is written.
+
+  Each post's `image` is matched to its actual topic/category (see mapping
+  below, fixed 2026-09-12 — previously cycled through 4 generic images with
+  no regard for topic, e.g. the septic post showed a driveway-repair photo).
+  `images` is a separate decorative pool (not topic-matched) used only for
+  the /blog listing Hero slideshow and the "Photo Gallery" sidebar widget.
 */
 export interface BlogPost {
   slug: string;
@@ -20,7 +25,14 @@ export interface BlogPost {
   faqs?: { question: string; answer: string }[];
 }
 
-export const images = ['/hero-bg-1.webp', '/hero-bg-2.webp', '/hero-bg-3.webp', '/hero-bg-4.webp'];
+export const images = [
+  '/project-excavation-bucket.webp',
+  '/service-grading-leveling.webp',
+  '/service-site-preparation.webp',
+  '/project-driveway-repair.webp',
+  '/service-land-clearing.webp',
+  '/project-finished-grading.webp',
+];
 
 export const posts: BlogPost[] = [
   {
@@ -29,7 +41,7 @@ export const posts: BlogPost[] = [
     excerpt: 'The order site work actually happens in, from clearing through final grade, before a foundation ever gets poured.',
     date: 'September 2, 2026',
     category: 'Site Preparation',
-    image: images[0],
+    image: '/service-site-preparation.webp',
     body: [
       {
         heading: 'Why Site Prep Comes First',
@@ -69,7 +81,7 @@ export const posts: BlogPost[] = [
     excerpt: 'What actually drives the price of an excavation job, and why a flat "per hour" rate only tells half the story.',
     date: 'August 26, 2026',
     category: 'Cost Guides',
-    image: images[1],
+    image: '/service-excavation.webp',
   },
   {
     slug: 'land-clearing-vs-brush-clearing',
@@ -77,7 +89,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Two services that sound similar but solve different problems, and how to tell which one your property needs.',
     date: 'August 19, 2026',
     category: 'Land Clearing',
-    image: images[2],
+    image: '/service-land-clearing.webp',
   },
   {
     slug: 'deq-certification-septic-install',
@@ -85,7 +97,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Why a standard excavation license isn’t enough to legally install or repair a septic system in Oregon.',
     date: 'August 12, 2026',
     category: 'Septic Systems',
-    image: images[3],
+    image: '/service-septic-install.webp',
   },
   {
     slug: 'signs-your-yard-needs-drainage-work',
@@ -93,7 +105,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Standing water, soggy patches, and a soaked foundation line, what they usually mean and what actually fixes them.',
     date: 'August 5, 2026',
     category: 'Drainage',
-    image: images[0],
+    image: '/service-drainage-excavation.webp',
   },
   {
     slug: 'grading-101-getting-slope-right',
@@ -101,7 +113,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Why grade matters more than it looks like it should, and what happens down the line when it’s off.',
     date: 'July 29, 2026',
     category: 'Grading',
-    image: images[1],
+    image: '/service-grading-leveling.webp',
   },
   {
     slug: 'utility-trenching-what-to-know',
@@ -109,7 +121,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Call-before-you-dig rules, depth requirements, and why utility trenching is rarely a DIY weekend project.',
     date: 'July 22, 2026',
     category: 'Utility Excavation',
-    image: images[2],
+    image: '/service-utility-trenching.webp',
   },
   {
     slug: 'repair-vs-replace-damaged-driveway',
@@ -117,7 +129,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Cracking, potholes, and drainage issues, the signs that separate a patch job from a full regrade.',
     date: 'July 15, 2026',
     category: 'Driveway Repair',
-    image: images[3],
+    image: '/service-driveway-repair.webp',
   },
   {
     slug: 'foundation-excavation-what-contractor-checks',
@@ -125,7 +137,7 @@ export const posts: BlogPost[] = [
     excerpt: 'Soil type, slope, and buried utilities, the site checks that happen before the first bucket of dirt moves.',
     date: 'July 8, 2026',
     category: 'Foundation Excavation',
-    image: images[0],
+    image: '/service-foundation-excavation.webp',
   },
   {
     slug: 'slope-stabilization-stopping-erosion',
@@ -133,7 +145,7 @@ export const posts: BlogPost[] = [
     excerpt: 'How an eroding slope gets identified early, and the excavation work that actually holds it in place.',
     date: 'July 1, 2026',
     category: 'Slope Stabilization',
-    image: images[1],
+    image: '/service-slope-stabilization.webp',
   },
   {
     slug: 'choosing-excavation-contractor-lane-county',
@@ -141,7 +153,7 @@ export const posts: BlogPost[] = [
     excerpt: 'What to check before hiring: license, bonding, certifications, and the questions worth asking upfront.',
     date: 'June 24, 2026',
     category: 'Hiring Guide',
-    image: images[2],
+    image: '/project-site-layout-survey.webp',
   },
   {
     slug: 'free-estimates-what-to-expect',
@@ -149,6 +161,6 @@ export const posts: BlogPost[] = [
     excerpt: 'What David actually looks at on-site before a number goes on paper, and why it takes longer than a phone quote.',
     date: 'June 17, 2026',
     category: 'Estimates',
-    image: images[3],
+    image: '/project-finished-grading.webp',
   },
 ];
