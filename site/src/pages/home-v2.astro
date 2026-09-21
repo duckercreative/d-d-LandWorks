@@ -11,24 +11,24 @@ import CTABlock from '../components/CTABlock.astro';
 
 const whyItems = [
   {
-    title: 'On-Site Estimates',
-    description: 'Every quote follows a walkthrough of your property, priced for your actual soil, slope, and access — not a phone-in approximation.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
+    title: 'Owner-Operated',
+    description: 'You can speak directly with the person involved in your project, making it easier to discuss the property, work, and questions that come up along the way.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z M4 21v-1.5a7 7 0 0 1 14 0V21" />',
   },
   {
-    title: 'Residential & Commercial',
-    description: 'The same crew and equipment serve homeowners, builders, and commercial development sites across Lane County — no project too large or too small.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+    title: 'Local to Lane County',
+    description: 'Working locally means familiarity with the properties, roads, terrain, and site conditions found throughout the surrounding area.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" /><circle cx="12" cy="10.5" r="2.3" fill="currentColor" stroke="none" />',
   },
   {
-    title: 'Clean Job Sites',
-    description: 'Clear, grade, trench, compact, or install — whatever the job requires, the site gets left clean and organized when the work is done.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6" /><path stroke-linecap="round" stroke-linejoin="round" d="m15.5 3.5 2-2m1 4 2-2" />',
+    title: 'Licensed & Bonded',
+    description: 'D&D Land Works operates under Oregon Construction Contractors Board license #261742, giving property owners a way to verify the contractor\'s licensing status.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
   },
   {
-    title: 'Direct Communication',
-    description: 'Call or message and reach the person who will actually run the job — not a call center, not a dispatcher relay, not a sales team.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-1.1 4.2L21 20l-4.5-1a8.4 8.4 0 1 1 4.5-7.5Z" />',
+    title: 'Hands-On Site Work',
+    description: 'Excavation can involve more than moving soil. Clearing, grading, drainage, access, trenching, and other site conditions can all affect what happens on the property.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />',
   },
 ];
 
@@ -173,62 +173,56 @@ const businessSchema = {
 	</section>
 
 	<!-- ── Why Choose D&D Land Works ────────────────────────────────────── -->
-	<section class="relative bg-white overflow-hidden">
-		<!-- Decorative ambient glow — bottom left -->
-		<div
-			class="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-brand-blue-light/30 blur-3xl"
-			aria-hidden="true"
-		></div>
+	<section class="bg-white border-b border-slate-100">
+		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+			<div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
 
-		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-
-			<!-- Section header -->
-			<div class="mb-12 md:mb-16 text-center max-w-2xl mx-auto">
-				<div class="mb-4 flex items-center justify-center gap-2">
-					<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
-					<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-						Why Choose D&amp;D Land Works
+				<!-- Left: text + feature list -->
+				<div>
+					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+						Why Choose <span class="text-brand-blue">D&amp;D Land Works?</span>
+					</h2>
+					<p class="mt-5 text-slate-600 leading-relaxed">
+						Every property is different. Access, existing ground conditions, drainage, and the work planned for the site can all affect how excavation should be approached. D&amp;D Land Works brings local knowledge and a hands-on approach to residential and commercial properties throughout Lane County.
 					</p>
-				</div>
-				<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-					Why Choose D&amp;D Land Works <span class="text-brand-blue">for Excavation?</span>
-				</h2>
-				<p class="mt-5 text-slate-700 leading-relaxed">
-					Choosing an excavation contractor involves more than equipment. Here is what shapes how D&amp;D Land Works approaches each project in Lane County.
-				</p>
-			</div>
 
-			<!-- 4 reason cards -->
-			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-				{whyItems.map((item) => (
-					<div class="card flex flex-col gap-4">
-						<span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue shrink-0">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+					<!-- Feature list -->
+					<ul class="mt-10 flex flex-col gap-7">
+						{whyItems.map((item) => (
+							<li class="flex items-start gap-4">
+								<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+								</span>
+								<div>
+									<p class="font-display font-bold text-ink">{item.title}</p>
+									<p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+								</div>
+							</li>
+						))}
+					</ul>
+
+					<!-- CTA -->
+					<a href="/about" class="btn-pill mt-10 inline-flex">
+						Learn More About D&amp;D Land Works
+						<span class="btn-pill-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+							</svg>
 						</span>
-						<div>
-							<h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">
-								{item.title}
-							</h3>
-							<p class="mt-2 text-sm text-slate-600 leading-relaxed">
-								{item.description}
-							</p>
-						</div>
-					</div>
-				))}
-			</div>
+					</a>
+				</div>
 
-			<!-- CTA -->
-			<div class="mt-12 text-center">
-				<a href="/contact" class="btn-pill inline-flex">
-					Talk to an Excavation Contractor
-					<span class="btn-pill-icon">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-						</svg>
-					</span>
-				</a>
-			</div>
+				<!-- Right: image -->
+				<div class="relative">
+					<img
+						src="/project-grading-driveway.webp"
+						alt="D&D Land Works excavation and site work in Lane County, Oregon"
+						class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+						loading="lazy"
+					/>
+				</div>
 
+			</div>
 		</div>
 	</section>
 
