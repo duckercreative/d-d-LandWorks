@@ -88,15 +88,30 @@ const businessSchema = {
 		secondaryCta={{ label: 'Our Services', href: '#services' }}
 		backgroundImages={['/project-excavation-bucket.webp', '/project-grading-driveway.webp', '/project-finished-grading.webp']}
 	/>
-	<!-- About Our Excavation Company -->
-	<section class="bg-white border-b border-slate-200">
-		<div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
-			<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+
+	<!-- ── About Our Excavation Company ─────────────────────────────────── -->
+	<section class="relative bg-white overflow-hidden">
+		<!-- Decorative ambient glow — top right -->
+		<div
+			class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
+			aria-hidden="true"
+		></div>
+
+		<div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+			<div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+
+				<!-- Text column -->
 				<div>
+					<div class="mb-4 flex items-center gap-2">
+						<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+						<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+							Lane County&rsquo;s Excavation Contractor
+						</p>
+					</div>
 					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
 						About D&amp;D Land Works
 					</h2>
-					<p class="mt-5 max-w-md text-slate-700 leading-relaxed">
+					<p class="mt-5 text-slate-700 leading-relaxed max-w-prose">
 						D&amp;D Land Works is a licensed and bonded excavation contractor serving residential and commercial properties throughout Lane County, Oregon. Site preparation, excavation, grading, land and brush clearing, foundation excavation, drainage, utility trenching, driveway grading, septic installation and repair, and slope stabilization form part of its defined service scope.
 					</p>
 					<a href="/about" class="btn-pill mt-8 inline-flex">
@@ -108,18 +123,34 @@ const businessSchema = {
 						</span>
 					</a>
 				</div>
-				<div class="relative">
+
+				<!-- Image column -->
+				<div class="relative pb-6">
 					<img
 						src="/project-excavation-bucket.webp"
 						alt="D&D Land Works excavation contractor working in Lane County, Oregon"
 						class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
 						loading="lazy"
 					/>
+					<!-- License badge overlapping bottom-left of image -->
+					<div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+							</svg>
+						</span>
+						<div class="leading-tight">
+							<p class="font-display font-bold text-sm">CCB #261742</p>
+							<p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
-	<!-- Why Choose: dense fact paragraph — services, license, DEQ cert, area, contact -->
+
+	<!-- ── Why Choose D&D Land Works ────────────────────────────────────── -->
 	<AboutSection
 		eyebrow="Why Choose D&D Land Works"
 		headlineHtml='Why Choose D&D Land Works <span class="text-brand-blue">for Excavation?</span>'
@@ -127,40 +158,55 @@ const businessSchema = {
 		ctaLabel="Talk to an Excavation Contractor"
 		ctaHref="/contact"
 	/>
+
+	<!-- ── Services ─────────────────────────────────────────────────────── -->
 	<section id="services" class="relative">
+		<!-- Dark photo header -->
 		<div class="relative bg-ink overflow-hidden">
 			<img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
 			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
-			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-36 text-center md:pt-24 md:pb-44">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Services</p>
+			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
 				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
 					Full-Service Excavation Services <span class="text-brand-blue-light">in Lane County, Oregon</span>
 				</h2>
-				<p class="mt-4 text-slate-300 leading-relaxed">
+				<p class="mt-5 text-slate-300 leading-relaxed">
 					Excavation and site preparation can involve several connected types of site work. The available services cover land preparation, earthwork, grading, access, drainage, utilities, foundations, and septic work according to the requirements of each property and project.
 				</p>
 			</div>
 		</div>
-		<div class="relative mx-auto max-w-6xl px-4 -mt-28 pb-8 md:-mt-32">
-			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+		<!-- Service cards — overlapping the dark header -->
+		<div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+			<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 				{services.map((service) => <ServiceCard {...service} />)}
 			</div>
 		</div>
-		<div class="mx-auto max-w-3xl px-4 pb-16 text-center">
-			<a href="/services" class="btn btn-cta mt-6 inline-flex">Explore Excavation Services</a>
+
+		<!-- Services CTA -->
+		<div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center">
+			<a href="/services" class="btn btn-cta inline-flex">Explore Excavation Services</a>
 		</div>
 	</section>
-	<!-- Service areas -->
-	<section class="bg-slate-50 border-b border-slate-200">
-		<div class="mx-auto max-w-6xl px-4 py-16">
-			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-				Local Excavation Services Across Lane County
-			</h2>
-			<p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
-				Excavation and site preparation services are available throughout Lane County, Oregon, including <strong class="text-brand-blue">Eugene, Springfield</strong>, and surrounding communities. Residential and commercial projects can include excavation, grading, land clearing, drainage, trenching, foundation excavation, driveway work, and septic services.
-			</p>
-			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
-				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+
+	<!-- ── Local Service Areas ───────────────────────────────────────────── -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+			<!-- Section header -->
+			<div class="mb-12 md:mb-16 text-center">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Service Area</p>
+				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-ink md:text-4xl">
+					Local Excavation Services Across Lane County
+				</h2>
+				<p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+					Excavation and site preparation services are available throughout Lane County, Oregon, including <strong class="text-brand-blue">Eugene, Springfield</strong>, and surrounding communities. Residential and commercial projects can include excavation, grading, land clearing, drainage, trenching, foundation excavation, driveway work, and septic services.
+				</p>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start">
+				<!-- Map -->
+				<div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md">
 					<iframe
 						title="D&D Land Works service area map, Lane County, Oregon"
 						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
@@ -171,6 +217,8 @@ const businessSchema = {
 						referrerpolicy="no-referrer-when-downgrade"
 					></iframe>
 				</div>
+
+				<!-- Location links + CTA -->
 				<div class="flex flex-col gap-6">
 					<div class="card">
 						<p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
@@ -198,24 +246,39 @@ const businessSchema = {
 					<a href="/service-area" class="btn btn-cta self-start">Find Excavation Services Near You &rarr;</a>
 				</div>
 			</div>
-			<p class="mt-6 text-center text-sm text-slate-600">
+
+			<p class="mt-10 text-center text-sm text-slate-600">
 				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
 			</p>
 		</div>
 	</section>
-	<!-- Process / What to Expect -->
-	<section class="bg-ink text-white">
-		<div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
-			<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
-				What to Expect During an Excavation Project
-			</h2>
-			<p class="mt-4 text-center text-slate-300 max-w-2xl mx-auto leading-relaxed">
-				An excavation project starts with the property, planned work, site conditions, and required project scope. The work can then be organized around the excavation, grading, clearing, drainage, trenching, foundation, driveway, or septic services needed for the property.
-			</p>
-			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+	<!-- ── What to Expect / Process ─────────────────────────────────────── -->
+	<section class="relative bg-ink text-white overflow-hidden">
+		<!-- Subtle radial glow — right side -->
+		<div
+			class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+			aria-hidden="true"
+		></div>
+
+		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+			<!-- Section header -->
+			<div class="mb-12 md:mb-16 text-center">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+					What to Expect During an Excavation Project
+				</h2>
+				<p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+					An excavation project starts with the property, planned work, site conditions, and required project scope. The work can then be organized around the excavation, grading, clearing, drainage, trenching, foundation, driveway, or septic services needed for the property.
+				</p>
+			</div>
+
+			<!-- Process step cards -->
+			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
 				{processSteps.map((item) => (
-					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
-						<span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+						<span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
 							{item.step}
 						</span>
 						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
@@ -223,15 +286,35 @@ const businessSchema = {
 					</div>
 				))}
 			</div>
-			<div class="mt-10 text-center">
+
+			<div class="mt-12 text-center">
 				<a href="/contact" class="btn btn-cta">Start Your Project Estimate</a>
 			</div>
 		</div>
 	</section>
+
+	<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
 	<FAQ items={faqs} />
-	<div class="bg-white border-b border-slate-200 py-10 text-center">
-		<a href="/contact" class="btn btn-cta inline-flex">Ask About Your Excavation Project</a>
-	</div>
+
+	<!-- ── Mid-page CTA strip ────────────────────────────────────────────── -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-3xl px-4 py-14 md:py-20 text-center">
+			<p class="font-display font-black uppercase tracking-tight text-2xl text-ink md:text-3xl">
+				Questions About Your Excavation Project?
+			</p>
+			<p class="mt-3 text-slate-700 leading-relaxed max-w-xl mx-auto">
+				Free estimates are available for applicable excavation projects in Lane County. Call or email D&amp;D Land Works to discuss your property and scope.
+			</p>
+			<div class="mt-7 flex flex-wrap items-center justify-center gap-4">
+				<a href="/contact" class="btn btn-cta inline-flex">Ask About Your Excavation Project</a>
+				<a href="tel:5414018726" class="font-display font-bold text-ink hover:text-brand-blue transition-colors text-lg">
+					541-401-8726
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── Final CTA Block ───────────────────────────────────────────────── -->
 	<CTABlock
 		headline="Get a Free Estimate From D&D Land Works"
 		subheadline="Planning excavation, site preparation, grading, land clearing, drainage, trenching, foundation excavation, driveway work, or septic services in Lane County? Contact D&D Land Works to discuss your property and project requirements. Call 541-401-8726 or email david@ddlandworks.com."
