@@ -5,10 +5,32 @@
 */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import AboutSection from '../components/AboutSection.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+
+const whyItems = [
+  {
+    title: 'On-Site Estimates',
+    description: 'Every quote follows a walkthrough of your property, priced for your actual soil, slope, and access — not a phone-in approximation.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
+  },
+  {
+    title: 'Residential & Commercial',
+    description: 'The same crew and equipment serve homeowners, builders, and commercial development sites across Lane County — no project too large or too small.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+  },
+  {
+    title: 'Clean Job Sites',
+    description: 'Clear, grade, trench, compact, or install — whatever the job requires, the site gets left clean and organized when the work is done.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6" /><path stroke-linecap="round" stroke-linejoin="round" d="m15.5 3.5 2-2m1 4 2-2" />',
+  },
+  {
+    title: 'Direct Communication',
+    description: 'Call or message and reach the person who will actually run the job — not a call center, not a dispatcher relay, not a sales team.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-1.1 4.2L21 20l-4.5-1a8.4 8.4 0 1 1 4.5-7.5Z" />',
+  },
+];
 
 const services = [
   { title: 'Site Preparation', description: 'Clearing, rough grading, and access preparation can prepare a property for construction or other planned improvements.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
@@ -151,13 +173,64 @@ const businessSchema = {
 	</section>
 
 	<!-- ── Why Choose D&D Land Works ────────────────────────────────────── -->
-	<AboutSection
-		eyebrow="Why Choose D&D Land Works"
-		headlineHtml='Why Choose D&D Land Works <span class="text-brand-blue">for Excavation?</span>'
-		descriptionHtml="<p>Choosing an excavation contractor involves more than the type of equipment used. Project scope, site access, related excavation services, licensing, and communication can all affect how the work is organized. D&amp;D Land Works provides excavation and site preparation services within a defined scope for residential and commercial properties throughout Lane County.</p><p>Oregon CCB license <strong class='font-semibold text-ink'>#261742</strong> establishes the contractor&rsquo;s licensing and bonding status. Free estimates are available for applicable excavation projects. Septic installation and repair for qualifying onsite wastewater work is also within scope.</p>"
-		ctaLabel="Talk to an Excavation Contractor"
-		ctaHref="/contact"
-	/>
+	<section class="relative bg-white overflow-hidden">
+		<!-- Decorative ambient glow — bottom left -->
+		<div
+			class="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-brand-blue-light/30 blur-3xl"
+			aria-hidden="true"
+		></div>
+
+		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+			<!-- Section header -->
+			<div class="mb-12 md:mb-16 text-center max-w-2xl mx-auto">
+				<div class="mb-4 flex items-center justify-center gap-2">
+					<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+					<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+						Why Choose D&amp;D Land Works
+					</p>
+				</div>
+				<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+					Why Choose D&amp;D Land Works <span class="text-brand-blue">for Excavation?</span>
+				</h2>
+				<p class="mt-5 text-slate-700 leading-relaxed">
+					Choosing an excavation contractor involves more than equipment. Here is what shapes how D&amp;D Land Works approaches each project in Lane County.
+				</p>
+			</div>
+
+			<!-- 4 reason cards -->
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{whyItems.map((item) => (
+					<div class="card flex flex-col gap-4">
+						<span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+						</span>
+						<div>
+							<h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">
+								{item.title}
+							</h3>
+							<p class="mt-2 text-sm text-slate-600 leading-relaxed">
+								{item.description}
+							</p>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<!-- CTA -->
+			<div class="mt-12 text-center">
+				<a href="/contact" class="btn-pill inline-flex">
+					Talk to an Excavation Contractor
+					<span class="btn-pill-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</span>
+				</a>
+			</div>
+
+		</div>
+	</section>
 
 	<!-- ── Services ─────────────────────────────────────────────────────── -->
 	<section id="services" class="relative">
