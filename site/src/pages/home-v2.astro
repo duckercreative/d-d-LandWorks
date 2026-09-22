@@ -25,23 +25,31 @@ const services = [
 const problemCards = [
   {
     title: 'Preparing Raw or Undeveloped Land',
-    description: 'We clear, excavate, and grade undeveloped property to create usable ground for construction, access, drainage, or other planned improvements.',
+    description: 'Undeveloped land requires clearing, excavation, and grading before construction or planned improvements can begin. We handle site preparation and land clearing to prepare raw property for the next stage of the project.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
+    href: '/services/site-preparation',
+    linkLabel: 'Site Preparation',
   },
   {
     title: 'Poor Grading and Standing Water',
-    description: 'We reshape uneven areas where poor grading contributes to standing water, creating more suitable grades for drainage and planned property use.',
+    description: 'Standing water around structures, driveways, and yard areas often traces back to poor grading. We correct grades, address drainage paths, and reshape affected areas so water moves away from the property rather than collecting on it.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
+    href: '/services/grading-leveling',
+    linkLabel: 'Grading & Leveling',
   },
   {
     title: 'Drainage, Erosion & Slope Conditions',
-    description: 'We address excavation and grading needs related to drainage, erosion, and slope conditions, with the project scope based on site access and ground conditions.',
+    description: 'Erosion, unstable slopes, and drainage problems can worsen without correction. We excavate, regrade, and reshape affected areas — addressing the ground conditions that allow erosion or water movement to damage the site.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
+    href: '/services/drainage-excavation',
+    linkLabel: 'Drainage Excavation',
   },
   {
     title: 'Damaged Driveways, Utilities & Site Access',
-    description: 'We repair gravel driveways and perform excavation for utility access, trenches, and related site work where existing property conditions require excavation or grading.',
+    description: 'A rutted driveway, failed utility trench, or inaccessible site entry often requires excavation before it can be corrected. We regrade driveways, open utility trenches, and restore site access based on existing conditions.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
+    href: '/services/driveway-repair',
+    linkLabel: 'Driveway Repair',
   },
 ];
 
@@ -249,6 +257,14 @@ const businessSchema = {
 						<div>
 							<h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
 							<p class="mt-2 text-sm text-slate-600 leading-relaxed">{card.description}</p>
+							{card.href && (
+								<a href={card.href} class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+									{card.linkLabel}
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+									</svg>
+								</a>
+							)}
 						</div>
 					</div>
 				))}
