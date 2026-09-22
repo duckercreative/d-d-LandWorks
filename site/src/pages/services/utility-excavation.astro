@@ -36,7 +36,7 @@ const depthTable = [
   { utility: 'Water service line', depth: '24 in. total (12 in. below Lane County’s 12 in. frost depth)', code: 'OPSC 609.1' },
   { utility: 'Sewer lateral', depth: '12 in. minimum ground cover, sloped ~1/4 in./ft', code: 'OPSC 718.1' },
   { utility: 'Gas line', depth: '18 in. standard (8 in. for outdoor-appliance lines, if approved)', code: 'ORSC G2415.12 / .12.1' },
-  { utility: 'Electrical conduit', depth: '6–24 in., depending on wiring method — NEC national baseline; Oregon’s OESC amendment not directly confirmed', code: 'NEC Table 300.5' },
+  { utility: 'Electrical conduit', depth: '6–24 in., depending on wiring method, NEC national baseline; Oregon’s OESC amendment not directly confirmed', code: 'NEC Table 300.5' },
 ];
 
 const faqs = [
@@ -46,7 +46,7 @@ const faqs = [
   { question: 'How deep does a gas line need to be buried?', answer: '18 inches minimum cover standard, per ORSC G2415.12. An individual outdoor-appliance line, a grill or a light, may run as shallow as 8 inches if approved by the local authority, per G2415.12.1.' },
   { question: 'Can water, sewer, electrical, and gas all go in the same trench?', answer: 'Yes, generally. Lane County permits multiple utilities sharing one trench without prohibition. The one code-stated rule: the water pipe’s bottom must sit at least 12 inches above the sewer pipe’s top where the two cross (OPSC 720.1). Individual utility companies may add their own separation specs on top of this, so confirm for a specific job.' },
   { question: 'Who calls Oregon811 before utility trenching starts?', answer: 'D&D Land Works does, before every dig. Oregon811 requires at least two business days’ advance notice, free of charge, enforced by the Oregon PUC. This is a separate call from the utility-company tap application.' },
-  { question: 'Who calls the utility company for a new tap — me or the contractor?', answer: 'Typically, the property owner or their developer/builder initiates the tap request directly with the utility (EWEB, Springfield Utility Board, or a rural water district); the actual trenching from the main or meter to the structure is done separately by the excavation contractor. This varies by utility, and which party D&D itself coordinates with on a given job is confirmed per job, not a fixed practice.' },
+  { question: 'Who calls the utility company for a new tap: me or the contractor?', answer: 'Typically, the property owner or their developer/builder initiates the tap request directly with the utility (EWEB, Springfield Utility Board, or a rural water district); the actual trenching from the main or meter to the structure is done separately by the excavation contractor. This varies by utility, and which party D&D itself coordinates with on a given job is confirmed per job, not a fixed practice.' },
   { question: 'What’s the difference between utility excavation and trenching and backfill?', answer: 'This page covers which utility is being run, why, and at what code-required depth: water, sewer, electrical, gas, and communications. Trenching & Backfill covers the general mechanics of opening and properly closing any trench, bedding, compaction in lifts, surface restoration, whether it’s for a utility line, drainage pipe, or a footing.' },
   { question: 'Does trenching under a driveway or patio cost more than trenching through open ground?', answer: 'Yes. Trenching through existing hardscape requires saw-cutting, disposal of the removed material, and surface restoration that open-ground trenching doesn’t, a real cost driver stated honestly here rather than surfacing as a surprise mid-job. No Lane-County-exact multiplier exists; a free on-site estimate is the way to price a specific trench route.' },
 ];
@@ -124,7 +124,7 @@ const serviceSchema = {
 		ctaHref="/contact"
 		eyebrow="Utility Excavation in Lane County, OR"
 		headlineHtml="Professional <span class='text-brand-blue'>Utility Excavation</span> in Eugene, Springfield &amp; Lane County"
-		descriptionHtml="<p>Utility excavation is trenching to bring a new water service line, sewer lateral, electrical conduit, or gas line to a structure &mdash; a different job than general excavation (creating space for a foundation) or drainage excavation (managing water). Required burial depth in Lane County, Oregon depends on the utility: water lines need 24 inches total (OPSC 609.1), sewer laterals need 12 inches of cover (OPSC 718.1), gas lines need 18 inches (ORSC G2415.12), and electrical conduit needs 6&ndash;24 inches depending on wiring method (NEC Table 300.5).</p><p>D&amp;D Land Works calls Oregon 811 before every dig and provides utility excavation for residential and commercial properties throughout Eugene, Springfield, and Lane County under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
+		descriptionHtml="<p>Utility excavation is trenching to bring a new water service line, sewer lateral, electrical conduit, or gas line to a structure, a different job than general excavation (creating space for a foundation) or drainage excavation (managing water). Required burial depth in Lane County, Oregon depends on the utility: water lines need 24 inches total (OPSC 609.1), sewer laterals need 12 inches of cover (OPSC 718.1), gas lines need 18 inches (ORSC G2415.12), and electrical conduit needs 6&ndash;24 inches depending on wiring method (NEC Table 300.5).</p><p>D&amp;D Land Works calls Oregon 811 before every dig and provides utility excavation for residential and commercial properties throughout Eugene, Springfield, and Lane County under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>. Free estimates are available.</p>"
 	/>
 	<!-- What it covers -->
 	<section class="mx-auto max-w-6xl px-4 py-16">
@@ -242,7 +242,7 @@ const serviceSchema = {
 		badgeLabel="What's Run vs. How the Trench Is Closed"
 		ctaLabel="See Trenching & Backfill"
 		ctaHref="/services/trenching-backfill"
-		bodyHtml="<p>This page covers which utility is being run, why, and at what code-required depth.</p><p><a href='/services/trenching-backfill' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Trenching &amp; Backfill</a> covers the general mechanics of opening and properly closing any trench &mdash; bedding, compaction in lifts, and surface restoration &mdash; whether that trench is for a utility line, a drainage pipe, or a footing.</p>"
+		bodyHtml="<p>This page covers which utility is being run, why, and at what code-required depth.</p><p><a href='/services/trenching-backfill' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Trenching &amp; Backfill</a> covers the general mechanics of opening and properly closing any trench: bedding, compaction in lifts, and surface restoration, whether that trench is for a utility line, a drainage pipe, or a footing.</p>"
 	/>
 	<PhotoContentBlock
 		eyebrow="Utility Excavation in Lane County, OR"
@@ -254,7 +254,7 @@ const serviceSchema = {
 		badgeLabel="Licensed & Bonded"
 		ctaLabel="Get a Free Estimate"
 		ctaHref="/contact"
-		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 &mdash; a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every utility trench is dug to the code-required depth for that specific line, and Oregon 811 gets called at least two business days before equipment ever moves.</p><p>David Deggelman scopes every job in person and confirms which utilities are going in, at what depth, and whether they can share a trench, before anything&rsquo;s quoted. If you&rsquo;re bringing water, sewer, electrical, or gas service to a new structure anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Every utility trench is dug to the code-required depth for that specific line, and Oregon 811 gets called at least two business days before equipment ever moves.</p><p>David Deggelman scopes every job in person and confirms which utilities are going in, at what depth, and whether they can share a trench, before anything&rsquo;s quoted. If you&rsquo;re bringing water, sewer, electrical, or gas service to a new structure anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
 	/>
 	<WhyChooseUs
 		descriptionHtml="Every utility trench starts with a call to Oregon 811, gets cut to the code-required depth for that specific line, and is scoped by David in person before anything's quoted."
@@ -311,7 +311,7 @@ const serviceSchema = {
 				</div>
 			</div>
 			<p class="mt-6 text-center text-sm text-slate-600">
-				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a>, the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
 			</p>
 		</div>
 	</section>

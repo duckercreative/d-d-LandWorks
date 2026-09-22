@@ -15,10 +15,10 @@ const { before, after, caption, id } = Astro.props;
 		data-before-after
 		style="--reveal: 50%;"
 	>
-		<img src={after} alt={`${caption} — after`} class="absolute inset-0 h-full w-full object-cover" loading="lazy" draggable="false" />
+		<img src={after} alt={`${caption}: after`} class="absolute inset-0 h-full w-full object-cover" loading="lazy" draggable="false" />
 		<img
 			src={before}
-			alt={`${caption} — before`}
+			alt={`${caption}: before`}
 			class="absolute inset-0 h-full w-full object-cover"
 			style="clip-path: inset(0 calc(100% - var(--reveal)) 0 0);"
 			loading="lazy"

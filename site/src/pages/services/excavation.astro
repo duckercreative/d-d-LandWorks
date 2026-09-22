@@ -29,8 +29,8 @@ const projectTypes = [
 
 const costRows = [
   { model: 'Hourly', range: '$100–$300/hr', drives: 'Machine size, job complexity, how much hands-on operator time it takes' },
-  { model: 'Per cubic yard — standard soil', range: '$2.50–$15/cu yd', drives: 'Volume of material moved, haul distance, access' },
-  { model: 'Per cubic yard — rock', range: '$50–$200/cu yd', drives: 'Whether the crew hits solid rock and needs ripping or blasting' },
+  { model: 'Per cubic yard, standard soil', range: '$2.50–$15/cu yd', drives: 'Volume of material moved, haul distance, access' },
+  { model: 'Per cubic yard, rock', range: '$50–$200/cu yd', drives: 'Whether the crew hits solid rock and needs ripping or blasting' },
   { model: 'Flat per-project', range: 'Varies by scope', drives: 'Used for well-defined jobs like a single driveway cut or one pad' },
 ];
 
@@ -49,7 +49,7 @@ const faqs = [
   { question: 'What’s the difference between residential and commercial excavation?', answer: 'Residential jobs typically use compact machines, mini excavators and skid steers, moving at most a few hundred cubic yards. Commercial jobs are measured in acres, with full-size equipment and sometimes multiple crews working in phases. Either way, the process is the same: a real site visit and a written estimate, not a phone-quoted guess.' },
   { question: 'What equipment is used for excavation work?', answer: 'An excavator handles digging and rock work, a dozer pushes and shapes material across larger cuts, and compaction equipment runs behind the fill. What shows up depends on the site, a tight in-town lot needs a smaller machine than an acreage parcel with a long haul road.' },
   { question: 'Do I need to call 811 before digging in Oregon?', answer: 'Yes. Oregon811 (the Oregon Utility Notification Center) requires at least two business days’ advance notice before digging, and locate requests are free. D&D Land Works makes that call before starting any dig, as Oregon law requires.' },
-  { question: 'Do I need a permit to excavate in Lane County?', answer: 'It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1 — confirm the exact figure for your project with Lane County’s Land Management Division rather than treating that as an exact, guaranteed number. See site preparation for the fuller permit picture.' },
+  { question: 'Do I need a permit to excavate in Lane County?', answer: 'It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1. Confirm the exact figure for your project with Lane County’s Land Management Division rather than treating that as an exact, guaranteed number. See site preparation for the fuller permit picture.' },
   { question: 'How long does excavation take?', answer: 'Often just a few days for a residential job once permits and site prep are done. Commercial or multi-building excavation commonly runs 1 to 3-plus weeks depending on scope, access, and how much material has to move.' },
   { question: 'Can you excavate for a pond, driveway, or utility line, or just foundations?', answer: 'Yes to all of them. D&D Land Works scopes foundation digs, ponds, driveways and access roads, and utility runs individually, walking each site rather than treating every job as the same generic dig.' },
 ];
@@ -117,7 +117,7 @@ const serviceSchema = {
 	<Hero
 		eyebrow="Service"
 		headline="Excavation in Eugene, Springfield & Lane County, Oregon"
-		subheadline="General earthmoving for a defined purpose: cutting material from a high spot, filling a low spot, and bringing a site to the elevation a specific project needs — a foundation, a pond, a driveway, or a utility trench."
+		subheadline="General earthmoving for a defined purpose: cutting material from a high spot, filling a low spot, and bringing a site to the elevation a specific project needs: a foundation, a pond, a driveway, or a utility trench."
 		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
 		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
 	/>
@@ -127,7 +127,7 @@ const serviceSchema = {
 		ctaHref="/contact"
 		eyebrow="Excavation Services in Lane County, OR"
 		headlineHtml="Professional <span class='text-brand-blue'>Excavation</span> in Eugene, Springfield &amp; Lane County"
-		descriptionHtml="<p>Excavation and grading is general earthmoving work: cutting material from high points, filling low points, and bringing a site to the elevation a project needs &mdash; whether that&rsquo;s a foundation, a pond, a driveway, a building pad, or a utility line trench.</p><p>D&amp;D Land Works provides excavation and grading for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, including foundation digs, pond excavation, driveway and access-road cutting, and utility-run trenching, using an excavator, dozer, and compaction equipment matched to the site. D&amp;D is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>, calls <strong class='font-semibold text-ink'>Oregon 811</strong> at least two business days before digging on every job, and follows OSHA&rsquo;s excavation and trenching safety standard (29 CFR 1926 Subpart P) on jobs involving deeper cuts or trenches. Free estimates are available for both residential and commercial excavation work.</p>"
+		descriptionHtml="<p>Excavation and grading is general earthmoving work: cutting material from high points, filling low points, and bringing a site to the elevation a project needs, whether that&rsquo;s a foundation, a pond, a driveway, a building pad, or a utility line trench.</p><p>D&amp;D Land Works provides excavation and grading for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, including foundation digs, pond excavation, driveway and access-road cutting, and utility-run trenching, using an excavator, dozer, and compaction equipment matched to the site. D&amp;D is licensed and bonded under Oregon <strong class='font-semibold text-ink'>CCB #261742</strong>, calls <strong class='font-semibold text-ink'>Oregon 811</strong> at least two business days before digging on every job, and follows OSHA&rsquo;s excavation and trenching safety standard (29 CFR 1926 Subpart P) on jobs involving deeper cuts or trenches. Free estimates are available for both residential and commercial excavation work.</p>"
 	/>
 	<!-- What does it cover -->
 	<section class="mx-auto max-w-6xl px-4 py-16">
@@ -322,7 +322,7 @@ const serviceSchema = {
 		badgeLabel="Licensed & Bonded"
 		ctaLabel="Get a Free Estimate"
 		ctaHref="/contact"
-		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, calls Oregon 811 before every dig, and follows OSHA&rsquo;s excavation and trenching safety standard on jobs that call for it &mdash; credentials and process you can verify yourself rather than take on faith.</p><p>David Deggelman owns the company and scopes every job in person, so your estimate is based on your site&rsquo;s actual access, soil, and scope. If you&rsquo;re planning a foundation dig, pond, driveway cut, or utility run anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
+		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, calls Oregon 811 before every dig, and follows OSHA&rsquo;s excavation and trenching safety standard on jobs that call for it, credentials and process you can verify yourself rather than take on faith.</p><p>David Deggelman owns the company and scopes every job in person, so your estimate is based on your site&rsquo;s actual access, soil, and scope. If you&rsquo;re planning a foundation dig, pond, driveway cut, or utility run anywhere in Eugene, Springfield, or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
 	/>
 	<WhyChooseUs
 		descriptionHtml="Every excavation job starts with David walking the site in person, calling Oregon 811 before equipment ever moves, and confirming which permits actually apply to your project."
@@ -379,7 +379,7 @@ const serviceSchema = {
 				</div>
 			</div>
 			<p class="mt-6 text-center text-sm text-slate-600">
-				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> &mdash; the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
+				Don&rsquo;t see your town? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a>, the list above isn&rsquo;t exhaustive of every address D&amp;D Land Works will drive to.
 			</p>
 		</div>
 	</section>
