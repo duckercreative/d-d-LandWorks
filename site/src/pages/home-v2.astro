@@ -9,56 +9,84 @@ import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
 
-const whyItems = [
+const services = [
+  { title: 'Site Preparation', description: 'We prepare properties for construction and planned improvements by clearing, excavating, grading, and shaping the site according to the project scope.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
+  { title: 'Land & Brush Clearing', description: 'We clear brush and other site growth when an area needs to be opened for construction, access, grading, or excavation.', href: '/services/land-clearing', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
+  { title: 'Grading & Leveling', description: 'We grade and level ground to establish the elevations needed for construction, drainage, driveways, and other site improvements.', href: '/services/grading-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Foundation Excavation', description: 'Foundation excavation prepares the ground for a building foundation by excavating within the required project area based on planned construction and site layout.', href: '/services/foundation-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
+  { title: 'Drainage Excavation', description: 'Drainage excavation creates the ground changes or excavated areas needed for site drainage work where water collects or moves through areas that need improvement.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Utility Excavation', description: 'Utility excavation creates access and trenches for underground utility work. Scope depends on the utility, trench location, depth, and existing site conditions.', href: '/services/utility-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
+  { title: 'Trenching & Backfill', description: 'We excavate trenches for applicable utility, septic, and site projects and handle backfill where it forms part of the project scope.', href: '/services/trenching-backfill', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Septic Installation & Repair', description: 'D&D Land Works handles septic installation and repair and is DEQ certified for relevant septic work. Scope depends on the property, existing system, and site conditions.', href: '/services/septic-install-repairs', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Driveway Repair', description: 'We repair gravel driveways where grading, excavation, drainage, or access work is needed based on existing driveway conditions and property access.', href: '/services/driveway-repair', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
+  { title: 'Slope Stabilization', description: 'We perform excavation and grading work related to slope conditions where the project calls for changes to the existing ground based on site access and soil conditions.', href: '/services/slope-stabilization', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+];
+
+const problemCards = [
   {
-    title: 'Owner-Operated',
-    description: 'You can speak directly with the person involved in your project, making it easier to discuss the property, work, and questions that come up along the way.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z M4 21v-1.5a7 7 0 0 1 14 0V21" />',
+    title: 'Preparing Raw or Undeveloped Land',
+    description: 'We clear, excavate, and grade undeveloped property to create usable ground for construction, access, drainage, or other planned improvements.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
   },
   {
-    title: 'Local to Lane County',
-    description: 'Working locally means familiarity with the properties, roads, terrain, and site conditions found throughout the surrounding area.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" /><circle cx="12" cy="10.5" r="2.3" fill="currentColor" stroke="none" />',
+    title: 'Poor Grading and Standing Water',
+    description: 'We reshape uneven areas where poor grading contributes to standing water, creating more suitable grades for drainage and planned property use.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
   },
   {
-    title: 'Licensed & Bonded',
-    description: 'D&D Land Works operates under Oregon Construction Contractors Board license #261742, giving property owners a way to verify the contractor\'s licensing status.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
+    title: 'Drainage, Erosion & Slope Conditions',
+    description: 'We address excavation and grading needs related to drainage, erosion, and slope conditions, with the project scope based on site access and ground conditions.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
   },
   {
-    title: 'Hands-On Site Work',
-    description: 'Excavation can involve more than moving soil. Clearing, grading, drainage, access, trenching, and other site conditions can all affect what happens on the property.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />',
+    title: 'Damaged Driveways, Utilities & Site Access',
+    description: 'We repair gravel driveways and perform excavation for utility access, trenches, and related site work where existing property conditions require excavation or grading.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
   },
 ];
 
-const services = [
-  { title: 'Site Preparation', description: 'Clearing, rough grading, and access preparation can prepare a property for construction or other planned improvements.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
-  { title: 'Excavation', description: 'General earthwork supports new construction, additions, property improvements, and other excavation requirements.', href: '/services/excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
-  { title: 'Land & Brush Clearing', description: 'Land and brush clearing prepares raw or overgrown areas for subsequent excavation, grading, or property improvements.', href: '/services/land-clearing', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
-  { title: 'Foundation Excavation', description: 'Foundation excavation prepares areas for homes, shops, barns, ADUs, and other applicable building projects.', href: '/services/foundation-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
-  { title: 'Grading & Leveling', description: 'Grading and leveling shape the property surface for construction, access, drainage, and finished site conditions.', href: '/services/grading-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Drainage Excavation', description: 'Drainage excavation creates or modifies excavated paths needed for applicable water-management improvements.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Utility Excavation & Trenching', description: 'Utility excavation and trenching provide excavated pathways for applicable underground utility installations.', href: '/services/utility-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
-  { title: 'Septic Installation & Repair', description: 'Septic installation and repair address applicable onsite wastewater projects within the company&rsquo;s service scope.', href: '/services/septic-install-repairs', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Driveway Repair & Grading', description: 'Driveway repair and grading improve gravel driveways and property access areas where grading or surface correction is required.', href: '/services/driveway-repair', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-  { title: 'Slope Stabilization', description: 'Slope stabilization involves applicable excavation and site work for properties where slope conditions require stabilization measures.', href: '/services/slope-stabilization', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+const whyItems = [
+  {
+    title: 'Licensed & Bonded',
+    description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. Customers can verify the license through the official Oregon Construction Contractors Board lookup.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
+    link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' },
+  },
+  {
+    title: 'Free Estimates',
+    description: 'We provide free estimates for excavation and site preparation projects. The scope can be discussed around the property, access, existing conditions, and work you need completed.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
+  },
+  {
+    title: 'Residential Projects',
+    description: 'We handle excavation and site preparation for homeowners and property owners throughout Eugene, Springfield, and surrounding Lane County communities.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+  },
+  {
+    title: 'Commercial Projects',
+    description: 'We also handle excavation and site preparation for commercial customers, builders, and other property projects based on the required scope and site conditions.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18" />',
+  },
+  {
+    title: 'DEQ Certified for Septic Work',
+    description: 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+  },
 ];
 
 const processSteps = [
-  { step: '1', title: 'Request a Free Estimate', detail: 'Provide the property location and describe the excavation or site preparation work you need.' },
-  { step: '2', title: 'Review the Project Scope', detail: 'The required work is defined according to the property, planned improvements, access, site conditions, and applicable services.' },
-  { step: '3', title: 'Plan the Site Work', detail: 'The excavation and related site work are organized according to the defined project requirements.' },
-  { step: '4', title: 'Complete the Excavation Work', detail: 'Applicable excavation, clearing, grading, trenching, drainage, foundation, driveway, or septic work is completed according to the project scope.' },
-  { step: '5', title: 'Complete Final Site Work', detail: 'Final grading, backfill, access work, or cleanup can be completed when included in the project scope.' },
+  { step: '1', title: 'Project Discussion', detail: 'We start by discussing the property, planned work, access, and the excavation or site preparation you need completed. This helps define the initial project scope.' },
+  { step: '2', title: 'Site Assessment', detail: 'Site conditions such as existing grades, soil, drainage, access, structures, and utilities can affect the excavation work. These conditions help determine the work required.' },
+  { step: '3', title: 'Excavation Work', detail: 'Once the scope is established, the required clearing, excavation, grading, trenching, drainage, or related site work is completed according to the project requirements.' },
+  { step: '4', title: 'Final Site Review', detail: 'After the planned work is completed, the site is reviewed to confirm the excavation and related work have been addressed according to the agreed project scope.' },
 ];
 
 const faqs = [
-  { question: 'What services does D&D Land Works provide?', answer: 'D&D Land Works provides site preparation, excavation, land and brush clearing, foundation excavation, grading and leveling, drainage excavation, utility excavation and trenching, septic installation and repair, driveway repair and grading, and slope stabilization. These services support residential and commercial construction, property improvements, access, drainage, utility, foundation, and septic projects.' },
-  { question: 'Is D&D Land Works licensed and bonded?', answer: 'Yes, D&D Land Works operates under Oregon Construction Contractors Board license #261742 and maintains the applicable licensing and bonding requirements for its excavation work. Customers can verify the contractor\'s license through the Oregon Construction Contractors Board before hiring. The CCB license provides a direct way to check the contractor\'s licensing record.' },
-  { question: 'Does D&D Land Works serve Eugene and Springfield?', answer: 'Yes, D&D Land Works serves Eugene, Springfield, and surrounding communities within Lane County, Oregon. The service area includes residential and commercial excavation projects involving site preparation, grading, land and brush clearing, drainage excavation, utility trenching, foundation excavation, driveway work, septic services, and other applicable site work within the company\'s service scope.' },
-  { question: 'How do I get an excavation estimate?', answer: 'To request an excavation estimate, contact D&D Land Works at 541-401-8726 or david@ddlandworks.com and provide the property location and a description of the planned work. The project can then be discussed according to the required excavation, site preparation, grading, drainage, trenching, foundation, driveway, or septic services.' },
-  { question: 'Does D&D Land Works install and repair septic systems?', answer: 'Yes, septic installation and repair are included within D&D Land Works\' stated service scope. Qualifying projects receive applicable onsite wastewater excavation and related septic work. Specific requirements depend on the property and project, so site conditions, regulatory requirements, and scope should be reviewed before work begins.' },
+  { question: 'What Does an Excavation Contractor Do?', answer: 'An excavation contractor prepares and changes ground for construction, drainage, utilities, foundations, access, septic work, and other property projects. D&D Land Works handles excavation, clearing, grading, trenching, driveway repair, septic work, and related site preparation throughout Lane County.' },
+  { question: 'What Services Does D&D Land Works Provide?', answer: 'D&D Land Works provides site preparation, land and brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic installation and repair, driveway repair, and slope stabilization for residential and commercial properties across Lane County.' },
+  { question: 'Does D&D Land Works Work on Residential Properties?', answer: 'Yes. D&D Land Works handles residential excavation and site preparation for homeowners and property owners. Projects can include preparing undeveloped land, foundation excavation, grading, drainage work, utility trenches, driveway repair, septic work, and other excavation needs based on site conditions.' },
+  { question: 'Is D&D Land Works Licensed and Bonded?', answer: 'Yes. D&D Land Works is licensed and bonded in Oregon under Construction Contractors Board license #261742. Customers can verify Oregon contractor licensing through the Oregon CCB\'s official license lookup before hiring an excavation contractor for their project.' },
+  { question: 'Does D&D Land Works Provide Free Estimates?', answer: 'Yes. D&D Land Works provides free estimates for excavation and site preparation projects. The estimate can be based on the property\'s existing conditions, access, planned work, excavation requirements, drainage, utilities, and other factors affecting the project scope.' },
 ];
 
 const anchorAreas = [
@@ -99,21 +127,21 @@ const businessSchema = {
 ---
 
 <BaseLayout
-	title="Licensed Excavation Contractor in Lane County, OR | D&D Land Works"
-	description="Licensed, bonded excavation & site prep contractor serving Lane County, OR. Site prep, grading, septic & more. Free estimates: 541-401-8726."
+	title="Excavation Contractor in Eugene, Oregon | D&D Land Works"
+	description="Licensed, bonded excavation contractor in Eugene & Lane County, OR. Site prep, grading, land clearing, septic & more. Free estimates: 541-401-8726."
 >
+	<!-- ── Hero ─────────────────────────────────────────────────────────── -->
 	<Hero
 		eyebrow="Lane County, OR"
-		headline="Licensed Excavation Contractor in Lane County, Oregon"
-		subheadline="D&D Land Works is a licensed and bonded excavation contractor serving Lane County, Oregon. We provide site preparation, excavation, grading, land clearing, drainage, utility trenching, foundation excavation, and septic installation and repair for residential and commercial projects."
-		primaryCta={{ label: 'Get a Free Estimate', href: '/contact' }}
+		headline="Excavation Contractor in Eugene, Oregon"
+		subheadline="D&D Land Works is a licensed and bonded excavation contractor serving Eugene and Lane County, Oregon. We handle site preparation, grading, land clearing, foundation excavation, drainage, utility excavation, trenching, septic work, driveway repair, and slope stabilization."
+		primaryCta={{ label: 'Request a Free Estimate', href: '/contact' }}
 		secondaryCta={{ label: 'Our Services', href: '#services' }}
 		backgroundImages={['/project-excavation-bucket.webp', '/project-grading-driveway.webp', '/project-finished-grading.webp']}
 	/>
 
-	<!-- ── About Our Excavation Company ─────────────────────────────────── -->
+	<!-- ── About: Owner-Operated ────────────────────────────────────────── -->
 	<section class="relative bg-white overflow-hidden">
-		<!-- Decorative ambient glow — top right -->
 		<div
 			class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
 			aria-hidden="true"
@@ -127,15 +155,17 @@ const businessSchema = {
 					<div class="mb-4 flex items-center gap-2">
 						<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
 						<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-							Lane County&rsquo;s Excavation Contractor
+							About D&amp;D Land Works
 						</p>
 					</div>
 					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-						About D&amp;D Land Works
+						Owner-Operated Excavation Contractor Serving Lane County, Oregon
 					</h2>
-					<p class="mt-5 text-slate-700 leading-relaxed max-w-prose">
-						D&amp;D Land Works is a licensed and bonded excavation contractor serving residential and commercial properties throughout Lane County, Oregon. Site preparation, excavation, grading, land and brush clearing, foundation excavation, drainage, utility trenching, driveway grading, septic installation and repair, and slope stabilization form part of its defined service scope.
-					</p>
+					<div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+						<p>D&amp;D Land Works works with homeowners, property owners, builders, and commercial customers throughout Lane County. We handle the excavation and site work needed to prepare, improve, or repair a property.</p>
+						<p>Our work includes site preparation, land and brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic installation and repair, driveway repair, and slope stabilization. The right scope depends on the property, existing conditions, access, and the work you need completed.</p>
+						<p>Our service area includes Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell, and surrounding Lane County communities.</p>
+					</div>
 					<a href="/about" class="btn-pill mt-8 inline-flex">
 						Learn More About D&amp;D Land Works
 						<span class="btn-pill-icon">
@@ -154,7 +184,6 @@ const businessSchema = {
 						class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
 						loading="lazy"
 					/>
-					<!-- License badge overlapping bottom-left of image -->
 					<div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
 						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -172,6 +201,73 @@ const businessSchema = {
 		</div>
 	</section>
 
+	<!-- ── Services ─────────────────────────────────────────────────────── -->
+	<section id="services" class="relative">
+		<div class="relative bg-ink overflow-hidden">
+			<img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
+				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+					Complete Excavation &amp; Site Preparation Services
+				</h2>
+				<p class="mt-5 text-slate-300 leading-relaxed">
+					D&amp;D Land Works handles excavation and site preparation for construction, property improvements, drainage, utilities, access, septic work, and other projects across Eugene and Lane County.
+				</p>
+			</div>
+		</div>
+
+		<div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+			<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+				{services.map((service) => <ServiceCard {...service} />)}
+			</div>
+		</div>
+
+		<div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+			<a href="/services" class="btn btn-cta inline-flex">Explore Our Services</a>
+			<a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+		</div>
+	</section>
+
+	<!-- ── Common Property Problems ─────────────────────────────────────── -->
+	<section class="bg-slate-50 border-y border-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+			<div class="mb-12 md:mb-14 text-center">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Common Projects</p>
+				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+					Excavation Services for Common Property Problems
+				</h2>
+			</div>
+
+			<div class="grid gap-6 sm:grid-cols-2">
+				{problemCards.map((card) => (
+					<div class="card flex gap-5 items-start">
+						<span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={card.icon} />
+						</span>
+						<div>
+							<h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+							<p class="mt-2 text-sm text-slate-600 leading-relaxed">{card.description}</p>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<div class="mt-12 text-center">
+				<a href="/contact" class="btn-pill inline-flex">
+					Discuss Your Excavation Project
+					<span class="btn-pill-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</span>
+				</a>
+			</div>
+
+		</div>
+	</section>
+
 	<!-- ── Why Choose D&D Land Works ────────────────────────────────────── -->
 	<section class="bg-white border-b border-slate-100">
 		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
@@ -183,10 +279,9 @@ const businessSchema = {
 						Why Choose <span class="text-brand-blue">D&amp;D Land Works?</span>
 					</h2>
 					<p class="mt-5 text-slate-600 leading-relaxed">
-						Every property is different. Access, existing ground conditions, drainage, and the work planned for the site can all affect how excavation should be approached. D&amp;D Land Works brings local knowledge and a hands-on approach to residential and commercial properties throughout Lane County.
+						Every excavation project has different site conditions, access requirements, and work involved. D&amp;D Land Works keeps the scope clear and brings relevant excavation, grading, and site preparation services together for residential and commercial projects.
 					</p>
 
-					<!-- Feature list -->
 					<ul class="mt-10 flex flex-col gap-7">
 						{whyItems.map((item) => (
 							<li class="flex items-start gap-4">
@@ -196,14 +291,23 @@ const businessSchema = {
 								<div>
 									<p class="font-display font-bold text-ink">{item.title}</p>
 									<p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+									{item.link && (
+										<a
+											href={item.link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline"
+										>
+											{item.link.label}
+										</a>
+									)}
 								</div>
 							</li>
 						))}
 					</ul>
 
-					<!-- CTA -->
-					<a href="/about" class="btn-pill mt-10 inline-flex">
-						Learn More About D&amp;D Land Works
+					<a href="/contact" class="btn-pill mt-10 inline-flex">
+						Request a Free Estimate
 						<span class="btn-pill-icon">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -226,33 +330,40 @@ const businessSchema = {
 		</div>
 	</section>
 
-	<!-- ── Services ─────────────────────────────────────────────────────── -->
-	<section id="services" class="relative">
-		<!-- Dark photo header -->
-		<div class="relative bg-ink overflow-hidden">
-			<img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
-			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
-			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
-				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-					Full-Service Excavation Services <span class="text-brand-blue-light">in Lane County, Oregon</span>
+	<!-- ── What to Expect / Process ─────────────────────────────────────── -->
+	<section class="relative bg-ink text-white overflow-hidden">
+		<div
+			class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+			aria-hidden="true"
+		></div>
+
+		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+			<div class="mb-12 md:mb-16 text-center">
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+					How an Excavation Project Works
 				</h2>
-				<p class="mt-5 text-slate-300 leading-relaxed">
-					Excavation and site preparation can involve several connected types of site work. The available services cover land preparation, earthwork, grading, access, drainage, utilities, foundations, and septic work according to the requirements of each property and project.
+				<p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+					Every project starts with the property, planned work, and site conditions. The scope is established before work begins so the excavation, grading, or site preparation can be completed according to the project requirements.
 				</p>
 			</div>
-		</div>
 
-		<!-- Service cards — overlapping the dark header -->
-		<div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
-			<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-				{services.map((service) => <ServiceCard {...service} />)}
+			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+				{processSteps.map((item) => (
+					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+						<span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+							{item.step}
+						</span>
+						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+					</div>
+				))}
 			</div>
-		</div>
 
-		<!-- Services CTA -->
-		<div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center">
-			<a href="/services" class="btn btn-cta inline-flex">Explore Excavation Services</a>
+			<div class="mt-12 text-center">
+				<a href="/contact" class="btn btn-cta">Discuss Your Project</a>
+			</div>
 		</div>
 	</section>
 
@@ -260,7 +371,6 @@ const businessSchema = {
 	<section class="bg-slate-50">
 		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
 
-			<!-- Section header -->
 			<div class="mb-12 md:mb-14 text-center">
 				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
 				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
@@ -271,42 +381,26 @@ const businessSchema = {
 				</p>
 			</div>
 
-			<!-- Two-column: location list card + map -->
 			<div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
 
-				<!-- Left: dark location list -->
+				<!-- Dark location list -->
 				<div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-
-					<!-- Eugene — highlighted/active -->
-					<a
-						href="/locations/eugene"
-						class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90"
-					>
+					<a href="/locations/eugene" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
 							<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
 						</svg>
 						<span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
 					</a>
-
-					<!-- Springfield -->
-					<a
-						href="/locations/springfield"
-						class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-					>
+					<a href="/locations/springfield" class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
 							<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
 						</svg>
 						<span class="font-display font-bold uppercase tracking-wide text-sm">Springfield, OR</span>
 					</a>
-
-					<!-- Other areas -->
 					{otherAreas.map((area) => (
-						<a
-							href={area.href}
-							class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-						>
+						<a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
 								<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
@@ -314,10 +408,9 @@ const businessSchema = {
 							<span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
 						</a>
 					))}
-
 				</div>
 
-				<!-- Right: Google Map -->
+				<!-- Google Map -->
 				<div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
 					<iframe
 						title="D&D Land Works service area map, Lane County, Oregon"
@@ -338,46 +431,6 @@ const businessSchema = {
 		</div>
 	</section>
 
-	<!-- ── What to Expect / Process ─────────────────────────────────────── -->
-	<section class="relative bg-ink text-white overflow-hidden">
-		<!-- Subtle radial glow — right side -->
-		<div
-			class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
-			aria-hidden="true"
-		></div>
-
-		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-
-			<!-- Section header -->
-			<div class="mb-12 md:mb-16 text-center">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
-				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-					What to Expect During an Excavation Project
-				</h2>
-				<p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-					An excavation project starts with the property, planned work, site conditions, and required project scope. The work can then be organized around the excavation, grading, clearing, drainage, trenching, foundation, driveway, or septic services needed for the property.
-				</p>
-			</div>
-
-			<!-- Process step cards -->
-			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-				{processSteps.map((item) => (
-					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-						<span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
-							{item.step}
-						</span>
-						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
-					</div>
-				))}
-			</div>
-
-			<div class="mt-12 text-center">
-				<a href="/contact" class="btn btn-cta">Start Your Project Estimate</a>
-			</div>
-		</div>
-	</section>
-
 	<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
 	<FAQ items={faqs} />
 
@@ -385,13 +438,13 @@ const businessSchema = {
 	<section class="bg-slate-50 border-y border-slate-200">
 		<div class="mx-auto max-w-3xl px-4 py-14 md:py-20 text-center">
 			<p class="font-display font-black uppercase tracking-tight text-2xl text-ink md:text-3xl">
-				Questions About Your Excavation Project?
+				Have a Question About Your Project?
 			</p>
 			<p class="mt-3 text-slate-700 leading-relaxed max-w-xl mx-auto">
-				Free estimates are available for applicable excavation projects in Lane County. Call or email D&amp;D Land Works to discuss your property and scope.
+				Free estimates are available for excavation and site preparation projects across Lane County. Call or email D&amp;D Land Works to discuss your property and scope.
 			</p>
 			<div class="mt-7 flex flex-wrap items-center justify-center gap-4">
-				<a href="/contact" class="btn btn-cta inline-flex">Ask About Your Excavation Project</a>
+				<a href="/contact" class="btn btn-cta inline-flex">Request a Free Estimate</a>
 				<a href="tel:5414018726" class="font-display font-bold text-ink hover:text-brand-blue transition-colors text-lg">
 					541-401-8726
 				</a>
@@ -402,9 +455,10 @@ const businessSchema = {
 	<!-- ── Final CTA Block ───────────────────────────────────────────────── -->
 	<CTABlock
 		headline="Get a Free Estimate From D&D Land Works"
-		subheadline="Planning excavation, site preparation, grading, land clearing, drainage, trenching, foundation excavation, driveway work, or septic services in Lane County? Contact D&D Land Works to discuss your property and project requirements. Call 541-401-8726 or email david@ddlandworks.com."
+		subheadline="Planning excavation, site preparation, grading, land clearing, drainage, trenching, foundation excavation, driveway repair, or septic work in Lane County? Contact D&D Land Works to discuss your property and project scope. Call 541-401-8726 or email david@ddlandworks.com."
 		ctaLabel="Request Your Free Estimate"
 		ctaHref="/contact"
+		phone="541-401-8726"
 	/>
 </BaseLayout>
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
