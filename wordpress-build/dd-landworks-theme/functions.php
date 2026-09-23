@@ -89,3 +89,4 @@ add_filter( 'show_admin_bar', '__return_false' );
 require DDLW_DIR . '/inc/template-tags.php';
 require DDLW_DIR . '/inc/shortcodes.php';
 require DDLW_DIR . '/inc/customizer.php';
+require DDLW_DIR . '/inc/meta-site-preparation.php';

@@ -3,23 +3,33 @@
  * Template Name: Site Preparation Page
  *
  * 1:1 port of site/src/pages/services/site-preparation.astro
- * Sections: Hero → About/Difference → Services → Problems
- *           → Process → Why Choose → Service Areas → FAQ → CTA
+ * All section text is editable from WP Admin via the
+ * "Site Preparation — Page Content" meta box (inc/meta-site-preparation.php).
  */
 
 get_header();
 
+$pid = get_the_ID();
+
 // ── 1. HERO ──────────────────────────────────────────────────────────────────
 echo ddlw_hero( array(
-	'eyebrow'         => 'Eugene, Oregon',
-	'title'           => 'Site Preparation Contractor in Eugene, Oregon',
-	'subtitle'        => "D&D Land Works prepares residential and commercial properties for construction. Our site preparation work can include land clearing, grading, and leveling. We serve Eugene and Lane County and adjust the work to the site's existing conditions and construction requirements.",
+	'eyebrow'         => sp_get( $pid, 'sp_hero_eyebrow' ),
+	'title'           => sp_get( $pid, 'sp_hero_title' ),
+	'subtitle'        => sp_get( $pid, 'sp_hero_subtitle' ),
 	'primary_label'   => 'Call ' . ddlw_phone(),
 	'primary_href'    => ddlw_phone_href(),
 	'secondary_label' => 'Free Estimate',
 	'secondary_href'  => home_url( '/contact' ),
 	'images'          => 'project-excavation-bucket.webp,project-grading-driveway.webp',
 ) );
+
+// ── Paragraph helper: blank-line-separated text → <p> tags ───────────────────
+function sp_paras( $text ) {
+	$paras = array_filter( array_map( 'trim', explode( "\n\n", $text ) ) );
+	return implode( '', array_map( function( $p ) {
+		return '<p>' . esc_html( $p ) . '</p>';
+	}, $paras ) );
+}
 
 ?>
 
@@ -35,11 +45,9 @@ echo ddlw_hero( array(
 					<img src="<?php echo esc_url( ddlw_img( 'logo.png' ) ); ?>" alt="" aria-hidden="true" class="about-eyebrow__logo" />
 					<p class="eyebrow">Site Preparation vs. Excavation</p>
 				</div>
-				<h2 class="section-title">What's the Difference Between Site Preparation and Excavation?</h2>
+				<h2 class="section-title"><?php echo esc_html( sp_get( $pid, 'sp_about_heading' ) ); ?></h2>
 				<div class="about-body">
-					<p>Site preparation is the broader work that gets a property ready for construction. It can include land clearing, topsoil stripping, cut and fill, grading, leveling, and compaction based on existing site conditions and planned construction.</p>
-					<p>Excavation is more specific digging work. It may involve preparing areas for foundations, utilities, drainage, or other construction needs.</p>
-					<p>The two can occur on the same project. Site preparation establishes suitable ground conditions, while excavation addresses specific areas that must be dug for the next construction stage. The required scope depends on the property, construction plans, elevations, access, drainage, and existing ground conditions on site.</p>
+					<?php echo sp_paras( sp_get( $pid, 'sp_about_body' ) ); ?>
 				</div>
 				<a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="btn-pill" style="margin-top:2rem;display:inline-flex;">
 					Learn More About D&amp;D Land Works
@@ -76,26 +84,26 @@ echo ddlw_hero( array(
 <?php
 $site_prep_items = array(
 	array(
-		'title' => 'Land Clearing',
-		'desc'  => 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.',
+		'title' => sp_get( $pid, 'sp_svc_1_title' ),
+		'desc'  => sp_get( $pid, 'sp_svc_1_desc' ),
 		'href'  => home_url( '/services/land-clearing' ),
 		'icon'  => 'M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z',
 	),
 	array(
-		'title' => 'Topsoil Stripping',
-		'desc'  => 'Topsoil stripping removes the surface soil layer before grading begins. Suitable topsoil can be stockpiled for later use while the underlying ground is prepared for construction.',
+		'title' => sp_get( $pid, 'sp_svc_2_title' ),
+		'desc'  => sp_get( $pid, 'sp_svc_2_desc' ),
 		'href'  => home_url( '/services/site-preparation' ),
 		'icon'  => 'M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14',
 	),
 	array(
-		'title' => 'Cut and Fill',
-		'desc'  => 'Cut and fill moves soil to change existing ground elevations. It helps shape building areas to planned grades when the property requires significant changes in elevation.',
+		'title' => sp_get( $pid, 'sp_svc_3_title' ),
+		'desc'  => sp_get( $pid, 'sp_svc_3_desc' ),
 		'href'  => home_url( '/services/grading-leveling' ),
 		'icon'  => 'M3 17h4l4-9 4 5 3-4h3M17 6h3v3',
 	),
 	array(
-		'title' => 'Grading',
-		'desc'  => 'Grading adjusts existing ground elevations to meet planned site requirements. It shapes the construction area and establishes suitable grades for the building and surrounding ground.',
+		'title' => sp_get( $pid, 'sp_svc_4_title' ),
+		'desc'  => sp_get( $pid, 'sp_svc_4_desc' ),
 		'href'  => home_url( '/services/grading-leveling' ),
 		'icon'  => 'M3 20 9 8l4 6 2-3 6 9H3Z',
 	),
@@ -135,31 +143,31 @@ $site_prep_items = array(
 <?php
 $problem_cards = array(
 	array(
-		'title'     => 'Raw or Undeveloped Land',
-		'desc'      => 'Raw or undeveloped lots may require clearing, debris removal, topsoil work, and grading before construction can begin. Site preparation creates a workable area for the next stage of the project.',
-		'icon'      => 'M3 20 9 8l4 6 2-3 6 9H3Z',
-		'href'      => home_url( '/services/site-preparation' ),
+		'title'      => sp_get( $pid, 'sp_prob_1_title' ),
+		'desc'       => sp_get( $pid, 'sp_prob_1_desc' ),
+		'icon'       => 'M3 20 9 8l4 6 2-3 6 9H3Z',
+		'href'       => home_url( '/services/site-preparation' ),
 		'link_label' => 'Site Preparation',
 	),
 	array(
-		'title'     => 'Poor Grading',
-		'desc'      => 'Poor grading can leave uneven ground or unsuitable elevations across a construction area. Site preparation adjusts the existing grades to create ground conditions that match the planned construction requirements.',
-		'icon'      => 'M3 17h4l4-9 4 5 3-4h3M17 6h3v3',
-		'href'      => home_url( '/services/grading-leveling' ),
+		'title'      => sp_get( $pid, 'sp_prob_2_title' ),
+		'desc'       => sp_get( $pid, 'sp_prob_2_desc' ),
+		'icon'       => 'M3 17h4l4-9 4 5 3-4h3M17 6h3v3',
+		'href'       => home_url( '/services/grading-leveling' ),
 		'link_label' => 'Grading &amp; Leveling',
 	),
 	array(
-		'title'     => 'Drainage and Surface Water',
-		'desc'      => 'Drainage problems can leave water collecting in areas of the property. Site preparation can address grading and ground conditions that affect how surface water moves across the site.',
-		'icon'      => 'M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z',
-		'href'      => home_url( '/services/drainage-excavation' ),
+		'title'      => sp_get( $pid, 'sp_prob_3_title' ),
+		'desc'       => sp_get( $pid, 'sp_prob_3_desc' ),
+		'icon'       => 'M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z',
+		'href'       => home_url( '/services/drainage-excavation' ),
 		'link_label' => 'Drainage Excavation',
 	),
 	array(
-		'title'     => 'Difficult Site Access',
-		'desc'      => 'Limited or damaged access can make it harder to move equipment and materials onto the property. Site preparation may include work that improves access for the planned construction activities.',
-		'icon'      => 'M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5',
-		'href'      => home_url( '/services/driveway-repair' ),
+		'title'      => sp_get( $pid, 'sp_prob_4_title' ),
+		'desc'       => sp_get( $pid, 'sp_prob_4_desc' ),
+		'icon'       => 'M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5',
+		'href'       => home_url( '/services/driveway-repair' ),
 		'link_label' => 'Driveway Repair',
 	),
 );
@@ -202,26 +210,10 @@ $problem_cards = array(
 <!-- ── 5. PROCESS / HOW IT WORKS ─────────────────────────────────────────────── -->
 <?php
 $process_steps = array(
-	array(
-		'step'  => '1',
-		'title' => 'Project Assessment',
-		'desc'  => 'The property and planned construction are reviewed before work begins. Existing grades, soil, access, drainage, and other site conditions help determine the preparation work required.',
-	),
-	array(
-		'step'  => '2',
-		'title' => 'Site Clearing',
-		'desc'  => 'The work area is cleared of vegetation, brush, debris, and other obstacles that could interfere with site preparation. This creates a workable area for the planned construction.',
-	),
-	array(
-		'step'  => '3',
-		'title' => 'Site Grading',
-		'desc'  => 'The prepared ground is shaped to meet planned elevations and site requirements. Cut, fill, grading, and leveling may be used where changes to existing ground levels are needed.',
-	),
-	array(
-		'step'  => '4',
-		'title' => 'Ground Compaction',
-		'desc'  => "Prepared ground is compacted after earthwork to create a suitable subgrade for the next construction stage. The required compaction work depends on the site's existing ground conditions.",
-	),
+	array( 'step' => '1', 'title' => sp_get( $pid, 'sp_proc_1_title' ), 'desc' => sp_get( $pid, 'sp_proc_1_desc' ) ),
+	array( 'step' => '2', 'title' => sp_get( $pid, 'sp_proc_2_title' ), 'desc' => sp_get( $pid, 'sp_proc_2_desc' ) ),
+	array( 'step' => '3', 'title' => sp_get( $pid, 'sp_proc_3_title' ), 'desc' => sp_get( $pid, 'sp_proc_3_desc' ) ),
+	array( 'step' => '4', 'title' => sp_get( $pid, 'sp_proc_4_title' ), 'desc' => sp_get( $pid, 'sp_proc_4_desc' ) ),
 );
 ?>
 <section class="process-section">
@@ -251,29 +243,29 @@ $process_steps = array(
 <?php
 $why_items = array(
 	array(
-		'title' => 'Licensed and Bonded',
-		'desc'  => 'D&D Land Works is licensed and bonded in Oregon under CCB #' . ddlw_ccb_number() . '. This provides a clear contractor credential for residential and commercial site preparation work.',
+		'title' => sp_get( $pid, 'sp_why_1_title' ),
+		'desc'  => sp_get( $pid, 'sp_why_1_desc' ),
 		'icon'  => 'M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z',
 		'link'  => array( 'label' => 'Verify CCB License &rarr;', 'href' => 'https://search.ccb.state.or.us/search/' ),
 	),
 	array(
-		'title' => 'Free Estimates',
-		'desc'  => 'Free estimates allow the property, access, existing conditions, and planned work to be discussed before the site preparation scope is established.',
+		'title' => sp_get( $pid, 'sp_why_2_title' ),
+		'desc'  => sp_get( $pid, 'sp_why_2_desc' ),
 		'icon'  => 'M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5',
 	),
 	array(
-		'title' => 'Residential Projects',
-		'desc'  => 'D&D Land Works provides site preparation for residential construction, including properties in Eugene, Springfield, and surrounding Lane County communities.',
+		'title' => sp_get( $pid, 'sp_why_3_title' ),
+		'desc'  => sp_get( $pid, 'sp_why_3_desc' ),
 		'icon'  => 'M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4',
 	),
 	array(
-		'title' => 'Commercial Projects',
-		'desc'  => "Commercial site preparation is scoped around the property's conditions, access, planned construction, and earthwork requirements for the project.",
+		'title' => sp_get( $pid, 'sp_why_4_title' ),
+		'desc'  => sp_get( $pid, 'sp_why_4_desc' ),
 		'icon'  => 'M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18',
 	),
 	array(
-		'title' => 'DEQ Certified for Septic Work',
-		'desc'  => 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.',
+		'title' => sp_get( $pid, 'sp_why_5_title' ),
+		'desc'  => sp_get( $pid, 'sp_why_5_desc' ),
 		'icon'  => 'M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3',
 	),
 );
@@ -282,8 +274,8 @@ $why_items = array(
 	<div class="container">
 		<div class="why-split-grid">
 			<div>
-				<h2 class="section-title">Why Choose <span style="color:var(--color-brand-blue);">D&amp;D Land Works</span> for Site Preparation?</h2>
-				<p class="lede" style="margin-top:1.25rem;">Site preparation depends on the property, planned construction, and existing site conditions. D&amp;D Land Works provides residential and commercial site preparation in Eugene and Lane County, with work scoped around the property and project requirements.</p>
+				<h2 class="section-title"><?php echo esc_html( sp_get( $pid, 'sp_why_heading' ) ); ?></h2>
+				<p class="lede" style="margin-top:1.25rem;"><?php echo esc_html( sp_get( $pid, 'sp_why_intro' ) ); ?></p>
 				<ul class="why-list">
 					<?php foreach ( $why_items as $item ) : ?>
 						<li class="why-list__item">
@@ -324,15 +316,15 @@ $why_items = array(
 <!-- ── 7. SERVICE AREAS ───────────────────────────────────────────────────────── -->
 <?php
 $service_areas = array(
-	array( 'label' => 'Springfield',    'href' => home_url( '/locations/springfield' ) ),
-	array( 'label' => 'Cottage Grove',  'href' => home_url( '/locations/cottage-grove' ) ),
-	array( 'label' => 'Junction City',  'href' => home_url( '/locations/junction-city' ) ),
-	array( 'label' => 'Creswell',       'href' => home_url( '/locations/creswell' ) ),
-	array( 'label' => 'Veneta',         'href' => home_url( '/locations/veneta' ) ),
-	array( 'label' => 'Florence',       'href' => home_url( '/locations/florence' ) ),
-	array( 'label' => 'Oakridge',       'href' => home_url( '/locations/oakridge' ) ),
-	array( 'label' => 'Coburg',         'href' => home_url( '/locations/coburg' ) ),
-	array( 'label' => 'Lowell',         'href' => home_url( '/locations/lowell' ) ),
+	array( 'label' => 'Springfield',   'href' => home_url( '/locations/springfield' ) ),
+	array( 'label' => 'Cottage Grove', 'href' => home_url( '/locations/cottage-grove' ) ),
+	array( 'label' => 'Junction City', 'href' => home_url( '/locations/junction-city' ) ),
+	array( 'label' => 'Creswell',      'href' => home_url( '/locations/creswell' ) ),
+	array( 'label' => 'Veneta',        'href' => home_url( '/locations/veneta' ) ),
+	array( 'label' => 'Florence',      'href' => home_url( '/locations/florence' ) ),
+	array( 'label' => 'Oakridge',      'href' => home_url( '/locations/oakridge' ) ),
+	array( 'label' => 'Coburg',        'href' => home_url( '/locations/coburg' ) ),
+	array( 'label' => 'Lowell',        'href' => home_url( '/locations/lowell' ) ),
 );
 $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z"/><circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none"/></svg>';
 ?>
@@ -406,26 +398,10 @@ echo ddlw_faq( array( 'heading' => 'Common Questions About Site Preparation' ), 
 <!-- ── 9. RELATED SERVICES ────────────────────────────────────────────────────── -->
 <?php
 $related_services = array(
-	array(
-		'title' => 'Land Clearing',
-		'desc'  => 'Removing brush, trees, and debris to open up usable land before site work begins.',
-		'href'  => home_url( '/services/land-clearing' ),
-	),
-	array(
-		'title' => 'Grading &amp; Leveling',
-		'desc'  => 'Shaping land to the right slope for drainage and building.',
-		'href'  => home_url( '/services/grading-leveling' ),
-	),
-	array(
-		'title' => 'Foundation Excavation',
-		'desc'  => 'Digging and leveling for footings and foundations.',
-		'href'  => home_url( '/services/foundation-excavation' ),
-	),
-	array(
-		'title' => 'Drainage Excavation',
-		'desc'  => 'Excavation and grading to correct standing water and poor drainage.',
-		'href'  => home_url( '/services/drainage-excavation' ),
-	),
+	array( 'title' => 'Land Clearing',       'desc' => 'Removing brush, trees, and debris to open up usable land before site work begins.',        'href' => home_url( '/services/land-clearing' ) ),
+	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and building.',                           'href' => home_url( '/services/grading-leveling' ) ),
+	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging and leveling for footings and foundations.',                                     'href' => home_url( '/services/foundation-excavation' ) ),
+	array( 'title' => 'Drainage Excavation',  'desc' => 'Excavation and grading to correct standing water and poor drainage.',                     'href' => home_url( '/services/drainage-excavation' ) ),
 );
 ?>
 <section style="background:#fff;border-top:1px solid var(--color-slate-100);padding-block:5rem;">
@@ -446,8 +422,8 @@ $related_services = array(
 <!-- ── 10. CTA BLOCK ──────────────────────────────────────────────────────────── -->
 <?php
 echo ddlw_cta_block( array(
-	'title'    => 'Get a Free Site Preparation Estimate',
-	'subtitle' => 'Planning site preparation starts with understanding the property and construction requirements. D&D Land Works provides free estimates for residential and commercial projects, with the scope based on existing site conditions, earthwork, access, drainage, and the work needed before construction begins.',
+	'title'    => sp_get( $pid, 'sp_cta_title' ),
+	'subtitle' => sp_get( $pid, 'sp_cta_subtitle' ),
 ) );
 
 get_footer();
