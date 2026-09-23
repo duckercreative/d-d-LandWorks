@@ -693,3 +693,65 @@ input, textarea, select { font-family: inherit; }
 	html { scroll-behavior: auto; }
 	.mobile-menu, .hero__bg-slide { transition: none !important; }
 }
+
+/* -------------------------------------------------------------------------
+   18. Site Preparation page (template-site-preparation.php)
+   ---------------------------------------------------------------------- */
+
+/* Section header helpers */
+.section-header { margin-bottom: 3rem; }
+.section-header--center { text-align: center; }
+.section-intro { color: var(--color-slate-700); line-height: 1.75; max-width: 40rem; margin-top: 1rem; }
+.section-header--center .section-intro { margin-inline: auto; }
+
+/* Service card grid (4-col for site prep items + related services) */
+.service-card-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 640px) { .service-card-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .service-card-grid { grid-template-columns: repeat(4, 1fr); } }
+.service-card { display: flex; flex-direction: column; gap: 0.75rem; border-radius: var(--radius-brand-card); border: 1px solid var(--color-slate-200); background: #fff; padding: 1.5rem; text-decoration: none; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.service-card:hover { border-color: var(--color-brand-blue); box-shadow: 0 4px 16px rgba(31,125,195,0.1); }
+.service-card__icon { display: flex; height: 2.75rem; width: 2.75rem; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: var(--color-brand-blue-light); color: var(--color-brand-blue); }
+.service-card__icon svg { height: 1.25rem; width: 1.25rem; }
+.service-card__title { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.825rem; color: var(--color-ink); transition: color 150ms ease; }
+.service-card:hover .service-card__title { color: var(--color-brand-blue); }
+.service-card__desc { font-size: 0.8rem; color: var(--color-slate-600); line-height: 1.65; flex: 1; }
+.service-card__arrow { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; color: var(--color-brand-blue); }
+
+/* Problems section */
+.problems-section { background: var(--color-slate-50); border-top: 1px solid var(--color-slate-200); border-bottom: 1px solid var(--color-slate-200); padding-block: 5rem; }
+@media (min-width: 768px) { .problems-section { padding-block: 7rem; } }
+.problem-cards-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 640px) { .problem-cards-grid { grid-template-columns: 1fr 1fr; } }
+.problem-card { display: flex; align-items: flex-start; gap: 1.25rem; background: #fff; border-radius: var(--radius-brand-card); border: 1px solid var(--color-slate-200); padding: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.problem-card__icon { display: flex; height: 3rem; width: 3rem; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: var(--color-brand-blue-light); color: var(--color-brand-blue); }
+.problem-card__icon svg { height: 1.25rem; width: 1.25rem; }
+.problem-card__title { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.875rem; color: var(--color-ink); }
+.problem-card__desc { margin-top: 0.5rem; font-size: 0.82rem; color: var(--color-slate-600); line-height: 1.65; }
+.problem-card__link { display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.75rem; font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--color-brand-blue); }
+.problem-card__link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Process section */
+.process-section { position: relative; background: var(--color-ink); color: #fff; padding-block: 5rem; overflow: hidden; }
+@media (min-width: 768px) { .process-section { padding-block: 7rem; } }
+.process-glow { pointer-events: none; position: absolute; right: 0; top: 0; height: 30rem; width: 30rem; border-radius: 999px; background: rgba(31,125,195,0.1); filter: blur(80px); }
+.process-cards-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .process-cards-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+@media (min-width: 1024px) { .process-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+.process-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-brand-card); padding: 1.5rem; }
+.process-card__num { display: flex; height: 2.5rem; width: 2.5rem; align-items: center; justify-content: center; border-radius: 999px; background: var(--color-safety-orange); font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 0.875rem; }
+.process-card__title { margin-top: 1rem; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.8rem; color: #fff; }
+.process-card__desc { margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-slate-300); line-height: 1.65; }
+
+/* Why choose (site prep variant — text+list left, image right) */
+.why-site-prep-section { background: #fff; border-bottom: 1px solid var(--color-slate-100); padding-block: 5rem; }
+@media (min-width: 768px) { .why-site-prep-section { padding-block: 7rem; } }
+.why-split-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 1024px) { .why-split-grid { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+
+/* Service areas section */
+.service-areas-section { background: var(--color-slate-50); padding-block: 5rem; }
+@media (min-width: 768px) { .service-areas-section { padding-block: 7rem; } }
+
+/* Outline button for dark backgrounds */
+.btn-outline-dark { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.75rem 1.5rem; border-radius: var(--radius-brand); display: inline-flex; align-items: center; justify-content: center; transition: border-color 150ms ease; }
+.btn-outline-dark:hover { border-color: #fff; }
