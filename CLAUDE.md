@@ -46,11 +46,13 @@ These were written for the prior HVAC client. The *process* generalizes; specifi
 | Social automation pipeline | [docs/social-automation.md](docs/social-automation.md) |
 | Report design system (dark mode CSS) | [docs/report-design.md](docs/report-design.md) |
 
-## Platform: Astro (decided 2026-09-04)
+## Platform: Astro (decided 2026-09-04), primary and live
 
-The site will be built in **Astro**, not WordPress. Full phased build plan: [docs/astro-site-build-plan.md](docs/astro-site-build-plan.md) — written as a TCREI prompt (Task/Context/References/Evaluate/Iterate), broken into 12 phases (0-11) from project setup through post-launch. Start there for anything site-build related. Project lives in `site/`.
+The site is built in **Astro** — this remains the primary/live platform. Full phased build plan: [docs/astro-site-build-plan.md](docs/astro-site-build-plan.md) — written as a TCREI prompt (Task/Context/References/Evaluate/Iterate), broken into 12 phases (0-11) from project setup through post-launch. Start there for anything site-build related. Project lives in `site/`.
 
-**Design system:** finalized — [docs/design-system.md](docs/design-system.md). Barlow Condensed (display) + Barlow (body), near-black + brand-blue (from the logo) + safety-orange as a CTA-only 4th accent. Tokens live in `site/src/styles/global.css`.
+**Design system:** finalized — [docs/design-system.md](docs/design-system.md). v1.2: Outfit (display) + Poppins (body) — superseded the original Barlow Condensed/Barlow pick after a competitor typography review (see that doc's changelog). Near-black + brand-blue (from the logo) + safety-orange as a CTA-only 4th accent. Tokens live in `site/src/styles/global.css`.
+
+**Secondary WordPress theme (added 2026-09-12):** a parallel, dependency-free WordPress theme exists at `wordpress-build/dd-landworks-theme/` — built at the client's explicit request as a second option alongside Astro, not a replacement. It ports the same design system and homepage content via a shortcode-based component library (no ACF, no page-builder plugin required). Only the homepage, header/footer, and blog templates are fully built; the other ~56 pages need to be assembled in WP admin from the Astro source copy using the theme's page templates + shortcodes — see that folder's `README.md` for the full scope, shortcode reference, and setup checklist. Never treat this as replacing the Astro build without an explicit instruction to switch platforms.
 
 ## Content Workflow (methodology carries over; publish step changes)
 
@@ -58,7 +60,7 @@ The site will be built in **Astro**, not WordPress. Full phased build plan: [doc
 /deep-research [url or business]  →  /content-brief  →  content-create  →  humanizer  →  write into Astro content collection + build (see docs/astro-site-build-plan.md Phase 7)
 ```
 
-The WordPress/Elementor MCP integration (`05-wordpress/mcp-server/`) and its patterns were deleted along with the prior client's data and are **not** being rebuilt — this client is Astro, not WordPress. `/elementor-design` and `/elementor-push` don't apply here; `.claude/skills/elementor-page-builder/` is dead weight for this client.
+The original WordPress/Elementor **MCP integration** (`05-wordpress/mcp-server/`) and its patterns were deleted along with the prior client's data and are **not** being rebuilt — `/elementor-design` and `/elementor-push` don't apply here; `.claude/skills/elementor-page-builder/` is dead weight for this client. This is unrelated to the hand-written `wordpress-build/dd-landworks-theme/` theme above, which doesn't depend on Elementor or that MCP server at all.
 
 ## Carried-Forward Working Rules (business-agnostic)
 
