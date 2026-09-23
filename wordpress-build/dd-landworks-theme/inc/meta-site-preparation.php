@@ -38,10 +38,14 @@ function sp_defaults() {
 		'sp_hero_subtitle' => "D&D Land Works prepares residential and commercial properties for construction. Our site preparation work can include land clearing, grading, and leveling. We serve Eugene and Lane County and adjust the work to the site's existing conditions and construction requirements.",
 
 		/* About / Difference */
+		'sp_about_eyebrow' => 'Site Preparation vs. Excavation',
 		'sp_about_heading' => "What's the Difference Between Site Preparation and Excavation?",
 		'sp_about_body'    => "Site preparation is the broader work that gets a property ready for construction. It can include land clearing, topsoil stripping, cut and fill, grading, leveling, and compaction based on existing site conditions and planned construction.\n\nExcavation is more specific digging work. It may involve preparing areas for foundations, utilities, drainage, or other construction needs.\n\nThe two can occur on the same project. Site preparation establishes suitable ground conditions, while excavation addresses specific areas that must be dug for the next construction stage. The required scope depends on the property, construction plans, elevations, access, drainage, and existing ground conditions on site.",
 
-		/* Services grid — 4 cards */
+		/* Services grid — section labels + 4 cards */
+		'sp_svc_eyebrow' => 'Our Services',
+		'sp_svc_heading' => 'What Does Site Preparation Include?',
+		'sp_svc_intro'   => 'Site preparation includes the work needed to prepare a property for construction. The scope can vary with existing ground conditions, planned elevations, access, drainage, and the type of construction planned for the site.',
 		'sp_svc_1_title' => 'Land Clearing',
 		'sp_svc_1_desc'  => 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.',
 		'sp_svc_2_title' => 'Topsoil Stripping',
@@ -51,7 +55,10 @@ function sp_defaults() {
 		'sp_svc_4_title' => 'Grading',
 		'sp_svc_4_desc'  => 'Grading adjusts existing ground elevations to meet planned site requirements. It shapes the construction area and establishes suitable grades for the building and surrounding ground.',
 
-		/* Problems — 4 cards */
+		/* Problems — section labels + 4 cards */
+		'sp_prob_eyebrow' => 'We Can Help',
+		'sp_prob_heading' => 'Site Preparation Problems We Help Address',
+		'sp_prob_intro'   => "Site preparation helps address property conditions that can prevent construction from starting properly. Raw land, uneven grades, drainage problems, and difficult site access can all affect the work required before construction. The preparation scope depends on the property's existing conditions and planned use.",
 		'sp_prob_1_title' => 'Raw or Undeveloped Land',
 		'sp_prob_1_desc'  => 'Raw or undeveloped lots may require clearing, debris removal, topsoil work, and grading before construction can begin. Site preparation creates a workable area for the next stage of the project.',
 		'sp_prob_2_title' => 'Poor Grading',
@@ -61,7 +68,10 @@ function sp_defaults() {
 		'sp_prob_4_title' => 'Difficult Site Access',
 		'sp_prob_4_desc'  => 'Limited or damaged access can make it harder to move equipment and materials onto the property. Site preparation may include work that improves access for the planned construction activities.',
 
-		/* Process — 4 steps */
+		/* Process — section labels + 4 steps */
+		'sp_proc_eyebrow' => 'How It Works',
+		'sp_proc_heading' => 'How the Site Preparation Process Works',
+		'sp_proc_intro'   => 'Site preparation follows a planned sequence based on the property, construction requirements, and existing site conditions. The process begins with assessing the work area, then moves through clearing, grading, and compaction to prepare the ground for construction.',
 		'sp_proc_1_title' => 'Project Assessment',
 		'sp_proc_1_desc'  => 'The property and planned construction are reviewed before work begins. Existing grades, soil, access, drainage, and other site conditions help determine the preparation work required.',
 		'sp_proc_2_title' => 'Site Clearing',
@@ -70,6 +80,17 @@ function sp_defaults() {
 		'sp_proc_3_desc'  => 'The prepared ground is shaped to meet planned elevations and site requirements. Cut, fill, grading, and leveling may be used where changes to existing ground levels are needed.',
 		'sp_proc_4_title' => 'Ground Compaction',
 		'sp_proc_4_desc'  => "Prepared ground is compacted after earthwork to create a suitable subgrade for the next construction stage. The required compaction work depends on the site's existing ground conditions.",
+
+		/* Service Areas */
+		'sp_areas_eyebrow' => 'Our Service Area',
+		'sp_areas_heading' => 'Site Preparation Services in Eugene and Lane County',
+		'sp_areas_intro'   => 'D&D Land Works provides site preparation for residential and commercial properties in Eugene and surrounding Lane County communities. Service areas include Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell, depending on the project scope and location.',
+
+		/* FAQ */
+		'sp_faq_heading' => 'Common Questions About Site Preparation',
+
+		/* Related Services */
+		'sp_related_heading' => 'Related Services',
 
 		/* Why choose — 5 items */
 		'sp_why_heading' => 'Why Choose D&D Land Works for Site Preparation?',
@@ -151,13 +172,17 @@ function sp_render_meta_box( $post ) {
 
 	/* ── About / Difference ── */
 	echo '<fieldset class="sp-section"><legend>Site Prep vs. Excavation Section</legend>';
+	$txt( 'sp_about_eyebrow', 'Eyebrow label' );
 	$txt( 'sp_about_heading', 'Heading' );
 	$area( 'sp_about_body', 'Body text', 'Separate paragraphs with a blank line.' );
 	echo '</fieldset>';
 
 	/* ── Services ── */
 	echo '<fieldset class="sp-section"><legend>What Site Prep Includes (4 service cards)</legend>';
-	echo '<div class="sp-grid">';
+	$txt( 'sp_svc_eyebrow', 'Eyebrow label' );
+	$txt( 'sp_svc_heading', 'Section heading' );
+	$area( 'sp_svc_intro', 'Intro paragraph' );
+	echo '<div class="sp-grid" style="margin-top:.75rem;">';
 	for ( $i = 1; $i <= 4; $i++ ) {
 		echo '<div>';
 		echo '<p style="font-size:.8rem;font-weight:700;margin:0 0 .5rem;color:#1d2327;">Card ' . $i . '</p>';
@@ -169,7 +194,10 @@ function sp_render_meta_box( $post ) {
 
 	/* ── Problems ── */
 	echo '<fieldset class="sp-section"><legend>Problems We Help Address (4 cards)</legend>';
-	echo '<div class="sp-grid">';
+	$txt( 'sp_prob_eyebrow', 'Eyebrow label' );
+	$txt( 'sp_prob_heading', 'Section heading' );
+	$area( 'sp_prob_intro', 'Intro paragraph' );
+	echo '<div class="sp-grid" style="margin-top:.75rem;">';
 	for ( $i = 1; $i <= 4; $i++ ) {
 		echo '<div>';
 		echo '<p style="font-size:.8rem;font-weight:700;margin:0 0 .5rem;color:#1d2327;">Card ' . $i . '</p>';
@@ -181,7 +209,10 @@ function sp_render_meta_box( $post ) {
 
 	/* ── Process ── */
 	echo '<fieldset class="sp-section"><legend>How It Works (4 steps)</legend>';
-	echo '<div class="sp-grid">';
+	$txt( 'sp_proc_eyebrow', 'Eyebrow label' );
+	$txt( 'sp_proc_heading', 'Section heading' );
+	$area( 'sp_proc_intro', 'Intro paragraph' );
+	echo '<div class="sp-grid" style="margin-top:.75rem;">';
 	for ( $i = 1; $i <= 4; $i++ ) {
 		echo '<div>';
 		echo '<p style="font-size:.8rem;font-weight:700;margin:0 0 .5rem;color:#1d2327;">Step ' . $i . '</p>';
@@ -204,6 +235,23 @@ function sp_render_meta_box( $post ) {
 		echo '</div>';
 	}
 	echo '</div></fieldset>';
+
+	/* ── Service Areas ── */
+	echo '<fieldset class="sp-section"><legend>Service Areas</legend>';
+	$txt( 'sp_areas_eyebrow', 'Eyebrow label' );
+	$txt( 'sp_areas_heading', 'Section heading' );
+	$area( 'sp_areas_intro', 'Intro paragraph' );
+	echo '</fieldset>';
+
+	/* ── FAQ ── */
+	echo '<fieldset class="sp-section"><legend>FAQ</legend>';
+	$txt( 'sp_faq_heading', 'Section heading' );
+	echo '</fieldset>';
+
+	/* ── Related Services ── */
+	echo '<fieldset class="sp-section"><legend>Related Services</legend>';
+	$txt( 'sp_related_heading', 'Section heading' );
+	echo '</fieldset>';
 
 	/* ── CTA ── */
 	echo '<fieldset class="sp-section"><legend>CTA Block (bottom of page)</legend>';
@@ -233,22 +281,32 @@ function sp_save_meta( $post_id ) {
 
 	$text_fields = array(
 		'sp_hero_eyebrow', 'sp_hero_title',
-		'sp_about_heading',
+		'sp_about_eyebrow', 'sp_about_heading',
+		'sp_svc_eyebrow', 'sp_svc_heading',
 		'sp_svc_1_title', 'sp_svc_2_title', 'sp_svc_3_title', 'sp_svc_4_title',
+		'sp_prob_eyebrow', 'sp_prob_heading',
 		'sp_prob_1_title', 'sp_prob_2_title', 'sp_prob_3_title', 'sp_prob_4_title',
+		'sp_proc_eyebrow', 'sp_proc_heading',
 		'sp_proc_1_title', 'sp_proc_2_title', 'sp_proc_3_title', 'sp_proc_4_title',
 		'sp_why_heading',
 		'sp_why_1_title', 'sp_why_2_title', 'sp_why_3_title', 'sp_why_4_title', 'sp_why_5_title',
+		'sp_areas_eyebrow', 'sp_areas_heading',
+		'sp_faq_heading',
+		'sp_related_heading',
 		'sp_cta_title',
 	);
 
 	$textarea_fields = array(
 		'sp_hero_subtitle', 'sp_about_body',
+		'sp_svc_intro',
 		'sp_svc_1_desc', 'sp_svc_2_desc', 'sp_svc_3_desc', 'sp_svc_4_desc',
+		'sp_prob_intro',
 		'sp_prob_1_desc', 'sp_prob_2_desc', 'sp_prob_3_desc', 'sp_prob_4_desc',
+		'sp_proc_intro',
 		'sp_proc_1_desc', 'sp_proc_2_desc', 'sp_proc_3_desc', 'sp_proc_4_desc',
 		'sp_why_intro',
 		'sp_why_1_desc', 'sp_why_2_desc', 'sp_why_3_desc', 'sp_why_4_desc', 'sp_why_5_desc',
+		'sp_areas_intro',
 		'sp_cta_subtitle',
 	);
 

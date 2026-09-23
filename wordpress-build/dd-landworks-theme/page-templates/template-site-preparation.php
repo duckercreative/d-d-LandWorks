@@ -43,7 +43,7 @@ function sp_paras( $text ) {
 			<div class="about-text">
 				<div class="about-eyebrow">
 					<img src="<?php echo esc_url( ddlw_img( 'logo.png' ) ); ?>" alt="" aria-hidden="true" class="about-eyebrow__logo" />
-					<p class="eyebrow">Site Preparation vs. Excavation</p>
+					<p class="eyebrow"><?php echo esc_html( sp_get( $pid, 'sp_about_eyebrow' ) ); ?></p>
 				</div>
 				<h2 class="section-title"><?php echo esc_html( sp_get( $pid, 'sp_about_heading' ) ); ?></h2>
 				<div class="about-body">
@@ -113,9 +113,9 @@ $site_prep_items = array(
 	<img src="<?php echo esc_url( ddlw_img( 'project-site-excavation.webp' ) ); ?>" alt="" aria-hidden="true" class="services-intro__bg" loading="lazy" />
 	<div class="services-intro__overlay"></div>
 	<div class="container services-intro__inner">
-		<p class="eyebrow eyebrow--light">Our Services</p>
-		<h2 class="section-title section-title--white">What Does Site Preparation Include?</h2>
-		<p>Site preparation includes the work needed to prepare a property for construction. The scope can vary with existing ground conditions, planned elevations, access, drainage, and the type of construction planned for the site.</p>
+		<p class="eyebrow eyebrow--light"><?php echo esc_html( sp_get( $pid, 'sp_svc_eyebrow' ) ); ?></p>
+		<h2 class="section-title section-title--white"><?php echo esc_html( sp_get( $pid, 'sp_svc_heading' ) ); ?></h2>
+		<p><?php echo esc_html( sp_get( $pid, 'sp_svc_intro' ) ); ?></p>
 	</div>
 </section>
 <div class="container" style="margin-top:-8rem;position:relative;z-index:2;padding-bottom:1.5rem;">
@@ -175,9 +175,9 @@ $problem_cards = array(
 <section class="problems-section">
 	<div class="container">
 		<div class="section-header section-header--center">
-			<p class="eyebrow">We Can Help</p>
-			<h2 class="section-title">Site Preparation Problems We Help Address</h2>
-			<p class="section-intro">Site preparation helps address property conditions that can prevent construction from starting properly. Raw land, uneven grades, drainage problems, and difficult site access can all affect the work required before construction. The preparation scope depends on the property's existing conditions and planned use.</p>
+			<p class="eyebrow"><?php echo esc_html( sp_get( $pid, 'sp_prob_eyebrow' ) ); ?></p>
+			<h2 class="section-title"><?php echo esc_html( sp_get( $pid, 'sp_prob_heading' ) ); ?></h2>
+			<p class="section-intro"><?php echo esc_html( sp_get( $pid, 'sp_prob_intro' ) ); ?></p>
 		</div>
 		<div class="problem-cards-grid">
 			<?php foreach ( $problem_cards as $card ) : ?>
@@ -220,9 +220,9 @@ $process_steps = array(
 	<div class="process-glow" aria-hidden="true"></div>
 	<div class="container">
 		<div class="section-header section-header--center section-header--white">
-			<p class="eyebrow eyebrow--light">How It Works</p>
-			<h2 class="section-title section-title--white">How the Site Preparation Process Works</h2>
-			<p style="color:var(--color-slate-300);max-width:40rem;margin-inline:auto;">Site preparation follows a planned sequence based on the property, construction requirements, and existing site conditions. The process begins with assessing the work area, then moves through clearing, grading, and compaction to prepare the ground for construction.</p>
+			<p class="eyebrow eyebrow--light"><?php echo esc_html( sp_get( $pid, 'sp_proc_eyebrow' ) ); ?></p>
+			<h2 class="section-title section-title--white"><?php echo esc_html( sp_get( $pid, 'sp_proc_heading' ) ); ?></h2>
+			<p style="color:var(--color-slate-300);max-width:40rem;margin-inline:auto;"><?php echo esc_html( sp_get( $pid, 'sp_proc_intro' ) ); ?></p>
 		</div>
 		<div class="process-cards-grid">
 			<?php foreach ( $process_steps as $step ) : ?>
@@ -331,9 +331,9 @@ $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 <section class="service-areas-section">
 	<div class="container">
 		<div class="section-header section-header--center">
-			<p class="eyebrow">Our Service Area</p>
-			<h2 class="section-title">Site Preparation Services in Eugene and Lane County</h2>
-			<p class="section-intro">D&amp;D Land Works provides site preparation for residential and commercial properties in Eugene and surrounding Lane County communities. Service areas include Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell, depending on the project scope and location.</p>
+			<p class="eyebrow"><?php echo esc_html( sp_get( $pid, 'sp_areas_eyebrow' ) ); ?></p>
+			<h2 class="section-title"><?php echo esc_html( sp_get( $pid, 'sp_areas_heading' ) ); ?></h2>
+			<p class="section-intro"><?php echo esc_html( sp_get( $pid, 'sp_areas_intro' ) ); ?></p>
 		</div>
 		<div class="areas-grid">
 			<div class="areas-list">
@@ -390,7 +390,7 @@ $faqs = array(
 	),
 );
 
-echo ddlw_faq( array( 'heading' => 'Common Questions About Site Preparation' ), implode( '', array_map( function( $item ) {
+echo ddlw_faq( array( 'heading' => sp_get( $pid, 'sp_faq_heading' ) ), implode( '', array_map( function( $item ) {
 	return '[faq_item q="' . esc_attr( $item['q'] ) . '"]' . esc_html( $item['a'] ) . '[/faq_item]';
 }, $faqs ) ) );
 ?>
@@ -406,7 +406,7 @@ $related_services = array(
 ?>
 <section style="background:#fff;border-top:1px solid var(--color-slate-100);padding-block:5rem;">
 	<div class="container">
-		<h2 class="section-title" style="text-align:center;margin-bottom:3rem;">Related Services</h2>
+		<h2 class="section-title" style="text-align:center;margin-bottom:3rem;"><?php echo esc_html( sp_get( $pid, 'sp_related_heading' ) ); ?></h2>
 		<div class="service-card-grid">
 			<?php foreach ( $related_services as $item ) : ?>
 				<a href="<?php echo esc_url( $item['href'] ); ?>" class="service-card service-card--no-icon">
