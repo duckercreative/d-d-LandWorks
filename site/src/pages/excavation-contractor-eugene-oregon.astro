@@ -1,0 +1,542 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import PhotoContentBlock from '../components/PhotoContentBlock.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+
+const excavationServices = [
+  {
+    title: 'Foundation Excavation',
+    description: 'Digging the footprint for a foundation, crawl space, or basement to the depth and grade your footing plan requires. We cut clean and leave the box square for the concrete crew.',
+    href: '/services/foundation-excavation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+  },
+  {
+    title: 'Trenching & Backfill',
+    description: 'Trench digging for water lines, sewer laterals, electrical conduit, and drainage pipe. We dig to grade, bed the pipe, and backfill in lifts so the trench doesn\'t settle under a driveway or pad.',
+    href: '/services/trenching-backfill',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
+  },
+  {
+    title: 'Utility Excavation',
+    description: 'Water service, sewer, storm drain, and conduit runs from the street or meter to the structure. We work around existing utilities and coordinate with 811 locates before anything moves.',
+    href: '/services/utility-excavation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+  },
+  {
+    title: 'Site Preparation',
+    description: 'Clearing, grading, and compaction before a foundation crew arrives. Most Eugene-area lots need clearing before excavation can start — we handle both in sequence.',
+    href: '/services/site-preparation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
+  },
+  {
+    title: 'Drainage Excavation',
+    description: 'French drains, swales, curtain drains, and catch-basin installations to move water away from a structure or correct a standing-water problem on a Lane County property.',
+    href: '/services/drainage-excavation',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
+  },
+  {
+    title: 'Septic Excavation',
+    description: 'Tank placement, distribution box, and drainfield trenching for on-site septic systems. D&D Land Works is DEQ certified for septic install and repair throughout Lane County.',
+    href: '/services/septic-install-repairs',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18" />',
+  },
+];
+
+const processSteps = [
+  { step: '1', title: 'Call 811 — utility locate', detail: 'Required before any digging in Oregon. All underground utilities must be marked before equipment breaks ground. Allow several business days and verify all marks are on site before work starts.' },
+  { step: '2', title: 'Site walk and scope', detail: 'David walks the property, confirms existing grades and underground conditions, reviews the plan dimensions, and identifies access or soil conditions that will affect the job.' },
+  { step: '3', title: 'Permits (if required)', detail: 'Lane County and Oregon DEQ permits may apply depending on scope. Foundation excavation under an active building permit is generally exempt; driveway and utility work may not be. Confirm before equipment rolls.' },
+  { step: '4', title: 'Equipment mobilization', detail: 'Machine selection and access planning happen before the crew arrives. Tight lots, narrow gates, and buried utilities all affect how equipment enters and sets up on an Eugene-area site.' },
+  { step: '5', title: 'Excavation and grading', detail: 'Digging, trenching, or cut-and-fill proceeds to the plan dimensions and elevations. Spoils are stockpiled on-site or hauled depending on what the job requires.' },
+  { step: '6', title: 'Backfill, compact, and cleanup', detail: 'After inspections, trenches and disturbed areas are backfilled in lifts and compacted. The site is cleaned before the crew leaves so the next trade can pick up without clearing excavation debris first.' },
+];
+
+const projectTypes = [
+  { title: 'New Home Build', detail: 'The most common call: a raw Eugene or Springfield lot that needs clearing, grading, foundation dig, and utility trenching before a builder\'s crew shows up.' },
+  { title: 'ADU or Detached Shop', detail: 'ADU and outbuilding footprints require their own foundation excavation. On lots that already have a primary structure, utility connections and access constraints get tighter.' },
+  { title: 'Driveway and Access', detail: 'Driveway cuts through berms, culvert placement, and access road grading for rural Lane County properties that need a machine to reach the job site.' },
+  { title: 'Utility Runs', detail: 'Water service, sewer lateral, septic, and conduit runs from the street or meter to the structure. Common on infill lots and rural properties with new structures going in.' },
+  { title: 'Drainage Correction', detail: 'Standing water, wet crawl spaces, and soggy grades across Eugene\'s valley floor and clay-heavy soils. French drains, curtain drains, and swales move the water somewhere it belongs.' },
+  { title: 'Septic Install or Repair', detail: 'On-site septic for rural and unincorporated Lane County properties. D&D Land Works is DEQ certified and handles tank, distribution box, and drainfield excavation through one crew.' },
+];
+
+const costRows = [
+  { scope: 'Foundation excavation', range: '$3,000–$12,000', note: 'Size and depth of footprint; basement vs. crawl space; soil conditions' },
+  { scope: 'Trenching (water/sewer)', range: '$20–$60 per linear foot', note: 'Depth, soil type, existing utilities, bedding requirements' },
+  { scope: 'Septic excavation', range: '$2,000–$8,000', note: 'System type, drainfield length, soil percolation, access' },
+  { scope: 'Drainage excavation', range: '$1,500–$10,000+', note: 'French drain run length, catch basins, outlet routing' },
+  { scope: 'Site preparation (full scope)', range: '$10,000–$50,000+', note: 'Lot size, vegetation, cut/fill volume, Lane County soil conditions' },
+  { scope: 'Malpass clay surcharge', range: '+25–50% above baseline', note: 'West Eugene clay subgrades are slower, heavier, and may need undercutting' },
+];
+
+const faqs = [
+  {
+    question: 'What does an excavation contractor do in Eugene?',
+    answer: 'An excavation contractor in Eugene handles the digging, grading, and earth-moving work that happens before a structure gets built or a utility gets installed. That includes foundation excavation for new homes and ADUs, trenching for water, sewer, and conduit, drainage work for standing-water problems, septic system excavation on Lane County lots not served by municipal sewer, and site preparation that gets a raw lot ready for a foundation crew. D&D Land Works is licensed and bonded under Oregon CCB #261742 and DEQ certified for septic, so the same company handles the full scope without subcontracting.',
+  },
+  {
+    question: 'How much does excavation cost in Eugene, Oregon?',
+    answer: 'Cost ranges vary significantly by scope. Foundation excavation for a typical residential footprint runs $3,000–$12,000 depending on depth and size. Trenching for water or sewer lines runs $20–$60 per linear foot. Septic excavation runs $2,000–$8,000 depending on system type and access. Drainage work runs $1,500–$10,000 or more. Full site preparation (clearing, grading, foundation prep combined) on a Eugene residential lot typically runs $15,000–$50,000 depending on vegetation and soil conditions. Malpass clay in west Eugene adds 25–50% to baseline grading cost versus a well-drained site. A free on-site estimate is the accurate number for a specific job.',
+  },
+  {
+    question: 'Do I need a permit for excavation in Eugene or Lane County?',
+    answer: 'It depends on the scope. Foundation excavation done under an active building permit is generally exempt from a separate grading or excavation permit. Trenching for utility connections may require right-of-way permits from the City of Eugene or Lane County Public Works. Grading or fill work that moves more than roughly 50 cubic yards generally triggers a Lane County Grading and Fill Permit. Projects disturbing 1 or more acres require an Oregon DEQ 1200-C Construction Stormwater Permit, with a $1,515 application fee. Lane County drainfield work requires a separate On-Site Wastewater Program permit. Confirm with Lane County LMD (541-682-4651) or the ePASS portal before any work starts.',
+  },
+  {
+    question: 'How long does excavation take?',
+    answer: 'A foundation excavation for a standard residential footprint can be completed in one to three days. Utility trenching depends on the run length, soil conditions, and access — a straightforward 100-foot water service run might take a day; a long sewer lateral through rocky ground takes longer. Drainage work and site preparation projects run longer, typically three days to two or more weeks depending on scope. Eugene\'s clay soils and the wet season extend timelines: ground that\'s soft or saturated limits what equipment can do without tearing up the site.',
+  },
+  {
+    question: 'What is the 811 utility locate requirement in Oregon?',
+    answer: 'Oregon law requires calling 811 (the Oregon Utility Notification Center) and waiting for all underground utilities to be marked before any digging begins. This applies to every excavation project regardless of depth or size. Allow two to three business days for locators to respond. All marks must be confirmed on site before equipment breaks ground. D&D Land Works handles utility locate coordination as a standard part of every project — no client needs to manage this separately.',
+  },
+  {
+    question: 'Does excavation work depend on the season in Eugene?',
+    answer: 'Yes. Eugene\'s rainy season runs roughly October through May. Wet Willamette Valley clay saturates quickly and becomes difficult to excavate, trench, and compact. Foundation excavation in saturated Malpass clay can turn a two-day job into a week-long one. Drainage work in winter actually helps identify problem areas, but the excavation itself is slower. The dry season from May through October is the preferred window for most excavation scopes. If your project lands in the wet season, budget extra time and confirm erosion-control requirements with Lane County before work starts.',
+  },
+  {
+    question: 'Can D&D Land Works handle both excavation and site preparation on the same lot?',
+    answer: 'Yes, and that\'s the common sequence on raw Eugene-area lots. Clearing and grading happen first to open the site; foundation excavation, utility trenching, and drainage work follow once the build area is established. Running the whole scope through one crew avoids the scheduling gaps that come from coordinating multiple contractors and ensures the grade established during site prep carries through to the excavation elevations. D&D Land Works handles the full sequence under one CCB license.',
+  },
+  {
+    question: 'Does D&D Land Works serve Springfield and Lane County?',
+    answer: 'Yes. D&D Land Works serves Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell across Lane County. Springfield is close to home base so those jobs schedule easily. Rural and unincorporated Lane County properties are common for septic and utility excavation. Call 541-401-8726 to confirm coverage for a specific address.',
+  },
+];
+
+const related = [
+  { title: 'Site Preparation', description: 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.', href: '/services/site-preparation' },
+  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and a level build pad.', href: '/services/grading-leveling' },
+  { title: 'Foundation Excavation', description: 'Digging the footprint for foundations, footings, crawl spaces, and basements.', href: '/services/foundation-excavation' },
+  { title: 'Drainage Excavation', description: 'French drains, swales, and catch basins to correct standing water on Lane County properties.', href: '/services/drainage-excavation' },
+];
+
+const anchorAreas = [
+  { label: 'Eugene', href: '/locations/eugene' },
+  { label: 'Springfield', href: '/locations/springfield' },
+];
+const otherAreas = [
+  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+  { label: 'Junction City', href: '/locations/junction-city' },
+  { label: 'Creswell', href: '/locations/creswell' },
+  { label: 'Veneta', href: '/locations/veneta' },
+  { label: 'Florence', href: '/locations/florence' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/locations/coburg' },
+  { label: 'Lowell', href: '/locations/lowell' },
+];
+
+const demoReviews = [
+  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew excavated our foundation and cleaned up everything before they left. Would hire again for any excavation work in Eugene.' },
+  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage problem and had someone out within the week. Trenched a French drain that fixed the standing water for good.' },
+  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our utility trenching, just took a little longer to schedule than expected.' },
+  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic excavation went smoothly start to finish. David walked us through the whole process and coordinated the DEQ inspection.' },
+  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared and prepped almost an acre for our build, then came back for the foundation dig. On time, fair price, no surprises.' },
+  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend D&D Land Works for any excavation or site prep work in Lane County.' },
+];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Excavation', 'Foundation Excavation', 'Trenching', 'Utility Excavation', 'Site Preparation', 'Drainage Excavation', 'Septic Installation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/excavation-contractor-eugene-oregon/#service',
+      name: 'Excavation Contractor in Eugene, Oregon',
+      serviceType: 'Excavation',
+      description: 'Licensed excavation contractor in Eugene, Oregon. Foundation excavation, trenching, utility excavation, drainage, and septic excavation for residential and commercial projects. CCB #261742, DEQ Certified.',
+      url: 'https://www.ddlandworks.com/excavation-contractor-eugene-oregon/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Excavation', item: 'https://www.ddlandworks.com/services/excavation/' },
+        { '@type': 'ListItem', position: 3, name: 'Excavation Contractor Eugene, OR', item: 'https://www.ddlandworks.com/excavation-contractor-eugene-oregon/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Excavation Contractor in Eugene, Oregon | Site Prep, Grading & Land Clearing"
+  description="Licensed excavation contractor in Eugene, Oregon. Site preparation, land grading, clearing, foundation digging, and septic excavation. CCB #261742. Free estimates — call 541-401-8726."
+>
+  <Hero
+    eyebrow="Eugene, Oregon"
+    headline="Excavation Contractor in Eugene, Oregon"
+    subheadline="Foundation digging, trenching, utility excavation, drainage, and septic work from one licensed, bonded contractor. D&D Land Works serves Eugene, Springfield, and all of Lane County — David walks every site before quoting."
+    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+  />
+
+  <!-- Who We Excavate For -->
+  <section class="relative bg-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+              Eugene's Excavation Contractor
+            </p>
+          </div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            Excavation Services for Homes and Businesses in Eugene
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>Most construction and land projects in Eugene start with a call to an excavation contractor. D&D Land Works handles the digging, trenching, and earth-moving work that comes before a foundation gets poured, a utility gets connected, or a drainage problem gets fixed. We serve homeowners and builders across Eugene, Springfield, and Lane County.</p>
+            <p>The jobs vary a lot. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller than that — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on.</p>
+            <p>David Deggelman owns D&D Land Works and walks every site in person before quoting. The estimate is based on what's actually on the property — the soil, the slope, the access, and what the job takes — not a number pulled from a price sheet. Licensed and bonded under Oregon CCB #261742 and DEQ certified for septic.</p>
+          </div>
+          <a href="/about" class="btn-pill mt-8 inline-flex">
+            Learn More About D&amp;D Land Works
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative pb-6">
+          <img
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works excavation contractor working on a Lane County, Oregon project"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Does Excavation Include -->
+  <section id="services" class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          What Does Excavation Include?
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          Excavation covers the digging and earth-moving work that gets a site ready for construction. The scope depends on the project — foundation depth, utility runs, drainage needs, and what the ground requires before a structure can go on it.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {excavationServices.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="/services" class="btn btn-cta inline-flex">Explore All Services</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- Project Types -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Who We Work For</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          Excavation Projects We Handle in Eugene
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          No two excavation jobs in Lane County are the same. The scope, soil, and access change every time. Here are the most common project types we handle across Eugene and the surrounding area.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projectTypes.map((p) => (
+          <div class="card">
+            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{p.title}</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">{p.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Talk About Your Project
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
+        How the Excavation Process Works in Eugene
+      </h2>
+      <p class="mt-4 text-slate-300 leading-relaxed text-center max-w-2xl mx-auto">
+        Every excavation job follows a sequence. The specific steps depend on the scope, but the order is consistent, from utility locates through final cleanup.
+      </p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {processSteps.map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/contact" class="btn btn-cta">Discuss Your Excavation Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eugene Soil & Season Context -->
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-5xl px-4 py-16">
+      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
+        Why Eugene Soil and Season Affect Excavation Cost and Timeline
+      </h2>
+      <div class="mt-8 grid gap-8 lg:grid-cols-2">
+        <div>
+          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">Malpass Clay and Willamette Valley Soils</p>
+          <p class="text-slate-700 leading-relaxed">
+            West Eugene sits on Malpass clay — a hydric soil with high shrink-swell properties that moves slowly under equipment and saturates quickly. In wet conditions it pumps and ruts under load, making foundation excavation and trench work slower and harder. Soft spots need to be undercut and replaced with structural fill before a trench or foundation box will stay clean. Lots in River Road, Santa Clara, and west Eugene regularly require more time and material than a well-drained site.
+          </p>
+        </div>
+        <div>
+          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">Oregon's Wet Season (Oct–May)</p>
+          <p class="text-slate-700 leading-relaxed">
+            Lane County's rainy season runs October through May. Excavating in heavy clay during wet weather is slower, harder on equipment, and creates more sediment management work under Lane County's EPSC permit. Open trenches in wet conditions can slough and widen. Dry-season excavation, from May through October, is faster and costs less on most Eugene lots. If your project timeline puts excavation in winter, build in extra schedule and confirm erosion-control requirements before work starts.
+          </p>
+        </div>
+        <div>
+          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">South Hills and Wooded Infill Lots</p>
+          <p class="text-slate-700 leading-relaxed">
+            Many available Eugene lots — especially in the South Hills, Fox Hollow, and east Eugene infill corridors — need clearing before excavation can start. Vegetation has to come off and the grade has to be established before a machine can dig a foundation box accurately. That clearing and grading scope adds time and cost that doesn't show up in a foundation-only estimate. A site walk before quoting is how that gets priced accurately.
+          </p>
+        </div>
+        <div>
+          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">Rural and Unincorporated Lane County</p>
+          <p class="text-slate-700 leading-relaxed">
+            Rural properties outside Eugene and Springfield often need utility excavation and septic work that urban lots don't. Water service from a well, on-site septic with drainfield trenching, and access road cuts are common on rural Lane County parcels. D&D Land Works is DEQ certified for septic excavation, which lets the same crew handle the site prep, the foundation dig, and the septic work without coordinating a second contractor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Table -->
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-4xl px-4 py-16">
+      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+        How Much Does Excavation Cost in Eugene, Oregon?
+      </h2>
+      <p class="mt-4 text-center text-slate-700 leading-relaxed">
+        Scope, soil, access, and depth all drive cost. These are general ranges — not a quote for your specific job.
+      </p>
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-slate-300 text-left">
+              <th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Scope</th>
+              <th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
+              <th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Moves the Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {costRows.map((row) => (
+              <tr class="border-b border-slate-200">
+                <td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.scope}</td>
+                <td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
+                <td class="py-3 text-slate-600">{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-6 text-sm text-slate-600 text-center">
+        Free estimates, always. David walks the property and gives you a real number based on the actual job.
+      </p>
+      <div class="mt-6 text-center">
+        <a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Septic context -->
+  <PhotoContentBlock
+    eyebrow="DEQ Certified"
+    headline="Septic Excavation on Rural Lane County Lots"
+    image="/service-septic-install.webp"
+    imageAlt="Septic system excavation on a rural Lane County, Oregon lot"
+    imageSide="left"
+    badgeValue="DEQ Certified"
+    badgeLabel="Septic Install & Repair"
+    ctaLabel="Septic Install & Repair"
+    ctaHref="/services/septic-install-repairs"
+    bodyHtml="<p>Many rural and unincorporated Lane County properties aren't served by municipal sewer and need an on-site septic system before they can be built on or improved. Septic excavation includes digging for the tank, the distribution box, and the drainfield trenches — work that requires DEQ certification and coordination with Lane County's On-Site Wastewater Program.</p><p>D&amp;D Land Works is DEQ certified for septic install and repair. The same crew that handles site prep and foundation excavation can handle the septic scope, which avoids the sequencing problems that come from coordinating multiple contractors on a timeline where the drainfield evaluation has to happen before grading disturbs the proposed drainfield area. If your Lane County lot needs both site prep and septic work, confirm with your evaluator that the drainfield is staked and approved before any grading equipment moves near it.</p>"
+  />
+
+  <!-- Why Choose D&D -->
+  <PhotoContentBlock
+    eyebrow="Excavation Contractor Eugene, OR"
+    headline="Why Eugene Homeowners and Builders Choose D&D Land Works"
+    image="/project-site-staging.webp"
+    imageAlt="D&D Land Works excavation equipment at work on a Eugene, Oregon site"
+    imageSide="right"
+    badgeValue="CCB #261742"
+    badgeLabel="Licensed & Bonded"
+    ctaLabel="Get a Free Estimate"
+    ctaHref="/contact"
+    bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 and DEQ certified for septic work — both credentials you can verify at the <a href='https://search.ccb.state.or.us/search/' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>CCB license lookup</a>. David Deggelman owns the company, walks every site before quoting, and runs the equipment. The person who scopes the job shows up to do it. No subcontracted crew, no phone estimate built from satellite images.</p><p>Eugene's excavation conditions — Malpass clay, wet-season soil, Lane County permitting, and the clearing needs of wooded infill lots — are ones David works with regularly, not occasional edge cases. If you're in Eugene, Springfield, or anywhere in Lane County and need a licensed excavation contractor, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> for a free, on-site estimate.</p>"
+  />
+
+  <WhyChooseUs
+    descriptionHtml="Every excavation job in Eugene starts with David walking the property, not a phone estimate. One licensed, bonded crew handles the digging, trenching, and cleanup — with a straight answer on 811 locates and permits before equipment shows up."
+  />
+
+  <!-- Service Area -->
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
+        Eugene &amp; Lane County Service Area
+      </h2>
+      <p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
+        D&amp;D Land Works is <strong class="text-brand-blue">based in Lane County</strong> and serves Eugene, Springfield, and the surrounding area for excavation, site preparation, and septic work.
+      </p>
+      <div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+        <div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+          <iframe
+            title="D&D Land Works service area map, Eugene and Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Eugene,+Oregon&z=11&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="flex flex-col gap-6">
+          <div class="card">
+            <p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
+              Service Area Includes
+            </p>
+            <p class="leading-relaxed">
+              {anchorAreas.map((area, i) => (
+                <>
+                  <a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
+                  {i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+                </>
+              ))}
+              <span class="text-slate-400"> &middot; </span>
+              {otherAreas.map((area, i) => (
+                <>
+                  <a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
+                  {i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+                </>
+              ))}
+            </p>
+          </div>
+          <div class="card">
+            <p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-2">Eugene Neighborhoods Served</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              South Hills &middot; Fox Hollow &middot; River Road &middot; Santa Clara &middot; Airport District &middot; Whiteaker &middot; Friendly Area &middot; Churchill &middot; Cal Young &middot; East Eugene
+            </p>
+          </div>
+          <p class="text-slate-700 leading-relaxed text-sm">
+            David walks every Eugene-area site before quoting, so estimates reflect the actual soil, slope, access, and scope — not a regional average. Licensed and bonded CCB #261742, DEQ certified for septic.
+          </p>
+          <a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
+        </div>
+      </div>
+      <p class="mt-6 text-center text-sm text-slate-600">
+        Don&rsquo;t see your Eugene neighborhood or Lane County city listed? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> to confirm coverage for your address.
+      </p>
+    </div>
+  </section>
+
+  <Gallery />
+
+  <Testimonials
+    businessName="D&D Land Works"
+    rating={4.83}
+    reviewCount={demoReviews.length}
+    reviews={demoReviews}
+  />
+
+  <FAQ heading="Excavation Contractor FAQs — Eugene, Oregon" items={faqs} />
+
+  <!-- Related Services -->
+  <section class="mx-auto max-w-6xl px-4 pb-16 pt-8">
+    <h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center mb-8">
+      Related Services
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {related.map((service) => <ServiceCard {...service} />)}
+    </div>
+  </section>
+
+  <CTABlock
+    headline="Get Your Eugene Excavation Project Scoped"
+    subheadline="Free estimate for excavation, trenching, foundation digging, or site prep anywhere in Eugene or Lane County. David walks the site first."
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
