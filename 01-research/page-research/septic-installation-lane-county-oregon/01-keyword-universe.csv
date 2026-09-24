@@ -1,0 +1,153 @@
+﻿query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+septic installation lane county oregon,topical_map,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P0,Primary page target — county-level location signal
+septic system installation lane county,serp,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P0,Near-synonym — system vs installer framing
+septic installation contractor lane county,topical_map,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Topical map primary keyword — contractor-framed
+septic system installation eugene or,topical_map,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P0,Topical map primary keyword — Eugene city-level variant; this page is the natural install-specific landing target
+septic system installation eugene oregon,serp,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P0,Full state-name variant of above
+deq certified septic installer oregon,topical_map,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Topical map primary keyword — D&D's key credential differentiator
+deq certified septic installer lane county,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,County-level variant of credential differentiator
+new septic system installation lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,New-install framing — install-only transactional intent
+new septic system cost oregon,topical_map,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Topical map secondary keyword — cost-stage research
+septic system springfield or,topical_map,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Topical map secondary keyword — Springfield city-level target
+rural septic installation lane county,topical_map,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Topical map secondary keyword — rural/unincorporated Lane County angle
+on-site wastewater oregon,topical_map,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P0,Topical map secondary keyword — Oregon DEQ's official terminology for septic systems
+septic installer lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Person/role-framed variant
+septic company lane county oregon,serp,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P1,Generic company-framed head term
+septic contractor lane county oregon,serp,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon,P1,Contractor-framed head term
+septic system installer eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,City-level installer-framed variant
+septic installation springfield oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Second-largest city in Lane County
+septic installation cottage grove oregon,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P1,Tier 2 city — rural setting, heavy septic dependence
+septic installation creswell oregon,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,Tier 2 city — small rural community
+septic installation veneta oregon,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,Tier 2 city — All Dirt is based here
+septic installation junction city oregon,serp,commercial,decision,y,scheduled,mid,low,/septic-installation-lane-county-oregon,P2,Tier 2 city — farm/rural community
+septic installation florence oregon,serp,commercial,decision,y,scheduled,mid,low,/septic-installation-lane-county-oregon,P3,Tier 3 city — coastal, unique soil conditions
+septic installation oakridge oregon,serp,commercial,decision,y,scheduled,mid,low,/septic-installation-lane-county-oregon,P3,Tier 3 — mountain community, likely no sewer
+septic installation coburg oregon,serp,commercial,decision,y,scheduled,mid,low,/septic-installation-lane-county-oregon,P3,Tier 3 — small community
+septic installation lowell oregon,serp,commercial,decision,y,scheduled,mid,low,/septic-installation-lane-county-oregon,P3,Tier 3 — rural lakeside community
+new septic system cost lane county,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,New-install cost query with county modifier
+septic system installation cost eugene oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Highest-volume cost query with location — reused from septic pack; avg $4173-$5963 (350 projects)
+how much does septic installation cost in oregon,serp,commercial,consideration,y,scheduled,long,high,/septic-installation-lane-county-oregon,P0,Broad Oregon cost question
+septic system cost oregon 2026,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Year-modified cost query
+new septic system cost with installation,serp,commercial,consideration,n,browse,mid,high,/septic-installation-lane-county-oregon,P1,Generic national cost query with install framing
+conventional septic system cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Real range found: $3000-$10000 — direct comparison-table anchor
+alternative treatment system cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Real range found: $12000-$30000+ — direct comparison-table anchor
+septic tank installation cost,serp,commercial,consideration,n,browse,mid,high,/septic-installation-lane-county-oregon,P1,Generic national cost query — high volume
+drainfield installation cost oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Component-specific install cost query
+septic tank excavation cost oregon,serp,commercial,consideration,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,Excavation-component cost query — D&D's core work
+drain field excavation cost,serp,commercial,consideration,n,browse,mid,med,/septic-installation-lane-county-oregon,P2,Excavation-component framing
+new construction septic system lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,New construction angle — building on raw land
+new construction septic system oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Broad Oregon new-construction framing
+septic system for new home lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,New home framing
+new home construction septic system eugene or,serp,commercial,decision,y,scheduled,long,med,/septic-installation-lane-county-oregon,P2,City-level new-construction framing
+building permit and septic permit lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Combined permit query — common for new construction
+septic permit new construction oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Permit-education query for new builds
+rural septic system oregon,serp,commercial,consideration,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P1,Rural/acreage framing
+rural property septic system lane county,serp,commercial,consideration,y,scheduled,long,med,/septic-installation-lane-county-oregon,P1,Specific rural Lane County angle
+acreage lot septic system installation oregon,serp,commercial,consideration,y,scheduled,long,med,/septic-installation-lane-county-oregon,P2,Rural/acreage new land framing
+property outside city limits septic lane county,serp,informational,consideration,y,browse,long,low,/septic-installation-lane-county-oregon,P2,No-sewer framing for unincorporated Lane County
+does my property need septic or city sewer lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Decision-stage sewer vs septic query
+no city sewer septic installation lane county,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,Rural/no-sewer framing
+on-site wastewater system installation lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Oregon DEQ official terminology variant
+on-site sewage disposal system oregon,serp,informational,awareness,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Regulatory terminology variant
+onsite wastewater treatment system oregon,serp,informational,awareness,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Full technical regulatory term
+conventional vs alternative septic system oregon,serp,informational,consideration,y,browse,long,high,/septic-installation-lane-county-oregon,P0,Decision-stage system-type comparison query — zero competitors explain this
+what type of septic system do i need in oregon,serp,informational,decision,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Direct decision-stage system-type query
+conventional septic system installation oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,System-type-specific install query
+alternative treatment system installation oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,ATT system install query
+sand filter septic system installation,serp,commercial,decision,n,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,ATT subtype install query
+mound septic system installation oregon,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,ATT subtype — Willamette Valley clay/high water table relevance
+aerobic treatment unit installation oregon,serp,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,ATT subtype — high-cost system
+pressure dosed septic system oregon,serp,informational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P3,Technical system type — ATT variant
+capping fill septic system oregon,serp,informational,awareness,y,browse,mid,low,/septic-installation-lane-county-oregon,P3,Oregon-specific system type in DEQ list
+septic system for clay soil oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Willamette Valley clay-soil relevance — commonly forces ATT
+septic system clay soil lane county,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,County-specific soil framing
+high water table septic system oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,Soil/site condition — alternative system trigger
+septic permit lane county,serp,informational,consideration,y,browse,mid,high,/septic-installation-lane-county-oregon,P0,Direct permit-process query
+septic permit cost lane county oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Real figure found: site evaluation fee ~$866-$998 (secondary source — flag for confirmation)
+how to get a septic permit in oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Process-education query
+oregon septic permit process,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Permit process framing
+lane county septic site evaluation,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Site evaluation sub-process query
+septic site evaluation cost oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,Cost of the site evaluation step specifically
+test pit septic oregon,serp,informational,awareness,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Test pit sub-process — 2-3 pits, 50-100ft apart, 2x4x5ft required
+perc test oregon septic,serp,informational,awareness,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Colloquial term for site evaluation/percolation testing
+soil test for septic system oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,Soil evaluation framing
+how long does septic installation take oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Timeline query — physical install 3-7 days; full process weeks to months
+how long does it take to get a septic permit lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Permit timeline specifically
+steps to install a septic system oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Process/sequence education query
+septic system installation process lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Local process framing
+does lane county or oregon deq issue septic permits,serp,informational,awareness,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Direct regulatory structure question — Lane County is DEQ's agent
+lane county subsurface sanitation program,serp,navigational,awareness,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Direct navigational query for the permitting office
+oregon administrative rules 340-071,serp,informational,awareness,n,browse,long,low,/septic-installation-lane-county-oregon,P3,Direct regulation citation query — OAR 340-071
+oregon deq septic rules,serp,informational,awareness,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,General regulation education query
+what is an on-site wastewater system,serp,informational,awareness,n,browse,mid,low,/septic-installation-lane-county-oregon,P2,Terminology education — Oregon DEQ terminology
+deq licensed installer search oregon,serp,navigational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,DEQ business license search tool
+how to verify septic installer is deq certified oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Trust-verification query
+is my septic contractor licensed oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Trust-verification query
+difference between ccb license and deq certification septic,serp,informational,awareness,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Credential distinction — educational content
+do i need a general contractor or septic contractor,serp,informational,awareness,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Credential framing question
+what does deq certified mean septic oregon,serp,informational,consideration,n,browse,mid,med,/septic-installation-lane-county-oregon,P0,Credential education — consistent with homepage framing
+deq installer certification requirements oregon,serp,informational,awareness,n,browse,mid,low,/septic-installation-lane-county-oregon,P2,Credential-category education — Installer Certification (Chemeketa)
+one contractor for excavation and septic lane county,serp,commercial,decision,y,scheduled,long,med,/septic-installation-lane-county-oregon,P1,Bundled-service positioning variant — D&D's key USP
+septic and excavation company lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Bundled positioning — excavation + septic one company
+contractor that does excavation and septic installation oregon,serp,commercial,decision,y,scheduled,long,med,/septic-installation-lane-county-oregon,P2,Bundled-service framing
+who installs septic systems in lane county oregon,serp,commercial,decision,y,scheduled,long,med,/septic-installation-lane-county-oregon,P1,Direct who-does-this query
+licensed septic installer lane county oregon,serp,commercial,consideration,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P0,Trust-modifier; maps to DEQ Installer Certification
+licensed and bonded septic contractor lane county,serp,commercial,consideration,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P1,Trust-modifier
+best septic installer lane county oregon,autocomplete,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,"best" prefix mining
+top rated septic installer lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,"top rated" prefix mining
+affordable septic installation lane county,autocomplete,commercial,decision,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,"affordable" prefix mining
+septic system installer near me lane county,autocomplete,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Near-me with county modifier
+septic installer near me,autocomplete,commercial,decision,n,scheduled,head,high,/septic-installation-lane-county-oregon,P0,High-volume generic local-intent query
+free septic estimate lane county oregon,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P0,Conversion query — matches D&D's free estimates USP
+get a quote for septic installation lane county,autocomplete,transactional,decision,y,scheduled,long,high,/contact/,P1,Conversion variant
+call septic contractor eugene,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P1,Conversion-intent
+free septic estimate eugene oregon,autocomplete,transactional,decision,y,scheduled,mid,high,/contact/,P0,City-level conversion query
+septic installation estimate springfield or,autocomplete,transactional,decision,y,scheduled,mid,med,/contact/,P2,City-level conversion variant
+what is included in septic system installation,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Scope-education query — what D&D actually does
+what does a septic company do during installation,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Process-education query
+what is included in the cost of a new septic system,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Cost-scope education
+septic tank size for 3 bedroom house oregon,serp,informational,consideration,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,Sizing/planning query for new installs
+septic tank size requirements oregon,serp,informational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Technical sizing query
+drainfield size requirements lane county,serp,informational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Drainfield sizing/planning
+septic system for adu oregon,serp,commercial,consideration,y,scheduled,mid,med,/septic-installation-lane-county-oregon,P2,ADU-specific project type — Oregon ADU law relevant
+can an adu share existing septic system oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,ADU+septic capacity question — common in Lane County
+septic system capacity expansion oregon,serp,informational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P2,Capacity expansion for ADU or additions
+willamette valley clay soil septic system,serp,informational,awareness,y,browse,mid,med,/septic-installation-lane-county-oregon,P1,Regional soil entity — clay forces ATT systems
+malpass clay loam septic system,serp,informational,awareness,y,browse,long,low,/septic-installation-lane-county-oregon,P3,Specific Willamette Valley soil unit — Lane County valley floor
+septic system for rural property with well oregon,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Well+septic setback requirement — rural properties
+setback requirements septic system oregon,serp,informational,awareness,n,browse,mid,low,/septic-installation-lane-county-oregon,P2,Regulatory setback education
+septic well setback distance oregon,serp,informational,awareness,n,browse,mid,low,/septic-installation-lane-county-oregon,P2,Setback education for rural properties
+how close can septic be to a well in oregon,serp,informational,consideration,n,browse,long,low,/septic-installation-lane-county-oregon,P2,Direct setback question
+can i build over my drainfield,serp,informational,consideration,n,browse,mid,med,/septic-installation-lane-county-oregon,P1,Post-install drainfield protection query
+drainfield protection requirements oregon,serp,informational,awareness,n,browse,mid,low,/septic-installation-lane-county-oregon,P2,Regulatory drainfield protection
+site prep before septic installation lane county,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Cross-link to site-preparation page opportunity
+drainfield area must be preserved before grading,serp,informational,awareness,y,browse,long,low,/septic-installation-lane-county-oregon,P2,Sequencing rule — must preserve drainfield area before grading
+septic system installation epass lane county,serp,navigational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P3,Lane County ePASS portal for permit applications
+lane county epass septic permit,serp,navigational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P3,Portal-navigational query
+how long does a new septic system last,serp,informational,awareness,n,browse,mid,high,/septic-installation-lane-county-oregon,P1,Lifespan query for new-install decision-making — 25-40 years for tank; 20-30 years drainfield
+average lifespan of septic system oregon,serp,informational,awareness,y,browse,mid,med,/septic-installation-lane-county-oregon,P2,Oregon-framed lifespan query
+septic vs city sewer cost oregon,serp,informational,consideration,y,browse,mid,low,/septic-installation-lane-county-oregon,P3,Comparison/education query
+should i connect to city sewer or install septic lane county,serp,informational,consideration,y,browse,long,low,/septic-installation-lane-county-oregon,P2,Decision query for properties with sewer access
+excavation for new septic system oregon,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon,P1,Combined septic+excavation framing — D&D's core positioning
+who does the excavation for septic installation,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Process question — D&D does both site and install
+questions to ask a septic installer,serp,informational,consideration,n,browse,mid,med,/septic-installation-lane-county-oregon,P1,Hiring-decision content
+what to look for when hiring a septic contractor,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P2,Hiring-decision content
+how do i know if my property can support a septic system,serp,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Pre-purchase/pre-build evaluation query
+can all properties have septic systems oregon,serp,informational,consideration,y,browse,long,low,/septic-installation-lane-county-oregon,P2,Feasibility question
+what if my property fails the septic site evaluation,serp,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Worst-case outcome education — ATT systems as backup
+how much does a site evaluation cost for septic oregon,quora,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Direct Quora question framing
+what is the cheapest type of septic system i can install in oregon,quora,commercial,consideration,y,browse,long,high,/septic-installation-lane-county-oregon,P0,Direct Quora question — conventional system answer
+how long does it take to get a septic system installed in lane county from permit to finish,quora,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Direct Quora question framing
+do i have to hire a deq licensed contractor to install my septic in oregon or can i do it myself,quora,informational,awareness,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Owner-install option question — honest answer: homeowner can on own property but advisable to hire
+i want to buy land in lane county oregon does it need a perc test before i build,quora,informational,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Pre-purchase land evaluation question
+best septic contractor near me that does installation not just pumping,reddit_proxy,commercial,decision,n,scheduled,long,high,/septic-installation-lane-county-oregon,P1,Reddit-style query distinguishing installation from pumping
+anyone recommend a good septic installer in lane county oregon reddit,reddit_proxy,commercial,consideration,y,browse,long,med,/septic-installation-lane-county-oregon,P1,Reddit-style recommendation ask
+how much did your septic system installation cost in oregon reddit,reddit_proxy,commercial,consideration,y,browse,long,high,/septic-installation-lane-county-oregon,P0,Reddit cost-sharing query — highest conversion signal
+how do i find out if my property can support a conventional septic system reddit,reddit_proxy,informational,consideration,n,browse,long,med,/septic-installation-lane-county-oregon,P1,Reddit-style feasibility question
+d&d land works septic installation,search_suggestion,navigational,decision,n,browse,mid,high,/septic-installation-lane-county-oregon,P0,Brand + service query — must be owned once GBP/site exist
+david deggelman septic lane county,search_suggestion,navigational,decision,y,browse,long,med,/about/,P1,Owner-name query — E-E-A-T signal
+septic pumping lane county,serp,commercial,consideration,y,scheduled,head,high,n/a,P3,FENCED OUT — D&D does not offer pumping; do not target
+septic inspection lane county,serp,commercial,consideration,y,scheduled,mid,high,n/a,P3,FENCED OUT — DEQ inspection/certification beyond D&D's stated scope; do not target as own service
+24 hour septic service lane county,autocomplete,transactional,decision,y,scheduled,mid,med,n/a,P3,SCOPE CAUTION — do not claim 24/7 emergency without confirming with David
+emergency septic repair lane county,serp,commercial,decision,y,scheduled,mid,high,/septic-installation-lane-county-oregon/,P3,SCOPE CAUTION — redirect to general septic page; verify David's actual emergency response capability
+septic repair lane county oregon,serp,commercial,decision,y,scheduled,head,high,/septic-installation-lane-county-oregon/,P2,REDIRECT — repair is in scope but belongs on the base septic page not this install-focused page

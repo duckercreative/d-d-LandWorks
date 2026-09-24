@@ -1,0 +1,55 @@
+entity_name,entity_type,schema_type,priority_tier,placement,notes,confirmed
+D&D Land Works,Organization,LocalBusiness / GeneralContractor,1,H1 + hero + schema,Business entity anchor; provider for all Service schema,yes
+David Deggelman,Person,Person,1,First paragraph + E-E-A-T,Owner name; confirmed in business-info.md,yes
+Oregon CCB #261742,Credential,EducationalOccupationalCredential,1,Hero + first paragraph,Mandatory on all pages; confirmed,yes
+DEQ Certified,Credential,EducationalOccupationalCredential,1,H1 + hero + credential section,Core differentiator; general framing only per business-info.md constraint,yes
+Septic System Installation,Service,Service,1,H1 + schema,Primary service entity on this page,yes
+Lane County Oregon,Place,AdministrativeArea,1,H1 + meta + areaServed schema,Primary geo entity,yes
+Eugene Oregon,Place,City,1,H2 + areaServed + body,Largest city; primary keyword city,yes
+Springfield Oregon,Place,City,1,Opening + areaServed + body,Second-largest city; topical map keyword,yes
+Oregon DEQ,Organization,GovernmentOrganization,2,Credential section + permit section,Issues DEQ certifications; oversees onsite wastewater under OAR 340-071,yes
+OAR Chapter 340 Division 71,Regulation,Legislation,2,Credential + permit section,Oregon's onsite wastewater rules; confirmed correct citation,yes
+OAR 340-071-0120,Specific Rule,Legislation,2,Permit section,Establishes Lane County as DEQ's agent for septic permitting,yes
+Lane County Subsurface Sanitation Program,GovernmentProgram,GovernmentOrganization,2,Permit process section,The office that receives applications and issues septic permits in Lane County,yes
+Lane County Land Management Division,GovernmentDepartment,GovernmentOrganization,2,Permit section,Parent department of Subsurface Sanitation Program,yes
+ePASS portal,DigitalTool,,2,Permit process section,Lane County's online permit application system for septic and building permits,yes
+Conventional Septic System,SystemType,,2,System-type comparison table,Standard gravity-fed system; lower cost; suitable soil required,yes
+Alternative Treatment Technology (ATT),SystemType,,2,System-type comparison table,DEQ umbrella term for non-conventional systems,yes
+Sand Filter System,SystemType,,2,System-type comparison table,ATT subtype; intermittent ($7-18k) or recirculating ($10-25k+),yes
+Aerobic Treatment Unit (ATU),SystemType,,2,System-type comparison table,ATT subtype; $10-20k; requires ongoing maintenance contract,yes
+Mound System,SystemType,,2,System-type comparison table,ATT subtype; used with high water table or shallow clay soil,yes
+Pressure-Dosed System,SystemType,,2,System-type comparison table,ATT variant; distribution method variation,yes
+Capping Fill System,SystemType,,2,System-type comparison table,Oregon-specific ATT system type listed in DEQ approved types,yes
+Septic Tank,SystemComponent,,2,What's included + process,Physical tank; concrete or poly; size by bedroom count,yes
+Drainfield / Leach Field,SystemComponent,,2,What's included + process,Absorption area; most land-sensitive component,yes
+Distribution Box (D-box),SystemComponent,,2,What's included section,Routes effluent from tank to drainfield laterals,yes
+Site Evaluation (Test Pit Evaluation),ProcessStep,,3,Permit process section,Required first step before any septic permit in Oregon,yes
+Test Pits,ProcessComponent,,3,Site evaluation sub-section,"2-3 pits; 50-100 ft apart; 2ft × 4ft × 5ft each; Lane County standard",yes
+Perc Test,ColloquialTerm,,3,FAQ / explanation,Homeowner term for site evaluation; Oregon uses 'site evaluation' officially,yes
+High Water Table,SiteCondition,,3,System-type decision section,Common ATT trigger in Willamette Valley,yes
+Willamette Valley Clay Soil,RegionalEntity,,3,System-type decision section,Forces ATT systems on many Lane County properties,yes
+Malpass Silty Clay Loam,SpecificSoilUnit,,3,Eugene-area context section,Dominant soil on Lane County valley floor; USDA Web Soil Survey,yes
+Drainfield Protection Rule,RegulatoryRequirement,,3,Post-install / process section,Must not cut/fill/pave drainfield area once proposed; cross-link to site-prep page,yes
+Setback Requirements,RegulatoryRequirement,,3,Rural property section,Distances between septic and wells/structures/property lines,yes
+Oregon 811 / Oregon Utility Notification Center,RegulatoryEntity,,3,Pre-installation section,D&D calls before every dig; cross-mention from excavation pages,yes
+Oregon Construction Contractors Board (CCB),RegulatoryBody,GovernmentOrganization,4,Credential section,Issues CCB #261742; separate from DEQ,yes
+DEQ Sewage Disposal Service Business License,CredentialType,,4,Credential section,General Oregon fact; installer/pumper/combined categories; do NOT assert David's specific tier,yes
+Installer Certification (Individual DEQ),CredentialType,,4,Credential section,Required before DEQ business license; 2-day Chemeketa course; 70% pass,yes
+Maintenance Provider Certification,CredentialType,,4,Credential section (footnote),Separate credential for ATT servicing; relevance depends on David's scope,conditional
+Chemeketa Community College,EducationalInstitution,,4,Credential section,Where DEQ Installer Certification course is commonly delivered,yes
+DEQ Business License Search Tool,GovernmentTool,,4,Trust section,oregon.gov/deq/residential/pages/onsite-search.aspx — link directly,yes
+Cottage Grove Oregon,Place,City,5,Service area section,Rural community south of Eugene; heavy septic dependence,yes
+Creswell Oregon,Place,City,5,Service area section,Small rural community; limited sewer access,yes
+Veneta Oregon,Place,City,5,Service area section,Rural west Lane County; All Dirt based here,yes
+Junction City Oregon,Place,City,5,Service area section,Farming community north of Eugene,yes
+Coburg Oregon,Place,City,5,Service area section,Small community; limited sewer infrastructure,yes
+Lowell Oregon,Place,City,5,Service area section,Rural lakeside community southeast of Eugene,yes
+Oakridge Oregon,Place,City,5,Service area section,Mountain community; likely no city sewer,yes
+Florence Oregon,Place,City,5,Service area section,Coastal community; unique soil conditions,yes
+Unincorporated Lane County,Place,,5,Opening / rural section,Properties outside any city's Urban Growth Boundary,yes
+Urban Growth Boundary (UGB),PlanningEntity,,5,Sewer-vs-septic section,Properties outside UGB typically cannot connect to city sewer,yes
+New Construction Septic System,ProjectType,,6,New construction section,Distinct from retrofit — raw land or new-build site,yes
+ADU (Accessory Dwelling Unit),ProjectType,,6,ADU section,Oregon ADU law creates new demand for septic capacity questions,yes
+Building Permit,RelatedPermit,,6,New construction section,Often applied for simultaneously with septic permit in Lane County,yes
+Electrical Permit,RelatedPermit,,6,ATT system section,Some ATT pump systems require an electrical permit,yes
+Eugene-area septic install cost data (350 projects avg $4173-$5963),CostData,,6,Cost section,Homeyou-sourced; likely skewed toward conventional systems; use as general range,yes

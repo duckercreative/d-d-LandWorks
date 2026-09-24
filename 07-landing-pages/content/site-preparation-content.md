@@ -1,4 +1,4 @@
-# D&D Land Works — Site Preparation Page Content (Draft)
+﻿# D&D Land Works — Site Preparation Page Content (Draft)
 
 **Prepared:** 2026-09-08 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/site-preparation-brief.md` + full `01-research/page-research/site-preparation/` pack + `business-info.md` + `07-landing-pages/content/home-content.md` (voice/schema pattern reference)
@@ -19,7 +19,7 @@
 | **H1** | Site Preparation in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/site-preparation/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `HowTo` (7-step process), `Speakable` (H2 #1, #3, #8, #9) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/land-clearing/`, `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/drainage-excavation/`, `/services/septic-install-repairs/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/services/land-clearing/`, `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/drainage-excavation/`, `/septic-installation-lane-county-oregon/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | site preparation eugene or |
 | **Co-primary keyword** | site preparation lane county or |
 | **Word count** | ~2,770 words (body copy, H1 through closing CTA; excludes this metadata table and the JSON-LD block) — within the brief's 2,300–2,900 target |
@@ -114,7 +114,7 @@ It happens, and it's not a sign of a bad contractor or a bait-and-switch quote. 
 
 ## Site Prep and Your Septic System
 
-If your project includes a septic system, sequencing matters more than it might seem. Lane County requires that once a drainfield location is proposed or approved through a test-pit evaluation, it can't be cut, filled, paved, or otherwise disturbed. Doing so can void the site's septic approval outright. In practice, that means the area evaluated for your drainfield needs to be confirmed and flagged before general grading starts on the rest of the lot, not treated as part of one undifferentiated grading job. If you're planning septic work alongside site prep, confirm with your septic evaluator or [Lane County's On-Site Wastewater Program](https://www.lanecounty.org/government/county_departments/public_works/land_management_division/on-_site_wastewater) that the drainfield area has been evaluated and marked before grading equipment moves near it. For the installation and repair work itself, see [septic installation and repair](/services/septic-install-repairs/).
+If your project includes a septic system, sequencing matters more than it might seem. Lane County requires that once a drainfield location is proposed or approved through a test-pit evaluation, it can't be cut, filled, paved, or otherwise disturbed. Doing so can void the site's septic approval outright. In practice, that means the area evaluated for your drainfield needs to be confirmed and flagged before general grading starts on the rest of the lot, not treated as part of one undifferentiated grading job. If you're planning septic work alongside site prep, confirm with your septic evaluator or [Lane County's On-Site Wastewater Program](https://www.lanecounty.org/government/county_departments/public_works/land_management_division/on-_site_wastewater) that the drainfield area has been evaluated and marked before grading equipment moves near it. For the installation and repair work itself, see [septic installation and repair](/septic-installation-lane-county-oregon/).
 
 ## Frequently Asked Questions
 

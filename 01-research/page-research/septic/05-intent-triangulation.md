@@ -1,4 +1,4 @@
-# Intent Triangulation — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Intent Triangulation — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 **Sourcing note:** consistent with every prior pack in this project, named-competitor 1-3 star review text was not directly retrievable this session. This file triangulates intent from: (1) genuine Quora question titles (verbatim, high-signal real-user questions — see `02-question-mine.md`), (2) septic-industry education/cost literature reflecting aggregated real complaint and decision patterns, (3) Oregon-specific regulatory facts that predictably create pain points, and (4) the distinct psychological framing this task explicitly asked for: septic is frequently a distressed/urgent purchase, not a planned home-improvement decision, and that changes what "good" content looks like here versus the prior four pages in this pipeline.
 

@@ -1,8 +1,8 @@
-# Research Pack — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Research Pack — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 **Prepared:** 2026-09-08 · **Prepared by:** Ducker Creative (deep-research methodology, adapted from HVAC → excavation/site-prep per CLAUDE.md, and further adapted here from general excavation → state-regulated septic work)
 **Page targeted:** Septic Installation & Repair — the sixth page through this pipeline (following homepage, Site Preparation, Excavation & Grading, Grading & Leveling, and Land Clearing), and the first page in this project that is a genuinely distinct discipline from general earthwork: state-regulated (Oregon DEQ, not just Oregon CCB), health/safety-critical, and frequently a distressed/urgent purchase rather than a planned project.
-**Current state:** A page already exists at `site/src/pages/services/septic-install-repairs.astro`, built earlier and outside this research pipeline. This pack does not start from zero — it verifies, deepens, and extends what's already live, and flags anywhere the live page's framing should be preserved as-is versus where this research adds real depth. See §9 below.
+**Current state:** A page already exists at `site/src/pages/septic-installation-lane-county-oregon.astro`, built earlier and outside this research pipeline. This pack does not start from zero — it verifies, deepens, and extends what's already live, and flags anywhere the live page's framing should be preserved as-is versus where this research adds real depth. See §9 below.
 
 This file is the master synthesis. The future content brief should read only this file; the other 8 files in this folder are supporting evidence to drill into on demand.
 
@@ -177,7 +177,7 @@ Full sourcing and validation in `02-question-mine.md`:
 
 Reuses this project's already-confirmed schema decisions (`GeneralContractor` primary business type, `Service` for individual pages) — no new schema-type research needed, since the septic-specific credential nuance fits within schema.org's existing `EducationalOccupationalCredential` type already used in `home-content.md`'s shipped JSON-LD.
 
-- **`Service`** (primary page type) — `@id` following this project's established pattern (`https://www.ddlandworks.com/services/septic-install-repairs/#service`), `provider` referencing `{"@id": "https://www.ddlandworks.com/#business"}`
+- **`Service`** (primary page type) — `@id` following this project's established pattern (`https://www.ddlandworks.com/septic-installation-lane-county-oregon/#service`), `provider` referencing `{"@id": "https://www.ddlandworks.com/#business"}`
 - **`FAQPage`** — for the 10-question shortlist above
 - **`HowTo`** — for the site-evaluation-to-permit process sequence
 - **`ItemList`** — for the signs-of-failure bulleted list

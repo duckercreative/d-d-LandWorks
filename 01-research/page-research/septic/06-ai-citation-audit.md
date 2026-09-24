@@ -1,4 +1,4 @@
-# AI Citation Audit — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# AI Citation Audit — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 **Method note:** consistent with every prior pack in this project, this session cannot directly query the ChatGPT, Perplexity, Gemini, Claude.ai, or Bing Copilot chat interfaces. This audit reasons from what Google's organic/SERP results surface for the target queries — a documented, reliable proxy for what retrieval-augmented AI answers draw from — cross-checked against the specific domain patterns already confirmed in the homepage pack. The core finding carries over unchanged: **D&D Land Works is cited nowhere, by anyone, for any query**, for the same structural reason as every other page (`ddlandworks.com` does not resolve, zero digital footprint exists).
 

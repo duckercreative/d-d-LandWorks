@@ -1,4 +1,4 @@
-# Question Mine — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Question Mine — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 **Page:** Septic Installation & Repair — the sixth page through this pipeline, and the first genuinely state-regulated, health/safety-critical service page (site prep, excavation, grading, and land clearing are all civil/earthwork; septic is a licensed environmental-health discipline layered on top of earthwork).
 **Sourced via:** WebSearch against Google results (PAA-adjacent), `site:quora.com` search-result titles (exact question phrasing), Oregon DEQ / Lane County government pages, septic-industry cost/education sites (Angi, HomeAdvisor, septictankhub, Alpha Environmental, HouseMaster), and the existing homepage/site-preparation question mines cross-referenced for septic-adjacent items already surfaced (reused, not re-derived, where noted).

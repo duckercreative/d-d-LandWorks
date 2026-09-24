@@ -1,4 +1,4 @@
-# Oregon / Lane County Authority Signals — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Oregon / Lane County Authority Signals — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 This is the regulatory core of this pack. Every fact below was pulled from live sources during this research session (2026-09-08), verified directly against `oregon.gov/deq` and `lanecounty.org` wherever possible rather than assumed or reused wholesale from the excavation-permit research on prior pages — per the task's explicit instruction that septic needs its own dedicated regulatory research, not just reused excavation permit facts. Where a fact genuinely is shared with a prior pack (the test-pit/site-evaluation process, the drainfield-protection sequencing rule), it is cited and cross-referenced rather than re-derived, also per instruction.
 

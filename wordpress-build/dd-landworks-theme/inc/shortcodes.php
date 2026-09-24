@@ -255,7 +255,7 @@ function ddlw_service_grid( $atts ) {
 		'excavation'             => '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />',
 		'land-clearing'          => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />',
 		'grading-leveling'       => '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
-		'septic-install-repairs' => '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+		'septic-installation-lane-county-oregon' => '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
 		'foundation-excavation'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />',
 		'drainage-excavation'    => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
 		'utility-excavation'     => '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />',

@@ -1,4 +1,4 @@
-# Competitor Matrix — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Competitor Matrix — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 **Headline finding, confirmed directly this session:** the competitive set for septic is genuinely different from the excavation/grading/land-clearing competitive set this project has used for the prior five pages. Of the 8 excavation competitors originally deep-dived in the homepage pack, **only 4 (half) offer septic installation/repair themselves**, one explicitly does NOT and instead supports other septic installers, and 4 dedicated septic/sewer specialty companies were found competing in this exact keyword space who never appeared anywhere in the excavation, grading, or land-clearing research. This matters for the brief: D&D's real competition on this page is not the same 8-10 names used everywhere else — it is a smaller, split field of septic-capable excavators plus a genuinely separate specialist category.
 

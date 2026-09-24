@@ -1,4 +1,4 @@
-# Research Pack — D&D Land Works Drainage Excavation (`/services/drainage-excavation/`)
+﻿# Research Pack — D&D Land Works Drainage Excavation (`/services/drainage-excavation/`)
 
 **Prepared:** 2026-09-09 · **Prepared by:** Ducker Creative (deep-research methodology, adapted from HVAC → excavation/site-prep per CLAUDE.md; eighth page through this pipeline, after the homepage, Site Preparation, Excavation & Grading, Grading & Leveling, Land Clearing, Septic, and Foundation Excavation)
 **Page targeted:** Drainage Excavation (`/services/drainage-excavation/` in the live Astro site; `/drainage-excavation/` per the topical map's original URL notation) — per the topical map (§6.6), a P1 core service page. This page has been referenced but never built out by **four** already-shipped pages: Grading & Leveling (an entire H2 comparing swales to French drains, explicitly deferring "a dedicated write-up on dug drainage systems" here), Foundation Excavation (an H2 on ORSC-required foundation drainage, explicitly framed as code education with install scope "confirmed per job"), Septic (a fully separate wastewater-dispersal system, already well-disambiguated), and the homepage/topical map (the originally-planned scope). Resolving the scope boundary across all four is this pack's central task.
@@ -39,7 +39,7 @@ That page also already cross-links forward: *"This is a different system from a 
 
 ### What stays on Septic — a separate wastewater-dispersal system
 
-The shipped `07-landing-pages/content/septic-content.md` already fully disambiguates the septic drainfield from yard/surface drainage everywhere the topic could plausibly overlap (its own FAQ states plainly: *"Can I build, pave, or grade over my drainfield? No..."* framed entirely around the DEQ-regulated leach field, never conflated with stormwater). **Confirmed: this page does not need to re-litigate that distinction beyond a brief one-line disambiguation** — e.g., "a septic drainfield disperses wastewater and is a completely separate, DEQ-regulated system; see [Septic Install & Repair](/services/septic-install-repairs/) for that." Nothing further is required.
+The shipped `07-landing-pages/content/septic-content.md` already fully disambiguates the septic drainfield from yard/surface drainage everywhere the topic could plausibly overlap (its own FAQ states plainly: *"Can I build, pave, or grade over my drainfield? No..."* framed entirely around the DEQ-regulated leach field, never conflated with stormwater). **Confirmed: this page does not need to re-litigate that distinction beyond a brief one-line disambiguation** — e.g., "a septic drainfield disperses wastewater and is a completely separate, DEQ-regulated system; see [Septic Install & Repair](/septic-installation-lane-county-oregon/) for that." Nothing further is required.
 
 ### What THIS page owns
 

@@ -77,7 +77,7 @@ function ddlw_services() {
 		array( 'title' => 'Excavation', 'slug' => 'excavation', 'group' => 'core', 'description' => 'General earthwork for new construction, additions, and land improvements.' ),
 		array( 'title' => 'Land & Brush Clearing', 'slug' => 'land-clearing', 'group' => 'core', 'description' => 'Full clearing or lighter brush-clearing scopes for raw land.' ),
 		array( 'title' => 'Grading & Leveling', 'slug' => 'grading-leveling', 'group' => 'core', 'description' => 'Rough and finish grading for building pads, yards, and drainage slope.' ),
-		array( 'title' => 'Septic Install & Repairs', 'slug' => 'septic-install-repairs', 'group' => 'core', 'description' => 'DEQ-certified septic system work, install and repair.' ),
+		array( 'title' => 'Septic Installation', 'slug' => 'septic-installation-lane-county-oregon', 'group' => 'core', 'description' => 'DEQ-certified septic system work, install and repair.' ),
 		array( 'title' => 'Foundation Excavation', 'slug' => 'foundation-excavation', 'group' => 'additional', 'description' => 'Digging and prep for home, shop, barn, and ADU foundations.' ),
 		array( 'title' => 'Drainage Excavation', 'slug' => 'drainage-excavation', 'group' => 'additional', 'description' => 'Excavation and grading to correct standing water and poor yard drainage.' ),
 		array( 'title' => 'Utility Excavation', 'slug' => 'utility-excavation', 'group' => 'additional', 'description' => 'Trenching and backfill for water, sewer, and utility lines.' ),

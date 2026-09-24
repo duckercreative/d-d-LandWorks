@@ -1,4 +1,4 @@
-# Content Gap Analysis — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Content Gap Analysis — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 Adapted from the parent methodology's 20-point framework, applied against the split competitive set documented in `04-competitor-matrix.md` (4 septic-capable excavation competitors + 4 dedicated septic specialists, 8 total). Each gap scored on:
 - **Coverage in competitors** (0 = none of the 8 address it / 10 = all address it)

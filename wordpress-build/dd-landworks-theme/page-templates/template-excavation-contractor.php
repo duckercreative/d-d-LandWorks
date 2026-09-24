@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Excavation Contractor Eugene Page
  *
@@ -111,7 +111,7 @@ $excavation_services = array(
 	array(
 		'title' => ec_get( $pid, 'ec_svc_6_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_6_desc' ),
-		'href'  => home_url( '/services/septic-install-repairs' ),
+		'href'  => home_url( '/septic-installation-lane-county-oregon' ),
 		'icon'  => 'M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18',
 	),
 );

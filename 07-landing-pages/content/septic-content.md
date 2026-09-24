@@ -1,4 +1,4 @@
-# D&D Land Works — Septic Install & Repair Page Content (Draft)
+﻿# D&D Land Works — Septic Install & Repair Page Content (Draft)
 
 **Prepared:** 2026-09-08 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/septic-brief.md` + full `01-research/page-research/septic/` pack + `business-info.md` + `docs/design-system.md` + `07-landing-pages/content/home-content.md` (the already-shipped "What Does DEQ Certified Mean for Septic Work?" section this page extends, not contradicts) + `07-landing-pages/content/land-clearing-content.md` (voice/tone and schema `@id` pattern reference) + `07-landing-pages/content/site-preparation-content.md` (the drainfield-sequencing rule this page cross-links to, not re-derives).
@@ -22,7 +22,7 @@ A second, smaller flag carried from the brief: the current live page's H1 is sim
 | **Title tag** | Septic Install & Repair in Eugene & Lane County, OR \| D&D (57 chars) |
 | **Meta description** | DEQ-certified septic installation & repair in Eugene, Springfield & Lane County, OR. Licensed, bonded, free estimates: 541-401-8726. (134 chars) |
 | **H1** | Septic Install & Repair in Eugene, Springfield & Lane County, Oregon |
-| **Canonical URL** | `/services/septic-install-repairs/` |
+| **Canonical URL** | `/septic-installation-lane-county-oregon/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `HowTo` (4-step site evaluation process), `ItemList` (signs-of-failure list), `BreadcrumbList`, `Speakable` (H2 #1, #3 lead-in, #6, #7, #9) — no `AggregateRating`/`Review` (zero reviews at launch), no `MedicalBusiness`, no `hasCredential` claim beyond what's already shipped on the homepage (not re-declared here since the business entity isn't redefined inline — see Schema section note) |
 | **Internal links (out)** | `/` (homepage), `/services/site-preparation/` (sideways, drainfield-sequencing framing), `/resources/septic-installation-cost-oregon/`, `/resources/oregon-septic-basics/`, `/locations/eugene/septic/`, `/locations/springfield/septic/`, `/about/`, `/contact/` |
 | **Primary keyword** | septic installation eugene or / septic system installation eugene oregon |
@@ -190,11 +190,11 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.ddlandworks.com/services/septic-install-repairs/#service",
+      "@id": "https://www.ddlandworks.com/septic-installation-lane-county-oregon/#service",
       "name": "Septic Installation and Repair",
       "serviceType": "Septic Installation and Repair",
       "description": "D&D Land Works provides DEQ-certified septic system installation and repair throughout Eugene, Springfield, and Lane County, Oregon, as part of a full-service excavation company licensed and bonded under Oregon CCB #261742. Oregon septic systems fall into two broad categories: conventional (gravity-fed) systems, typically the lower-cost option where soil and site conditions allow, and DEQ-approved alternative treatment technologies (sand filters, aerobic treatment units, and similar systems), required on sites with more challenging soil, water table, or lot conditions. D&D Land Works handles both installation and repair, though not routine pumping.",
-      "url": "https://www.ddlandworks.com/services/septic-install-repairs/",
+      "url": "https://www.ddlandworks.com/septic-installation-lane-county-oregon/",
       "provider": {
         "@id": "https://www.ddlandworks.com/#business"
       },
@@ -358,13 +358,13 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
           "@type": "ListItem",
           "position": 3,
           "name": "Septic Install & Repairs",
-          "item": "https://www.ddlandworks.com/services/septic-install-repairs/"
+          "item": "https://www.ddlandworks.com/septic-installation-lane-county-oregon/"
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.ddlandworks.com/services/septic-install-repairs/#webpage",
+      "@id": "https://www.ddlandworks.com/septic-installation-lane-county-oregon/#webpage",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -382,4 +382,4 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
 
 ---
 
-**Note:** The mandatory humanizer pass (per CLAUDE.md's Carried-Forward Working Rules) is complete — the editable prose sections (everything outside the FAQ block and AI citation block, both preserved verbatim since the FAQ mirrors the JSON-LD schema) had 16 em-dash constructions converted to periods or colons. Every credential-related sentence (CCB vs. DEQ distinction, the ORS 105.465 disclosure-duty wording) was touched only for punctuation, never for wording, so the conservative credential framing and legal distinctions are unchanged. Tone was kept calm and non-alarmist throughout, including in the failing-system-signs list. No WordPress references appear anywhere in this file. Placing this content into `site/src/pages/services/septic-install-repairs.astro` (live or a test route) is a separate, later step and is not part of this task.
+**Note:** The mandatory humanizer pass (per CLAUDE.md's Carried-Forward Working Rules) is complete — the editable prose sections (everything outside the FAQ block and AI citation block, both preserved verbatim since the FAQ mirrors the JSON-LD schema) had 16 em-dash constructions converted to periods or colons. Every credential-related sentence (CCB vs. DEQ distinction, the ORS 105.465 disclosure-duty wording) was touched only for punctuation, never for wording, so the conservative credential framing and legal distinctions are unchanged. Tone was kept calm and non-alarmist throughout, including in the failing-system-signs list. No WordPress references appear anywhere in this file. Placing this content into `site/src/pages/septic-installation-lane-county-oregon.astro` (live or a test route) is a separate, later step and is not part of this task.

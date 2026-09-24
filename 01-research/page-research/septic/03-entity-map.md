@@ -1,4 +1,4 @@
-# Entity Map — Septic Install & Repair (`/services/septic-install-repairs/`)
+﻿# Entity Map — Septic Install & Repair (`/septic-installation-lane-county-oregon/`)
 
 Adapted from the Koray 14-source entity method, per this project's established excavation/Oregon substitution. This page is the first in the pipeline that requires its own dedicated regulatory-entity research rather than reusing excavation-permit facts wholesale — septic is a distinct, state-regulated environmental-health discipline (Oregon DEQ) layered on top of general earthwork (Oregon CCB), and the two credential systems must not be conflated. Full machine-readable version in `entity-inventory.csv` in this folder. Canonical forms for business/location/certification entities already established by sibling packs are reused verbatim per the task's explicit instruction — see the "Reused Verbatim" markers below.
 
