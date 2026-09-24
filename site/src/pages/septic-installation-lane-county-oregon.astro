@@ -1,0 +1,416 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const sitePrepItems = [
+  { title: 'Soil', description: 'Your soil affects how wastewater moves into the ground. Before installation starts, the site needs to be checked to understand what your property can support.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Slope', description: 'A steep or uneven lot can affect where your tank and drainfield can go. Your land\'s shape and elevation help determine a layout that works for your property.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h18M7 17V9m5 8V5m5 12V11" />' },
+  { title: 'Space', description: 'You need enough suitable area on your property for the system. Where your home sits, your property lines, any wells, and other features all affect where things can go.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0-5 5M4 16v4m0 0h4m-4 0 5-5m11 5-5-5m5 5v-4m0 4h-4" />' },
+  { title: 'Wet Ground', description: 'If your ground is wet, septic work gets harder. Seasonal moisture can affect digging, access, and how well wastewater moves through the soil around the system.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Drainfield', description: 'The drainfield is the part of your septic system where treated wastewater moves into the soil. Where it goes depends on your property, soil, available space, and the approved system.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
+  { title: 'Site Access', description: 'Equipment needs a clear path to the work area. A narrow driveway, steep slope, or structures on your property can change how the work is planned.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+];
+
+const howItWorksSteps = [
+  { step: '1', title: 'Site Requirements', detail: 'Before digging starts, your property may need an evaluation, a system design, and required approvals. These steps happen first and can affect when installation work can begin.' },
+  { step: '2', title: 'Permits and Approvals', detail: 'Some septic projects need permits before work can start. How long that takes depends on your property, what the system requires, and the agencies involved.' },
+  { step: '3', title: 'Soil and Ground Conditions', detail: 'Your soil affects how easily the ground can be excavated. Wet ground can slow access and affect when certain parts of the site work can happen.' },
+  { step: '4', title: 'Site Access', detail: 'Equipment needs to reach the tank and drainfield areas on your property. A narrow driveway, steep slope, or structures in the way takes more planning before work begins.' },
+  { step: '5', title: 'Excavation and Installation', detail: 'The digging depends on your tank, drainfield, piping, and property layout. A larger or more complex system on your land can mean more excavation work.' },
+  { step: '6', title: 'Weather and Project Scope', detail: 'Rain and wet ground can change what is possible on your property in Lane County. Material timing, related site prep, and other requirements on your project can also shift the schedule.' },
+];
+
+const faqs = [
+  {
+    question: 'What work does the contractor handle?',
+    answer: 'Ask what parts of the project are included. We handle the excavation and installation work — tank placement, drainfield prep, and related site work that falls within our scope. We can explain what that covers for your project.',
+  },
+  {
+    question: 'Who handles the septic design and permits?',
+    answer: 'The design and permit requirements for your property are handled separately. Who is responsible depends on your project. We can explain what usually applies and point you in the right direction.',
+  },
+  {
+    question: 'What site conditions could affect the work on my property?',
+    answer: 'Your soil, slope, available space, wet ground, and access can all change what the installation involves. Ask your contractor to walk through how your specific site affects the work before anything starts.',
+  },
+  {
+    question: 'What will affect my cost?',
+    answer: 'The cost depends on your property. Your tank, drainfield, the amount of excavation, soil conditions, access, and any required approvals can all change the price. A real estimate needs to be based on your actual site.',
+  },
+  {
+    question: 'How long will the installation take?',
+    answer: 'Every property is different. Permits, your system requirements, weather, your ground conditions, site access, and how much excavation your land needs can all affect when the work gets done. There is no single answer without looking at your property.',
+  },
+];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Licensed septic installation contractor serving Eugene, Springfield, and Lane County, Oregon. DEQ Certified. Licensed and bonded CCB #261742.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Septic Installation', 'Septic Excavation', 'Tank Placement', 'Drainfield Excavation', 'Site Preparation', 'Excavation Contractor'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/septic-installation-lane-county-oregon/#service',
+      name: 'Septic System Installation in Lane County, Oregon',
+      serviceType: 'Septic Installation',
+      description: 'DEQ Certified septic installation contractor in Lane County, Oregon. Tank placement, drainfield excavation, and related site work for new septic systems. Licensed and bonded CCB #261742.',
+      url: 'https://www.ddlandworks.com/septic-installation-lane-county-oregon/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Septic Installation Lane County Oregon', item: 'https://www.ddlandworks.com/septic-installation-lane-county-oregon/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Septic System Installation in Lane County, Oregon | D&D Land Works"
+  description="DEQ Certified septic installation contractor in Lane County, OR (CCB #261742). Tank placement, drainfield excavation, and related site work. Free estimates — call 541-401-8726."
+>
+  <Hero
+    eyebrow="Eugene, Oregon"
+    headline="Septic System Installation in Lane County, Oregon"
+    subheadline="If you are building a home or preparing rural land in Lane County, you may need a septic system for wastewater. We help with septic installation, tank placement, and related excavation based on your property, site conditions, and approved system requirements."
+    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+  />
+
+  <!-- Who Needs a Septic System -->
+  <section class="relative bg-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <!-- Text column -->
+        <div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            Who Needs a Septic System?
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>If you are building or buying property without access to a public sewer system, you may need a septic system. Rural homes and undeveloped lots often need one before construction can move forward. Your property and site conditions determine what is needed.</p>
+            <p>The land matters. Soil, slope, available space, and the location of the home can all affect where the system can go. Every property is different.</p>
+            <p>We can help with the excavation and installation work once the site is ready. If you are not sure what comes first, we can talk through the project and help you understand the next step.</p>
+          </div>
+          <a href="/contact" class="btn-pill mt-8 inline-flex">
+            Talk Through Your Project
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <!-- Image column -->
+        <div class="relative pb-6">
+          <img
+            src="/project-grading-driveway.webp"
+            alt="D&D Land Works grading contractor working in Lane County, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Conditions -->
+  <section id="site-conditions" class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Site Conditions</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          Your Land Helps Determine the Right Septic System
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          Your property affects where and how a septic system can be installed. Soil, slope, space, water, and access all need to be considered before the work begins.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {sitePrepItems.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="btn btn-cta inline-flex">Talk Through Your Project</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- The Work Itself -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          What We Handle on Your Septic Project
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          We help with the physical work involved in a septic installation. That includes the excavation, tank placement, drainfield prep, and related site work based on your approved project.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: 'Tank Placement', description: 'We prepare the excavation and place the septic tank according to the project plan. The tank location depends on the property layout, access, and approved system requirements.', href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Drainfield Excavation', description: 'The drainfield needs the right space and ground conditions. We handle the excavation needed to prepare the drainfield area as part of the septic installation work.', href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Septic Excavation', description: 'Septic installation often requires careful digging for the tank, pipes, and drainfield. The amount of excavation depends on the system, property, and ground conditions.', href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Site Preparation', description: 'The ground may need preparation before septic components can be installed. We can handle related site work that falls within the septic installation scope.', href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Backfill', description: 'After the septic components are installed and the required project steps are complete, the excavated areas can be backfilled. The work follows the approved project requirements.', href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Local Septic Work', description: 'We provide septic installation work for properties in Lane County, including projects around Eugene and Springfield. We are licensed and bonded, CCB #261742.', href: '/contact', linkLabel: 'Get a Free Estimate' },
+        ].map((card) => (
+          <div class="card flex flex-col gap-3">
+            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
+            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+              {card.linkLabel}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Get a Free Estimate
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process - How It Works -->
+  <section class="relative bg-ink text-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-16 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Project Timing</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          How Long Does Septic Installation Take?
+        </h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Septic installation does not have one fixed timeline. The schedule can depend on the site, required system, permits, ground conditions, weather, access, and the amount of excavation and installation work involved.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        {howItWorksSteps.map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contractor Checklist -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What D&D Land Works Does for Your <span class="text-brand-blue">Septic Project</span>
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            Before choosing a septic contractor, ask what part of the project they handle, what the site needs, and what requirements apply. A clear conversation can help you understand the work before it starts.
+          </p>
+          <ul class="mt-10 flex flex-col gap-7">
+            {[
+              { title: 'Licensed and Bonded', description: 'Check that the contractor is licensed and bonded. We are licensed and bonded through the Oregon Construction Contractors Board, CCB #261742.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />' },
+              { title: 'DEQ Certification', description: 'Ask whether the contractor has the certification needed for the septic work. We have DEQ certification relevant to septic installation and repair in Oregon.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+              { title: 'Site Conditions', description: 'Soil, slope, space, wet ground, and access can affect septic work. The contractor should understand how these conditions may affect excavation and installation on your property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+              { title: 'Project Scope', description: 'Ask what work is included. Septic installation may involve tank placement, drainfield excavation, and related site work. The exact scope depends on the approved project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+              { title: 'Permits and Requirements', description: 'Ask which permits or approval steps apply to your property. Requirements can vary by project, and the appropriate local or state authority handles those requirements.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
+              { title: 'Clear Estimate', description: 'Ask what affects your project cost before work begins. System needs, excavation, access, soil, drainfield work, and site conditions can all change the amount of work required.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+            ].map((item) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+                </span>
+                <div>
+                  <p class="font-display font-bold text-ink">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="btn-pill mt-10 inline-flex">
+            Discuss Your Project
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works septic excavation work in Lane County, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
+          Septic Installation Across Lane County
+        </h2>
+        <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          We provide septic installation and related excavation work across Lane County, including projects around Eugene, Springfield, and surrounding rural communities.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
+          <a href="/locations/eugene" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
+          </a>
+          {[
+            { label: 'Springfield', href: '/locations/springfield' },
+            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+            { label: 'Junction City', href: '/locations/junction-city' },
+            { label: 'Creswell', href: '/locations/creswell' },
+            { label: 'Veneta', href: '/locations/veneta' },
+            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Coburg', href: '/locations/coburg' },
+            { label: 'Lowell', href: '/locations/lowell' },
+          ].map((area) => (
+            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
+            </a>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
+          <iframe
+            title="D&D Land Works service area map, Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ heading="Questions to Ask Before Hiring a Septic Installer" items={faqs} />
+
+  <!-- Related Services -->
+  <section class="bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
+        Related Services
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Excavation Contractor', description: 'Foundation digging, utility trenching, drainage excavation, and septic excavation across Lane County.', href: '/excavation-contractor-eugene-oregon', linkLabel: 'Learn about excavation' },
+          { title: 'Land Clearing', description: 'Open up the work area before grading begins — brush clearing, tree removal, and stump grinding.', href: '/land-clearing-services-eugene-oregon', linkLabel: 'Learn about land clearing' },
+          { title: 'Land Grading', description: 'Lot leveling, building pad grading, drainage grading, and driveway regrading across Lane County.', href: '/land-grading-services-eugene-oregon', linkLabel: 'Learn about land grading' },
+          { title: 'Site Preparation', description: 'Get raw land cleared, graded, and ready for a builder or contractor to start construction.', href: '/services/site-preparation', linkLabel: 'Learn about site preparation' },
+        ].map((item) => (
+          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
+            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
+            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+              {item.linkLabel} &#8594;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    headline="Talk With D&D Land Works About Your Septic Project"
+    subheadline="If you are planning a new septic system in Lane County, start with the property and what it needs. Call 541-401-8726 to discuss your project, ask questions, and request a free estimate."
+    ctaLabel="Request a Free Estimate"
+    ctaHref="/contact"
+    phone="541-401-8726"
+    email="david@ddlandworks.com"
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />

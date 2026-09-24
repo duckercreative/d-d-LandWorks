@@ -1,6 +1,6 @@
----
+﻿---
 /*
-  Built from the full deep-research → content-brief → content-create →
+  Built from the full deep-research â†’ content-brief â†’ content-create â†’
   humanizer pipeline output (07-landing-pages/content/drainage-excavation-content.md).
   Promoted from the /services/drainage-excavation-test draft after review.
 
@@ -9,7 +9,7 @@
   NOT confirmed fact (business-info.md doesn't list it; the shipped grading-leveling
   page calls it "not confirmed as a current D&D service"). The PRIOR live page
   claimed "Installing French drains along foundations and retaining walls" as a
-  flat claim — that predated this research pipeline and was NOT treated as settled
+  flat claim â€” that predated this research pipeline and was NOT treated as settled
   fact here. This page uses the conservative framing throughout: D&D excavates and
   trenches for buried drainage systems; specific product installation is confirmed
   per job. Still needs David's explicit confirmation.
@@ -26,54 +26,54 @@ import Gallery from '../../components/Gallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 
 const compareTable = [
-  { label: 'Depth', french: '18–24 in. standard (4–6 ft near a footing)', curtain: 'About 2 ft' },
+  { label: 'Depth', french: '18â€“24 in. standard (4â€“6 ft near a footing)', curtain: 'About 2 ft' },
   { label: 'Purpose', french: 'Intercepts water along its length at one consistent depth, often deep groundwater', curtain: 'Intercepts near-surface water spreading across a broader area' },
-  { label: 'Typical cost', french: 'Roughly $40–$100+/linear ft (national range)', curtain: 'Roughly $10–$25/linear ft (national range)' },
+  { label: 'Typical cost', french: 'Roughly $40â€“$100+/linear ft (national range)', curtain: 'Roughly $10â€“$25/linear ft (national range)' },
   { label: 'Best use', french: 'A persistent wet spot or groundwater problem', curtain: 'A shallower, lower-cost fix for surface-level wetness' },
 ];
 
 const destinations = [
   { title: 'Daylight', detail: 'The pipe exits above ground at a lower point on the property, letting gravity carry the water the rest of the way. The most common option on a sloped Lane County lot, sometimes fitted with a pop-up emitter.' },
   { title: 'A dry well', detail: 'An underground chamber that collects water and slowly releases it back into the surrounding soil. Usually paired with a French drain, not a substitute for one.' },
-  { title: 'A permitted storm-system tie-in', detail: 'A connection to the city’s public stormwater system, which requires a permit in both Eugene and Springfield.' },
+  { title: 'A permitted storm-system tie-in', detail: 'A connection to the cityâ€™s public stormwater system, which requires a permit in both Eugene and Springfield.' },
 ];
 
 const permits = [
-  { situation: 'Tying into Eugene’s storm system', detail: 'Requires a permit under Eugene Code §6.610, issued only to a property owner (own residence) or a licensed plumber or septic-tank-installation contractor.' },
-  { situation: 'Tying into Springfield’s storm system', detail: 'A similar connection permit under Springfield’s Development Code (Ordinance 6464, effective January 2024).' },
-  { situation: 'Unincorporated Lane County', detail: 'Lane County’s Stormwater Management Program is the authority to confirm rules for unincorporated property.' },
+  { situation: 'Tying into Eugeneâ€™s storm system', detail: 'Requires a permit under Eugene Code Â§6.610, issued only to a property owner (own residence) or a licensed plumber or septic-tank-installation contractor.' },
+  { situation: 'Tying into Springfieldâ€™s storm system', detail: 'A similar connection permit under Springfieldâ€™s Development Code (Ordinance 6464, effective January 2024).' },
+  { situation: 'Unincorporated Lane County', detail: 'Lane Countyâ€™s Stormwater Management Program is the authority to confirm rules for unincorporated property.' },
 ];
 
 const materials = [
   { name: 'Perforated pipe', detail: 'Rigid PVC resists crushing and holds its shape longer; flexible corrugated pipe costs less and bends more easily, but collapses and clogs sooner.' },
   { name: 'Drain rock', detail: 'Clean, washed, angular gravel packed around the pipe so water moves through it freely instead of getting trapped in fine soil.' },
-  { name: 'Filter fabric', detail: 'Geotextile fabric wrapped around the gravel and pipe, keeping Willamette Valley’s silty clay from migrating in and clogging the system.' },
+  { name: 'Filter fabric', detail: 'Geotextile fabric wrapped around the gravel and pipe, keeping Willamette Valleyâ€™s silty clay from migrating in and clogging the system.' },
 ];
 
 const costRows = [
-  { type: 'French drain', range: '$40–$100+/linear ft', affects: 'Depth (footing-level runs deeper and costs more), pipe material, soil conditions' },
-  { type: 'Curtain drain', range: '$10–$25/linear ft', affects: 'Shallower depth, less material, simpler trench' },
-  { type: 'Dry well', range: '$1,165–$4,420 installed', affects: 'Chamber size, depth, hand-dug vs. machine-dug' },
-  { type: 'Catch basin', range: '$1,000–$4,000 installed', affects: 'Basin size, pipe run length, tie-in complexity' },
+  { type: 'French drain', range: '$40â€“$100+/linear ft', affects: 'Depth (footing-level runs deeper and costs more), pipe material, soil conditions' },
+  { type: 'Curtain drain', range: '$10â€“$25/linear ft', affects: 'Shallower depth, less material, simpler trench' },
+  { type: 'Dry well', range: '$1,165â€“$4,420 installed', affects: 'Chamber size, depth, hand-dug vs. machine-dug' },
+  { type: 'Catch basin', range: '$1,000â€“$4,000 installed', affects: 'Basin size, pipe run length, tie-in complexity' },
 ];
 
 const faqs = [
-  { question: 'What’s the difference between a French drain and a curtain drain?', answer: 'A French drain runs deeper, 18–24 inches standard, deeper still near a footing, and intercepts water along its length at a consistent depth. A curtain drain is shallower, about 2 feet, and less expensive, built to intercept near-surface water spreading across a broader area rather than deep groundwater at one point. Both are buried, perforated-pipe systems; which one fits depends on how deep the water problem actually sits.' },
-  { question: 'How deep does a French drain need to be?', answer: 'It depends on what it’s solving. Standard yard-drainage depth runs 18–24 inches. A drain handling only surface water can run as shallow as 8–12 inches. A drain tied to a footing’s own depth runs 4–6 feet. Depth is a real design decision made on-site, not a fixed number, based on where the water problem actually sits.' },
-  { question: 'How much does a French drain or yard drainage system cost?', answer: 'General national ranges run roughly $10–$100+ per linear foot depending on depth and type: shallow exterior drains around $10–$35/ft, deep footing-level drains around $45–$85/ft, curtain drains around $10–$25/ft. These aren’t Lane County numbers, no Lane-County-specific pricing exists yet. A free on-site estimate is the only way to price a specific yard.' },
+  { question: 'Whatâ€™s the difference between a French drain and a curtain drain?', answer: 'A French drain runs deeper, 18â€“24 inches standard, deeper still near a footing, and intercepts water along its length at a consistent depth. A curtain drain is shallower, about 2 feet, and less expensive, built to intercept near-surface water spreading across a broader area rather than deep groundwater at one point. Both are buried, perforated-pipe systems; which one fits depends on how deep the water problem actually sits.' },
+  { question: 'How deep does a French drain need to be?', answer: 'It depends on what itâ€™s solving. Standard yard-drainage depth runs 18â€“24 inches. A drain handling only surface water can run as shallow as 8â€“12 inches. A drain tied to a footingâ€™s own depth runs 4â€“6 feet. Depth is a real design decision made on-site, not a fixed number, based on where the water problem actually sits.' },
+  { question: 'How much does a French drain or yard drainage system cost?', answer: 'General national ranges run roughly $10â€“$100+ per linear foot depending on depth and type: shallow exterior drains around $10â€“$35/ft, deep footing-level drains around $45â€“$85/ft, curtain drains around $10â€“$25/ft. These arenâ€™t Lane County numbers, no Lane-County-specific pricing exists yet. A free on-site estimate is the only way to price a specific yard.' },
   { question: 'Where does the water from a French drain actually go?', answer: 'To one of three real destinations: daylight at a lower point on the property, a dry well that slowly infiltrates it back into the soil, or a permitted tie-in to the city storm system. A drain with none of these just relocates standing water to another spot underground, a known failure mode of a poorly designed system.' },
-  { question: 'Do I need a permit to tie a drain into the storm system in Eugene or Springfield?', answer: 'Yes, in both cities. Eugene requires a permit under Municipal Code §6.610, issued only to the property owner or a licensed plumber or septic-tank-installation contractor. Springfield requires a similar connection permit under its Development Code. Confirm the exact process and fees directly with each city’s engineering or public works department before a project starts.' },
-  { question: 'What’s the difference between a French drain and a dry well?', answer: 'They’re usually paired, not substitutes. A French drain conveys water continuously along a trench to an exit point; a dry well collects a volume of water and slowly releases it back into the surrounding soil. A French drain often discharges into a dry well rather than the two being alternative fixes for the same problem.' },
-  { question: 'My yard was already regraded and it’s still wet. What’s next?', answer: 'Not every water problem is a surface problem. Grading corrects the ground’s own slope; if water is collecting below or at grade, it needs a buried drain to carry it away instead. That’s not a sign the earlier grading work was done badly, it’s a different remedy for a different situation.' },
-  { question: 'Is a French drain the same as the drain required around my new foundation?', answer: 'Physically similar, legally different. The code-required foundation drain is the same basic technique, a perforated pipe in gravel, but it’s tied to a building permit and Oregon’s ORSC R405 requirement. A general yard or retaining-wall French drain not tied to a new foundation’s own code requirement is this page’s territory.' },
-  { question: 'Can a French drain make my drainage problem worse?', answer: 'A poorly built one can. A French drain with no real discharge destination doesn’t solve the problem, it just moves standing water to another spot, often underground where it’s harder to diagnose. That’s a known mistake with unlicensed or DIY installs, not an inherent flaw in a properly designed system.' },
-  { question: 'How long does a properly installed French drain last?', answer: '15–25 years or more for a properly built system with the right pipe, gravel, and filter fabric, a general industry figure, not a D&D-specific claim. What shortens that lifespan: no filter fabric, letting Willamette Valley clay silt up the system, the wrong pipe type, or no real discharge point.' },
+  { question: 'Do I need a permit to tie a drain into the storm system in Eugene or Springfield?', answer: 'Yes, in both cities. Eugene requires a permit under Municipal Code Â§6.610, issued only to the property owner or a licensed plumber or septic-tank-installation contractor. Springfield requires a similar connection permit under its Development Code. Confirm the exact process and fees directly with each cityâ€™s engineering or public works department before a project starts.' },
+  { question: 'Whatâ€™s the difference between a French drain and a dry well?', answer: 'Theyâ€™re usually paired, not substitutes. A French drain conveys water continuously along a trench to an exit point; a dry well collects a volume of water and slowly releases it back into the surrounding soil. A French drain often discharges into a dry well rather than the two being alternative fixes for the same problem.' },
+  { question: 'My yard was already regraded and itâ€™s still wet. Whatâ€™s next?', answer: 'Not every water problem is a surface problem. Grading corrects the groundâ€™s own slope; if water is collecting below or at grade, it needs a buried drain to carry it away instead. Thatâ€™s not a sign the earlier grading work was done badly, itâ€™s a different remedy for a different situation.' },
+  { question: 'Is a French drain the same as the drain required around my new foundation?', answer: 'Physically similar, legally different. The code-required foundation drain is the same basic technique, a perforated pipe in gravel, but itâ€™s tied to a building permit and Oregonâ€™s ORSC R405 requirement. A general yard or retaining-wall French drain not tied to a new foundationâ€™s own code requirement is this pageâ€™s territory.' },
+  { question: 'Can a French drain make my drainage problem worse?', answer: 'A poorly built one can. A French drain with no real discharge destination doesnâ€™t solve the problem, it just moves standing water to another spot, often underground where itâ€™s harder to diagnose. Thatâ€™s a known mistake with unlicensed or DIY installs, not an inherent flaw in a properly designed system.' },
+  { question: 'How long does a properly installed French drain last?', answer: '15â€“25 years or more for a properly built system with the right pipe, gravel, and filter fabric, a general industry figure, not a D&D-specific claim. What shortens that lifespan: no filter fabric, letting Willamette Valley clay silt up the system, the wrong pipe type, or no real discharge point.' },
 ];
 
 const related = [
   { title: 'Grading & Leveling', description: 'Surface swales, berms, and re-sloping an existing yard, no buried system involved.', href: '/land-grading-services-eugene-oregon' },
   { title: 'Foundation Excavation', description: 'The code-required ORSC R405 foundation drain tied to a new build.', href: '/services/foundation-excavation' },
-  { title: 'Septic Install & Repair', description: 'A separate, DEQ-regulated wastewater-dispersal system.', href: '/services/septic-install-repairs' },
+  { title: 'Septic Install & Repair', description: 'A separate, DEQ-regulated wastewater-dispersal system.', href: '/septic-installation-lane-county-oregon' },
   { title: 'Excavation & Earthmoving', description: 'General cut-and-fill, trenching, and earthmoving mechanics.', href: '/excavation-contractor-eugene-oregon' },
 ];
 
@@ -156,7 +156,7 @@ const serviceSchema = {
 		badgeLabel="French Drains, Curtain Drains & Catch Basins"
 		ctaLabel="Get a Free Estimate"
 		ctaHref="/contact"
-		bodyHtml="<p>This page covers the buried, constructed side of drainage: French drains, curtain drains, catch basins, dry wells, and culverts, systems that carry water underground to a discharge point.</p><p><a href='/land-grading-services-eugene-oregon' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Grading &amp; Leveling</a> covers the surface side: swales, berms, and re-sloping that move water by reshaping the ground itself. A septic drainfield is a separate, DEQ-regulated wastewater system unrelated to yard or stormwater drainage. See <a href='/services/septic-install-repairs' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Septic Install &amp; Repair</a> for that.</p>"
+		bodyHtml="<p>This page covers the buried, constructed side of drainage: French drains, curtain drains, catch basins, dry wells, and culverts, systems that carry water underground to a discharge point.</p><p><a href='/land-grading-services-eugene-oregon' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Grading &amp; Leveling</a> covers the surface side: swales, berms, and re-sloping that move water by reshaping the ground itself. A septic drainfield is a separate, DEQ-regulated wastewater system unrelated to yard or stormwater drainage. See <a href='/septic-installation-lane-county-oregon' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Septic Install &amp; Repair</a> for that.</p>"
 	/>
 	<!-- French drain basics -->
 	<PhotoContentBlock
@@ -165,7 +165,7 @@ const serviceSchema = {
 		image="/service-drainage-excavation.webp"
 		imageAlt="French drain trench with gravel and perforated pipe in Lane County"
 		imageSide="right"
-		badgeValue="18–24 in"
+		badgeValue="18â€“24 in"
 		badgeLabel="Standard French Drain Depth"
 		ctaLabel="Get a Free Estimate"
 		ctaHref="/contact"

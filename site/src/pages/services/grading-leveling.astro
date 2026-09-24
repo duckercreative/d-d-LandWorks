@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
@@ -26,15 +26,15 @@ const howItWorksSteps = [
 const faqs = [
   {
     question: 'Do I need a permit to grade my property in Lane County?',
-    answer: 'Yes, if your project moves more than 50 cubic yards of earth or creates a cut or fill slope steeper than 2:1. Contact Lane County Land Management Division at 3050 N. Delta Hwy, Eugene (M–F 9am–3pm). Foundation excavation under an active building permit is generally exempt; driveway and landscaping grading is not. We handle permit guidance for Lane County projects — call before you start and we\'ll tell you what applies to your project.',
+    answer: 'Yes, if your project moves more than 50 cubic yards of earth or creates a cut or fill slope steeper than 2:1. Contact Lane County Land Management Division at 3050 N. Delta Hwy, Eugene (Mâ€“F 9amâ€“3pm). Foundation excavation under an active building permit is generally exempt; driveway and landscaping grading is not. We handle permit guidance for Lane County projects â€” call before you start and we\'ll tell you what applies to your project.',
   },
   {
     question: 'How much does land grading cost in Eugene, Oregon?',
-    answer: 'National cost ranges are $0.08–$2.00 per square foot for yard grading, $1,000–$5,125 for driveway grading, and $1,000–$6,700 for foundation prep. Eugene area projects vary based on lot size, soil type, slope, and whether fill material is needed. Malpass clay can add time on some sites, and we flag that during the site visit. Call 541-401-8726 for a free, itemized estimate.',
+    answer: 'National cost ranges are $0.08â€“$2.00 per square foot for yard grading, $1,000â€“$5,125 for driveway grading, and $1,000â€“$6,700 for foundation prep. Eugene area projects vary based on lot size, soil type, slope, and whether fill material is needed. Malpass clay can add time on some sites, and we flag that during the site visit. Call 541-401-8726 for a free, itemized estimate.',
   },
   {
     question: 'What is the difference between rough grading and finish grading?',
-    answer: 'Rough grading is the bulk earthmoving stage: we set the building pad elevation, strip topsoil, and rough in drainage falls, typically within ±0.1 foot of plan. Finish grading follows after underground utilities are installed. It brings the surface to ±0.5 inch precision and prepares the site for paving, planting, or final inspection. D&D handles both stages for new construction projects in Lane County.',
+    answer: 'Rough grading is the bulk earthmoving stage: we set the building pad elevation, strip topsoil, and rough in drainage falls, typically within Â±0.1 foot of plan. Finish grading follows after underground utilities are installed. It brings the surface to Â±0.5 inch precision and prepares the site for paving, planting, or final inspection. D&D handles both stages for new construction projects in Lane County.',
   },
   {
     question: 'Do you call Oregon 811 before starting grading work?',
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     question: 'When is the best time to schedule grading in Oregon?',
-    answer: 'May through September. Dry conditions reduce erosion risk and keep project costs down. Grading can be done October through April, but Oregon\'s wet season (Oct 1–Apr 30) requires additional erosion control under state law, which adds time and cost. How saturated the soil is also matters; Malpass clay handles equipment longer than some soils but not when it\'s fully waterlogged. Spring and summer slots book up early, so contact us ahead of time.',
+    answer: 'May through September. Dry conditions reduce erosion risk and keep project costs down. Grading can be done October through April, but Oregon\'s wet season (Oct 1â€“Apr 30) requires additional erosion control under state law, which adds time and cost. How saturated the soil is also matters; Malpass clay handles equipment longer than some soils but not when it\'s fully waterlogged. Spring and summer slots book up early, so contact us ahead of time.',
   },
   {
     question: 'How do I verify D&D Land Works\' contractor license?',
@@ -78,7 +78,7 @@ const pageSchema = {
       knowsAbout: ['Land Grading', 'Lot Leveling', 'Building Pad Grading', 'Drainage Grading', 'Gravel Driveway Grading', 'Site Preparation', 'Cut and Fill Grading'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification â€” Septic Install & Repair' },
       ],
       sameAs: ['https://search.ccb.state.or.us/search/'],
     },
@@ -113,7 +113,7 @@ const pageSchema = {
 
 <BaseLayout
   title="Land Grading and Leveling Services in Eugene, Oregon | Residential & Commercial"
-  description="Land grading and leveling services in Eugene, Oregon. Residential and commercial lot grading, building pad prep, drainage grading. Licensed contractor. CCB #261742. Free quote — 541-401-8726."
+  description="Land grading and leveling services in Eugene, Oregon. Residential and commercial lot grading, building pad prep, drainage grading. Licensed contractor. CCB #261742. Free quote â€” 541-401-8726."
 >
   <Hero
     eyebrow="Eugene, Oregon"
@@ -403,8 +403,8 @@ const pageSchema = {
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {[
           { title: 'Excavation Contractor', description: 'Foundation digging, utility trenching, drainage excavation, and septic excavation across Lane County.', href: '/excavation-contractor-eugene-oregon', linkLabel: 'Learn about excavation' },
-          { title: 'Land Clearing', description: 'Open up the work area before grading begins — brush clearing, tree removal, and stump grinding.', href: '/land-clearing-services-eugene-oregon', linkLabel: 'Learn about land clearing' },
-          { title: 'Septic Installation and Repair', description: 'DEQ Certified septic work — new system installation and repairs on existing systems across Lane County.', href: '/services/septic-install-repairs', linkLabel: 'Learn about septic work' },
+          { title: 'Land Clearing', description: 'Open up the work area before grading begins â€” brush clearing, tree removal, and stump grinding.', href: '/land-clearing-services-eugene-oregon', linkLabel: 'Learn about land clearing' },
+          { title: 'Septic Installation and Repair', description: 'DEQ Certified septic work â€” new system installation and repairs on existing systems across Lane County.', href: '/septic-installation-lane-county-oregon', linkLabel: 'Learn about septic work' },
           { title: 'Site Preparation', description: 'Get raw land cleared, graded, and ready for a builder or contractor to start construction.', href: '/services/site-preparation', linkLabel: 'Learn about site preparation' },
         ].map((item) => (
           <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">

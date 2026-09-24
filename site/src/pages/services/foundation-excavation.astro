@@ -1,6 +1,6 @@
----
+﻿---
 /*
-  Built from the full deep-research → content-brief → content-create →
+  Built from the full deep-research â†’ content-brief â†’ content-create â†’
   humanizer pipeline output (07-landing-pages/content/foundation-excavation-content.md).
   Promoted from the /services/foundation-excavation-test draft after review.
 
@@ -23,9 +23,9 @@ import Gallery from '../../components/Gallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 
 const foundationTypes = [
-  { type: 'Slab-on-grade', depth: 'Shallow topsoil strip, roughly 2–3 ft', drives: 'Minimal depth and haul-off; national range roughly $6–$16/sq ft' },
-  { type: 'Crawlspace', depth: 'Perimeter trench to footing depth plus stem-wall height, 18–48 in finished clearance', drives: 'Trench length and depth, stem-wall pour; national range roughly $8–$18/sq ft' },
-  { type: 'Full basement', depth: '8–10 ft, sloped or shored', drives: 'Shoring/benching, hundreds of cubic yards hauled off, often dewatering; national range roughly $75–$150/cu yd removed' },
+  { type: 'Slab-on-grade', depth: 'Shallow topsoil strip, roughly 2â€“3 ft', drives: 'Minimal depth and haul-off; national range roughly $6â€“$16/sq ft' },
+  { type: 'Crawlspace', depth: 'Perimeter trench to footing depth plus stem-wall height, 18â€“48 in finished clearance', drives: 'Trench length and depth, stem-wall pour; national range roughly $8â€“$18/sq ft' },
+  { type: 'Full basement', depth: '8â€“10 ft, sloped or shored', drives: 'Shoring/benching, hundreds of cubic yards hauled off, often dewatering; national range roughly $75â€“$150/cu yd removed' },
 ];
 
 const inspectionSteps = [
@@ -44,15 +44,15 @@ const drainageReqs = [
 ];
 
 const faqs = [
-  { question: 'How deep does a foundation footing need to be in Oregon?', answer: 'Not less than 12 inches below finished grade on undisturbed ground, per ORSC R403.1.4, a figure that also satisfies Lane County’s frost-protection depth under Table R301.2. This number rests on two agreeing secondary sources rather than a direct read of the primary code table, so it’s worth confirming with your local building department before treating it as final for your project.' },
-  { question: 'Does foundation type (slab, crawlspace, or basement) change the excavation cost?', answer: 'Yes, significantly. A slab needs only a shallow topsoil strip, a crawlspace needs a perimeter trench cut to footing depth, and a full basement requires an 8- to 10-foot excavation with far more material hauled off. National data puts a full basement dig 40–60% more expensive than a slab.' },
-  { question: 'What is "over-dig," and how much extra space does a crew need around a foundation?', answer: 'Over-dig is the extra excavation beyond the footing or wall lines a crew needs to physically work, forming, waterproofing, and backfilling. OSHA’s house-foundation/basement rule sets a minimum working width of 2 feet at the bottom of the excavation.' },
-  { question: 'Does the building department inspect a foundation before the concrete gets poured?', answer: 'Yes. In both Eugene and unincorporated Lane County, the foundation/footing inspection happens after the trench or pad is excavated, forms are erected, and rebar is placed, but before any concrete is poured. Skipping that step isn’t legal, and it’s a red flag if a contractor implies otherwise.' },
-  { question: 'What happens if the excavator hits rock or water while digging a foundation?', answer: 'It’s a real, explainable cost and schedule driver, not a bait-and-switch. The same rock-cost mechanics covered on the Excavation & Earthmoving page apply, but the stakes are higher on a foundation dig’s tighter construction timeline. Deeper digs in the Willamette Valley’s high winter water table sometimes require dewatering.' },
-  { question: 'Do I need a soils report or an engineer before excavating for a foundation?', answer: 'Not always required by code for a typical single-family foundation, but recommended. A $2,000–$5,000 geotechnical/soils study is credited with preventing 20–50% of cost overruns from unexpected rock or bad soil, and ORSC R403.1 requires footings to bear on undisturbed natural soil or engineered fill.' },
-  { question: 'Does an ADU need its own foundation excavation?', answer: 'Yes, an ADU built as a standalone structure needs its own footing and foundation dig, commonly a simpler slab-on-grade or monolithic-slab type. Excavating close to an existing house’s foundation triggers OSHA’s underpinning rule, 1926.652(b).' },
+  { question: 'How deep does a foundation footing need to be in Oregon?', answer: 'Not less than 12 inches below finished grade on undisturbed ground, per ORSC R403.1.4, a figure that also satisfies Lane Countyâ€™s frost-protection depth under Table R301.2. This number rests on two agreeing secondary sources rather than a direct read of the primary code table, so itâ€™s worth confirming with your local building department before treating it as final for your project.' },
+  { question: 'Does foundation type (slab, crawlspace, or basement) change the excavation cost?', answer: 'Yes, significantly. A slab needs only a shallow topsoil strip, a crawlspace needs a perimeter trench cut to footing depth, and a full basement requires an 8- to 10-foot excavation with far more material hauled off. National data puts a full basement dig 40â€“60% more expensive than a slab.' },
+  { question: 'What is "over-dig," and how much extra space does a crew need around a foundation?', answer: 'Over-dig is the extra excavation beyond the footing or wall lines a crew needs to physically work, forming, waterproofing, and backfilling. OSHAâ€™s house-foundation/basement rule sets a minimum working width of 2 feet at the bottom of the excavation.' },
+  { question: 'Does the building department inspect a foundation before the concrete gets poured?', answer: 'Yes. In both Eugene and unincorporated Lane County, the foundation/footing inspection happens after the trench or pad is excavated, forms are erected, and rebar is placed, but before any concrete is poured. Skipping that step isnâ€™t legal, and itâ€™s a red flag if a contractor implies otherwise.' },
+  { question: 'What happens if the excavator hits rock or water while digging a foundation?', answer: 'Itâ€™s a real, explainable cost and schedule driver, not a bait-and-switch. The same rock-cost mechanics covered on the Excavation & Earthmoving page apply, but the stakes are higher on a foundation digâ€™s tighter construction timeline. Deeper digs in the Willamette Valleyâ€™s high winter water table sometimes require dewatering.' },
+  { question: 'Do I need a soils report or an engineer before excavating for a foundation?', answer: 'Not always required by code for a typical single-family foundation, but recommended. A $2,000â€“$5,000 geotechnical/soils study is credited with preventing 20â€“50% of cost overruns from unexpected rock or bad soil, and ORSC R403.1 requires footings to bear on undisturbed natural soil or engineered fill.' },
+  { question: 'Does an ADU need its own foundation excavation?', answer: 'Yes, an ADU built as a standalone structure needs its own footing and foundation dig, commonly a simpler slab-on-grade or monolithic-slab type. Excavating close to an existing houseâ€™s foundation triggers OSHAâ€™s underpinning rule, 1926.652(b).' },
   { question: 'Does Oregon require a drain around a foundation?', answer: 'Yes, for most. Per ORSC R405, a foundation drain is required around concrete or masonry foundations retaining earth and enclosing habitable space, unless the foundation sits on well-drained soil. This is a different system from a septic drainfield or a yard drainage swale, which happen to share the word "drain."' },
-  { question: 'Should foundation excavation happen before or after I hire a builder?', answer: 'Foundation excavation is almost always tied to an active building permit and a builder’s or GC’s schedule, not a standalone decision made in isolation. D&D coordinates around that schedule and the inspection process rather than treating the job as self-contained.' },
+  { question: 'Should foundation excavation happen before or after I hire a builder?', answer: 'Foundation excavation is almost always tied to an active building permit and a builderâ€™s or GCâ€™s schedule, not a standalone decision made in isolation. D&D coordinates around that schedule and the inspection process rather than treating the job as self-contained.' },
 ];
 
 const related = [
@@ -249,11 +249,11 @@ const serviceSchema = {
 				))}
 			</div>
 			<p class="mt-6 text-sm text-slate-600 leading-relaxed">
-				This is a different system from a <a href="/services/septic-install-repairs" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">septic drainfield</a>, which disperses wastewater, and from a yard-scale swale or <a href="/services/drainage-excavation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">drainage excavation</a> that manages surface runoff. All three happen to share the word &ldquo;drain,&rdquo; but they don&rsquo;t share a purpose.
+				This is a different system from a <a href="/septic-installation-lane-county-oregon" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">septic drainfield</a>, which disperses wastewater, and from a yard-scale swale or <a href="/services/drainage-excavation" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">drainage excavation</a> that manages surface runoff. All three happen to share the word &ldquo;drain,&rdquo; but they don&rsquo;t share a purpose.
 			</p>
 		</div>
 	</section>
-	<!-- ADU + rock/water + builder timing — each answer gets its own photo block, alternating sides -->
+	<!-- ADU + rock/water + builder timing â€” each answer gets its own photo block, alternating sides -->
 	<PhotoContentBlock
 		eyebrow="ADU Foundations"
 		headline="What About an ADU or a Foundation Near an Existing House?"

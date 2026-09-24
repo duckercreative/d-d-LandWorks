@@ -1,11 +1,11 @@
----
+﻿---
 /*
-  Built from the full deep-research → content-brief → content-create →
+  Built from the full deep-research â†’ content-brief â†’ content-create â†’
   humanizer pipeline output (07-landing-pages/content/utility-excavation-content.md).
   Promoted from the /services/utility-excavation-test draft after review.
 
   OPEN ITEM carried from the content file: the electrical burial-depth figure
-  (6-24 in., NEC Table 300.5) is the confirmed NATIONAL baseline only — Oregon's
+  (6-24 in., NEC Table 300.5) is the confirmed NATIONAL baseline only â€” Oregon's
   own OESC amendment table couldn't be directly verified (403 error during
   research). Water/sewer/gas figures are solidly sourced from Lane County's own
   government page and don't carry the same hedge. Also unconfirmed: which party
@@ -29,33 +29,33 @@ const utilities = [
   { name: 'Sewer laterals', detail: 'The pipe connecting a structure to a public sewer main or, on a property without one, to a septic system.' },
   { name: 'Electrical conduit', detail: 'A new service, sub-panel run, or power line to a detached shop, barn, or outbuilding.' },
   { name: 'Gas lines', detail: 'New gas service to a structure, or an individual line to an outdoor appliance like a grill or a light.' },
-  { name: 'Communications/fiber conduit', detail: 'Trenching for phone, cable, or fiber lines. Depth follows the individual ISP or utility’s own construction standard, no Oregon code figure exists for this one.' },
+  { name: 'Communications/fiber conduit', detail: 'Trenching for phone, cable, or fiber lines. Depth follows the individual ISP or utilityâ€™s own construction standard, no Oregon code figure exists for this one.' },
 ];
 
 const depthTable = [
-  { utility: 'Water service line', depth: '24 in. total (12 in. below Lane County’s 12 in. frost depth)', code: 'OPSC 609.1' },
+  { utility: 'Water service line', depth: '24 in. total (12 in. below Lane Countyâ€™s 12 in. frost depth)', code: 'OPSC 609.1' },
   { utility: 'Sewer lateral', depth: '12 in. minimum ground cover, sloped ~1/4 in./ft', code: 'OPSC 718.1' },
   { utility: 'Gas line', depth: '18 in. standard (8 in. for outdoor-appliance lines, if approved)', code: 'ORSC G2415.12 / .12.1' },
-  { utility: 'Electrical conduit', depth: '6–24 in., depending on wiring method, NEC national baseline; Oregon’s OESC amendment not directly confirmed', code: 'NEC Table 300.5' },
+  { utility: 'Electrical conduit', depth: '6â€“24 in., depending on wiring method, NEC national baseline; Oregonâ€™s OESC amendment not directly confirmed', code: 'NEC Table 300.5' },
 ];
 
 const faqs = [
-  { question: 'How deep does a water line need to be buried in Oregon?', answer: '12 inches below Lane County’s own 12-inch frost depth, for a total minimum trench depth of 24 inches below grade, per Oregon Plumbing Specialty Code 609.1. Frost depth varies by county, so this exact total is specific to Lane County, not a statewide constant.' },
+  { question: 'How deep does a water line need to be buried in Oregon?', answer: '12 inches below Lane Countyâ€™s own 12-inch frost depth, for a total minimum trench depth of 24 inches below grade, per Oregon Plumbing Specialty Code 609.1. Frost depth varies by county, so this exact total is specific to Lane County, not a statewide constant.' },
   { question: 'How deep does a sewer lateral need to be buried?', answer: '12 inches minimum ground cover, per OPSC 718.1, sloped at roughly 1/4 inch per foot toward the discharge point.' },
   { question: 'How deep does electrical conduit need to be buried?', answer: '6 to 24 inches, depending on the wiring method: rigid metal conduit shallowest, direct-buried cable deepest, per NEC Table 300.5, the national baseline Oregon adopts. Any Oregon-specific amendment to this baseline should be confirmed for an exact figure; treat the range above as the confirmed national standard, not a settled Oregon-specific number.' },
   { question: 'How deep does a gas line need to be buried?', answer: '18 inches minimum cover standard, per ORSC G2415.12. An individual outdoor-appliance line, a grill or a light, may run as shallow as 8 inches if approved by the local authority, per G2415.12.1.' },
-  { question: 'Can water, sewer, electrical, and gas all go in the same trench?', answer: 'Yes, generally. Lane County permits multiple utilities sharing one trench without prohibition. The one code-stated rule: the water pipe’s bottom must sit at least 12 inches above the sewer pipe’s top where the two cross (OPSC 720.1). Individual utility companies may add their own separation specs on top of this, so confirm for a specific job.' },
-  { question: 'Who calls Oregon811 before utility trenching starts?', answer: 'D&D Land Works does, before every dig. Oregon811 requires at least two business days’ advance notice, free of charge, enforced by the Oregon PUC. This is a separate call from the utility-company tap application.' },
+  { question: 'Can water, sewer, electrical, and gas all go in the same trench?', answer: 'Yes, generally. Lane County permits multiple utilities sharing one trench without prohibition. The one code-stated rule: the water pipeâ€™s bottom must sit at least 12 inches above the sewer pipeâ€™s top where the two cross (OPSC 720.1). Individual utility companies may add their own separation specs on top of this, so confirm for a specific job.' },
+  { question: 'Who calls Oregon811 before utility trenching starts?', answer: 'D&D Land Works does, before every dig. Oregon811 requires at least two business daysâ€™ advance notice, free of charge, enforced by the Oregon PUC. This is a separate call from the utility-company tap application.' },
   { question: 'Who calls the utility company for a new tap: me or the contractor?', answer: 'Typically, the property owner or their developer/builder initiates the tap request directly with the utility (EWEB, Springfield Utility Board, or a rural water district); the actual trenching from the main or meter to the structure is done separately by the excavation contractor. This varies by utility, and which party D&D itself coordinates with on a given job is confirmed per job, not a fixed practice.' },
-  { question: 'What’s the difference between utility excavation and trenching and backfill?', answer: 'This page covers which utility is being run, why, and at what code-required depth: water, sewer, electrical, gas, and communications. Trenching & Backfill covers the general mechanics of opening and properly closing any trench, bedding, compaction in lifts, surface restoration, whether it’s for a utility line, drainage pipe, or a footing.' },
-  { question: 'Does trenching under a driveway or patio cost more than trenching through open ground?', answer: 'Yes. Trenching through existing hardscape requires saw-cutting, disposal of the removed material, and surface restoration that open-ground trenching doesn’t, a real cost driver stated honestly here rather than surfacing as a surprise mid-job. No Lane-County-exact multiplier exists; a free on-site estimate is the way to price a specific trench route.' },
+  { question: 'Whatâ€™s the difference between utility excavation and trenching and backfill?', answer: 'This page covers which utility is being run, why, and at what code-required depth: water, sewer, electrical, gas, and communications. Trenching & Backfill covers the general mechanics of opening and properly closing any trench, bedding, compaction in lifts, surface restoration, whether itâ€™s for a utility line, drainage pipe, or a footing.' },
+  { question: 'Does trenching under a driveway or patio cost more than trenching through open ground?', answer: 'Yes. Trenching through existing hardscape requires saw-cutting, disposal of the removed material, and surface restoration that open-ground trenching doesnâ€™t, a real cost driver stated honestly here rather than surfacing as a surprise mid-job. No Lane-County-exact multiplier exists; a free on-site estimate is the way to price a specific trench route.' },
 ];
 
 const related = [
   { title: 'Excavation & Earthmoving', description: 'General cut-and-fill, trenching, and earthmoving mechanics, plus the fuller OSHA/Oregon811 picture.', href: '/excavation-contractor-eugene-oregon' },
   { title: 'Drainage Excavation', description: 'Buried trenching for water management, not utility service delivery.', href: '/services/drainage-excavation' },
   { title: 'Trenching & Backfill', description: 'The general mechanics of closing any trench properly.', href: '/services/trenching-backfill' },
-  { title: 'Septic Install & Repair', description: 'The septic tank and drainfield itself.', href: '/services/septic-install-repairs' },
+  { title: 'Septic Install & Repair', description: 'The septic tank and drainfield itself.', href: '/septic-installation-lane-county-oregon' },
 ];
 
 const demoReviews = [
@@ -193,7 +193,7 @@ const serviceSchema = {
 		ctaHref="/contact"
 		bodyHtml="<p>Yes, generally. Lane County code allows multiple utilities to share one trench without prohibition, so water, sewer, electrical, and gas can go in together instead of four separate digs. The one code-stated rule: where a water line and a sewer line cross, the water pipe&rsquo;s bottom must sit at least 12 inches above the sewer pipe&rsquo;s top (OPSC 720.1).</p><p>Individual utility companies, EWEB, Springfield Utility Board, and NW Natural among them, may add their own separation specs on top of that. Buried non-metallic lines also need tracer wire so they can be located later: blue for water, green for sanitary sewer, yellow for gas.</p>"
 	/>
-	<!-- Who calls who + hitting an existing line — each answer gets its own photo block, alternating sides -->
+	<!-- Who calls who + hitting an existing line â€” each answer gets its own photo block, alternating sides -->
 	<PhotoContentBlock
 		eyebrow="Who Calls Who"
 		headline="Who Calls Before Digging, and Who Calls the Utility Company?"
