@@ -6,47 +6,55 @@ import FAQ from '../../components/FAQ.astro';
 import CTABlock from '../../components/CTABlock.astro';
 
 const sitePrepItems = [
-  { title: 'Foundation Excavation', description: 'Foundation excavation prepares the ground for new construction. The work creates the space needed for the foundation while considering site access, soil, depth, and surrounding ground conditions.', href: '/services/foundation-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-  { title: 'Utility Excavation', description: 'Utility excavation creates space for underground lines and connections. Trenching needs to match the project while accounting for access, existing conditions, depth, and planned utility routes.', href: '/services/utility-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-  { title: 'Drainage Excavation', description: 'Drainage excavation creates the space needed for drainage systems. The work depends on site conditions, slope, water flow, soil, and where water needs to move.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Septic Excavation', description: 'Septic projects can require excavation for system installation or repairs. D&D Land Works handles the excavation involved while considering property access, soil, terrain, and project requirements.', href: '/services/septic-installation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
-  { title: 'Site Preparation Excavation', description: 'Excavation can help prepare raw or undeveloped ground for construction. The scope may include removing or moving soil before grading, foundation work, utilities, or other site work.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
-  { title: 'Trenching and Backfill', description: 'Trenching creates narrow excavated areas for utilities, drainage, or other underground work. Backfill may follow once the required installation or project work has been completed.', href: '/services/trenching-backfill', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Lot Grading and Leveling', description: 'Lot grading shapes the ground across a property or the part you plan to use. It can smooth uneven areas, adjust elevations, and create a better starting point for construction, yards, or other site work.', href: '/services/lot-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Building Pad Grading', description: 'A building pad needs a suitable grade before construction can move forward. We shape the planned building area based on the existing ground, site elevations, access, and the requirements of your project.', href: '/services/building-pad-grading', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
+  { title: 'Yard Grading', description: 'Low spots, uneven ground, and poor surface flow can make a yard difficult to use. Yard grading reshapes the surface where needed and can help direct runoff based on the conditions of your property.', href: '/services/lot-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Drainage Grading', description: 'Grading can help control where surface water moves across a property. We shape the ground to create the needed slope and fall, while considering existing elevations, soil, drainage needs, and site conditions.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Driveway and Access Grading', description: 'A driveway or access area needs a practical grade for its intended use. We can shape and level the ground as part of site preparation, considering slope, existing conditions, drainage, and how vehicles will use the area.', href: '/services/drainage-excavation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Residential and Commercial Grading', description: 'Grading needs vary between a home lot, commercial property, and larger development site. We provide grading and leveling for residential and commercial projects, with the scope based on the property\'s conditions and planned use.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
 ];
 
 const howItWorksSteps = [
-  { step: '1', title: 'Project Discussion', detail: 'The first step is understanding your project and the area that needs excavation. The planned use helps define the work and related services.' },
-  { step: '2', title: 'Site Assessment', detail: 'Site conditions help shape the excavation plan. Property access, terrain, soil, existing structures, and the planned work area all need consideration.' },
-  { step: '3', title: 'Scope Planning', detail: 'The excavation scope depends on what needs to be dug, how deep it needs to go, and what happens after the excavation is complete.' },
-  { step: '4', title: 'Utility Considerations', detail: 'Existing or planned utilities can affect excavation. Their locations and the planned utility routes should be considered before digging begins.' },
-  { step: '5', title: 'Excavation Work', detail: 'The excavation follows the agreed project scope. Soil, depth, access, ground conditions, and site layout can affect how the work is completed.' },
-  { step: '6', title: 'Related Site Work', detail: 'Excavation may be followed by grading, drainage, trenching, backfill, or other site work when included in the project scope.' },
+  { step: '1', title: 'Site Size and Scope', detail: 'A small yard grading project may involve less work than preparing a larger building area. The amount of land being graded and the final grade required both affect the overall project time.' },
+  { step: '2', title: 'Ground and Soil Conditions', detail: 'Soil conditions can change how easily material can be moved and shaped. Wet ground may also affect when grading work can be completed, especially during periods of heavy rain in Eugene.' },
+  { step: '3', title: 'Existing Slope and Elevation', detail: 'Steep slopes, uneven elevations, and larger changes in grade can require more material movement. The existing shape of the property helps determine how much grading work is needed.' },
+  { step: '4', title: 'Site Access', detail: 'Equipment needs room to reach the areas being graded. Narrow access, structures, utilities, or other site limits can affect how the work is planned and how efficiently material can be moved.' },
+  { step: '5', title: 'Material Movement', detail: 'Grading may involve cutting high areas, filling low areas, or moving soil around the property. The amount of material involved can affect the work required and whether related site preparation is needed.' },
+  { step: '6', title: 'Weather and Related Work', detail: 'Rain and wet ground can affect grading conditions in Eugene and Lane County. Additional work such as drainage, excavation, or site preparation may also add time when included in the project scope.' },
 ];
 
 const faqs = [
   {
-    question: 'Does D&D Land Works handle residential excavation?',
-    answer: 'Yes. D&D Land Works provides residential excavation for foundations, utilities, drainage, septic work, and other property preparation needs.',
+    question: 'Do I need a permit to grade my property in Lane County?',
+    answer: 'Yes, if your project moves more than 50 cubic yards of earth or creates a cut or fill slope steeper than 2:1. Contact Lane County Land Management Division at 3050 N. Delta Hwy, Eugene (M–F 9am–3pm). Foundation excavation under an active building permit is generally exempt; driveway and landscaping grading is not. We handle permit guidance for Lane County projects — call before you start and we\'ll tell you what applies to your project.',
   },
   {
-    question: 'Does D&D Land Works handle commercial excavation?',
-    answer: 'Yes. Commercial excavation can support construction, utilities, drainage, site preparation, and other project needs based on the property\'s conditions.',
+    question: 'How much does land grading cost in Eugene, Oregon?',
+    answer: 'National cost ranges are $0.08–$2.00 per square foot for yard grading, $1,000–$5,125 for driveway grading, and $1,000–$6,700 for foundation prep. Eugene area projects vary based on lot size, soil type, slope, and whether fill material is needed. Malpass clay can add time on some sites, and we flag that during the site visit. Call 541-401-8726 for a free, itemized estimate.',
   },
   {
-    question: 'Can excavation include grading?',
-    answer: 'Yes. Excavation and grading can work together when a project needs ground levels changed or prepared for the next stage of site work.',
+    question: 'What is the difference between rough grading and finish grading?',
+    answer: 'Rough grading is the bulk earthmoving stage: we set the building pad elevation, strip topsoil, and rough in drainage falls, typically within ±0.1 foot of plan. Finish grading follows after underground utilities are installed. It brings the surface to ±0.5 inch precision and prepares the site for paving, planting, or final inspection. D&D handles both stages for new construction projects in Lane County.',
   },
   {
-    question: 'Can excavation include drainage work?',
-    answer: "Yes. Excavation can create the space needed for drainage systems. The approach depends on the property's slope, soil, water flow, and existing conditions.",
+    question: 'Do you call Oregon 811 before starting grading work?',
+    answer: 'Yes, always. Oregon law requires contractors to notify Oregon 811 (the Utility Notification Center) at least two business days before any excavation or grading begins. We submit the locate request before equipment arrives on your property. Utility companies mark underground lines, and we check that all marks are present before we start. Required by Oregon OSHA; standard on every D&D job.',
   },
   {
-    question: 'Can excavation be part of septic installation?',
-    answer: 'Yes. Septic installation can require excavation for the planned system. D&D Land Works handles relevant septic excavation and repair work.',
+    question: 'Can grading fix standing water in my Eugene yard?',
+    answer: 'Usually yes. Water pooling in Willamette Valley yards is most often caused by flat or reverse-sloped grade, especially where Malpass clay slows drainage. We regrade to move water away from your home and toward proper outlets. On sites where slope correction alone won\'t drain fast enough through heavy clay, we recommend combining regrading with a French drain or swale. A free site visit will tell you which approach your property needs.',
   },
   {
-    question: 'How does rain affect excavation in Eugene?',
-    answer: 'Rain can change ground conditions and equipment access. Wet soil may affect scheduling and how excavation work is approached on a particular property.',
+    question: 'When is the best time to schedule grading in Oregon?',
+    answer: 'May through September. Dry conditions reduce erosion risk and keep project costs down. Grading can be done October through April, but Oregon\'s wet season (Oct 1–Apr 30) requires additional erosion control under state law, which adds time and cost. How saturated the soil is also matters; Malpass clay handles equipment longer than some soils but not when it\'s fully waterlogged. Spring and summer slots book up early, so contact us ahead of time.',
+  },
+  {
+    question: 'How do I verify D&D Land Works\' contractor license?',
+    answer: 'D&D Land Works holds CCB License #261742 with the Oregon Construction Contractors Board. You can check our active license status, bond, and insurance at orccb.org. Look at both the license status and the bond separately; a license can show Active even if the bond has lapsed. We\'re also DEQ Certified for septic installation and repair. Look us up before you call if you want to.',
+  },
+  {
+    question: 'What is a building pad and do I need one?',
+    answer: 'A building pad is a leveled, compacted ground platform at a precise engineered elevation, required before any structure (home, shop, barn, ADU) goes up on raw land. It\'s not the same as general yard leveling. A pad has to meet elevation specs from your architect or engineer, including bearing capacity for the structure. D&D grades building pads for homes, outbuildings, and commercial structures across Lane County. We work from your engineered drawings or help figure out what\'s needed if you don\'t have them yet.',
   },
 ];
 
@@ -60,14 +68,14 @@ const pageSchema = {
       url: 'https://www.ddlandworks.com/',
       telephone: '+15414018726',
       email: 'david@ddlandworks.com',
-      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      description: 'Full-service land grading, lot leveling, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
       priceRange: '$$',
       areaServed: [
         { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
         { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
-      knowsAbout: ['Land Clearing', 'Brush Clearing', 'Site Preparation', 'Grading', 'Excavation', 'Septic Installation'],
+      knowsAbout: ['Land Grading', 'Lot Leveling', 'Building Pad Grading', 'Drainage Grading', 'Gravel Driveway Grading', 'Site Preparation', 'Cut and Fill Grading'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
@@ -76,11 +84,11 @@ const pageSchema = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://www.ddlandworks.com/services/land-clearing-v2/#service',
-      name: 'Excavation Contractor in Eugene, Oregon',
-      serviceType: 'Excavation',
-      description: 'Excavation contractor serving Eugene, Oregon. Foundation digging, utility trenching, drainage excavation, and septic excavation. Licensed and bonded, CCB #261742.',
-      url: 'https://www.ddlandworks.com/services/land-clearing-v2/',
+      '@id': 'https://www.ddlandworks.com/land-grading-services-eugene-oregon/#service',
+      name: 'Land Grading and Leveling Services in Eugene, Oregon',
+      serviceType: 'Land Grading',
+      description: 'Licensed land grading contractor in Eugene and Lane County, Oregon. Lot leveling, building pad grading, drainage grading, slope correction, and gravel driveway regrading. CCB #261742.',
+      url: 'https://www.ddlandworks.com/land-grading-services-eugene-oregon/',
       provider: { '@id': 'https://www.ddlandworks.com/#business' },
       areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
     },
@@ -96,8 +104,7 @@ const pageSchema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Land Clearing', item: 'https://www.ddlandworks.com/services/land-clearing/' },
-        { '@type': 'ListItem', position: 3, name: 'Land Clearing Services Eugene OR', item: 'https://www.ddlandworks.com/land-clearing-services-eugene-oregon/' },
+        { '@type': 'ListItem', position: 2, name: 'Land Grading Services Eugene Oregon', item: 'https://www.ddlandworks.com/land-grading-services-eugene-oregon/' },
       ],
     },
   ],
@@ -105,18 +112,18 @@ const pageSchema = {
 ---
 
 <BaseLayout
-  title="Excavation Contractor in Eugene, Oregon | D&D Land Works"
-  description="Excavation contractor in Eugene, Oregon. Foundation digging, utility trenching, drainage, and septic excavation. Licensed and bonded, CCB #261742. Free estimates — call 541-401-8726."
+  title="Land Grading and Leveling Services in Eugene, Oregon | D&D Land Works"
+  description="Licensed land grading contractor in Eugene, OR (CCB #261742). Lot leveling, building pad grading, drainage grading, and driveway grading across Lane County. Free estimates — call 541-401-8726."
 >
   <Hero
     eyebrow="Eugene, Oregon"
-    headline="Excavation Contractor in Eugene, Oregon"
-    subheadline="Need to prepare a property for building, utilities, drainage, or other site work? D&D Land Works provides excavation in Eugene, OR for residential and commercial properties, with work planned around your site and its ground conditions."
+    headline="Land Grading and Leveling Services in Eugene, Oregon"
+    subheadline="D&D Land Works provides land grading services in Eugene, OR, and across Lane County. We grade land for homes, commercial sites, yards, driveways, and building areas based on existing ground conditions and your project needs. David Deggelman runs the business and handles every estimate himself."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
 
-  <!-- What We Excavate For -->
+  <!-- What We Grade For -->
   <section class="relative bg-white overflow-hidden">
     <div
       class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
@@ -127,21 +134,21 @@ const pageSchema = {
         <!-- Text column -->
         <div>
           <div class="mb-4 flex items-center gap-2">
-            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <img src="/logo.png" alt="D&D Land Works" class="h-6 w-auto" />
             <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              What We Excavate For
+              Grading in Eugene
             </p>
           </div>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Does an Excavation Contractor Do?
+            What Eugene Properties Need in a Grading Contractor
           </h2>
           <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Excavation work gets the ground ready for what comes next. D&amp;D Land Works digs and moves soil for foundations, utilities, drainage, septic work, and other site needs in Eugene and Lane County.</p>
-            <p>Your property may need a small trench or a larger area prepared for construction. We look at the space, access, soil, and ground conditions before the work begins. The goal is to prepare the right area for your project.</p>
-            <p>Builders may need foundation areas ready for construction. Homeowners may need drainage or utility trenches. Rural properties may need excavation for septic work. Each job has its own needs, and the work is planned around your site.</p>
+            <p>Grading in Eugene depends on the property, not just the size of the lot. Existing slopes, soil, wet ground, drainage, access, and nearby structures can all affect the work.</p>
+            <p>A yard may need a different grade than a building pad or driveway. During Eugene's wetter months, ground conditions can also affect when grading work is practical.</p>
+            <p>Local project requirements may include permits, utility checks, or other site approvals, depending on the work involved. We look at the existing ground and your planned use before defining the grading scope. This helps set a practical final grade for your property and project.</p>
           </div>
           <a href="/contact" class="btn-pill mt-8 inline-flex">
-            Talk About Your Excavation Project
+            Talk About Your Grading Project
             <span class="btn-pill-icon">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -152,8 +159,8 @@ const pageSchema = {
         <!-- Image column -->
         <div class="relative pb-6">
           <img
-            src="/project-excavation-bucket.webp"
-            alt="D&D Land Works excavation contractor working in Lane County, Oregon"
+            src="/project-grading-driveway.webp"
+            alt="D&D Land Works grading contractor working in Lane County, Oregon"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
             loading="lazy"
           />
@@ -173,7 +180,7 @@ const pageSchema = {
     </div>
   </section>
 
-  <!-- Excavation Services -->
+  <!-- Grading Services -->
   <section id="services" class="relative">
     <div class="relative bg-ink overflow-hidden">
       <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
@@ -181,10 +188,10 @@ const pageSchema = {
       <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-          Excavation Services D&amp;D Land Works Provides
+          Types of Land Grading We Provide
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          D&amp;D Land Works handles excavation for foundations, utilities, drainage, septic systems, and site preparation. Each project is planned around your property, access, ground conditions, and needs.
+          Land grading changes the shape and level of the ground for a specific use. The work depends on your property, existing slope, soil, access, drainage, and what you plan to build or use the space for.
         </p>
       </div>
     </div>
@@ -199,26 +206,25 @@ const pageSchema = {
     </div>
   </section>
 
-  <!-- Who We Excavate For -->
+  <!-- Lane County Conditions -->
   <section class="bg-slate-50 border-y border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Who We Excavate For</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          Excavation Services from D&amp;D Land Works
+        <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          Eugene and Lane County Conditions That Can Affect Grading
         </h2>
         <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          D&amp;D Land Works is a full-service excavation company. One company can clear the land, dig, trench, grade and fill it back in. You don&rsquo;t have to juggle three contractors for one project. We work on homes, rural land and business sites across Lane County.
+          Grading can look different from one property to another. In Eugene and Lane County, rain, wet ground, soil, slopes, drainage, and site access can all affect how we plan the work and shape the final grade.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { title: 'Residential Excavation for Homeowners', description: "You live there, so you care about your yard, your walls and your driveway. Maybe you're adding a room or running a new water line. We dig carefully near the house. Then we fill it back in and pack it tight so the ground doesn't sink next to your foundation.", href: '/contact', linkLabel: 'Get a Free Estimate' },
-          { title: 'Residential Excavation for Property Owners', description: "Maybe you own a lot you haven't built on yet, or a rental that needs work. You're not there every day, and that's okay. We look at the site, tell you in plain words what it needs and get the ground ready for your next step.", href: '/contact', linkLabel: 'Get a Free Estimate' },
-          { title: 'Residential Excavation for Rural Land', description: "Acreage comes with its own jobs. You might need a trench to run power out to the barn, or a septic system far from any sewer line. Before we give you a price, we check how the machines will get in. On rural land, access can change the whole plan.", href: '/contact', linkLabel: 'Get a Free Estimate' },
-          { title: 'Small Excavation Jobs Around Eugene', description: "Not every project is a big one. Sometimes it's a short trench or a small pad for a shed. Small jobs get the same careful look as big ones. A mistake next to your house costs just as much either way.", href: '/contact', linkLabel: 'Get a Free Estimate' },
-          { title: 'Commercial Excavation for Builders', description: "Builders need the dig to match the plans so the next trade can start on time. We dig building pads and foundations, cut trenches for water and sewer, and grade the site so water drains off. Tell us your start date. We'll tell you straight what the site needs.", href: '/contact', linkLabel: 'Get a Free Estimate' },
-          { title: 'Commercial Excavation for Developers', description: "Bigger sites mean more moving parts. There may be several lots, longer utility runs and more paperwork, like county permits and inspections. We work from your engineered plans and do the dirt work in the right order. That way each phase is ready for the crew that comes next.", href: '/contact', linkLabel: 'Get a Free Estimate' },
+          { title: 'Wet Weather and Ground Conditions', description: "Rain can leave soil soft and harder to work. Wet ground may affect equipment access, material movement, and grading timing. We check the actual site conditions before deciding how the work should move forward.", href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Soil Conditions', description: "Soil affects how easily the ground can be shaped and moved. Different soil conditions may change the grading approach, especially when the property needs leveling, filling, or material moved to another area.", href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Sloped Properties', description: "A sloped lot may need more careful planning than a fairly even property. Existing elevations help determine where material needs to be cut, where it may be placed, and what final grade the project requires.", href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Drainage and Surface Water', description: "Water flow matters when shaping a property. Grading can help direct surface runoff, but the right approach depends on the existing drainage, low areas, slope, and other conditions around the property.", href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Site Access', description: "Equipment needs a practical way to reach the areas being graded. Tight driveways, structures, utilities, or limited access can affect how material is moved and how the grading work is planned.", href: '/contact', linkLabel: 'Discuss Your Project' },
+          { title: 'Lane County Property Conditions', description: "Properties across Lane County can have different terrain, drainage, soil, and access conditions. We look at the property itself rather than assuming every Eugene-area site needs the same grading approach.", href: '/contact', linkLabel: 'Get a Free Estimate' },
         ].map((card) => (
           <div class="card flex flex-col gap-3">
             <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
@@ -253,12 +259,12 @@ const pageSchema = {
     ></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-16 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Grading Timeline</p>
         <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Does an Excavation Project Work?
+          How Long Does Land Grading Take?
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Excavation starts with understanding what your property needs. The project scope can change based on access, soil, depth, utilities, permits, weather, and the work planned after excavation.
+          The time needed for land grading depends on the size of the property, grading scope, existing slope, soil and ground conditions, site access, weather, and the amount of material that needs to be moved. Related site preparation can also affect the schedule.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -273,30 +279,30 @@ const pageSchema = {
         ))}
       </div>
       <div class="mt-12 text-center">
-        <a href="/contact" class="btn btn-cta">Discuss Your Project</a>
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
       </div>
     </div>
   </section>
 
-  <!-- Eugene Site Conditions -->
+  <!-- Hiring a Grading Contractor -->
   <section class="bg-white border-b border-slate-100">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
         <div>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            How Do Eugene Site Conditions Affect <span class="text-brand-blue">Excavation?</span>
+            What to Check Before Hiring a <span class="text-brand-blue">Grading Contractor</span>
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            Eugene properties can have different soil, terrain, drainage, and access conditions. Wet weather can also change ground conditions, so excavation work needs to match the actual site.
+            Before hiring a grading contractor in Eugene, ask a few practical questions. You want to know who will assess the site, what the estimate includes, how ground conditions may affect the work, and whether permits or related site work are needed.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {[
-              { title: 'Wet Ground', description: 'Wet ground can affect equipment access and how excavation work moves forward. Weather and drainage conditions should be considered when planning the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-              { title: 'Clay Soil', description: 'Clay soil can behave differently when wet. Soil conditions may affect excavation, equipment access, drainage, and the overall approach to the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-              { title: 'Sloped Terrain', description: 'Sloped properties can create different access and excavation needs. The slope, surrounding ground, and planned work help determine the appropriate project scope.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-              { title: 'Drainage Conditions', description: 'Existing drainage can affect excavation planning. Water flow, low areas, and ground conditions may need to be considered when excavation connects with drainage work.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-              { title: 'Site Access', description: 'Access affects where equipment can work and how materials can be handled. Tight or difficult areas may require additional planning before excavation begins.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-              { title: 'Willamette Valley Conditions', description: "Properties around the Willamette Valley can have different soil, drainage, and terrain conditions. Each excavation project should be planned around the property's actual site conditions.", icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
+              { title: 'Licensed and Bonded', description: 'Check that the contractor is licensed and bonded. D&D Land Works is licensed and bonded through the Oregon Construction Contractors Board under CCB #261742.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />' },
+              { title: 'Site Assessment', description: 'A proper estimate should consider the property\'s slope, existing grade, soil, drainage, and access. These conditions help define the grading scope before work begins.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+              { title: 'Clear Project Scope', description: 'Ask what the estimate includes. Material movement, grading, leveling, related site preparation, and other work should be clear so you know what is part of the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+              { title: 'Ground Conditions', description: 'Ask how wet ground, soil conditions, slope, and weather may affect the work. Eugene properties can have different site conditions, so the plan should fit your property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+              { title: 'Permit Requirements', description: 'Ask whether your project may require permits or other local requirements. Permit needs can vary based on the property, project scope, and location.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
+              { title: 'Related Site Work', description: 'Grading may connect with drainage, excavation, driveway preparation, or other site work. A good contractor should explain when grading is only one part of the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
@@ -320,8 +326,8 @@ const pageSchema = {
         </div>
         <div class="relative">
           <img
-            src="/project-grading-driveway.webp"
-            alt="D&D Land Works excavation work in Lane County, Oregon"
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works grading work in Eugene, Oregon"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
             loading="lazy"
           />
@@ -336,10 +342,10 @@ const pageSchema = {
       <div class="mb-12 md:mb-14 text-center">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Excavation Services Across Eugene and Lane County
+          Grading Services Across Eugene and Lane County
         </h2>
         <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          D&amp;D Land Works serves Eugene, Springfield, and surrounding Lane County communities. Excavation work is planned around your property's location, access, terrain, ground conditions, and project needs.
+          D&amp;D Land Works serves Eugene, Springfield, and surrounding Lane County communities. Grading work is planned around your property's location, access, terrain, soil conditions, and project needs.
         </p>
       </div>
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
@@ -386,7 +392,7 @@ const pageSchema = {
     </div>
   </section>
 
-  <FAQ heading="Excavation Contractor FAQs" items={faqs} />
+  <FAQ heading="Land Grading FAQs" items={faqs} />
 
   <!-- Related Services -->
   <section class="bg-white border-t border-slate-100">
@@ -396,10 +402,10 @@ const pageSchema = {
       </h2>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { title: 'Site Preparation', description: 'Get your lot flat, firm and ready for the builder.', href: '/services/site-preparation', linkLabel: 'Learn about site preparation' },
-          { title: 'Land Clearing', description: 'Open up the work area so machines and crews can get in.', href: '/land-clearing-services-eugene-oregon', linkLabel: 'Learn about land clearing' },
-          { title: 'Foundation Excavation', description: 'The right size hole, dug to your plans, with solid ground underneath.', href: '/services/foundation-excavation', linkLabel: 'Learn about foundation excavation' },
-          { title: 'Grading and Leveling', description: 'Smooth out bumps and slope the ground so rain runs away from your home.', href: '/services/grading-leveling', linkLabel: 'Learn about grading and leveling' },
+          { title: 'Excavation Contractor', description: 'Foundation digging, utility trenching, drainage excavation, and septic excavation across Lane County.', href: '/excavation-contractor-eugene-oregon', linkLabel: 'Learn about excavation' },
+          { title: 'Land Clearing', description: 'Open up the work area before grading begins — brush clearing, tree removal, and stump grinding.', href: '/land-clearing-services-eugene-oregon', linkLabel: 'Learn about land clearing' },
+          { title: 'Septic Installation and Repair', description: 'DEQ Certified septic work — new system installation and repairs on existing systems across Lane County.', href: '/services/septic-install-repairs', linkLabel: 'Learn about septic work' },
+          { title: 'Site Preparation', description: 'Get raw land cleared, graded, and ready for a builder or contractor to start construction.', href: '/services/site-preparation', linkLabel: 'Learn about site preparation' },
         ].map((item) => (
           <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
             <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
@@ -416,9 +422,9 @@ const pageSchema = {
   </section>
 
   <CTABlock
-    headline="Request Excavation Services in Eugene"
-    subheadline="Tell D&D Land Works what you need done. We can discuss your property, site conditions, and the excavation work your project requires."
-    ctaLabel="Talk About Your Excavation Project"
+    headline="Discuss Your Property Grading Needs"
+    subheadline="Every property has different grading needs. Tell us what you want to use the land for, and we can look at the existing slope, grade, drainage, access, and ground conditions. We provide free estimates for residential and commercial grading projects in Eugene and Lane County."
+    ctaLabel="Talk About Your Grading Project"
     ctaHref="/contact"
     phone="541-401-8726"
     email="david@ddlandworks.com"

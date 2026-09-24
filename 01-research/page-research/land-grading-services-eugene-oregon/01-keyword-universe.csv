@@ -1,0 +1,152 @@
+keyword,intent,funnel_stage,local_modifier,commercial_value,notes
+land grading services Eugene OR,transactional,bottom,yes,high,Primary target keyword
+grading contractor Eugene Oregon,transactional,bottom,yes,high,High commercial value
+lot leveling Lane County,transactional,bottom,yes,high,Lane County modifier
+yard grading Eugene OR,transactional,bottom,yes,high,Residential focus
+gravel driveway grading Eugene,transactional,bottom,yes,high,Driveway-specific
+drainage grading Oregon,transactional,bottom,yes,high,Problem-specific
+building pad grading Eugene,transactional,bottom,yes,high,New construction focus
+site grading Eugene Oregon,transactional,bottom,yes,high,Broad contractor term
+lot grading Eugene OR,transactional,bottom,yes,high,Lot-specific grading
+land leveling Eugene Oregon,transactional,bottom,yes,high,Leveling variant
+residential grading contractor Eugene,transactional,bottom,yes,high,Residential segment
+commercial grading contractor Eugene OR,transactional,bottom,yes,medium,Commercial segment
+yard resloping Eugene Oregon,transactional,bottom,yes,medium,Problem correction term
+cut and fill grading Lane County,transactional,bottom,yes,medium,Technical term variant
+rough grading Eugene Oregon,transactional,bottom,yes,medium,Build stage term
+finish grading Eugene Oregon,transactional,bottom,yes,medium,Build stage term
+building pad preparation Eugene,transactional,bottom,yes,high,New construction
+excavation and grading Eugene OR,transactional,bottom,yes,high,Combined service
+slope correction Eugene Oregon,transactional,bottom,yes,medium,Problem correction
+erosion control grading Lane County,transactional,bottom,yes,medium,Regulatory compliance
+driveway regrading Eugene OR,transactional,bottom,yes,medium,Driveway repair
+gravel road grading Eugene Oregon,transactional,bottom,yes,medium,Rural property
+driveway grading Lane County OR,transactional,bottom,yes,medium,Driveway+county
+drainage swale grading Eugene OR,transactional,bottom,yes,medium,Drainage specific
+French drain grading Eugene,transactional,bottom,yes,medium,Drainage system
+foundation drainage grading Eugene,transactional,bottom,yes,high,Foundation protection
+yard leveling Eugene OR,transactional,bottom,yes,high,Leveling specific
+RV pad grading Eugene Oregon,transactional,bottom,yes,medium,RV use case
+shed pad grading Eugene OR,transactional,bottom,yes,medium,Structure use case
+land clearing and grading Eugene,transactional,bottom,yes,high,Combined clearing+grading
+excavation grading Eugene OR,transactional,bottom,yes,high,Broad excavation
+grading company Eugene Oregon,transactional,bottom,yes,high,Company type term
+dirt work Eugene Oregon,transactional,bottom,yes,high,Informal term popular
+site prep grading Eugene OR,transactional,bottom,yes,high,New construction
+land grading cost Eugene Oregon,commercial_investigation,middle,yes,medium,Cost research
+how much does grading cost Eugene,commercial_investigation,middle,yes,medium,Cost research question
+lot leveling cost Oregon,commercial_investigation,middle,yes,medium,Cost research
+yard grading contractor Lane County,transactional,bottom,yes,high,Geographic focus
+residential grading Lane County OR,transactional,bottom,yes,medium,Residential+county
+building lot grading Eugene,transactional,bottom,yes,high,New construction
+grading for septic system Eugene,transactional,bottom,yes,medium,Septic-tied grading
+utility trench grading Eugene OR,transactional,bottom,yes,medium,Utility work
+new construction grading Eugene OR,transactional,bottom,yes,high,New build focus
+grading for foundation Eugene Oregon,transactional,bottom,yes,high,Foundation prep
+building pad leveling Eugene,transactional,bottom,yes,high,Leveling specific
+pad grading Lane County OR,transactional,bottom,yes,medium,Geographic
+rough grade building lot Eugene,transactional,bottom,yes,medium,Technical term
+finish grade yard Eugene OR,transactional,bottom,yes,medium,Technical term
+grading permit Lane County Oregon,informational,top,yes,low,Permit research
+50 cubic yards grading permit Oregon,informational,top,yes,low,Threshold awareness
+land grading near me Eugene,transactional,bottom,yes,high,Near-me intent
+grading contractor near me Lane County,transactional,bottom,yes,high,Near-me intent
+excavation contractor Eugene OR grading,transactional,bottom,yes,high,Combined excavation
+site leveling Eugene Oregon,transactional,bottom,yes,medium,Leveling specific
+land grading Eugene,transactional,bottom,yes,high,City-only short form
+grading Eugene OR,transactional,bottom,yes,medium,Ultra-short
+land preparation Eugene Oregon,transactional,bottom,yes,medium,Land prep broad
+grading and leveling Eugene,transactional,bottom,yes,high,Combined phrase
+excavation and grading contractor Eugene,transactional,bottom,yes,high,Full service term
+slope grading Eugene Oregon,transactional,bottom,yes,medium,Slope-specific
+yard slope correction Eugene OR,transactional,bottom,yes,medium,Homeowner problem
+backyard grading Eugene OR,transactional,bottom,yes,medium,Residential specific
+front yard grading Eugene,transactional,bottom,yes,low,Specific yard area
+grading around foundation Eugene OR,transactional,bottom,yes,high,Foundation protection
+water drainage fix yard Eugene,informational/transactional,middle,yes,medium,Problem-first search
+yard drainage grading Eugene OR,transactional,bottom,yes,high,Drainage fix
+standing water yard fix Eugene,informational,top,yes,medium,Problem symptom search
+soggy lawn grading Eugene Oregon,transactional,bottom,yes,medium,Problem symptom
+water pooling yard Eugene OR,informational,top,yes,medium,Problem symptom
+grading for water drainage Eugene,transactional,bottom,yes,high,Drainage grading
+drainage correction grading Eugene,transactional,bottom,yes,high,Fix-oriented
+how to fix yard drainage Eugene Oregon,informational,top,yes,low,DIY research
+land grading services Springfield OR,transactional,bottom,yes,medium,Adjacent city
+grading contractor Springfield Oregon,transactional,bottom,yes,medium,Adjacent city
+lot leveling Springfield OR,transactional,bottom,yes,medium,Adjacent city
+land grading Cottage Grove OR,transactional,bottom,yes,low,Tier 2 city
+land grading Junction City OR,transactional,bottom,yes,low,Tier 2 city
+land grading Veneta OR,transactional,bottom,yes,low,Tier 2 city
+grading contractor Creswell OR,transactional,bottom,yes,low,Tier 2 city
+lot grading Florence OR,transactional,bottom,yes,low,Tier 3 city
+land leveling Oakridge OR,transactional,bottom,yes,low,Tier 3 city
+building pad grading Springfield OR,transactional,bottom,yes,medium,Adjacent city
+site prep contractor Eugene OR,transactional,bottom,yes,high,Related service
+excavation site prep Eugene Oregon,transactional,bottom,yes,high,Related service
+dirt work contractor Lane County,transactional,bottom,yes,high,Regional dirt work
+land grading Willamette Valley,transactional,bottom,yes,medium,Regional modifier
+Eugene Oregon grading services,transactional,bottom,yes,high,Reversed order
+grading leveling company Eugene,transactional,bottom,yes,high,Company search
+licensed grading contractor Eugene,transactional,bottom,yes,high,Trust qualifier
+bonded grading contractor Eugene OR,transactional,bottom,yes,medium,Trust qualifier
+CCB licensed grading Eugene Oregon,transactional,bottom,yes,medium,License qualifier
+free estimate grading Eugene Oregon,transactional,bottom,yes,high,CTA qualifier
+best grading contractor Eugene OR,transactional,bottom,yes,high,Quality qualifier
+affordable grading Eugene Oregon,commercial_investigation,middle,yes,medium,Budget qualifier
+cheap grading contractor Eugene OR,commercial_investigation,middle,yes,low,Budget qualifier
+excavation grading company Lane County,transactional,bottom,yes,medium,Company search
+property grading Eugene OR,transactional,bottom,yes,medium,Property broad
+how much does lot grading cost Oregon,commercial_investigation,middle,yes,medium,Cost research
+cost to grade yard Oregon,commercial_investigation,middle,yes,medium,Cost research
+land grading price per square foot,commercial_investigation,middle,no,medium,National cost
+yard leveling cost Oregon,commercial_investigation,middle,yes,medium,Cost research
+what does grading a lot cost,informational,middle,no,low,Cost educational
+do I need a grading permit Lane County,informational,top,yes,low,Permit research
+land grading permit Eugene Oregon,informational,top,yes,low,Permit research
+when to grade your property Oregon,informational,top,yes,low,Timing educational
+best time for grading Oregon wet season,informational,top,yes,low,Seasonal timing
+Malpass clay grading Eugene,informational,middle,yes,low,Local soil research
+clay soil grading Eugene Oregon,informational/transactional,middle,yes,medium,Soil+grading
+Oregon 811 grading excavation,informational,top,yes,low,Compliance
+grading contractor who pulls permits Eugene,transactional,bottom,yes,medium,Permit compliance
+gravel driveway installation Eugene OR,transactional,bottom,yes,medium,Related service
+gravel driveway repair Eugene Oregon,transactional,bottom,yes,medium,Related service
+new driveway grading Eugene OR,transactional,bottom,yes,medium,Driveway install
+access road grading Eugene Oregon,transactional,bottom,yes,medium,Rural access road
+private road grading Lane County,transactional,bottom,yes,medium,Rural private road
+rural property grading Eugene OR,transactional,bottom,yes,medium,Rural focus
+acreage grading Eugene Oregon,transactional,bottom,yes,medium,Large lot
+land prep for new home Eugene,transactional,bottom,yes,high,New construction
+grading before building Eugene Oregon,transactional,bottom,yes,high,Pre-build grading
+grading for home addition Eugene OR,transactional,bottom,yes,medium,Addition project
+driveway base grading Eugene,transactional,bottom,yes,medium,Driveway prep
+building pad excavation Eugene OR,transactional,bottom,yes,high,New construction
+foundation pad grading Eugene,transactional,bottom,yes,high,Foundation prep
+site grading contractor Lane County,transactional,bottom,yes,high,Geographic
+land leveling contractor Lane County,transactional,bottom,yes,high,Geographic
+grading subcontractor Eugene Oregon,transactional,bottom,yes,medium,B2B search
+developer grading Eugene OR,transactional,bottom,yes,medium,Commercial/developer
+commercial grading Eugene Oregon,transactional,bottom,yes,medium,Commercial segment
+residential lot grading Eugene,transactional,bottom,yes,high,Residential lot
+yard re-grade Eugene Oregon,transactional,bottom,yes,medium,Correction regrading
+property regrading Eugene OR,transactional,bottom,yes,medium,Correction regrading
+slope stabilization grading Eugene,transactional,bottom,yes,medium,Erosion/stability
+erosion control Eugene Oregon contractor,transactional,bottom,yes,medium,Erosion control
+sediment control Eugene grading,transactional,bottom,yes,low,Compliance
+grading inspection Lane County OR,informational,top,yes,low,Process step
+grading survey Eugene Oregon,informational,middle,yes,low,Pre-work survey
+elevation survey grading Eugene,informational,middle,yes,low,Pre-work survey
+GPS grading Eugene Oregon,informational,middle,yes,low,Technology term
+laser grading Eugene OR,informational,middle,yes,low,Technology term
+grading and excavation Eugene OR,transactional,bottom,yes,high,Combined service search
+site prep and grading Eugene Oregon,transactional,bottom,yes,high,Combined service
+lot clearing and grading Eugene,transactional,bottom,yes,high,Combined clearing+grading
+land grading contractor license Oregon,commercial_investigation,middle,yes,medium,License verification search
+excavation contractor grading Lane County,transactional,bottom,yes,high,Geographic combined
+yard slope grading Eugene OR,transactional,bottom,yes,medium,Slope-specific residential
+French drain installation Eugene OR,transactional,bottom,yes,medium,Drainage system — related
+drainage swale installation Eugene,transactional,bottom,yes,medium,Drainage system — related
+cut and fill contractor Eugene Oregon,transactional,bottom,yes,medium,Technical buyer term
+land grading estimate Eugene Oregon,transactional,bottom,yes,high,Pre-call estimate search
+grading contractor free estimate Eugene,transactional,bottom,yes,high,CTA-driven search
+grading services Lane County Oregon,transactional,bottom,yes,high,Geographic variant

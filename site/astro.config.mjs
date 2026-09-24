@@ -7,6 +7,7 @@ export default defineConfig({
   site: 'https://ddlandworks.com',
   redirects: {
     '/services/land-clearing': '/land-clearing-services-eugene-oregon',
+    '/services/grading-leveling': '/land-grading-services-eugene-oregon',
   },
   vite: {
     plugins: [tailwindcss()],
