@@ -167,7 +167,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 | `/services/excavation/` | "grading and leveling" (already shipped, per `excavation-content.md`'s own H2 "What's the Difference Between Excavation and Grading?") | Boundary section + Related Services card |
 | `/services/site-preparation/` | "grading and leveling" | Related Services card |
 | `/locations/eugene/`, `/locations/springfield/` (future/existing city pages) | "yard grading in Eugene" / "yard leveling in Springfield" | Body, services-offered section of each city page |
-| `/services/drainage-excavation/`, `/services/driveway-repair/`, `/services/slope-stabilization/` (sibling/future pages) | "back to grading and leveling" | Each sibling page's "parent cluster" link, per the topical map's hub-and-spoke rule |
+| `/services/drainage-excavation/`, `/services/driveway-repair/`, `/slope-stabilization-eugene-oregon/` (sibling/future pages) | "back to grading and leveling" | Each sibling page's "parent cluster" link, per the topical map's hub-and-spoke rule |
 | `/about/` | Breadcrumb | Breadcrumb |
 | Global header/footer | "Services" nav item | Every page |
 
@@ -180,7 +180,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 | `/services/site-preparation/` | "site preparation" — same explicit "if you're prepping a raw lot for new construction" framing | H2 #2 (problem-framed list intro) |
 | `/services/drainage-excavation/` (future, not yet built) | "drainage excavation" — framed as "a dedicated write-up on dug drainage systems is coming; this page covers surface grading and swales" | H2 #5 (swale vs. French drain) |
 | `/services/driveway-repair/` | "driveway repair" | Cross-link only, per the topical map's "one page" rule for driveway grading |
-| `/services/slope-stabilization/` | "slope stabilization" | Cross-link only, for hillside/structural erosion control outside this page's ordinary-surface-slope scope |
+| `/slope-stabilization-eugene-oregon/` | "slope stabilization" | Cross-link only, for hillside/structural erosion control outside this page's ordinary-surface-slope scope |
 | `/locations/eugene/`, `/locations/springfield/` | "Eugene" / "Springfield" | H1/opening paragraph area |
 | `/about/` | "David Deggelman" | Trust/CCB mention |
 | `/contact/` | "get a free estimate" / "call 541-401-8726" | H2 #12 CTA + hero |

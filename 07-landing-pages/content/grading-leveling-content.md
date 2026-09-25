@@ -22,7 +22,7 @@
 | **H1** | Grading & Leveling in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/grading-leveling/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #1, #3, #6, #8) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/services/site-preparation/`, `/services/drainage-excavation/` (future), `/services/driveway-repair/`, `/services/slope-stabilization/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/services/site-preparation/`, `/services/drainage-excavation/` (future), `/services/driveway-repair/`, `/slope-stabilization-eugene-oregon/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | land grading eugene or |
 | **Word count** | ~2,210 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — at the top edge of the brief's 1,700–2,200 target |
 
@@ -148,7 +148,7 @@ Grading and leveling is often the whole job, but not always. [Excavation](/servi
 - **[Excavation](/services/excavation/)** — cut-and-fill, backfill, and new digging for foundations, ponds, and utility trenches
 - **[Site Preparation](/services/site-preparation/)** — clearing, stripping topsoil, and grading a raw lot before a new build
 - **[Driveway Repair](/services/driveway-repair/)** — regrading a driveway or access road that's washed out or settled
-- **[Slope Stabilization](/services/slope-stabilization/)** — hillside erosion control and structural slope work, beyond ordinary surface regrading
+- **[Slope Stabilization](/slope-stabilization-eugene-oregon/)** — hillside erosion control and structural slope work, beyond ordinary surface regrading
 
 D&D Land Works covers all of this under one Oregon CCB license (#261742), for both residential and commercial properties throughout [Eugene](/locations/eugene/), [Springfield](/locations/springfield/), and the rest of Lane County. To see the full range of services D&D Land Works offers, visit the [homepage](/) or [David Deggelman's about page](/about/).
 
