@@ -5,7 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ddlandworks.com',
-  redirects: {},
+  redirects: {
+    '/services/utility-excavation': '/utility-trenching-eugene-oregon',
+  },
   vite: {
     plugins: [tailwindcss()],
   },
