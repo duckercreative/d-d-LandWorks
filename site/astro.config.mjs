@@ -8,7 +8,6 @@ export default defineConfig({
   redirects: {
     '/services/land-clearing': '/land-clearing-services-eugene-oregon',
     '/services/grading-leveling': '/land-grading-services-eugene-oregon',
-    '/services/drainage-excavation': '/drainage-installation-eugene-oregon',
   },
   vite: {
     plugins: [tailwindcss()],
