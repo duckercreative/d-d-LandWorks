@@ -5,55 +5,39 @@ import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
 
-const preDigItems = [
-  { title: 'Foundation Layout', description: 'David uses the building plans to understand where the foundation will sit, how deep it needs to be, and where the excavation area will be.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5M9 20h6M9 20V4m6 16h5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-5m0 16V4M9 4h6" />' },
-  { title: 'Excavation Depth', description: 'The plans tell us how deep the foundation needs to go. David follows the project requirements for your property instead of using one standard depth.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
-  { title: 'Site Access', description: 'Equipment needs a clear path to reach the foundation area. David looks at driveways, lot width, slope, and nearby structures before the work is planned.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-  { title: 'Existing Ground', description: 'The shape of the land affects how the excavation is approached. David looks at slope and elevation before the dig so the work fits what your property allows.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Underground Utilities', description: 'Underground utility lines need to be located before digging starts. Oregon law requires an 811 locate at least two business days before excavation begins.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
-  { title: 'Site Boundaries', description: 'The excavation needs to stay within the planned foundation footprint. David marks the area before digging so the work stays focused on the space your foundation requires.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18" />' },
+const propertyFactors = [
+  { title: 'Water Lines', description: 'A water line may need a trench from the water source to a home or building. A new home or rural property may need a longer water-line trench from the service point to the building.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Sewer Lines', description: 'A sewer line may cross part of the property. The route can depend on the building location, required grade, and where the sewer or septic system is located.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+  { title: 'Electrical Conduit', description: 'If electrical service is being run underground, the conduit may need a planned trench from the service point to the building.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
+  { title: 'Power Lines', description: 'Power lines may be placed underground when the project calls for it. The trench route and requirements depend on the specific property and utility plan.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Underground Utility Routes', description: 'A utility route may cross yards, driveways, or other parts of a property. Existing structures and underground lines can affect where excavation takes place.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Utility Excavation', description: 'D&D Land Works focuses on the excavation needed to create the utility trench. The utility provider or qualified professional handles work outside the excavation scope.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
 ];
 
 const faqs = [
   {
-    question: 'How deep do footings need to be in Eugene, Oregon?',
-    answer: 'In Lane County, exterior footings must be placed at least 12 inches below finished grade on undisturbed soil, per Oregon Residential Specialty Code R403.1.4. Lane County\'s elevation sits in the 12-inch frost protection band per ORSC Table R301.2(1). This makes 12 inches the number that governs both the code minimum and the frost protection requirement for most Eugene-area projects. Saturated Willamette Valley clay at the 12-inch depth may require over-excavation to reach firm bearing soil; a site assessment before work begins accounts for this.',
+    question: 'How deep does a water service line need to be buried in Lane County, Oregon?',
+    answer: 'Water service lines must be buried at least 24 inches below grade in Lane County — 12 inches below the local 12-inch frost depth, as required by Oregon Plumbing Specialty Code 609.1. Deeper burial may be required under driveways, parking areas, or where the inspector specifies additional depth.',
   },
   {
-    question: 'What type of foundation is most common in Eugene?',
-    answer: 'Crawl space foundations are the most common type in Eugene and Lane County, particularly in homes built before 2000, based on local Lane County real estate data. Slab-on-grade has become standard for newer construction and ADU projects. Full basements are the least common: Oregon\'s mild winters reduce the seasonal demand for basement space, and west Eugene\'s high winter water table complicates deep excavation and foundation drainage requirements.',
+    question: 'How deep does a sewer lateral need to be buried?',
+    answer: 'Sanitary sewer laterals need at least 12 inches of cover above the pipe in Lane County (OPSC 718.1). The pipe must also slope at least ¼ inch per foot toward the sewer main or septic tank to ensure gravity drainage. Inadequate slope is the most common cause of sewer lateral failure.',
   },
   {
-    question: 'How much does foundation excavation cost in Eugene, Oregon?',
-    answer: 'Foundation excavation in Eugene typically ranges from $2,300 to $4,100 for a standard residential job (crawl space or slab, approximately 1 to 1.5 days of work) and $3,900 to $6,800 for full basement excavation. Hourly rates with excavator and operator run $190 to $340 per hour in Lane County. These are general market estimates based on HomeBlue data for the Eugene area. Call D&D Land Works at 541-401-8726 for a free on-site estimate.',
+    question: 'How deep does electrical conduit need to be buried in Oregon?',
+    answer: 'In Oregon, PVC electrical conduit must be at least 18 inches deep in open ground and 24 inches deep under driveways or parking areas, per NEC Table 300.5 (adopted by Oregon\'s Electrical Specialty Code). Rigid metal conduit can be as shallow as 6 inches in both conditions. Direct-burial cable requires 24 inches.',
   },
   {
-    question: 'Is there bedrock in Eugene, Oregon?',
-    answer: 'No. The Willamette Valley floor has no significant bedrock. Unlike Central Oregon, where volcanic basalt sits near the surface and rock ripping or blasting is a real cost line, Lane County\'s subsurface is Willamette Valley clay and alluvial soils deposited by the Missoula Floods. The primary excavation challenge in Eugene is clay behavior during wet season, not rock. National content that includes rock cost premiums does not reflect Lane County conditions.',
+    question: 'How deep does a gas line need to be buried in Oregon?',
+    answer: 'Standard residential gas piping must be at least 18 inches below grade in Oregon (Oregon Residential Specialty Code G2415.12). Lines feeding portable outdoor appliances — generators, outdoor heaters, BBQ drops — can be as shallow as 8 inches under ORSC G2415.12.1.',
   },
   {
-    question: 'What is Malpass clay and does it affect foundation excavation?',
-    answer: 'Malpass clay is a soil series found throughout west Eugene, documented in BLM Technical Note 447. It has high shrink-swell properties and very low permeability. In wet season (October through May), saturated Malpass clay at the 12-inch code-minimum footing depth can be too soft to support footing loads adequately, requiring over-excavation to reach firm bearing soil. D&D assesses site soil conditions before finalizing any foundation excavation quote.',
+    question: 'Can water, sewer, electrical, and gas go in the same trench?',
+    answer: 'Yes — joint trenching is code-permitted in Lane County with modern pipe materials. The one key separation rule: where a water line crosses above a sewer line, the bottom of the water pipe must be at least 12 inches above the top of the sewer pipe (OPSC 720.1). Individual utility companies may have additional separation specifications beyond code minimums — confirm these when you initiate the service application.',
   },
   {
-    question: 'How do I schedule a footing inspection in Lane County?',
-    answer: 'For City of Eugene permits, schedule through the eBuild system at pdd.eugene-or.gov/ebuild or call 541-682-5283 before 7 a.m. for same-day inspection. For unincorporated Lane County, call Lane County Building Safety at 541-682-4651 with at least 48 hours of advance notice. The inspection happens after excavation, forms, and rebar are in place, and before concrete is placed. D&D coordinates the inspection timing with the GC and building department.',
-  },
-  {
-    question: 'What does foundation excavation include for a new home?',
-    answer: 'Foundation excavation for a new home covers: Oregon 811 utility locate (at least 2 business days before digging), organic topsoil stripping, excavation to footing depth (12-inch minimum per ORSC R403.1.4; deeper if soil conditions require it), over-dig working space for foundation forms and waterproofing, haul-off of excavated material, and rough perimeter grading to ORSC R401.3 grade-fall requirements. D&D coordinates the footing inspection schedule so concrete pour stays on the builder\'s timeline.',
-  },
-  {
-    question: 'How does foundation excavation work for an ADU in Eugene?',
-    answer: 'ADU foundation excavation follows the same ORSC frost-depth requirements as primary dwelling construction (12-inch minimum, R403.1.4). Foundation drainage under ORSC R405 applies to ADU basements and enclosed crawlspaces in Lane County clay soils. When excavating adjacent to an existing structure, OSHA 1926.652(b) requires underpinning or shoring. D&D coordinates the full sequence: excavation, inspection scheduling, and handoff to the GC for forming and pour.',
-  },
-  {
-    question: 'Can you excavate for a foundation during Oregon\'s rainy season?',
-    answer: 'Yes. D&D excavates year-round in Eugene and Lane County. Wet-season work (October through May) adds erosion control measures required for disturbed sites over 500 square feet under Lane County LMD rules and may require dewatering in west Eugene clay areas and low-lying valley floor sites. Wet clay haul-off runs heavier per load than dry material. If the project timeline is flexible, the dry window from May through September is the preferred scheduling window. If it is not flexible, D&D plans accordingly.',
-  },
-  {
-    question: 'Does D&D Land Works call 811 before every foundation dig?',
-    answer: 'Yes. Oregon law requires at least 2 business days of advance notice to Oregon 811 (digsafelyoregon.com) before any excavation begins. D&D submits the locate request on every job, without exception. If an unmarked utility is encountered despite a proper locate, D&D stops work and contacts the utility owner directly. Oregon 811 locate requests are free.',
+    question: 'Who is required to call Oregon 811 before utility trenching?',
+    answer: 'Under ORS Chapter 757, both the property owner and the excavation contractor are legally required to notify Oregon 811 at least two business days before any digging begins. The service is free — call 811 or 1-800-332-2344, or submit at digsafelyoregon.com, 24/7. D&D calls Oregon 811 on every project.',
   },
 ];
 
@@ -111,18 +95,18 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Foundation Excavation Services in Eugene, Oregon | D&D Land Works"
-  description="Foundation excavation contractor in Eugene & Lane County, OR (CCB #261742). Basement, crawlspace & slab excavation, footing trenching, and soil haul-off. Free estimates — call 541-401-8726."
+  title="Utility Trenching Services in Eugene, Oregon | D&D Land Works"
+  description="Utility trenching in Eugene & Lane County, OR. Water, sewer, and power line trenching for new homes and buildings. Licensed and bonded CCB #261742. Free estimates — call 541-401-8726."
 >
   <Hero
-    eyebrow="Eugene, Oregon"
-    headline="Foundation Excavation Services in Eugene, Oregon"
-    subheadline="Building a home starts with getting the ground ready. In Eugene and around Lane County, every property can be a little different. David looks at the plans, access, slope, and ground conditions before digging so the foundation excavation fits your property."
+    eyebrow="Utility Trenching in Eugene, Oregon"
+    headline="Utility Trenching Services in Eugene, Oregon"
+    subheadline="Water, sewer, or power lines may need to cross your property before a new home or building can be used. D&D Land Works digs the utility trenches needed for these projects, based on your plans, site conditions, and access."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
 
-  <!-- What Is Foundation Excavation -->
+  <!-- Why Is Water Collecting -->
   <section class="relative bg-white overflow-hidden">
     <div
       class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
@@ -135,19 +119,20 @@ const serviceSchema = {
           <div class="mb-4 flex items-center gap-2">
             <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
             <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              Foundation Excavation in Lane County, OR
+              What Is Utility Trenching?
             </p>
           </div>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Is Foundation Excavation?
+            What Is Utility Trenching?
           </h2>
           <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Foundation excavation means digging the ground where a new home or other building foundation will go. The plans show where the foundation needs to go and how deep the excavation needs to be.</p>
-            <p>In Eugene and Lane County, every lot is a little different. The slope, soil, and access can change how the excavation is approached. A crawl-space foundation may need a different depth and footprint than a slab or basement.</p>
-            <p>David looks at the plans, the ground conditions, and site access before anything is quoted. The goal is to leave the foundation area ready for the next step of your build.</p>
+            <p>Adding a water line, sewer line, or electrical conduit means creating a safe underground path for the utility. On Eugene-area properties, slope, wet ground, long utility runs, and site access can affect how that trench is approached. We look at the property and planned route before excavation begins.</p>
+            <p>The trench follows a planned <strong>trench route</strong> based on the project requirements. Its depth and location can change with the utility type, soil, slope, wet ground, and site access. The excavation needs to follow the plans for the project.</p>
+            <p>Once the utility work is ready, <strong>backfill</strong> may be used to fill the trench as part of the project. D&D Land Works handles the excavation side, while utility design, connections, and other specialized work may be handled by the proper utility professional.</p>
+            <p>Trenching time depends on the length and depth of the excavation, soil, access, existing utilities, weather, and the overall project. Wet ground or difficult access can make the work take longer.</p>
           </div>
-          <a href="/excavation-contractor-eugene-oregon" class="btn-pill mt-8 inline-flex">
-            Excavation Contractor Eugene
+          <a href="/contact" class="btn-pill mt-8 inline-flex">
+            Talk About Your Project
             <span class="btn-pill-icon">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -185,18 +170,18 @@ const serviceSchema = {
       <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
       <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
       <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Before We Dig</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Underground Utilities</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-          What Needs to Happen Before the Foundation Is Dug?
+          What Kind of Utility Needs a Trench?
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          Every Eugene property is different. Soil, slope, wet ground, and site access can change how the work is planned. Before digging, we look at the plans and the actual property so the excavation fits the job.
+          Water, sewer, and electrical lines each have their own depth and route requirements. If your new water or power line needs a trench, the utility type and property conditions both affect how the excavation is planned.
         </p>
       </div>
     </div>
     <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {preDigItems.map((item) => <ServiceCard {...item} />)}
+        {propertyFactors.map((item) => <ServiceCard {...item} />)}
       </div>
     </div>
     <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
@@ -205,26 +190,26 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Site Conditions That Matter -->
+  <!-- Finding the Right Way to Move Water -->
   <section class="bg-slate-50 border-y border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Site Conditions That Matter</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Site Conditions</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          How Do Soil, Slope, and Wet Ground Affect Foundation Excavation?
+          What Can Make Utility Trenching Harder?
         </h2>
         <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Eugene-area properties can look very different from one lot to the next. David looks at the slope, soil, access, and wet ground conditions before digging because those details can change how your excavation needs to be done.
+          A utility trench can be simple on an open lot, but every property is different. Around Eugene and Lane County, rain, wet ground, slopes, driveways, and existing underground lines can change how the work is planned.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { title: 'Soil', description: 'In the Willamette Valley, clay-heavy soils behave differently than looser or drier ground. The soil on your lot can affect how equipment works and how the excavation is approached.', href: '/contact', linkLabel: 'Talk to David' },
-          { title: 'Slope', description: 'A sloped lot can have different elevations across the foundation area. David looks at the existing grade to understand how the excavation needs to follow your foundation plans.', href: '/land-grading-services-eugene-oregon', linkLabel: 'Grading & Leveling' },
-          { title: 'Elevation', description: 'An uneven lot may require more soil to be removed in some areas than others. The plans and existing grade guide where the excavation goes and how much needs to come out.', href: '/contact', linkLabel: 'Talk to David' },
-          { title: 'Wet Ground', description: "Eugene's rainy season runs October through May. Saturated ground can affect equipment access and may change the timing of the work. David checks conditions before the dig starts.", href: '/drainage-installation-eugene-oregon', linkLabel: 'Drainage Solutions' },
-          { title: 'Site Access', description: 'Equipment needs a clear path to the foundation area. Tight driveways, fencing, neighboring structures, or a narrow lot can all affect how the work is planned.', href: '/contact', linkLabel: 'Talk to David' },
-          { title: 'Existing Structures', description: 'Excavating near a building already on the property requires extra care. David looks at where the new foundation sits relative to any existing structures before work begins.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'Wet Ground', description: 'After heavy rain, some Eugene-area properties can have wet ground that makes equipment access harder. We look at the ground and site conditions before trenching so the work fits the actual property.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'Sloped Property', description: 'A sloped lot can make the utility route more involved. The trench still needs to follow the project requirements while working with the shape of the property.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'Driveway Crossings', description: 'If a utility line needs to cross a driveway, the excavation has to account for the existing surface and access to the property.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'Existing Utilities', description: 'Water, sewer, electric, or other underground lines may already be on the property. Their location needs to be considered before excavation begins.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'Long Utility Runs', description: 'On some rural Lane County properties, a new building may sit farther from existing services. A longer trench means more excavation, soil movement, and site access to consider.', href: '/contact', linkLabel: 'Talk to David' },
+          { title: 'How D&D Approaches the Site', description: 'David looks at the property and the planned utility route before the digging starts. The goal is to understand the ground, access, and work area so the excavation fits the actual site.', href: '/contact', linkLabel: 'Talk to David' },
         ].map((card) => (
           <div class="card flex flex-col gap-3">
             <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
@@ -251,7 +236,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- How Does a Foundation Excavation Work -->
+  <!-- Local Ground Conditions -->
   <section class="relative bg-ink text-white overflow-hidden">
     <div
       class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
@@ -259,19 +244,20 @@ const serviceSchema = {
     ></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-16 text-center">
-        <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Does a Foundation Excavation Work?
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Sewer Line Trenching</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          What About Sewer Line Trenching in Eugene?
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Every foundation dig is a little different. In Eugene and Lane County, the plans tell us what needs to be built, while the actual ground conditions on your lot tell us what the excavation will be like.
+          Sewer trenching can be part of a new home or property project. The route, grade, soil, and final connection all affect how the excavation is planned.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Marking the Foundation Area', detail: 'The foundation area is marked before digging starts. This shows where the excavation needs to go and keeps the work in line with the plans.' },
-          { title: 'Digging to the Required Depth', detail: 'Soil is removed until the planned depth is reached. The depth depends on the foundation plans and the conditions found on the property.' },
-          { title: 'Moving the Excavated Soil', detail: 'Digging leaves soil that needs to be managed. Depending on the property and project, some soil may stay on site or need to be moved elsewhere.' },
-          { title: 'Checking the Finished Grade', detail: 'The excavation is checked against the planned depth and ground levels. This helps leave the foundation area ready for the next stage of construction.' },
+          { title: 'Why a Sewer Trench Needs a Steady Slope', detail: 'A sewer line may need a planned slope so wastewater can move as intended. The required grade comes from the project plans and applicable requirements.' },
+          { title: 'Sewer Lines to a Septic System', detail: 'On some Lane County properties, a sewer trench may run to a septic system rather than a public sewer connection. The route and depth depend on the system location and approved project requirements.' },
+          { title: 'Sewer Trenching on Sloped Property', detail: 'A sloped property can change the trench route and excavation depth. Existing grades and project plans help determine how the trench is laid out.' },
+          { title: 'What D&D Handles', detail: 'D&D Land Works handles the excavation for the planned sewer route. Plumbing, septic design, connections, and other specialized work may be handled separately.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
             <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
@@ -286,26 +272,23 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- What Can Make the Dig Harder -->
+  <!-- Where the Water Goes -->
   <section class="bg-white border-b border-slate-100">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
         <div>
-          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">What Can Make the Dig Harder?</p>
+          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">After the Dig</p>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            How Does Foundation Excavation Work on Your Property?
+            What Happens With the Soil After the Trench Is Dug?
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            Every foundation dig is different. Rain, soil, slope, access, nearby buildings, and excavation depth can change how the work is planned and carried out.
+            Digging a utility trench leaves soil beside the work area. What happens next depends on the trench, the soil, the project plans, and whether the material can be used again.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {[
-              { title: 'Rain and Wet Ground', description: 'Wet ground can make equipment access harder and may affect when excavation can safely move forward. Weather can also change the work schedule.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-              { title: 'Clay and Soft Soil', description: 'Soil conditions can vary from one property to another. Clay or soft ground may affect digging conditions and how equipment moves around the site.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-              { title: 'Sloped Lots', description: 'A sloped lot can have different elevations across the foundation area. The plans and existing grade guide how the excavation is approached.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-              { title: 'Tight Lots and Hard-to-Reach Spots', description: 'Limited access can make it harder to bring equipment into the foundation area. Nearby fences, driveways, or structures may also limit working space.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-              { title: 'Digging Close to an Existing Building', description: 'Excavation near an existing building requires careful planning. The available space, ground conditions, and location of the new foundation all matter.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9" />' },
-              { title: 'Deeper Digs Need Extra Care', description: 'Deeper excavations require more planning than a shallow foundation dig. The depth, soil, access, and site conditions all affect how the work is handled.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4" />' },
+              { title: 'Moving the Excavated Soil', description: 'Digging creates soil that has to be managed during the project. The amount depends on the trench length, depth, and property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+              { title: 'Backfilling', description: 'Once the trench work is ready for the next stage, the excavated area can be backfilled as required by the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
+              { title: 'Finishing the Work Area', description: 'A yard, driveway, or access area may be disturbed during trenching. The amount of finishing work depends on what was excavated.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
@@ -330,7 +313,7 @@ const serviceSchema = {
         <div class="relative">
           <img
             src="/service-land-clearing.webp"
-            alt="Excavator digging a foundation on a Lane County, Oregon property"
+            alt="Utility trenching work on a Lane County, Oregon property"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
             loading="lazy"
           />
@@ -343,13 +326,14 @@ const serviceSchema = {
   <section class="bg-slate-50">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Eugene and Lane County</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Local Properties</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Foundation Excavation in Eugene and Lane County
+          Utility Trenching Around Eugene and Lane County
         </h2>
-        <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          We provide foundation excavation for home and building projects in Eugene, Springfield, and surrounding Lane County areas. Every property is different, so the excavation is planned around the site and project plans.
-        </p>
+        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
+          <p>Properties around Eugene and Lane County can be very different. A new home in town, a sloped lot, or a rural property may each have different trenching needs. Long utility runs, wet ground, driveway crossings, and existing underground lines can all affect the work.</p>
+          <p>Before excavation starts, David can look at the property and talk through the planned utility route with you. That gives you a clearer idea of what the excavation will involve before the work begins.</p>
+        </div>
       </div>
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
         <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
@@ -395,7 +379,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <FAQ heading="Foundation Excavation FAQs in Eugene, Oregon" items={faqs} />
+  <FAQ heading="Frequently Asked Questions" items={faqs} />
 
   <!-- Related Services -->
   <section class="bg-white border-t border-slate-100">
@@ -425,8 +409,9 @@ const serviceSchema = {
   </section>
 
   <CTABlock
-    headline="Talk With D&D Land Works About Your Foundation Excavation"
-    subheadline="If you are planning a new foundation, we can talk through the excavation, site access, and ground conditions. Call 541-401-8726 to discuss your project and request a free estimate. D&D Land Works is licensed and bonded, CCB #261742."
+    eyebrow="Talk With David"
+    headline="Need a Utility Trench?"
+    subheadline="If you need a trench for a water line, sewer line, or electrical conduit, we can look at the property and talk through the excavation needed. David can review the site, access, and project requirements with you. D&D Land Works is owned by David Deggelman and serves Eugene, Springfield, and nearby Lane County areas."
     ctaLabel="Request a Free Estimate"
     ctaHref="/contact"
     phone="541-401-8726"
