@@ -10,7 +10,7 @@ const propertyFactors = [
   { title: 'Electrical Conduit', description: 'Electrical conduit can run underground inside a trench. D&D can handle the excavation, while the electrical work is handled by the proper electrical professional.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
   { title: 'Irrigation Lines', description: 'Irrigation lines may need a narrow trench across part of a property. The route can depend on the layout of the yard, ground conditions, and access.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
   { title: 'Drainage and Ditches', description: 'Water problems may call for a trench or ditch to give runoff a path. The right approach depends on the slope, ground, and where the water needs to go.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Septic-Related Excavation', description: 'Some septic projects require excavation for tanks, lines, or other parts of the system. D&D\'s role is the digging; septic design and related work are separate.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+  { title: 'Septic-Related Excavation', description: 'Some septic projects require excavation for tanks, lines, or other parts of the system. D\'s role is the digging; septic design and related work are separate.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
   { title: 'Residential Trenching', description: 'Homeowners may need trenching for several types of property work. If you\'re not sure what kind of trench you need, we can look at the project and explain the excavation involved.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
 ];
 
@@ -58,7 +58,7 @@ const serviceSchema = {
         { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
-      knowsAbout: ['Driveway Excavation', 'Driveway Grading', 'Gravel Driveway Repair', 'Site Preparation', 'Land Clearing', 'Septic Installation'],
+      knowsAbout: ['Trenching', 'Utility Trenching', 'Irrigation Trenching', 'Drainage Excavation', 'Site Preparation', 'Septic Installation'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
@@ -67,11 +67,11 @@ const serviceSchema = {
     },
     {
       '@type': 'Service',
-      '@id': 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-oregon/#service',
-      name: 'Driveway Excavation & Grading Services in Eugene, Oregon',
-      serviceType: 'Driveway Excavation and Grading',
-      description: 'Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates — 541-401-8726.',
-      url: 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-oregon/',
+      '@id': 'https://www.ddlandworks.com/trenching-services-eugene-oregon/#service',
+      name: 'Trenching Services in Eugene, Oregon',
+      serviceType: 'Trenching and Backfill',
+      description: 'Trenching services in Eugene, Springfield, and Lane County, Oregon. Utility trenching, irrigation trenching, drainage ditches, and septic excavation. Free estimates — 541-401-8726.',
+      url: 'https://www.ddlandworks.com/trenching-services-eugene-oregon/',
       provider: { '@id': 'https://www.ddlandworks.com/#business' },
       areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
     },
@@ -87,7 +87,7 @@ const serviceSchema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Driveway Excavation & Grading', item: 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-oregon/' },
+        { '@type': 'ListItem', position: 2, name: 'Trenching Services', item: 'https://www.ddlandworks.com/trenching-services-eugene-oregon/' },
       ],
     },
   ],
@@ -95,8 +95,8 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Driveway Excavation & Grading in Eugene, Oregon | New Driveways & Repairs"
-  description="Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates — 541-401-8726."
+  title="Trenching Services in Eugene, Oregon | D&D Land Works"
+  description="Trenching services in Eugene, Springfield, and Lane County, Oregon. Utility trenching, irrigation trenching, drainage ditches, and septic excavation. Free estimates — 541-401-8726."
 >
   <Hero
     eyebrow="Trenching Services in Eugene, Oregon"
@@ -106,7 +106,7 @@ const serviceSchema = {
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
 
-  <!-- Why Is Water Collecting -->
+  <!-- What Is Trenching -->
   <section class="relative bg-white overflow-hidden">
     <div
       class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
@@ -143,7 +143,7 @@ const serviceSchema = {
         <div class="relative pb-6">
           <img
             src="/before-lot.webp"
-            alt="Foundation excavation site preparation in Lane County, Oregon"
+            alt="Trenching work on a Lane County, Oregon property"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
             loading="lazy"
           />
@@ -163,7 +163,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Before We Dig -->
+  <!-- What Kind of Project -->
   <section id="before-we-dig" class="relative">
     <div class="relative bg-ink overflow-hidden">
       <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
@@ -189,7 +189,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Finding the Right Way to Move Water -->
+  <!-- Trench vs Ditch -->
   <section class="bg-slate-50 border-y border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
@@ -235,7 +235,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Local Ground Conditions -->
+  <!-- Before We Dig -->
   <section class="relative bg-ink text-white overflow-hidden">
     <div
       class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
@@ -271,7 +271,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Where the Water Goes -->
+  <!-- What D&D Can Handle -->
   <section class="bg-white border-b border-slate-100">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
@@ -315,7 +315,7 @@ const serviceSchema = {
         <div class="relative">
           <img
             src="/service-land-clearing.webp"
-            alt="Driveway grading and excavation work on a Lane County, Oregon property"
+            alt="Trenching and excavation work on a Lane County, Oregon property"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
             loading="lazy"
           />

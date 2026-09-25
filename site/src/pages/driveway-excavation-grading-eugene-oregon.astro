@@ -6,38 +6,34 @@ import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
 
 const propertyFactors = [
-  { title: 'Utility and Water Lines', description: 'Water lines and other underground utilities may need a trench to reach the right location. The digging is separate from the plumbing or utility work that follows.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
-  { title: 'Electrical Conduit', description: 'Electrical conduit can run underground inside a trench. D&D can handle the excavation, while the electrical work is handled by the proper electrical professional.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
-  { title: 'Irrigation Lines', description: 'Irrigation lines may need a narrow trench across part of a property. The route can depend on the layout of the yard, ground conditions, and access.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Drainage and Ditches', description: 'Water problems may call for a trench or ditch to give runoff a path. The right approach depends on the slope, ground, and where the water needs to go.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Septic-Related Excavation', description: 'Some septic projects require excavation for tanks, lines, or other parts of the system. D&D\'s role is the digging; septic design and related work are separate.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
-  { title: 'Residential Trenching', description: 'Homeowners may need trenching for several types of property work. If you\'re not sure what kind of trench you need, we can look at the project and explain the excavation involved.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Rain and Runoff', description: 'Rain can create runoff across the driveway. When water follows the same path, it may move gravel, create low spots, or wear away the surface.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Slope and Grade', description: 'The driveway\'s slope affects where water goes. A driveway that is shaped poorly may let water collect in one area or run along the surface.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Soil and Ground Conditions', description: 'The ground under a driveway affects how it holds water and supports the surface. Wet or soft ground can make some driveway problems harder to fix.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+  { title: 'Traffic and Repeated Use', description: 'Cars and trucks place repeated pressure on the driveway. Over time, this can contribute to ruts, potholes, and an uneven surface.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Low Spots and Standing Water', description: 'A low area can collect water after rain. When water stays in the same place, it can leave the driveway muddy and affect the gravel surface.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Existing Drainage', description: 'Ditches, slopes, and other drainage features can affect how water reaches the driveway. If water is a major part of the problem, related drainage work may need to be considered.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
 ];
 
 const faqs = [
   {
-    question: 'How deep do irrigation lines need to be buried in Lane County, Oregon?',
-    answer: 'Irrigation depth depends on the line, property, and project requirements. Mainlines and lateral lines may need different depths. The site conditions and planned irrigation system should guide the trench depth.',
+    question: 'How much does gravel driveway grading cost in Eugene or Lane County, Oregon?',
+    answer: 'Gravel driveway grading costs vary by driveway size, condition, slope, drainage, and the work required. Existing driveway regrading may cost less than new driveway excavation and preparation. D&D can inspect your driveway and provide a free estimate based on the actual work needed.',
   },
   {
-    question: 'What\'s the difference between a sprinkler mainline trench and a lateral trench?',
-    answer: 'A mainline carries water to different parts of the irrigation system. Lateral lines branch off to serve sprinkler areas. Because they have different jobs, their trench requirements can also differ.',
+    question: 'Why does my gravel driveway keep washing out every winter?',
+    answer: 'Your gravel driveway may wash out because rainwater is flowing across the driveway instead of away from it. Poor slope, low spots, missing drainage, or blocked culverts can contribute. Fixing the water flow may require grading, reshaping, drainage work, or additional gravel.',
   },
   {
-    question: 'How much does trenching cost in Eugene, Oregon?',
-    answer: 'Trenching cost depends on the length, depth, soil, access, slope, and site conditions. Hard ground or difficult access can add work. D&D Land Works can look at your property and provide a free estimate.',
+    question: 'How deep should a gravel driveway base be in Oregon?',
+    answer: 'A gravel driveway does not have one required base depth for every property. The needed depth depends on soil, drainage, driveway use, ground conditions, and the project. D&D can assess the existing ground and determine what preparation the driveway may need.',
   },
   {
-    question: 'How much does it cost to trench 100 feet for irrigation?',
-    answer: 'There is no single price for 100 feet of irrigation trenching. Soil, access, depth, and whether the trench crosses an existing surface can change the work. A site estimate gives you a more useful number.',
+    question: 'What kind of gravel is best for driveways in the Eugene area?',
+    answer: 'Crushed gravel with a mix of larger stone and smaller material is commonly used for driveway surfaces because it can compact into a firm layer. The right material depends on your ground, drainage, driveway use, and the condition of the existing surface.',
   },
   {
-    question: 'Do I need to call Oregon 811 before digging an irrigation trench?',
-    answer: 'Underground utilities should be located before excavation begins. Oregon 811 can help identify marked utility lines before digging. Check the current requirements for your project before work starts.',
-  },
-  {
-    question: 'Do I need a permit to dig an irrigation trench in Lane County?',
-    answer: 'Permit needs can depend on where the trench is located and what the project involves. Work near a road or right-of-way may have different requirements. D&D can discuss the project with you before digging begins.',
+    question: 'Do I need a permit to install a gravel driveway in Oregon?',
+    answer: 'You may need a permit if the work changes how your driveway connects to a public road. Work entirely on private property may have different requirements. Permit needs depend on the location and project, so confirm requirements before excavation or construction begins.',
   },
 ];
 
@@ -99,9 +95,9 @@ const serviceSchema = {
   description="Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates — 541-401-8726."
 >
   <Hero
-    eyebrow="Trenching Services in Eugene, Oregon"
-    headline="Trenching Services in Eugene, Oregon"
-    subheadline="Need a trench for a water line, utility, irrigation, drainage, or another project? We dig trenches for Eugene-area properties and work around the ground, slope, access, and existing site conditions. We'll look at what you need dug and explain the work before it starts."
+    eyebrow="Driveway Excavation & Grading in Eugene, Oregon"
+    headline="Driveway Excavation & Grading Services in Eugene, Oregon"
+    subheadline="On some Eugene-area driveways, rain can leave the ground wet and move gravel downhill. When David looks at the driveway, he checks the slope, low spots, water flow, and condition of the existing surface before deciding what work may be needed."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
@@ -119,16 +115,16 @@ const serviceSchema = {
           <div class="mb-4 flex items-center gap-2">
             <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
             <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              What Is Trenching?
+              What Is Wrong With Your Driveway?
             </p>
           </div>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Is Trenching?
+            What Is Wrong With Your Driveway?
           </h2>
           <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Trenching means digging a narrow path into the ground. The trench gives a pipe, conduit, drainage line, or other underground service a place to go.</p>
-            <p>The work starts with the ground and soil on your property. The trench route, size, and depth depend on what the trench is for and the conditions around it.</p>
-            <p>For larger digging needs, trenching may be part of a wider excavation project. Contact D&D Land Works to discuss what needs to be dug and how your property may affect the work.</p>
+            <p>A driveway can change over time. Potholes and ruts may form from traffic, while gravel can move when rainwater runs across the surface. Low spots may also hold water and leave the driveway muddy.</p>
+            <p>If water keeps running down the driveway, it can move gravel and wear away the surface. Washouts can become worse when water follows the same path again and again. The slope and shape of the driveway matter.</p>
+            <p>The right repair depends on what is happening on your property. Some driveways may need grading or leveling. Others may need excavation, gravel work, or changes to how water moves across the area.</p>
           </div>
           <a href="/contact" class="btn-pill mt-8 inline-flex">
             Talk About Your Project
@@ -169,12 +165,12 @@ const serviceSchema = {
       <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
       <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
       <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Trenching Projects</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Driveway Problems</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-          What Kind of Project Needs a Trench?
+          What Is Causing the Driveway Problem?
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          A trench can be used for many types of work. The purpose of the trench depends on what needs to go underground and where it needs to run on your property.
+          Rain, runoff, slope, soil, and repeated traffic can all affect a driveway. Understanding what is happening helps show whether grading, excavation, gravel work, or drainage may be needed.
         </p>
       </div>
     </div>
@@ -193,22 +189,22 @@ const serviceSchema = {
   <section class="bg-slate-50 border-y border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Trenching vs. Ditching</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Driveway Excavation</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          What Is the Difference Between a Trench and a Ditch?
+          When Does a Driveway Need Excavation?
         </h2>
         <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          A trench and a ditch are both dug into the ground, but they serve different purposes. A trench is often made for something that needs to run underground, while a ditch is often used to move water.
+          Excavation may be needed when the ground under a driveway is damaged, uneven, or needs to be prepared for a new surface. The amount of work depends on the property.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { title: 'Underground Lines', description: 'A trench can give a water line, conduit, or other underground service a place to run. Its route depends on the project and property.', href: '/contact', linkLabel: 'Get an Estimate' },
-          { title: 'Moving Water', description: 'A ditch can give rain and runoff a path to move away from an area. The slope and ground conditions help determine where the water can go.', href: '/contact', linkLabel: 'Get an Estimate' },
-          { title: 'Shape and Size', description: 'Trenches and ditches can vary in width, depth, and shape. The work depends on what the digging needs to accomplish.', href: '/contact', linkLabel: 'Get an Estimate' },
-          { title: 'Ground Conditions', description: 'Soil, wet ground, slope, and access can affect the digging. These conditions can also affect where the trench or ditch can go.', href: '/contact', linkLabel: 'Get an Estimate' },
-          { title: 'Utility Routes', description: 'A utility trench follows the planned route for an underground line. Existing utilities should be located before excavation begins.', href: '/contact', linkLabel: 'Get an Estimate' },
-          { title: 'Choosing the Right One', description: 'Not sure whether your project needs a trench or ditch? We can look at the property and explain what type of excavation may fit your project.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Deeply Damaged Areas', description: 'Some damaged areas may need more than surface grading. Excavation can help remove or reshape problem areas before the driveway is rebuilt.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Preparing a New Driveway', description: 'A new driveway may need ground preparation before the surface is added. Excavation can help prepare the area and establish the planned driveway shape.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'When Grading Alone May Not Be Enough', description: 'Grading can reshape the surface, but it may not fix deeper ground problems. If the issue is below the surface, more excavation may be needed.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Removing Problem Areas', description: 'Some parts of an existing driveway may be badly damaged or uneven. Those areas may need to be removed and reshaped before further driveway work.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Working With the Existing Ground', description: 'The existing soil and ground conditions can affect how much excavation is needed. We look at the property before deciding what work makes sense.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Access to the Driveway', description: 'Equipment access can affect how excavation work is done. A long driveway, narrow access, or nearby structures may change how the work is approached.', href: '/contact', linkLabel: 'Get an Estimate' },
         ].map((card) => (
           <div class="card flex flex-col gap-3">
             <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
@@ -243,20 +239,20 @@ const serviceSchema = {
     ></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-16 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Before We Dig</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Driveway Work</p>
         <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          What Happens Before the Trench Is Dug?
+          What Happens During Driveway Grading and Excavation?
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Before digging starts, we look at what the trench is for, where it needs to go, and what is around it. This helps avoid problems during the work.
+          The work starts by looking at the driveway, ground, water flow, and access. From there, the needed excavation and grading can be planned around the actual condition of your property.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Confirm the Trench Route', detail: 'First, decide where the trench needs to run. The route should match the project and leave room around existing structures and other site features.' },
-          { title: 'Locate Underground Utilities', detail: 'Before digging, existing underground utilities should be located. This helps identify lines that may be near the planned trench.' },
-          { title: 'Check the Ground', detail: 'Look at the soil, slope, wet areas, and ground conditions. These can affect how the excavation is done and where equipment can work.' },
-          { title: 'Check Access', detail: 'Make sure there is a workable path to the digging area. Driveways, buildings, fences, and tight spaces can affect equipment access.' },
+          { title: 'Looking at the Driveway', detail: 'We look at the surface, low spots, ruts, slope, gravel, and areas where water may be causing problems.' },
+          { title: 'Preparing the Ground', detail: 'Where needed, problem areas can be excavated or reshaped. The amount of work depends on the driveway and existing ground conditions.' },
+          { title: 'Grading and Reshaping', detail: 'Grading shapes the driveway surface and helps establish the needed slope. The goal is to create a better surface and improve how water moves.' },
+          { title: 'Working With Existing Gravel', detail: 'If the driveway already has gravel, the existing material may be reshaped or worked with where appropriate. Additional gravel may be needed depending on the condition.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
             <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
@@ -276,21 +272,20 @@ const serviceSchema = {
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
         <div>
-          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Trenching Services</p>
+          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Why D&D Land Works</p>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Kind of Trenching Can D&D Land Works Handle?
+            Why Hire D&D Land Works in Eugene?
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            On Eugene-area properties, trenching can mean different things. You may need a line across a yard, a ditch for water, or excavation for a rural property project. D&D Land Works can help with the digging and ground work needed for these projects.
+            When David looks at your driveway, the goal is to understand the problem before deciding what work is needed. D&D Land Works focuses on the ground, gravel, slope, and water affecting your driveway.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {[
-              { title: 'Utility Trenching', description: 'A water line, sewer line, or electrical conduit may need a trench. We handle the digging while the proper utility or trade contractor handles installation and connections.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
-              { title: 'Irrigation Trenching', description: 'Irrigation lines may need trenches across a yard or property. We can prepare the trench based on the planned route, ground conditions, and access.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-              { title: 'Drainage and Ditch Digging', description: 'Some water problems may need a trench or ditch to give runoff a path. The right approach depends on the slope, ground, and where the water needs to go.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-              { title: 'Residential Trenching', description: 'Home projects can need trenches for water, irrigation, drainage, or other underground work. We can look at the area and explain what the excavation may involve.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-              { title: 'Septic-Related Excavation', description: 'Some septic projects require digging for tanks, lines, or other parts of the system. D&D handles the excavation, while septic design and related system work remain separate.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
-              { title: 'Other Excavation Work', description: 'Some trenching jobs are part of a larger excavation project. If your project needs more than trench digging, we can look at the site and explain what excavation may be needed.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l5.653-4.655m5.833-4.329c.266.088.556.149.858.159a3.752 3.752 0 0 0 3.520-5.039 3 3 0 0 1-.857 1.078m-5.521 4-4.654-4.654" />' },
+              { title: 'Licensed and Bonded in Oregon', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the current license through the Oregon Construction Contractors Board.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />' },
+              { title: 'Drainage Is Part of the Look', description: 'Water can be a big reason a driveway develops ruts, washouts, or soft spots. We look at how water moves across the driveway so grading or repair addresses the actual problem.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+              { title: 'DEQ Septic Certification', description: 'D&D Land Works also carries Oregon DEQ certification for septic system installation and repair. When driveway work connects with septic or related excavation, that experience can be useful when planning the work.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />' },
+              { title: 'Free Estimates in Lane County', description: 'We provide free estimates throughout Lane County. We can look at your driveway, talk through what you are seeing, and explain what the work may involve.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6z" />' },
+              { title: 'Other Excavation Work', description: 'When a driveway project connects with drainage, septic, or other excavation work, the site may involve more than the driveway surface itself. D&D can explain which excavation work falls within its scope and what may need another contractor.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l5.653-4.655m5.833-4.329c.266.088.556.149.858.159a3.752 3.752 0 0 0 3.520-5.039 3 3 0 0 1-.857 1.078m-5.521 4-4.654-4.654" />' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
@@ -330,10 +325,11 @@ const serviceSchema = {
       <div class="mb-12 md:mb-14 text-center">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Local Properties</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Trenching Services in Eugene, Springfield, and Lane County
+          Driveway Work Around Eugene and Lane County
         </h2>
         <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
-          <p>D&D Land Works provides trench excavation for property owners in Eugene, Springfield, and nearby parts of Lane County. We can look at your property, access, and ground conditions to help determine what the trenching work may involve.</p>
+          <p>Eugene-area driveways deal with heavy rain, wet ground, and runoff through the wet season. On a sloped or rural driveway, water may follow the same path year after year — slowly moving gravel and creating ruts or low spots.</p>
+          <p>When we look at a driveway, we check the slope, low spots, and how water moves across the surface before deciding what work may be needed.</p>
         </div>
       </div>
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
@@ -411,8 +407,8 @@ const serviceSchema = {
 
   <CTABlock
     eyebrow="Talk With David"
-    headline="Need a Trench Dug on Your Eugene-Area Property?"
-    subheadline="If you need a trench for water, utilities, irrigation, drainage, or another project, D&D Land Works can look at the digging involved. Call 541-401-8726 to discuss your project and get a free estimate."
+    headline="Let's Talk About Your Driveway"
+    subheadline="Not sure if your driveway needs grading, excavation, or gravel work? Call 541-401-8726. We can discuss what you are seeing and help you understand what may be needed."
     ctaLabel="Request a Free Estimate"
     ctaHref="/contact"
     phone="541-401-8726"
