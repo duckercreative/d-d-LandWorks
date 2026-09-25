@@ -31,7 +31,7 @@
 | **H1** | Land Clearing in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/land-clearing/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #2, #5 lead-in, #6) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/brush-clearing/` (sideways, explicit "if it's just brush/overgrowth" framing), `/services/site-preparation/`, `/services/grading-leveling/`, `/resources/land-clearing-cost-per-acre-oregon/`, `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/brush-clearing-eugene-oregon/` (sideways, explicit "if it's just brush/overgrowth" framing), `/services/site-preparation/`, `/services/grading-leveling/`, `/resources/land-clearing-cost-per-acre-oregon/`, `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/`, `/about/`, `/contact/` |
 | **Primary keyword** | land clearing eugene or / land clearing eugene oregon |
 | **Co-primary keyword** | land clearing lane county or |
 | **Word count** | ~2,448 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — within the brief's 2,000–2,500 target |
@@ -46,7 +46,7 @@
 
 # Land Clearing in Eugene, Springfield & Lane County, Oregon
 
-Land clearing is the full-parcel version of opening up a property: felling standing trees, grubbing stumps and root balls, and cutting brush down to bare, usable ground. If your property doesn't have standing timber to fell or stumps to grub (just overgrowth, scrub, and volunteer saplings), that's a lighter job with a lower cost tier, and it's called [brush clearing](/services/brush-clearing/) instead. See that page if it sounds closer to what you're actually dealing with. D&D Land Works provides land clearing throughout Eugene, Springfield, and the rest of Lane County, Oregon, for wooded lots being opened up ahead of a new build and for overgrown or neglected acreage being reclaimed for pasture or general use. Scope gets set on a walk-through, not a guess from a satellite photo.
+Land clearing is the full-parcel version of opening up a property: felling standing trees, grubbing stumps and root balls, and cutting brush down to bare, usable ground. If your property doesn't have standing timber to fell or stumps to grub (just overgrowth, scrub, and volunteer saplings), that's a lighter job with a lower cost tier, and it's called [brush clearing](/brush-clearing-eugene-oregon/) instead. See that page if it sounds closer to what you're actually dealing with. D&D Land Works provides land clearing throughout Eugene, Springfield, and the rest of Lane County, Oregon, for wooded lots being opened up ahead of a new build and for overgrown or neglected acreage being reclaimed for pasture or general use. Scope gets set on a walk-through, not a guess from a satellite photo.
 
 <!-- AI CITATION BLOCK — verbatim from land-clearing-brief.md §5 / 00-research-pack.md §12, placed in first 30% of body per brief §5 -->
 > Land clearing removes trees, stumps, brush, and debris from a property to open it up for construction, pasture, or general use. It's a heavier-scope, more expensive service than brush clearing, which targets only smaller vegetation — blackberry, scotch broom, saplings — without felling standing timber or grubbing stumps. D&D Land Works provides land clearing for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon, including wooded lots being prepared for a new build, and overgrown or neglected acreage being reclaimed for pasture or general use. Work typically includes felling and removing trees within the clearing footprint, grubbing stumps and root balls, cutting and hauling brush, chipping or burning debris where permitted, and rough grading the cleared area. Trees and features a customer wants kept can be flagged and preserved during the walk-through. D&D Land Works is licensed and bonded under Oregon Construction Contractors Board license CCB #261742, serving Eugene, Springfield, and the rest of Lane County. Free estimates are available.
@@ -66,7 +66,7 @@ Land clearing covers the full range, from a couple acres of blackberry and scrub
 
 ## What's the Difference Between Land Clearing and Brush Clearing?
 
-Land clearing is the full-parcel service: felling standing trees, grubbing stumps and root balls, and clearing to bare, buildable ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings: no standing timber to fell, no stumps to grub, and a lower cost tier to match. If it's just brush, overgrowth, or scrub on your property, with no timber and no stumps involved, see [brush clearing](/services/brush-clearing/) instead of this page.
+Land clearing is the full-parcel service: felling standing trees, grubbing stumps and root balls, and clearing to bare, buildable ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings: no standing timber to fell, no stumps to grub, and a lower cost tier to match. If it's just brush, overgrowth, or scrub on your property, with no timber and no stumps involved, see [brush clearing](/brush-clearing-eugene-oregon/) instead of this page.
 
 ## What Happens to the Trees, Stumps, and Debris?
 
@@ -124,14 +124,14 @@ Homeowners call for a couple acres to open up a building envelope or a garden. B
 
 ## Often Paired With
 
-Once a lot is cleared, most jobs move straight into [site preparation](/services/site-preparation/) or [grading and leveling](/services/grading-leveling/) to get the ground ready for what comes next. And if it turns out your project doesn't actually need full land clearing (no standing timber to fell, no stumps to grub, just overgrowth and scrub), see [brush clearing](/services/brush-clearing/) instead; it's a lighter, less expensive scope built for exactly that case.
+Once a lot is cleared, most jobs move straight into [site preparation](/services/site-preparation/) or [grading and leveling](/services/grading-leveling/) to get the ground ready for what comes next. And if it turns out your project doesn't actually need full land clearing (no standing timber to fell, no stumps to grub, just overgrowth and scrub), see [brush clearing](/brush-clearing-eugene-oregon/) instead; it's a lighter, less expensive scope built for exactly that case.
 
 <!-- IMAGE GAP: Debris pile staged for chipping, hauling, or burning. Alt: "Land clearing debris staged for disposal, Lane County, Oregon." Needs a real jobsite photo; ties directly to the debris-disposal section above. -->
 
 ## Frequently Asked Questions
 
 **What's the difference between land clearing and brush clearing?**
-Land clearing is the full-parcel service — felling standing trees, grubbing stumps, and clearing to bare ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings, with no standing timber to fell and no stumps to grub. If your project is closer to that lighter case, see [brush clearing](/services/brush-clearing/) instead.
+Land clearing is the full-parcel service — felling standing trees, grubbing stumps, and clearing to bare ground. Brush clearing is the lighter service for overgrowth, scrub, and saplings, with no standing timber to fell and no stumps to grub. If your project is closer to that lighter case, see [brush clearing](/brush-clearing-eugene-oregon/) instead.
 
 **Does land clearing include stump removal?**
 Yes — grubbing stumps and root balls within the footprint of a clearing job is part of the service. That's different from hiring D&D for a standalone stump-grinding job on a single stump, independent of a broader clearing project. That's not a service D&D offers on its own.

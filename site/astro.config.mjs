@@ -7,6 +7,7 @@ export default defineConfig({
   site: 'https://ddlandworks.com',
   redirects: {
     '/services/utility-excavation': '/utility-trenching-eugene-oregon',
+    '/services/brush-clearing': '/brush-clearing-eugene-oregon',
   },
   vite: {
     plugins: [tailwindcss()],

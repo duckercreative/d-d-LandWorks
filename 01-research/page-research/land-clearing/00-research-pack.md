@@ -11,7 +11,7 @@ This file is the master synthesis. The future content brief should read only thi
 
 ## 0. SCOPE BOUNDARY FINDING — Land Clearing vs. Brush Clearing (read this first)
 
-**The question:** the topical map (`../../topical-map-2026-09-03.md` §6.4, §16) planned a single page — "Land Clearing (incl. brush clearing)" at `/land-clearing/` — with brush clearing folded in as a section that would "graduate to standalone later when it earns demand." The live Astro codebase has already built **two separate, standalone pages**: `/services/land-clearing.astro` (94 lines) and `/services/brush-clearing.astro` (82 lines), each with its own hero, service list, equipment section, and cross-links to the other.
+**The question:** the topical map (`../../topical-map-2026-09-03.md` §6.4, §16) planned a single page — "Land Clearing (incl. brush clearing)" at `/land-clearing/` — with brush clearing folded in as a section that would "graduate to standalone later when it earns demand." The live Astro codebase has already built **two separate, standalone pages**: `/services/land-clearing.astro` (94 lines) and `/brush-clearing-eugene-oregon.astro` (82 lines), each with its own hero, service list, equipment section, and cross-links to the other.
 
 **Recommendation: KEEP SEPARATE.** The live site's split is correct and should be ratified going forward, superseding the topical map's original conservative "section at launch" plan. This is not a close call — four independent lines of evidence converge on the same conclusion:
 
