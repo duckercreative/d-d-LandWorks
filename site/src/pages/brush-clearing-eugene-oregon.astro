@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const propertyFactors = [
+  { title: 'Overgrown Brush', description: 'Brush and shrubs can take over a property over time. Heavy growth may make areas difficult to access or use.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Blackberries and Invasive Plants', description: 'Blackberry vines and other invasive plants spread quickly and can be difficult to remove. They can also hide ground conditions underneath.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+  { title: 'Wooded and Overgrown Lots', description: 'Lots with heavy brush, saplings, and undergrowth may need clearing before grading, building, or other site work can begin.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Fence Lines and Property Edges', description: 'Brush growing along fence lines or property edges can be difficult to manage. Clearing these areas can improve access and visibility.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Slope and Hillside Growth', description: 'Brush on slopes can hide erosion or unstable ground. Clearing the vegetation can help assess the condition of the slope below.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Pre-Construction Clearing', description: 'Before grading, excavation, or construction can begin, overgrown areas may need to be cleared. The extent of clearing depends on the property and project.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
+];
+
+const faqs = [
+  {
+    question: 'How much does brush clearing cost in Eugene or Lane County, Oregon?',
+    answer: 'Brush clearing cost depends on the size of the area, density of growth, access, and what the property requires. D&D Land Works can look at the property and provide a free estimate based on the actual work needed.',
+  },
+  {
+    question: 'Can D&D Land Works clear blackberry vines?',
+    answer: 'Blackberry vines are common on Oregon properties and can be cleared as part of a brush clearing project. The extent of the work depends on how dense the growth is and what the cleared area needs to be used for.',
+  },
+  {
+    question: 'Do I need a permit to clear brush on my property in Lane County?',
+    answer: 'Permit requirements can depend on the location, amount of clearing, and how the land will be used after. Properties near waterways or protected areas may have additional requirements. Check with Lane County before beginning work.',
+  },
+  {
+    question: 'What happens to the brush after it is cleared?',
+    answer: 'Cleared brush can be chipped, piled, or hauled off depending on the project and property. We can discuss disposal options when we look at the site.',
+  },
+  {
+    question: 'Can brush clearing be done before grading or excavation?',
+    answer: 'Yes — brush clearing is often one of the first steps before site grading or excavation can begin. Removing overgrowth gives equipment room to work and lets us assess the ground conditions underneath.',
+  },
+  {
+    question: 'Does D&D Land Works clear brush on sloped properties?',
+    answer: 'We can look at sloped and hillside properties and discuss what clearing work may be needed. Slope conditions, access, and ground stability can all affect the work.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Brush Clearing', 'Land Clearing', 'Site Preparation', 'Grading', 'Excavation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/brush-clearing-eugene-oregon/#service',
+      name: 'Brush Clearing Services in Eugene, Oregon',
+      serviceType: 'Brush Clearing',
+      description: 'Brush clearing in Eugene, Oregon for overgrown areas, unwanted brush, and property cleanup. D&D Land Works provides local excavation and land-clearing services.',
+      url: 'https://www.ddlandworks.com/brush-clearing-eugene-oregon/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Brush Clearing', item: 'https://www.ddlandworks.com/brush-clearing-eugene-oregon/' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Brush Clearing in Eugene, Oregon | Property & Land Clearing"
+  description="Brush clearing in Eugene, Oregon for overgrown areas, unwanted brush, and property cleanup. D&D Land Works provides local excavation and land-clearing services."
+>
+  <Hero
+    eyebrow="Brush Clearing in Eugene, Oregon"
+    headline="Brush Clearing Services in Eugene, Oregon"
+    subheadline="Overgrown brush, blackberries, and dense undergrowth can make a property difficult to use or develop. We look at the site, what needs to be cleared, and the ground conditions before the work begins."
+    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+  />
+
+  <!-- What Is Brush Clearing -->
+  <section class="relative bg-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+              What Is Brush Clearing?
+            </p>
+          </div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What Is Brush Clearing?
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>Brush clearing means removing overgrown vegetation from a property. This can include shrubs, blackberry vines, saplings, tall grass, and other undergrowth that has taken over an area.</p>
+            <p>In the Eugene area, wet winters and mild summers mean brush can grow quickly. A property that was open a few years ago may now be heavily overgrown and difficult to access.</p>
+            <p>The right approach depends on how dense the growth is, what the land needs to be used for afterward, and what the ground looks like underneath. We look at the site before deciding what the work involves.</p>
+          </div>
+          <a href="/contact" class="btn-pill mt-8 inline-flex">
+            Talk About Your Property
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative pb-6">
+          <img
+            src="/before-lot.webp"
+            alt="Overgrown property before brush clearing in Lane County, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Kind of Growth -->
+  <section class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Property Overgrowth</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          What Kind of Growth Needs Clearing?
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          Brush clearing covers many types of overgrowth. The right equipment and approach depend on what is growing, how dense it is, and what the property needs after clearing.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {propertyFactors.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="btn btn-cta inline-flex">Talk Through Your Project</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- When Does a Property Need Clearing -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Land Clearing</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          When Does a Property Need Brush Clearing?
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          Brush clearing may be needed before construction, grading, or other site work — or simply to reclaim land that has become too overgrown to use. The reason depends on the property and project.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: 'Before Grading or Excavation', description: 'Overgrown areas often need to be cleared before grading or excavation equipment can access the site. Clearing first makes the rest of the work easier.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Before Construction', description: 'New construction may require clearing brush and undergrowth from the building area and surrounding site before work can begin.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Reclaiming Unused Land', description: 'Land that has not been maintained can become overgrown over time. Clearing opens up the area and makes it usable again.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Improving Property Access', description: 'Heavy brush along driveways, paths, or property edges can limit access. Clearing can open up routes and make the property easier to move around.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'Assessing Ground Conditions', description: 'Dense brush can hide what the ground underneath looks like. Clearing the vegetation makes it possible to see and assess the soil and slope.', href: '/contact', linkLabel: 'Get an Estimate' },
+          { title: 'General Property Cleanup', description: 'Some properties simply need a cleanup — removing years of overgrowth to get the land back to a manageable state.', href: '/contact', linkLabel: 'Get an Estimate' },
+        ].map((card) => (
+          <div class="card flex flex-col gap-3">
+            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
+            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+              {card.linkLabel}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Talk About Your Property
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens During Clearing -->
+  <section class="relative bg-ink text-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-16 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">The Clearing Process</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          What Happens During Brush Clearing?
+        </h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          The work starts with a look at the property — what is growing, how dense it is, and what the cleared area needs to be used for. From there, the clearing can be planned around the actual site.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+        {[
+          { title: 'Looking at the Site', detail: 'We look at the brush type, density, slope, access, and ground conditions. This helps determine what equipment and approach the clearing will need.' },
+          { title: 'Clearing the Vegetation', detail: 'Brush, shrubs, vines, and undergrowth are removed from the area. The method depends on the size of the growth and how thoroughly the area needs to be cleared.' },
+          { title: 'Managing What Is Removed', detail: 'Cleared brush can be chipped, piled, or hauled depending on the project. We can discuss what makes sense for your property when we look at the site.' },
+          { title: 'Preparing for the Next Step', detail: 'After clearing, the area may be ready for grading, excavation, construction, or simply left as open ground. The next step depends on the project.' },
+        ].map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+        <a href="tel:5414018726" class="btn btn-outline border-white/30 text-white hover:bg-white/10">Call 541-401-8726</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What D&D Can Help With -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Brush Clearing Services</p>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What Can D&D Land Works Help With?
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            D&D Land Works can help with brush clearing as a standalone project or as part of a larger site preparation job. We look at the property first and explain what the clearing work may involve.
+          </p>
+          <ul class="mt-10 flex flex-col gap-7">
+            {[
+              { title: 'Brush and Shrub Removal', description: 'We can clear overgrown brush, shrubs, and dense undergrowth from yards, lots, and rural properties throughout Lane County.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+              { title: 'Blackberry and Invasive Plant Clearing', description: 'Blackberry vines and invasive plants can spread across a property quickly. We can clear these areas as part of a brush removal project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+              { title: 'Pre-Construction Site Clearing', description: 'Before grading or excavation can begin, overgrown areas may need to be cleared. We can handle the clearing to prepare the site for the next step.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
+              { title: 'Licensed and Bonded in Oregon', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />' },
+              { title: 'Free Estimates in Lane County', description: 'We provide free estimates throughout Lane County. We can look at the overgrown area, talk through what you need cleared, and explain what the work may involve.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6z" />' },
+            ].map((item) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+                </span>
+                <div>
+                  <p class="font-display font-bold text-ink">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="btn-pill mt-10 inline-flex">
+            Talk About Your Property
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/service-land-clearing.webp"
+            alt="Brush clearing work on a Lane County, Oregon property"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Local Properties</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
+          Brush Clearing in Eugene, Springfield, and Lane County
+        </h2>
+        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
+          <p>Eugene and Lane County properties can see heavy brush growth through the wet season. Blackberries, invasive shrubs, and dense undergrowth are common across both rural and residential properties.</p>
+          <p>We work with property owners throughout Eugene, Springfield, and nearby Lane County communities. We can look at your property and discuss what the brush clearing may involve.</p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
+          <a href="/locations/eugene" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
+          </a>
+          {[
+            { label: 'Springfield', href: '/locations/springfield' },
+            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+            { label: 'Junction City', href: '/locations/junction-city' },
+            { label: 'Creswell', href: '/locations/creswell' },
+            { label: 'Veneta', href: '/locations/veneta' },
+            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Coburg', href: '/locations/coburg' },
+            { label: 'Lowell', href: '/locations/lowell' },
+          ].map((area) => (
+            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
+            </a>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
+          <iframe
+            title="D&D Land Works service area map, Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ heading="Frequently Asked Questions" items={faqs} />
+
+  <!-- Related Services -->
+  <section class="bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
+        Related Services
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Land Clearing', description: 'Full land clearing for trees, stumps, brush, and debris before site grading or construction.', href: '/land-clearing-services-eugene-oregon' },
+          { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope — often follows clearing work.', href: '/land-grading-services-eugene-oregon' },
+          { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before a build starts.', href: '/services/site-preparation' },
+          { title: 'Slope Stabilization', description: 'Addressing erosion, unstable slopes, and runoff on hillside and sloped properties.', href: '/slope-stabilization-eugene-oregon' },
+        ].map((item) => (
+          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
+            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
+            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+              Learn More &#8594;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    eyebrow="Talk With David"
+    headline="Need Brush Cleared on Your Eugene-Area Property?"
+    subheadline="If your property has overgrown brush, blackberries, or dense undergrowth, we can look at the site and discuss what the clearing work may involve. Call 541-401-8726 for a free estimate."
+    ctaLabel="Request a Free Estimate"
+    ctaHref="/contact"
+    phone="541-401-8726"
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
