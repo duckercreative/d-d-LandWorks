@@ -1,130 +1,111 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import AboutSection from '../components/AboutSection.astro';
-import PhotoContentBlock from '../components/PhotoContentBlock.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
-import Gallery from '../components/Gallery.astro';
-import Testimonials from '../components/Testimonials.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
-const processSteps = [
-  { step: '1', title: 'Utility locate (call 811)', detail: 'Required before any digging. Oregon law requires calling 811 and waiting for all underground utilities to be marked before equipment breaks ground. Allow several business days.' },
-  { step: '2', title: 'Site walk and survey', detail: 'David walks the lot in person, establishes existing grades, drainage patterns, access constraints, and property lines before anything moves.' },
-  { step: '3', title: 'Clear the build envelope', detail: 'Brush, volunteer trees, blackberry, and debris come out of the build zone. On Eugene\'s South Hills and wooded infill lots, this is often the most time-intensive phase.' },
-  { step: '4', title: 'Install erosion controls', detail: 'Silt fence, inlet protection, and other erosion controls go in before grading starts. Required by Lane County\'s EPSC permit and Oregon DEQ rules.' },
-  { step: '5', title: 'Strip and stockpile topsoil', detail: 'Topsoil is separated from subgrade material and stockpiled on-site, available for landscaping later.' },
-  { step: '6', title: 'Cut and fill to grade', detail: 'Material from high spots gets cut and moved into low spots to bring the pad to the design elevation.' },
-  { step: '7', title: 'Compact the subgrade', detail: 'The exposed subgrade gets proof rolled and compacted to the bearing density a foundation, slab, or driveway actually needs. Malpass clay and saturated subgrades sometimes need undercutting and base rock before this step holds.' },
-  { step: '8', title: 'Stake corners and elevations', detail: 'Reference stakes go in so the foundation crew, surveyor, or county inspector can verify the pad matches the approved plan.' },
-  { step: '9', title: 'Rough-grade for drainage', detail: 'The pad gets a final pitch so water moves away from the structure. Eugene\'s heavy winter rainfall and high water tables in low-lying areas make this step load-bearing, not cosmetic.' },
+const sitePrepItems = [
+  { title: 'Land Clearing', description: 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
+  { title: 'Topsoil Stripping', description: 'Topsoil stripping removes the surface soil layer before grading begins. Suitable topsoil can be stockpiled for later use while the underlying ground is prepared for construction.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
+  { title: 'Cut and Fill', description: 'Cut and fill moves soil to change existing ground elevations. It helps shape building areas to planned grades when the property requires significant changes in elevation.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Grading', description: 'Grading adjusts existing ground elevations to meet planned site requirements. It shapes the construction area and establishes suitable grades for the building and surrounding ground.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Compaction', description: 'Compaction firms the prepared subgrade before construction continues. The required work depends on existing soil conditions and the surface needed for the next construction stage.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />' },
 ];
 
-const permits = [
+const problemCards = [
   {
-    name: 'Lane County Grading and Fill Permit',
-    trigger: 'Generally required when a project moves more than roughly 50 cubic yards of earth or creates a cut or fill slope steeper than approximately 2:1. Confirm the exact threshold with Lane County LMD (541-682-4651) or apply through the ePASS portal before assuming either way.',
-    admin: 'Lane County Land Management Division — 3050 N. Delta Hwy, Eugene, OR 97408',
+    title: 'Raw or Undeveloped Land',
+    description: 'Raw or undeveloped lots may require clearing, debris removal, topsoil work, and grading before construction can begin. Site preparation creates a workable area for the next stage of the project.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
+    href: '/site-preparation-contractor-eugene-oregon',
+    linkLabel: 'Site Preparation',
   },
   {
-    name: 'Erosion Prevention and Sediment Control (EPSC) Permit',
-    trigger: 'Lane County typically requires an EPSC permit for residential grading and soil disturbance, with Type I generally covering single-family scopes and Type II covering larger or more sensitive sites. Wet-season work (October through May) triggers additional erosion-control obligations.',
-    admin: 'Lane County Land Management Division',
+    title: 'Poor Grading',
+    description: 'Poor grading can leave uneven ground or unsuitable elevations across a construction area. Site preparation adjusts the existing grades to create ground conditions that match the planned construction requirements.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
+    href: '/land-grading-services-eugene-oregon',
+    linkLabel: 'Grading & Leveling',
   },
   {
-    name: 'Oregon DEQ 1200-C Construction Stormwater Permit',
-    trigger: 'Required when a project disturbs 1 or more acres, or is part of a common plan of development totaling 1+ acres even if your individual lot is smaller. Application fee: $1,515 plus a $1,558 first-year annual fee. Must be submitted at least 30 days before breaking ground. Projects over 5 acres require a 14-day public notice period.',
-    admin: 'Oregon DEQ — apply at oregon.gov/deq',
+    title: 'Drainage and Surface Water',
+    description: 'Drainage problems can leave water collecting in areas of the property. Site preparation can address grading and ground conditions that affect how surface water moves across the site.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
+    href: '/drainage-installation-eugene-oregon',
+    linkLabel: 'Drainage Excavation',
+  },
+  {
+    title: 'Difficult Site Access',
+    description: 'Limited or damaged access can make it harder to move equipment and materials onto the property. Site preparation may include work that improves access for the planned construction activities.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
+    href: '/services/driveway-repair',
+    linkLabel: 'Driveway Repair',
   },
 ];
 
-const costRows = [
-  { scope: 'Flat, cleared lot', range: '$10,000–$20,000', affects: 'Easiest scenario: minimal clearing, good access, well-drained soil' },
-  { scope: 'Typical residential lot', range: '$15,000–$35,000', affects: 'Standard scope with some clearing, cut-and-fill grading, and compaction' },
-  { scope: 'Wooded or sloped lot', range: '$40,000–$70,000+', affects: 'South Hills infill lots, steep approaches, or heavy blackberry and tree cover' },
-  { scope: 'Land clearing (Oregon)', range: '$1,000–$40,000+ / acre', affects: 'Light brush on the low end; old growth timber on the high end' },
-  { scope: 'Malpass clay soil surcharge', range: '+25–50% above baseline', affects: 'West Eugene clay subgrades are slower to work and may need undercutting and base rock' },
+const howItWorksSteps = [
+  { step: '1', title: 'Project Assessment', detail: 'The property and planned construction are reviewed before work begins. Existing grades, soil, access, drainage, and other site conditions help determine the preparation work required.' },
+  { step: '2', title: 'Site Clearing', detail: 'The work area is cleared of vegetation, brush, debris, and other obstacles that could interfere with site preparation. This creates a workable area for the planned construction.' },
+  { step: '3', title: 'Site Grading', detail: 'The prepared ground is shaped to meet planned elevations and site requirements. Cut, fill, grading, and leveling may be used where changes to existing ground levels are needed.' },
+  { step: '4', title: 'Ground Compaction', detail: "Prepared ground is compacted after earthwork to create a suitable subgrade for the next construction stage. The required compaction work depends on the site's existing ground conditions." },
 ];
 
-const projectTypes = [
-  { title: 'New Home Build', detail: 'The most common call: a raw Eugene or Springfield lot that needs to go from vegetation to a compacted, builder-ready pad.' },
-  { title: 'ADU (Accessory Dwelling Unit)', detail: 'ADU construction in Eugene requires its own site-prep scope and its own permit questions, separate from the primary residence, worth sorting out before grading starts.' },
-  { title: 'Shop or Barn Pad', detail: 'Rural lots in the Veneta, Junction City, and Creswell fringe often need a level, compacted gravel pad before a metal building crew shows up.' },
-  { title: 'Subdivision or Multi-Lot Development', detail: 'Multi-lot development triggers the DEQ 1200-C "common plan of development" rule even when individual lots are under an acre.' },
-  { title: 'Commercial Pad', detail: 'Commercial grading volumes are larger and more likely to cross both the Lane County permit threshold and the Oregon DEQ 1-acre mark.' },
-  { title: 'Lot Purchase — Pre-Construction Prep', detail: 'Some buyers close on a lot and immediately schedule a site walk before a builder is selected, to understand what the clearing and grading scope will cost before finalizing a build budget.' },
+const whySitePrepItems = [
+  {
+    title: 'Licensed and Bonded',
+    description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. This provides a clear contractor credential for residential and commercial site preparation work.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
+    link: { label: 'Verify CCB License', href: 'https://search.ccb.state.or.us/search/' },
+  },
+  {
+    title: 'Free Estimates',
+    description: 'Free estimates allow the property, access, existing conditions, and planned work to be discussed before the site preparation scope is established.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
+  },
+  {
+    title: 'Residential Projects',
+    description: 'D&D Land Works provides site preparation for residential construction, including properties in Eugene, Springfield, and surrounding Lane County communities.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
+  },
+  {
+    title: 'Commercial Projects',
+    description: "Commercial site preparation is scoped around the property's conditions, access, planned construction, and earthwork requirements for the project.",
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18" />',
+  },
+  {
+    title: 'DEQ Certified for Septic Work',
+    description: 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+  },
 ];
 
 const faqs = [
   {
-    question: 'What does a site preparation contractor actually do in Eugene?',
-    answer: 'Site prep is the work that turns a raw or partially-cleared lot into a pad a foundation crew can actually build on. The 9-step sequence for Lane County lots: (1) call 811 for utility locates, (2) site walk and survey, (3) clear brush and trees, (4) install erosion controls, (5) strip and stockpile topsoil, (6) cut and fill to grade, (7) compact and proof-roll the subgrade, (8) stake corners and elevations, (9) rough-grade for drainage. In Eugene, the clearing phase and the drainage grade both get more attention than on a lot in better-drained soil, because Malpass clay and Willamette Valley silt hold water in ways sandy loam does not.',
+    question: 'Do I Need Site Preparation Before Building?',
+    answer: 'Most construction sites need some level of site preparation before building. The required work depends on existing ground conditions, vegetation, elevations, access, drainage, and the planned construction. A cleared, level property may require less preparation than a raw lot.',
   },
   {
-    question: 'How much does site preparation cost in Eugene, Oregon?',
-    answer: 'Cost ranges in the Eugene area: flat, already-cleared lots typically run $10,000–$20,000; a standard residential build lot runs $15,000–$35,000; wooded or sloped South Hills lots frequently run $40,000–$70,000 or more. Land clearing alone in Oregon ranges from $1,000–$5,000 per acre for light brush up to $10,000–$40,000+ per acre for heavily forested ground. Malpass clay in west Eugene can add 25–50% to grading cost compared to a well-drained site. A free on-site estimate is the only accurate number for your specific lot.',
+    question: 'What Does Site Preparation Include?',
+    answer: "Site preparation can include land clearing, topsoil stripping, cut and fill, grading, leveling, and subgrade compaction. The exact scope depends on the property's existing conditions and construction requirements, including planned elevations, access, drainage, and the type of project.",
   },
   {
-    question: 'Do I need a permit for site prep in Eugene or Lane County?',
-    answer: 'Almost certainly yes, depending on scope. Lane County\'s Grading and Fill Permit is generally required when a project moves roughly 50+ cubic yards of earth or creates cut/fill slopes steeper than about 2:1. An Erosion Prevention and Sediment Control (EPSC) permit is typically required for residential grading work. Oregon DEQ\'s 1200-C stormwater permit is required when a project disturbs 1 acre or more — the application fee is $1,515 plus a $1,558 first-year annual fee, and it must be submitted at least 30 days before breaking ground. Projects within Eugene city limits may also need City of Eugene Building & Permit Services approval separately from Lane County. Contact Lane County LMD at 541-682-4651 or apply through the ePASS portal to confirm what applies to your project.',
+    question: 'Does Site Preparation Require a Permit?',
+    answer: 'Permit requirements depend on the project, location, and type of site work involved. Lane County requirements may apply to grading, fill, erosion prevention, or access work, while larger disturbances may also involve Oregon DEQ stormwater requirements.',
   },
   {
-    question: 'What is Malpass clay and why does it matter for Eugene site prep?',
-    answer: 'Malpass clay is a hydric soil dominant in west Eugene with high shrink-swell properties and very slow water movement — it swells when wet and contracts when dry. Under saturated load (standard in Eugene\'s wet season), it "pumps and ruts" under equipment weight, making compaction harder and sometimes requiring undercutting soft spots and replacing them with structural fill or base rock before the pad will hold. If your Eugene lot is in the River Road, Santa Clara, or west Eugene area, Malpass clay is a realistic site condition to budget for.',
+    question: 'How Do Soil Conditions Affect Site Preparation Cost?',
+    answer: 'Soil conditions can change the amount and type of site preparation required. Rock, heavy clay, poor ground, or buried materials may require additional excavation, equipment, hauling, or preparation. These conditions can increase project complexity and affect the overall cost.',
   },
   {
-    question: 'When is the best time to do site prep in the Eugene area?',
-    answer: 'May through October is the optimal window. Lane County\'s wet season runs roughly October through May, during which Willamette Valley clay saturates quickly and becomes slow and expensive to work. Wet-season grading is possible but requires tighter erosion controls, moves more slowly, and carries a higher risk of soft-ground delays. Scheduling for the dry season typically shortens the job and lowers cost. If your timeline puts site prep in winter, factor in extra schedule and erosion-control budget.',
+    question: 'Does Rain Affect Site Preparation Work?',
+    answer: 'Rain can affect site preparation when ground becomes wet or difficult to work. Wet soil may influence grading, compaction, access, and drainage work. Project timing can therefore depend on weather, existing soil conditions, site access, and the amount of earthwork required.',
   },
   {
-    question: 'Do you handle site prep for ADUs in Eugene?',
-    answer: 'Yes. ADU (accessory dwelling unit) construction in Eugene has its own site prep scope and its own permit track — the ADU grading plan is separate from the primary residence, and the Lane County or City of Eugene permit thresholds apply to the ADU construction footprint independently. If you\'re building a backyard ADU or a detached garage conversion in Eugene, the site prep question is worth asking early, before design is finalized, since the pad location, driveway access, and any septic implications all affect the grading scope.',
+    question: 'What Happens After Site Preparation?',
+    answer: 'After site preparation, construction can move into related work such as foundation excavation, utility excavation, trenching, drainage work, or other site-specific construction activities. The next stage depends on the project plans and what the prepared property requires.',
   },
-  {
-    question: 'Should I get site prep done before or after hiring a builder?',
-    answer: 'Site work typically starts once a builder is hired and the design and permitting process is already underway — the grading plan, foundation type, septic layout, and driveway alignment all shape what site prep needs to accomplish. That said, a lot owner in Eugene can schedule a free site walk from a contractor before selecting a builder to understand the rough clearing and grading scope for budgeting purposes.',
-  },
-  {
-    question: 'Does the septic system placement affect when site prep can start?',
-    answer: 'Yes, and this is one of the most common sequencing mistakes on rural Eugene-area lots. Lane County\'s On-Site Wastewater Program requires that a proposed drainfield area be evaluated and approved before any grading disturbs it. Cutting, filling, compacting, or paving over an approved drainfield area can void the county\'s septic approval outright. If your lot needs a septic system, confirm the drainfield is staked and approved before site-prep grading moves near it.',
-  },
-  {
-    question: 'What areas of Eugene does D&D Land Works serve for site prep?',
-    answer: 'D&D Land Works serves Eugene and the surrounding Lane County area, including South Hills, Fox Hollow, River Road, Santa Clara, Airport District, and Eugene\'s eastern infill corridor, as well as Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell. Call 541-401-8726 to confirm coverage for a specific address.',
-  },
-];
-
-const related = [
-  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/land-clearing-services-eugene-oregon' },
-  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/land-grading-services-eugene-oregon' },
-  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/foundation-excavation-eugene-oregon' },
-  { title: 'Drainage Excavation', description: 'Excavation and grading to correct standing water and poor drainage.', href: '/drainage-installation-eugene-oregon' },
-];
-
-const anchorAreas = [
-  { label: 'Eugene', href: '/locations/eugene' },
-  { label: 'Springfield', href: '/locations/springfield' },
-];
-const otherAreas = [
-  { label: 'Cottage Grove', href: '/locations/cottage-grove' },
-  { label: 'Junction City', href: '/locations/junction-city' },
-  { label: 'Creswell', href: '/locations/creswell' },
-  { label: 'Veneta', href: '/locations/veneta' },
-  { label: 'Florence', href: '/locations/florence' },
-  { label: 'Oakridge', href: '/locations/oakridge' },
-  { label: 'Coburg', href: '/locations/coburg' },
-  { label: 'Lowell', href: '/locations/lowell' },
-];
-
-const demoReviews = [
-  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
-  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
-  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
-  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
-  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
-  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
 ];
 
 const pageSchema = {
@@ -140,8 +121,8 @@ const pageSchema = {
       description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
       priceRange: '$$',
       areaServed: [
-        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
-        { '@type': 'City', name: 'Springfield' },
+        { '@type': 'City', name: 'Eugene' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
       knowsAbout: ['Site Preparation', 'Land Clearing', 'Grading', 'Excavation', 'Septic Installation', 'Drainage Excavation'],
@@ -156,7 +137,7 @@ const pageSchema = {
       '@id': 'https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/#service',
       name: 'Site Preparation Contractor in Eugene, Oregon',
       serviceType: 'Site Preparation',
-      description: 'Land clearing, grading, compacting, and construction-ready lot preparation for residential and commercial projects in Eugene and Lane County, Oregon. Includes cut-and-fill grading, topsoil stripping, subgrade compaction, staking, and rough drainage grading.',
+      description: 'Land clearing, grading, compacting, and construction-ready lot preparation for residential and commercial projects in Eugene and Lane County, Oregon.',
       url: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/',
       provider: { '@id': 'https://www.ddlandworks.com/#business' },
       areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
@@ -173,8 +154,8 @@ const pageSchema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Site Preparation', item: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/' },
-        { '@type': 'ListItem', position: 3, name: 'Site Preparation Contractor Eugene, OR', item: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Site Preparation', item: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/' },
       ],
     },
   ],
@@ -182,53 +163,164 @@ const pageSchema = {
 ---
 
 <BaseLayout
-  title="Site Preparation Contractor in Eugene, Oregon | Land Prep for Construction"
+  title="Site Preparation Contractor in Eugene, Oregon | D&D Land Works"
   description="Site preparation contractor in Eugene, Oregon. Land clearing, grading, compacting, and construction-ready lot prep. Licensed and bonded. CCB #261742. Get a free estimate from D&D Land Works."
 >
   <Hero
     eyebrow="Eugene, Oregon"
     headline="Site Preparation Contractor in Eugene, Oregon"
-    subheadline="Land clearing, grading, and compaction from one licensed, bonded contractor. Eugene's clay soil and short dry season make the sequence matter more here than people expect."
+    subheadline="D&D Land Works prepares residential and commercial properties for construction. Our site preparation work can include land clearing, grading, and leveling. We serve Eugene and Lane County and adjust the work to the site's existing conditions and construction requirements."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
 
-  <!-- About / entity-dense intro paragraph -->
-  <AboutSection
-    ctaLabel="Get a Free Estimate"
-    ctaHref="/contact"
-    eyebrow="Eugene, Oregon"
-    headlineHtml="Site Prep for Eugene Lots, <span class='text-brand-blue'>Done by the Same Crew</span> That Scoped It"
-    descriptionHtml="<p>D&amp;D Land Works provides site preparation for residential and commercial lots throughout Eugene and Lane County, Oregon, including new home builds, ADUs, commercial pads, and shop or barn pad construction. Site prep is the work that gets a raw or partially-cleared lot to a builder-ready state: brush removal and lot clearing, topsoil stripping and stockpiling, cut-and-fill grading to design elevation, subgrade compaction, corner staking, and rough drainage grading so water moves away from the structure&rsquo;s footprint.</p><p>Eugene-specific conditions shape how that work runs. The Willamette Valley&rsquo;s clay-heavy soils are slower to move and hold water differently than sandy loam, which affects both cost and timeline. Wooded infill lots in the South Hills, Fox Hollow, and east Springfield require more upfront clearing before grading can start. The rainy season from October through May triggers stricter Lane County erosion-control permit requirements and limits dry-ground grading windows. D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>Oregon CCB #261742</strong> and DEQ certified for septic work.</p>"
-  />
+  <!-- Site Prep vs Excavation -->
+  <section class="relative bg-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+              Site Preparation vs. Excavation
+            </p>
+          </div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What's the Difference Between Site Preparation and Excavation?
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>Site preparation is the broader work that gets a property ready for construction. It can include land clearing, topsoil stripping, cut and fill, grading, leveling, and compaction based on existing site conditions and planned construction.</p>
+            <p>Excavation is more specific digging work. It may involve preparing areas for foundations, utilities, drainage, or other construction needs.</p>
+            <p>The two can occur on the same project. Site preparation establishes suitable ground conditions, while excavation addresses specific areas that must be dug for the next construction stage. The required scope depends on the property, construction plans, elevations, access, drainage, and existing ground conditions on site.</p>
+          </div>
+          <a href="/about" class="btn-pill mt-8 inline-flex">
+            Learn More About D&amp;D Land Works
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative pb-6">
+          <img
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works excavation contractor working in Lane County, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- What site prep includes — Eugene context -->
-  <PhotoContentBlock
-    eyebrow="Site Prep in Eugene, OR"
-    headline="What Does Site Preparation Include for an Eugene Lot?"
-    image="/project-site-staging.webp"
-    imageAlt="Excavator grading a lot in Eugene, Oregon for new home construction"
-    imageSide="left"
-    badgeValue="CCB #261742"
-    badgeLabel="Licensed & Bonded"
-    ctaLabel="See Full Service Details"
-    ctaHref="/site-preparation-contractor-eugene-oregon"
-    bodyHtml="<p>Site prep covers everything that happens before a foundation crew shows up: clearing the build envelope, stripping and stockpiling topsoil, cutting and filling to the design grade, compacting the subgrade, staking corners and elevations, and pitching the finished pad for drainage. The scope changes lot to lot, but the order is consistent.</p><p>In Eugene, the clearing phase is often the most labor-intensive step because many available lots, especially in the South Hills and wooded infill corridors, have been sitting long enough to grow up in blackberry, scotch broom, and volunteer Douglas fir before a buyer decided to build. Clearing that vegetation to grade is a separate scope from grading itself, and both need to happen before a foundation contractor can do anything useful on the site.</p>"
-  />
+  <!-- What Does Site Preparation Include -->
+  <section id="services" class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          What Does Site Preparation Include?
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          Site preparation includes the work needed to prepare a property for construction. The scope can vary with existing ground conditions, planned elevations, access, drainage, and the type of construction planned for the site.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {sitePrepItems.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="/services" class="btn btn-cta inline-flex">Explore Our Services</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
 
-  <!-- Process steps — dark section -->
-  <section class="bg-ink text-white">
-    <div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-white text-center">
-        The Site Preparation Sequence for Eugene Lots
-      </h2>
-      <p class="mt-4 text-slate-300 leading-relaxed text-center max-w-2xl mx-auto">
-        The scope changes lot to lot, but the sequence is consistent, from the initial site walk through the final drainage grade.
-      </p>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {processSteps.map((item) => (
-          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6">
-            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white">
+  <!-- Common Property Problems -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">We Can Help</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          Site Preparation Problems We Help Address
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          Site preparation helps address property conditions that can prevent construction from starting properly. Raw land, uneven grades, drainage problems, and difficult site access can all affect the work required before construction. The preparation scope depends on the property's existing conditions and planned use.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {problemCards.map((card) => (
+          <div class="card flex gap-5 items-start">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={card.icon} />
+            </span>
+            <div>
+              <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">{card.description}</p>
+              {card.href && (
+                <a href={card.href} class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+                  {card.linkLabel}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Discuss Your Excavation Project
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="relative bg-ink text-white overflow-hidden">
+    <div
+      class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-16 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          How the Site Preparation Process Works
+        </h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Site preparation follows a planned sequence based on the property, construction requirements, and existing site conditions. The process begins with assessing the work area, then moves through clearing, grading, and compaction to prepare the ground for construction.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        {howItWorksSteps.map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
               {item.step}
             </span>
             <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
@@ -236,247 +328,161 @@ const pageSchema = {
           </div>
         ))}
       </div>
-      <p class="mt-8 text-sm text-slate-400 text-center">
-        Steps 2 and 5 are covered in detail on the <a href="/land-clearing-services-eugene-oregon" class="text-brand-blue-light underline underline-offset-2">land clearing</a> and <a href="/land-grading-services-eugene-oregon" class="text-brand-blue-light underline underline-offset-2">grading &amp; leveling</a> service pages when a lot needs dedicated work in those areas.
-      </p>
-    </div>
-  </section>
-
-  <!-- Eugene soil / season context -->
-  <section class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-5xl px-4 py-16">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink">
-        Why Eugene Soil and Season Affect Site Prep Cost and Timeline
-      </h2>
-      <div class="mt-8 grid gap-8 lg:grid-cols-2">
-        <div>
-          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">Malpass Clay and Willamette Valley Soils</p>
-          <p class="text-slate-700 leading-relaxed">
-            The dominant subsurface challenge in west Eugene is Malpass clay: a hydric soil with high shrink-swell properties and very slow water movement. It swells when wet, contracts when dry, and under saturated load it &ldquo;pumps and ruts&rdquo; under equipment weight. Soft spots often need to be undercut and replaced with structural fill before a subgrade will compact properly. Across the valley, deep silty loam and clay deposited by Ice Age Missoula Floods create high winter water tables in lower-lying areas like River Road and Santa Clara. Eugene lots in these zones routinely add 25&ndash;50% to grading cost compared to a well-drained site.
-          </p>
-        </div>
-        <div>
-          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">Oregon's Wet Season (Oct–May)</p>
-          <p class="text-slate-700 leading-relaxed">
-            Lane County&rsquo;s rainy season runs roughly October through May. Grading in heavy clay soil during wet weather is slower, harder on equipment, and requires tighter erosion-control measures under Lane County&rsquo;s EPSC permit requirements. Scheduling site prep for Eugene&rsquo;s dry season, roughly May through October, shortens the job window and typically reduces cost. If your project timeline puts grading in the wet season, that&rsquo;s not a dealbreaker, but it&rsquo;s worth building extra schedule and erosion-control cost into the budget.
-          </p>
-        </div>
-        <div>
-          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">South Hills and Wooded Infill Lots</p>
-          <p class="text-slate-700 leading-relaxed">
-            Eugene&rsquo;s available inventory skews toward wooded infill lots, especially in the South Hills, Fox Hollow, and the Crest Drive corridor, where lots sat undeveloped long enough to grow dense vegetation. These lots need substantial clearing before grading can start, which adds time and cost that a flat, already-open lot wouldn&rsquo;t require. A site walk before quoting is how that scope gets priced accurately rather than estimated over the phone.
-          </p>
-        </div>
-        <div>
-          <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue mb-3">River Road and Santa Clara Lots</p>
-          <p class="text-slate-700 leading-relaxed">
-            Flatter lots in River Road, Santa Clara, and the areas north and west of central Eugene tend to have fewer clearing challenges but more drainage considerations. Poor lot-to-lot drainage and high water tables in the valley floor mean that grading for proper drainage away from a structure&rsquo;s footprint matters more, not less, on these sites. A drainage plan built into the grading scope from the start avoids the common problem of fixing drainage issues after a foundation is already in.
-          </p>
-        </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn btn-cta">Discuss Your Project</a>
       </div>
     </div>
   </section>
 
-  <!-- Permits -->
-  <section class="bg-slate-50 border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-        Do I Need a Permit for Site Prep in Eugene or Lane County?
-      </h2>
-      <p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
-        There isn&rsquo;t one universal answer, but three specific permits are the ones to know about for Lane County grading and site-prep work.
-      </p>
-      <div class="mt-10 grid gap-6 lg:grid-cols-3">
-        {permits.map((permit) => (
-          <div class="card">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue">{permit.name}</p>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">{permit.trigger}</p>
-            <p class="mt-3 text-xs text-slate-500">Administered by: {permit.admin}</p>
-          </div>
-        ))}
-      </div>
-      <p class="mt-8 text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto text-center">
-        Projects within Eugene city limits may also require City of Eugene Building and Permit Services approval in addition to county permits. Foundation excavation done under an active building permit is generally exempt from a separate grading permit, but driveway and landscape grading usually aren&rsquo;t. Confirm with <a href="https://www.lanecounty.org/government/county_departments/public_works/land_management_division" class="text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark">Lane County LMD</a> before work begins.
-      </p>
-    </div>
-  </section>
-
-  <!-- Project types -->
-  <section class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-        What Kind of Project Is This For?
-      </h2>
-      <p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
-        Site preparation in Eugene covers more than new single-family home builds, even though that&rsquo;s the default most contractor websites describe.
-      </p>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projectTypes.map((p) => (
-          <div class="card">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-ink">{p.title}</p>
-            <p class="mt-2 text-sm text-slate-600">{p.detail}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-10 text-center">
-        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cost -->
-  <section class="bg-slate-50 border-b border-slate-200">
-    <div class="mx-auto max-w-4xl px-4 py-16">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-        How Much Does Site Preparation Cost in Eugene, Oregon?
-      </h2>
-      <p class="mt-4 text-center text-slate-700 leading-relaxed">
-        There&rsquo;s no Eugene-specific published figure because scope, soil, and access vary too much lot to lot. The ranges below are general industry benchmarks, not a quote for your project.
-      </p>
-      <div class="mt-8 overflow-x-auto">
-        <table class="w-full text-sm border-collapse">
-          <thead>
-            <tr class="border-b border-slate-300 text-left">
-              <th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Scope</th>
-              <th class="py-2 pr-4 font-display font-bold uppercase tracking-wide text-ink">Typical Range</th>
-              <th class="py-2 font-display font-bold uppercase tracking-wide text-ink">What Affects Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {costRows.map((row) => (
-              <tr class="border-b border-slate-200">
-                <td class="py-3 pr-4 font-semibold text-ink whitespace-nowrap">{row.scope}</td>
-                <td class="py-3 pr-4 text-brand-blue font-semibold whitespace-nowrap">{row.range}</td>
-                <td class="py-3 text-slate-600">{row.affects}</td>
-              </tr>
+  <!-- Why Choose D&D Land Works -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            Why Choose <span class="text-brand-blue">D&amp;D Land Works</span> for Site Preparation?
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            Site preparation depends on the property, planned construction, and existing site conditions. D&amp;D Land Works provides residential and commercial site preparation in Eugene and Lane County, with work scoped around the property and project requirements.
+          </p>
+          <ul class="mt-10 flex flex-col gap-7">
+            {whySitePrepItems.map((item) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+                </span>
+                <div>
+                  <p class="font-display font-bold text-ink">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  {item.link && (
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline"
+                    >
+                      {item.link.label}
+                    </a>
+                  )}
+                </div>
+              </li>
             ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="mt-6 text-sm text-slate-600 text-center">
-        These are general, national and Oregon-wide ranges. A free on-site estimate is the only accurate way to price a specific Eugene lot.
-      </p>
-      <div class="mt-6 text-center">
-        <a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+          </ul>
+          <a href="/contact" class="btn-pill mt-10 inline-flex">
+            Request a Free Estimate
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/project-grading-driveway.webp"
+            alt="D&D Land Works site preparation work in Lane County, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Septic sequencing — relevant for Eugene-area rural lots -->
-  <PhotoContentBlock
-    eyebrow="Septic Sequencing"
-    headline="Site Prep Timing and Septic Systems on Eugene-Area Lots"
-    image="/service-septic-install.webp"
-    imageAlt="Septic system installation on an Eugene-area lot prepared for construction"
-    imageSide="left"
-    badgeValue="DEQ Certified"
-    badgeLabel="Septic Install & Repair"
-    ctaLabel="Septic Install & Repair"
-    ctaHref="/septic-installation-lane-county-oregon"
-    bodyHtml="<p>Many lots in the Eugene fringe, places like Creswell, Veneta, Junction City, and rural unincorporated Lane County, rely on on-site septic rather than municipal sewer. On those lots, sequencing matters more than people expect: once a drainfield location has been proposed or approved through a Lane County test-pit evaluation, that area can&rsquo;t be cut, filled, compacted, or paved without voiding the county&rsquo;s septic approval.</p><p>That means the drainfield area needs to be evaluated, approved, and flagged before site-prep grading starts on the rest of the lot, not after. D&amp;D Land Works is DEQ certified for septic install and repair, so the same contractor who preps the site can also handle the septic work, and the sequencing between the two scopes doesn&rsquo;t require coordinating a second company. If your Lane County lot needs both, confirm with your septic evaluator or <a href='https://www.lanecounty.org/government/county_departments/public_works/land_management_division/on-_site_wastewater' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>Lane County&rsquo;s On-Site Wastewater Program</a> that the drainfield is staked before grading equipment moves near it.</p>"
-  />
-
-  <!-- Why D&D -->
-  <PhotoContentBlock
-    eyebrow="Site Prep Contractor Eugene, OR"
-    headline="Why Eugene Homeowners and Builders Choose D&D Land Works for Site Prep"
-    image="/project-site-staging.webp"
-    imageAlt="D&D Land Works equipment at work on a site preparation job in Eugene, Oregon"
-    imageSide="right"
-    badgeValue="CCB #261742"
-    badgeLabel="Licensed & Bonded"
-    ctaLabel="Get a Free Estimate"
-    ctaHref="/contact"
-    bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742 and DEQ certified for septic install and repair, credentials you can verify yourself at the <a href='https://search.ccb.state.or.us/search/' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>CCB license lookup</a> before you call. David Deggelman owns the company, walks every site in person before quoting, and runs the equipment, so the person who scopes the job is the one who shows up to do it. No subcontracted crew, no call-center handoff, no estimate built from satellite imagery instead of boots on the ground.</p><p>Eugene&rsquo;s grading season, soil conditions, and permit requirements are ones David works with all the time, not a regional generality. If you&rsquo;re in the South Hills, along River Road, in Springfield, or anywhere else in Lane County and need a construction-ready lot, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> for your free, on-site estimate.</p>"
-  />
-
-  <WhyChooseUs
-    descriptionHtml="Every site-prep job in Eugene starts with David walking the lot, not a phone estimate. One licensed, bonded crew handles the clearing, grading, and staking, with a straight answer on which permits apply before equipment shows up."
-  />
-
-  <!-- Service area -->
-  <section class="bg-slate-50 border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-        Eugene &amp; Lane County Service Area
-      </h2>
-      <p class="mt-4 text-center text-slate-700 max-w-2xl mx-auto leading-relaxed">
-        D&amp;D Land Works is <strong class="text-brand-blue">based in Lane County</strong> and serves Eugene, Springfield, and the surrounding area. The crew and equipment are local, not dispatched from another county.
-      </p>
-      <div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
-        <div class="aspect-4/3 overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-sm">
+  <!-- Service Areas -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
+          Site Preparation Services in Eugene and Lane County
+        </h2>
+        <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          D&amp;D Land Works provides site preparation for residential and commercial properties in Eugene and surrounding Lane County communities. Service areas include Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell, depending on the project scope and location.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
+          <a href="/locations/eugene" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
+          </a>
+          {[
+            { label: 'Springfield', href: '/locations/springfield' },
+            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+            { label: 'Junction City', href: '/locations/junction-city' },
+            { label: 'Creswell', href: '/locations/creswell' },
+            { label: 'Veneta', href: '/locations/veneta' },
+            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Coburg', href: '/locations/coburg' },
+            { label: 'Lowell', href: '/locations/lowell' },
+          ].map((area) => (
+            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
+            </a>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
           <iframe
-            title="D&D Land Works service area map, Eugene and Lane County, Oregon"
-            src="https://maps.google.com/maps?q=Eugene,+Oregon&z=11&output=embed"
+            title="D&D Land Works service area map, Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
             width="100%"
             height="100%"
-            style="border:0;"
+            style="border:0; display:block;"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div class="flex flex-col gap-6">
-          <div class="card">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-3">
-              Service Area Includes
-            </p>
-            <p class="leading-relaxed">
-              {anchorAreas.map((area, i) => (
-                <>
-                  <a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
-                  {i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
-                </>
-              ))}
-              <span class="text-slate-400"> &middot; </span>
-              {otherAreas.map((area, i) => (
-                <>
-                  <a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
-                  {i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
-                </>
-              ))}
-            </p>
-          </div>
-          <div class="card">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-ink mb-2">Eugene Neighborhoods Served</p>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              South Hills &middot; Fox Hollow &middot; River Road &middot; Santa Clara &middot; Airport District &middot; Whiteaker &middot; Friendly Area &middot; Churchill &middot; Cal Young &middot; East Eugene
-            </p>
-          </div>
-          <p class="text-slate-700 leading-relaxed text-sm">
-            David walks every Eugene-area site in person before quoting, so pricing reflects the actual soil, slope, access, and vegetation on your lot, not a regional average. Licensed and bonded CCB #261742, DEQ certified for septic.
-          </p>
-          <a href="/service-area" class="btn btn-cta self-start">View All Service Areas &rarr;</a>
-        </div>
       </div>
-      <p class="mt-6 text-center text-sm text-slate-600">
-        Don&rsquo;t see your Eugene neighborhood or Lane County city listed? Call <a href="tel:5414018726" class="font-semibold text-brand-blue">541-401-8726</a> to confirm coverage for your address.
-      </p>
     </div>
   </section>
 
-  <Gallery />
-
-  <Testimonials
-    businessName="D&D Land Works"
-    rating={4.83}
-    reviewCount={demoReviews.length}
-    reviews={demoReviews}
-  />
-
-  <FAQ items={faqs} />
-
-  <section class="mx-auto max-w-6xl px-4 pb-16">
-    <h2 class="font-display font-bold uppercase tracking-tight text-2xl text-ink text-center">
-      Related Services
-    </h2>
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {related.map((service) => <ServiceCard {...service} />)}
+  <!-- Related Services -->
+  <section class="bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
+        Related Services
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land before site work begins.', href: '/land-clearing-services-eugene-oregon' },
+          { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/land-grading-services-eugene-oregon' },
+          { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/foundation-excavation-eugene-oregon' },
+          { title: 'Drainage Excavation', description: 'Excavation and grading to correct standing water and poor drainage.', href: '/drainage-installation-eugene-oregon' },
+        ].map((item) => (
+          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
+            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
+            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+              Learn More &#8594;
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
+
+  <FAQ heading="Common Questions About Site Preparation" items={faqs} />
+
+  <ProcessSteps />
 
   <CTABlock
-    headline="Get Your Eugene Lot Scoped"
-    subheadline="Free estimate for site preparation anywhere in Eugene or Lane County."
+    headline="Get a Free Site Preparation Estimate"
+    subheadline="Planning site preparation starts with understanding the property and construction requirements. D&D Land Works provides free estimates for residential and commercial projects, with the scope based on existing site conditions, earthwork, access, drainage, and the work needed before construction begins."
+    ctaLabel="Request a Free Estimate"
+    ctaHref="/contact"
+    phone="541-401-8726"
   />
 </BaseLayout>
+
 <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
