@@ -4,7 +4,6 @@ import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 
 const sitePrepItems = [
   { title: 'Lot Grading and Leveling', description: 'Lot grading shapes the ground across a property or the part you plan to use. It can smooth uneven areas, adjust elevations, and create a better starting point for construction, yards, or other site work.', href: '/services/lot-leveling', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
@@ -16,12 +15,10 @@ const sitePrepItems = [
 ];
 
 const howItWorksSteps = [
-  { step: '1', title: 'Site Size and Scope', detail: 'A small yard grading project may involve less work than preparing a larger building area. The amount of land being graded and the final grade required both affect the overall project time.' },
-  { step: '2', title: 'Ground and Soil Conditions', detail: 'Soil conditions can change how easily material can be moved and shaped. Wet ground may also affect when grading work can be completed, especially during periods of heavy rain in Eugene.' },
-  { step: '3', title: 'Existing Slope and Elevation', detail: 'Steep slopes, uneven elevations, and larger changes in grade can require more material movement. The existing shape of the property helps determine how much grading work is needed.' },
-  { step: '4', title: 'Site Access', detail: 'Equipment needs room to reach the areas being graded. Narrow access, structures, utilities, or other site limits can affect how the work is planned and how efficiently material can be moved.' },
-  { step: '5', title: 'Material Movement', detail: 'Grading may involve cutting high areas, filling low areas, or moving soil around the property. The amount of material involved can affect the work required and whether related site preparation is needed.' },
-  { step: '6', title: 'Weather and Related Work', detail: 'Rain and wet ground can affect grading conditions in Eugene and Lane County. Additional work such as drainage, excavation, or site preparation may also add time when included in the project scope.' },
+  { step: '1', title: 'Size and Amount of Grading', detail: 'A small yard grading project may involve less work than preparing a larger building area. Grading can involve cutting high areas, filling low areas, or moving soil — the amount of material and area both affect how long the work takes.' },
+  { step: '2', title: 'Soil, Slope, and Ground Conditions', detail: 'Soil conditions can change how easily material can be moved and shaped. Steep slopes and larger changes in elevation can require more work, and wet ground may affect when grading can be completed.' },
+  { step: '3', title: 'Site Access', detail: 'Equipment needs room to reach the areas being graded. Narrow access, structures, utilities, or other site limits can affect how the work is planned and how efficiently material can be moved.' },
+  { step: '4', title: 'Weather and Related Work', detail: 'Rain and wet ground can affect grading conditions in Eugene and Lane County. Additional work such as drainage, excavation, or site preparation may also add time when included in the project scope.' },
 ];
 
 const faqs = [
@@ -119,7 +116,7 @@ const pageSchema = {
   <Hero
     eyebrow="Eugene, Oregon"
     headline="Land Grading and Leveling Services in Eugene, Oregon"
-    subheadline="Uneven ground, standing water, or a steep yard can make it hard to use your property or get ready for a new project. D&D Land Works helps homeowners and property owners in Eugene and Lane County shape and level their land so it is ready for what comes next."
+    subheadline="D&D Land Works helps homeowners and property owners shape uneven or sloped ground, improve drainage, and prepare land for yards, driveways, buildings, and other projects. David Deggelman handles estimates directly and looks at the property before deciding what grading work is needed."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
@@ -268,7 +265,7 @@ const pageSchema = {
           The time needed for land grading depends on the size of the property, grading scope, existing slope, soil and ground conditions, site access, weather, and the amount of material that needs to be moved. Related site preparation can also affect the schedule.
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {howItWorksSteps.map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
             <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
@@ -421,8 +418,6 @@ const pageSchema = {
       </div>
     </div>
   </section>
-
-  <ProcessSteps />
 
 <CTABlock
     headline="Discuss Your Property Grading Needs"
