@@ -1,4 +1,4 @@
-ï»¿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
@@ -8,8 +8,7 @@ import CTABlock from '../components/CTABlock.astro';
 const propertyFactors = [
   { title: 'Water Lines', description: 'A water line may need a trench from the water source to a home or building. A new home or rural property may need a longer water-line trench from the service point to the building.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
   { title: 'Sewer Lines', description: 'A sewer line may cross part of the property. The route can depend on the building location, required grade, and where the sewer or septic system is located.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
-  { title: 'Electrical Conduit', description: 'If electrical service is being run underground, the conduit may need a planned trench from the service point to the building.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
-  { title: 'Power Lines', description: 'Power lines may be placed underground when the project calls for it. The trench route and requirements depend on the specific property and utility plan.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Electrical and Power Conduit', description: 'Underground electrical service may require a trench from the service point to the building. The route, depth, and conduit requirements depend on the project and applicable electrical requirements.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />' },
   { title: 'Underground Utility Routes', description: 'A utility route may cross yards, driveways, or other parts of a property. Existing structures and underground lines can affect where excavation takes place.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
   { title: 'Utility Excavation', description: 'D&D Land Works focuses on the excavation needed to create the utility trench. The utility provider or qualified professional handles work outside the excavation scope.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
 ];
@@ -17,11 +16,11 @@ const propertyFactors = [
 const faqs = [
   {
     question: 'How deep does a water service line need to be buried in Lane County, Oregon?',
-    answer: 'Water service lines must be buried at least 24 inches below grade in Lane County â€” 12 inches below the local 12-inch frost depth, as required by Oregon Plumbing Specialty Code 609.1. Deeper burial may be required under driveways, parking areas, or where the inspector specifies additional depth.',
+    answer: 'Water service lines must be buried at least 24 inches below grade in Lane County — 12 inches below the local 12-inch frost depth, as required by Oregon Plumbing Specialty Code 609.1. Deeper burial may be required under driveways, parking areas, or where the inspector specifies additional depth.',
   },
   {
     question: 'How deep does a sewer lateral need to be buried?',
-    answer: 'Sanitary sewer laterals need at least 12 inches of cover above the pipe in Lane County (OPSC 718.1). The pipe must also slope at least Â¼ inch per foot toward the sewer main or septic tank to ensure gravity drainage. Inadequate slope is the most common cause of sewer lateral failure.',
+    answer: 'Sanitary sewer laterals need at least 12 inches of cover above the pipe in Lane County (OPSC 718.1). The pipe must also slope at least ¼ inch per foot toward the sewer main or septic tank to ensure gravity drainage. Inadequate slope is the most common cause of sewer lateral failure.',
   },
   {
     question: 'How deep does electrical conduit need to be buried in Oregon?',
@@ -29,11 +28,11 @@ const faqs = [
   },
   {
     question: 'How deep does a gas line need to be buried in Oregon?',
-    answer: 'Standard residential gas piping must be at least 18 inches below grade in Oregon (Oregon Residential Specialty Code G2415.12). Lines feeding portable outdoor appliances â€” generators, outdoor heaters, BBQ drops â€” can be as shallow as 8 inches under ORSC G2415.12.1.',
+    answer: 'Standard residential gas piping must be at least 18 inches below grade in Oregon (Oregon Residential Specialty Code G2415.12). Lines feeding portable outdoor appliances — generators, outdoor heaters, BBQ drops — can be as shallow as 8 inches under ORSC G2415.12.1.',
   },
   {
     question: 'Can water, sewer, electrical, and gas go in the same trench?',
-    answer: 'Yes â€” joint trenching is code-permitted in Lane County with modern pipe materials. The one key separation rule: where a water line crosses above a sewer line, the bottom of the water pipe must be at least 12 inches above the top of the sewer pipe (OPSC 720.1). Individual utility companies may have additional separation specifications beyond code minimums â€” confirm these when you initiate the service application.',
+    answer: 'Yes — joint trenching is code-permitted in Lane County with modern pipe materials. The one key separation rule: where a water line crosses above a sewer line, the bottom of the water pipe must be at least 12 inches above the top of the sewer pipe (OPSC 720.1). Individual utility companies may have additional separation specifications beyond code minimums — confirm these when you initiate the service application.',
   },
 ];
 
@@ -57,7 +56,7 @@ const serviceSchema = {
       knowsAbout: ['Utility Trenching', 'Land Clearing', 'Site Preparation', 'Grading', 'Septic Installation'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification â€” Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
       ],
       sameAs: ['https://search.ccb.state.or.us/search/'],
     },
@@ -92,7 +91,7 @@ const serviceSchema = {
 
 <BaseLayout
   title="Utility Trenching Services in Eugene, Oregon | D&D Land Works"
-  description="Utility trenching in Eugene & Lane County, OR. Water, sewer, and power line trenching for new homes and buildings. Licensed and bonded CCB #261742. Free estimates â€” call 541-401-8726."
+  description="Utility trenching in Eugene & Lane County, OR. Water, sewer, and power line trenching for new homes and buildings. Licensed and bonded CCB #261742. Free estimates — call 541-401-8726."
 >
   <Hero
     eyebrow="Utility Trenching in Eugene, Oregon"
@@ -126,6 +125,7 @@ const serviceSchema = {
             <p>The trench follows a planned <strong>trench route</strong> based on the project requirements. Its depth and location can change with the utility type, soil, slope, wet ground, and site access. The excavation needs to follow the plans for the project.</p>
             <p>Once the utility work is ready, <strong>backfill</strong> may be used to fill the trench as part of the project. D&D Land Works handles the excavation side, while utility design, connections, and other specialized work may be handled by the proper utility professional.</p>
             <p>Trenching time depends on the length and depth of the excavation, soil, access, existing utilities, weather, and the overall project. Wet ground or difficult access can make the work take longer.</p>
+            <p>Utility and water-line trenching may also include irrigation lines on residential and rural properties, depending on the project. See our <a href="/trenching-services-eugene-oregon" class="text-brand-blue font-semibold hover:underline">trenching services page</a> for a broader look at the trenching work we handle.</p>
           </div>
           <a href="/contact" class="btn-pill mt-8 inline-flex">
             Talk About Your Project
@@ -278,16 +278,16 @@ const serviceSchema = {
         <div>
           <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">After the Dig</p>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Happens With the Soil After the Trench Is Dug?
+            What Happens After the Utility Trench Is Dug?
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
             Digging a utility trench leaves soil beside the work area. What happens next depends on the trench, the soil, the project plans, and whether the material can be used again.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {[
-              { title: 'Moving the Excavated Soil', description: 'Digging creates soil that has to be managed during the project. The amount depends on the trench length, depth, and property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+              { title: 'Excavated Soil', description: 'Digging creates soil that has to be managed during the project. The amount depends on the trench length, depth, and property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
               { title: 'Backfilling', description: 'Once the trench work is ready for the next stage, the excavated area can be backfilled as required by the project.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
-              { title: 'Finishing the Work Area', description: 'A yard, driveway, or access area may be disturbed during trenching. The amount of finishing work depends on what was excavated.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
+              { title: 'Restoring the Work Area', description: 'A yard, driveway, or access area may be disturbed during trenching. The amount of restoration work depends on what was excavated.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18" />' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
@@ -388,9 +388,9 @@ const serviceSchema = {
       </h2>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before a build starts â€” often the step before foundation excavation.', href: '/site-preparation-contractor-eugene-oregon' },
+          { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before a build starts — often the step before foundation excavation.', href: '/site-preparation-contractor-eugene-oregon' },
           { title: 'Land Clearing', description: 'Removing brush and overgrowth from your property before site prep and foundation excavation can begin.', href: '/land-clearing-services-eugene-oregon' },
-          { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope â€” often follows excavation work.', href: '/land-grading-services-eugene-oregon' },
+          { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope — often follows excavation work.', href: '/land-grading-services-eugene-oregon' },
           { title: 'Drainage Installation', description: 'French drains, surface drainage, and drainage excavation for Eugene and Lane County properties.', href: '/drainage-installation-eugene-oregon' },
         ].map((item) => (
           <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
