@@ -4,7 +4,6 @@ import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 
 const sitePrepItems = [
   { title: 'Land Clearing', description: 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
@@ -473,8 +472,6 @@ const pageSchema = {
   </section>
 
   <FAQ heading="Common Questions About Site Preparation" items={faqs} />
-
-  <ProcessSteps />
 
   <CTABlock
     headline="Get a Free Site Preparation Estimate"
