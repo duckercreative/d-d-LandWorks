@@ -1,4 +1,4 @@
-# Content Brief — D&D Land Works Excavation & Grading (`/services/excavation/`)
+﻿# Content Brief — D&D Land Works Excavation & Grading (`/services/excavation/`)
 
 **Prepared:** 2026-09-08 · **Prepared by:** Ducker Creative
 **Built from:** `01-research/page-research/excavation/` full research pack (files 00-08 + entity-inventory.csv + 01-keyword-universe.csv), cross-checked against `01-research/page-research/home/entity-inventory.csv` and `01-research/page-research/site-preparation/entity-inventory.csv` for canonical entity reuse, `business-info.md`, `docs/design-system.md`, `07-landing-pages/content/site-preparation-content.md` (schema `@id` pattern reference), and the current live page at `site/src/pages/services/excavation.astro`.
@@ -95,7 +95,7 @@ Copied verbatim from `00-research-pack.md` §11 (drafted to be citable by an AI 
 | 5 | Residential vs. Commercial Excavation — What's Actually Different? | Gap #6, residential-vs-commercial explanation gap (score 20.0) — 0/10 competitors explain this, several claim both audiences generically | Comparison table: columns Residential / Commercial (equipment, crew size, timeline, complexity) |
 | 6 | How Much Does Excavation Cost? | Gap #3 (rock/cost-overrun honesty, score 40.0) + Gap #4 (cost-structure explanation, score 40.0), both tied — 0/10 competitors publish any pricing or explain quote variance | Comparison table: Pricing Model / Typical Range / What Drives It (hourly, per-cubic-yard, rock premium), plus a short honest paragraph on the rock/clay cost jump |
 | 7 | Does D&D Call Before Digging? | Gap #1, Oregon811 competence signal (tied score 50.0, highest in the pack) — 0/10 competitors mention Oregon811, utility locates, or call-before-you-dig anywhere | Answer-first, 70-90 words + direct link to digsafelyoregon.com; `Speakable` |
-| 8 | Do You Need a Permit to Excavate in Lane County? | Reused/cross-linked from the site-preparation pack's fuller permit section, per `00-research-pack.md` §3's explicit instruction not to duplicate it | Short answer-first, 80-100 words, hedged per §3 above, cross-linking to `/services/site-preparation/` for the full permit table |
+| 8 | Do You Need a Permit to Excavate in Lane County? | Reused/cross-linked from the site-preparation pack's fuller permit section, per `00-research-pack.md` §3's explicit instruction not to duplicate it | Short answer-first, 80-100 words, hedged per §3 above, cross-linking to `/site-preparation-contractor-eugene-oregon/` for the full permit table |
 | 9 | Can I Rent an Excavator and Do This Myself? | Gap #10, DIY-vs-hire threshold (score 15.0) — task-brief-named objection, 0/10 competitors address it | Answer-first + honest explanation, 90-110 words; `Speakable` |
 | 10 | How Long Does Excavation Take? | Process/timeline theme reused from the homepage pack, scoped to excavation-specific figures | Short comparison note: residential (days) vs. commercial (1-3+ weeks) |
 | 11 | Frequently Asked Questions | Gap #11, FAQ-content gap (score 13.5) — effectively 0/10 competitors run a real FAQ | `FAQPage`-formatted Q&A, 9 questions (see §8 below) |
@@ -156,7 +156,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 | From | Anchor text example | Placement |
 |---|---|---|
 | Homepage (`/`) | "excavation and grading" | H2 #2 services list of `home-brief.md` |
-| `/services/site-preparation/` | "excavation" (down-link, since site prep leads into excavation) | H2 #3 sequencing section of `site-preparation-content.md`, already present as "then excavation follows" |
+| `/site-preparation-contractor-eugene-oregon/` | "excavation" (down-link, since site prep leads into excavation) | H2 #3 sequencing section of `site-preparation-content.md`, already present as "then excavation follows" |
 | `/service-areas/eugene/`, `/service-areas/springfield/` (future city pages) | "excavation contractor in Eugene" / "excavation in Springfield" | Body, services-offered section of each city page |
 | `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/utility-excavation/`, `/services/drainage-excavation/` (future sibling pages) | "back to excavation" | Each sibling page's "parent cluster" link, per the topical map's hub-and-spoke rule |
 | `/about/` | Breadcrumb | Breadcrumb |
@@ -167,7 +167,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 | To | Anchor text | Placement |
 |---|---|---|
 | `/` (homepage) | "D&D Land Works" or "our full range of excavation services" | Breadcrumb + body-late (up-link to hub) |
-| `/services/site-preparation/` | "site preparation" | Opening paragraph (brief cross-reference, not a re-derivation) + H2 #8 (permit cross-link) |
+| `/site-preparation-contractor-eugene-oregon/` | "site preparation" | Opening paragraph (brief cross-reference, not a re-derivation) + H2 #8 (permit cross-link) |
 | `/services/grading-leveling/` | "grading and leveling" | H2 #2 (boundary statement) + Related Services card |
 | `/services/foundation-excavation/` | "foundation excavation" | H2 #3 (foundation dig project type) + Related Services card |
 | `/services/utility-excavation/` | "utility excavation" | H2 #3 (utility run project type) + Related Services card — **this link is currently missing from the live page's card grid; add it as the fourth card** |

@@ -5,7 +5,7 @@
 **Status:** Humanizer pass complete (2026-09-08). See note at end of file.
 
 **Corrections applied on top of the brief (per task instruction):**
-1. Canonical URL is `/services/site-preparation/`, not the flat `/site-preparation/` the brief and topical map proposed — the live Astro codebase (22 references, including `site/src/pages/services/index.astro` and the file's own existing location at `site/src/pages/services/site-preparation.astro`) already uses the nested form. Used consistently below in metadata, breadcrumbs, and schema.
+1. Canonical URL is `/site-preparation-contractor-eugene-oregon/`, not the flat `/site-preparation/` the brief and topical map proposed — the live Astro codebase (22 references, including `site/src/pages/services/index.astro` and the file's own existing location at `site/src/pages/site-preparation-contractor-eugene-oregon.astro`) already uses the nested form. Used consistently below in metadata, breadcrumbs, and schema.
 2. The `Service` schema's `provider` references `"@id": "https://www.ddlandworks.com/#business"` — the exact `@id` already shipped in `home-content.md`'s JSON-LD, not the `#organization` placeholder the brief guessed at before this was confirmed.
 
 ---
@@ -17,7 +17,7 @@
 | **Title tag** | Site Preparation in Eugene & Lane County, OR \| D&D (57 chars) |
 | **Meta description** | Site preparation vs. excavation, explained. Clearing, grading & permits for Lane County, OR lots. Licensed, bonded. Free estimate: 541-401-8726. (154 chars) |
 | **H1** | Site Preparation in Eugene, Springfield & Lane County, Oregon |
-| **Canonical URL** | `/services/site-preparation/` |
+| **Canonical URL** | `/site-preparation-contractor-eugene-oregon/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `HowTo` (7-step process), `Speakable` (H2 #1, #3, #8, #9) — no `AggregateRating`/`Review` (zero reviews at launch) |
 | **Internal links (out)** | `/` (homepage), `/services/land-clearing/`, `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/drainage-excavation/`, `/septic-installation-lane-county-oregon/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | site preparation eugene or |
@@ -177,11 +177,11 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.ddlandworks.com/services/site-preparation/#service",
+      "@id": "https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/#service",
       "name": "Site Preparation",
       "serviceType": "Site Preparation",
       "description": "Site preparation is the work that gets a raw or partially-cleared lot ready for construction: clearing brush and debris, stripping and stockpiling topsoil, cutting and filling to bring the pad to design grade, compacting the subgrade, and staking corners and elevations for the build crew. It is distinct from excavation, which is the specific digging done for a foundation, utility line, or drainage feature once the site is prepped.",
-      "url": "https://www.ddlandworks.com/services/site-preparation/",
+      "url": "https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/",
       "provider": {
         "@id": "https://www.ddlandworks.com/#business"
       },
@@ -309,13 +309,13 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
           "@type": "ListItem",
           "position": 3,
           "name": "Site Preparation",
-          "item": "https://www.ddlandworks.com/services/site-preparation/"
+          "item": "https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/"
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.ddlandworks.com/services/site-preparation/#webpage",
+      "@id": "https://www.ddlandworks.com/site-preparation-contractor-eugene-oregon/#webpage",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -332,4 +332,4 @@ Note on `Speakable`: `cssSelector` values below assume heading `id` attributes a
 
 ---
 
-**Note:** The mandatory humanizer pass is complete — the editable prose sections (everything outside the FAQ block, which mirrors the JSON-LD schema verbatim and was left untouched, and the AI citation block, which is preserved verbatim per the brief) had 16 repeated em-dash constructions cleaned up into periods, commas, or colons for natural variation, plus one small grammar fix ("a already-open lot" → "an already-open lot"). No facts, numbers, hedged permit language, links, headings, FAQ content, or schema were changed. Placing this into `site/src/pages/services/site-preparation.astro` is a separate, later step and is not part of this task. No pricing, founding year, address, hours, or review counts were invented; the two Lane County permit thresholds (Grading and Fill Permit, Erosion Prevention Permit) are hedged and attributed to a third-party permitting guide throughout, per `07-oregon-authority.md`'s sourcing caveat, while the DEQ 1200-C and septic test-pit facts are stated as confirmed since they were verified directly against oregon.gov and lanecounty.org. D&D's specific role in septic test-pit coordination and any geotechnical-referral service were left as open items per the brief (§ "Open Items"), so H2 #9 and #8 use the more generic, unconfirmed-safe framing rather than claiming an active coordination role that hasn't been confirmed with David.
+**Note:** The mandatory humanizer pass is complete — the editable prose sections (everything outside the FAQ block, which mirrors the JSON-LD schema verbatim and was left untouched, and the AI citation block, which is preserved verbatim per the brief) had 16 repeated em-dash constructions cleaned up into periods, commas, or colons for natural variation, plus one small grammar fix ("a already-open lot" → "an already-open lot"). No facts, numbers, hedged permit language, links, headings, FAQ content, or schema were changed. Placing this into `site/src/pages/site-preparation-contractor-eugene-oregon.astro` is a separate, later step and is not part of this task. No pricing, founding year, address, hours, or review counts were invented; the two Lane County permit thresholds (Grading and Fill Permit, Erosion Prevention Permit) are hedged and attributed to a third-party permitting guide throughout, per `07-oregon-authority.md`'s sourcing caveat, while the DEQ 1200-C and septic test-pit facts are stated as confirmed since they were verified directly against oregon.gov and lanecounty.org. D&D's specific role in septic test-pit coordination and any geotechnical-referral service were left as open items per the brief (§ "Open Items"), so H2 #9 and #8 use the more generic, unconfirmed-safe framing rather than claiming an active coordination role that hasn't been confirmed with David.

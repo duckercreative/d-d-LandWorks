@@ -1,4 +1,4 @@
-# Content Gap Analysis — Site Preparation (`/site-preparation/`)
+﻿# Content Gap Analysis — Site Preparation (`/site-preparation/`)
 
 Same scoring model as the homepage pack: **Coverage in competitors** (0 = none of the 9 address it / 10 = all 9 address it), **Difficulty for D&D to fill** (1 = easy / 5 = requires new asset or David's direct input), **Conversion Impact** (1 = SEO/trust only / 5 = directly drives calls). Ordered by `(10 - coverage) × conversion_impact / difficulty`.
 
@@ -12,7 +12,7 @@ The task brief flags one gap dimension as the single most important for this spe
 | 4 | **Septic/drainfield sequencing gap** | 0 | 1 | 4 | 40.0 | State plainly that a septic test-pit evaluation must happen before the drainfield area is graded/filled/disturbed, and that D&D coordinates around this — a real regulatory fact (`07-oregon-authority.md` §5), zero-cost to add, and unclaimed by any competitor |
 | 5 | **Rock/clay cost-overrun honesty gap** | 0 | 1 | 4 | 40.0 | Explain plainly that Willamette Valley clay and occasional rock can affect cost/timeline, and that a soil check protects the customer's budget — reframes a possible upsell as trust-building transparency; zero competitors mention this possibility |
 | 6 | **Project-type specificity gap (ADU, shop/barn, subdivision, commercial)** | 0 for ADU/shop-barn; ~2-3/9 for subdivision/commercial generically | 2 | 4 | 20.0-40.0 (highest for ADU) | Name each project type from the topical map explicitly (new home build, ADU, shop/barn pad, subdivision, commercial site development) with a sentence of real scope difference for each — zero competitors name ADU or shop/barn as project types at all |
-| 7 | **Ordered-process gap** | ~1/9 (All Dirt lists items, not as a sequence) | 2 | 3 | 27.0 | Present the real process as a numbered sequence (survey/plan → clear → strip topsoil → cut/fill to grade → compact → stake → rough-grade for drainage) rather than a bulleted feature list — the current live page (`site/src/pages/services/site-preparation.astro`) already has most of these steps as a bulleted list; converting to a numbered, explained sequence is a low-effort upgrade |
+| 7 | **Ordered-process gap** | ~1/9 (All Dirt lists items, not as a sequence) | 2 | 3 | 27.0 | Present the real process as a numbered sequence (survey/plan → clear → strip topsoil → cut/fill to grade → compact → stake → rough-grade for drainage) rather than a bulleted feature list — the current live page (`site/src/pages/site-preparation-contractor-eugene-oregon.astro`) already has most of these steps as a bulleted list; converting to a numbered, explained sequence is a low-effort upgrade |
 | 8 | **FAQ-content gap** | 0 | 2 | 3 | 15.0 | A real, sourced FAQ block (see shortlist in `02-question-mine.md`) with FAQPage schema — 0/9 competitors have one on a site-prep page |
 | 9 | **Real pricing-range gap** | 0 | 2 | 5 | 25.0 | Publish honest ranges sourced from this pack (e.g., site prep $8,000-$50,000+ depending on complexity; cut/fill roughly $2.25-$3.00/cubic yard; rock excavation $50-$200/cubic yard vs. $5-$15 standard) clearly labeled as general, not Lane-County-specific or a quote |
 | 10 | **Timeline-specificity gap** | ~1/9 (implied generically, not stated on any site-prep page) | 1 | 4 | 36.0 | Cite real ranges: a well-kept lot can be cleared in about a week; overall residential site prep commonly runs 1-2 months; commercial/subdivision site work commonly runs 1-3+ weeks |
@@ -36,7 +36,7 @@ The task brief flags one gap dimension as the single most important for this spe
 - Real pricing ranges specific to D&D's own jobs, if David is willing to share even rough figures (would strengthen Gap #9 beyond the generic national/statewide ranges currently available)
 - Typical response/scheduling turnaround for a site-prep estimate specifically
 
-## What the current live page (`site/src/pages/services/site-preparation.astro`) already gets right
+## What the current live page (`site/src/pages/site-preparation-contractor-eugene-oregon.astro`) already gets right
 
 - Already frames site prep as "the first thing that happens on almost every job," which is directionally aligned with the umbrella-hub framing — but does not yet explicitly disambiguate site prep from excavation as a distinct service, which is this file's #1 gap
 - Already lists real process steps (clearing, stripping topsoil, cut/fill, compaction, staking, rough grading for drainage) as a bulleted list — accurate content, just not yet sequenced, explained, or paired with the permit/timeline/cost context this research pack adds

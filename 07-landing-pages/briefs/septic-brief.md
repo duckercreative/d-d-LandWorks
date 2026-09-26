@@ -167,7 +167,7 @@ No FAQ answer should invent a specific DEQ credential number or type for David, 
 | From | Anchor text example | Placement |
 |---|---|---|
 | Homepage (`/`) | "septic installation and repair" | Services list of `home-content.md`, already implemented (also linked from H2 #4, DEQ section) |
-| `/services/site-preparation/` | "septic" (down-link, per that page's existing "Site Prep and Your Septic System" section) | Already implemented per `site-preparation-content.md` |
+| `/site-preparation-contractor-eugene-oregon/` | "septic" (down-link, per that page's existing "Site Prep and Your Septic System" section) | Already implemented per `site-preparation-content.md` |
 | `/locations/eugene/septic/`, `/locations/springfield/septic/` (already live) | "septic install & repair" | Already implemented in both city×service pages' body copy |
 | `/resources/septic-installation-cost-oregon/`, `/resources/oregon-septic-basics/` (already live) | "septic installation cost in Oregon" / "Oregon septic basics" | Already implemented as outbound links from the current live service page; this brief's job is to make the service page itself the deeper, more authoritative version these two resource pages currently point to |
 | `/about/` | Breadcrumb | Breadcrumb |
@@ -177,7 +177,7 @@ No FAQ answer should invent a specific DEQ credential number or type for David, 
 
 | To | Anchor text | Placement |
 |---|---|---|
-| `/services/site-preparation/` | "site preparation" — with **explicit "if grading or clearing needs to happen on the same property, the area evaluated for your drainfield can't be disturbed first — see site preparation for how D&D sequences that" framing**, not a bare anchor | H2 #8 (site evaluation process) and H2 #6/§6's drainfield-protection detail |
+| `/site-preparation-contractor-eugene-oregon/` | "site preparation" — with **explicit "if grading or clearing needs to happen on the same property, the area evaluated for your drainfield can't be disturbed first — see site preparation for how D&D sequences that" framing**, not a bare anchor | H2 #8 (site evaluation process) and H2 #6/§6's drainfield-protection detail |
 | `/` (homepage) | "D&D Land Works" or "our full range of excavation services" | Breadcrumb + body-late (up-link to hub) |
 | `/locations/eugene/septic/`, `/locations/springfield/septic/` | "septic work in Eugene" / "septic work in Springfield" | Body, near the geo-modifier in the opening paragraph or H1 area |
 | `/resources/septic-installation-cost-oregon/` | "our full septic cost breakdown" | H2 #4 (cost section) — link out for the fuller national-range context rather than duplicating it in full |

@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Template Name: Site Preparation Page
  *
- * 1:1 port of site/src/pages/services/site-preparation.astro
+ * 1:1 port of site/src/pages/site-preparation-contractor-eugene-oregon.astro
  * All section text is editable from WP Admin via the
  * "Site Preparation — Page Content" meta box (inc/meta-site-preparation.php).
  */
@@ -92,7 +92,7 @@ $site_prep_items = array(
 	array(
 		'title' => sp_get( $pid, 'sp_svc_2_title' ),
 		'desc'  => sp_get( $pid, 'sp_svc_2_desc' ),
-		'href'  => home_url( '/services/site-preparation' ),
+		'href'  => home_url( '/site-preparation-contractor-eugene-oregon' ),
 		'icon'  => 'M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14',
 	),
 	array(
@@ -146,7 +146,7 @@ $problem_cards = array(
 		'title'      => sp_get( $pid, 'sp_prob_1_title' ),
 		'desc'       => sp_get( $pid, 'sp_prob_1_desc' ),
 		'icon'       => 'M3 20 9 8l4 6 2-3 6 9H3Z',
-		'href'       => home_url( '/services/site-preparation' ),
+		'href'       => home_url( '/site-preparation-contractor-eugene-oregon' ),
 		'link_label' => 'Site Preparation',
 	),
 	array(

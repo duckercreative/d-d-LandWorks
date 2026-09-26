@@ -1,0 +1,33 @@
+entity_name,entity_type,canonical_name,qid,kg_id,schema_type,salience_score,role,validation_status,sameAs_url,co_occurrence_status,notes
+D&D Land Works,Organization,D&D Land Works,,/g/,LocalBusiness,10,primary_business,VALIDATED_LOCAL,https://www.ddlandworks.com/#business,,No GBP or Wikidata entry as of 2026-09-25
+David Deggelman,Person,David Deggelman,,,,8,founder,VALIDATED_LOCAL,,,Named owner — no LinkedIn or Wikidata entry found
+Oregon CCB #261742,Credential,Oregon Construction Contractors Board License #261742,,,EducationalOccupationalCredential,9,credential,VALIDATED_LOCAL,https://www.oregon.gov/ccb,,Verify active at orccb.org
+DEQ Certified,Credential,Oregon DEQ Certification (septic),,,EducationalOccupationalCredential,5,credential,VALIDATED_LOCAL,https://www.oregon.gov/deq,,Septic-related scope only; not drainage-specific
+Eugene Oregon,Place,Eugene Oregon,Q34017,/m/02q8xb,City,9,areaServed,VALIDATED,https://en.wikipedia.org/wiki/Eugene%2C_Oregon,mandatory,Lane County seat
+Springfield Oregon,Place,Springfield Oregon,Q1051614,,City,7,areaServed,VALIDATED,https://en.wikipedia.org/wiki/Springfield%2C_Oregon,mandatory,Second largest Lane County city
+Lane County Oregon,Place,Lane County Oregon,Q485252,,AdministrativeArea,8,areaServed,VALIDATED,https://en.wikipedia.org/wiki/Lane_County%2C_Oregon,mandatory,Primary service region
+Willamette Valley,Place,Willamette Valley,Q644427,,Landform,6,geographic_context,VALIDATED,https://en.wikipedia.org/wiki/Willamette_Valley,recommended,Soil and climate context
+French Drain,Thing,French Drain,,,Thing,10,primary_service_entity,VALIDATED,https://en.wikipedia.org/wiki/French_drain,mandatory,Core service entity for this page
+Curtain Drain,Thing,Curtain Drain,,,Thing,7,service_entity,VALIDATED_NO_KG,,,Zero competitor coverage in this market
+Catch Basin,Thing,Catch Basin,,,Thing,6,service_entity,VALIDATED_NO_KG,,,Zero competitor coverage; national cost $1K-$4K
+Dry Well,Thing,Dry Well (Soakaway),,,Thing,6,service_entity,VALIDATED_NO_KG,https://en.wikipedia.org/wiki/Soakaway,recommended,Wikipedia redirects dry well to Soakaway
+Daylight Discharge Point,Thing,Daylight Discharge Point,,,Thing,7,service_entity,VALIDATED_NO_KG,,,Page's central "where does water go" answer
+Pop-up Emitter,Thing,Pop-up Emitter,,,Thing,4,service_entity,VALIDATED_NO_KG,,,Detail-level differentiator
+Perforated Pipe,Thing,Perforated Pipe,,,Thing,6,component_entity,VALIDATED_NO_KG,,,Rigid PVC preferred over corrugated in clay
+Drain Rock,Thing,Drain Rock / Washed Gravel,,,Thing,5,component_entity,VALIDATED_NO_KG,,,3/4-inch angular washed gravel
+Filter Fabric,Thing,Geotextile Filter Fabric,,,Thing,7,component_entity,VALIDATED_NO_KG,,,Critical in Malpass clay — prevents clogging
+Swale,Thing,Swale,,,Thing,3,sibling_page_entity,VALIDATED_NO_KG,,,OWNED by grading-leveling page — cross-link only
+Culvert,Thing,Culvert,Q282416,,Thing,4,service_entity,VALIDATED,https://en.wikipedia.org/wiki/Culvert,recommended,Driveway drainage context
+Sump Pump,Thing,Sump Pump,,,Thing,3,adjacent_scope,VALIDATED_NO_KG,,,Typically plumbing/electrical scope — brief disambiguation only
+Malpass Clay,Thing,Malpass Clay (soil series),,,Thing,8,local_entity,VALIDATED_LOCAL,https://www.blm.gov/sites/blm.gov/files/TN-447.pdf,mandatory,BLM Technical Note 447; west Eugene; high shrink-swell low permeability
+Willamette Valley Clay,Thing,Willamette Valley Clay Soils,,,Thing,6,local_entity,VALIDATED_LOCAL,,,Contextual grouping; Malpass is the specific named series
+Eugene Stormwater Connection Permit,GovernmentService,Eugene Code §6.610 Stormwater Connection Permit,,,GovernmentService,9,authority_entity,VALIDATED_LOCAL,https://eugene.municipal.codes/EC/6.610,mandatory,Zero competitor covers this; strongest Eugene-specific signal
+City of Eugene Stormwater Program,GovernmentOrganization,City of Eugene Stormwater Program,,,GovernmentOrganization,7,authority_entity,VALIDATED_LOCAL,https://www.eugene-or.gov/463/Stormwater,recommended,Administers EC §6.610 permits
+Springfield Development Code Ordinance 6464,GovernmentService,Springfield Development Code Stormwater Amendments (Ordinance 6464),,,GovernmentService,6,authority_entity,VALIDATED_LOCAL,https://springfield-or.gov,recommended,Effective January 8 2024; stormwater connection requirements
+Lane County Stormwater Management Program,GovernmentOrganization,Lane County Public Works Stormwater Management Program,,,GovernmentOrganization,5,authority_entity,VALIDATED_LOCAL,https://www.lanecounty.org/government/county_departments/public_works/engineering_and_construction_services/stormwater_management_program,recommended,Authority for unincorporated Lane County properties
+Oregon 811,SafetyOrganization,Oregon 811 (Oregon Utility Notification Center),,,Organization,6,safety_entity,VALIDATED,https://digsafelyoregon.com,mandatory,Call 811 before any digging
+OSHA 1926 Subpart P,GovernmentService,OSHA 29 CFR 1926 Subpart P (Excavation Safety),,,GovernmentService,4,safety_entity,VALIDATED,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.652,recommended,5 ft depth threshold for protective systems; most yard drains below threshold
+Oregon DEQ 1200-C,GovernmentService,Oregon DEQ 1200-C Construction Stormwater Permit,,,GovernmentService,3,regulatory_entity,VALIDATED_LOCAL,https://www.oregon.gov/deq/wq/wqpermits/pages/stormwater-construction.aspx,recommended,1+ acre disturbance trigger — most yard jobs below threshold
+Oregon DSL Removal-Fill Law,GovernmentService,Oregon Department of State Lands Removal-Fill Law,,,GovernmentService,3,regulatory_entity,VALIDATED_LOCAL,https://www.oregon.gov/dsl/wetlands-waters/pages/removal-fill.aspx,recommended,Only relevant if discharge touches wetland/stream
+Excavator,Product,Mini Excavator,Q557056,,Product,5,equipment_entity,VALIDATED,https://en.wikipedia.org/wiki/Excavator,recommended,For drainage trench digging
+Trencher,Product,Trencher (machine),,,Product,5,equipment_entity,VALIDATED_NO_KG,,,Common for narrow residential drainage trenches

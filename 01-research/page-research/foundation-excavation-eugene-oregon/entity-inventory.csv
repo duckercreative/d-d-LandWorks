@@ -1,0 +1,49 @@
+entity_name,entity_type,canonical_name,qid,kg_id,schema_type,salience_score,role,validation_status,sameAs_url,co_occurrence_status,notes
+D&D Land Works,Organization,D&D Land Works,,/g/11x_dd_land_works,GeneralContractor,1.0,primary_business,VALIDATED_LOCAL,https://ddlandworks.com,mandatory,Reused from home/entity-inventory.csv
+David Deggelman,Person,David Deggelman,,,Person,0.8,business_owner,VALIDATED_LOCAL,,mandatory,Named owner — trust signal; reused from home pack
+Oregon CCB #261742,Credential,Oregon CCB License #261742,,,EducationalOccupationalCredential,0.9,license,VALIDATED_LOCAL,https://www.oregon.gov/ccb/Pages/index.aspx,mandatory,Active license — verify at orccb.org
+DEQ Certified,Credential,DEQ Certified,,,EducationalOccupationalCredential,0.7,certification,VALIDATED_LOCAL,,recommended,Septic certification; relevant context for drainage sections
+Eugene,City,Eugene Oregon,Q34017,,City,1.0,service_area_primary,VALIDATED,https://www.wikidata.org/wiki/Q34017,mandatory,Primary city target — H1 meta areaServed
+Springfield Oregon,City,Springfield Oregon,Q50740,,City,0.8,service_area_primary,VALIDATED,https://www.wikidata.org/wiki/Q50740,mandatory,Second-largest city in service area — include in H1 or intro
+Lane County Oregon,County,Lane County Oregon,Q108068,,County,0.9,service_area,VALIDATED,https://www.wikidata.org/wiki/Q108068,mandatory,County-level framing for schema areaServed
+Willamette Valley,Region,Willamette Valley,Q188059,,Place,0.7,geographic_context,VALIDATED,https://www.wikidata.org/wiki/Q188059,mandatory,Soil and seasonal framing entity
+Foundation Excavation,Service,Foundation Excavation,,,Service,1.0,primary_service,VALIDATED_NO_KG,,mandatory,Primary service entity for this page
+Basement Excavation,Service,Basement Excavation,,,Service,0.8,service_subtype,VALIDATED_NO_KG,,recommended,Foundation type sub-service
+Crawl Space Excavation,Service,Crawl Space Excavation,,,Service,0.8,service_subtype,VALIDATED_NO_KG,,recommended,Most common foundation type in Eugene
+Footings Excavation,Service,Footings Excavation,,,Service,0.7,service_subtype,VALIDATED_NO_KG,,recommended,Keyword-bearing sub-service
+ADU Foundation Excavation,Service,ADU Foundation Excavation,,,Service,0.7,service_subtype,VALIDATED_NO_KG,,recommended,High-growth segment — Oregon HB 2001 era
+Slab Foundation Excavation,Service,Slab Foundation Excavation,,,Service,0.6,service_subtype,VALIDATED_NO_KG,,recommended,Comparison table row
+Oregon Residential Specialty Code,Regulatory,Oregon Residential Specialty Code,,,GovernmentService,0.8,regulatory_authority,VALIDATED_LOCAL,https://up.codes/viewer/oregon/irc-2021,mandatory,Code that governs footing depth in Oregon
+ORSC R403.1.4,CodeSection,ORSC R403.1.4,,,legislation,0.9,code_citation,VALIDATED_LOCAL,https://up.codes/viewer/oregon/irc-2021/chapter/4/foundations#R403.1.4,mandatory,12-inch minimum footing depth — the page's primary code citation
+ORSC R403.1.4.1,CodeSection,ORSC R403.1.4.1,,,legislation,0.8,code_citation,VALIDATED_LOCAL,https://up.codes/viewer/oregon/irc-2021/chapter/4/foundations#R403.1.4.1,mandatory,Frost protection method options
+ORSC Table R301.2,CodeSection,ORSC Table R301.2(1),,,legislation,0.8,code_citation,VALIDATED_LOCAL,,mandatory,Frost depth by elevation table — 12 in below 2500 ft
+ORSC R405,CodeSection,ORSC R405,,,legislation,0.7,code_citation,VALIDATED_LOCAL,https://codes.iccsafe.org/s/ORRC2023P1/chapter-4-foundations,recommended,Foundation drain requirement — applies in Lane County clay
+ORSC R401.3,CodeSection,ORSC R401.3,,,legislation,0.6,code_citation,VALIDATED_LOCAL,,recommended,Grade fall at foundation perimeter
+ORSC R408,CodeSection,ORSC R408,,,legislation,0.6,code_citation,VALIDATED_LOCAL,,recommended,Crawlspace vapor retarder
+OSHA Subpart P,Regulation,OSHA 29 CFR 1926 Subpart P,,,GovernmentService,0.7,safety_authority,VALIDATED,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926SubpartP,recommended,Trench/excavation safety standard
+OSHA 1926.652,Regulation,OSHA 1926.652,,,GovernmentService,0.8,safety_authority,VALIDATED,https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.652,mandatory,Over-dig working space; underpinning rule
+Oregon CCB,Organization,Oregon Construction Contractors Board,,,GovernmentOrganization,0.7,regulatory_authority,VALIDATED,https://www.oregon.gov/ccb/Pages/index.aspx,mandatory,License verification body
+Oregon 811,Organization,Oregon 811,,,SafetyOrganization,0.8,safety_organization,VALIDATED,https://digsafelyoregon.com,mandatory,Utility locate — D&D calls on every job
+City of Eugene Building Inspection,Organization,City of Eugene Building Inspection Services,,,GovernmentOrganization,0.7,local_authority,VALIDATED_LOCAL,https://www.eugene-or.gov/384/Inspections,mandatory,Footing inspection contact for in-city permits
+Eugene eBuild,System,eBuild,,,Service,0.7,inspection_platform,VALIDATED_LOCAL,https://pdd.eugene-or.gov/ebuild,recommended,Online inspection scheduling for City of Eugene permits
+Lane County Land Management Division,Organization,Lane County Land Management Division,,,GovernmentOrganization,0.7,local_authority,VALIDATED_LOCAL,https://www.lanecounty.org/government/county_departments/public_works/land_management_division,mandatory,Permit and inspection authority for unincorporated county
+Lane County Building Safety,Program,Lane County Building Safety,,,GovernmentService,0.7,inspection_program,VALIDATED_LOCAL,https://www.lanecounty.org/government/county_departments/public_works/land_management_division/building_safety,mandatory,Footing inspection — call 541-682-4651; 48-hr advance
+Malpass Clay,SoilType,Malpass Clay,,,Thing,0.8,local_soil,VALIDATED_LOCAL,https://www.blm.gov/sites/blm.gov/files/docs/2021-10/TN-447.pdf,mandatory,BLM-documented; west Eugene; high shrink/swell; low permeability
+Slab-on-Grade Foundation,FoundationType,Slab-on-grade foundation,,,Thing,0.7,foundation_type,VALIDATED_NO_KG,,mandatory,Comparison table; second most common in Eugene
+Crawl Space Foundation,FoundationType,Crawl space foundation,,,Thing,0.8,foundation_type,VALIDATED_NO_KG,,mandatory,Most common in Eugene (per local real estate data)
+Full Basement Foundation,FoundationType,Full basement foundation,,,Thing,0.7,foundation_type,VALIDATED_NO_KG,,mandatory,Least common in Eugene; highest cost
+Over-Dig,TechnicalConcept,Over-dig,,,Thing,0.7,technical_term,VALIDATED_NO_KG,,recommended,OSHA working-space concept — 2-foot minimum
+Foundation Drain,ConstructionElement,Foundation drain,,,Thing,0.7,code_requirement,VALIDATED_NO_KG,,recommended,ORSC R405; required in Eugene clay soils
+Vapor Retarder,ConstructionElement,Crawlspace vapor retarder,,,Thing,0.6,code_requirement,VALIDATED_NO_KG,,recommended,ORSC R408; crawl space specific
+Underpinning,ConstructionSafety,Underpinning,,,Thing,0.7,safety_term,VALIDATED_NO_KG,,recommended,OSHA 1926.652(b); ADU/adjacent-structure excavation
+Dewatering,ConstructionTechnique,Dewatering,,,Thing,0.6,local_technique,VALIDATED_NO_KG,,recommended,Required in Eugene wet season (Oct–May)
+Geotechnical Report,ProfessionalService,Geotechnical report,,,Thing,0.6,professional_service,VALIDATED_NO_KG,,recommended,Soils report; FAQ-level mention
+Braun Excavating,Organization,Braun Excavating Inc,,,LocalBusiness,0.5,competitor,VALIDATED_LOCAL,https://www.braunexcavating.net,context,Knowledge Graph winner for this query; CCB #101388
+Heavy D Excavation,Organization,Heavy D Excavation,,,LocalBusiness,0.5,competitor,VALIDATED_LOCAL,https://www.heavydexcavation.net,context,Rank #2–4; CCB #258673; explicitly uses "foundation excavation Eugene OR"
+Emerald Excavating,Organization,Emerald Excavating,,,LocalBusiness,0.5,competitor,VALIDATED_LOCAL,https://www.emeraldexc.com,context,60+ years in Eugene; CCB #14173 + DEQ #33500
+Cottage Grove Oregon,City,Cottage Grove Oregon,,,City,0.5,service_area,VALIDATED_LOCAL,,recommended,Tier 2 service area mention
+Junction City Oregon,City,Junction City Oregon,,,City,0.5,service_area,VALIDATED_LOCAL,,recommended,Tier 2 service area mention
+Creswell Oregon,City,Creswell Oregon,,,City,0.5,service_area,VALIDATED_LOCAL,,recommended,Tier 2 service area mention
+Veneta Oregon,City,Veneta Oregon,,,City,0.5,service_area,VALIDATED_LOCAL,,recommended,Tier 2 service area mention
+Florence Oregon,City,Florence Oregon,,,City,0.4,service_area,VALIDATED_LOCAL,,optional,Tier 3 service area
+Cascadia Subduction Zone,GeologicFeature,Cascadia Subduction Zone,Q841739,,GeologicFeature,0.4,context,VALIDATED,https://www.wikidata.org/wiki/Q841739,optional,Brief seismic context for foundation importance — TerraFirma source

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Homepage — 1:1 port of site/src/pages/index.astro
  * Updated 2026-09-23 to match current section order and content.
@@ -92,7 +92,7 @@ echo ddlw_hero( array(
 				<div>
 					<h3 class="prob-card__title">Preparing Raw or Undeveloped Land</h3>
 					<p class="prob-card__desc">Undeveloped land requires clearing, excavation, and grading before construction or planned improvements can begin. We handle site preparation and land clearing to prepare raw property for the next stage of the project.</p>
-					<a href="<?php echo esc_url( home_url( '/services/site-preparation' ) ); ?>" class="prob-card__link">
+					<a href="<?php echo esc_url( home_url( '/site-preparation-contractor-eugene-oregon' ) ); ?>" class="prob-card__link">
 						Site Preparation
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="height:0.875rem;width:0.875rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
 					</a>

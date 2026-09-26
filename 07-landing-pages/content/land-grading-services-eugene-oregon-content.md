@@ -2,7 +2,7 @@
 Meta: Licensed land grading contractor in Eugene, OR (CCB #261742). Lot leveling, building pad grading, drainage grading, and driveway grading. Call 541-401-8726 for a free estimate.
 H1: Land Grading Services in Eugene, Oregon
 Schema: LocalBusiness, GeneralContractor, Service, FAQPage, BreadcrumbList
-Internal links: /excavation-contractor-eugene-oregon (anchor: excavation contractor in Eugene), /land-clearing-services-eugene-oregon (anchor: land clearing services), /septic-installation-lane-county-oregon (anchor: septic installation and repair), /services/site-preparation (anchor: site preparation)
+Internal links: /excavation-contractor-eugene-oregon (anchor: excavation contractor in Eugene), /land-clearing-services-eugene-oregon (anchor: land clearing services), /septic-installation-lane-county-oregon (anchor: septic installation and repair), /site-preparation-contractor-eugene-oregon (anchor: site preparation)
 Primary keyword: land grading services Eugene OR
 Word count: ~2,100 body copy; ~2,850 total with FAQ and schema
 
@@ -155,7 +155,7 @@ A building pad is a leveled, compacted ground platform at a precise engineered e
 
 ## Licensed grading contractor serving Lane County
 
-D&D Land Works is licensed, bonded, and insured in Oregon (CCB #261742) and DEQ Certified for [septic installation and repair](/septic-installation-lane-county-oregon). We serve Eugene, Springfield, Cottage Grove, Junction City, Veneta, Creswell, and Florence, and take on grading and [site preparation](/services/site-preparation) projects throughout Lane County.
+D&D Land Works is licensed, bonded, and insured in Oregon (CCB #261742) and DEQ Certified for [septic installation and repair](/septic-installation-lane-county-oregon). We serve Eugene, Springfield, Cottage Grove, Junction City, Veneta, Creswell, and Florence, and take on grading and [site preparation](/site-preparation-contractor-eugene-oregon) projects throughout Lane County.
 
 If your project starts with clearing first, we handle that too. See our [land clearing services](/land-clearing-services-eugene-oregon) page.
 

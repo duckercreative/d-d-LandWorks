@@ -24,7 +24,7 @@ A second, smaller flag carried from the brief: the current live page's H1 is sim
 | **H1** | Septic Install & Repair in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/septic-installation-lane-county-oregon/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `HowTo` (4-step site evaluation process), `ItemList` (signs-of-failure list), `BreadcrumbList`, `Speakable` (H2 #1, #3 lead-in, #6, #7, #9) — no `AggregateRating`/`Review` (zero reviews at launch), no `MedicalBusiness`, no `hasCredential` claim beyond what's already shipped on the homepage (not re-declared here since the business entity isn't redefined inline — see Schema section note) |
-| **Internal links (out)** | `/` (homepage), `/services/site-preparation/` (sideways, drainfield-sequencing framing), `/resources/septic-installation-cost-oregon/`, `/resources/oregon-septic-basics/`, `/locations/eugene/septic/`, `/locations/springfield/septic/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/site-preparation-contractor-eugene-oregon/` (sideways, drainfield-sequencing framing), `/resources/septic-installation-cost-oregon/`, `/resources/oregon-septic-basics/`, `/locations/eugene/septic/`, `/locations/springfield/septic/`, `/about/`, `/contact/` |
 | **Primary keyword** | septic installation eugene or / septic system installation eugene oregon |
 | **Co-primary keyword** | septic repair eugene oregon / septic system repair lane county |
 | **Word count** | ~2,499 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — within the brief's 2,300–2,900 target |
@@ -118,7 +118,7 @@ A septic permit isn't issued sight unseen. It follows a defined sequence:
 3. **Planning clearance.** The application clears Lane County's planning review before final permits are issued.
 4. **Construction.** Once permits are issued, installation begins. The physical construction itself typically takes a matter of days, though the full evaluation-to-permit process can run several weeks to a few months depending on scheduling and site complexity.
 
-One sequencing detail worth knowing before any grading or clearing happens on the same property: once a drainfield location is proposed or approved through the site evaluation, it can't be cut, filled, paved, or otherwise disturbed without risking the county's approval. That means a second round of test pits, added cost, and real delay, and on a tight lot, there may not be an equally good alternative location, since suitable soil area on a given parcel is finite. See [site preparation](/services/site-preparation/) for how D&D sequences grading and clearing work around that rule.
+One sequencing detail worth knowing before any grading or clearing happens on the same property: once a drainfield location is proposed or approved through the site evaluation, it can't be cut, filled, paved, or otherwise disturbed without risking the county's approval. That means a second round of test pits, added cost, and real delay, and on a tight lot, there may not be an equally good alternative location, since suitable soil area on a given parcel is finite. See [site preparation](/site-preparation-contractor-eugene-oregon/) for how D&D sequences grading and clearing work around that rule.
 
 <!-- IMAGE GAP: Test pits dug during a site evaluation. Alt: "Septic site evaluation test pits, Lane County, Oregon." Genuinely absent; ties directly to this section. -->
 

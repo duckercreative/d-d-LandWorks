@@ -99,7 +99,7 @@ $excavation_services = array(
 	array(
 		'title' => ec_get( $pid, 'ec_svc_4_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_4_desc' ),
-		'href'  => home_url( '/services/site-preparation' ),
+		'href'  => home_url( '/site-preparation-contractor-eugene-oregon' ),
 		'icon'  => 'M3 20 9 8l4 6 2-3 6 9H3Z',
 	),
 	array(
@@ -384,7 +384,7 @@ echo ddlw_faq( array( 'heading' => ec_get( $pid, 'ec_faq_heading' ) ), implode( 
 <!-- ── 9. RELATED SERVICES ──────────────────────────────────────────────── -->
 <?php
 $related_services = array(
-	array( 'title' => 'Site Preparation',      'desc' => 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.',              'href' => home_url( '/services/site-preparation' ) ),
+	array( 'title' => 'Site Preparation',      'desc' => 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.',              'href' => home_url( '/site-preparation-contractor-eugene-oregon' ) ),
 	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and a level build pad.',                               'href' => home_url( '/services/grading-leveling' ) ),
 	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging the footprint for foundations, footings, crawl spaces, and basements.',                      'href' => home_url( '/services/foundation-excavation' ) ),
 	array( 'title' => 'Drainage Excavation',   'desc' => 'French drains, swales, and catch basins to correct standing water on Lane County properties.',        'href' => home_url( '/services/drainage-excavation' ) ),

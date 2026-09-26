@@ -1,11 +1,11 @@
-# D&D Land Works — Grading & Leveling Page Content (Draft)
+﻿# D&D Land Works — Grading & Leveling Page Content (Draft)
 
 **Prepared:** 2026-09-08 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/grading-leveling-brief.md` + full `01-research/page-research/grading-leveling/` pack + `business-info.md` + `07-landing-pages/content/excavation-content.md` (voice/schema `@id` pattern reference) + the current live page at `site/src/pages/services/grading-leveling.astro` (existing "slope is the whole job" framing and equipment section preserved, one bullet removed per required scope fix).
 **Status:** Humanizer pass complete (2026-09-08). See note at end of file.
 
 **Corrections / flags applied on top of the brief (per task instruction):**
-1. **Required deletion made:** the live page's bullet "Cutting building pads level and to design elevation" is removed. It's grading tied to a new build — that belongs to [excavation](/services/excavation/) and [site preparation](/services/site-preparation/), not this page, per the brief's §6 Boundary Note and the excavation page's own shipped boundary language. No cut/fill-during-construction, backfill-after-a-trench, or building-pad content appears anywhere below.
+1. **Required deletion made:** the live page's bullet "Cutting building pads level and to design elevation" is removed. It's grading tied to a new build — that belongs to [excavation](/services/excavation/) and [site preparation](/site-preparation-contractor-eugene-oregon/), not this page, per the brief's §6 Boundary Note and the excavation page's own shipped boundary language. No cut/fill-during-construction, backfill-after-a-trench, or building-pad content appears anywhere below.
 2. City-page links use the live Astro codebase's actual routes — `/locations/eugene/` and `/locations/springfield/` — matching the pattern already shipped in `excavation-content.md`.
 3. The `Service` schema's `provider` references `"@id": "https://www.ddlandworks.com/#business"`, the exact `@id` already shipped in `excavation-content.md`'s and `site-preparation-content.md`'s JSON-LD.
 4. Per the brief's §1/§6 flag: the H1 changes from the current live page's "Grading & Leveling" to the fuller, geo-scoped "Grading & Leveling in Eugene, Springfield & Lane County, Oregon," matching the sibling pages' pattern. The URL/slug does not change. This is flagged in the brief as a call to confirm with David/dev before build, not a settled decision — carrying that flag forward rather than treating it as resolved.
@@ -22,7 +22,7 @@
 | **H1** | Grading & Leveling in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/grading-leveling/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #1, #3, #6, #8) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/services/site-preparation/`, `/services/drainage-excavation/` (future), `/services/driveway-repair/`, `/slope-stabilization-eugene-oregon/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/site-preparation-contractor-eugene-oregon/`, `/services/drainage-excavation/` (future), `/services/driveway-repair/`, `/slope-stabilization-eugene-oregon/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | land grading eugene or |
 | **Word count** | ~2,210 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — at the top edge of the brief's 1,700–2,200 target |
 
@@ -36,7 +36,7 @@
 
 # Grading & Leveling in Eugene, Springfield & Lane County, Oregon
 
-A yard that ponds after every rain, a lawn that slopes toward the house instead of away from it, a low spot that never dries out: that's a real, definable job with its own name, grading and leveling. It's not a guessing game between calling a landscaper and calling an excavation contractor, and it's not the same job as digging a new foundation or clearing a raw lot. D&D Land Works grades and levels existing yards throughout Eugene, Springfield, and the rest of Lane County, Oregon, correcting the slope and getting water moving where it should. If your project involves new digging (a foundation, a pond, a utility trench), see [excavation](/services/excavation/) instead. If you're prepping a raw lot ahead of new construction, that's [site preparation](/services/site-preparation/). This page covers the third case: ground that already exists and just isn't shaped right.
+A yard that ponds after every rain, a lawn that slopes toward the house instead of away from it, a low spot that never dries out: that's a real, definable job with its own name, grading and leveling. It's not a guessing game between calling a landscaper and calling an excavation contractor, and it's not the same job as digging a new foundation or clearing a raw lot. D&D Land Works grades and levels existing yards throughout Eugene, Springfield, and the rest of Lane County, Oregon, correcting the slope and getting water moving where it should. If your project involves new digging (a foundation, a pond, a utility trench), see [excavation](/services/excavation/) instead. If you're prepping a raw lot ahead of new construction, that's [site preparation](/site-preparation-contractor-eugene-oregon/). This page covers the third case: ground that already exists and just isn't shaped right.
 
 <!-- AI CITATION BLOCK — verbatim from grading-leveling-brief.md §5 (corrected version, building-pad phrasing dropped), placed in first 30% of body per brief §5 -->
 > Grading and leveling corrects an existing yard's surface — re-sloping a lawn, fixing a low spot that collects water, or restoring a positive drainage slope away from a foundation — without digging a new excavation. D&D Land Works provides grading and leveling for residential and commercial properties throughout Eugene, Springfield, and Lane County, Oregon, correcting yards that slope the wrong way, fixing low spots and standing water, and shaping swales and berms to redirect surface water. The work follows Oregon's adopted residential drainage standard (ORSC §R401.3), which calls for a minimum 6-inch fall over the first 10 feet near a foundation and a 2% minimum slope beyond that. D&D is licensed and bonded under Oregon CCB #261742. Most yard-sized grading jobs fall well under Lane County's grading-permit threshold. Free estimates are available.
@@ -47,7 +47,7 @@ It's neither, exactly. It's a job with its own name: grading and leveling. The l
 
 ## What Does Grading & Leveling Actually Fix?
 
-Everything on this list is a problem with ground that already exists. None of it involves digging a new foundation, clearing a raw lot for [site preparation](/services/site-preparation/), or cutting a building pad. That work belongs on those pages instead. Grading and leveling corrects:
+Everything on this list is a problem with ground that already exists. None of it involves digging a new foundation, clearing a raw lot for [site preparation](/site-preparation-contractor-eugene-oregon/), or cutting a building pad. That work belongs on those pages instead. Grading and leveling corrects:
 
 - Yards that slope toward the house instead of away from it
 - Low spots and standing water that never drain, even weeks after rain
@@ -143,10 +143,10 @@ May through October is generally the preferred dry window, since Willamette Vall
 
 ## Related Services
 
-Grading and leveling is often the whole job, but not always. [Excavation](/services/excavation/) covers grading tied to new digging (a foundation, a pond, a trench); [site preparation](/services/site-preparation/) grades a raw lot before construction. Neither is this page's scope.
+Grading and leveling is often the whole job, but not always. [Excavation](/services/excavation/) covers grading tied to new digging (a foundation, a pond, a trench); [site preparation](/site-preparation-contractor-eugene-oregon/) grades a raw lot before construction. Neither is this page's scope.
 
 - **[Excavation](/services/excavation/)** — cut-and-fill, backfill, and new digging for foundations, ponds, and utility trenches
-- **[Site Preparation](/services/site-preparation/)** — clearing, stripping topsoil, and grading a raw lot before a new build
+- **[Site Preparation](/site-preparation-contractor-eugene-oregon/)** — clearing, stripping topsoil, and grading a raw lot before a new build
 - **[Driveway Repair](/services/driveway-repair/)** — regrading a driveway or access road that's washed out or settled
 - **[Slope Stabilization](/slope-stabilization-eugene-oregon/)** — hillside erosion control and structural slope work, beyond ordinary surface regrading
 

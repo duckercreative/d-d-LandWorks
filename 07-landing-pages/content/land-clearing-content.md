@@ -1,4 +1,4 @@
-# D&D Land Works — Land Clearing Page Content (Draft)
+﻿# D&D Land Works — Land Clearing Page Content (Draft)
 
 **Prepared:** 2026-09-08 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/land-clearing-brief.md` + full `01-research/page-research/land-clearing/` pack + `business-info.md` + `07-landing-pages/content/grading-leveling-content.md` (voice/tone and schema `@id` pattern reference) + `07-landing-pages/content/home-content.md` (the shipped scope-disclosure sentence this page must not contradict) + the current live page at `site/src/pages/services/land-clearing.astro` (existing "From Overgrown to Buildable" section, equipment section, and Often-Paired-With section preserved and re-anchored, not rewritten from scratch) + the current live page at `site/src/pages/resources/land-clearing-cost-per-acre-oregon.astro` (reused Angi-sourced cost figures for site-wide consistency).
@@ -31,7 +31,7 @@
 | **H1** | Land Clearing in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/land-clearing/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #2, #5 lead-in, #6) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/brush-clearing-eugene-oregon/` (sideways, explicit "if it's just brush/overgrowth" framing), `/services/site-preparation/`, `/services/grading-leveling/`, `/resources/land-clearing-cost-per-acre-oregon/`, `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/brush-clearing-eugene-oregon/` (sideways, explicit "if it's just brush/overgrowth" framing), `/site-preparation-contractor-eugene-oregon/`, `/services/grading-leveling/`, `/resources/land-clearing-cost-per-acre-oregon/`, `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/`, `/about/`, `/contact/` |
 | **Primary keyword** | land clearing eugene or / land clearing eugene oregon |
 | **Co-primary keyword** | land clearing lane county or |
 | **Word count** | ~2,448 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — within the brief's 2,000–2,500 target |
@@ -124,7 +124,7 @@ Homeowners call for a couple acres to open up a building envelope or a garden. B
 
 ## Often Paired With
 
-Once a lot is cleared, most jobs move straight into [site preparation](/services/site-preparation/) or [grading and leveling](/services/grading-leveling/) to get the ground ready for what comes next. And if it turns out your project doesn't actually need full land clearing (no standing timber to fell, no stumps to grub, just overgrowth and scrub), see [brush clearing](/brush-clearing-eugene-oregon/) instead; it's a lighter, less expensive scope built for exactly that case.
+Once a lot is cleared, most jobs move straight into [site preparation](/site-preparation-contractor-eugene-oregon/) or [grading and leveling](/services/grading-leveling/) to get the ground ready for what comes next. And if it turns out your project doesn't actually need full land clearing (no standing timber to fell, no stumps to grub, just overgrowth and scrub), see [brush clearing](/brush-clearing-eugene-oregon/) instead; it's a lighter, less expensive scope built for exactly that case.
 
 <!-- IMAGE GAP: Debris pile staged for chipping, hauling, or burning. Alt: "Land clearing debris staged for disposal, Lane County, Oregon." Needs a real jobsite photo; ties directly to the debris-disposal section above. -->
 

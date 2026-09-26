@@ -1,4 +1,4 @@
-# Entity Map — Site Preparation (`/site-preparation/`)
+﻿# Entity Map — Site Preparation (`/site-preparation/`)
 
 Adapted from the same Koray-derived method used in the homepage pack, scoped to the entities that matter specifically for site preparation rather than re-deriving the whole-business entity set. **Canonical business/location/certification entities are reused verbatim from `../home/entity-inventory.csv`** (D&D Land Works, David Deggelman, Oregon CCB #261742, Oregon DEQ, Lane County, Eugene, Springfield, Willamette Valley, `GeneralContractor` schema type) — see that file for their original validation notes. This file only re-lists them where placement differs for this page; full detail lives in `entity-inventory.csv` in this folder.
 
@@ -21,7 +21,7 @@ Unlike the homepage, which names services at the category level, a site-prep pag
 | Subgrade Compaction | VALIDATED_LOCAL | The step that determines whether a foundation crew can build on the pad; named by 1/9 competitors (All Dirt: "soil compaction and stabilization") |
 | Access Road / Driveway Cut | VALIDATED_LOCAL | Relevant to rural acreage and subdivision project types; overlaps `/driveway-repair/` |
 | Erosion Control / Silt Fencing | VALIDATED_LOCAL | Directly tied to DEQ 1200-C compliance (see §4) — named by only 1/9 competitors, in passing |
-| Site Staking (corners/elevations) | VALIDATED_LOCAL | Already present in the current live page copy (`site/src/pages/services/site-preparation.astro`); real industry step, keep |
+| Site Staking (corners/elevations) | VALIDATED_LOCAL | Already present in the current live page copy (`site/src/pages/site-preparation-contractor-eugene-oregon.astro`); real industry step, keep |
 
 ## 3. Oregon Permitting Entities (new for this page — not covered at this depth in the homepage pack)
 

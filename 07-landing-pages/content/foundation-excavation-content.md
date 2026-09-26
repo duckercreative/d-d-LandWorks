@@ -1,4 +1,4 @@
-# D&D Land Works — Foundation Excavation Page Content (Draft)
+﻿# D&D Land Works — Foundation Excavation Page Content (Draft)
 
 **Prepared:** 2026-09-09 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/foundation-excavation-brief.md` + full `01-research/page-research/foundation-excavation/` pack + `business-info.md` + `docs/design-system.md` + `07-landing-pages/content/excavation-content.md` (voice/tone reference, JSON-LD `@id` pattern, and the exact OSHA/Oregon811 figures already shipped there) + the current live page at `site/src/pages/services/foundation-excavation.astro` (existing hook, process list, and equipment note preserved and extended, not discarded).
@@ -24,7 +24,7 @@
 | **H1** | Foundation Excavation in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/foundation-excavation/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #2, #3, #5, #8, #9, #10), `HowTo` (H2 #6), `ItemList` (H2 #7) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/services/site-preparation/`, `/services/drainage-excavation/`, `/services/septic/`, `/services/trenching-backfill/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/services/excavation/`, `/site-preparation-contractor-eugene-oregon/`, `/services/drainage-excavation/`, `/services/septic/`, `/services/trenching-backfill/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | foundation excavation eugene or |
 | **Co-primary keyword** | foundation excavation lane county or |
 | **Word count** | ~2,225 words (body copy, H1 through closing CTA; excludes this metadata block, HTML image-gap comments, and the JSON-LD block) |
@@ -118,7 +118,7 @@ It's a real, explainable cost and schedule driver, not a bait-and-switch. The sa
 
 ## Should Foundation Excavation Happen Before or After I Hire a Builder?
 
-Foundation excavation is almost always tied to an active building permit and a builder's or GC's schedule, not a standalone decision made on its own. D&D Land Works coordinates around that schedule and the [site preparation](/services/site-preparation/) and inspection process rather than treating the dig as a self-contained job, whether the permit holder is you, your builder, or your GC.
+Foundation excavation is almost always tied to an active building permit and a builder's or GC's schedule, not a standalone decision made on its own. D&D Land Works coordinates around that schedule and the [site preparation](/site-preparation-contractor-eugene-oregon/) and inspection process rather than treating the dig as a self-contained job, whether the permit holder is you, your builder, or your GC.
 
 ## Frequently Asked Questions
 
@@ -151,9 +151,9 @@ Foundation excavation is almost always tied to an active building permit and a b
 
 ## Related Services
 
-Foundation excavation is one piece of a larger project. For general cut-and-fill, backfill, and rock-removal mechanics that apply to any dig, not just a foundation, see [Excavation & Earthmoving](/services/excavation/). [Site preparation](/services/site-preparation/) usually comes first on a raw lot; septic and drainage work are separate systems that sometimes get confused with the foundation drain covered above, but aren't the same thing.
+Foundation excavation is one piece of a larger project. For general cut-and-fill, backfill, and rock-removal mechanics that apply to any dig, not just a foundation, see [Excavation & Earthmoving](/services/excavation/). [Site preparation](/site-preparation-contractor-eugene-oregon/) usually comes first on a raw lot; septic and drainage work are separate systems that sometimes get confused with the foundation drain covered above, but aren't the same thing.
 
-- **[Site Preparation](/services/site-preparation/)** — clearing, stripping topsoil, and grading a raw lot before excavation starts
+- **[Site Preparation](/site-preparation-contractor-eugene-oregon/)** — clearing, stripping topsoil, and grading a raw lot before excavation starts
 - **[Excavation & Earthmoving](/services/excavation/)** — general cut-and-fill, backfill, and earthmoving mechanics
 - **[Trenching & Backfill](/services/trenching-backfill/)** — trenching and backfill for utility runs
 - **[Drainage Excavation](/services/drainage-excavation/)** — yard-scale swales and drainage trenches, distinct from the code-required foundation drain above

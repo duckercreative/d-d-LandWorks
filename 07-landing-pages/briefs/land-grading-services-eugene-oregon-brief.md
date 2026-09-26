@@ -286,7 +286,7 @@ All 8 questions sourced from `02-question-mine.md`. Each traces to a specific ca
 | `/excavation-contractor-eugene-oregon` | excavation contractor in Eugene | Services section — "Once grading is done, we also handle excavation work" or service area section |
 | `/land-clearing-services-eugene-oregon` | land clearing services | Process section — "If your property hasn't been cleared yet, we can handle that first" |
 | `/septic-installation-lane-county-oregon` | septic installation and repair | Trust section — "We're also DEQ Certified for septic work across Lane County" |
-| `/services/site-preparation` | site preparation | Services section — connect grading to broader site prep services |
+| `/site-preparation-contractor-eugene-oregon` | site preparation | Services section — connect grading to broader site prep services |
 
 ---
 

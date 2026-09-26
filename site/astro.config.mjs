@@ -8,6 +8,7 @@ export default defineConfig({
   redirects: {
     '/services/utility-excavation': '/utility-trenching-eugene-oregon',
     '/services/brush-clearing': '/brush-clearing-eugene-oregon',
+    '/services/site-preparation': '/site-preparation-contractor-eugene-oregon',
     '/services/slope-stabilization': '/slope-stabilization-eugene-oregon',
   },
   vite: {

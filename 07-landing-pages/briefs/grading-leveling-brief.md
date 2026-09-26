@@ -1,4 +1,4 @@
-# Content Brief — D&D Land Works Grading & Leveling (`/services/grading-leveling/`)
+﻿# Content Brief — D&D Land Works Grading & Leveling (`/services/grading-leveling/`)
 
 **Prepared:** 2026-09-08 · **Prepared by:** Ducker Creative
 **Built from:** `01-research/page-research/grading-leveling/` full research pack (files 00-08 + entity-inventory.csv + 01-keyword-universe.csv), cross-checked against `01-research/page-research/home/entity-inventory.csv`, `01-research/page-research/site-preparation/entity-inventory.csv`, and `01-research/page-research/excavation/entity-inventory.csv` for canonical entity reuse, `business-info.md`, `docs/design-system.md`, `07-landing-pages/content/excavation-content.md` (voice/tone and schema `@id` pattern reference), and the current live page at `site/src/pages/services/grading-leveling.astro`.
@@ -116,7 +116,7 @@ This is the single most important structural instruction in this brief, per the 
 - **THIS page (`/services/grading-leveling/`) owns:** standalone re-sloping, yard leveling, and drainage-grading for an **existing** surface — where nothing new is being dug. A yard that floods, an uneven lawn, a driveway that needs re-sloping without a new cut, a low spot that's been there for years — all of it belongs here.
 - **Excavation & Grading (`/services/excavation/`), already shipped, owns:** grading-to-elevation that happens *because* something is being dug — cut-and-fill to design grade, backfill and compaction after a trench or footing, and rough grading that finishes an excavation project. The excavation page's own shipped H2, "What's the Difference Between Excavation and Grading?", already states this exact boundary and links back to this page:
   > "This page covers grading that happens because something is being dug: cut-and-fill to design grade, backfill and compaction after a trench or footing goes in, and rough grading that finishes an excavation project. Standalone re-sloping, yard leveling, or drainage-grading on ground where nothing new is being dug is a different job, covered on the grading and leveling page instead. If your project doesn't involve a new dig, that's the page to start on."
-- **Site Preparation (`/services/site-preparation/`), already shipped, owns:** grading a **raw or partially-cleared lot** ahead of new construction. This page's territory is the opposite case — an already-developed lot or yard with a surface problem, independent of any new build.
+- **Site Preparation (`/site-preparation-contractor-eugene-oregon/`), already shipped, owns:** grading a **raw or partially-cleared lot** ahead of new construction. This page's territory is the opposite case — an already-developed lot or yard with a surface problem, independent of any new build.
 - **Required fix to the current live page:** the existing "Cutting building pads level and to design elevation" bullet under "Slope Is the Whole Job" is grading tied to a new build — it belongs to Excavation & Grading / Site Preparation, not here, per the boundary quoted above. **This bullet must be removed or replaced** with an on-scope item (e.g., correcting a yard sloping toward the house, or restoring a positive drainage slope after settling) — it should not be carried forward into the rewritten page as-is. This is the one required content deletion this brief specifies.
 - **Instruction to the content writer:** if a draft of this page's content starts describing cut/fill during a new dig, backfill after a trench, rough grading finishing an excavation project, or grading a raw lot before a build, stop — that content belongs on a sibling page. This page's job is standalone grading for an existing surface problem, and per `04-competitor-matrix.md` it is genuinely uncontested ground: 0/8 competitors treat it as a distinct service at all.
 - This distinction should surface in the opening paragraph (briefly, alongside the landscaping-vs-excavation disambiguation) and be restated in the closing CTA copy and the Internal Links section (§9) with explicit "if your project involves new digging, see excavation instead" framing.
@@ -165,7 +165,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 |---|---|---|
 | Homepage (`/`) | "grading and leveling" | H2 #2 services list of `home-brief.md` |
 | `/services/excavation/` | "grading and leveling" (already shipped, per `excavation-content.md`'s own H2 "What's the Difference Between Excavation and Grading?") | Boundary section + Related Services card |
-| `/services/site-preparation/` | "grading and leveling" | Related Services card |
+| `/site-preparation-contractor-eugene-oregon/` | "grading and leveling" | Related Services card |
 | `/locations/eugene/`, `/locations/springfield/` (future/existing city pages) | "yard grading in Eugene" / "yard leveling in Springfield" | Body, services-offered section of each city page |
 | `/services/drainage-excavation/`, `/services/driveway-repair/`, `/slope-stabilization-eugene-oregon/` (sibling/future pages) | "back to grading and leveling" | Each sibling page's "parent cluster" link, per the topical map's hub-and-spoke rule |
 | `/about/` | Breadcrumb | Breadcrumb |
@@ -177,7 +177,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 |---|---|---|
 | `/` (homepage) | "D&D Land Works" or "our full range of excavation services" | Breadcrumb + body-late (up-link to hub) |
 | `/services/excavation/` | "excavation" — with **explicit "if your project involves new digging, see excavation instead" framing**, not a bare anchor | H2 #1 (disambiguation) and the opening paragraph, per §6's Boundary Note |
-| `/services/site-preparation/` | "site preparation" — same explicit "if you're prepping a raw lot for new construction" framing | H2 #2 (problem-framed list intro) |
+| `/site-preparation-contractor-eugene-oregon/` | "site preparation" — same explicit "if you're prepping a raw lot for new construction" framing | H2 #2 (problem-framed list intro) |
 | `/services/drainage-excavation/` (future, not yet built) | "drainage excavation" — framed as "a dedicated write-up on dug drainage systems is coming; this page covers surface grading and swales" | H2 #5 (swale vs. French drain) |
 | `/services/driveway-repair/` | "driveway repair" | Cross-link only, per the topical map's "one page" rule for driveway grading |
 | `/slope-stabilization-eugene-oregon/` | "slope stabilization" | Cross-link only, for hillside/structural erosion control outside this page's ordinary-surface-slope scope |

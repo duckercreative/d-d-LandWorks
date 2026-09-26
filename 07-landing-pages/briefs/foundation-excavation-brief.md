@@ -1,4 +1,4 @@
-# Content Brief — D&D Land Works Foundation Excavation (`/services/foundation-excavation/`)
+﻿# Content Brief — D&D Land Works Foundation Excavation (`/services/foundation-excavation/`)
 
 **Prepared:** 2026-09-09 · **Prepared by:** Ducker Creative
 **Built from:** `01-research/page-research/foundation-excavation/` full research pack (files 00, 02, 03, 04, 05, 07 + entity-inventory.csv), cross-checked against `01-research/page-research/home/entity-inventory.csv` and `01-research/page-research/excavation/entity-inventory.csv` for canonical entity reuse, `business-info.md`, `docs/design-system.md`, `07-landing-pages/content/excavation-content.md` (scope-boundary framing, "What Kind of Project Is This For?" foundation-dig bullet, and the exact JSON-LD `@id` pattern), and the current live page at `site/src/pages/services/foundation-excavation.astro`.
@@ -159,7 +159,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 |---|---|---|
 | `/services/excavation/` | "foundation excavation" (down-link, since the shipped excavation page already names this exact sentence) | "What Kind of Project Is This For?" section — already present in `excavation-content.md` as "See foundation excavation for more depth on this project type" |
 | Homepage (`/`) | "foundation excavation" | Services list section |
-| `/services/site-preparation/` | "foundation excavation" (down-link, since site prep precedes a foundation dig on the same lot) | Sequencing section, if not already present |
+| `/site-preparation-contractor-eugene-oregon/` | "foundation excavation" (down-link, since site prep precedes a foundation dig on the same lot) | Sequencing section, if not already present |
 | `/locations/eugene/`, `/locations/springfield/` | "foundation excavation in Eugene" / "foundation excavation in Springfield" | Body, services-offered section of each city page |
 | `/about/` | Breadcrumb | Breadcrumb |
 | Global header/footer | "Services" nav item | Every page |
@@ -170,7 +170,7 @@ No FAQ answer should fabricate a statistic not already present in the research p
 |---|---|---|
 | `/` (homepage) | "D&D Land Works" or "our full range of excavation services" | Breadcrumb + body-late (up-link to hub) |
 | `/services/excavation/` | "Excavation & Grading" (explicit "for general excavation mechanics, see" framing per §6's Boundary Note) | H2 #1 (scope intro), H2 #2 (scope-boundary statement, primary placement), H2 #9 (rock/water cost-mechanics cross-link) — **add this card to the Related Services grid, currently missing** |
-| `/services/site-preparation/` | "site preparation" | Opening paragraph (brief sequencing cross-reference) + H2 #10 (schedule-coordination section) |
+| `/site-preparation-contractor-eugene-oregon/` | "site preparation" | Opening paragraph (brief sequencing cross-reference) + H2 #10 (schedule-coordination section) |
 | `/services/drainage-excavation/` | "drainage excavation" | H2 #7 (explicit distinction from the foundation drain) |
 | `/services/septic/` | "septic drainfield" | H2 #7 (explicit distinction, one clause, per the entity map's "note the distinction explicitly" instruction) |
 | `/services/trenching-backfill/` | "trenching and backfill" | Related Services card (existing, preserve) |

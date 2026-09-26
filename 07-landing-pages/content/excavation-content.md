@@ -1,4 +1,4 @@
-# D&D Land Works — Excavation & Grading Page Content (Draft)
+﻿# D&D Land Works — Excavation & Grading Page Content (Draft)
 
 **Prepared:** 2026-09-08 · **For:** Ducker Creative / D&D Land Works
 **Built from:** `07-landing-pages/briefs/excavation-brief.md` + full `01-research/page-research/excavation/` pack + `business-info.md` + `07-landing-pages/content/site-preparation-content.md` (voice/schema pattern reference) + `07-landing-pages/content/home-content.md` (OSHA citation wording reference, schema `@id` origin) + the current live page at `site/src/pages/services/excavation.astro` (existing process list and equipment framing preserved and expanded, not discarded).
@@ -22,7 +22,7 @@
 | **H1** | Excavation & Earthmoving in Eugene, Springfield & Lane County, Oregon |
 | **Canonical URL** | `/services/excavation/` |
 | **Schema types** | `Service` (primary, `provider` → `{"@id": "https://www.ddlandworks.com/#business"}`), `FAQPage`, `BreadcrumbList`, `Speakable` (H2 #2, #4, #7, #9) — no `AggregateRating`/`Review` (zero reviews at launch) |
-| **Internal links (out)** | `/` (homepage), `/services/site-preparation/`, `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/utility-excavation/`, `/services/drainage-excavation/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
+| **Internal links (out)** | `/` (homepage), `/site-preparation-contractor-eugene-oregon/`, `/services/grading-leveling/`, `/services/foundation-excavation/`, `/services/utility-excavation/`, `/services/drainage-excavation/`, `/locations/eugene/`, `/locations/springfield/`, `/about/`, `/contact/` |
 | **Primary keyword** | excavation contractor eugene or |
 | **Co-primary keyword** | excavation contractor lane county or |
 | **Word count** | ~2,600 words (body copy, H1 through closing CTA; excludes this metadata table, HTML image-gap comments, and the JSON-LD block) — at the top of the brief's 2,000–2,600 target |
@@ -37,7 +37,7 @@
 
 # Excavation & Earthmoving in Eugene, Springfield & Lane County, Oregon
 
-Excavation is general earthmoving for a defined purpose: cutting material from a high spot, filling a low spot, and bringing a site to the elevation a specific project needs, whether that's a foundation, a pond, a driveway, or a utility trench. It's a different phase than [site preparation](/services/site-preparation/), which clears and grades a raw lot before any of this starts, and it's a narrower scope than grading on its own, a distinction this page draws a hard line around below. D&D Land Works provides excavation and earthmoving for residential and commercial projects throughout Eugene, Springfield, and the rest of Lane County, Oregon, under one Oregon CCB license.
+Excavation is general earthmoving for a defined purpose: cutting material from a high spot, filling a low spot, and bringing a site to the elevation a specific project needs, whether that's a foundation, a pond, a driveway, or a utility trench. It's a different phase than [site preparation](/site-preparation-contractor-eugene-oregon/), which clears and grades a raw lot before any of this starts, and it's a narrower scope than grading on its own, a distinction this page draws a hard line around below. D&D Land Works provides excavation and earthmoving for residential and commercial projects throughout Eugene, Springfield, and the rest of Lane County, Oregon, under one Oregon CCB license.
 
 <!-- AI CITATION BLOCK — verbatim from 00-research-pack.md §11, placed in first 30% of body per brief §5 -->
 > Excavation and grading is general earthmoving work: cutting material from high points, filling low points, and bringing a site to the elevation a project needs — whether that's a foundation, a pond, a driveway, a building pad, or a utility line trench. D&D Land Works provides excavation and grading for residential and commercial projects throughout Eugene, Springfield, and Lane County, Oregon, including foundation digs, pond excavation, driveway and access-road cutting, and utility-run trenching, using an excavator, dozer, and compaction equipment matched to the site. D&D is licensed and bonded under Oregon Construction Contractors Board license CCB #261742, calls Oregon 811 (the Oregon Utility Notification Center) at least two business days before digging on every job as required by Oregon law, and follows OSHA's excavation and trenching safety standard (29 CFR 1926 Subpart P) on jobs involving deeper cuts or trenches. Free estimates are available for both residential and commercial excavation work.
@@ -119,7 +119,7 @@ Yes. D&D Land Works calls Oregon 811 (the Oregon Utility Notification Center) at
 
 ## Do You Need a Permit to Excavate in Lane County?
 
-It depends on scope. A Lane County permitting guide indicates a Grading and Fill Permit is generally required when a project moves more than roughly 50 cubic yards of earth or creates a cut/fill slope steeper than roughly 2:1. Confirm the exact figure for your project directly with [Lane County's Land Management Division](https://www.lanecounty.org/government/county_departments/public_works/land_management_division) rather than treating that as a guaranteed number. Foundation excavation done under an active building permit is generally exempt from a separate grading permit. See [site preparation](/services/site-preparation/) for the fuller permit picture, including the Erosion Prevention Permit and Oregon DEQ's 1200-C stormwater permit.
+It depends on scope. A Lane County permitting guide indicates a Grading and Fill Permit is generally required when a project moves more than roughly 50 cubic yards of earth or creates a cut/fill slope steeper than roughly 2:1. Confirm the exact figure for your project directly with [Lane County's Land Management Division](https://www.lanecounty.org/government/county_departments/public_works/land_management_division) rather than treating that as a guaranteed number. Foundation excavation done under an active building permit is generally exempt from a separate grading permit. See [site preparation](/site-preparation-contractor-eugene-oregon/) for the fuller permit picture, including the Erosion Prevention Permit and Oregon DEQ's 1200-C stormwater permit.
 
 ## Can I Rent an Excavator and Do This Myself?
 
@@ -150,7 +150,7 @@ An excavator handles digging and rock work, a dozer pushes and shapes material a
 Yes. Oregon811 (the Oregon Utility Notification Center) requires at least two business days' advance notice before digging, and locate requests are free. D&D Land Works makes that call before starting any dig, as Oregon law requires.
 
 **Do I need a permit to excavate in Lane County?**
-It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1 — confirm the exact figure for your project with Lane County's Land Management Division rather than treating that as an exact, guaranteed number. See [site preparation](/services/site-preparation/) for the fuller permit picture.
+It depends on scope. A Lane County permitting guide puts the Grading and Fill Permit threshold at roughly 50 cubic yards moved or a cut/fill slope steeper than roughly 2:1 — confirm the exact figure for your project with Lane County's Land Management Division rather than treating that as an exact, guaranteed number. See [site preparation](/site-preparation-contractor-eugene-oregon/) for the fuller permit picture.
 
 **How long does excavation take?**
 Often just a few days for a residential job once permits and site prep are done. Commercial or multi-building excavation commonly runs 1 to 3-plus weeks depending on scope, access, and how much material has to move.
@@ -160,9 +160,9 @@ Yes to all of them. D&D Land Works scopes foundation digs, ponds, driveways and 
 
 ## Related Services
 
-Excavation is rarely the only phase a project needs. [Site preparation](/services/site-preparation/) usually comes first on a raw lot; [grading and leveling](/services/grading-leveling/) handles standalone re-sloping and yard-leveling work where nothing new is being dug (the cut-and-fill and backfill covered on this page are a different scope); [foundation excavation](/services/foundation-excavation/) and [utility excavation](/services/utility-excavation/) go deeper on those two specific project types.
+Excavation is rarely the only phase a project needs. [Site preparation](/site-preparation-contractor-eugene-oregon/) usually comes first on a raw lot; [grading and leveling](/services/grading-leveling/) handles standalone re-sloping and yard-leveling work where nothing new is being dug (the cut-and-fill and backfill covered on this page are a different scope); [foundation excavation](/services/foundation-excavation/) and [utility excavation](/services/utility-excavation/) go deeper on those two specific project types.
 
-- **[Site Preparation](/services/site-preparation/)** — clearing, stripping topsoil, and grading a raw lot before excavation starts
+- **[Site Preparation](/site-preparation-contractor-eugene-oregon/)** — clearing, stripping topsoil, and grading a raw lot before excavation starts
 - **[Grading & Leveling](/services/grading-leveling/)** — re-sloping and finish grading for an existing surface, no new digging involved
 - **[Foundation Excavation](/services/foundation-excavation/)** — digging and leveling for footings and foundations
 - **[Utility Excavation](/services/utility-excavation/)** — trenching and backfill for water, sewer, and utility lines

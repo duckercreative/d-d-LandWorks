@@ -1,0 +1,95 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+utility trenching eugene or,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P0,Primary page target keyword
+utility trenching eugene oregon,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P0,Full state-name variant
+utility trenching lane county oregon,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P0,County-level variant
+water line trenching eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P0,High-volume sub-service variant — plumbing SERPs dominated; excavator gap
+sewer line trenching eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P0,High-volume sub-service variant — plumbing SERPs dominated; excavator gap
+electric conduit trenching eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P0,Sub-service variant; Portland contractors rank; no Eugene excavator
+utility trenching contractor eugene or,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P1,Contractor-suffix variant
+underground utility contractor eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Directory-dominated SERP; service page can rank with schema
+underground utility trenching eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Underground modifier variant
+gas line trenching eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Sub-service variant; NW Natural context relevant
+joint trenching eugene oregon,serp,commercial,consideration,y,scheduled,long,high,/utility-trenching-eugene-oregon,P1,Zero competitors rank for this; first-mover
+utility trench digging eugene or,serp,commercial,decision,y,scheduled,mid,medium,/utility-trenching-eugene-oregon,P1,Digging-phrasing variant
+trenching contractor eugene oregon,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P1,Generic trenching contractor — broad local head term
+utility trenching springfield oregon,serp,commercial,decision,y,scheduled,head,high,/utility-trenching-eugene-oregon,P1,Springfield city variant — Tier 1 city per business-info.md
+underground utility installation eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Installation-phrasing variant
+utility trenching near me,serp,commercial,decision,n,scheduled,head,high,/utility-trenching-eugene-oregon,P1,Near-me device-located generic
+how deep does a water line need to be buried oregon,paa,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Depth-question; PAA-sourced; cojoasphalt.com ranks for this
+how deep does a sewer line need to be buried in oregon,paa,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Depth-question PAA variant
+how deep does electrical conduit need to be buried oregon,paa,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Depth-question; NEC 300.5 context
+how deep does a gas line need to be buried in oregon,paa,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Depth-question; ORSC G2415.12 context
+water line burial depth lane county,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Lane County-specific depth lookup
+frost depth lane county oregon,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P1,Frost depth = 12 in.; driving water line depth
+can water and sewer go in same trench oregon,paa,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P0,Joint trenching PAA; zero-competitor coverage
+can water sewer electrical gas go in same trench,paa,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P0,Joint trenching multi-utility PAA
+joint trenching multiple utilities oregon,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Joint trenching informational
+utility trench separation requirements oregon,serp,informational,consideration,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Code-adjacent separation rules
+who calls 811 utility company or contractor,paa,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P0,Coordination-role PAA
+who is required to call 811 in oregon,paa,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Oregon811 obligation clarity
+oregon811 utility trenching,serp,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,OR811 + service combined
+call before you dig oregon,serp,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,OR811 awareness term
+how long is oregon 811 ticket good for,paa,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Ticket validity — new 30-day rule; zero-competitor coverage
+oregon811 ticket expiration 30 days,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P1,New regulatory detail (2025/2026 change)
+do i need a permit for utility trenching lane county,paa,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Permit-anxiety PAA
+lane county right of way permit trenching,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,ROW permit; 6-8 week process; Lane County Public Works
+utility trench permit cost oregon,serp,commercial,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P2,Permit cost ranges
+utility trenching cost per foot oregon,serp,commercial,consideration,y,browse,mid,high,/utility-trenching-eugene-oregon,P0,Cost-intent head term; cojoasphalt.com ranks
+water line trenching cost oregon,serp,commercial,consideration,y,browse,mid,high,/utility-trenching-eugene-oregon,P0,Cost-intent sub-service
+sewer lateral trenching cost oregon,serp,commercial,consideration,y,browse,mid,high,/utility-trenching-eugene-oregon,P0,Cost-intent sub-service
+electrical conduit trenching cost oregon,serp,commercial,consideration,y,browse,mid,high,/utility-trenching-eugene-oregon,P1,Cost-intent sub-service
+gas line trenching cost oregon,serp,commercial,consideration,y,browse,mid,high,/utility-trenching-eugene-oregon,P1,Cost-intent sub-service
+joint trench cost oregon,serp,commercial,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Joint trench pricing; cojoasphalt.com cost guide covers this; expand
+trenching under driveway cost oregon,serp,commercial,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Hardscape differential cost
+trenching under concrete cost,serp,commercial,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P2,Hardscape specific
+how much does utility trenching cost in eugene oregon,serp,commercial,decision,y,browse,long,high,/utility-trenching-eugene-oregon,P0,Eugene-specific cost query
+adu utility trenching eugene oregon,serp,commercial,decision,y,scheduled,long,high,/utility-trenching-eugene-oregon,P0,ADU-driven demand; Oregon ADU law context
+utility trenching for adu lane county,serp,commercial,decision,y,scheduled,long,high,/utility-trenching-eugene-oregon,P1,ADU county-level variant
+new construction utility trenching eugene or,serp,commercial,decision,y,scheduled,long,high,/utility-trenching-eugene-oregon,P1,New construction buyer
+utility trenching for shop or barn eugene,serp,commercial,decision,y,scheduled,long,medium,/utility-trenching-eugene-oregon,P2,Outbuilding buyer
+utility trenching for detached garage eugene,serp,commercial,decision,y,scheduled,long,medium,/utility-trenching-eugene-oregon,P2,Outbuilding buyer
+run water to detached garage oregon,serp,commercial,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P1,Outbuilding water line natural language
+cost to run power to a shop from house oregon,serp,commercial,consideration,y,browse,long,high,/utility-trenching-eugene-oregon,P1,Outbuilding power natural language
+sewer lateral installation lane county,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Sewer lateral specific
+new water service line eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,New water line specific
+water service line replacement eugene or,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Replacement buyer
+electrical trenching eugene oregon,serp,commercial,decision,y,scheduled,mid,high,/utility-trenching-eugene-oregon,P1,Electrical-only variant
+sub panel trenching cost eugene or,serp,commercial,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P2,Sub-panel/outbuilding electrical
+ev charger trenching cost eugene oregon,serp,commercial,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P2,EV charger trenching demand driver
+tracer wire requirements oregon,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Tracer wire detail; zero-competitor coverage
+tracer wire color code utility trench,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Color-specific tracer wire lookup
+bedding material utility trench oregon,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Material-specific term
+what does utility trenching contractor do,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Awareness-stage question
+utility excavation vs utility trenching,serp,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P1,Scope-boundary disambiguation (links to /utility-excavation/)
+what is the difference between trenching and excavation,paa,informational,awareness,n,browse,long,medium,/utility-trenching-eugene-oregon,P1,PAA disambiguation
+utility trenching cottage grove oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-trenching-eugene-oregon,P2,Tier 2 city variant
+utility trenching junction city oregon,serp,commercial,decision,y,scheduled,mid,medium,/utility-trenching-eugene-oregon,P2,Tier 2 city variant
+utility trenching creswell oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-trenching-eugene-oregon,P3,Tier 2 city variant
+utility trenching veneta oregon,serp,commercial,decision,y,scheduled,mid,low,/utility-trenching-eugene-oregon,P3,Tier 2 city variant
+licensed bonded utility trenching contractor oregon,serp,commercial,decision,y,scheduled,long,high,/utility-trenching-eugene-oregon,P1,Trust-signal combined query
+ccb licensed utility trenching eugene,serp,commercial,decision,y,scheduled,long,medium,/utility-trenching-eugene-oregon,P2,CCB-specific trust query
+free estimate utility trenching eugene,serp,commercial,decision,y,scheduled,long,high,/utility-trenching-eugene-oregon,P0,Conversion-intent
+d&d land works utility trenching,serp,navigational,decision,y,scheduled,mid,medium,/utility-trenching-eugene-oregon,P1,Brand + service navigational
+eweb new water service connection,serp,navigational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P2,Utility coordination navigational — EWEB
+springfield utility board new service,serp,navigational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P2,Utility coordination navigational — SUB
+nw natural new gas service oregon,serp,navigational,consideration,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Gas utility coordination navigational
+nec table 300.5 burial depth,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Code-lookup phrasing
+opsc 609.1 water service depth,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Code-section lookup
+orsc g2415.12 gas line depth,serp,informational,awareness,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Code-section lookup
+lane county trenching for utilities,serp,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P0,Direct match to Lane County government source
+what happens if you hit a utility line,paa,informational,awareness,n,browse,long,medium,/utility-trenching-eugene-oregon,P1,Failure-mode PAA
+hit unmarked utility line liability oregon,serp,informational,awareness,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Liability-specific
+who contacts utility company for new tap,paa,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P0,Coordination-role disambiguation
+permit for new water service line eugene or,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Permit-specific local
+new sewer connection permit eugene,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Sewer permit-specific
+utility trenching wet season willamette valley,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Seasonal timing angle; zero-competitor coverage
+best time to schedule excavation eugene oregon,serp,informational,consideration,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Seasonal planning
+willamette valley clay soil excavation,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Soil-specific — Malpass clay context
+lane county soil trenching,serp,informational,awareness,y,browse,long,low,/utility-trenching-eugene-oregon,P2,Soil-specific local
+utility trench inspection before backfill oregon,serp,informational,consideration,y,browse,long,medium,/utility-trenching-eugene-oregon,P1,Inspection timing
+open trench vs trenchless utility oregon,serp,informational,consideration,n,browse,long,medium,/utility-trenching-eugene-oregon,P2,Method comparison; D&D = open trench; honest scope note
+directional boring vs trenching oregon,serp,informational,consideration,n,browse,long,low,/utility-trenching-eugene-oregon,P2,Method comparison
+deq certified excavation contractor oregon,serp,commercial,decision,y,scheduled,long,medium,/utility-trenching-eugene-oregon,P1,DEQ cert differentiation angle
+deq certified trenching eugene,serp,commercial,decision,y,scheduled,long,medium,/utility-trenching-eugene-oregon,P1,DEQ cert + location
+osha trench safety requirements,serp,informational,awareness,n,browse,long,medium,/utility-trenching-eugene-oregon,P2,OSHA 1926 Subpart P context (reused)
+how deep before osha requires shoring,paa,informational,awareness,n,browse,long,medium,/utility-trenching-eugene-oregon,P2,OSHA shoring threshold

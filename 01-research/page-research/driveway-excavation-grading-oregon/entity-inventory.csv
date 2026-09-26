@@ -1,0 +1,45 @@
+entity_name,entity_type,canonical_name,qid,schema_type,salience_score,role,validation_status,sameAs_url,co_occurrence_status,notes
+D&D Land Works,Organization,D&D Land Works,,GeneralContractor,1.0,primary_business,VALIDATED_LOCAL,,mandatory,Business entity; CCB #261742; owner David Deggelman
+David Deggelman,Person,David Deggelman,,Person,0.9,business_owner,VALIDATED_LOCAL,,mandatory,Owner; use for author/E-E-A-T signals
+Eugene Oregon,Place,Eugene,Q44189,City,1.0,primary_location,VALIDATED,https://www.wikidata.org/wiki/Q44189,mandatory,Primary service city; seat of Lane County
+Springfield Oregon,Place,Springfield,,City,0.9,service_location,VALIDATED_LOCAL,,mandatory,Adjacent to Eugene; part of Eugene metro
+Lane County Oregon,Place,Lane County Oregon,Q486761,AdministrativeArea,0.95,service_area,VALIDATED,https://www.wikidata.org/wiki/Q486761,mandatory,Primary service jurisdiction
+Willamette Valley,Place,Willamette Valley,Q1246756,Landform,0.8,regional_context,VALIDATED,,mandatory,Broader regional identifier for soil/climate context
+Junction City Oregon,Place,Junction City Oregon,,City,0.6,service_location,VALIDATED_LOCAL,,recommended,Lane County city; used in cost benchmarks from cojo
+Cottage Grove Oregon,Place,Cottage Grove Oregon,,City,0.6,service_location,VALIDATED_LOCAL,,recommended,Southern Lane County
+Creswell Oregon,Place,Creswell Oregon,,City,0.5,service_location,VALIDATED_LOCAL,,recommended,Lane County satellite city
+Gravel Driveway Excavation,Service,Gravel Driveway Excavation,,Service,1.0,primary_service,VALIDATED_LOCAL,,mandatory,Core service on this page
+Gravel Driveway Grading,Service,Gravel Driveway Grading,,Service,1.0,primary_service,VALIDATED_LOCAL,,mandatory,Core service on this page
+Driveway Regrading,Service,Driveway Regrading,,Service,0.9,primary_service,VALIDATED_LOCAL,,mandatory,Maintenance/repair variant of grading
+Washed Out Driveway Repair,Service,Washed Out Driveway Repair,,Service,0.9,primary_service,VALIDATED_LOCAL,,mandatory,Urgency service; highest-converting failure-mode query
+Gravel Driveway Repair,Service,Gravel Driveway Repair,,Service,0.9,primary_service,VALIDATED_LOCAL,,mandatory,Broad repair service
+3/4 minus crushed quarry rock,Material,3/4 minus crushed quarry rock,,,0.8,material,VALIDATED_LOCAL,https://www.laneforest.com/bulk-rock-and-gravel/quarry-rock/,differentiator,Oregon standard driveway surface course; Lane Forest Products source
+2-inch minus crushed rock,Material,2-inch minus crushed rock,,,0.7,material,VALIDATED_LOCAL,,differentiator,Base course material
+Road base / CSBC,Material,Crushed Surface Base Course,,,0.6,material,VALIDATED_LOCAL,,differentiator,Interchangeable with 2-inch minus; both terms used in Oregon
+Geotextile fabric,Material,Geotextile fabric,,,0.8,material,VALIDATED,,,differentiator,Woven separator layer; mandatory on Lane County clay
+Oregon CCB,Organization,Oregon Construction Contractors Board,,,0.9,regulatory_body,VALIDATED,https://www.oregon.gov/ccb/,,mandatory,License body; D&D CCB #261742
+Oregon 811,Service,Oregon 811,,,0.85,regulatory_service,VALIDATED,https://digsafelyoregon.com,,unclaimed,Dig Safely Oregon; 2 business days notice required; no competitor mentions this
+Oregon Utility Notification Center,Organization,Oregon Utility Notification Center,,,0.7,regulatory_body,VALIDATED,https://www.ounc.org,,unclaimed,Governs Oregon 811; ORS Chapter 757
+ORS 374.305(1),Statute,ORS 374.305(1),,,0.7,legal_reference,VALIDATED,https://oregon.gov/odot/Engineering/AccessMgmt/PermitProcess.pdf,,unclaimed,State highway approach permit requirement
+ODOT,Organization,Oregon Department of Transportation,Q1030060,GovernmentOrganization,0.7,regulatory_body,VALIDATED,https://www.wikidata.org/wiki/Q1030060,,recommended,Approach permits for state highway frontage
+Lane County ROW Access Connections Permit,PermitType,Lane County ROW Access Connections Permit,,,0.8,permit,VALIDATED_LOCAL,https://www.lanecountyor.gov/government/county_departments/public_works/right-of-way_permits,,unclaimed,$450 permanent; required for new/modified county road approach
+Lane Code Chapter 15,RegulatoryCode,Lane Code Chapter 15,,,0.6,legal_reference,VALIDATED_LOCAL,,unclaimed,Governing code for Lane County road approach standards
+Lane County Public Works,Organization,Lane County Public Works,,,0.7,government_agency,VALIDATED_LOCAL,,recommended,Administers approach permits; 3050 N. Delta Hwy Eugene
+OAR 952-001-0010(23),AdminRule,OAR 952-001-0010(23),,,0.6,legal_reference,VALIDATED,,unclaimed,Oregon 811 ticket validity reduced to 30 days; 2025/2026 change
+Form 734-2680,Form,Oregon ODOT Form 734-2680,,,0.5,form_reference,VALIDATED,https://www.oregon.gov/odot/Forms/2ODOT/7342680.pdf,,unclaimed,ODOT state highway approach permit application
+Malpass silty clay loam,SoilType,Malpass silty clay loam,,,0.8,soil_entity,VALIDATED,https://websoilsurvey.nrcs.usda.gov,,unclaimed,Dominant Lane County Valley floor soil; Hydrologic Group D
+Hydrologic Soil Group D,Classification,Hydrologic Soil Group D,,,0.7,soil_classification,VALIDATED,,unclaimed,Very slow water transmission; high shrink-swell; drives geotextile requirement
+Willamette Valley wet season,SeasonalPattern,Willamette Valley wet season,,,0.8,climate_entity,VALIDATED_LOCAL,,unclaimed,Oct–Apr; 47" annual precipitation in Eugene; primary driveway failure driver
+Crown,DrivewayFeature,Driveway crown,,,0.7,technical_feature,VALIDATED_LOCAL,,differentiator,Center-high surface profile that sheds water; key term in drainage diagnosis
+Culvert,Infrastructure,Culvert,,,0.6,infrastructure,VALIDATED,,recommended,Common requirement on rural Oregon driveways
+Motor grader,Equipment,Motor grader,,,0.5,equipment,VALIDATED,,recommended,Primary grading equipment
+Box blade,Equipment,Box blade,,,0.4,equipment,VALIDATED,,recommended,DIY-accessible grading tool; referenced in DIY vs. hire guidance
+Driveway excavation,Process,Driveway excavation,,,0.9,process,VALIDATED_LOCAL,,mandatory,Initial cut to establish foundation bed
+Driveway grading,Process,Driveway grading,,,0.9,process,VALIDATED_LOCAL,,mandatory,Shaping slope crown and drainage angles
+Compaction in lifts,Process,Compaction in lifts,,,0.6,process,VALIDATED,,differentiator,Layer-by-layer compaction; critical on wet-climate clay
+Mud pumping,FailureMode,Mud pumping / pumping fines,,,0.7,failure_mode,VALIDATED_LOCAL,,unclaimed,Clay pumping into base rock when no geotextile used
+Gravel washout,FailureMode,Gravel washout,,,0.9,failure_mode,VALIDATED_LOCAL,,mandatory,Most common Oregon driveway failure mode
+Rutting,FailureMode,Driveway rutting,,,0.8,failure_mode,VALIDATED_LOCAL,,mandatory,Base failure or clay pumping; primary clay-subgrade failure mode
+Washboard,FailureMode,Washboard driveway surface,,,0.6,failure_mode,VALIDATED_LOCAL,,recommended,Ripple pattern in gravel surface
+digsafelyoregon.com,URL,Dig Safely Oregon,,,0.8,reference_url,VALIDATED,https://digsafelyoregon.com,,unclaimed,Official Oregon 811 online notification portal
+ccblookup.com,URL,Oregon CCB License Lookup,,,0.7,reference_url,VALIDATED,https://www.ccblookup.com,,recommended,Public license verification tool; cite for trust

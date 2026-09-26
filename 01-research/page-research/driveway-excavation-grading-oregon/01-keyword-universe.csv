@@ -1,0 +1,98 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,target_page_slug,priority,notes
+driveway grading Eugene OR,seed/search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Core target keyword — exact service + city
+driveway grading Eugene Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Full state spelling variant
+driveway excavation Eugene Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Strong local intent; competitor pages exist
+driveway grading Oregon,search,commercial,consideration,yes,browse,head,high,/driveway-excavation-grading-oregon,P0,Statewide head term; broad but relevant
+gravel driveway repair Eugene Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,Repair intent with location; high conversion signal
+gravel driveway contractor Eugene Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Hire-ready intent
+gravel driveway installation Eugene OR,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,New install intent — high commercial value
+washed out driveway repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,Pain-point driven; urgency; real search term found
+gravel driveway Eugene OR,search,commercial,consideration,yes,browse,head,high,/driveway-excavation-grading-oregon,P0,Short-tail local — high impressions
+gravel driveway repair Oregon,search,transactional,decision,yes,urgency,head,high,/driveway-excavation-grading-oregon,P0,Statewide repair head term
+driveway grading cost Oregon,search,commercial,consideration,yes,browse,mid,high,/driveway-excavation-grading-oregon,P0,Cost research pre-call query
+driveway leveling Eugene Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Seed keyword; confirms user intent
+gravel driveway repair Lane County Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P0,Very specific local — low competition
+gravel driveway grading repair Lane County,seed,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P0,Seed keyword; long-tail gold
+driveway excavation Oregon,seed,transactional,decision,yes,scheduled,head,high,/driveway-excavation-grading-oregon,P0,Seed keyword
+driveway excavation contractor Eugene,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Multiple competitor pages found for this
+driveway grading Springfield Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Adjacent city — Eugene metro area
+gravel driveway repair Springfield OR,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,Seed keyword variant; cover Springfield
+driveway grading Lane County Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,County-level modifier — strong local signal
+gravel driveway contractor Lane County,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P0,Hire-ready with county modifier
+driveway excavation cost Oregon,search,commercial,consideration,yes,browse,mid,high,/driveway-excavation-grading-oregon,P1,Cost research; drives call conversions
+gravel driveway installation cost Oregon,search,commercial,consideration,yes,browse,mid,high,/driveway-excavation-grading-oregon,P1,Pricing research before hire
+driveway regrading Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Direct service term
+driveway regrading cost Oregon,search,commercial,consideration,yes,browse,mid,high,/driveway-excavation-grading-oregon,P1,Cost intent; mid-funnel
+driveway regrading Eugene Oregon,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P0,Long-tail local; strong
+gravel driveway repair near me Eugene,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,"Near me" intent — mobile search
+driveway excavation near me Eugene,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,"Near me" variant — mobile
+gravel driveway contractor near me Eugene,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,"Near me" hire intent
+excavation contractor Eugene OR,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Broad excavation term — also serves other pages
+grading contractor Eugene Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Service category term
+excavation contractor Lane County Oregon,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,County-level
+driveway washout repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P0,Failure-mode driven; urgency signal
+gravel driveway washout repair Eugene,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P0,City-specific washout repair
+driveway erosion repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Erosion repair intent
+gravel driveway erosion fix Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,Long-tail erosion variant
+gravel driveway keeps washing out Oregon,search,informational,awareness,yes,urgency,long,med,/driveway-excavation-grading-oregon,P1,Symptom query; great for FAQ/intro content
+how to fix washed out gravel driveway Oregon,search,informational,awareness,yes,urgency,long,med,/driveway-excavation-grading-oregon,P1,Informational but drives service discovery
+driveway leveling Oregon,search,transactional,decision,yes,scheduled,head,high,/driveway-excavation-grading-oregon,P1,Leveling head term — statewide
+gravel driveway leveling service Eugene,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P0,Specific service + city
+driveway leveling cost Eugene Oregon,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Cost research — some results misroute to concrete leveling; opportunity
+gravel driveway base prep Oregon,search,informational,consideration,yes,browse,mid,med,/driveway-excavation-grading-oregon,P2,Technical research query
+gravel driveway base material Oregon,seed,informational,consideration,yes,browse,mid,med,/driveway-excavation-grading-oregon,P2,Seed keyword; technical
+gravel driveway base depth Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Depth spec question — great FAQ target
+driveway base excavation Eugene Oregon,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,Technical service term
+geotextile fabric driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Material-specific informational
+crushed rock driveway Eugene Oregon,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Material + city; active research
+3/4 minus gravel driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Spec-level question; trust builder
+crusher run driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Material research term
+road base gravel driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Informational; mid-page content target
+clay soil driveway preparation Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Oregon-specific context; Willamette Valley pain point
+driveway drainage repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Drainage failure — urgency signal
+driveway drainage fix Eugene Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,City-specific drainage fix
+driveway slope repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Slope/drainage problem
+driveway crown repair Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Technical term — good for body copy
+gravel driveway drainage Oregon,search,informational,consideration,yes,browse,mid,med,/driveway-excavation-grading-oregon,P2,General drainage informational
+driveway water runoff fix Oregon,search,informational,consideration,yes,urgency,long,med,/driveway-excavation-grading-oregon,P2,Symptom-first query
+gravel driveway pothole repair Eugene,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,Specific failure mode + city
+gravel driveway pothole repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Statewide pothole fix
+gravel driveway rut repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Failure mode term
+gravel driveway rut repair Eugene,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,Local rut repair
+washboard driveway repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Washboard — common Oregon rural driveway problem
+how much does gravel driveway cost Oregon,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Cost research question format
+gravel driveway cost Oregon 2026,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Current year pricing research
+gravel driveway cost Eugene,search,commercial,consideration,yes,browse,mid,high,/driveway-excavation-grading-oregon,P1,Cost + city
+gravel driveway maintenance cost Oregon,search,commercial,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Recurring maintenance cost research
+annual driveway maintenance Oregon,search,commercial,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Maintenance cycle awareness
+how often to regrade gravel driveway Oregon,search,informational,awareness,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Seasonal maintenance question — great FAQ
+gravel driveway repair cost Eugene OR,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Cost research pre-call
+driveway excavation estimate Eugene,search,commercial,consideration,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,Estimate-seeking pre-hire
+driveway grading estimate Lane County,search,commercial,consideration,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,County estimate query
+site prep driveway Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Site prep term — cross-service
+dirt work driveway Eugene,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Regional vernacular for excavation
+driveway access road grading Oregon,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,Rural access road variant
+rural driveway repair Oregon,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,Rural property owners — large segment in Lane County
+farm driveway repair Lane County Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,Rural/agricultural modifier — specific audience
+gravel driveway Springfield Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Springfield location target
+gravel driveway Cottage Grove Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Satellite city — mention in content
+gravel driveway Junction City Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Satellite city — mention in content
+gravel driveway Creswell Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Satellite city — mention in content
+gravel driveway repair Cottage Grove,search,transactional,decision,yes,urgency,mid,high,/driveway-excavation-grading-oregon,P1,City-specific repair
+gravel driveway repair Creswell Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P2,Smaller city variant
+new gravel driveway installation Oregon,seed,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P0,Seed keyword — new install intent
+best gravel for driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Material research — great for body copy
+best gravel for driveway Lane County Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Hyper-local material question
+how deep should gravel driveway be Oregon,search,informational,awareness,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Informational FAQ — good for featured snippet
+do I need permit for gravel driveway Oregon,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Regulatory question — trust/authority content
+gravel driveway restoration Eugene,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,"Restoration" synonym
+Oregon driveway excavation and grading,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P0,Brand-level service description
+gravel driveway repair cost per foot Oregon,search,commercial,consideration,yes,browse,long,high,/driveway-excavation-grading-oregon,P1,Per-foot pricing query
+driveway repair after storm Oregon,search,transactional,decision,yes,urgency,long,high,/driveway-excavation-grading-oregon,P1,Post-storm urgency — Oregon winters drive this
+gravel driveway seasonal maintenance Oregon,search,informational,awareness,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Maintenance awareness
+driveway grading Willamette Valley,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P1,Regional modifier — covers broader service area
+gravel driveway tips Oregon winters,search,informational,awareness,yes,browse,long,low,/driveway-excavation-grading-oregon,P2,Low commercial value but drives awareness/trust
+culvert installation driveway Oregon,search,transactional,decision,yes,scheduled,mid,high,/driveway-excavation-grading-oregon,P2,Cross-service — culverts are part of driveway drainage work
+driveway gravel replenish Eugene,search,transactional,decision,yes,scheduled,long,high,/driveway-excavation-grading-oregon,P1,Maintenance/top-up service
+gravel driveway how long does it last Oregon,search,informational,awareness,yes,browse,long,low,/driveway-excavation-grading-oregon,P2,Longevity question — awareness content
+gravel vs asphalt driveway Oregon cost,search,informational,consideration,yes,browse,long,med,/driveway-excavation-grading-oregon,P2,Comparison research; D&D does grading not paving — clarify scope

@@ -1,4 +1,4 @@
-# Content Brief — D&D Land Works Land Clearing (`/services/land-clearing/`)
+﻿# Content Brief — D&D Land Works Land Clearing (`/services/land-clearing/`)
 
 **Prepared:** 2026-09-08 · **Prepared by:** Ducker Creative
 **Built from:** `01-research/page-research/land-clearing/` full research pack (files 00-08 + entity-inventory.csv), cross-checked against `01-research/page-research/home/entity-inventory.csv`, `01-research/page-research/site-preparation/entity-inventory.csv`, `01-research/page-research/excavation/entity-inventory.csv`, and `01-research/page-research/grading-leveling/entity-inventory.csv` for canonical entity reuse, `business-info.md`, `docs/design-system.md`, `07-landing-pages/content/grading-leveling-content.md` (voice/tone and schema `@id` pattern reference), `07-landing-pages/content/home-content.md` (the shipped scope-disclosure sentence this brief must not contradict — see §6's Critical Scope-Framing box), and the current live pages at `site/src/pages/services/land-clearing.astro` and `site/src/pages/brush-clearing-eugene-oregon.astro`.
@@ -167,7 +167,7 @@ No FAQ answer should fabricate a specific penalty dollar figure for unpermitted 
 |---|---|---|
 | Homepage (`/`) | "land clearing" | Services list, per `home-content.md`'s existing "Land clearing and brush clearing" line item |
 | `/brush-clearing-eugene-oregon/` (already shipped) | "land clearing" | Existing "Related Services" card, already implemented |
-| `/services/site-preparation/`, `/services/grading-leveling/` | "land clearing" | Related-service cross-links |
+| `/site-preparation-contractor-eugene-oregon/`, `/services/grading-leveling/` | "land clearing" | Related-service cross-links |
 | `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/` (already live city × service pages) | "land clearing" (parent-cluster link) | Each city page's own body copy, per the topical map's hub-and-spoke rule — these pages already link up to `/services/land-clearing/` |
 | `/resources/land-clearing-cost-per-acre-oregon/` (already live) | "land clearing" | Existing "Related Services" card |
 | `/about/` | Breadcrumb | Breadcrumb |
@@ -178,7 +178,7 @@ No FAQ answer should fabricate a specific penalty dollar figure for unpermitted 
 | To | Anchor text | Placement |
 |---|---|---|
 | `/brush-clearing-eugene-oregon/` | "brush clearing" — with **explicit "if it's just brush, overgrowth, or scrub — no standing timber, no stumps to grub — see brush clearing instead" framing**, not a bare anchor | Opening paragraph (immediately, per §6) and H2 #2 (the scope-difference section) and H2 #8 (Often Paired With) |
-| `/services/site-preparation/` | "site preparation" | H2 #1 intro and H2 #8 (Often Paired With, existing) |
+| `/site-preparation-contractor-eugene-oregon/` | "site preparation" | H2 #1 intro and H2 #8 (Often Paired With, existing) |
 | `/services/grading-leveling/` | "grading and leveling" | H2 #8 (Often Paired With, existing) |
 | `/resources/land-clearing-cost-per-acre-oregon/` | "our full land clearing cost breakdown" | H2 #4 (cost section) — link out for the fuller vegetation-tier breakdown rather than duplicating it in full |
 | `/locations/eugene/land-clearing/`, `/locations/springfield/land-clearing/` | "land clearing in Eugene" / "land clearing in Springfield" | Body, near the geo-modifier in the opening paragraph or H1 area |
@@ -225,7 +225,7 @@ Pulled from `01-research/page-research/land-clearing/entity-inventory.csv`, cros
 - **Forestry Mulching** — `VALIDATED` but flagged `adjacent_distinct_concept`, salience 6. Not a verified D&D method — do not introduce as a D&D offering without confirming with David (see Open Items).
 
 **Project-type entities (salience 7–9):**
-- **Pre-Construction Lot Clearing** (9) — universal project type, feeds into `/services/site-preparation/`.
+- **Pre-Construction Lot Clearing** (9) — universal project type, feeds into `/site-preparation-contractor-eugene-oregon/`.
 - **Wooded/Timbered Lot Clearing** (8) — named directly in the live page's hero copy, heaviest-scope/highest-cost tier.
 - **Overgrown/Neglected Acreage Reclamation** (7) — named directly in the live page's hero copy.
 - **Pasture and Acreage Reclamation Clearing** (7) — task-brief-named; the genuinely cheaper cost tier zero competitors separate.

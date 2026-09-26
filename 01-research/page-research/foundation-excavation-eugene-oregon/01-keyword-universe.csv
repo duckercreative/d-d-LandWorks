@@ -1,0 +1,88 @@
+query,source,intent,funnel_stage,local_modifier,urgency,head_or_long_tail,commercial_value,gsc_imps,gsc_position,serp_features,target_page_slug,priority,notes
+foundation excavation Eugene OR,GSC+Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,ai_overview|organic,/foundation-excavation-eugene-oregon,P1,Primary target — AI Overview fires for this query (DataForSEO confirmed)
+foundation excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,ai_overview|organic,/foundation-excavation-eugene-oregon,P1,Full-state variant of primary
+foundation excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Shorter city variant
+foundation excavation Springfield Oregon,Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Second-largest city; share this page
+foundation excavation Lane County,Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,County-level modifier
+foundation excavation Lane County Oregon,Autocomplete,transactional,decision,yes,scheduled,head,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Full county+state variant
+foundation excavation contractor Eugene OR,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Contractor qualifier adds commercial signal
+foundation excavation contractor Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Full state variant
+foundation excavation company Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Company vs contractor vocabulary variant
+basement excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Basement-specific; target with a section
+basement excavation Eugene OR,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Short state variant
+basement excavation Lane County,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,County-level basement query
+basement digging Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,"Digging" vocabulary — less formal
+basement dig Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Informal; still worth targeting in body
+crawl space excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Crawl space-specific; major section
+crawl space preparation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Preparation language variant
+crawl space excavation Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Statewide crawl space query
+crawl space foundation excavation Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Full phrase variant
+crawlspace excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,No-space spelling variant
+footings excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Footings-specific query; target with section
+footing excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Singular footing variant
+excavation for footings Eugene OR,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Prepositional phrase variant
+footing excavation contractor Eugene,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Contractor qualifier for footings
+slab foundation excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Slab-specific; section in comparison table
+slab excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Shorter slab variant
+house foundation excavation Springfield Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Springfield-specific; include in intro/service area
+new home foundation excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,New home context — most common use case
+new home foundation excavation cost Oregon,Informational+Autocomplete,commercial,consideration,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Cost query — new construction context
+foundation excavation cost Oregon,Informational+Autocomplete,commercial,consideration,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Cost query — statewide
+foundation excavation cost Eugene Oregon,Informational+Autocomplete,commercial,consideration,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Cost query — city-specific
+foundation dig cost Eugene Oregon,Autocomplete,commercial,consideration,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P2,Dig vocabulary cost query
+how much does foundation excavation cost Oregon,Informational,commercial,consideration,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Question-form cost query
+basement excavation cost Oregon,Informational+Autocomplete,commercial,consideration,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Basement cost query
+basement excavation cost Eugene,Informational+Autocomplete,commercial,consideration,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,City-level basement cost
+crawl space excavation cost Oregon,Informational+Autocomplete,commercial,consideration,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Crawl space cost query
+foundation dig Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Informal dig vocabulary — statewide
+foundation dig Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Informal + city
+ADU foundation excavation Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,ADU — Oregon HB 2001 era of heavy ADU activity
+ADU foundation excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,ADU + city — uncontested query
+ADU foundation dig Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Informal ADU variant
+accessory dwelling unit foundation excavation Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P3,Full term ADU variant
+frost line depth Oregon foundation,Informational,informational,awareness,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Awareness query — frost depth
+Oregon frost line depth,Informational,informational,awareness,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P2,Short frost line query
+frost depth Oregon,Informational,informational,awareness,yes,scheduled,short,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Very broad — note as secondary
+frost line Eugene Oregon,Informational,informational,awareness,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P2,City-specific frost line
+how deep does a foundation need to be in Oregon,Informational+PAA,informational,awareness,yes,scheduled,long,med,0,0,paa|organic,/foundation-excavation-eugene-oregon,P1,PAA-style question — directly answered
+how deep does a footing need to be in Oregon,Informational+PAA,informational,awareness,yes,scheduled,long,med,0,0,paa|organic,/foundation-excavation-eugene-oregon,P1,Footing-specific depth question
+foundation footing depth Oregon,Informational,informational,awareness,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Shorter depth query
+Oregon residential code foundation depth,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,Code-specific query — highly citable
+ORSC foundation footing requirements Oregon,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Very specific code reference query
+crawlspace vs slab foundation excavation,Informational,commercial,consideration,no,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Comparison query — decision stage
+crawlspace vs basement excavation cost,Informational,commercial,consideration,no,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Comparison — cost dimension
+slab vs crawl space foundation Oregon,Informational,commercial,consideration,yes,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P1,Oregon-specific comparison
+what is over-dig excavation,Informational,informational,awareness,no,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,Concept query — owned by section H5
+over dig foundation,Informational,informational,awareness,no,scheduled,mid,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,Short over-dig query
+excavating for foundation footing inspection Oregon,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P1,Inspection sequencing query — zero competitor coverage
+footing inspection before concrete Oregon,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P1,Pour sequencing query
+Eugene eBuild footing inspection,Navigational,navigational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,City of Eugene-specific inspection system
+foundation drain Oregon code,Informational,informational,awareness,yes,scheduled,mid,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,Foundation drain code query
+ORSC R405 foundation drain,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Very specific code query
+do I need a foundation drain in Oregon,Informational+PAA,informational,awareness,yes,scheduled,long,low,0,0,paa|organic,/foundation-excavation-eugene-oregon,P2,Question-form drain query
+foundation excavation shoring Eugene Oregon,Informational,commercial,consideration,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Shoring — relevant to basement work
+residential foundation excavation Eugene OR,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Residential qualifier — primary market
+commercial foundation excavation Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,mid,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Commercial qualifier
+foundation excavation estimate Eugene Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Free estimate query — direct conversion
+free estimate foundation excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Free estimate CTA query
+foundation excavation near me Eugene,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Near-me modifier
+foundation excavation near me Lane County,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P1,Near-me county variant
+geotechnical report foundation excavation Oregon,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Soils report angle — reference in FAQ
+soils report before foundation excavation,Informational,informational,awareness,no,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,FAQ-level question
+foundation excavation rock Oregon,Informational,informational,awareness,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,Rock-hit scenario
+hit rock foundation excavation cost,Informational+Commercial,commercial,consideration,no,scheduled,long,med,0,0,organic,/foundation-excavation-eugene-oregon,P2,Cost overrun concern
+rock removal foundation Oregon,Informational,commercial,consideration,yes,scheduled,mid,med,0,0,organic,/foundation-excavation-eugene-oregon,P2,Rock removal modifier
+foundation excavation before builder hired,Informational+PAA,informational,awareness,no,scheduled,long,low,0,0,paa|organic,/foundation-excavation-eugene-oregon,P1,Schedule coordination question
+when to excavate for foundation new construction,Informational,informational,awareness,no,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P2,New construction timing question
+foundation excavation Cottage Grove Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P3,Tier 2 city variant
+foundation excavation Junction City Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P3,Tier 2 city variant
+foundation excavation Creswell Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P3,Tier 2 city variant
+foundation excavation Veneta Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P3,Tier 2 city variant
+foundation excavation licensed contractor Oregon,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,Licensed qualifier — trust signal
+CCB licensed foundation excavation Eugene,Autocomplete,transactional,decision,yes,scheduled,long,high,0,0,organic,/foundation-excavation-eugene-oregon,P2,CCB-specific search
+D&D Land Works foundation excavation,Navigational,navigational,decision,yes,scheduled,long,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Branded query (no GBP yet)
+foundation excavation Lane County Oregon reviews,Autocomplete,commercial,consideration,yes,scheduled,long,med,0,0,organic|related_searches,/foundation-excavation-eugene-oregon,P2,Reviews modifier (from related searches)
+best foundation excavation Eugene Oregon,Autocomplete,commercial,consideration,yes,scheduled,long,med,0,0,organic|related_searches,/foundation-excavation-eugene-oregon,P2,Best modifier (from related searches)
+Emerald Excavating foundation Eugene,Navigational,navigational,decision,yes,scheduled,mid,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Competitor branded — own the comparison
+Braun Excavating foundation Eugene,Navigational,navigational,decision,yes,scheduled,mid,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Competitor branded
+Heavy D Excavation foundation Eugene,Navigational,navigational,decision,yes,scheduled,mid,low,0,0,organic,/foundation-excavation-eugene-oregon,P3,Competitor branded
