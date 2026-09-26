@@ -222,14 +222,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Clay Soil', detail: 'Some areas of Eugene have clay soil that does not let water move through quickly. This can leave parts of a yard wet after rain.' },
-          { title: 'Wet Low Areas', detail: 'Low parts of a property may stay wet during the rainy season. In these areas, changing the surface grade may not solve the whole drainage problem.' },
-          { title: 'Hillside Runoff', detail: 'Sloped properties can send water downhill toward a house, driveway, or other part of the yard. The slope helps show where that water is coming from.' },
-          { title: 'Seasonal Ground Conditions', detail: 'Wet weather can change how the ground handles drainage work. Very wet soil can also make excavation harder, so the timing and site conditions matter.' },
+          { step: '1', title: 'Clay Soil', detail: 'Some areas of Eugene have clay soil that does not let water move through quickly. This can leave parts of a yard wet after rain.' },
+          { step: '2', title: 'Wet Low Areas', detail: 'Low parts of a property may stay wet during the rainy season. In these areas, changing the surface grade may not solve the whole drainage problem.' },
+          { step: '3', title: 'Hillside Runoff', detail: 'Sloped properties can send water downhill toward a house, driveway, or other part of the yard. The slope helps show where that water is coming from.' },
+          { step: '4', title: 'Seasonal Ground Conditions', detail: 'Wet weather can change how the ground handles drainage work. Very wet soil can also make excavation harder, so the timing and site conditions matter.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

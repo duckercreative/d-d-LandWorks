@@ -255,14 +255,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Why a Sewer Trench Needs a Steady Slope', detail: 'A sewer line may need a planned slope so wastewater can move as intended. The required grade comes from the project plans and applicable requirements.' },
-          { title: 'Sewer Lines to a Septic System', detail: 'On some Lane County properties, a sewer trench may run to a septic system rather than a public sewer connection. The route and depth depend on the system location and approved project requirements.' },
-          { title: 'Sewer Trenching on Sloped Property', detail: 'A sloped property can change the trench route and excavation depth. Existing grades and project plans help determine how the trench is laid out.' },
-          { title: 'What D&D Handles', detail: 'D&D Land Works handles the excavation for the planned sewer route. Plumbing, septic design, connections, and other specialized work may be handled separately.' },
+          { step: '1', title: 'Why a Sewer Trench Needs a Steady Slope', detail: 'A sewer line may need a planned slope so wastewater can move as intended. The required grade comes from the project plans and applicable requirements.' },
+          { step: '2', title: 'Sewer Lines to a Septic System', detail: 'On some Lane County properties, a sewer trench may run to a septic system rather than a public sewer connection. The route and depth depend on the system location and approved project requirements.' },
+          { step: '3', title: 'Sewer Trenching on Sloped Property', detail: 'A sloped property can change the trench route and excavation depth. Existing grades and project plans help determine how the trench is laid out.' },
+          { step: '4', title: 'What D&D Handles', detail: 'D&D Land Works handles the excavation for the planned sewer route. Plumbing, septic design, connections, and other specialized work may be handled separately.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

@@ -252,14 +252,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Assess the Slope', detail: 'We look at the slope angle, soil type, erosion areas, and how water is moving across the surface. This shapes what work may be needed.' },
-          { title: 'Check the Drainage', detail: 'Where water goes on and around the slope affects how erosion develops. We look at existing drainage and where runoff is concentrating.' },
-          { title: 'Discuss the Options', detail: 'After looking at the site, we can discuss what grading, drainage, or excavation work may help and what the work would involve.' },
-          { title: 'Plan Around the Property', detail: 'Slope work needs to account for access, nearby structures, and what the property will be used for. We plan around the actual conditions on site.' },
+          { step: '1', title: 'Assess the Slope', detail: 'We look at the slope angle, soil type, erosion areas, and how water is moving across the surface. This shapes what work may be needed.' },
+          { step: '2', title: 'Check the Drainage', detail: 'Where water goes on and around the slope affects how erosion develops. We look at existing drainage and where runoff is concentrating.' },
+          { step: '3', title: 'Discuss the Options', detail: 'After looking at the site, we can discuss what grading, drainage, or excavation work may help and what the work would involve.' },
+          { step: '4', title: 'Plan Around the Property', detail: 'Slope work needs to account for access, nearby structures, and what the property will be used for. We plan around the actual conditions on site.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

@@ -250,14 +250,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Looking at the Driveway', detail: 'We look at the surface, low spots, ruts, slope, gravel, and areas where water may be causing problems.' },
-          { title: 'Preparing the Ground', detail: 'Where needed, problem areas can be excavated or reshaped. The amount of work depends on the driveway and existing ground conditions.' },
-          { title: 'Grading and Reshaping', detail: 'Grading shapes the driveway surface and helps establish the needed slope. The goal is to create a better surface and improve how water moves.' },
-          { title: 'Working With Existing Gravel', detail: 'If the driveway already has gravel, the existing material may be reshaped or worked with where appropriate. Additional gravel may be needed depending on the condition.' },
+          { step: '1', title: 'Looking at the Driveway', detail: 'We look at the surface, low spots, ruts, slope, gravel, and areas where water may be causing problems.' },
+          { step: '2', title: 'Preparing the Ground', detail: 'Where needed, problem areas can be excavated or reshaped. The amount of work depends on the driveway and existing ground conditions.' },
+          { step: '3', title: 'Grading and Reshaping', detail: 'Grading shapes the driveway surface and helps establish the needed slope. The goal is to create a better surface and improve how water moves.' },
+          { step: '4', title: 'Working With Existing Gravel', detail: 'If the driveway already has gravel, the existing material may be reshaped or worked with where appropriate. Additional gravel may be needed depending on the condition.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

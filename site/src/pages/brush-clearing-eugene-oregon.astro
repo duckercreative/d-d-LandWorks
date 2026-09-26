@@ -252,14 +252,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Looking at the Site', detail: 'We look at the brush type, density, slope, access, and ground conditions. This helps determine what equipment and approach the clearing will need.' },
-          { title: 'Clearing the Vegetation', detail: 'Brush, shrubs, vines, and undergrowth are removed from the area. The method depends on the size of the growth and how thoroughly the area needs to be cleared.' },
-          { title: 'Managing What Is Removed', detail: 'Cleared brush can be chipped, piled, or hauled depending on the project. We can discuss what makes sense for your property when we look at the site.' },
-          { title: 'Preparing for the Next Step', detail: 'After clearing, the area may be ready for grading, excavation, construction, or simply left as open ground. The next step depends on the project.' },
+          { step: '1', title: 'Looking at the Site', detail: 'We look at the brush type, density, slope, access, and ground conditions. This helps determine what equipment and approach the clearing will need.' },
+          { step: '2', title: 'Clearing the Vegetation', detail: 'Brush, shrubs, vines, and undergrowth are removed from the area. The method depends on the size of the growth and how thoroughly the area needs to be cleared.' },
+          { step: '3', title: 'Managing What Is Removed', detail: 'Cleared brush can be chipped, piled, or hauled depending on the project. We can discuss what makes sense for your property when we look at the site.' },
+          { step: '4', title: 'Preparing for the Next Step', detail: 'After clearing, the area may be ready for grading, excavation, construction, or simply left as open ground. The next step depends on the project.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

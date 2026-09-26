@@ -269,14 +269,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Marking the Foundation Area', detail: 'The foundation area is marked before digging starts. This shows where the excavation needs to go and keeps the work in line with the plans.' },
-          { title: 'Digging to the Required Depth', detail: 'Soil is removed until the planned depth is reached. The depth depends on the foundation plans and the conditions found on the property.' },
-          { title: 'Moving the Excavated Soil', detail: 'Digging leaves soil that needs to be managed. Depending on the property and project, some soil may stay on site or need to be moved elsewhere.' },
-          { title: 'Checking the Finished Grade', detail: 'The excavation is checked against the planned depth and ground levels. This helps leave the foundation area ready for the next stage of construction.' },
+          { step: '1', title: 'Marking the Foundation Area', detail: 'The foundation area is marked before digging starts. This shows where the excavation needs to go and keeps the work in line with the plans.' },
+          { step: '2', title: 'Digging to the Required Depth', detail: 'Soil is removed until the planned depth is reached. The depth depends on the foundation plans and the conditions found on the property.' },
+          { step: '3', title: 'Moving the Excavated Soil', detail: 'Digging leaves soil that needs to be managed. Depending on the property and project, some soil may stay on site or need to be moved elsewhere.' },
+          { step: '4', title: 'Checking the Finished Grade', detail: 'The excavation is checked against the planned depth and ground levels. This helps leave the foundation area ready for the next stage of construction.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>

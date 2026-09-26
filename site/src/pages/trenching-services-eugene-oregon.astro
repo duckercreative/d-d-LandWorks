@@ -254,14 +254,17 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         {[
-          { title: 'Confirm the Trench Route', detail: 'First, decide where the trench needs to run. The route should match the project and leave room around existing structures and other site features.' },
-          { title: 'Locate Underground Utilities', detail: 'Before digging, existing underground utilities should be located. This helps identify lines that may be near the planned trench.' },
-          { title: 'Check the Ground', detail: 'Look at the soil, slope, wet areas, and ground conditions. These can affect how the excavation is done and where equipment can work.' },
-          { title: 'Check Access', detail: 'Make sure there is a workable path to the digging area. Driveways, buildings, fences, and tight spaces can affect equipment access.' },
+          { step: '1', title: 'Confirm the Trench Route', detail: 'First, decide where the trench needs to run. The route should match the project and leave room around existing structures and other site features.' },
+          { step: '2', title: 'Locate Underground Utilities', detail: 'Before digging, existing underground utilities should be located. This helps identify lines that may be near the planned trench.' },
+          { step: '3', title: 'Check the Ground', detail: 'Look at the soil, slope, wet areas, and ground conditions. These can affect how the excavation is done and where equipment can work.' },
+          { step: '4', title: 'Check Access', detail: 'Make sure there is a workable path to the digging area. Driveways, buildings, fences, and tight spaces can affect equipment access.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>
