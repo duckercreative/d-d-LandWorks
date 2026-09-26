@@ -1,8 +1,9 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const related = [
   { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/septic-installation-lane-county-oregon' },
@@ -72,7 +73,9 @@ const related = [
 			{related.map((item) => <ServiceCard title={item.title} description={item.description} href={item.href} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get Your System Checked"
 		subheadline="Free estimate for septic install or repair anywhere in Lane County."
 	/>

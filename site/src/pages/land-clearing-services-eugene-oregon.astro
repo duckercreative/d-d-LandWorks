@@ -1,9 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const sitePrepItems = [
   { title: 'Brush Clearing', description: 'Blackberry, scrub, and thick brush take over fast around here. We cut it back and clear it off the work area, so you can walk your own land again.', href: '/brush-clearing-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
@@ -412,7 +413,9 @@ const pageSchema = {
     </div>
   </section>
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     headline="Ready to Clear Your Property?"
     subheadline="Get in touch with D&D Land Works to discuss your land clearing needs in Eugene and the surrounding Lane County area."
     ctaLabel="Request a Free Estimate"

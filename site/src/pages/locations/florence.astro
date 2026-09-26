@@ -8,6 +8,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import Gallery from '../../components/Gallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const services = [
   { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/excavation-contractor-eugene-oregon' },
@@ -79,7 +80,9 @@ const demoReviews = [
 		reviewCount={demoReviews.length}
 		reviews={demoReviews}
 	/>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Free Estimate in Florence"
 		subheadline="Call ahead so the trip out gets scheduled with the rest of the week's jobs."
 	/>

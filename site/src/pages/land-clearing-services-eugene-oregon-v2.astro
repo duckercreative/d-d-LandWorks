@@ -1,9 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const propertyFactors = [
   { title: 'Utility and Water Lines', description: 'Water lines and other underground utilities may need a trench to reach the right location. The digging is separate from the plumbing or utility work that follows.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-4-4m4 4 4-4M4 8h16" />' },
@@ -409,7 +410,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     eyebrow="Talk With David"
     headline="Need a Trench Dug on Your Eugene-Area Property?"
     subheadline="If you need a trench for water, utilities, irrigation, drainage, or another project, D&D Land Works can look at the digging involved. Call 541-401-8726 to discuss your project and get a free estimate."

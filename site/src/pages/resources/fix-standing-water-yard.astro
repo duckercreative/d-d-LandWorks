@@ -1,8 +1,9 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const related = [
   { title: 'Drainage Excavation', description: 'Cutting swales and trenches to move water where it needs to go.', href: '/drainage-installation-eugene-oregon' },
@@ -68,7 +69,9 @@ const related = [
 			{related.map((service) => <ServiceCard {...service} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get the Water Moving"
 		subheadline="Free estimate for drainage work anywhere in Lane County."
 	/>

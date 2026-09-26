@@ -8,6 +8,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import Gallery from '../../components/Gallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const services = [
   { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/services/site-preparation' },
@@ -79,7 +80,9 @@ const demoReviews = [
 		reviewCount={demoReviews.length}
 		reviews={demoReviews}
 	/>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Free Estimate in Veneta"
 		subheadline="Call with the property details and David will scope out the land clearing, septic, or site work."
 	/>

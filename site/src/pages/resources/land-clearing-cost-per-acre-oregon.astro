@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const related = [
   { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/land-clearing-services-eugene-oregon' },
@@ -68,7 +69,9 @@ const related = [
 			{related.map((service) => <ServiceCard {...service} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Real Number for Your Property"
 		subheadline="Free on-site estimate for land or lot clearing."
 	/>

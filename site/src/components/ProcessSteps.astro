@@ -1,0 +1,57 @@
+---
+interface Props {
+  heading?: string;
+  intro?: string;
+  ctaLabel?: string;
+}
+
+const {
+  heading = "How Your Excavation Project Gets Started",
+  intro = "Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.",
+  ctaLabel = "Discuss Your Project",
+} = Astro.props;
+
+const steps = [
+  { step: '1', title: 'Talk About the Project', detail: "We start by talking with you about your property and what you need done. We'll discuss the area, access, and the type of excavation or site work you have in mind." },
+  { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
+  { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
+  { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
+];
+---
+
+<section class="relative bg-ink text-white overflow-hidden">
+  <div
+    class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+    <div class="mb-12 md:mb-16 text-center">
+      <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+      <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+        {heading}
+      </h2>
+      <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        {intro}
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      {steps.map((item) => (
+        <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+            {item.step}
+          </span>
+          <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/contact" class="btn btn-cta">{ctaLabel}</a>
+    </div>
+
+  </div>
+</section>

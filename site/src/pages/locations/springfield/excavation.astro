@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Hero from '../../../components/Hero.astro';
 import AboutSection from '../../../components/AboutSection.astro';
@@ -7,6 +7,7 @@ import WhyChooseUs from '../../../components/WhyChooseUs.astro';
 import Gallery from '../../../components/Gallery.astro';
 import Testimonials from '../../../components/Testimonials.astro';
 import CTABlock from '../../../components/CTABlock.astro';
+import ProcessSteps from '../../../components/ProcessSteps.astro';
 
 const demoReviews = [
   { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
@@ -58,7 +59,9 @@ const demoReviews = [
 		reviewCount={demoReviews.length}
 		reviews={demoReviews}
 	/>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Free Estimate in Springfield"
 		subheadline="Same-schedule coverage as Eugene, no separate dispatch."
 	/>

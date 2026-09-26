@@ -1,8 +1,9 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const related = [
   { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/excavation-contractor-eugene-oregon' },
@@ -68,7 +69,9 @@ const related = [
 			{related.map((service) => <ServiceCard {...service} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Real Number"
 		subheadline="Free on-site estimate, no obligation."
 	/>

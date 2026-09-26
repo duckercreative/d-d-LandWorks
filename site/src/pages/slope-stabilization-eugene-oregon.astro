@@ -1,9 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const propertyFactors = [
   { title: 'Erosion and Soil Loss', description: 'Rain can carry soil off a slope over time. When the same areas erode year after year, the ground can become unstable or develop gullies.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
@@ -407,7 +408,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     eyebrow="Talk With David"
     headline="Dealing With a Slope or Erosion Problem?"
     subheadline="If you have erosion, runoff, or an unstable slope on your Eugene-area property, we can look at the site and discuss what grading or excavation work may help. Call 541-401-8726 for a free estimate."

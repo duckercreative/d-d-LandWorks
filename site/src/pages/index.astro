@@ -9,45 +9,45 @@ import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
 
 const services = [
-  { title: 'Site Preparation', description: 'We prepare property for construction by clearing the work area, excavating where needed, establishing grades, and addressing site conditions that affect the planned project.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
-  { title: 'Land & Brush Clearing', description: 'We clear brush, vegetation, and overgrowth from the site to open ground for construction, excavation, or grading. Clearing removes obstacles that would otherwise interfere with planned site work.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
-  { title: 'Grading & Leveling', description: 'We grade land to shape the surface, establish drainage slopes, and create the elevations that construction, driveways, and other site improvements require. Proper grading directs water away from structures and prepares the site for the next phase of work.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Foundation Excavation', description: 'We excavate within the foundation area to the required depth and dimensions, removing soil and preparing ground for footings, forms, and the structural elements a building requires.', href: '/foundation-excavation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
-  { title: 'Drainage Excavation', description: 'We excavate for drainage improvements by opening channels, trenches, and graded areas that redirect water away from structures, driveways, and problem zones on the property.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Utility Excavation', description: 'We excavate trenches for underground utilities, creating the access and depth that water, sewer, electrical, and other utility installations require before backfill and restoration.', href: '/utility-trenching-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
-  { title: 'Trenching & Backfill', description: 'We cut trenches to the specified depth and width for utility lines, septic connections, and other buried installations, then backfill and compact to restore the disturbed area after the work is placed.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-  { title: 'Septic Installation & Repair', description: 'We handle excavation, installation, and repair work for applicable septic projects, with the scope based on the property, existing system, site conditions, and applicable DEQ requirements.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Driveway Repair', description: 'We repair gravel driveways by regrading the surface, correcting drainage, rebuilding failed areas, and restoring access across the property. Existing conditions, drainage patterns, and material determine the scope.', href: '/services/driveway-repair', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
-  { title: 'Slope Stabilization', description: 'We address slope conditions by excavating, regrading, and reshaping ground where unstable slopes, erosion, or soil movement create site problems that require correction.', href: '/slope-stabilization-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Site Preparation', description: 'Before construction starts, the property may need clearing, digging, grading, or other ground work. We prepare the area based on what your project and property require.', href: '/services/site-preparation', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
+  { title: 'Land & Brush Clearing', description: 'Brush, overgrowth, and unwanted vegetation can make it hard to use or work on a property. We clear areas so there is open ground for excavation, grading, or construction.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
+  { title: 'Grading & Leveling', description: 'Uneven ground can cause water to collect or make an area hard to use. We shape the ground to improve the surface and help water move where it should.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Foundation Excavation', description: 'A building project may need an area dug out before the foundation work begins. We excavate the foundation area based on the plans and site conditions.', href: '/foundation-excavation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
+  { title: 'Drainage Excavation', description: 'Water can cause problems around buildings, driveways, and other parts of a property. We dig channels and trenches where needed to help move water away from problem areas.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Utility Excavation', description: 'Water, sewer, electrical, and other underground lines may need a trench before installation. We excavate the path needed for the utility work.', href: '/utility-trenching-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
+  { title: 'Trenching & Backfill', description: 'A trench gives underground lines and other systems a place to go. We dig the trench and can backfill the area after the work is completed, based on the project scope.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
+  { title: 'Septic Installation & Repair', description: 'Septic work can require excavation around the existing system or new system area. The work depends on the property, existing system, site conditions, and applicable requirements.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Driveway Repair', description: 'Gravel driveways can develop potholes, ruts, washouts, and uneven areas. We can regrade and repair problem areas based on the condition of the driveway and ground.', href: '/services/driveway-repair', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
+  { title: 'Slope Stabilization', description: 'Slopes can change when soil moves or water causes erosion. We can excavate, reshape, and regrade areas where ground movement needs to be addressed.', href: '/slope-stabilization-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
 ];
 
 const problemCards = [
   {
-    title: 'Preparing Raw or Undeveloped Land',
-    description: 'Undeveloped land requires clearing, excavation, and grading before construction or planned improvements can begin. We handle site preparation and land clearing to prepare raw property for the next stage of the project.',
+    title: 'Land That Needs Clearing or Preparation',
+    description: 'If your property is covered with brush or has uneven ground, it may need some work before you can build or improve it. We can clear the area, excavate where needed, and prepare the ground for the next step.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
     href: '/services/site-preparation',
     linkLabel: 'Site Preparation',
   },
   {
-    title: 'Poor Grading and Standing Water',
-    description: 'Standing water around structures, driveways, and yard areas often traces back to poor grading. We correct grades, address drainage paths, and reshape affected areas so water moves away from the property rather than collecting on it.',
+    title: 'Standing Water and Poor Grading',
+    description: 'Water that collects around your home, driveway, or yard can make the ground muddy and hard to use. We can reshape the ground and improve the way water moves across the property.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
     href: '/land-grading-services-eugene-oregon',
     linkLabel: 'Grading & Leveling',
   },
   {
-    title: 'Drainage, Erosion & Slope Conditions',
-    description: 'Erosion, unstable slopes, and drainage problems can worsen without correction. We excavate, regrade, and reshape affected areas, addressing the ground conditions that allow erosion or water movement to damage the site.',
+    title: 'Drainage, Erosion, and Slopes',
+    description: 'Rain and runoff can move soil, damage slopes, and create wet areas. We can excavate, reshape, and regrade problem areas based on the ground and water conditions on your property.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
     href: '/drainage-installation-eugene-oregon',
     linkLabel: 'Drainage Excavation',
   },
   {
-    title: 'Damaged Driveways, Utilities & Site Access',
-    description: 'A rutted driveway, failed utility trench, or inaccessible site entry often requires excavation before it can be corrected. We regrade driveways, open utility trenches, and restore site access based on existing conditions.',
+    title: 'Damaged Driveways and Site Access',
+    description: 'Ruts, washouts, uneven ground, or poor access can make it hard to use your property. We can repair gravel driveways, reshape access areas, and do the excavation needed to improve the site.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
-    href: '/services/driveway-repair',
+    href: '/driveway-excavation-grading-eugene-oregon',
     linkLabel: 'Driveway Repair',
   },
 ];
@@ -82,10 +82,10 @@ const whyItems = [
 ];
 
 const processSteps = [
-  { step: '1', title: 'Project Discussion', detail: 'We start by discussing the property, planned work, access, and the excavation or site preparation you need completed. This helps define the initial project scope.' },
-  { step: '2', title: 'Site Assessment', detail: 'Site conditions such as existing grades, soil, drainage, access, structures, and utilities can affect the excavation work. These conditions help determine the work required.' },
-  { step: '3', title: 'Excavation Work', detail: 'Once the scope is established, the required clearing, excavation, grading, trenching, drainage, or related site work is completed according to the project requirements.' },
-  { step: '4', title: 'Final Site Review', detail: 'After the planned work is completed, we review the site to make sure the excavation, grading, or related work has been completed according to the agreed scope.' },
+  { step: '1', title: 'Talk About the Project', detail: 'We start by talking with you about your property and what you need done. We\'ll discuss the area, access, and the type of excavation or site work you have in mind.' },
+  { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
+  { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
+  { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
 ];
 
 const faqs = [
@@ -169,9 +169,9 @@ const businessSchema = {
 						Owner-Operated Excavation Contractor Serving Lane County, Oregon
 					</h2>
 					<div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-						<p>D&amp;D Land Works works with homeowners, property owners, builders, and commercial customers throughout Lane County. We handle the excavation and site work needed to prepare, improve, or repair a property.</p>
-						<p>Our work includes site preparation, land and brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic installation and repair, driveway repair, and slope stabilization. The right scope depends on the property, existing conditions, access, and the work you need completed.</p>
-						<p>Our service area includes Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell, and surrounding Lane County communities.</p>
+						<p>David Deggelman works directly with property owners to understand what needs to be done. Every property is different. The ground, access, drainage, slope, and existing work can all change the job. We look at those conditions before deciding what work is needed.</p>
+						<p>D&amp;D Land Works helps with excavation and site work across Lane County. This includes site preparation, brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic work, driveway repair, and slope stabilization.</p>
+						<p>We work with homeowners, property owners, builders, and commercial customers in Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell, and nearby Lane County communities. If you are not sure what your property needs, we can look at the site and talk through the work with you.</p>
 					</div>
 					<a href="/about" class="btn-pill mt-8 inline-flex">
 						Learn More About D&amp;D Land Works
@@ -219,7 +219,7 @@ const businessSchema = {
 					Complete Excavation &amp; Site Preparation Services
 				</h2>
 				<p class="mt-5 text-slate-300 leading-relaxed">
-					D&amp;D Land Works handles excavation and site preparation for construction, property improvements, drainage, utilities, access, septic work, and other projects across Eugene and Lane County.
+					Every property has different ground, access, drainage, and site needs. We help with the digging, clearing, grading, and other site work needed to move a project forward.
 				</p>
 			</div>
 		</div>
@@ -241,10 +241,11 @@ const businessSchema = {
 		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
 
 			<div class="mb-12 md:mb-14 text-center">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Common Projects</p>
+				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Common Property Problems</p>
 				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-					Excavation Services for Common Property Problems
+					Problems We Help Property Owners Solve
 				</h2>
+				<p class="mt-4 text-slate-600 max-w-2xl mx-auto leading-relaxed">Every property has its own challenges. You may need to clear land, fix standing water, repair a driveway, or prepare an area for construction. We look at the ground and the work needed before deciding what should be done.</p>
 			</div>
 
 			<div class="grid gap-6 sm:grid-cols-2">
@@ -271,7 +272,7 @@ const businessSchema = {
 
 			<div class="mt-12 text-center">
 				<a href="/contact" class="btn-pill inline-flex">
-					Discuss Your Excavation Project
+					Talk With Us About Your Property
 					<span class="btn-pill-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -295,10 +296,10 @@ const businessSchema = {
 			<div class="mb-12 md:mb-16 text-center">
 				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
 				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-					How an Excavation Project Works
+					How Your Excavation Project Gets Started
 				</h2>
 				<p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-					Every project starts with the property, planned work, and site conditions. The scope is established before work begins so the excavation, grading, or site preparation can be completed according to the project requirements.
+					Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.
 				</p>
 			</div>
 

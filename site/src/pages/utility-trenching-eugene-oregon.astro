@@ -1,9 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const propertyFactors = [
   { title: 'Water Lines', description: 'A water line may need a trench from the water source to a home or building. A new home or rural property may need a longer water-line trench from the service point to the building.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
@@ -408,7 +409,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     headline="Need a Utility Trench?"
     subheadline="If you need a trench for a water line, sewer line, or electrical conduit, we can look at the property and talk through the excavation needed. David can review the site, access, and project requirements with you. D&D Land Works is owned by David Deggelman and serves Eugene, Springfield, and nearby Lane County areas."
     ctaLabel="Request a Free Estimate"

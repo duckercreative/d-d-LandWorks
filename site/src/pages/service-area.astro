@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import AboutSection from '../components/AboutSection.astro';
@@ -7,6 +7,7 @@ import WhyChooseUs from '../components/WhyChooseUs.astro';
 import Gallery from '../components/Gallery.astro';
 import Testimonials from '../components/Testimonials.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const anchors = [
   { name: 'Eugene', href: '/locations/eugene', note: 'County seat, home base for most jobs.' },
@@ -222,7 +223,9 @@ const demoReviews = [
 		reviewCount={demoReviews.length}
 		reviews={demoReviews}
 	/>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Not Sure If You're in Range?"
 		subheadline="Call with your address. If it's a fit, you'll get a free estimate scheduled."
 	/>

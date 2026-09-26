@@ -1,8 +1,9 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const coreServices = [
   { title: 'Site Preparation', description: 'Clearing, grading, and prepping a pad before the build starts.', href: '/services/site-preparation' },
@@ -71,7 +72,9 @@ const coreServices = [
 			{coreServices.map((service) => <ServiceCard {...service} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get a Commercial Bid"
 		subheadline="Send your site plans and David will scope it directly, no middleman."
 	/>

@@ -1,9 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
 
 const propertyFactors = [
   { title: 'Overgrown Brush', description: 'Brush and shrubs can take over a property over time. Heavy growth may make areas difficult to access or use.', href: '/contact', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
@@ -407,7 +408,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     eyebrow="Talk With David"
     headline="Need Brush Cleared on Your Eugene-Area Property?"
     subheadline="If your property has overgrown brush, blackberries, or dense undergrowth, we can look at the site and discuss what the clearing work may involve. Call 541-401-8726 for a free estimate."

@@ -1,9 +1,10 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import FAQ from '../../components/FAQ.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 
 const sitePrepItems = [
   { title: 'Land Clearing', description: 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
@@ -56,7 +57,7 @@ const whySitePrepItems = [
     title: 'Licensed and Bonded',
     description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. This provides a clear contractor credential for residential and commercial site preparation work.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
-    link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' },
+    link: { label: 'Verify CCB License ?', href: 'https://search.ccb.state.or.us/search/' },
   },
   {
     title: 'Free Estimates',
@@ -127,7 +128,7 @@ const pageSchema = {
       knowsAbout: ['Site Preparation', 'Land Clearing', 'Grading', 'Excavation', 'Septic Installation', 'Drainage Excavation'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification � Septic Install & Repair' },
       ],
       sameAs: ['https://search.ccb.state.or.us/search/'],
     },
@@ -477,7 +478,9 @@ const pageSchema = {
 
   <FAQ heading="Common Questions About Site Preparation" items={faqs} />
 
-  <CTABlock
+  <ProcessSteps />
+
+<CTABlock
     headline="Get a Free Site Preparation Estimate"
     subheadline="Planning site preparation starts with understanding the property and construction requirements. D&D Land Works provides free estimates for residential and commercial projects, with the scope based on existing site conditions, earthwork, access, drainage, and the work needed before construction begins."
     ctaLabel="Request a Free Estimate"

@@ -6,6 +6,7 @@ import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
 import WhyChooseUs from '../../components/WhyChooseUs.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
 import Gallery from '../../components/Gallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 
@@ -200,7 +201,9 @@ const related = [
 			{related.map((service) => <ServiceCard {...service} />)}
 		</div>
 	</section>
-	<CTABlock
+	<ProcessSteps />
+
+<CTABlock
 		headline="Get the Brush Cut Back"
 		subheadline="Free estimate for brush clearing anywhere in Lane County."
 	/>
