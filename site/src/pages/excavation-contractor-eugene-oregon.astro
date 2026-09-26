@@ -16,12 +16,10 @@ const sitePrepItems = [
 ];
 
 const howItWorksSteps = [
-  { step: '1', title: 'Project Discussion', detail: 'The first step is understanding your project and the area that needs excavation. The planned use helps define the work and related services.' },
-  { step: '2', title: 'Site Assessment', detail: 'Site conditions help shape the excavation plan. Property access, terrain, soil, existing structures, and the planned work area all need consideration.' },
-  { step: '3', title: 'Scope Planning', detail: 'The excavation scope depends on what needs to be dug, how deep it needs to go, and what happens after the excavation is complete.' },
-  { step: '4', title: 'Utility Considerations', detail: 'Existing or planned utilities can affect excavation. Their locations and the planned utility routes should be considered before digging begins.' },
-  { step: '5', title: 'Excavation Work', detail: 'The excavation follows the agreed project scope. Soil, depth, access, ground conditions, and site layout can affect how the work is completed.' },
-  { step: '6', title: 'Related Site Work', detail: 'Excavation may be followed by grading, drainage, trenching, backfill, or other site work when included in the project scope.' },
+  { step: '1', title: 'Talk About the Project', detail: "We start by talking with you about your property and what you need done. We'll discuss the area, access, and the type of excavation or site work you have in mind." },
+  { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
+  { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
+  { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
 ];
 
 const faqs = [
@@ -255,13 +253,13 @@ const pageSchema = {
       <div class="mb-12 md:mb-16 text-center">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
         <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Does an Excavation Project Work?
+          How Your Excavation Project Gets Started
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Excavation starts with understanding what your property needs. The project scope can change based on access, soil, depth, utilities, permits, weather, and the work planned after excavation.
+          Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {howItWorksSteps.map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
             <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
