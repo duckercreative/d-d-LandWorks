@@ -252,16 +252,19 @@ const pageSchema = {
           Land clearing costs depend on the property. The size of the area, type of growth, site access, terrain, and ground conditions can all affect the work.
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {[
-          { title: 'How Big the Area Is', detail: "More ground takes more hours. But it's the part you actually want cleared that counts, not the whole deed. Plenty of folks only need an acre of a five acre lot opened up." },
-          { title: "What's Growing on It", detail: 'Light brush clears quick. Ten years of blackberry is a different animal, and so is heavy growth with vines woven through it. Thickness matters more here than the size of the lot does.' },
-          { title: 'How We Get In and How It Sits', detail: 'A machine has to reach the work. Narrow gates, tight drives, and nowhere to turn a truck all add time. Slopes and rutted ground slow things down the same way.' },
-          { title: 'Time of Year', detail: "Valley clay holds water for weeks after a wet stretch. Working soft ground takes longer and tears up the site. A summer job and a February job on the same lot don't cost the same." },
+          { step: '1', title: 'How Big the Area Is', detail: "More ground takes more hours. But it's the part you actually want cleared that counts, not the whole deed. Plenty of folks only need an acre of a five acre lot opened up." },
+          { step: '2', title: "What's Growing on It", detail: 'Light brush clears quick. Ten years of blackberry is a different animal, and so is heavy growth with vines woven through it. Thickness matters more here than the size of the lot does.' },
+          { step: '3', title: 'How We Get In and How It Sits', detail: 'A machine has to reach the work. Narrow gates, tight drives, and nowhere to turn a truck all add time. Slopes and rutted ground slow things down the same way.' },
+          { step: '4', title: 'Time of Year', detail: "Valley clay holds water for weeks after a wet stretch. Working soft ground takes longer and tears up the site. A summer job and a February job on the same lot don't cost the same." },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <p class="font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-3 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
           </div>
         ))}
       </div>
