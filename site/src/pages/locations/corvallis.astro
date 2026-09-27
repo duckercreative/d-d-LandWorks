@@ -6,37 +6,37 @@ import FAQ from '../../components/FAQ.astro';
 import CTABlock from '../../components/CTABlock.astro';
 
 const excavationTypes = [
-  { title: 'Site Preparation', description: 'Getting the ground ready for the next part of a project. Depending on the property, this may include clearing an area, digging, grading, or moving soil before work can begin.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
-  { title: 'Land Grading', description: 'Shaping or leveling the ground to create the ground shape a project calls for. The amount of grading needed depends on the property and what is being planned.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Land Clearing', description: 'Removing brush, trees, debris, or other overgrowth before excavation or site work can begin. The amount of clearing can affect the work that follows.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-  { title: 'Septic Excavation', description: 'If septic excavation is part of your project, D&D can discuss the excavation portion of the work. Septic design, engineering, permitting, and inspection are separate and may involve other professionals.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Site Preparation', description: 'Getting the ground ready for the next part of a project. Depending on the property, this may include clearing, digging, grading, or moving soil before work can begin.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Land Grading', description: 'Changing the shape and slope of the ground for a building area, driveway, drainage, or other planned use. Slope, ground conditions, and access can all affect the work.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, debris, and overgrown areas from a property before excavation or other site work can begin. The amount of clearing needed can affect the rest of the project.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Trenching', description: 'Digging a narrow path in the ground for underground lines, drainage, or other planned work. The depth, route, and purpose of the trench affect what the excavation involves.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
   { title: 'Drainage Work', description: 'When water collects where it should not, excavation or grading may create a better path for it to move. The right approach depends on the property and where the water is coming from.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Trenching', description: 'Digging a narrow path in the ground for utility work, drainage, or another project that needs something below the surface. Depth, route, access, and ground conditions all affect the work.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
+  { title: 'Residential Excavation', description: 'Excavation can be part of many home property projects — building-site preparation, grading, trenching, drainage, or other digging work depending on what the site needs.', href: '/excavation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5Z M9 21V12h6v9" />' },
 ];
 
 const whenCards = [
-  { title: 'Before Construction Begins', description: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on what the property currently looks like.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'Before Construction Begins', description: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on the current state of the property.', href: '/contact', linkLabel: 'Get an Estimate' },
   { title: 'When the Ground Is Uneven', description: 'If an area is too high, too low, or uneven for its planned use, grading or excavation can reshape it to fit the project.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Water Is Collecting', description: 'Standing water around a home, driveway, or yard is often a drainage problem. Excavation or grading may create a path to move water where it needs to go.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Land Needs Clearing', description: 'Brush, trees, and overgrowth need to be removed before excavation or grading can begin. The amount of clearing needed affects the rest of the project.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'For a Septic Project', description: 'Septic systems may require excavation for the components that go into the ground. Confirm what D&D handles and what the project involves before planning the work.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'For General Site Work', description: 'Access, ground conditions, depth of digging, existing structures, and utilities can all change what a Coburg-area project involves. Discuss the details before an estimate.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Water Is Collecting', description: 'Standing water around a home, driveway, or yard is often a drainage issue. Excavation or grading may create a path to move water where it needs to go.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Land Needs Clearing', description: 'Brush, trees, and overgrowth need to be removed before excavation or grading can begin. The amount of clearing affects the overall scope of the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Trenching Is Needed', description: 'If your project requires a path below ground for utilities, drainage, or other purposes, trenching is the type of excavation used to dig that path.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'For a Residential Property Project', description: 'Home properties can need excavation for many reasons — access improvements, drainage fixes, building prep, or other site work. Start by describing what you want to accomplish.', href: '/contact', linkLabel: 'Get an Estimate' },
 ];
 
 const whyItems = [
-  { title: 'Based in Springfield — Close to Coburg', description: 'D&D Land Works is headquartered in Springfield, Oregon, just a few miles from Coburg. Call 541-401-8726 to discuss your project and confirm whether it fits the current service area.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Call to Confirm Service Area', description: 'D&D Land Works is based in Springfield, not Corvallis. Call 541-401-8726 with your project location so we can confirm whether it fits the current service area before scheduling any work.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.338c0-.53.313-.988.741-1.212l8.25-4.125a1.5 1.5 0 0 1 1.518 0l8.25 4.125c.428.224.741.682.741 1.212v10.324c0 .53-.313.988-.741 1.212l-8.25 4.125a1.5 1.5 0 0 1-1.518 0l-8.25-4.125A1.365 1.365 0 0 1 2.25 16.662V6.338Z" />' },
   { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
-  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects where the service area is confirmed.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects where the service area applies.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
   { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects. David walks the property before quoting — pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
-  { title: 'No Fixed Timeline — Real Scope', description: 'We do not promise the same timeline for every job. Project size, ground conditions, access, clearing, and complexity can all affect how long a Coburg-area project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+  { title: 'No Fixed Timeline — Real Scope', description: 'We do not promise the same timeline for every job. Property size, ground conditions, access, clearing, and complexity can all affect how long a project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
 ];
 
 const faqs = [
-  { question: 'Do you serve Coburg?', answer: 'D&D Land Works is based in Springfield, just a few miles from Coburg. Call 541-401-8726 with your project details so we can confirm service coverage for your property.' },
-  { question: 'What does excavation involve?', answer: 'Excavation can involve digging, removing material, preparing ground, and shaping a site for the next part of a project. The work depends on the property and what you are trying to accomplish.' },
-  { question: 'Can you prepare my property near Coburg?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on the project. Call to discuss the property and confirm whether it is within the service area.' },
-  { question: 'Can you help with septic excavation?', answer: 'If septic excavation is part of your project and the property is within the service area, D&D can discuss the excavation portion of the work. Septic design, permitting, and other technical work may be handled separately.' },
-  { question: 'What affects excavation cost near Coburg?', answer: 'Project size, ground conditions, property access, excavation depth, existing structures, utilities, clearing needs, and weather can all affect the cost and timeline. The best way to understand scope is to describe the property and what you want done.' },
+  { question: 'Do you serve the Corvallis area?', answer: 'D&D Land Works is based in Springfield, Oregon. If your property is near Corvallis, call 541-401-8726 with the project location so we can confirm whether it fits the current service area.' },
+  { question: 'What does an excavation contractor do?', answer: 'An excavation contractor digs, moves, and shapes soil to prepare a property for a project. The work may include site preparation, grading, clearing, trenching, drainage work, and other excavation tasks.' },
+  { question: 'Can you prepare my property near Corvallis?', answer: 'Site preparation may include clearing, digging, grading, or moving soil, depending on the property. Call to discuss the project and confirm whether your location is within the service area.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects where the property is within the service area.' },
+  { question: 'What affects excavation cost near Corvallis?', answer: 'Size, depth, ground conditions, access, clearing, grading, drainage, material movement, and project complexity can all affect cost. The best way to discuss cost is to explain what you want done and share the basic details of the project.' },
 ];
 
 const serviceSchema = {
@@ -51,7 +51,7 @@ const serviceSchema = {
       email: 'david@ddlandworks.com',
       priceRange: '$$',
       areaServed: [
-        { '@type': 'City', name: 'Coburg', sameAs: 'https://www.wikidata.org/wiki/Q2399286' },
+        { '@type': 'City', name: 'Corvallis', sameAs: 'https://www.wikidata.org/wiki/Q188748' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
       hasCredential: [
@@ -72,7 +72,7 @@ const serviceSchema = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
         { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
-        { '@type': 'ListItem', position: 3, name: 'Coburg', item: 'https://www.ddlandworks.com/locations/coburg/' },
+        { '@type': 'ListItem', position: 3, name: 'Corvallis Area', item: 'https://www.ddlandworks.com/locations/corvallis/' },
       ],
     },
   ],
@@ -80,14 +80,14 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Excavation Contractor near Coburg, OR | D&D Land Works"
-  description="D&D Land Works provides excavation, land clearing, grading, septic excavation, and site preparation near Coburg, OR. Based in Springfield. CCB #261742. Free estimates — call 541-401-8726."
+  title="Excavation Contractor near Corvallis, OR | D&D Land Works"
+  description="D&D Land Works provides excavation, land clearing, grading, trenching, and drainage work near Corvallis, OR. Based in Springfield — call to confirm service area. CCB #261742. Free estimates — 541-401-8726."
 >
 
   <Hero
-    eyebrow="Excavation Contractor near Coburg, Oregon"
-    headline="Excavation Contractor near Coburg, Oregon"
-    subheadline="D&D Land Works helps property owners with excavation and site work near Coburg. If you have a property in the area, call to discuss your project and confirm whether the work is a good fit for the current service area."
+    eyebrow="Excavation Contractor near Corvallis, Oregon"
+    headline="Excavation Contractor near Corvallis, Oregon"
+    subheadline="D&D Land Works provides excavation and related site work for property projects. If your property is in or near the Corvallis area, call to discuss the work you need and confirm whether the project fits the current service area."
     primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
     secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
   />
@@ -101,16 +101,16 @@ const serviceSchema = {
           <div class="mb-4 flex items-center gap-2">
             <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
             <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              Excavation Work near Coburg
+              Excavation Work near Corvallis
             </p>
           </div>
           <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            Excavation and Site Work near Coburg
+            Excavation and Site Work near Corvallis
           </h2>
           <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Excavation is more than digging a hole. It can include preparing and shaping the ground so a property is ready for the next stage of work. Depending on the project, that may mean digging, clearing, grading, or preparing an area for another installation.</p>
-            <p>Every property is different. The exact work depends on what you plan to do with the site. A building area, open piece of land, or other project may each need a different approach before work can begin.</p>
-            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong> and is based in Springfield, just a few miles from Coburg. Call to discuss your project and confirm service coverage.</p>
+            <p>Excavation means digging and moving earth to prepare a property for the next part of a project. You may need it before building, to shape land, clear an area, improve drainage, or run a trench for underground work.</p>
+            <p>Every property is different. The ground, access, size of the job, and type of work can all change what a project needs. A small area may need only a little digging; a larger property may need clearing, grading, or more site preparation before work can begin.</p>
+            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong>. We are based in Springfield — call to confirm whether your Corvallis-area property is within the current service area.</p>
           </div>
           <a href="tel:5414018726" class="btn-pill mt-8 inline-flex">
             Call to Confirm Service Area
@@ -124,7 +124,7 @@ const serviceSchema = {
         <div class="relative pb-6">
           <img
             src="/project-excavation-bucket.webp"
-            alt="D&D Land Works excavation contractor serving the Coburg, Oregon area"
+            alt="D&D Land Works excavation contractor serving the Corvallis, Oregon area"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
             loading="lazy"
           />
@@ -150,12 +150,12 @@ const serviceSchema = {
       <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
       <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
       <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Coburg-Area Properties</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Corvallis-Area Properties</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
           What Kind of Work Does Your Property Need?
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          You may not know the exact name for the work your property needs — that is okay. Start by explaining what you want to do and what the site currently looks like.
+          You may not know the exact name for the work your property needs — that is okay. Start by explaining the problem you are trying to solve and what you want the land to do.
         </p>
       </div>
     </div>
@@ -170,13 +170,13 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- When does a Coburg property need excavation -->
+  <!-- When does a Corvallis property need excavation -->
   <section class="bg-slate-50 border-y border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
       <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Coburg-Area Excavation</p>
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Corvallis-Area Excavation</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          When Does a Property near Coburg Need Excavation?
+          When Does a Property Near Corvallis Need Excavation?
         </h2>
         <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
           You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve.
@@ -216,7 +216,7 @@ const serviceSchema = {
       <div class="mb-12 md:mb-16 text-center">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Getting Started</p>
         <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Your Coburg-Area Project Gets Started
+          How Your Corvallis-Area Project Gets Started
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
           You do not need to know the exact name of the work before you call. Start with what you want to do and where the property is located.
@@ -224,9 +224,9 @@ const serviceSchema = {
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {[
-          { step: '1', title: 'Tell Us What You Need', detail: 'Tell us what you want to build, clear, grade, or dig near Coburg. A description of the property and what you are trying to accomplish is the best place to start.' },
-          { step: '2', title: 'Confirm Service Area', detail: 'We confirm whether your Coburg-area property is within the current service area before scheduling any work. D&D is based just a few miles away in Springfield.' },
-          { step: '3', title: 'Understand the Scope', detail: 'Once the property and project are understood, the required excavation or related site work can be discussed based on what the site actually needs.' },
+          { step: '1', title: 'Tell Us What You Need', detail: 'Tell us what you want to build, clear, grade, trench, or dig on your property near Corvallis. If you are not sure of the exact work, describe the problem you are trying to solve.' },
+          { step: '2', title: 'Confirm Service Area', detail: 'We confirm whether your property is within the current service area before scheduling any work. D&D Land Works is based in Springfield — Corvallis-area projects are confirmed case by case.' },
+          { step: '3', title: 'Understand the Scope', detail: 'Once the property and project are understood, the required excavation or related site work can be discussed in plain terms based on actual site conditions.' },
           { step: '4', title: 'Get an Estimate', detail: 'D&D Land Works provides free estimates for applicable excavation and site work projects where the property falls within the service area.' },
         ].map((item) => (
           <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
@@ -255,7 +255,7 @@ const serviceSchema = {
             What Can D&D Land Works Help With?
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            D&D Land Works handles excavation and related site work for property owners near Coburg. The right work depends on your property and what you are trying to accomplish — not a standard package applied to every site.
+            D&D Land Works handles excavation and related site work for property projects. We look at the property itself and what it needs rather than assuming every site is the same.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {whyItems.map((item) => (
@@ -287,7 +287,7 @@ const serviceSchema = {
         <div class="relative">
           <img
             src="/project-grading-driveway.webp"
-            alt="D&D Land Works excavation and site work near Coburg, Oregon"
+            alt="D&D Land Works excavation and site work near Corvallis, Oregon"
             class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
             loading="lazy"
           />
@@ -305,18 +305,18 @@ const serviceSchema = {
           Based in Springfield — Serving Lane County
         </h2>
         <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
-          <p>D&D Land Works is headquartered in Springfield, Oregon, just a few miles from Coburg on I-5. Call to confirm whether your property is within the current service area.</p>
+          <p>D&D Land Works is headquartered in Springfield and regularly serves Lane County communities. Corvallis is outside the primary service area — call to confirm whether your property can be included.</p>
           <p>If your project is within the regular service area, contact us directly for a free estimate.</p>
         </div>
       </div>
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
         <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-          <a href="/locations/coburg" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+          <a href="/locations/corvallis" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
               <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
             </svg>
-            <span class="font-display font-bold uppercase tracking-wide text-sm">Coburg, OR</span>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Corvallis Area (Call to Confirm)</span>
           </a>
           {[
             { label: 'Eugene', href: '/locations/eugene' },
@@ -327,6 +327,7 @@ const serviceSchema = {
             { label: 'Veneta', href: '/locations/veneta' },
             { label: 'Florence', href: '/locations/florence' },
             { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Coburg', href: '/locations/coburg' },
             { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
           ].map((area) => (
             <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
@@ -340,8 +341,8 @@ const serviceSchema = {
         </div>
         <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
           <iframe
-            title="D&D Land Works service area map, north Lane County, Oregon"
-            src="https://maps.google.com/maps?q=Coburg,+Oregon&z=12&output=embed"
+            title="D&D Land Works service area map, Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
             width="100%"
             height="100%"
             style="border:0; display:block;"
@@ -353,7 +354,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <FAQ heading="Excavation near Coburg — FAQs" items={faqs} />
+  <FAQ heading="Excavation near Corvallis — FAQs" items={faqs} />
 
   <!-- Related Services -->
   <section class="bg-white border-t border-slate-100">
@@ -384,8 +385,8 @@ const serviceSchema = {
 
   <CTABlock
     eyebrow="Talk With David"
-    headline="Have a Project near Coburg?"
-    subheadline="Call D&D Land Works at 541-401-8726 and tell us what you are planning. Share where the property is, what you want done, and what you need the site to be ready for. We can confirm service coverage and provide a free estimate from there."
+    headline="Have a Project near Corvallis?"
+    subheadline="Call D&D Land Works at 541-401-8726 and explain what you are working on. Share the property location, what you want done, the size of the area, and any access or ground concerns. We will confirm whether the project fits the current service area and provide a free estimate if it does."
     ctaLabel="Call 541-401-8726"
     ctaHref="tel:5414018726"
     phone="541-401-8726"

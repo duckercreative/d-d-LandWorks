@@ -1,87 +1,396 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
-import AboutSection from '../../components/AboutSection.astro';
-import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
-import WhyChooseUs from '../../components/WhyChooseUs.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
-import Gallery from '../../components/Gallery.astro';
-import Testimonials from '../../components/Testimonials.astro';
+import FAQ from '../../components/FAQ.astro';
 import CTABlock from '../../components/CTABlock.astro';
-import ProcessSteps from '../../components/ProcessSteps.astro';
 
-const services = [
-  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/site-preparation-contractor-eugene-oregon' },
-  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/excavation-contractor-eugene-oregon' },
-  { title: 'Utility Trenching', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/utility-trenching-eugene-oregon' },
+const excavationTypes = [
+  { title: 'Site Preparation', description: 'Getting the ground ready for a build or project. Rural residential properties near Dexter and Fall Creek may need clearing, grading, and soil movement before work can begin.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Land Grading', description: 'Changing the shape and slope of the ground for a building area, driveway, drainage, or other planned use. Slope and ground conditions on rural Lane County properties can vary.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, and overgrowth before excavation or site work can begin. Lowell-area properties backed by timber or pasture may need clearing before other work can start.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Septic Excavation', description: 'Septic projects near Lowell may require excavation for the components that go into the ground. Call to confirm this service fits your project before scheduling — design and permits are separate.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Drainage Work', description: 'When water collects where it should not, excavation or grading may help create a better path for it to move. Rural properties near Dexter Reservoir can see seasonal drainage challenges.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Utility Trenching', description: 'Digging a narrow path in the ground for water, sewer, power, or other utility lines. Route, depth, ground conditions, and access all affect what trenching involves on a rural property.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
 ];
 
-const demoReviews = [
-  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
-  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
-  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
-  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
-  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
-  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+const whenCards = [
+  { title: 'Before a Build or Outbuilding', description: 'Rural lots near Dexter and Fall Creek may need clearing, grading, or excavation before a build or outbuilding project can start. The scope depends on the property.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When the Ground Is Uneven', description: 'If an area is too high, too low, or uneven for its planned use, grading or excavation can reshape it to fit the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Water Is Collecting', description: 'Standing water around a home, driveway, or pasture is often a drainage problem. Excavation or grading may create a path to move water where it needs to go.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Land Needs Clearing', description: 'Properties backed by timber or heavy brush near Fall Creek may need clearing before excavation or grading can begin. The amount of clearing affects the overall project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'For a Septic or Utility Project', description: 'Rural properties often need excavation for septic systems or utility lines. Call first to confirm the work fits the service area and that septic excavation is applicable for the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'For General Rural Site Work', description: 'Access, ground conditions, clearing, slope, and existing structures can all affect a Lowell-area project. Describe the property and what you need done so the scope can be discussed.', href: '/contact', linkLabel: 'Get an Estimate' },
 ];
+
+const whyItems = [
+  { title: 'Based in Springfield — Lowell Is Covered', description: 'Lowell is close enough to the Springfield shop that a site prep or excavation job here runs on the same schedule as anything closer in. D&D covers Lowell as part of the regular Lane County service area.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
+  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair. For Lowell-area septic projects, call first to confirm the work fits the project before scheduling.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects in Lowell. David walks the property before quoting — pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
+  { title: 'Rural Properties Are Looked at Individually', description: 'Properties near Dexter Reservoir and Fall Creek are rural residential — backed by timber or open pasture. Each site is looked at on its own merits rather than priced from a standard formula.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+];
+
+const faqs = [
+  { question: 'Do you serve Lowell?', answer: 'Yes. Lowell is part of the D&D Land Works service area. It is close enough to the Springfield shop that a job here runs on the same schedule as anything closer in. Call 541-401-8726 to discuss your property.' },
+  { question: 'Can you do septic or land clearing in Lowell?', answer: 'If your project involves septic excavation or land clearing rather than straightforward site prep, call first to confirm it is a fit before scheduling. D&D is DEQ certified for applicable septic work.' },
+  { question: 'Can you prepare my rural property near Lowell?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on what the property needs. Rural residential properties near Dexter and Fall Creek are looked at based on the actual site.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site preparation projects in Lowell. David walks the property before quoting.' },
+  { question: 'What affects excavation cost near Lowell?', answer: 'Project size, ground conditions, access, clearing needs, slope, existing structures, utilities, and project complexity can all affect cost. Rural properties may have more variables than a city lot.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Lowell', sameAs: 'https://www.wikidata.org/wiki/Q1017263' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Lowell', item: 'https://www.ddlandworks.com/excavation-contractor-lowell-oregon/' },
+      ],
+    },
+  ],
+};
 ---
 
 <BaseLayout
-	title="Excavation Contractor in Lowell, OR | D&D Land Works"
-	description="Site preparation and excavation for Lowell, OR properties near Dexter Reservoir and Fall Creek. Licensed and bonded, CCB #261742. Free estimates."
+  title="Excavation Contractor in Lowell, OR | D&D Land Works"
+  description="D&D Land Works provides excavation, site preparation, land clearing, and drainage work for rural properties near Lowell, OR and Dexter Reservoir. CCB #261742. Free estimates — call 541-401-8726."
 >
-	<Hero
-		eyebrow="Lowell, Oregon"
-		headline="Excavation in Lowell, OR"
-		subheadline="A small community near Dexter Reservoir and Fall Creek, east of Springfield along Highway 58, Lowell gets a small but steady share of rural site work."
-		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
-		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
-	/>
-	<!-- About -->
-	<AboutSection
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		eyebrow="Lowell, Oregon"
-		headlineHtml="Rural, Low-Volume, <span class='text-brand-blue'>Still Covered</span> in Lowell"
-		descriptionHtml="<p>Lowell doesn&rsquo;t get the job volume that Eugene or Springfield does, but it sits close enough to the shop that a site prep or excavation job out here runs on the same schedule as anything closer in. Properties tend to be rural residential, backed by timber or open pasture around Dexter and Fall Creek.</p><p>D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, covering Lowell as part of the regular Lane County service area. If the job is septic or land clearing rather than straight excavation, call first to confirm it&rsquo;s a fit before scheduling.</p>"
-	/>
-	<!-- Services -->
-	<section class="mx-auto max-w-6xl px-4 pb-16">
-		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-			Services in Lowell
-		</h2>
-		<div class="mt-8 grid gap-6 sm:grid-cols-2">
-			{services.map((service) => <ServiceCard {...service} />)}
-		</div>
-		<p class="mt-8 text-center text-slate-600">
-			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
-		</p>
-	</section>
-	<!-- Trust -->
-	<PhotoContentBlock
-		eyebrow="Lowell, Oregon"
-		headline="Why Do Lowell Property Owners Trust D&D Land Works?"
-		image="/service-grading-leveling.webp"
-		imageAlt="D&D Land Works job site near Lowell, Oregon"
-		imageSide="right"
-		badgeValue="CCB #261742"
-		badgeLabel="Licensed & Bonded"
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, a credential you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Lowell runs on the same schedule as anything closer to the shop, not a separate trip.</p><p>David Deggelman scopes every job in person before quoting. If you need site prep or excavation anywhere in Lowell, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to confirm it&rsquo;s a fit and schedule your free, on-site estimate.</p>"
-	/>
-	<WhyChooseUs />
-	<Gallery />
-	<Testimonials
-		businessName="D&D Land Works"
-		rating={4.83}
-		reviewCount={demoReviews.length}
-		reviews={demoReviews}
-	/>
-	<ProcessSteps />
 
-<CTABlock
-		headline="Get a Free Estimate in Lowell"
-		subheadline="Call and describe the property. David will confirm it's a fit before anything gets scheduled."
-	/>
+  <Hero
+    eyebrow="Excavation Contractor in Lowell, Oregon"
+    headline="Excavation Contractor in Lowell, Oregon"
+    subheadline="A small community near Dexter Reservoir and Fall Creek, east of Springfield along Highway 58. Rural residential, backed by timber or open pasture — and close enough to the shop that a job here runs on the same schedule as anything closer in."
+    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+  />
+
+  <!-- Local intro -->
+  <section class="relative bg-white overflow-hidden">
+    <div class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+              Rural Site Work near Lowell
+            </p>
+          </div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            Rural, Low-Volume — Still Covered in Lowell
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>Lowell does not get the job volume that Eugene or Springfield does, but it sits close enough to the Springfield shop that a site prep or excavation job here runs on the same schedule as anything closer in.</p>
+            <p>Properties near Dexter Reservoir and Fall Creek tend to be rural residential — backed by timber or open pasture. Each site is looked at on its own. If the job is septic or land clearing rather than straight excavation, call first to confirm it is a fit before scheduling.</p>
+            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong> and DEQ certified for applicable septic work. Lowell is part of the regular Lane County service area.</p>
+          </div>
+          <a href="/contact" class="btn-pill mt-8 inline-flex">
+            Talk About Your Property
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative pb-6">
+          <img
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works excavation contractor serving Lowell, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What kind of work -->
+  <section class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Lowell Properties</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          What Kind of Work Does Your Property Need?
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          You may not know the exact name for the work your property needs — that is okay. Start by describing what you want to do and what the site looks like now.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {excavationTypes.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="btn btn-cta inline-flex">Talk Through Your Project</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- When does a Lowell property need excavation -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Lowell Excavation</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          When Does a Lowell Property Need Excavation?
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {whenCards.map((card) => (
+          <div class="card flex flex-col gap-3">
+            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
+            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+              {card.linkLabel}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Talk About Your Property
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it gets started — process steps -->
+  <section class="relative bg-ink text-white overflow-hidden">
+    <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-16 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Getting Started</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          How Your Lowell Project Gets Started
+        </h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Call and describe the property. David will confirm it is a fit before anything gets scheduled — free estimates, no obligation.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        {[
+          { step: '1', title: 'Tell Us What You Need', detail: 'Tell us what you want to build, clear, grade, or dig near Lowell. Describe the property, what needs to happen, and what you want the site ready for.' },
+          { step: '2', title: 'Discuss the Property', detail: 'We talk about where the work is, what the property looks like, access, slope, drainage, existing structures, and utilities. For septic or clearing work, we confirm it fits the project.' },
+          { step: '3', title: 'Understand the Scope', detail: 'Once the property and project are understood, the required excavation or related site work can be discussed based on actual conditions.' },
+          { step: '4', title: 'Get an Estimate', detail: 'D&D Land Works provides free estimates for applicable excavation and site work projects in Lowell and east Lane County.' },
+        ].map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+        <a href="tel:5414018726" class="btn btn-outline border-white/30 text-white hover:bg-white/10">Call 541-401-8726</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What can D&D help with -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Excavation Services</p>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What Can D&D Land Works Help With?
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            D&D Land Works handles excavation and related site work for property owners near Lowell and Dexter Reservoir. Rural properties are looked at individually — not priced from a standard formula.
+          </p>
+          <ul class="mt-10 flex flex-col gap-7">
+            {whyItems.map((item) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+                </span>
+                <div>
+                  <p class="font-display font-bold text-ink">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  {item.link && (
+                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline">
+                      {item.link.label}
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="btn-pill mt-10 inline-flex">
+            Talk About Your Property
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/project-grading-driveway.webp"
+            alt="D&D Land Works excavation and site work near Lowell, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Local Properties</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
+          Excavation in Lowell and East Lane County
+        </h2>
+        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
+          <p>D&D Land Works is headquartered in Springfield and covers Lowell as part of the regular Lane County service area. Lowell is east of Springfield along Highway 58, near Dexter Reservoir and Fall Creek.</p>
+          <p>If your property is elsewhere in east Lane County, contact us to discuss what you need.</p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
+          <a href="/excavation-contractor-lowell-oregon" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Lowell, OR</span>
+          </a>
+          {[
+            { label: 'Eugene', href: '/locations/eugene' },
+            { label: 'Springfield', href: '/locations/springfield' },
+            { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+            { label: 'Creswell', href: '/locations/creswell' },
+            { label: 'Junction City', href: '/locations/junction-city' },
+            { label: 'Veneta', href: '/locations/veneta' },
+            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Coburg', href: '/locations/coburg' },
+          ].map((area) => (
+            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
+            </a>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
+          <iframe
+            title="D&D Land Works service area map, Lowell and east Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lowell,+Oregon&z=12&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ heading="Excavation in Lowell — FAQs" items={faqs} />
+
+  <!-- Related Services -->
+  <section class="bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
+        Related Services
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Land Clearing', description: 'Removing brush, trees, and overgrowth from rural properties before site work begins.', href: '/land-clearing-services-eugene-oregon' },
+          { title: 'Site Preparation', description: 'Clearing, grading, and excavation to prepare a property for the next stage of work.', href: '/site-preparation-contractor-eugene-oregon' },
+          { title: 'Drainage Excavation', description: 'Excavating channels and trenches to manage water on your property.', href: '/drainage-installation-eugene-oregon' },
+          { title: 'Septic Installation & Repair', description: 'DEQ certified excavation for septic installation and repair in Lane County.', href: '/septic-installation-lane-county-oregon' },
+        ].map((item) => (
+          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
+            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
+            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+              Learn More &#8594;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    eyebrow="Talk With David"
+    headline="Need Excavation Work near Lowell?"
+    subheadline="Call D&D Land Works at 541-401-8726 and describe the property. David will confirm it is a fit before anything gets scheduled. Free estimates — no obligation."
+    ctaLabel="Request a Free Estimate"
+    ctaHref="/contact"
+    phone="541-401-8726"
+  />
+
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

@@ -1,89 +1,396 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
-import AboutSection from '../../components/AboutSection.astro';
-import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
-import WhyChooseUs from '../../components/WhyChooseUs.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
-import Gallery from '../../components/Gallery.astro';
-import Testimonials from '../../components/Testimonials.astro';
+import FAQ from '../../components/FAQ.astro';
 import CTABlock from '../../components/CTABlock.astro';
-import ProcessSteps from '../../components/ProcessSteps.astro';
 
-const services = [
-  { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before the build starts.', href: '/site-preparation-contractor-eugene-oregon' },
-  { title: 'Excavation', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/excavation-contractor-eugene-oregon' },
-  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/land-clearing-services-eugene-oregon' },
-  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/septic-installation-lane-county-oregon' },
-  { title: 'Utility Trenching', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/utility-trenching-eugene-oregon' },
+const excavationTypes = [
+  { title: 'Site Preparation', description: 'Getting the ground ready for the next part of a project. This may include clearing an area, digging, grading, or moving soil before construction or other work can begin.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Land Grading', description: 'Changing the shape of the ground to level an area or create a different slope. If part of your property is uneven, grading may be part of the work needed to prepare the site.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
+  { title: 'Land Clearing', description: 'Removing brush, trees, debris, or overgrown material before excavation can begin. Once the area is clear, the ground can be prepared for the next step.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { title: 'Septic Excavation', description: 'If septic excavation is part of your project, D&D can discuss the excavation portion of the work. Septic design, engineering, permits, and inspections are separate and may involve other professionals.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Drainage Work', description: 'When water collects where it should not, excavation or grading may help create a better path for it to move. The right approach depends on the property and where the water is coming from.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
+  { title: 'Trenching', description: 'Digging a narrow path in the ground for utility work, drainage, or another project that needs something below the surface. Depth, route, access, and ground conditions all affect the work.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
 ];
 
-const demoReviews = [
-  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
-  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
-  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
-  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
-  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
-  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
+const whenCards = [
+  { title: 'Before Construction Begins', description: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on what the property currently looks like.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When the Ground Is Uneven', description: 'If an area is too high, too low, or uneven for its planned use, grading or excavation can reshape it to fit the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Water Is Collecting', description: 'Standing water around a home, driveway, or yard is often a drainage problem. Excavation or grading may create a path to move water where it needs to go.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'When Land Needs Clearing', description: 'Brush, trees, and overgrowth need to be removed before excavation or grading can begin. The amount of clearing needed affects the rest of the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'For a Septic Project', description: 'Septic systems may require excavation for the components that go into the ground. Confirm what the work involves and what D&D handles before planning the project.', href: '/contact', linkLabel: 'Get an Estimate' },
+  { title: 'For General Site Work', description: 'Access, ground conditions, depth, and the size of the project can all change what an excavation job in west Lane County involves. Discuss the details before work starts.', href: '/contact', linkLabel: 'Get an Estimate' },
 ];
+
+const whyItems = [
+  { title: 'Call to Confirm Service Area', description: 'D&D Land Works should be contacted directly to confirm that your Veneta-area property is within the current service area before any work is planned. West Lane County coverage is confirmed case by case.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.338c0-.53.313-.988.741-1.212l8.25-4.125a1.5 1.5 0 0 1 1.518 0l8.25 4.125c.428.224.741.682.741 1.212v10.324c0 .53-.313.988-.741 1.212l-8.25 4.125a1.5 1.5 0 0 1-1.518 0l-8.25-4.125A1.365 1.365 0 0 1 2.25 16.662V6.338Z" />' },
+  { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
+  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects where the service area is confirmed.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
+  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects. David walks the property before quoting — pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
+  { title: 'No Fixed Timeline — Real Scope', description: 'We do not promise the same timeline for every job. Site access, ground conditions, amount of clearing, and project complexity can all affect how long a Veneta-area project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+];
+
+const faqs = [
+  { question: 'Do you serve the Veneta area?', answer: 'If you have a project near Veneta, contact D&D Land Works at 541-401-8726 to confirm service availability for your property. West Lane County coverage is confirmed based on the project and location.' },
+  { question: 'What does excavation involve?', answer: 'Excavation can include digging, moving soil, clearing an area, and preparing the ground for a project. The work depends on the property and what you are trying to accomplish.' },
+  { question: 'Can you prepare my property?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on what your project needs. Call to discuss the property and confirm whether it is within the service area.' },
+  { question: 'Can you help with septic excavation?', answer: 'If septic excavation is part of your project and the property is within the service area, D&D can discuss the excavation work involved. Septic design, engineering, permits, and approvals are separate and may involve other professionals.' },
+  { question: 'What affects excavation cost near Veneta?', answer: 'Project size, digging depth, ground conditions, property access, existing structures, utilities, clearing needs, and weather can all affect the cost and timeline. These details are useful to discuss before an estimate.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Veneta', sameAs: 'https://www.wikidata.org/wiki/Q1023742' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Veneta', item: 'https://www.ddlandworks.com/locations/veneta/' },
+      ],
+    },
+  ],
+};
 ---
 
 <BaseLayout
-	title="Excavation Contractor in Veneta, OR | D&D Land Works"
-	description="Excavation, land clearing, and DEQ certified septic work for rural acreage in Veneta, OR. Licensed and bonded, CCB #261742. Free estimates."
+  title="Excavation Contractor near Veneta, OR | D&D Land Works"
+  description="D&D Land Works provides excavation, land clearing, grading, septic excavation, and site preparation near Veneta, OR. Call to confirm service area. CCB #261742. Free estimates — 541-401-8726."
 >
-	<Hero
-		eyebrow="Veneta, Oregon"
-		headline="Excavation in Veneta, OR"
-		subheadline="West of Eugene out toward Fern Ridge Lake, Veneta is rural acreage country. It's a competitive market for site work, and D&D Land Works takes it on the same as anywhere else in the county."
-		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
-		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
-	/>
-	<!-- About -->
-	<AboutSection
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		eyebrow="Veneta, Oregon"
-		headlineHtml="<span class='text-brand-blue'>Fern Ridge Country</span> in Veneta"
-		descriptionHtml="<p>Properties around Veneta and the Long Tom River valley run toward larger lots and rural-residential acreage, much of it wooded or overgrown along the edges. Clearing a building site or opening up pasture ground is common work out here, along with the site prep and grading that follows once the ground is clear.</p><p>A lot of these properties sit on their own septic system rather than municipal sewer, so drainfield repair and new system installs come up regularly too. D&amp;D Land Works is licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong> and DEQ certified for septic, covering Veneta as part of the regular Lane County service area.</p>"
-	/>
-	<!-- Services -->
-	<section class="mx-auto max-w-6xl px-4 pb-16">
-		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-			Services in Veneta
-		</h2>
-		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{services.map((service) => <ServiceCard {...service} />)}
-		</div>
-		<p class="mt-8 text-center text-slate-600">
-			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
-		</p>
-	</section>
-	<!-- Trust -->
-	<PhotoContentBlock
-		eyebrow="Veneta, Oregon"
-		headline="Why Do Veneta Property Owners Trust D&D Land Works?"
-		image="/service-grading-leveling.webp"
-		imageAlt="D&D Land Works job site in Veneta, Oregon"
-		imageSide="right"
-		badgeValue="CCB #261742"
-		badgeLabel="Licensed & Bonded"
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic install and repair, credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone.</p><p>David Deggelman scopes every job in person before quoting. If you need land clearing, site prep, or septic work anywhere in Veneta or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
-	/>
-	<WhyChooseUs />
-	<Gallery />
-	<Testimonials
-		businessName="D&D Land Works"
-		rating={4.83}
-		reviewCount={demoReviews.length}
-		reviews={demoReviews}
-	/>
-	<ProcessSteps />
 
-<CTABlock
-		headline="Get a Free Estimate in Veneta"
-		subheadline="Call with the property details and David will scope out the land clearing, septic, or site work."
-	/>
+  <Hero
+    eyebrow="Excavation Contractor near Veneta, Oregon"
+    headline="Excavation Contractor near Veneta, Oregon"
+    subheadline="D&D Land Works helps property owners with excavation and site work near Veneta. If you have a property in the Veneta area, call to talk through what needs to be done and confirm whether the project is within the current service area."
+    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
+    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
+  />
+
+  <!-- Local intro -->
+  <section class="relative bg-white overflow-hidden">
+    <div class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
+            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
+              Excavation Work near Veneta
+            </p>
+          </div>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            Excavation and Site Work near Veneta
+          </h2>
+          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
+            <p>Excavation is more than digging a hole. It can mean removing soil, moving earth, clearing an area, or getting the ground ready for another part of a project. Every property is different — you may need a small area prepared, land cleared before work begins, or ground shaped for a larger project.</p>
+            <p>The first step is understanding what you need done. Access, ground conditions, the size of the project, and the amount of digging can all change what the job involves on a west Lane County property.</p>
+            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong>. Call to confirm that your Veneta-area property is within the current service area before any work is planned.</p>
+          </div>
+          <a href="tel:5414018726" class="btn-pill mt-8 inline-flex">
+            Call to Confirm Service Area
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative pb-6">
+          <img
+            src="/project-excavation-bucket.webp"
+            alt="D&D Land Works excavation contractor serving the Veneta, Oregon area"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
+            loading="lazy"
+          />
+          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
+              </svg>
+            </span>
+            <div class="leading-tight">
+              <p class="font-display font-bold text-sm">CCB #261742</p>
+              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What kind of work -->
+  <section class="relative">
+    <div class="relative bg-ink overflow-hidden">
+      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
+      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
+      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Veneta-Area Properties</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
+          What Kind of Work Does Your Property Need?
+        </h2>
+        <p class="mt-5 text-slate-300 leading-relaxed">
+          You may not know the exact name for the work your property needs — that is okay. Start by explaining what you want to do and what the site looks like now.
+        </p>
+      </div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {excavationTypes.map((item) => <ServiceCard {...item} />)}
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
+      <a href="tel:5414018726" class="btn btn-cta inline-flex">Call to Confirm Service Area</a>
+      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- When does a Veneta property need excavation -->
+  <section class="bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Veneta-Area Excavation</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+          When Does a Property near Veneta Need Excavation?
+        </h2>
+        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {whenCards.map((card) => (
+          <div class="card flex flex-col gap-3">
+            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
+            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
+              {card.linkLabel}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/contact" class="btn-pill inline-flex">
+          Talk About Your Property
+          <span class="btn-pill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it gets started — process steps -->
+  <section class="relative bg-ink text-white overflow-hidden">
+    <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-16 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Getting Started</p>
+        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
+          How Your Veneta-Area Project Gets Started
+        </h2>
+        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          You do not need to know the exact name of the work before you call. Start with what you want to do and where the property is located.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        {[
+          { step: '1', title: 'Tell Us What You Need', detail: 'Tell us what you want to clear, grade, or dig near Veneta. Explain the property, the area that needs work, and what you are trying to accomplish.' },
+          { step: '2', title: 'Confirm Service Area', detail: 'We confirm whether your Veneta-area property is within the current service area before scheduling any work. West Lane County coverage is confirmed case by case.' },
+          { step: '3', title: 'Understand the Scope', detail: 'Once the property and project are understood, the required excavation or related site work can be discussed based on what the site actually needs.' },
+          { step: '4', title: 'Get an Estimate', detail: 'D&D Land Works provides free estimates for applicable excavation and site work projects where the property falls within the service area.' },
+        ].map((item) => (
+          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
+              {item.step}
+            </span>
+            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="tel:5414018726" class="btn btn-cta">Call 541-401-8726</a>
+        <a href="/contact" class="btn btn-outline border-white/30 text-white hover:bg-white/10">Request a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What can D&D help with -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Excavation Services</p>
+          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
+            What Can D&D Land Works Help With?
+          </h2>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            D&D Land Works handles excavation and related site work for property owners in the Veneta area. The right work depends on your property and what you are trying to accomplish — not a standard package.
+          </p>
+          <ul class="mt-10 flex flex-col gap-7">
+            {whyItems.map((item) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+                </span>
+                <div>
+                  <p class="font-display font-bold text-ink">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  {item.link && (
+                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline">
+                      {item.link.label}
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <a href="tel:5414018726" class="btn-pill mt-10 inline-flex">
+            Call to Confirm Service Area
+            <span class="btn-pill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/project-grading-driveway.webp"
+            alt="D&D Land Works excavation and site work near Veneta, Oregon"
+            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="mb-12 md:mb-14 text-center">
+        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Primary Service Area</p>
+        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
+          Based in Springfield — Serving Lane County
+        </h2>
+        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
+          <p>D&D Land Works is headquartered in Springfield and regularly serves communities throughout Lane County. Veneta and west Lane County coverage is confirmed based on the project and location.</p>
+          <p>If your project is within the regular service area, contact us directly for a free estimate.</p>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
+          <a href="/locations/veneta" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="font-display font-bold uppercase tracking-wide text-sm">Veneta, OR</span>
+          </a>
+          {[
+            { label: 'Eugene', href: '/locations/eugene' },
+            { label: 'Springfield', href: '/locations/springfield' },
+            { label: 'Junction City', href: '/locations/junction-city' },
+            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
+            { label: 'Creswell', href: '/locations/creswell' },
+            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Oakridge', href: '/locations/oakridge' },
+            { label: 'Coburg', href: '/locations/coburg' },
+            { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
+          ].map((area) => (
+            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
+                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
+            </a>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
+          <iframe
+            title="D&D Land Works service area map, Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Veneta,+Oregon&z=11&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ heading="Excavation near Veneta — FAQs" items={faqs} />
+
+  <!-- Related Services -->
+  <section class="bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
+        Related Services
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Land Clearing', description: 'Removing brush, trees, and overgrowth from a property before site work begins.', href: '/land-clearing-services-eugene-oregon' },
+          { title: 'Site Preparation', description: 'Clearing, grading, and excavation to prepare a property for the next stage of work.', href: '/site-preparation-contractor-eugene-oregon' },
+          { title: 'Drainage Excavation', description: 'Excavating channels and trenches to manage water on your property.', href: '/drainage-installation-eugene-oregon' },
+          { title: 'Septic Installation & Repair', description: 'DEQ certified excavation for septic installation and repair in Lane County.', href: '/septic-installation-lane-county-oregon' },
+        ].map((item) => (
+          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
+            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
+            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
+              Learn More &#8594;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    eyebrow="Talk With David"
+    headline="Have a Project near Veneta?"
+    subheadline="Call D&D Land Works at 541-401-8726 and explain what you are working on. Tell us about the property, the work you have in mind, and where the project is located. We will confirm whether it is within the service area and provide a free estimate if it is."
+    ctaLabel="Call 541-401-8726"
+    ctaHref="tel:5414018726"
+    phone="541-401-8726"
+  />
+
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

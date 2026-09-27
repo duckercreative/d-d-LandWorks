@@ -1,5 +1,5 @@
 ﻿---
-// Structure follows docs/topical-map.md §4-5: Services grouped Core (P0) / Additional (P1-P2);
+// Structure follows docs/topical-map.md �4-5: Services grouped Core (P0) / Additional (P1-P2);
 // Service Areas grouped Primary (Tier 1) / Also Serving (Tier 2) / Further Out (Tier 3) to match service-area.astro.
 const coreServices = [
   { label: 'Site Preparation', href: '/site-preparation-contractor-eugene-oregon' },
@@ -13,7 +13,7 @@ const additionalServices = [
   { label: 'Foundation Excavation', href: '/foundation-excavation-eugene-oregon' },
   { label: 'Drainage Excavation', href: '/drainage-installation-eugene-oregon' },
   { label: 'Utility Excavation', href: '/utility-trenching-eugene-oregon' },
-  { label: 'Driveway Repair', href: '/services/driveway-repair' },
+  { label: 'Driveway Repair', href: '/driveway-excavation-grading-eugene-oregon' },
   { label: 'Trenching & Backfill', href: '/trenching-services-eugene-oregon' },
   { label: 'Brush Clearing', href: '/brush-clearing-eugene-oregon' },
   { label: 'Slope Stabilization', href: '/slope-stabilization-eugene-oregon' },
@@ -21,25 +21,25 @@ const additionalServices = [
 
 const primaryAreas = [
   { label: 'Lane County, OR (all areas)', href: '/service-area' },
-  { label: 'Eugene, OR', href: '/locations/eugene' },
-  { label: 'Springfield, OR', href: '/locations/springfield' },
+  { label: 'Eugene, OR', href: '/excavation-contractor-eugene-oregon' },
+  { label: 'Springfield, OR', href: '/excavation-contractor-springfield-oregon' },
 ];
 
 const secondaryAreas = [
-  { label: 'Cottage Grove, OR', href: '/locations/cottage-grove' },
-  { label: 'Junction City, OR', href: '/locations/junction-city' },
-  { label: 'Creswell, OR', href: '/locations/creswell' },
-  { label: 'Veneta, OR', href: '/locations/veneta' },
+  { label: 'Cottage Grove, OR', href: '/excavation-contractor-cottage-grove-oregon' },
+  { label: 'Junction City, OR', href: '/excavation-contractor-junction-city-oregon' },
+  { label: 'Creswell, OR', href: '/excavation-contractor-creswell-oregon' },
+  { label: 'Veneta, OR', href: '/excavation-contractor-veneta-oregon' },
 ];
 
 const furtherAreas = [
-  { label: 'Florence, OR', href: '/locations/florence' },
+  { label: 'Florence, OR', href: '/excavation-contractor-florence-oregon' },
   { label: 'Oakridge, OR', href: '/locations/oakridge' },
-  { label: 'Coburg, OR', href: '/locations/coburg' },
-  { label: 'Lowell, OR', href: '/locations/lowell' },
+  { label: 'Coburg, OR', href: '/excavation-contractor-coburg-oregon' },
+  { label: 'Lowell, OR', href: '/excavation-contractor-lowell-oregon' },
 ];
 
-// Same set as Footer.astro's socialLinks — TODO: swap "#" for real profile URLs once these accounts exist.
+// Same set as Footer.astro's socialLinks � TODO: swap "#" for real profile URLs once these accounts exist.
 const socialLinks = [
   {
     label: 'Facebook',
@@ -64,7 +64,7 @@ const socialLinks = [
 ];
 ---
 
-<!-- Top utility bar: quick contact + social, sits above the sticky nav. Scrolls away on purpose — only the nav below stays pinned. -->
+<!-- Top utility bar: quick contact + social, sits above the sticky nav. Scrolls away on purpose � only the nav below stays pinned. -->
 <div class="bg-ink text-white">
 	<div class="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-4 text-sm">
 		<span class="font-semibold whitespace-nowrap">Licensed &amp; Bonded (CCB #261742)</span>
@@ -90,7 +90,7 @@ const socialLinks = [
 </div>
 
 <!--
-	`sticky` lives on <header> itself, not a div nested inside it — a sticky
+	`sticky` lives on <header> itself, not a div nested inside it � a sticky
 	element can only stay pinned while its containing block (immediate parent)
 	is still in view, and the old wrapper (<header> holding both this bar and
 	the utility bar above) was barely taller than its own contents, so it
@@ -189,8 +189,6 @@ const socialLinks = [
 					</div>
 				</div>
 
-				<a href="/commercial-excavation" class="text-ink hover:text-brand-blue transition-colors">Commercial</a>
-				<a href="/resources" class="text-ink hover:text-brand-blue transition-colors">Resources</a>
 				<a href="/blog" class="text-ink hover:text-brand-blue transition-colors">Blog</a>
 				<a href="/about" class="text-ink hover:text-brand-blue transition-colors">About</a>
 				<a href="/contact" class="text-ink hover:text-brand-blue transition-colors">Contact</a>
@@ -260,7 +258,7 @@ const socialLinks = [
 							{service.label}
 						</a>
 					))}
-					<a href="/services" class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue-light mt-1">View All Services →</a>
+					<a href="/services" class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue-light mt-1">View All Services ?</a>
 				</div>
 			</details>
 
@@ -290,16 +288,10 @@ const socialLinks = [
 							{area.label}
 						</a>
 					))}
-					<a href="/service-area" class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue-light mt-1">View Full Service Area →</a>
+					<a href="/service-area" class="font-display font-bold uppercase tracking-wide text-sm text-brand-blue-light mt-1">View Full Service Area ?</a>
 				</div>
 			</details>
 
-			<a href="/commercial-excavation" class="font-display font-black uppercase tracking-tight text-4xl text-white py-3 border-b border-white/10 hover:text-brand-blue transition-colors">
-				Commercial
-			</a>
-			<a href="/resources" class="font-display font-black uppercase tracking-tight text-4xl text-white py-3 border-b border-white/10 hover:text-brand-blue transition-colors">
-				Resources
-			</a>
 			<a href="/blog" class="font-display font-black uppercase tracking-tight text-4xl text-white py-3 border-b border-white/10 hover:text-brand-blue transition-colors">
 				Blog
 			</a>

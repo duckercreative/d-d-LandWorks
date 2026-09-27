@@ -1,91 +1,38 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
-import AboutSection from '../../components/AboutSection.astro';
-import PhotoContentBlock from '../../components/PhotoContentBlock.astro';
-import WhyChooseUs from '../../components/WhyChooseUs.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import Gallery from '../../components/Gallery.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import CTABlock from '../../components/CTABlock.astro';
-import ProcessSteps from '../../components/ProcessSteps.astro';
-
-const services = [
-  { title: 'Excavation & Site Prep', description: 'Cut-and-fill earthmoving, access roads, and rough grading.', href: '/locations/eugene/excavation' },
-  { title: 'Land Clearing', description: 'Removing brush, trees, and debris to open up usable land.', href: '/locations/eugene/land-clearing' },
-  { title: 'Grading & Leveling', description: 'Shaping land to the right slope for drainage and building.', href: '/locations/eugene/grading' },
-  { title: 'Drainage Excavation', description: 'Cutting swales and trenches to move water where it needs to go.', href: '/locations/eugene/drainage' },
-  { title: 'Septic Install & Repairs', description: 'DEQ certified installation and repair of septic systems.', href: '/locations/eugene/septic' },
-  { title: 'Foundation Excavation', description: 'Digging and leveling for footings and foundations.', href: '/foundation-excavation-eugene-oregon' },
-  { title: 'Utility Trenching', description: 'Trenching for water, sewer, power, and other utility lines.', href: '/utility-trenching-eugene-oregon' },
-];
-
-const demoReviews = [
-  { name: 'Jordan M.', initial: 'JM', date: 'Aug 2026', stars: 5, text: 'David and his crew graded our lot fast and cleaned up everything before they left. Would hire again for any excavation work.' },
-  { name: 'Casey R.', initial: 'CR', date: 'Jul 2026', stars: 5, text: 'Called about a drainage issue and had someone out within the week. Fixed the standing water problem for good.' },
-  { name: 'Taylor B.', initial: 'TB', date: 'Jul 2026', stars: 4, text: 'Good work on our driveway repair, just took a little longer than expected to schedule.' },
-  { name: 'Morgan K.', initial: 'MK', date: 'Jun 2026', stars: 5, text: 'Septic install went smoothly start to finish. Appreciated that David walked us through the whole process.' },
-  { name: 'Riley S.', initial: 'RS', date: 'Jun 2026', stars: 5, text: 'Cleared almost an acre of brush for us ahead of a build. On time, fair price, no surprises.' },
-  { name: 'Alex D.', initial: 'AD', date: 'May 2026', stars: 5, text: 'Foundation excavation was done right and on schedule. Highly recommend for any site prep work.' },
-];
 ---
+<BaseLayout title="Excavation Contractor in Eugene, OR | D&D Land Works" description="D&D Land Works — excavation, site prep, land clearing, grading, drainage, and septic work in Eugene, Oregon. CCB #261742. DEQ Certified.">
+  <section class="mx-auto max-w-3xl px-4 py-24 text-center">
+    <h1 class="font-display font-black uppercase tracking-tight text-4xl text-ink">Eugene, Oregon</h1>
+    <p class="mt-6 text-slate-600 leading-relaxed max-w-xl mx-auto">D&D Land Works serves Eugene from its Springfield base — excavation, site preparation, land clearing, grading, drainage, and septic work for residential and rural properties in the Eugene metro area.</p>
+    <a href="/contact" class="mt-8 inline-block rounded-full bg-brand-blue px-8 py-3 font-display font-bold uppercase tracking-wide text-sm text-white hover:bg-brand-blue-dark transition-colors">Get a Free Estimate</a>
+  </section>
 
-<BaseLayout
-	title="Excavation Contractor in Eugene, OR | D&D Land Works"
-	description="Excavation, grading, land clearing, drainage, and DEQ certified septic work in Eugene, OR. Licensed and bonded, CCB #261742. Free estimates."
->
-	<Hero
-		eyebrow="Eugene, Oregon"
-		headline="Excavation in Eugene, OR"
-		subheadline="Eugene is home base for D&D Land Works. Whether it's a lot in the South Hills with a steep approach or a flat parcel out toward the airport, the crew and equipment are already local."
-		primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
-		secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
-	/>
-	<!-- About -->
-	<AboutSection
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		eyebrow="Eugene, Oregon"
-		headlineHtml="Excavation &amp; Site Prep <span class='text-brand-blue'>Local to Eugene</span>, Not Dispatched From Out of Town"
-		descriptionHtml="<p>Eugene&rsquo;s terrain varies more than people expect within the same city limits: rolling, wooded lots in the South Hills and Fox Hollow area, flatter ground toward River Road and the airport, and older neighborhoods where a driveway or drain line was put in decades ago and hasn&rsquo;t aged well. D&amp;D Land Works works across all of it, and being based here means less windshield time eating into the job and faster response when something needs a look before an estimate.</p><p>Common calls in Eugene run from site prep for infill construction on smaller city lots to septic repair on older rural-residential parcels just outside town that never connected to municipal sewer. Licensed and bonded under <strong class='font-semibold text-ink'>CCB #261742</strong>, DEQ certified for septic work.</p>"
-	/>
-	<!-- Services -->
-	<section class="mx-auto max-w-6xl px-4 pb-16">
-		<h2 class="font-display font-bold uppercase tracking-tight text-3xl text-ink text-center">
-			Services in Eugene
-		</h2>
-		<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-			{services.map((service) => <ServiceCard {...service} />)}
-		</div>
-		<p class="mt-8 text-center text-slate-600">
-			<a href="/services" class="text-brand-blue underline hover:text-brand-blue-dark">See all 12 services</a>
-		</p>
-	</section>
-	<!-- Trust -->
-	<PhotoContentBlock
-		eyebrow="Eugene, Oregon"
-		headline="Why Do Eugene Homeowners Trust D&D Land Works?"
-		image="/service-excavation.webp"
-		imageAlt="D&D Land Works job site in Eugene, Oregon"
-		imageSide="left"
-		badgeValue="CCB #261742"
-		badgeLabel="Licensed & Bonded"
-		ctaLabel="Get a Free Estimate"
-		ctaHref="/contact"
-		bodyHtml="<p>D&amp;D Land Works is licensed and bonded under Oregon CCB #261742, and DEQ certified for septic work, credentials you can verify yourself at the CCB&rsquo;s own license lookup before you ever pick up the phone. Being based in Eugene means less windshield time and a faster look before an estimate goes out.</p><p>David Deggelman scopes every job in person before quoting. If you need excavation, grading, or septic work anywhere in Eugene or the rest of Lane County, <a href='/contact' class='text-brand-blue underline underline-offset-2 hover:text-brand-blue-dark'>contact D&amp;D Land Works</a> to schedule your free, on-site estimate.</p>"
-	/>
-	<WhyChooseUs />
-	<Gallery />
-	<Testimonials
-		businessName="D&D Land Works"
-		rating={4.83}
-		reviewCount={demoReviews.length}
-		reviews={demoReviews}
-	/>
-	<ProcessSteps />
-
-<CTABlock
-		headline="Get a Free Estimate in Eugene"
-		subheadline="Local crew, local equipment, no dispatch delay from out of town."
-	/>
+  <section class="border-t border-slate-200 py-16">
+    <div class="mx-auto max-w-4xl px-4">
+      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-10">Eugene Service Pages</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="/locations/eugene/excavation" class="rounded-xl border border-slate-200 p-6 hover:border-brand-blue hover:shadow-sm transition-all">
+          <div class="font-display font-bold text-ink">Excavation</div>
+          <div class="mt-1 text-sm text-slate-500">Site excavation &amp; earthwork</div>
+        </a>
+        <a href="/locations/eugene/land-clearing" class="rounded-xl border border-slate-200 p-6 hover:border-brand-blue hover:shadow-sm transition-all">
+          <div class="font-display font-bold text-ink">Land Clearing</div>
+          <div class="mt-1 text-sm text-slate-500">Tree removal, brush, stumps</div>
+        </a>
+        <a href="/locations/eugene/grading" class="rounded-xl border border-slate-200 p-6 hover:border-brand-blue hover:shadow-sm transition-all">
+          <div class="font-display font-bold text-ink">Grading</div>
+          <div class="mt-1 text-sm text-slate-500">Land grading &amp; site leveling</div>
+        </a>
+        <a href="/locations/eugene/drainage" class="rounded-xl border border-slate-200 p-6 hover:border-brand-blue hover:shadow-sm transition-all">
+          <div class="font-display font-bold text-ink">Drainage</div>
+          <div class="mt-1 text-sm text-slate-500">French drains &amp; stormwater</div>
+        </a>
+        <a href="/locations/eugene/septic" class="rounded-xl border border-slate-200 p-6 hover:border-brand-blue hover:shadow-sm transition-all">
+          <div class="font-display font-bold text-ink">Septic</div>
+          <div class="mt-1 text-sm text-slate-500">DEQ-certified septic work</div>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

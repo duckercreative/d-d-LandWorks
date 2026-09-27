@@ -62,7 +62,7 @@ const serviceSchema = {
       knowsAbout: ['Driveway Excavation', 'Driveway Grading', 'Gravel Driveway Repair', 'Site Preparation', 'Land Clearing', 'Septic Installation'],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification � Septic Install & Repair' },
       ],
       sameAs: ['https://search.ccb.state.or.us/search/'],
     },
@@ -71,7 +71,7 @@ const serviceSchema = {
       '@id': 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-oregon/#service',
       name: 'Driveway Excavation & Grading Services in Eugene, Oregon',
       serviceType: 'Driveway Excavation and Grading',
-      description: 'Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates — 541-401-8726.',
+      description: 'Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates � 541-401-8726.',
       url: 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-oregon/',
       provider: { '@id': 'https://www.ddlandworks.com/#business' },
       areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
@@ -97,7 +97,7 @@ const serviceSchema = {
 
 <BaseLayout
   title="Driveway Excavation & Grading in Eugene, Oregon | New Driveways & Repairs"
-  description="Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates — 541-401-8726."
+  description="Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates � 541-401-8726."
 >
   <Hero
     eyebrow="Trenching Services in Eugene, Oregon"
@@ -252,7 +252,7 @@ const serviceSchema = {
           Before digging starts, we look at what the trench is for, where it needs to go, and what is around it. This helps avoid problems during the work.
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {[
           { title: 'Confirm the Trench Route', detail: 'First, decide where the trench needs to run. The route should match the project and leave room around existing structures and other site features.' },
           { title: 'Locate Underground Utilities', detail: 'Before digging, existing underground utilities should be located. This helps identify lines that may be near the planned trench.' },
@@ -339,7 +339,7 @@ const serviceSchema = {
       </div>
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
         <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-          <a href="/locations/eugene" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
+          <a href="/excavation-contractor-eugene-oregon" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
               <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
@@ -347,15 +347,15 @@ const serviceSchema = {
             <span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
           </a>
           {[
-            { label: 'Springfield', href: '/locations/springfield' },
-            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
-            { label: 'Junction City', href: '/locations/junction-city' },
-            { label: 'Creswell', href: '/locations/creswell' },
-            { label: 'Veneta', href: '/locations/veneta' },
-            { label: 'Florence', href: '/locations/florence' },
+            { label: 'Springfield', href: '/excavation-contractor-springfield-oregon' },
+            { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-oregon' },
+            { label: 'Junction City', href: '/excavation-contractor-junction-city-oregon' },
+            { label: 'Creswell', href: '/excavation-contractor-creswell-oregon' },
+            { label: 'Veneta', href: '/excavation-contractor-veneta-oregon' },
+            { label: 'Florence', href: '/excavation-contractor-florence-oregon' },
             { label: 'Oakridge', href: '/locations/oakridge' },
-            { label: 'Coburg', href: '/locations/coburg' },
-            { label: 'Lowell', href: '/locations/lowell' },
+            { label: 'Coburg', href: '/excavation-contractor-coburg-oregon' },
+            { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
           ].map((area) => (
             <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -391,9 +391,9 @@ const serviceSchema = {
       </h2>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before a build starts — often the step before foundation excavation.', href: '/site-preparation-contractor-eugene-oregon' },
+          { title: 'Site Preparation', description: 'Clearing, grading, and prepping your lot before a build starts � often the step before foundation excavation.', href: '/site-preparation-contractor-eugene-oregon' },
           { title: 'Land Clearing', description: 'Removing brush and overgrowth from your property before site prep and foundation excavation can begin.', href: '/land-clearing-services-eugene-oregon' },
-          { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope — often follows excavation work.', href: '/land-grading-services-eugene-oregon' },
+          { title: 'Grading & Leveling', description: 'Rough and finish grading for building pads, yards, and drainage slope � often follows excavation work.', href: '/land-grading-services-eugene-oregon' },
           { title: 'Utility Excavation', description: 'Trenching and backfill for water, sewer, and utility lines connected to your new build.', href: '/utility-trenching-eugene-oregon' },
         ].map((item) => (
           <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">

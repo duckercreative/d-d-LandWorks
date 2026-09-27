@@ -1,22 +1,38 @@
 ---
+interface Step {
+  step: string;
+  title: string;
+  detail: string;
+}
+
 interface Props {
+  eyebrow?: string;
   heading?: string;
   intro?: string;
+  steps?: Step[];
   ctaLabel?: string;
+  ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
 }
 
 const {
-  heading = "How Your Excavation Project Gets Started",
-  intro = "Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.",
-  ctaLabel = "Discuss Your Project",
+  eyebrow = 'How It Works',
+  heading = 'How Your Excavation Project Gets Started',
+  intro = 'Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.',
+  steps = [
+    { step: '1', title: 'Talk About the Project', detail: "We start by talking with you about your property and what you need done. We'll discuss the area, access, and the type of excavation or site work you have in mind." },
+    { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
+    { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
+    { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
+  ],
+  ctaLabel = 'Get a Free Estimate',
+  ctaHref = '/contact',
+  secondaryCtaLabel,
+  secondaryCtaHref,
 } = Astro.props;
 
-const steps = [
-  { step: '1', title: 'Talk About the Project', detail: "We start by talking with you about your property and what you need done. We'll discuss the area, access, and the type of excavation or site work you have in mind." },
-  { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
-  { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
-  { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
-];
+const cols = steps.length <= 3 ? `lg:grid-cols-${steps.length}` : 'lg:grid-cols-4';
 ---
 
 <section class="relative bg-ink text-white overflow-hidden">
@@ -28,7 +44,7 @@ const steps = [
   <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
 
     <div class="mb-12 md:mb-16 text-center">
-      <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
+      <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">{eyebrow}</p>
       <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
         {heading}
       </h2>
@@ -37,7 +53,7 @@ const steps = [
       </p>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+    <div class={`grid gap-4 sm:grid-cols-2 sm:gap-6 ${cols}`}>
       {steps.map((item) => (
         <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
           <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
@@ -49,8 +65,11 @@ const steps = [
       ))}
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="/contact" class="btn btn-cta">{ctaLabel}</a>
+    <div class="mt-12 flex flex-wrap justify-center gap-4">
+      <a href={ctaHref} class="btn btn-cta">{ctaLabel}</a>
+      {secondaryCtaLabel && secondaryCtaHref && (
+        <a href={secondaryCtaHref} class="btn btn-outline border-white/30 text-white hover:bg-white/10">{secondaryCtaLabel}</a>
+      )}
     </div>
 
   </div>
