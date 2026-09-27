@@ -1,9 +1,9 @@
----
+﻿---
 /*
   Google-review widget, restyled to match the "Live Google Reviews" reference
   layout (dark header band + white review panel + numbered pagination).
   With no `reviews` passed, it still falls back to an honest "no reviews yet"
-  state instead of showing placeholder stars/names/counts by default — the
+  state instead of showing placeholder stars/names/counts by default, the
   rating/reviewCount/reviews passed in from index.astro right now are demo
   content only, requested to preview this design. Swap them for real data
   once the Google Business Profile exists and has actual reviews (see
@@ -197,7 +197,7 @@ const pages = Array.from({ length: Math.ceil(reviews.length / pageSize) }, (_, i
 		}
 
 		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-		nav.querySelector('.review-page-prev')?.addEventListener('click', () => goTo(current - 1));
+		nav.querySelector('.review-page-prev')?.addEventListener('click', () => goTo(current, 1));
 		nav.querySelector('.review-page-next')?.addEventListener('click', () => goTo(current + 1));
 
 		container.addEventListener('mouseenter', stopAutoplay);

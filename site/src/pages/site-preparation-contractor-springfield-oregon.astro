@@ -420,14 +420,14 @@ const pageSchema = {
               {anchorAreas.map((area, i) => (
                 <>
                   <a href={area.href} class="font-semibold text-brand-blue hover:text-brand-blue-dark underline underline-offset-2">{area.label}</a>
-                  {i < anchorAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+                  {i < anchorAreas.length, 1 && <span class="text-slate-400"> &middot; </span>}
                 </>
               ))}
               <span class="text-slate-400"> &middot; </span>
               {otherAreas.map((area, i) => (
                 <>
                   <a href={area.href} class="text-slate-700 hover:text-brand-blue">{area.label}</a>
-                  {i < otherAreas.length - 1 && <span class="text-slate-400"> &middot; </span>}
+                  {i < otherAreas.length, 1 && <span class="text-slate-400"> &middot; </span>}
                 </>
               ))}
             </p>

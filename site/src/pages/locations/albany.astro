@@ -11,7 +11,7 @@ const excavationTypes = [
   { title: 'Land Clearing', description: 'Removing brush, trees, debris, and overgrown areas from a property before excavation or grading can begin. The amount of clearing depends on what is on the property and how much land needs to be opened.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
   { title: 'Trenching', description: 'Digging a narrow path in the ground for utility work, drainage, water lines, or another project that needs something below the surface. Depth, route, ground conditions, and access all affect the work.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
   { title: 'Drainage Work', description: 'When water collects where it should not, excavation or grading may create a better path for it to move. The layout of the property and where the water needs to go both matter.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Residential Excavation', description: 'Excavation can be needed for many types of property work — building-site prep, grading, clearing, trenching, or drainage. A home lot and a larger property outside the city can have very different needs.', href: '/excavation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5Z M9 21V12h6v9" />' },
+  { title: 'Residential Excavation', description: 'Excavation can be needed for many types of property work, building-site prep, grading, clearing, trenching, or drainage. A home lot and a larger property outside the city can have very different needs.', href: '/excavation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5Z M9 21V12h6v9" />' },
 ];
 
 const whenCards = [
@@ -24,11 +24,11 @@ const whenCards = [
 ];
 
 const whyItems = [
-  { title: 'Based in Springfield — Serving Albany', description: 'D&D Land Works is headquartered in Springfield, Oregon, and serves Albany as part of the regular service area. Call 541-401-8726 to discuss your property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Based in Springfield, Serving Albany', description: 'D&D Land Works is headquartered in Springfield, Oregon, and serves Albany as part of the regular service area. Call 541-401-8726 to discuss your property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
   { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
   { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects in the Albany service area.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for excavation and site preparation projects in Albany. David walks the property before quoting — pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
-  { title: 'No Fixed Timeline — Real Scope', description: 'We do not promise the same timeline for every job. Property size, ground conditions, access, clearing, and complexity can all affect how long a project takes on an Albany property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for excavation and site preparation projects in Albany. David walks the property before quoting, pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
+  { title: 'No Fixed Timeline, Real Scope', description: 'We do not promise the same timeline for every job. Property size, ground conditions, access, clearing, and complexity can all affect how long a project takes on an Albany property.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
 ];
 
 const faqs = [
@@ -56,7 +56,7 @@ const serviceSchema = {
       ],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
       ],
     },
     {
@@ -81,7 +81,7 @@ const serviceSchema = {
 
 <BaseLayout
   title="Excavation Contractor in Albany, OR | D&D Land Works"
-  description="D&D Land Works provides excavation, land clearing, grading, trenching, drainage, and site preparation in Albany, OR. CCB #261742. Free estimates — call 541-401-8726."
+  description="D&D Land Works provides excavation, land clearing, grading, trenching, drainage, and site preparation in Albany, OR. CCB #261742. Free estimates, call 541-401-8726."
 >
 
   <Hero
@@ -155,7 +155,7 @@ const serviceSchema = {
           What Kind of Work Does Your Property Need?
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          You may not know the exact name for the work your property needs — that is okay. Start by explaining what you want to do with the property and what the site looks like now.
+          You may not know the exact name for the work your property needs, that is okay. Start by explaining what you want to do with the property and what the site looks like now.
         </p>
       </div>
     </div>
@@ -209,7 +209,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- How it gets started — process steps -->
+  <!-- How it gets started, process steps -->
   <section class="relative bg-ink text-white overflow-hidden">
     <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
@@ -219,7 +219,7 @@ const serviceSchema = {
           How Your Albany Project Gets Started
         </h2>
         <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          You do not need to know the exact name of the work before you call. Start with the problem you are trying to solve — what you want to do and where the work is.
+          You do not need to know the exact name of the work before you call. Start with the problem you are trying to solve, what you want to do and where the work is.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
@@ -354,7 +354,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <FAQ heading="Excavation in Albany — FAQs" items={faqs} />
+  <FAQ heading="Excavation in Albany, FAQs" items={faqs} />
 
   <!-- Related Services -->
   <section class="bg-white border-t border-slate-100">
@@ -386,7 +386,7 @@ const serviceSchema = {
   <CTABlock
     eyebrow="Talk With David"
     headline="Need Excavation Work in Albany?"
-    subheadline="Call D&D Land Works at 541-401-8726 and explain what you are working on. Share the property location, what you want done, the size of the area, and anything you know about access or existing structures. Free estimates — no obligation."
+    subheadline="Call D&D Land Works at 541-401-8726 and explain what you are working on. Share the property location, what you want done, the size of the area, and anything you know about access or existing structures. Free estimates, no obligation."
     ctaLabel="Request a Free Estimate"
     ctaHref="/contact"
     phone="541-401-8726"

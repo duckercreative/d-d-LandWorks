@@ -1,4 +1,4 @@
----
+﻿---
 interface Props {
   before: string;
   after: string;
@@ -20,7 +20,7 @@ const { before, after, caption, id } = Astro.props;
 			src={before}
 			alt={`${caption}: before`}
 			class="absolute inset-0 h-full w-full object-cover"
-			style="clip-path: inset(0 calc(100% - var(--reveal)) 0 0);"
+			style="clip-path: inset(0 calc(100%, var(--reveal)) 0 0);"
 			loading="lazy"
 			draggable="false"
 		/>

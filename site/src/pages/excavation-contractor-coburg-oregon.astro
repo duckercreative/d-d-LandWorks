@@ -24,11 +24,11 @@ const whenCards = [
 ];
 
 const whyItems = [
-  { title: 'Based in Springfield — Close to Coburg', description: 'D&D Land Works is headquartered in Springfield, Oregon, just a few miles from Coburg. Call 541-401-8726 to discuss your project and confirm whether it fits the current service area.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
+  { title: 'Based in Springfield, Close to Coburg', description: 'D&D Land Works is headquartered in Springfield, Oregon, just a few miles from Coburg. Call 541-401-8726 to discuss your project and confirm whether it fits the current service area.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
   { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
   { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects where the service area is confirmed.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects. David walks the property before quoting — pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
-  { title: 'No Fixed Timeline — Real Scope', description: 'We do not promise the same timeline for every job. Project size, ground conditions, access, clearing, and complexity can all affect how long a Coburg-area project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects. David walks the property before quoting, pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
+  { title: 'No Fixed Timeline, Real Scope', description: 'We do not promise the same timeline for every job. Project size, ground conditions, access, clearing, and complexity can all affect how long a Coburg-area project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
 ];
 
 const faqs = [
@@ -56,7 +56,7 @@ const serviceSchema = {
       ],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
       ],
     },
     {
@@ -81,7 +81,7 @@ const serviceSchema = {
 
 <BaseLayout
   title="Excavation Contractor near Coburg, OR | D&D Land Works"
-  description="D&D Land Works provides excavation, land clearing, grading, septic excavation, and site preparation near Coburg, OR. Based in Springfield. CCB #261742. Free estimates — call 541-401-8726."
+  description="D&D Land Works provides excavation, land clearing, grading, septic excavation, and site preparation near Coburg, OR. Based in Springfield. CCB #261742. Free estimates, call 541-401-8726."
 >
 
   <Hero
@@ -155,7 +155,7 @@ const serviceSchema = {
           What Kind of Work Does Your Property Need?
         </h2>
         <p class="mt-5 text-slate-300 leading-relaxed">
-          You may not know the exact name for the work your property needs — that is okay. Start by explaining what you want to do and what the site currently looks like.
+          You may not know the exact name for the work your property needs, that is okay. Start by explaining what you want to do and what the site currently looks like.
         </p>
       </div>
     </div>
@@ -209,7 +209,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- How it gets started — process steps -->
+  <!-- How it gets started, process steps -->
   <section class="relative bg-ink text-white overflow-hidden">
     <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
@@ -255,7 +255,7 @@ const serviceSchema = {
             What Can D&D Land Works Help With?
           </h2>
           <p class="mt-5 text-slate-600 leading-relaxed">
-            D&D Land Works handles excavation and related site work for property owners near Coburg. The right work depends on your property and what you are trying to accomplish — not a standard package applied to every site.
+            D&D Land Works handles excavation and related site work for property owners near Coburg. The right work depends on your property and what you are trying to accomplish, not a standard package applied to every site.
           </p>
           <ul class="mt-10 flex flex-col gap-7">
             {whyItems.map((item) => (
@@ -302,7 +302,7 @@ const serviceSchema = {
       <div class="mb-12 md:mb-14 text-center">
         <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Primary Service Area</p>
         <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Based in Springfield — Serving Lane County
+          Based in Springfield, Serving Lane County
         </h2>
         <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
           <p>D&D Land Works is headquartered in Springfield, Oregon, just a few miles from Coburg on I-5. Call to confirm whether your property is within the current service area.</p>
@@ -353,7 +353,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <FAQ heading="Excavation near Coburg — FAQs" items={faqs} />
+  <FAQ heading="Excavation near Coburg, FAQs" items={faqs} />
 
   <!-- Related Services -->
   <section class="bg-white border-t border-slate-100">
