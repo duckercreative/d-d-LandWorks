@@ -294,15 +294,15 @@ $why_items = array(
 <!-- ── 7. SERVICE AREAS ───────────────────────────────────────────────────── -->
 <?php
 $service_areas = array(
-	array( 'label' => 'Springfield',   'href' => home_url( '/locations/springfield' ) ),
-	array( 'label' => 'Cottage Grove', 'href' => home_url( '/locations/cottage-grove' ) ),
-	array( 'label' => 'Junction City', 'href' => home_url( '/locations/junction-city' ) ),
-	array( 'label' => 'Creswell',      'href' => home_url( '/locations/creswell' ) ),
-	array( 'label' => 'Veneta',        'href' => home_url( '/locations/veneta' ) ),
-	array( 'label' => 'Florence',      'href' => home_url( '/locations/florence' ) ),
-	array( 'label' => 'Oakridge',      'href' => home_url( '/locations/oakridge' ) ),
-	array( 'label' => 'Coburg',        'href' => home_url( '/locations/coburg' ) ),
-	array( 'label' => 'Lowell',        'href' => home_url( '/locations/lowell' ) ),
+	array( 'label' => 'Springfield',   'href' => ddlw_city_url( 'springfield' ) ),
+	array( 'label' => 'Cottage Grove', 'href' => ddlw_city_url( 'cottage-grove' ) ),
+	array( 'label' => 'Junction City', 'href' => ddlw_city_url( 'junction-city' ) ),
+	array( 'label' => 'Creswell',      'href' => ddlw_city_url( 'creswell' ) ),
+	array( 'label' => 'Veneta',        'href' => ddlw_city_url( 'veneta' ) ),
+	array( 'label' => 'Florence',      'href' => ddlw_city_url( 'florence' ) ),
+	array( 'label' => 'Oakridge',      'href' => ddlw_city_url( 'oakridge' ) ),
+	array( 'label' => 'Coburg',        'href' => ddlw_city_url( 'coburg' ) ),
+	array( 'label' => 'Lowell',        'href' => ddlw_city_url( 'lowell' ) ),
 );
 $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z"/><circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none"/></svg>';
 ?>
@@ -315,7 +315,7 @@ $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 		</div>
 		<div class="areas-grid">
 			<div class="areas-list">
-				<a href="<?php echo esc_url( home_url( '/locations/eugene' ) ); ?>" class="areas-list__primary">
+				<a href="<?php echo esc_url( ddlw_city_url( 'eugene' ) ); ?>" class="areas-list__primary">
 					<?php echo wp_kses_post( $pin_icon ); ?>
 					<span>Eugene, OR</span>
 				</a>

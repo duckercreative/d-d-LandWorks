@@ -281,7 +281,7 @@ function ddlw_service_grid( $atts ) {
 			<?php foreach ( ddlw_services() as $service ) :
 				$icon = $icons[ $service['slug'] ] ?? $icons['excavation'];
 				?>
-				<a href="/services/<?php echo esc_attr( $service['slug'] ); ?>" class="card service-card">
+				<a href="<?php echo esc_url( home_url( $service['href'] ) ); ?>" class="card service-card">
 					<span class="icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><?php echo $icon; ?></svg></span>
 					<h3><?php echo esc_html( $service['title'] ); ?></h3>
 					<p><?php echo esc_html( $service['description'] ); ?></p>

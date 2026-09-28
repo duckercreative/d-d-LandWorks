@@ -73,19 +73,30 @@ function ddlw_render_social_links( $class = '' ) {
  */
 function ddlw_services() {
 	return array(
-		array( 'title' => 'Site Preparation', 'slug' => 'site-preparation', 'group' => 'core', 'description' => 'Clearing, rough grading, and access prep before a builder or crew arrives.' ),
-		array( 'title' => 'Excavation', 'slug' => 'excavation', 'group' => 'core', 'description' => 'General earthwork for new construction, additions, and land improvements.' ),
-		array( 'title' => 'Land & Brush Clearing', 'slug' => 'land-clearing', 'group' => 'core', 'description' => 'Full clearing or lighter brush-clearing scopes for raw land.' ),
-		array( 'title' => 'Grading & Leveling', 'slug' => 'grading-leveling', 'group' => 'core', 'description' => 'Rough and finish grading for building pads, yards, and drainage slope.' ),
-		array( 'title' => 'Septic Installation', 'slug' => 'septic-installation-lane-county-oregon', 'group' => 'core', 'description' => 'DEQ-certified septic system work, install and repair.' ),
-		array( 'title' => 'Foundation Excavation', 'slug' => 'foundation-excavation', 'group' => 'additional', 'description' => 'Digging and prep for home, shop, barn, and ADU foundations.' ),
-		array( 'title' => 'Drainage Excavation', 'slug' => 'drainage-excavation', 'group' => 'additional', 'description' => 'Excavation and grading to correct standing water and poor yard drainage.' ),
-		array( 'title' => 'Utility Excavation', 'slug' => 'utility-excavation', 'group' => 'additional', 'description' => 'Trenching and backfill for water, sewer, and utility lines.' ),
-		array( 'title' => 'Gravel Driveway Repair', 'slug' => 'driveway-repair', 'group' => 'additional', 'description' => 'Regrading and re-rocking gravel driveways and access roads.' ),
-		array( 'title' => 'Trenching & Backfill', 'slug' => 'trenching-backfill', 'group' => 'additional', 'description' => 'Trenching and compacted backfill for utility and drainage lines.' ),
-		array( 'title' => 'Brush Clearing', 'slug' => 'brush-clearing', 'group' => 'additional', 'description' => 'Lighter clearing scopes: overgrowth, blackberry, and defensible space.' ),
-		array( 'title' => 'Slope Stabilization', 'slug' => 'slope-stabilization', 'group' => 'additional', 'description' => 'Earthwork and grading to address erosion-prone or unstable slopes.' ),
+		array( 'title' => 'Site Preparation',       'slug' => 'site-preparation',                   'href' => '/site-preparation-contractor-eugene-oregon',    'group' => 'core',       'description' => 'Clearing, rough grading, and access prep before a builder or crew arrives.' ),
+		array( 'title' => 'Excavation',              'slug' => 'excavation',                          'href' => '/excavation-contractor-eugene-oregon',           'group' => 'core',       'description' => 'General earthwork for new construction, additions, and land improvements.' ),
+		array( 'title' => 'Land & Brush Clearing',   'slug' => 'land-clearing',                      'href' => '/land-clearing-services-eugene-oregon',          'group' => 'core',       'description' => 'Full clearing or lighter brush-clearing scopes for raw land.' ),
+		array( 'title' => 'Grading & Leveling',      'slug' => 'grading-leveling',                   'href' => '/land-grading-services-eugene-oregon',           'group' => 'core',       'description' => 'Rough and finish grading for building pads, yards, and drainage slope.' ),
+		array( 'title' => 'Septic Install & Repairs','slug' => 'septic-installation-lane-county-oregon','href' => '/septic-installation-lane-county-oregon',      'group' => 'core',       'description' => 'DEQ-certified septic system work, install and repair.' ),
+		array( 'title' => 'Foundation Excavation',   'slug' => 'foundation-excavation',              'href' => '/foundation-excavation-eugene-oregon',           'group' => 'additional', 'description' => 'Digging and prep for home, shop, barn, and ADU foundations.' ),
+		array( 'title' => 'Drainage Excavation',     'slug' => 'drainage-excavation',                'href' => '/drainage-installation-eugene-oregon',           'group' => 'additional', 'description' => 'Excavation and grading to correct standing water and poor yard drainage.' ),
+		array( 'title' => 'Utility Excavation',      'slug' => 'utility-excavation',                 'href' => '/utility-trenching-eugene-oregon',               'group' => 'additional', 'description' => 'Trenching and backfill for water, sewer, and utility lines.' ),
+		array( 'title' => 'Gravel Driveway Repair',  'slug' => 'driveway-repair',                    'href' => '/driveway-excavation-grading-eugene-oregon',     'group' => 'additional', 'description' => 'Regrading and re-rocking gravel driveways and access roads.' ),
+		array( 'title' => 'Trenching & Backfill',    'slug' => 'trenching-backfill',                 'href' => '/trenching-services-eugene-oregon',              'group' => 'additional', 'description' => 'Trenching and compacted backfill for utility and drainage lines.' ),
+		array( 'title' => 'Brush Clearing',          'slug' => 'brush-clearing',                     'href' => '/brush-clearing-eugene-oregon',                  'group' => 'additional', 'description' => 'Lighter clearing scopes: overgrowth, blackberry, and defensible space.' ),
+		array( 'title' => 'Slope Stabilization',     'slug' => 'slope-stabilization',               'href' => '/slope-stabilization-eugene-oregon',             'group' => 'additional', 'description' => 'Earthwork and grading to address erosion-prone or unstable slopes.' ),
 	);
+}
+
+/**
+ * Returns the canonical URL for a city page.
+ * Matches the Astro site's /excavation-contractor-[city]-oregon URL pattern.
+ */
+function ddlw_city_url( $slug ) {
+	if ( ! $slug ) {
+		return home_url( '/service-area' );
+	}
+	return home_url( '/excavation-contractor-' . $slug . '-oregon' );
 }
 
 /**
@@ -95,21 +106,21 @@ function ddlw_services() {
 function ddlw_service_areas() {
 	return array(
 		'primary'   => array(
-			array( 'label' => 'Lane County, OR (all areas)', 'slug' => '' ),
-			array( 'label' => 'Eugene, OR', 'slug' => 'eugene' ),
-			array( 'label' => 'Springfield, OR', 'slug' => 'springfield' ),
+			array( 'label' => 'Lane County, OR (all areas)', 'slug' => '',              'href' => '/service-area' ),
+			array( 'label' => 'Eugene, OR',                  'slug' => 'eugene',        'href' => '/excavation-contractor-eugene-oregon' ),
+			array( 'label' => 'Springfield, OR',             'slug' => 'springfield',   'href' => '/excavation-contractor-springfield-oregon' ),
 		),
 		'secondary' => array(
-			array( 'label' => 'Cottage Grove, OR', 'slug' => 'cottage-grove' ),
-			array( 'label' => 'Junction City, OR', 'slug' => 'junction-city' ),
-			array( 'label' => 'Creswell, OR', 'slug' => 'creswell' ),
-			array( 'label' => 'Veneta, OR', 'slug' => 'veneta' ),
+			array( 'label' => 'Cottage Grove, OR', 'slug' => 'cottage-grove', 'href' => '/excavation-contractor-cottage-grove-oregon' ),
+			array( 'label' => 'Junction City, OR', 'slug' => 'junction-city', 'href' => '/excavation-contractor-junction-city-oregon' ),
+			array( 'label' => 'Creswell, OR',      'slug' => 'creswell',      'href' => '/excavation-contractor-creswell-oregon' ),
+			array( 'label' => 'Veneta, OR',         'slug' => 'veneta',        'href' => '/excavation-contractor-veneta-oregon' ),
 		),
 		'further'   => array(
-			array( 'label' => 'Florence, OR', 'slug' => 'florence' ),
-			array( 'label' => 'Oakridge, OR', 'slug' => 'oakridge' ),
-			array( 'label' => 'Coburg, OR', 'slug' => 'coburg' ),
-			array( 'label' => 'Lowell, OR', 'slug' => 'lowell' ),
+			array( 'label' => 'Florence, OR', 'slug' => 'florence', 'href' => '/excavation-contractor-florence-oregon' ),
+			array( 'label' => 'Oakridge, OR', 'slug' => 'oakridge', 'href' => '/locations/oakridge' ),
+			array( 'label' => 'Coburg, OR',   'slug' => 'coburg',   'href' => '/excavation-contractor-coburg-oregon' ),
+			array( 'label' => 'Lowell, OR',   'slug' => 'lowell',   'href' => '/excavation-contractor-lowell-oregon' ),
 		),
 	);
 }

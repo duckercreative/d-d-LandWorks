@@ -5,8 +5,12 @@
  * Footer — 4-column layout matching Footer.astro.
  */
 $footer_services = array_slice( ddlw_services(), 0, 10 );
-$footer_areas    = array_slice( ddlw_service_areas()['primary'], 1 );
-$footer_areas    = array_merge( $footer_areas, array_slice( ddlw_service_areas()['secondary'], 0, 2 ) );
+$areas_data      = ddlw_service_areas();
+$footer_areas    = array_merge(
+	array_filter( $areas_data['primary'], fn( $a ) => $a['slug'] !== '' ),
+	$areas_data['secondary'],
+	$areas_data['further']
+);
 ?>
 <footer class="site-footer">
 	<div class="container site-footer__grid">
@@ -26,7 +30,7 @@ $footer_areas    = array_merge( $footer_areas, array_slice( ddlw_service_areas()
 			<h3>Services</h3>
 			<ul class="footer-list">
 				<?php foreach ( $footer_services as $s ) : ?>
-					<li><a href="/services/<?php echo esc_attr( $s['slug'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( $s['href'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
@@ -35,7 +39,7 @@ $footer_areas    = array_merge( $footer_areas, array_slice( ddlw_service_areas()
 			<h3>Service Areas</h3>
 			<ul class="footer-list">
 				<?php foreach ( $footer_areas as $a ) : ?>
-					<li><a href="/locations/<?php echo esc_attr( $a['slug'] ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
@@ -47,8 +51,6 @@ $footer_areas    = array_merge( $footer_areas, array_slice( ddlw_service_areas()
 				<li><a href="<?php echo esc_url( ddlw_phone_href() ); ?>"><?php echo esc_html( ddlw_phone() ); ?></a></li>
 				<li><a href="mailto:<?php echo esc_attr( ddlw_email() ); ?>"><?php echo esc_html( ddlw_email() ); ?></a></li>
 				<li><a href="/about">About Us</a></li>
-				<li><a href="/commercial-excavation">Commercial</a></li>
-				<li><a href="/resources">Resources</a></li>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>

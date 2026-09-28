@@ -124,12 +124,68 @@ function ec_defaults() {
 	);
 }
 
-/* ── Helper: get value (meta → default) ───────────────────────────────────── */
+/* ── Helper: detect city name from page slug ───────────────────────────────── */
+
+function ec_city_from_slug( $post_id ) {
+	$slug = get_post_field( 'post_name', $post_id );
+
+	// Pattern: excavation-contractor-[city]-oregon
+	if ( preg_match( '/^excavation-contractor-(.+)-oregon$/', $slug, $m ) ) {
+		$map = array(
+			'eugene'        => 'Eugene',
+			'springfield'   => 'Springfield',
+			'florence'      => 'Florence',
+			'cottage-grove' => 'Cottage Grove',
+			'junction-city' => 'Junction City',
+			'corvallis'     => 'Corvallis',
+			'albany'        => 'Albany',
+			'creswell'      => 'Creswell',
+			'veneta'        => 'Veneta',
+			'coburg'        => 'Coburg',
+			'lowell'        => 'Lowell',
+		);
+		return $map[ $m[1] ] ?? ucwords( str_replace( '-', ' ', $m[1] ) );
+	}
+
+	// Also handle /locations/[city] pages (post_name is just the city slug)
+	$location_map = array(
+		'oakridge'      => 'Oakridge',
+		'eugene'        => 'Eugene',
+		'springfield'   => 'Springfield',
+		'florence'      => 'Florence',
+		'cottage-grove' => 'Cottage Grove',
+		'junction-city' => 'Junction City',
+		'corvallis'     => 'Corvallis',
+		'albany'        => 'Albany',
+		'creswell'      => 'Creswell',
+		'veneta'        => 'Veneta',
+		'coburg'        => 'Coburg',
+		'lowell'        => 'Lowell',
+	);
+	if ( isset( $location_map[ $slug ] ) ) {
+		return $location_map[ $slug ];
+	}
+
+	return 'Eugene';
+}
+
+/* ── Helper: get value (meta → city-aware default) ────────────────────────── */
 
 function ec_get( $post_id, $key ) {
-	$stored   = get_post_meta( $post_id, $key, true );
+	$stored = get_post_meta( $post_id, $key, true );
+	if ( $stored !== '' && $stored !== false ) {
+		return $stored;
+	}
 	$defaults = ec_defaults();
-	return ( $stored !== '' && $stored !== false ) ? $stored : ( $defaults[ $key ] ?? '' );
+	$default  = $defaults[ $key ] ?? '';
+
+	// Auto-substitute the detected city for "Eugene" in all default strings.
+	$city = ec_city_from_slug( $post_id );
+	if ( $city !== 'Eugene' ) {
+		$default = str_replace( "Eugene's", $city . "'s", $default );
+		$default = str_replace( 'Eugene', $city, $default );
+	}
+	return $default;
 }
 
 /* ── Render ────────────────────────────────────────────────────────────────── */

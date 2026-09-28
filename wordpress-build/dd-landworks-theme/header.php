@@ -46,14 +46,14 @@ $areas          = ddlw_service_areas();
 						<div class="nav-dropdown__cols">
 							<div>
 								<p class="nav-dropdown__heading">Core Services</p>
-								<ul><?php foreach ( $core_services as $s ) : ?><li><a href="/services/<?php echo esc_attr( $s['slug'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li><?php endforeach; ?></ul>
+								<ul><?php foreach ( $core_services as $s ) : ?><li><a href="<?php echo esc_url( home_url( $s['href'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li><?php endforeach; ?></ul>
 							</div>
 							<div>
 								<p class="nav-dropdown__heading nav-dropdown__heading--muted">Additional Services</p>
-								<ul><?php foreach ( $extra_services as $s ) : ?><li><a href="/services/<?php echo esc_attr( $s['slug'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li><?php endforeach; ?></ul>
+								<ul><?php foreach ( $extra_services as $s ) : ?><li><a href="<?php echo esc_url( home_url( $s['href'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a></li><?php endforeach; ?></ul>
 							</div>
 						</div>
-						<a href="/services" class="nav-dropdown__all">View All Services
+						<a href="<?php echo esc_url( home_url( '/services' ) ); ?>" class="nav-dropdown__all">View All Services
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="height:0.85rem;width:0.85rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
 						</a>
 					</div>
@@ -68,15 +68,15 @@ $areas          = ddlw_service_areas();
 						<div class="nav-dropdown__cols nav-dropdown__cols--3">
 							<div>
 								<p class="nav-dropdown__heading">Primary Coverage</p>
-								<ul><?php foreach ( $areas['primary'] as $a ) : ?><li><a href="<?php echo $a['slug'] ? '/locations/' . esc_attr( $a['slug'] ) : '/service-area'; ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
+								<ul><?php foreach ( $areas['primary'] as $a ) : ?><li><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
 							</div>
 							<div>
 								<p class="nav-dropdown__heading nav-dropdown__heading--muted">Also Serving</p>
-								<ul><?php foreach ( $areas['secondary'] as $a ) : ?><li><a href="/locations/<?php echo esc_attr( $a['slug'] ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
+								<ul><?php foreach ( $areas['secondary'] as $a ) : ?><li><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
 							</div>
 							<div>
 								<p class="nav-dropdown__heading nav-dropdown__heading--muted">Further Out</p>
-								<ul><?php foreach ( $areas['further'] as $a ) : ?><li><a href="/locations/<?php echo esc_attr( $a['slug'] ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
+								<ul><?php foreach ( $areas['further'] as $a ) : ?><li><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a></li><?php endforeach; ?></ul>
 							</div>
 						</div>
 						<a href="/service-area" class="nav-dropdown__all">View Full Service Area
@@ -85,8 +85,6 @@ $areas          = ddlw_service_areas();
 					</div>
 				</div>
 			</li>
-			<li><a href="/commercial-excavation">Commercial</a></li>
-			<li><a href="/resources">Resources</a></li>
 			<li><a href="/blog">Blog</a></li>
 			<li><a href="/about">About</a></li>
 			<li><a href="/contact">Contact</a></li>
@@ -116,26 +114,24 @@ $areas          = ddlw_service_areas();
 			<summary>Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1.5rem;width:1.5rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
 			<div class="mobile-menu__sub">
 				<p class="mobile-menu__sub-label mobile-menu__sub-label--accent">Core Services</p>
-				<?php foreach ( $core_services as $s ) : ?><a href="/services/<?php echo esc_attr( $s['slug'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a><?php endforeach; ?>
+				<?php foreach ( $core_services as $s ) : ?><a href="<?php echo esc_url( home_url( $s['href'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a><?php endforeach; ?>
 				<p class="mobile-menu__sub-label">Additional Services</p>
-				<?php foreach ( $extra_services as $s ) : ?><a href="/services/<?php echo esc_attr( $s['slug'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a><?php endforeach; ?>
-				<a href="/services" class="mobile-menu__sub-label--accent" style="font-weight:700;">View All Services →</a>
+				<?php foreach ( $extra_services as $s ) : ?><a href="<?php echo esc_url( home_url( $s['href'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a><?php endforeach; ?>
+				<a href="<?php echo esc_url( home_url( '/services' ) ); ?>" class="mobile-menu__sub-label--accent" style="font-weight:700;">View All Services →</a>
 			</div>
 		</details>
 		<details>
 			<summary>Service Areas <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1.5rem;width:1.5rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
 			<div class="mobile-menu__sub">
 				<p class="mobile-menu__sub-label mobile-menu__sub-label--accent">Primary Coverage</p>
-				<?php foreach ( $areas['primary'] as $a ) : ?><a href="<?php echo $a['slug'] ? '/locations/' . esc_attr( $a['slug'] ) : '/service-area'; ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
+				<?php foreach ( $areas['primary'] as $a ) : ?><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
 				<p class="mobile-menu__sub-label">Also Serving</p>
-				<?php foreach ( $areas['secondary'] as $a ) : ?><a href="/locations/<?php echo esc_attr( $a['slug'] ); ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
+				<?php foreach ( $areas['secondary'] as $a ) : ?><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
 				<p class="mobile-menu__sub-label">Further Out</p>
-				<?php foreach ( $areas['further'] as $a ) : ?><a href="/locations/<?php echo esc_attr( $a['slug'] ); ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
+				<?php foreach ( $areas['further'] as $a ) : ?><a href="<?php echo esc_url( home_url( $a['href'] ) ); ?>"><?php echo esc_html( $a['label'] ); ?></a><?php endforeach; ?>
 				<a href="/service-area" class="mobile-menu__sub-label--accent" style="font-weight:700;">View Full Service Area →</a>
 			</div>
 		</details>
-		<a href="/commercial-excavation">Commercial</a>
-		<a href="/resources">Resources</a>
 		<a href="/blog">Blog</a>
 		<a href="/about">About</a>
 		<a href="/contact">Contact</a>
