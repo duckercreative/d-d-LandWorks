@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * D&D Land Works theme bootstrap.
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DDLW_VERSION', '1.0.0' );
+define( 'DDLW_VERSION', '1.0.4' );
 define( 'DDLW_DIR', get_template_directory() );
 define( 'DDLW_URI', get_template_directory_uri() );
 
@@ -40,6 +40,10 @@ function ddlw_setup() {
 
 	add_image_size( 'ddlw-card', 640, 480, true );
 	add_image_size( 'ddlw-hero', 1920, 1080, true );
+
+	// Load theme stylesheet in the block editor so CSS variables and fonts
+	// apply to the canvas (makes RichText fields look like the front end).
+	add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', 'ddlw_setup' );
 
@@ -64,6 +68,15 @@ function ddlw_assets() {
 add_action( 'wp_enqueue_scripts', 'ddlw_assets' );
 
 /**
+ * Favicon — suppress WP's default site_icon output and serve our SVG.
+ */
+remove_action( 'wp_head', 'wp_site_icon', 99 );
+function ddlw_favicon() {
+	echo '<link rel="icon" type="image/png" href="' . esc_url( DDLW_URI . '/assets/images/logo.png' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'ddlw_favicon', 1 );
+
+/**
  * Fallback menus so the header/footer render sensibly before an admin has
  * assigned menus in Appearance > Menus.
  */
@@ -80,17 +93,32 @@ function ddlw_nav_fallback() {
 add_filter( 'excerpt_length', fn() => 28 );
 add_filter( 'excerpt_more', fn() => '&hellip;' );
 
-/**
- * Disable the admin bar's frontend CSS shove when logged in as a low-impact
- * default; site owners can re-enable via user profile screen as normal.
- */
-add_filter( 'show_admin_bar', '__return_false' );
 
 require DDLW_DIR . '/inc/template-tags.php';
 require DDLW_DIR . '/inc/shortcodes.php';
 require DDLW_DIR . '/inc/customizer.php';
 require DDLW_DIR . '/inc/meta-site-preparation.php';
 require DDLW_DIR . '/inc/meta-excavation-contractor.php';
+require DDLW_DIR . '/inc/service-content.php';
+if ( file_exists( DDLW_DIR . '/inc/service-content-additional.php' ) ) {
+	require DDLW_DIR . '/inc/service-content-additional.php';
+}
+require DDLW_DIR . '/inc/blocks.php';
+require DDLW_DIR . '/inc/auto-populate-homepage.php';
+
+/**
+ * Enqueue the homepage block editor JS (edit side only, no frontend output).
+ */
+function ddlw_block_editor_assets() {
+	wp_enqueue_script(
+		'ddlw-homepage-blocks',
+		DDLW_URI . '/assets/js/blocks/homepage.js',
+		array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-block-editor', 'wp-rich-text' ),
+		DDLW_VERSION,
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'ddlw_block_editor_assets' );
 
 /**
  * On theme activation: create all required pages so every URL resolves.
@@ -125,7 +153,7 @@ function ddlw_create_default_pages() {
 	$make( 'About',        'about',        'page-templates/template-about.php' );
 	$make( 'Contact',      'contact',      'page-templates/template-contact.php' );
 	$blog_id = $make( 'Blog', 'blog', '' );
-	$make( 'Service Area', 'service-area', '' );
+	$make( 'Service Area', 'service-area', 'page-templates/template-service-area.php' );
 	$make( 'Services',     'services',     '' );
 
 	/* ── Excavation contractor city pages ─────────────────────────────────── */
@@ -146,7 +174,7 @@ function ddlw_create_default_pages() {
 	foreach ( $cities as $slug => $city ) {
 		$make(
 			'Excavation Contractor in ' . $city . ', Oregon',
-			'excavation-contractor-' . $slug . '-oregon',
+			'excavation-contractor-' . $slug . '-or',
 			$ec_tpl,
 			'',
 			array(
@@ -166,18 +194,18 @@ function ddlw_create_default_pages() {
 	/* ── Service pages (matching Astro site slugs) ────────────────────────── */
 	$svc_tpl = 'page-templates/template-service.php';
 	$service_pages = array(
-		array( 'Site Preparation',         'site-preparation-contractor-eugene-oregon',   'Site prep, land clearing, rough grading, and access work before a builder arrives. D&D Land Works handles the full scope of site preparation for Eugene and Lane County.' ),
-		array( 'Site Preparation - Springfield', 'site-preparation-contractor-springfield-oregon', 'Site preparation, land clearing, grading, and access work for Springfield, Oregon properties. D&D Land Works is based in Springfield.' ),
-		array( 'Land Clearing',            'land-clearing-services-eugene-oregon',         'Full land clearing and brush clearing for Eugene and Lane County. Trees, brush, stumps, and vegetation removed so excavation or construction can begin.' ),
-		array( 'Grading & Leveling',       'land-grading-services-eugene-oregon',          'Land grading, site leveling, and drainage slope work for residential and commercial properties in Eugene and Lane County.' ),
-		array( 'Septic Install & Repairs', 'septic-installation-lane-county-oregon',       'DEQ-certified septic system installation and repair throughout Lane County. One contractor handles both the excavation and the septic work.' ),
-		array( 'Foundation Excavation',    'foundation-excavation-eugene-oregon',           'Foundation digging for homes, ADUs, shops, and barns in Eugene and Lane County. Clean excavation to plan dimensions before the concrete crew arrives.' ),
-		array( 'Drainage Excavation',      'drainage-installation-eugene-oregon',           'Drainage excavation, French drains, swales, and catch basins for standing water problems on Eugene and Lane County properties.' ),
-		array( 'Utility Excavation',       'utility-trenching-eugene-oregon',               'Utility trenching and backfill for water, sewer, electrical conduit, and irrigation lines across Eugene and Lane County.' ),
-		array( 'Driveway Repair',          'driveway-excavation-grading-eugene-oregon',     'Gravel driveway regrading and re-rocking for Eugene and Lane County. Rutted, washed-out, or uneven driveways excavated and reshaped.' ),
-		array( 'Trenching & Backfill',     'trenching-services-eugene-oregon',              'Trench digging and compacted backfill for utility lines, drainage pipe, and other underground work across Lane County.' ),
-		array( 'Brush Clearing',           'brush-clearing-eugene-oregon',                  'Brush clearing, blackberry removal, and light vegetation clearing for Eugene and Lane County properties.' ),
-		array( 'Slope Stabilization',      'slope-stabilization-eugene-oregon',             'Slope stabilization, erosion control, and hillside grading for unstable or erosion-prone sites in Eugene and Lane County.' ),
+		array( 'Site Preparation',         'site-preparation-contractor-eugene-or',   'Site prep, land clearing, rough grading, and access work before a builder arrives. D&D Land Works handles the full scope of site preparation for Eugene and Lane County.' ),
+		array( 'Site Preparation - Springfield', 'site-preparation-contractor-springfield-or', 'Site preparation, land clearing, grading, and access work for Springfield, Oregon properties. D&D Land Works is based in Springfield.' ),
+		array( 'Land Clearing',            'land-clearing-services-eugene-or',         'Full land clearing and brush clearing for Eugene and Lane County. Trees, brush, stumps, and vegetation removed so excavation or construction can begin.' ),
+		array( 'Grading & Leveling',       'land-grading-services-eugene-or',          'Land grading, site leveling, and drainage slope work for residential and commercial properties in Eugene and Lane County.' ),
+		array( 'Septic Install & Repairs', 'septic-installation-lane-county-or',       'DEQ-certified septic system installation and repair throughout Lane County. One contractor handles both the excavation and the septic work.' ),
+		array( 'Foundation Excavation',    'foundation-excavation-eugene-or',           'Foundation digging for homes, ADUs, shops, and barns in Eugene and Lane County. Clean excavation to plan dimensions before the concrete crew arrives.' ),
+		array( 'Drainage Excavation',      'drainage-installation-eugene-or',           'Drainage excavation, French drains, swales, and catch basins for standing water problems on Eugene and Lane County properties.' ),
+		array( 'Utility Excavation',       'utility-trenching-eugene-or',               'Utility trenching and backfill for water, sewer, electrical conduit, and irrigation lines across Eugene and Lane County.' ),
+		array( 'Driveway Repair',          'driveway-excavation-grading-eugene-or',     'Gravel driveway regrading and re-rocking for Eugene and Lane County. Rutted, washed-out, or uneven driveways excavated and reshaped.' ),
+		array( 'Trenching & Backfill',     'trenching-services-eugene-or',              'Trench digging and compacted backfill for utility lines, drainage pipe, and other underground work across Lane County.' ),
+		array( 'Brush Clearing',           'brush-clearing-eugene-or',                  'Brush clearing, blackberry removal, and light vegetation clearing for Eugene and Lane County properties.' ),
+		array( 'Slope Stabilization',      'slope-stabilization-eugene-or',             'Slope stabilization, erosion control, and hillside grading for unstable or erosion-prone sites in Eugene and Lane County.' ),
 	);
 	foreach ( $service_pages as $svc ) {
 		$make( $svc[0], $svc[1], $svc_tpl, $svc[2] );
@@ -208,3 +236,22 @@ function ddlw_create_default_pages() {
 	}
 }
 add_action( 'after_switch_theme', 'ddlw_create_default_pages' );
+
+/**
+ * Force custom templates for pages that may not have _wp_page_template set.
+ */
+function ddlw_force_page_templates( $template ) {
+	$map = array(
+		'service-area' => 'page-templates/template-service-area.php',
+	);
+	foreach ( $map as $slug => $tpl ) {
+		if ( is_page( $slug ) ) {
+			$path = get_template_directory() . '/' . $tpl;
+			if ( file_exists( $path ) ) {
+				return $path;
+			}
+		}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'ddlw_force_page_templates' );

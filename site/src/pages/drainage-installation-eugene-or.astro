@@ -1,0 +1,180 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Slope', desc: 'A yard that slopes toward the house sends rain straight toward the foundation. David checks the grade to understand where water is coming from and where it naturally wants to go.', href: '/contact', accent: true },
+  { num: '02', title: 'Soil', desc: 'Parts of Eugene have heavy clay that holds water instead of letting it drain. When David digs into the ground, he can tell pretty quickly whether the soil is part of the problem.', href: '/contact' },
+  { num: '03', title: 'Low Spots', desc: 'Low spots tend to collect water after rain and stay wet for days. David notes where the low areas are and whether water is pooling or just draining slowly.', href: '/contact' },
+  { num: '04', title: 'Yard Layout', desc: 'Driveways, patios, and walkways all change how water moves across a property. David looks at the full layout, not just the wet spot, to figure out where the water is coming from.', href: '/contact' },
+  { num: '05', title: 'Existing Drainage', desc: "If your property already has ditches, pipes, or culverts, David checks whether they're still doing their job. Old or blocked drainage can push water in the wrong direction.", href: '/contact' },
+  { num: '06', title: 'Site Access', desc: 'Some drainage work needs equipment to get in. David checks how the machine can reach the work area and whether a tight driveway or nearby structures will affect the job.', href: '/contact' },
+];
+
+const problems = [
+  { num: '01', title: 'French Drain', desc: 'A French drain is a buried drain that gives water a path to move away. It may help with wet areas where water needs to be collected below the surface.', link: 'French Drain', href: '/drainage-installation-eugene-or' },
+  { num: '02', title: 'Catch Basin', desc: 'A catch basin collects water at the surface, such as water pooling in a low part of a yard. It can help when surface runoff needs a clear place to enter.', link: 'Catch Basin', href: '/drainage-installation-eugene-or' },
+  { num: '03', title: 'Swale', desc: 'A swale is a shallow, shaped area that helps guide surface water. It may work well when the land has enough space to direct runoff along a planned path.', link: 'Swale', href: '/drainage-installation-eugene-or' },
+  { num: '04', title: 'Culvert', desc: 'A culvert carries water under a driveway or access area. On some rural properties, it may help keep a ditch or drainage path open where vehicles need to cross.', link: 'Culvert', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '05', title: 'Surface Grading', desc: 'Changing the surface grade can help guide water away from areas where it collects. This may be useful when the shape of the ground is part of the drainage problem.', link: 'Surface Grading', href: '/land-grading-services-eugene-or' },
+  { num: '06', title: 'Stormwater Drainage', desc: 'Stormwater drainage helps collect and move rainwater across a property. The right approach depends on the amount of runoff, property layout, and where the water can safely go.', link: 'Stormwater', href: '/drainage-installation-eugene-or' },
+];
+
+const costItems = [
+  { title: 'Clay Soil', desc: 'Some areas of Eugene have clay soil that does not let water move through quickly. This can leave parts of a yard wet after rain.' },
+  { title: 'Wet Low Areas', desc: 'Low parts of a property may stay wet during the rainy season. In these areas, changing the surface grade may not solve the whole drainage problem.' },
+  { title: 'Hillside Runoff', desc: 'Sloped properties can send water downhill toward a house, driveway, or other part of the yard. The slope helps show where that water is coming from.' },
+  { title: 'Seasonal Ground Conditions', desc: 'Wet weather can change how the ground handles drainage work. Very wet soil can also make excavation harder, so the timing and site conditions matter.' },
+];
+
+const timelineItems = [
+  { title: 'Daylight Discharge', desc: 'Water can sometimes leave the pipe at a lower point on the property. This only works when the site has enough slope to let water flow away from the drainage area.' },
+  { title: 'Dry Well', desc: 'A dry well can give collected water a place to soak into the surrounding ground. Whether this approach fits depends on the soil and conditions at your property.' },
+  { title: 'Stormwater Connection', desc: 'Some projects may connect to a public stormwater system when allowed. Any required local approval or permit should be confirmed before making that connection.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Site assessment', desc: 'David assesses slope, soil, low spots, existing drainage, and where water enters the problem area before recommending a solution.', accent: true },
+  { num: '2', title: 'Call 811 utility locates', desc: 'Utility locates are required before any trench excavation. We submit and confirm marks before work starts.' },
+  { num: '3', title: 'Excavation and installation', desc: 'Trench excavated to correct depth and slope. Pipe, gravel, and inlet structures installed per the drainage plan.' },
+  { num: '4', title: 'Backfill, grade, and check', desc: 'Trench backfilled, surface graded to drain away from structures, and system checked before site is handed back.' },
+];
+
+const faqs = [
+  {
+    question: 'How much does French drain installation cost in Eugene, Oregon?',
+    answer: 'French drain installation in Eugene averages $3,081 to $4,439 per project, based on aggregated quote data for the Eugene area (Homeyou, April 2026, 455 completed projects). The full range runs from $1,043 to $6,989 depending on system type, depth, length, and site conditions. In Willamette Valley clay, real project costs often run 2 to 3 times above national per-linear-foot baselines. Contact D&D for a free on-site estimate: 541-401-8726.',
+  },
+  {
+    question: 'Do I need a permit to install a French drain in Eugene?',
+    answer: "For a standard residential French drain discharging to daylight or a dry well on your own property, no permit is typically required. French drains are exempt from Oregon's Underground Injection Control regulations per Oregon DEQ. If you want to connect the discharge to Eugene's city stormwater system, that tie-in requires a permit under Eugene Municipal Code Section 6.610, issued only to a property owner for their own residence, a licensed plumber, or a licensed septic installer.",
+  },
+  {
+    question: 'What is the difference between a French drain and a curtain drain?',
+    answer: 'A French drain is a buried perforated pipe in gravel, installed at 18 to 24 inches depth or deeper at a footing, designed to collect and carry groundwater to a discharge point. A curtain drain is a shallower variant, typically around 2 feet deep, that intercepts near-surface lateral water moving across the soil before it reaches a structure. Curtain drains cost less, roughly $10 to $25 per linear foot versus $45 to $85 or more per foot for a deeper French drain, and work well for lighter near-surface water problems.',
+  },
+  {
+    question: 'Where does the water from a French drain actually go?',
+    answer: "Water from a French drain exits in one of three ways: a daylight discharge point where the pipe exits above ground at a lower elevation, a dry well that slowly infiltrates water back into the soil, or a permitted tie-in to the city's public stormwater system. In Eugene, the storm-system tie-in requires a permit under Municipal Code Section 6.610. The right option depends on your site's slope, soil conditions, and proximity to the city system.",
+  },
+  {
+    question: 'Does soil type affect how a French drain is installed?',
+    answer: 'Yes. Some Eugene-area properties have soil that holds water or becomes difficult to work when wet. Soil conditions can affect how drainage is excavated, which materials are used, and which approach fits the property. David looks at the soil and site conditions before recommending a drainage approach.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/drainage-installation-eugene-or/#service',
+      name: 'Drainage Installation Services in Eugene, Oregon',
+      serviceType: 'Drainage Installation',
+      description: 'Drainage installation services in Eugene, Springfield, and Lane County, Oregon. French drains, catch basins, swales, culverts, and surface grading to move water away from wet yards, foundations, and low spots. Licensed and bonded CCB #261742.',
+      url: 'https://www.ddlandworks.com/drainage-installation-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon'],
+    },
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Drainage Installation', item: 'https://www.ddlandworks.com/drainage-installation-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Drainage Installation in Eugene, Oregon | D&D Land Works"
+  pageDescription="Drainage installation contractor in Eugene, Oregon. French drains, catch basins, swales, and drainage grading for wet yards, foundation drainage, and standing water problems. CCB #261742. Free estimates."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Drainage Installation Services in"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="If rain leaves your yard soggy, water pools near your house, or runoff crosses your driveway, the problem may be with how water moves across your property. In Eugene, wet ground and changing site conditions can make each property different. D&D Land Works looks at the slope, soil, access, and existing drainage before planning the work."
+  heroImage="/service-drainage-excavation.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['French Drain', 'Catch Basin', 'Swale', 'Curtain Drain', 'Drainage Grading']}
+  ctxEyebrow="What to know"
+  ctxH2Light="Why Is Water Collecting"
+  ctxH2Bold="on Your Property?"
+  ctxIntro="Water can collect because the ground slopes the wrong way, a low area holds rain, or an old drainage path is no longer working. Before adding a drain, we look at where the water starts and where it needs to go. Soil plays a part too. Some properties have soil that holds water near the surface instead of letting it drain. Old ditches or pipes that are partly blocked can also change where water ends up. When David walks your property, he looks at the slope, the soil, and where the water is actually coming from, not just where it's sitting. That gives you a clearer picture of what kind of drainage work, if any, might help."
+  ctxLeft={{
+    label: 'French Drain',
+    title: 'Deep System',
+    tagline: 'Buried perforated pipe in gravel, 18–24 inches deep or more, collects and moves groundwater to a discharge point.',
+    bullets: [
+      'Addresses groundwater and hydrostatic pressure',
+      'Required for foundation and footing drainage',
+      'Depth: 18–24 inches minimum',
+      'Higher cost: $45–$85+ per linear foot',
+      'Requires discharge outlet (daylight or dry well)',
+    ],
+  }}
+  ctxRight={{
+    label: 'Curtain Drain',
+    title: 'Shallow System',
+    tagline: 'A shallower French drain variant (~2 ft) that intercepts near-surface lateral water before it reaches a structure.',
+    bullets: [
+      'Addresses surface and near-surface water',
+      'Good for yard drainage and slope interception',
+      'Depth: approximately 2 feet',
+      'Lower cost: $10–$25 per linear foot',
+      'Faster to install than deep French drain',
+    ],
+  }}
+  ctxBanner="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  inclEyebrow="What we assess"
+  inclH2Light="What Can Cause"
+  inclH2Bold="a Drainage Problem?"
+  inclIntro="Every property moves water in its own way. Slope, soil, low spots, existing drainage, and access can all affect where water collects and how it can be moved."
+  inclItems={inclItems}
+  probH2Light="Which Drainage System"
+  probH2Bold="Might Fit Your Property?"
+  probIntro="The right drainage approach depends on where water starts, where it collects, and where it needs to go. Your slope, soil, yard layout, and existing drainage all matter."
+  probImage="/service-drainage-excavation.webp"
+  problems={problems}
+  procH2Light="How Drainage Installation"
+  procH2Bold="Gets Done on Your Property"
+  processSteps={processSteps}
+  costH2Light="What Makes Drainage Installation"
+  costH2Bold="Different in Eugene's Soil?"
+  costIntro="Eugene-area properties can have different soil, slopes, and wet-season conditions. These local factors can affect how water moves and what type of drainage work may fit your property."
+  costItems={costItems}
+  costClosing="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  timelineH2Light="Where Does the Water From"
+  timelineH2Bold="a French Drain Go?"
+  timelineIntro="A French drain needs somewhere for the collected water to go. The right outlet depends on the property's slope, soil, drainage layout, and any requirements that apply."
+  timelineItems={timelineItems}
+  faqH2Light="Drainage Installation FAQs"
+  faqH2Bold="in Eugene, Oregon"
+  faqs={faqs}
+  ctaH2Light="Have Us Look at the Water"
+  ctaH2Bold="on Your Property"
+  ctaSub="If water is sitting in your yard, crossing your driveway, or moving toward your house, give us a call. David can walk the property with you, look at where the water is coming from, and talk through what may help."
+/>

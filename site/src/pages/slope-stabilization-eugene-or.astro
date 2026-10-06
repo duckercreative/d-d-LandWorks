@@ -1,0 +1,177 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Erosion and Soil Loss', desc: 'Rain can carry soil off a slope over time. When the same areas erode year after year, the ground can become unstable or develop gullies.', href: '/contact', accent: true },
+  { num: '02', title: 'Runoff and Water Flow', desc: 'Water running down a slope can concentrate and cut channels into the ground. Where runoff goes and how fast it moves affects how much erosion occurs.', href: '/contact' },
+  { num: '03', title: 'Slope Angle and Shape', desc: 'Steeper slopes tend to erode faster. The shape of a slope -- whether it curves, has flat spots, or funnels water -- affects where problems develop.', href: '/contact' },
+  { num: '04', title: 'Soil Type and Stability', desc: 'Some soils hold together better than others when wet. Clay soils can slide when saturated, while loose sandy soils may erode more easily under rain.', href: '/contact' },
+  { num: '05', title: 'Vegetation and Ground Cover', desc: 'Plant roots help hold soil in place. A slope that has been cleared or has lost its vegetation may be more vulnerable to erosion and movement.', href: '/contact' },
+  { num: '06', title: 'Cuts and Fill Areas', desc: 'Grading that cuts into a hillside or builds up a slope with fill material can create unstable conditions if the ground is not properly prepared and supported.', href: '/contact' },
+];
+
+const problems = [
+  { num: '01', title: 'Visible Erosion Channels', desc: 'Channels or gullies cut into a slope by running water are a sign that erosion is removing soil. The problem can grow larger each wet season.', link: 'Slope Assessment', href: '/slope-stabilization-eugene-or' },
+  { num: '02', title: 'Soil Moving After Rain', desc: 'If soil is moving downhill after rainstorms, the slope may need help redirecting water or stabilizing the ground surface.', link: 'Slope Grading', href: '/slope-stabilization-eugene-or' },
+  { num: '03', title: 'Exposed Roots or Bare Ground', desc: 'Exposed tree roots or bare patches on a slope can be a sign that the soil above has washed away. These areas may be more vulnerable to further erosion.', link: 'Slope Repair', href: '/slope-stabilization-eugene-or' },
+  { num: '04', title: 'Runoff Reaching Structures', desc: 'Water carrying soil off a slope and reaching a driveway, building, or other structure can indicate that the slope needs drainage attention.', link: 'Drainage Work', href: '/slope-stabilization-eugene-or' },
+  { num: '05', title: 'After Clearing or Grading', desc: 'Slopes that have been recently cleared of vegetation or regraded may be more vulnerable to erosion until the ground is stabilized.', link: 'Slope Stabilization', href: '/slope-stabilization-eugene-or' },
+  { num: '06', title: 'Unstable-Feeling Ground', desc: 'Ground that shifts or feels soft on a slope can be a sign of deeper soil movement. The area may need assessment before further work is done nearby.', link: 'Site Assessment', href: '/slope-stabilization-eugene-or' },
+];
+
+const costItems = [
+  { title: 'Licensed and Bonded in Oregon', desc: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board.' },
+  { title: 'Drainage Is Part of the Assessment', desc: 'Slope erosion and drainage are often connected. We look at how water moves across the slope to understand whether drainage changes may be part of the solution.' },
+  { title: 'Grading and Excavation Experience', desc: 'Slope stabilization may involve regrading, excavation, or both. We have experience with grading and excavation work on sloped properties throughout Lane County.' },
+  { title: 'Free Estimates in Lane County', desc: 'We provide free estimates throughout Lane County. We can look at the slope, discuss what you are seeing, and explain what the work may involve.' },
+  { title: 'DEQ Septic Certification', desc: 'D&D Land Works carries Oregon DEQ certification for septic work. When slope projects intersect with septic system areas, that experience can be relevant to planning the work.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Assess the Slope', desc: 'We look at the slope angle, soil type, erosion areas, and how water is moving across the surface. This shapes what work may be needed.', accent: true },
+  { num: '2', title: 'Check the Drainage', desc: 'Where water goes on and around the slope affects how erosion develops. We look at existing drainage and where runoff is concentrating.' },
+  { num: '3', title: 'Discuss the Options', desc: 'After looking at the site, we can discuss what grading, drainage, or excavation work may help and what the work would involve.' },
+  { num: '4', title: 'Plan Around the Property', desc: 'Slope work needs to account for access, nearby structures, and what the property will be used for. We plan around the actual conditions on site.' },
+];
+
+const faqs = [
+  {
+    question: 'How do you stabilize a slope in Oregon?',
+    answer: 'Slope stabilization depends on the cause of the problem. It may involve regrading, improving drainage, adding retaining features, or addressing how water moves across the slope. We look at the site before recommending an approach.',
+  },
+  {
+    question: 'What causes slope erosion in the Eugene area?',
+    answer: 'Eugene and Lane County receive heavy rain through the wet season. Rain that runs off a slope can carry soil with it, especially on steeper grades or where vegetation has been removed. Soil type and how water is directed across the slope also play a role.',
+  },
+  {
+    question: 'Can grading help with slope erosion?',
+    answer: 'Regrading can help by changing the slope angle or redirecting how water flows across the surface. Whether grading is the right solution depends on the cause of the erosion and the condition of the ground.',
+  },
+  {
+    question: 'Do I need a permit for slope work in Lane County?',
+    answer: 'Permit requirements depend on the scope of the work, where the slope is located, and how much grading or soil disturbance is involved. Larger projects or work near waterways may require permits. Confirm requirements before work begins.',
+  },
+  {
+    question: 'How much does slope stabilization cost in Eugene?',
+    answer: 'Cost depends on the size of the slope, the cause of the problem, the ground conditions, and what work is needed. We can look at the property and provide a free estimate based on the actual site.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Slope Stabilization', 'Erosion Control', 'Grading', 'Drainage', 'Site Preparation', 'Excavation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/slope-stabilization-eugene-or/#service',
+      name: 'Slope Stabilization Services in Eugene, Oregon',
+      serviceType: 'Slope Stabilization',
+      description: 'Slope stabilization in Eugene, Oregon for erosion, runoff, and unstable ground. D&D Land Works can assess site conditions and discuss excavation and grading needs.',
+      url: 'https://www.ddlandworks.com/slope-stabilization-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Slope Stabilization', item: 'https://www.ddlandworks.com/slope-stabilization-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Slope Stabilization in Eugene, Oregon | D&D Land Works"
+  pageDescription="Slope stabilization contractor in Eugene, Oregon. Erosion control, slope regrading, and drainage grading for unstable hillsides and eroding slopes in Lane County. CCB #261742. Free estimates."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Slope Stabilization in"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="Eugene-area slopes deal with heavy rain, wet soil, and runoff that can cause erosion and ground movement. We look at the slope, soil, and water flow before discussing what grading or excavation work may help."
+  heroImage="/service-slope-stabilization.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Erosion Control', 'Slope Regrading', 'Drainage Grading', 'Runoff Control', 'Hillside Repair']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What Is"
+  ctxH2Bold="Slope Stabilization?"
+  ctxIntro="Slope stabilization refers to work done to reduce erosion, limit soil movement, and improve the condition of a sloped area. The goal is to address what is causing the slope to erode or become unstable. On sloped properties in Lane County, heavy rain is often a factor. Water running down a slope can carry away soil and cut channels into the ground over time. The shape of the slope, soil type, and existing drainage all affect how serious the problem becomes. The right approach depends on what is causing the erosion and what the slope needs to be used for. We look at the site before discussing what grading, drainage, or excavation work may help."
+  ctxLeft={{
+    label: 'Surface Erosion',
+    title: 'Rain Carrying Soil Away',
+    tagline: 'Water runs off the slope and carries surface soil with it — gullies form, topsoil thins, and the slope degrades year over year.',
+    bullets: [
+      'Caused by rain runoff concentration',
+      'Worse on cleared or bare slopes',
+      'Visible as gullies and rills',
+      'Fix: regrade slope + improve drainage',
+      'Common in Lane County wet season',
+    ],
+  }}
+  ctxRight={{
+    label: 'Mass Movement',
+    title: 'Bulk Soil Sliding',
+    tagline: 'Saturated soil loses its cohesion and moves downslope — more common in clay-heavy soils after a long wet season.',
+    bullets: [
+      'Caused by water saturation and clay',
+      'Willamette Valley clay is high-risk',
+      'May require geotechnical assessment',
+      'Fix: drainage first, then slope reshaping',
+      'Contact a geotechnical engineer for large slides',
+    ],
+  }}
+  ctxBanner="D&D handles the grading and drainage side of slope stabilization — geotechnical engineering is a separate professional scope for larger slides."
+  inclEyebrow="What we assess"
+  inclH2Light="What Causes Slope Erosion"
+  inclH2Bold="and Instability?"
+  inclIntro="Several factors affect how a slope holds up under rain and repeated wet seasons. Understanding what is happening on the slope helps determine what work may address the problem."
+  inclItems={inclItems}
+  probH2Light="When Does a Slope Need"
+  probH2Bold="Stabilization Work?"
+  probIntro="Slope problems do not always look serious at first. Some signs appear gradually over several wet seasons. Others become visible quickly after heavy rain."
+  probImage="/service-slope-stabilization.webp"
+  problems={problems}
+  procH2Light="What Happens When We Look at"
+  procH2Bold="a Slope Problem?"
+  processSteps={processSteps}
+  costH2Light="Why Hire D&D Land Works"
+  costH2Bold="for Slope Work?"
+  costIntro="When David looks at a slope problem, the goal is to understand what is causing the erosion or instability before deciding what excavation or grading work may help."
+  costItems={costItems}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  ctaH2Light="Dealing With a Slope"
+  ctaH2Bold="or Erosion Problem?"
+  ctaSub="If you have erosion, runoff, or an unstable slope on your Eugene-area property, we can look at the site and discuss what grading or excavation work may help. Call 541-401-8726 for a free estimate."
+/>

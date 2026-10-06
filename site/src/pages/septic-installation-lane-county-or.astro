@@ -1,0 +1,199 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Soil', desc: 'Your soil affects how wastewater moves into the ground. Before installation starts, the site needs to be checked to understand what your property can support.', href: '/contact', accent: true },
+  { num: '02', title: 'Slope', desc: "A steep or uneven lot can affect where your tank and drainfield can go. Your land's shape and elevation help determine a layout that works for your property.", href: '/contact' },
+  { num: '03', title: 'Space', desc: 'You need enough suitable area on your property for the system. Where your home sits, your property lines, any wells, and other features all affect where things can go.', href: '/contact' },
+  { num: '04', title: 'Wet Ground', desc: 'If your ground is wet, septic work gets harder. Seasonal moisture can affect digging, access, and how well wastewater moves through the soil around the system.', href: '/contact' },
+  { num: '05', title: 'Drainfield', desc: 'The drainfield is the part of your septic system where treated wastewater moves into the soil. Where it goes depends on your property, soil, available space, and the approved system.', href: '/contact' },
+  { num: '06', title: 'Site Access', desc: 'Equipment needs a clear path to the work area. A narrow driveway, steep slope, or structures on your property can change how the work is planned.', href: '/contact' },
+];
+
+const problems = [
+  { num: '01', title: 'Tank Placement', desc: 'We prepare the excavation and place the septic tank according to the project plan. The tank location depends on the property layout, access, and approved system requirements.', link: 'Septic Installation', href: '/septic-installation-lane-county-or' },
+  { num: '02', title: 'Drainfield Excavation', desc: 'The drainfield needs the right space and ground conditions. We handle the excavation needed to prepare the drainfield area as part of the septic installation work.', link: 'Drainfield Prep', href: '/septic-installation-lane-county-or' },
+  { num: '03', title: 'Septic Excavation', desc: 'Septic installation often requires careful digging for the tank, pipes, and drainfield. The amount of excavation depends on the system, property, and ground conditions.', link: 'Excavation', href: '/excavation-contractor-eugene-or' },
+  { num: '04', title: 'Site Preparation', desc: 'The ground may need preparation before septic components can be installed. We can handle related site work that falls within the septic installation scope.', link: 'Site Prep', href: '/site-preparation-contractor-eugene-or' },
+  { num: '05', title: 'Backfill', desc: 'After the septic components are installed and the required project steps are complete, the excavated areas can be backfilled. The work follows the approved project requirements.', link: 'Contact', href: '/contact' },
+  { num: '06', title: 'Local Septic Work', desc: 'We provide septic installation work for properties in Lane County, including projects around Eugene and Springfield. We are licensed and bonded, CCB #261742.', link: 'Service Area', href: '/service-area' },
+];
+
+const costItems = [
+  { title: 'Licensed and Bonded', desc: 'Check that the contractor is licensed and bonded. We are licensed and bonded through the Oregon Construction Contractors Board, CCB #261742.' },
+  { title: 'DEQ Certification', desc: 'Ask whether the contractor has the certification needed for the septic work. We have DEQ certification relevant to septic installation and repair in Oregon.' },
+  { title: 'Site Conditions', desc: 'Soil, slope, space, wet ground, and access can affect septic work. The contractor should understand how these conditions may affect excavation and installation on your property.' },
+  { title: 'Project Scope', desc: 'Ask what work is included. Septic installation may involve tank placement, drainfield excavation, and related site work. The exact scope depends on the approved project.' },
+  { title: 'Permits and Requirements', desc: 'Ask which permits or approval steps apply to your property. Requirements can vary by project, and the appropriate local or state authority handles those requirements.' },
+  { title: 'Clear Estimate', desc: 'Ask what affects your project cost before work begins. System needs, excavation, access, soil, drainfield work, and site conditions can all change the amount of work required.' },
+];
+
+const timelineItems = [
+  { title: 'Site Requirements', desc: 'Before digging starts, your property may need an evaluation, a system design, and required approvals. These steps happen first and can affect when installation work can begin.' },
+  { title: 'Permits and Approvals', desc: 'Some septic projects need permits before work can start. How long that takes depends on your property, what the system requires, and the agencies involved.' },
+  { title: 'Soil and Ground Conditions', desc: 'Your soil affects how easily the ground can be excavated. Wet ground can slow access and affect when certain parts of the site work can happen.' },
+  { title: 'Site Access', desc: 'Equipment needs to reach the tank and drainfield areas on your property. A narrow driveway, steep slope, or structures in the way takes more planning before work begins.' },
+  { title: 'Excavation and Installation', desc: 'The digging depends on your tank, drainfield, piping, and property layout. A larger or more complex system on your land can mean more excavation work.' },
+  { title: 'Weather and Project Scope', desc: 'Rain and wet ground can change what is possible on your property in Lane County. Material timing, related site prep, and other requirements on your project can also shift the schedule.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Site requirements review', desc: 'Before digging starts, your property may need an evaluation, a system design, and required approvals. These steps happen first and can affect when installation work can begin.', accent: true },
+  { num: '2', title: 'Permits and DEQ approval', desc: 'Some septic projects need permits before work can start. How long that takes depends on your property, what the system requires, and the agencies involved.' },
+  { num: '3', title: 'Excavation and installation', desc: 'The digging depends on your tank, drainfield, piping, and property layout. A larger or more complex system on your land can mean more excavation work.' },
+  { num: '4', title: 'Inspection and backfill', desc: 'After the septic components are installed and the required project steps are complete, the excavated areas can be backfilled. The work follows the approved project requirements.' },
+];
+
+const faqs = [
+  {
+    question: 'What work does the contractor handle?',
+    answer: "Ask what parts of the project are included. We handle the excavation and installation work — tank placement, drainfield prep, and related site work that falls within our scope. We can explain what that covers for your project.",
+  },
+  {
+    question: 'Who handles the septic design and permits?',
+    answer: 'The design and permit requirements for your property are handled separately. Who is responsible depends on your project. We can explain what usually applies and point you in the right direction.',
+  },
+  {
+    question: 'What site conditions could affect the work on my property?',
+    answer: 'Your soil, slope, available space, wet ground, and access can all change what the installation involves. Ask your contractor to walk through how your specific site affects the work before anything starts.',
+  },
+  {
+    question: 'What will affect my cost?',
+    answer: 'The cost depends on your property. Your tank, drainfield, the amount of excavation, soil conditions, access, and any required approvals can all change the price. A real estimate needs to be based on your actual site.',
+  },
+  {
+    question: 'How long will the installation take?',
+    answer: 'Every property is different. Permits, your system requirements, weather, your ground conditions, site access, and how much excavation your land needs can all affect when the work gets done. There is no single answer without looking at your property.',
+  },
+  {
+    question: 'Is D&D Land Works licensed and bonded for septic work?',
+    answer: 'Yes. D&D Land Works is licensed and bonded through the Oregon Construction Contractors Board, CCB #261742. You can verify the license at the Oregon CCB website.',
+  },
+  {
+    question: 'Does D&D Land Works have DEQ certification for septic installation?',
+    answer: 'Yes. D&D Land Works holds DEQ certification relevant to septic installation and repair in Oregon. DEQ certification is required to legally perform septic installation and repair work in the state.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Licensed septic installation contractor serving Eugene, Springfield, and Lane County, Oregon. DEQ Certified. Licensed and bonded CCB #261742.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Septic Installation', 'Septic Repair', 'Drainfield Installation', 'Excavation', 'Site Preparation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/septic-installation-lane-county-or/#service',
+      name: 'Septic Installation in Lane County, Oregon',
+      serviceType: 'Septic Installation',
+      description: 'DEQ-certified septic installation and repair contractor in Lane County, Oregon. New system installation, drainfield prep, and septic excavation for rural and suburban properties. CCB #261742.',
+      url: 'https://www.ddlandworks.com/septic-installation-lane-county-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Septic Installation', item: 'https://www.ddlandworks.com/septic-installation-lane-county-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Septic Installation in Lane County, Oregon | D&D Land Works"
+  pageDescription="DEQ-certified septic installation contractor in Lane County, Oregon. New septic systems, drainfield installation, and septic excavation for rural and suburban properties. CCB #261742. Free estimates."
+  schema={schema}
+  heroEyebrow="Lane County, Oregon"
+  heroH1Light="Septic System Installation in"
+  heroH1Bold="Lane County, Oregon"
+  heroSub="If you are building a home or preparing rural land in Lane County, you may need a septic system for wastewater. We help with septic installation, tank placement, and related excavation based on your property, site conditions, and approved system requirements."
+  heroImage="/service-septic-install.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['New System Install', 'Drainfield Prep', 'Tank Placement', 'System Repair', 'DEQ Certified']}
+  ctxEyebrow="What to know"
+  ctxH2Light="Who Needs"
+  ctxH2Bold="a Septic System?"
+  ctxIntro="If you are building or buying property without access to a public sewer system, you may need a septic system. Rural homes and undeveloped lots often need one before construction can move forward. Your property and site conditions determine what is needed. The land matters. Soil, slope, available space, and the location of the home can all affect where the system can go. Every property is different. We can help with the excavation and installation work once the site is ready. Not sure where to start? Tell us about the property, and we can explain what part of the work we handle."
+  ctxLeft={{
+    label: 'New Installation',
+    title: 'Full System Build',
+    tagline: 'New construction or rural lots without city sewer — from soil evaluation through drainfield completion.',
+    bullets: [
+      'Lane County septic design required first',
+      'Soil evaluation and perc testing',
+      'Tank placement and piping',
+      'Drainfield excavation and installation',
+      'DEQ-certified installer required by Oregon law',
+    ],
+  }}
+  ctxRight={{
+    label: 'System Repair',
+    title: 'Fix or Replace',
+    tagline: 'Failing systems, drainfield issues, or non-compliant systems that need repair or full replacement.',
+    bullets: [
+      'Assessment of existing system condition',
+      'Failed drainfield replacement',
+      'Tank pump-out and inspection first',
+      'May require county re-approval',
+      'DEQ certification required for repair work',
+    ],
+  }}
+  ctxBanner="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  inclEyebrow="What we assess"
+  inclH2Light="Your Land Helps Determine"
+  inclH2Bold="the Right Septic System"
+  inclIntro="Your property affects where and how a septic system can be installed. Soil, slope, space, water, and access all need to be considered before the work begins."
+  inclItems={inclItems}
+  probH2Light="What Does D&D Land Works"
+  probH2Bold="Handle on a Septic Project?"
+  probIntro="We handle the excavation, tank placement, drainfield preparation, backfill, and other physical work included in our approved project scope. Septic design, approvals, and permitting are handled separately where required."
+  probImage="/service-septic-install.webp"
+  problems={problems}
+  procH2Light="How Septic Installation"
+  procH2Bold="Gets Done Step by Step"
+  processSteps={processSteps}
+  costH2Light="What Should You Check Before"
+  costH2Bold="Septic Work Starts?"
+  costIntro="Before choosing a septic contractor, ask what part of the project they handle, what the site needs, and what requirements apply. A clear conversation can help you understand the work before it starts."
+  costItems={costItems}
+  timelineH2Light="How Long Does Septic"
+  timelineH2Bold="Installation Take?"
+  timelineIntro="Septic installation does not have one fixed timeline. The schedule can depend on the site, required system, permits, ground conditions, weather, access, and the amount of excavation and installation work involved."
+  timelineItems={timelineItems}
+  faqH2Light="Questions to Ask Before"
+  faqH2Bold="Hiring a Septic Installer"
+  faqs={faqs}
+  ctaH2Light="Talk With D&D Land Works"
+  ctaH2Bold="About Your Septic Project"
+  ctaSub="If you are planning a new septic system in Lane County, start with the property and what it needs. Call 541-401-8726 to discuss your project, ask questions, and request a free estimate."
+/>

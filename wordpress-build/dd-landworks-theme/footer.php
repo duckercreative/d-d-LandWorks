@@ -4,7 +4,19 @@
 /**
  * Footer — 4-column layout matching Footer.astro.
  */
-$footer_services = array_slice( ddlw_services(), 0, 10 );
+$_svcs = ddlw_services();
+$footer_services = array(
+	$_svcs[0],  // Site Preparation
+	$_svcs[1],  // Excavation
+	$_svcs[2],  // Land Clearing
+	$_svcs[3],  // Grading & Leveling
+	$_svcs[5],  // Foundation Excavation
+	$_svcs[6],  // Drainage Excavation
+	$_svcs[7],  // Utility Excavation
+	$_svcs[8],  // Driveway Repair
+	$_svcs[4],  // Septic Install & Repairs
+	$_svcs[11], // Slope Stabilization
+);
 $areas_data      = ddlw_service_areas();
 $footer_areas    = array_merge(
 	array_filter( $areas_data['primary'], fn( $a ) => $a['slug'] !== '' ),
@@ -17,7 +29,7 @@ $footer_areas    = array_merge(
 		<div class="footer-col--brand">
 			<div class="logo-chip"><img src="<?php echo esc_url( ddlw_img( 'logo.png' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></div>
 			<p class="brand-name">D&amp;D Land Works</p>
-			<p>Excavation contractor services including site preparation, land clearing, grading, drainage, utility excavation, gravel driveway work, and DEQ certified septic install &amp; repair for Eugene, Springfield, and Lane County, OR.</p>
+			<p>Excavation contractor services including site preparation, land clearing, grading, drainage, utility excavation, driveway repair, and DEQ certified septic install &amp; repair for Eugene, Springfield, and Lane County, OR.</p>
 			<a href="/service-area" style="font-family:var(--font-display);font-weight:700;">View Full Service Area</a>
 			<ul class="credentials">
 				<li>Licensed, bonded &amp; insured</li>

@@ -1,4 +1,4 @@
-/*
+﻿/*
   DEMO/PLACEHOLDER blog data — no real posts exist for D&D Land Works yet.
   This backs the /blog listing and /blog/[slug] template design only.
   Replace with a real Astro content collection once actual posts exist (see
@@ -76,7 +76,7 @@ export const posts: BlogPost[] = [
     ],
   },
   {
-    slug: 'excavation-cost-lane-county-oregon',
+    slug: 'excavation-cost-lane-county-or',
     title: 'How Much Does Excavation Cost in Lane County, Oregon?',
     excerpt: 'What actually drives the price of an excavation job, and why a flat "per hour" rate only tells half the story.',
     date: 'August 26, 2026',

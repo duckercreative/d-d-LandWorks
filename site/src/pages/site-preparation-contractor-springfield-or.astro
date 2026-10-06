@@ -1,0 +1,175 @@
+﻿---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Utility Locate (811)', desc: 'Required before any digging. Oregon law requires calling 811 and waiting for all underground utilities to be marked before equipment breaks ground. Allow several business days.', href: '/contact', accent: true },
+  { num: '02', title: 'Site Walk and Survey', desc: "David walks the lot in person, establishes existing grades, drainage patterns, access constraints, and property lines before anything moves.", href: '/contact' },
+  { num: '03', title: 'Clear the Build Envelope', desc: "Brush, volunteer trees, blackberry, and debris come out of the build zone. On Springfield's wooded infill lots and rural parcels, this is often the most time-intensive phase.", href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Topsoil Strip and Stockpile', desc: 'Topsoil is separated from subgrade material and stockpiled on-site, available for landscaping later.', href: '/land-grading-services-eugene-or' },
+  { num: '05', title: 'Cut and Fill to Grade', desc: 'Material from high spots gets cut and moved into low spots to bring the pad to the design elevation.', href: '/land-grading-services-eugene-or' },
+  { num: '06', title: 'Compact and Rough-Grade', desc: 'Exposed subgrade gets proof rolled and compacted to the bearing density a foundation, slab, or driveway needs, then rough-graded for drainage.', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Raw Springfield lot with heavy vegetation', desc: "Springfield's wooded infill lots and rural parcels often have blackberry, brush, and volunteer trees that must be cleared before grading can start.", link: 'Land Clearing', href: '/land-clearing-services-eugene-or' },
+  { num: '02', title: "Flat valley floor with poor drainage", desc: "Springfield's flat valley floor and high winter water table mean drainage grade is load-bearing, not cosmetic. David plans the rough grade to move water away from the structure.", link: 'Drainage Grading', href: '/drainage-installation-eugene-or' },
+  { num: '03', title: 'Willamette Valley clay subgrade', desc: 'Clay-heavy subgrades can require undercutting and base rock before compaction holds. David checks soil conditions and flags any additional scope before work starts.', link: 'Soil Assessment', href: '/contact' },
+  { num: '04', title: 'Drainfield near grading area', desc: 'Cutting, filling, or compacting near an approved drainfield can void the county septic approval. D&D coordinates with the septic designer before site prep disturbs the drainfield area.', link: 'Septic Coordination', href: '/septic-installation-lane-county-or' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Utility locates and site walk', desc: 'Call 811, wait for marks, walk the lot with David to confirm grades, drainage, access, and scope before any work is planned.', accent: true },
+  { num: '2', title: 'Clearing and erosion controls', desc: 'Build envelope cleared of brush and debris. Silt fence and inlet protection installed before grading starts — required by Lane County EPSC permit.' },
+  { num: '3', title: 'Cut, fill, and grade', desc: 'Topsoil stripped and stockpiled. Material from high spots moved to low spots to reach the design pad elevation.' },
+  { num: '4', title: 'Compact and drainage grade', desc: 'Subgrade compacted and proof-rolled. Final pitch set so water moves away from the structure — especially important on flat Springfield valley floor.' },
+];
+
+const faqs = [
+  {
+    question: 'What does a site preparation contractor actually do in Springfield?',
+    answer: "Site prep is the work that turns a raw or partially-cleared lot into a pad a foundation crew can actually build on. The sequence for Lane County lots: (1) call 811 for utility locates, (2) site walk and survey, (3) clear brush and trees, (4) install erosion controls, (5) strip and stockpile topsoil, (6) cut and fill to grade, (7) compact and proof-roll the subgrade, (8) stake corners and elevations, (9) rough-grade for drainage. In Springfield, the drainage grade gets particular attention because the flat valley floor and Willamette Valley soils hold water in ways sandy loam does not.",
+  },
+  {
+    question: 'How much does site preparation cost in Springfield, Oregon?',
+    answer: 'Cost ranges in the Springfield area: flat, already-cleared lots typically run $10,000–$20,000; a standard residential build lot runs $15,000–$35,000; wooded or rural lots frequently run $40,000–$70,000 or more. Land clearing alone in Oregon ranges from $1,000–$5,000 per acre for light brush up to $10,000–$40,000+ per acre for heavily forested ground. Clay-heavy soils can add 25–50% to grading cost compared to a well-drained site. A free on-site estimate is the only accurate number for your specific lot.',
+  },
+  {
+    question: 'Do I need a permit for site prep in Springfield or Lane County?',
+    answer: "Almost certainly yes, depending on scope. Lane County's Grading and Fill Permit is generally required when a project moves roughly 50+ cubic yards of earth or creates cut/fill slopes steeper than about 2:1. An Erosion Prevention and Sediment Control (EPSC) permit is typically required for residential grading work. Oregon DEQ's 1200-C stormwater permit is required when a project disturbs 1 acre or more — the application fee is $1,515 plus a $1,558 first-year annual fee, and it must be submitted at least 30 days before breaking ground.",
+  },
+  {
+    question: 'When is the best time to do site prep in the Springfield area?',
+    answer: "May through October is the optimal window. Lane County's wet season runs roughly October through May, during which Willamette Valley clay saturates quickly and becomes slow and expensive to work. Wet-season grading is possible but requires tighter erosion controls, moves more slowly, and carries a higher risk of soft-ground delays.",
+  },
+  {
+    question: 'Do you handle site prep for ADUs in Springfield?',
+    answer: "Yes. ADU (accessory dwelling unit) construction in Springfield has its own site prep scope and its own permit track — the ADU grading plan is separate from the primary residence, and the Lane County or City of Springfield permit thresholds apply to the ADU construction footprint independently.",
+  },
+  {
+    question: 'Should I get site prep done before or after hiring a builder?',
+    answer: 'Site work typically starts once a builder is hired and the design and permitting process is already underway — the grading plan, foundation type, septic layout, and driveway alignment all shape what site prep needs to accomplish. That said, a lot owner in Springfield can schedule a free site walk from a contractor before selecting a builder to understand the rough clearing and grading scope for budgeting purposes.',
+  },
+  {
+    question: 'Does the septic system placement affect when site prep can start?',
+    answer: "Yes, and this is one of the most common sequencing mistakes on rural Springfield-area lots. Lane County's On-Site Wastewater Program requires that a proposed drainfield area be evaluated and approved before any grading disturbs it. Cutting, filling, compacting, or paving over an approved drainfield area can void the county's septic approval outright.",
+  },
+  {
+    question: 'What areas of Springfield does D&D Land Works serve for site prep?',
+    answer: 'D&D Land Works serves Springfield and the surrounding Lane County area, including Thurston, Hayden Bridge, Jasper, and east Springfield, as well as Eugene, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell. Call 541-401-8726 to confirm coverage for a specific address.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service site preparation, grading, and excavation contractor serving Springfield, Eugene, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Site Preparation', 'Land Clearing', 'Grading', 'Compaction', 'Foundation Preparation', 'Septic Installation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/site-preparation-contractor-springfield-or/#service',
+      name: 'Site Preparation Contractor in Springfield, Oregon',
+      serviceType: 'Site Preparation',
+      description: 'Site preparation contractor serving Springfield, Oregon and surrounding Lane County. Land clearing, grading, compaction, and construction-ready lot prep. CCB #261742, DEQ Certified.',
+      url: 'https://www.ddlandworks.com/site-preparation-contractor-springfield-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Springfield, Oregon', 'Eugene, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Site Preparation Springfield', item: 'https://www.ddlandworks.com/site-preparation-contractor-springfield-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Site Preparation Contractor in Springfield, Oregon | D&D Land Works"
+  pageDescription="Site preparation contractor in Springfield, Oregon. Land clearing, grading, compaction, and construction-ready lot prep for Springfield and Lane County. Licensed CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Springfield, Oregon"
+  heroH1Light="Site Preparation Contractor in"
+  heroH1Bold="Springfield, Oregon"
+  heroSub="Land clearing, grading, and compaction from one licensed, bonded contractor. Springfield's valley-floor soils and short dry season make the sequence matter more here than people expect."
+  heroImage="/service-site-preparation.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Land Clearing', 'Cut & Fill', 'Compaction', 'Drainage Grade', 'New Home Pads']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What Does Site Preparation"
+  ctxH2Bold="Include for a Springfield Lot?"
+  ctxIntro="Site prep covers everything that happens before a foundation crew shows up: clearing the build envelope, stripping and stockpiling topsoil, cutting and filling to the design grade, compacting the subgrade, staking corners and elevations, and pitching the finished pad for drainage. The scope changes lot to lot, but the order is consistent. In Springfield, the drainage grade is often the most critical step because many lots on the valley floor have high winter water tables and flat natural grades that do not naturally move water away from a structure. Getting that drainage pitch right during grading prevents costly foundation issues down the road."
+  ctxLeft={{
+    label: 'Springfield Area',
+    title: 'Wooded and Rural Lots',
+    tagline: "Springfield's infill lots and rural parcels often have heavy vegetation and larger clearing scopes before grading can start.",
+    bullets: [
+      'More clearing needed (blackberry, brush, trees)',
+      'Larger lot sizes = more cut and fill volume',
+      'Flat valley floor = drainage grade critical',
+      'Rural parcels may need septic coordination',
+      'ADU sites have their own permit track',
+    ],
+  }}
+  ctxRight={{
+    label: 'Eugene City Lots',
+    title: 'Infill and Urban Prep',
+    tagline: 'Eugene city lots are often smaller with more access constraints — and may have more existing infrastructure to work around.',
+    bullets: [
+      'Smaller footprints, tighter access',
+      'More adjacent structures and utilities',
+      'Higher infill density and permit scrutiny',
+      'Clearing scope often lighter',
+      'Standard Lane County EPSC permit applies',
+    ],
+  }}
+  ctxBanner="D&D Land Works serves both Springfield and Eugene — and all of Lane County. One contractor for both sides of the valley."
+  inclEyebrow="What is included"
+  inclH2Light="The Site Preparation Sequence"
+  inclH2Bold="for Springfield Lots"
+  inclIntro="The scope changes lot to lot, but the sequence is consistent, from the initial site walk through the final drainage grade."
+  inclItems={inclItems}
+  probH2Light="Springfield Site Prep"
+  probH2Bold="Challenges We Solve"
+  probIntro="These four conditions account for most of the complexity on Springfield and rural Lane County site prep jobs."
+  probImage="/service-site-preparation.webp"
+  problems={problems}
+  procH2Light="How Springfield Site Prep"
+  procH2Bold="Gets Done"
+  processSteps={processSteps}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  ctaH2Light="Get Your Springfield"
+  ctaH2Bold="Lot Scoped"
+  ctaSub="Free estimate for site preparation anywhere in Springfield or Lane County. Call 541-401-8726 to schedule a site walk."
+/>

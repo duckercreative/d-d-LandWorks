@@ -1,0 +1,175 @@
+﻿---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Brush Clearing', desc: 'Blackberry, scrub, and thick brush take over fast around here. We cut it back and clear it off the work area, so you can walk your own land again.', href: '/brush-clearing-eugene-or', accent: true },
+  { num: '02', title: 'Vegetation Clearing', desc: 'Grass, vines, weeds, and low growth all come off the spot you plan to use. That opens the ground up so you can finally see the dirt underneath.', href: '/land-clearing-services-eugene-or' },
+  { num: '03', title: 'Wooded Lot Clearing', desc: 'Some lots sit untouched for years and fill in on their own. We clear the heavy growth off the part you want, and leave it open for what comes next.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Access Area Clearing', desc: 'A machine has to reach the job first. We open the path in, plus room for trucks to park and drop material close to where you need it.', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '05', title: 'Construction Area Clearing', desc: 'Building something means the work area has to be clear. We take the growth off that footprint so the next crew can stake it out and get going.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '06', title: 'Rough Site Clearing', desc: 'Once the clearing is done, the ground sits open and ready. Grading, site prep, or excavation can start from there when those are part of your project.', href: '/land-grading-services-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Overgrown Lots', desc: 'Blackberry and brush spread fast around here. Give it a few seasons and a usable lot turns into a wall. We cut that growth back and open the space up again.', link: 'Land Clearing', href: '/land-clearing-services-eugene-or' },
+  { num: '02', title: 'Wooded Properties', desc: 'Some lots fill in on their own after sitting for years. We clear the brush and low growth off the part you want to use. Standing timber is a separate job for a tree crew.', link: 'Access Clearing', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '03', title: 'Uneven Ground', desc: 'Rutted, bumpy ground changes how a machine works a site. Dips and old fill can hide under the growth. We walk it first so the plan fits the ground instead of fighting it.', link: 'Land Grading', href: '/land-grading-services-eugene-or' },
+  { num: '04', title: 'Sloped Property', desc: 'Hillsides need a closer look. Slope decides where equipment can safely go, and it changes what happens to the soil once the growth comes off. Grading or stabilizing often follows the clearing.', link: 'Slope Stabilization', href: '/slope-stabilization-eugene-or' },
+  { num: '05', title: 'Tight Access', desc: 'The work area might be fine while the way in isn\'t. Narrow drives, gates, fences, nowhere to turn a truck around. We check the route in before anything gets scheduled.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+  { num: '06', title: 'Wet Ground', desc: 'Wet weather can leave ground soft and harder to work. Soil and drainage conditions can affect equipment access and when clearing should be done.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const costItems = [
+  { title: 'How Big the Area Is', desc: "More ground takes more hours. But it's the part you actually want cleared that counts, not the whole deed. Plenty of folks only need an acre of a five acre lot opened up." },
+  { title: "What's Growing on It", desc: 'Light brush clears quick. Ten years of blackberry is a different animal, and so is heavy growth with vines woven through it. Thickness matters more here than the size of the lot does.' },
+  { title: 'How We Get In and How It Sits', desc: 'A machine has to reach the work. Narrow gates, tight drives, and nowhere to turn a truck all add time. Slopes and rutted ground slow things down the same way.' },
+  { title: 'Time of Year', desc: 'Valley clay holds water for weeks after a wet stretch. Working soft ground takes longer and tears up the site. A summer job and a February job on the same lot don\'t cost the same.' },
+];
+
+const timelineItems = [
+  { title: 'Property Size', desc: "Bigger areas take more hours. What matters is the part you want cleared, not the whole lot, so a five acre parcel isn't a five acre job." },
+  { title: 'Amount of Vegetation', desc: 'Light brush moves fast. Ten years of blackberry with vines woven through it moves slow. Thickness usually drives the schedule more than acreage does.' },
+  { title: 'Site Access', desc: 'Easy equipment access can make the work simpler. Narrow gates, tight drives, or difficult entry may require extra preparation.' },
+  { title: 'Terrain', desc: 'Flat ground works fastest. Slopes and rutted areas slow a machine down and limit where it can safely go, which stretches the job.' },
+  { title: 'Weather and Ground Conditions', desc: 'Valley clay holds water for weeks. Soft ground slows the work and tears up a site, so a wet job sometimes waits for the next dry stretch.' },
+  { title: 'Related Site Work', desc: 'Clearing alone is the short version. Add grading, a driveway, or excavation and you\'re on site longer, though one crew doing it all beats scheduling three.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Site assessment', desc: 'David walks the lot to assess vegetation density, ground conditions, access and scope before quoting.', accent: true },
+  { num: '2', title: 'Access and perimeter first', desc: 'Clearing starts with the access route and perimeter so equipment can maneuver through the site.' },
+  { num: '3', title: 'Main clearing', desc: 'Brush, vegetation, and low growth cleared from the planned work area.' },
+  { num: '4', title: 'Haul-off and cleanup', desc: 'Cleared material is hauled off or disposed of on-site, leaving a clean, open work area.' },
+];
+
+const faqs = [
+  { question: 'What Does Land Clearing Include?', answer: "Brush, vegetation, vines, and low growth come off the area you plan to use. We open the way in too, if the path is grown over. Standing trees and stumps are a tree service's job, not ours, and we'll say so up front." },
+  { question: 'Is Land Clearing the Same as Site Preparation?', answer: "No. Clearing takes off what's growing. Site preparation changes the ground itself through grading, leveling, and moving dirt. Most projects need both, in that order, since you can't grade a pad through four feet of blackberry." },
+  { question: 'Can Land Clearing Prepare a Property for Construction?', answer: "Yes, it's usually the first step. Once the growth is off you can see the ground, stake out a building spot, and start grading or digging. Raw land almost always gets cleared before a crew sets foot on it." },
+  { question: 'What Affects Land Clearing Cost?', answer: 'Size of the area, how thick the growth is, how hard it is to reach, and the time of year. Valley clay in winter slows everything down. David walks the property and gives you a real number instead of a phone guess.' },
+  { question: 'How Long Does Land Clearing Take?', answer: 'A small brush job can be a day. A few acres of heavy growth runs longer, and wet ground can push the date. You get a window before work starts, and a call from us if weather moves it.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Land Clearing', 'Brush Clearing', 'Site Preparation', 'Grading', 'Excavation', 'Septic Installation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/land-clearing-services-eugene-or/#service',
+      name: 'Land Clearing Services in Eugene, Oregon',
+      serviceType: 'Land Clearing',
+      description: 'Land clearing and brush removal in Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742.',
+      url: 'https://www.ddlandworks.com/land-clearing-services-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Land Clearing', item: 'https://www.ddlandworks.com/land-clearing-services-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Land Clearing Services in Eugene, Oregon | D&D Land Works"
+  pageDescription="Land clearing and brush removal in Eugene, Oregon. Residential and commercial vegetation clearing, access clearing, and pre-construction clearing. Licensed CCB #261742. Free estimates."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Land Clearing"
+  heroH1Bold="Services in Eugene, Oregon"
+  heroSub="D&D Land Works clears overgrown land and heavy brush across Eugene, Springfield, and Lane County. Blackberry, undergrowth, raw lots nobody has touched in years. We come look at the property first, then explain what needs to be cleared and what may need to happen next."
+  heroImage="/service-land-clearing.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Brush Clearing', 'Vegetation Removal', 'Access Clearing', 'Pre-Construction', 'Lot Clearing']}
+  ctxEyebrow="What to know"
+  ctxH2Light="Land Clearing for Homes and"
+  ctxH2Bold="Businesses in Eugene"
+  ctxIntro="Most property jobs start the same way. The brush has to come off before anything else can happen. D&D Land Works clears land for homeowners and businesses in Eugene, Springfield, and all over Lane County. No two jobs look the same. A lot of calls start like this — you have a back acre you can't walk into anymore. The blackberry took it over. Or you bought a wooded lot a few years back and never got to it. Sometimes it's smaller than that. You want a spot for a shop or a shed, and the brush is in the way. We clear it out. You get ground you can stand on and plan around. Builders call with a date and a set of plans. The whole work area has to be open. So do the paths the trucks and machines use to get in and out. Raw land in Lane County hides things. Wet spots. Soft ground. Better to find that now than after the foundation crew shows up."
+  ctxLeft={{
+    label: 'Land Clearing',
+    title: 'Clear the Growth',
+    tagline: 'Removing everything above ground — brush, vines, vegetation — to expose the land underneath.',
+    bullets: [
+      'Blackberry, scrub, and dense brush removal',
+      'Vegetation and low-growth clearing',
+      'Access path and equipment route opening',
+      'Construction footprint clearing',
+      'Haul-off or on-site disposal',
+    ],
+  }}
+  ctxRight={{
+    label: 'Site Preparation',
+    title: 'Shape the Ground',
+    tagline: 'What follows clearing — grading, leveling, cut and fill to bring the lot to construction-ready condition.',
+    bullets: [
+      'Topsoil stripping and stockpiling',
+      'Cut and fill to planned elevations',
+      'Subgrade grading and compaction',
+      'Rough drainage grading',
+      'Builder-ready pad preparation',
+    ],
+  }}
+  ctxBanner="D&D Land Works handles land clearing and site preparation together — no need to coordinate separate crews."
+  inclEyebrow="What is included"
+  inclH2Light="What Does Land Clearing"
+  inclH2Bold="Include?"
+  inclIntro="Land clearing covers the work that gets growth off a property. What it takes depends on how thick the brush is, how the land sits, and what you plan to do with it after."
+  inclItems={inclItems}
+  probH2Light="Land Clearing for Different"
+  probH2Bold="Property Conditions"
+  probIntro="No two lots in Eugene clear the same way. How thick the brush is, how the land sits, how wet the ground gets, and whether a machine can even reach the spot all change the job."
+  probImage="/service-land-clearing.webp"
+  problems={problems}
+  procH2Light="How Land Clearing"
+  procH2Bold="Gets Done on Your Property"
+  processSteps={processSteps}
+  costH2Light="How Much Does Land Clearing"
+  costH2Bold="Cost in Eugene?"
+  costIntro="Land clearing costs depend on the property. The size of the area, type of growth, site access, terrain, and ground conditions can all affect the work."
+  costItems={costItems}
+  costClosing="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  timelineH2Light="What Can Affect the Timeline"
+  timelineH2Bold="for Land Clearing?"
+  timelineIntro="A small brush job can be done in a day. A few acres of heavy growth takes longer, and Eugene weather has a say in it. Here's what sets the schedule on most jobs."
+  timelineItems={timelineItems}
+  faqH2Light="Land Clearing FAQs"
+  faqH2Bold="in Eugene, Oregon"
+  faqs={faqs}
+  ctaH2Light="Ready to Clear"
+  ctaH2Bold="Your Property?"
+  ctaSub="Get in touch with D&D Land Works to discuss your land clearing needs in Eugene and the surrounding Lane County area."
+/>

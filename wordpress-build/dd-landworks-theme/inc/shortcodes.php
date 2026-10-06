@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Component shortcodes — the page-builder-free way to assemble a page in
  * this theme. Each one ports a component from the Astro build
@@ -61,7 +61,7 @@ function ddlw_hero( $atts ) {
 				<?php endif; ?>
 				<a href="<?php echo esc_url( $a['primary_href'] ); ?>" class="hero__phone">
 					<span class="hero__phone-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="height:1.1rem;width:1.1rem;"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></span>
-					<span class="hero__phone-text"><small>Call us any time</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
+					<span class="hero__phone-text"><small>Call</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
 				</a>
 			</div>
 		</div>
@@ -255,7 +255,7 @@ function ddlw_service_grid( $atts ) {
 		'excavation'             => '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />',
 		'land-clearing'          => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />',
 		'grading-leveling'       => '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
-		'septic-installation-lane-county-oregon' => '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+		'septic-installation-lane-county-or' => '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
 		'foundation-excavation'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />',
 		'drainage-excavation'    => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
 		'utility-excavation'     => '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />',
@@ -463,9 +463,10 @@ add_shortcode( 'faq', 'ddlw_faq' );
    ---------------------------------------------------------------------- */
 function ddlw_cta_block( $atts ) {
 	$a = shortcode_atts( array(
-		'title'    => 'Get a Free Estimate From D&D Land Works',
-		'subtitle' => 'Site preparation, excavation and grading, land clearing, drainage, utility work, and DEQ-certified septic installation and repair — one licensed, bonded contractor for residential and commercial properties throughout Lane County.',
-		'cta_label' => 'Book Appointment',
+		'eyebrow'   => '',
+		'title'     => 'Get a Free Estimate From D&D Land Works',
+		'subtitle'  => 'Site preparation, excavation and grading, land clearing, drainage, utility work, and DEQ-certified septic installation and repair — one licensed, bonded contractor for residential and commercial properties throughout Lane County.',
+		'cta_label' => 'Request a Free Estimate',
 		'cta_href'  => '/contact',
 	), $atts, 'cta_block' );
 
@@ -474,6 +475,9 @@ function ddlw_cta_block( $atts ) {
 	<section class="cta-block">
 		<div class="container">
 			<div class="cta-block__inner">
+				<?php if ( ! empty( $a['eyebrow'] ) ) : ?>
+				<p class="eyebrow eyebrow--light" style="justify-content:center;margin-bottom:.75rem;"><?php echo esc_html( $a['eyebrow'] ); ?></p>
+				<?php endif; ?>
 				<h2><?php echo esc_html( $a['title'] ); ?></h2>
 				<p><?php echo esc_html( $a['subtitle'] ); ?></p>
 				<div class="cta-block__actions">
@@ -483,7 +487,7 @@ function ddlw_cta_block( $atts ) {
 					</a>
 					<a href="<?php echo esc_url( ddlw_phone_href() ); ?>" class="hero__phone">
 						<span class="hero__phone-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="height:1.1rem;width:1.1rem;"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></span>
-						<span class="hero__phone-text"><small>Call us any time</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
+						<span class="hero__phone-text"><small>Call</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
 					</a>
 				</div>
 			</div>
@@ -619,7 +623,7 @@ function ddlw_photo_block( $atts, $content = '' ) {
 					</a>
 					<a href="<?php echo esc_url( ddlw_phone_href() ); ?>" class="phone-inline">
 						<span class="phone-inline-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="height:1.1rem;width:1.1rem;"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></span>
-						<span class="phone-inline-text"><small>Call us any time</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
+						<span class="phone-inline-text"><small>Call</small><strong><?php echo esc_html( ddlw_phone() ); ?></strong></span>
 					</a>
 				</div>
 			</div>

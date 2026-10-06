@@ -1,0 +1,159 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Land Clearing', desc: 'Land clearing removes brush, vegetation, debris, and other surface obstacles from the property. This creates usable space for grading and prepares the site for planned construction work.', href: '/land-clearing-services-eugene-or', accent: true },
+  { num: '02', title: 'Topsoil Stripping', desc: 'Topsoil stripping removes the surface soil layer before grading begins. Suitable topsoil can be stockpiled for later use while the underlying ground is prepared for construction.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '03', title: 'Cut and Fill', desc: 'Cut and fill moves soil to change existing ground elevations. It helps shape building areas to planned grades when the property requires significant changes in elevation.', href: '/land-grading-services-eugene-or' },
+  { num: '04', title: 'Grading', desc: 'Grading adjusts existing ground elevations to meet planned site requirements. It shapes the construction area and establishes suitable grades for the building and surrounding ground.', href: '/land-grading-services-eugene-or' },
+  { num: '05', title: 'Compaction', desc: 'Mechanical compaction of soil, gravel, and sub-base materials achieves the density required for driveways, building pads, and structural foundations.', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Raw or Undeveloped Land', desc: 'Raw or undeveloped lots may require clearing, debris removal, topsoil work, and grading before construction can begin. Site preparation creates a workable area for the next stage of the project.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Poor Grading', desc: 'Poor grading can leave uneven ground or unsuitable elevations across a construction area. Site preparation adjusts the existing grades to create ground conditions that match the planned construction requirements.', link: 'Grading & Leveling', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Drainage and Surface Water', desc: 'Drainage problems can leave water collecting in areas of the property. Site preparation can address grading and ground conditions that affect how surface water moves across the site.', link: 'Drainage Excavation', href: '/drainage-installation-eugene-or' },
+  { num: '04', title: 'Difficult Site Access', desc: 'Limited or damaged access can make it harder to move equipment and materials onto the property. Site preparation may include work that improves access for the planned construction activities.', link: 'Driveway Repair', href: '/driveway-excavation-grading-eugene-or' },
+];
+
+const costItems = [
+  { title: 'Licensed and Bonded', desc: 'D&D Land Works is licensed and bonded in Oregon. This provides a clear contractor credential for residential and commercial site preparation work.' },
+  { title: 'Free Estimates', desc: 'Free estimates allow the property, access, existing conditions, and planned work to be discussed before the site preparation scope is established.' },
+  { title: 'Residential Projects', desc: 'D&D Land Works provides site preparation for residential construction, including properties in Eugene, Springfield, and surrounding Lane County communities.' },
+  { title: 'Commercial Projects', desc: 'Commercial site preparation is scoped around the property conditions, access, planned construction, and earthwork requirements for the project.' },
+  { title: 'DEQ Certified for Septic Work', desc: 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Project Assessment', desc: 'The property and planned construction are reviewed before work begins. Existing grades, soil, access, drainage, and other site conditions help determine the preparation work required.', accent: true },
+  { num: '2', title: 'Site Clearing', desc: 'The work area is cleared of vegetation, brush, debris, and other obstacles that could interfere with site preparation. This creates a workable area for the planned construction.' },
+  { num: '3', title: 'Site Grading', desc: 'The prepared ground is shaped to meet planned elevations and site requirements. Cut, fill, grading, and leveling may be used where changes to existing ground levels are needed.' },
+  { num: '4', title: 'Ground Compaction', desc: 'Prepared ground is compacted after earthwork to create a suitable subgrade for the next construction stage. The required compaction work depends on the site existing ground conditions.' },
+];
+
+const faqs = [
+  { question: 'Do I Need Site Preparation Before Building?', answer: 'Most construction sites need some level of site preparation before building. The required work depends on existing ground conditions, vegetation, elevations, access, drainage, and the planned construction. A cleared, level property may require less preparation than a raw lot.' },
+  { question: 'What Does Site Preparation Include?', answer: "Services encompass land clearing, topsoil stripping, cut and fill, grading, leveling, and subgrade compaction. The scope depends on the property's existing conditions and construction requirements, including planned elevations, access, drainage, and the type of project." },
+  { question: 'Does Site Preparation Require a Permit?', answer: 'Permit requirements depend on the project type, location, and type of site work involved. Lane County requirements may apply to grading, fill, erosion prevention, or access work, while larger disturbances may also involve Oregon DEQ stormwater requirements.' },
+  { question: 'How Do Soil Conditions Affect Site Preparation Cost?', answer: 'Rock, heavy clay, poor ground, or buried materials may require additional excavation, equipment, hauling, or preparation. These conditions increase project complexity and can affect the overall cost.' },
+  { question: 'Does Rain Affect Site Preparation Work?', answer: 'Rain affects site preparation when ground becomes wet or difficult to work. Wet soil may influence grading, compaction, access, and drainage work. Project timing depends on weather, existing soil conditions, site access, and the amount of earthwork required.' },
+  { question: 'What Happens After Site Preparation?', answer: 'Construction moves into related work such as foundation excavation, utility excavation, trenching, drainage work, or other site-specific activities depending on the project plans.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service site preparation, grading, and excavation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/site-preparation-contractor-eugene-or/#service',
+      name: 'Site Preparation Contractor in Eugene, Oregon',
+      serviceType: 'Site Preparation',
+      description: 'Land clearing, grading, compacting, and construction-ready lot preparation for residential and commercial projects in Eugene and Lane County, Oregon.',
+      url: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Site Preparation', item: 'https://www.ddlandworks.com/site-preparation-contractor-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Site Preparation Contractor in Eugene, Oregon | D&D Land Works"
+  pageDescription="Site preparation contractor in Eugene, Oregon. Land clearing, grading, compacting, and construction-ready lot prep. Licensed and bonded. CCB #261742. Get a free estimate from D&D Land Works."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Site Preparation Contractor in"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="D&D Land Works prepares residential and commercial properties for construction. Our site preparation work can include land clearing, grading, and leveling. We serve Eugene and Lane County and adjust the work to the site's existing conditions and construction requirements."
+  heroImage="/service-site-preparation.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Land Clearing', 'Topsoil Stripping', 'Cut & Fill', 'Grading', 'Compaction']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What's the Difference Between Site"
+  ctxH2Bold="Preparation and Excavation?"
+  ctxIntro="Site preparation is the work that gets your property ready for construction. It may include clearing brush, removing soil, grading the ground, leveling areas, or improving access. Excavation is more focused on digging. It can include digging for foundations, utilities, drainage, or other parts of a project. A project may need both. Site preparation gets the property ready, while excavation digs the areas needed for the next step. The work depends on your property, plans, ground conditions, access, and drainage."
+  ctxLeft={{
+    label: 'Site Preparation',
+    title: 'Build-Ready Ground',
+    tagline: 'The work that gets your property ready for construction — clearing, grading, compacting, and drainage, in sequence.',
+    bullets: [
+      'Clearing brush, vegetation, and debris',
+      'Topsoil stripping and stockpiling',
+      'Cut and fill to design elevations',
+      'Subgrade compaction and proof rolling',
+      'Rough drainage grading',
+    ],
+  }}
+  ctxRight={{
+    label: 'General Excavation',
+    title: 'Targeted Digging',
+    tagline: 'More focused on digging — for foundations, utilities, drainage, or other specific project components.',
+    bullets: [
+      'Foundation trenching and footings',
+      'Utility trench excavation',
+      'Septic tank and drainfield digging',
+      'Pond and retention basin work',
+      'Specific depth/shape requirements',
+    ],
+  }}
+  ctxBanner="D&D Land Works handles both site preparation and targeted excavation — often on the same project."
+  inclEyebrow="What is included"
+  inclH2Light="What Does Site"
+  inclH2Bold="Preparation Include?"
+  inclIntro="Site preparation includes the work needed to prepare a property for construction. The scope can vary with existing ground conditions, planned elevations, access, drainage, and the type of construction planned for the site."
+  inclItems={inclItems}
+  probH2Light="Site Preparation Problems"
+  probH2Bold="We Help Address"
+  probIntro="Site preparation helps address property conditions that can prevent construction from starting properly. Raw land, uneven grades, drainage problems, and difficult site access can all affect the work required before construction. The preparation scope depends on the property's existing conditions and planned use."
+  probImage="/service-site-preparation.webp"
+  problems={problems}
+  procH2Light="How the Site Preparation"
+  procH2Bold="Process Works"
+  processSteps={processSteps}
+  costH2Light="Why Choose D&D Land Works"
+  costH2Bold="for Site Preparation?"
+  costIntro="Site preparation depends on the property, planned construction, and existing site conditions. D&D Land Works provides residential and commercial site preparation in Eugene and Lane County, with work scoped around the property and project requirements."
+  costItems={costItems}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  ctaH2Light="Get a Free Site"
+  ctaH2Bold="Preparation Estimate"
+  ctaSub="Planning site preparation starts with understanding the property and construction requirements. D&D Land Works provides free estimates for residential and commercial projects, with the scope based on existing site conditions, earthwork, access, drainage, and the work needed before construction begins."
+/>

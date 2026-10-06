@@ -249,6 +249,7 @@ input, textarea, select { font-family: inherit; }
 .primary-nav a, .primary-nav button {
 	background: none; border: none; padding: 0; color: var(--color-ink);
 	display: flex; align-items: center; gap: 0.25rem; transition: color 150ms ease;
+	font-family: inherit; font-size: inherit; font-weight: inherit;
 }
 .primary-nav a:hover, .primary-nav button:hover { color: var(--color-brand-blue); }
 @media (min-width: 1024px) { .primary-nav { display: flex; } }
@@ -569,6 +570,16 @@ input, textarea, select { font-family: inherit; }
 /* -------------------------------------------------------------------------
    15. Blog (single + listing)
    ---------------------------------------------------------------------- */
+/* Archive hero — bg image with overlay, matches Hero.astro */
+.blog-archive-hero { position: relative; background: var(--color-ink); color: #fff; padding-block: 5rem 3.5rem; overflow: hidden; }
+.blog-archive-hero__bg { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; opacity: 0.5; }
+.blog-archive-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--color-ink), rgba(10,10,10,0.4)); }
+.blog-archive-hero__inner { position: relative; max-width: 48rem; }
+.blog-archive-hero h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; font-size: 2.25rem; margin: 0 0 .75rem; }
+.blog-archive-hero p { font-size: 1.0625rem; color: rgba(255,255,255,0.75); max-width: 36rem; margin: 0; line-height: 1.65; }
+@media (min-width: 768px) { .blog-archive-hero h1 { font-size: 3rem; } }
+
+/* Single post hero */
 .blog-hero { position: relative; background: var(--color-ink); color: #fff; padding-block: 5rem 3.5rem; overflow: hidden; }
 .blog-hero img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; opacity: 0.5; }
 .blog-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--color-ink), rgba(10,10,10,0.4)); }
@@ -582,6 +593,8 @@ input, textarea, select { font-family: inherit; }
 .blog-category { display: inline-block; border-radius: 999px; background: var(--color-brand-blue-light); color: var(--color-brand-blue-dark); padding: 0.25rem 0.75rem; font-weight: 600; font-size: 0.75rem; }
 .blog-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
 .sidebar-card { border-radius: var(--radius-brand-card); background: var(--color-brand-blue-light); padding: 1.5rem; }
+.sidebar-card__heading { font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--color-ink); margin: 0; }
+.sidebar-card__rule { margin: 0.75rem 0 1rem; border: none; border-top: 1px solid rgba(31,125,195,0.2); height: 0; }
 .sidebar-card h3 { font-weight: 900; font-size: 1.25rem; }
 .sidebar-card hr { margin: 0.75rem 0 1rem; border: none; border-top: 1px solid rgba(31,125,195,0.2); }
 .sidebar-card .recent-post { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }

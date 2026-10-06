@@ -1,0 +1,564 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface IncludedItem {
+  num: string;
+  title: string;
+  desc: string;
+  href?: string;
+  accent?: boolean;
+}
+
+interface ProblemItem {
+  num: string;
+  title: string;
+  desc: string;
+  link: string;
+  href: string;
+}
+
+interface ProcessStep {
+  num: string;
+  title: string;
+  desc: string;
+  accent?: boolean;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface CostItem {
+  title: string;
+  desc: string;
+}
+
+interface TimelineItem {
+  title: string;
+  desc: string;
+}
+
+interface CompareCard {
+  label: string;
+  title: string;
+  tagline: string;
+  bullets: string[];
+}
+
+interface Props {
+  // Meta
+  pageTitle: string;
+  pageDescription: string;
+  schema: object;
+
+  // Hero
+  heroEyebrow?: string;
+  heroH1Light: string;
+  heroH1Bold: string;
+  heroSub: string;
+  heroImage: string;
+  heroScopeLabel?: string;
+  heroScopeTags?: string[];
+
+  // Compare/context section
+  ctxEyebrow?: string;
+  ctxH2Light: string;
+  ctxH2Bold: string;
+  ctxIntro: string;
+  ctxLeft: CompareCard;
+  ctxRight: CompareCard;
+  ctxBanner?: string;
+
+  // What's included
+  inclEyebrow?: string;
+  inclH2Light: string;
+  inclH2Bold: string;
+  inclIntro: string;
+  inclItems: IncludedItem[];
+
+  // Problems
+  probH2Light: string;
+  probH2Bold: string;
+  probIntro: string;
+  probImage: string;
+  problems: ProblemItem[];
+
+  // Process
+  procH2Light: string;
+  procH2Bold: string;
+  processSteps: ProcessStep[];
+
+  // Cost section (optional)
+  costH2Light?: string;
+  costH2Bold?: string;
+  costIntro?: string;
+  costItems?: CostItem[];
+  costClosing?: string;
+
+  // Timeline section (optional)
+  timelineH2Light?: string;
+  timelineH2Bold?: string;
+  timelineIntro?: string;
+  timelineItems?: TimelineItem[];
+
+  // FAQ
+  faqH2Light?: string;
+  faqH2Bold?: string;
+  faqs: FaqItem[];
+
+  // CTA
+  ctaH2Light?: string;
+  ctaH2Bold?: string;
+  ctaSub?: string;
+}
+
+const {
+  pageTitle,
+  pageDescription,
+  schema,
+  heroEyebrow = 'Eugene, Oregon',
+  heroH1Light,
+  heroH1Bold,
+  heroSub,
+  heroImage,
+  heroScopeLabel = 'Typical scope',
+  heroScopeTags = [],
+  ctxEyebrow = 'What to know',
+  ctxH2Light,
+  ctxH2Bold,
+  ctxIntro,
+  ctxLeft,
+  ctxRight,
+  ctxBanner,
+  inclEyebrow = 'What is included',
+  inclH2Light,
+  inclH2Bold,
+  inclIntro,
+  inclItems,
+  probH2Light,
+  probH2Bold,
+  probIntro,
+  probImage,
+  problems,
+  procH2Light,
+  procH2Bold,
+  processSteps,
+  costH2Light,
+  costH2Bold,
+  costIntro,
+  costItems,
+  costClosing,
+  timelineH2Light,
+  timelineH2Bold,
+  timelineIntro,
+  timelineItems,
+  faqH2Light = 'Common Questions About',
+  faqH2Bold,
+  faqs,
+  ctaH2Light = 'Get a Free',
+  ctaH2Bold = 'Estimate From D&D Land Works',
+  ctaSub = 'Contact D&D Land Works to discuss your property and project scope. We provide free on-site estimates for residential and commercial projects across Lane County, Oregon.',
+} = Astro.props;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+
+  <!-- ─── HERO: SPLIT ─────────────────────────────────────────────────────── -->
+  <section class="bg-ink text-white">
+    <div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[680px]">
+
+      <!-- Left: copy -->
+      <div class="px-6 sm:px-10 lg:px-16 xl:px-24 py-16 lg:py-20 flex flex-col gap-7">
+        <nav aria-label="Breadcrumb" class="flex gap-2 items-center text-sm text-white/40">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span>/</span>
+          <a href="/services" class="hover:text-white transition-colors">Services</a>
+          <span>/</span>
+          <span class="text-white">{heroH1Bold}</span>
+        </nav>
+
+        <div class="flex gap-3 items-center font-display font-semibold uppercase tracking-[0.22em] text-[0.875rem] text-accent-light">
+          <span class="w-10 h-[2px] bg-accent-light shrink-0"></span>
+          <span>{heroEyebrow}</span>
+        </div>
+
+        <h1 class="font-display leading-[0.95] text-[clamp(2.8rem,6vw,5rem)]">
+          <span class="block font-light">{heroH1Light}</span>
+          <span class="block font-semibold">{heroH1Bold}</span>
+        </h1>
+
+        <p class="text-white/70 text-lg leading-relaxed max-w-lg">{heroSub}</p>
+
+        <div class="flex flex-wrap gap-4 pt-1">
+          <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+          <a href="tel:5414018726" class="h-[52px] px-7 inline-flex items-center border border-white/50 rounded-(--radius-brand) font-display font-semibold uppercase tracking-[0.1em] text-sm text-white hover:border-white transition-colors">Call 541-401-8726</a>
+        </div>
+
+        <div class="mt-auto pt-7 border-t border-white/12 flex flex-wrap gap-6 text-sm text-white/55">
+          <span><strong class="text-white font-semibold">CCB #261742</strong> Licensed &amp; Bonded</span>
+          <span><strong class="text-white font-semibold">DEQ</strong> Certified Septic</span>
+          <span><strong class="text-white font-semibold">Free</strong> On-Site Estimates</span>
+        </div>
+      </div>
+
+      <!-- Right: image + scope card -->
+      <div class="hidden lg:flex px-16 xl:px-24 py-20 items-stretch">
+        <div class="relative flex-grow rounded-(--radius-brand-card) overflow-hidden">
+          <img src={heroImage} alt={`${heroH1Bold} in Lane County Oregon`} class="absolute inset-0 w-full h-full object-cover object-[60%_50%]" />
+          {heroScopeTags.length > 0 && (
+            <div class="absolute bottom-6 left-6 right-6 bg-white text-ink rounded-(--radius-brand-card) p-7 flex flex-col gap-4">
+              <span class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-accent-dark">{heroScopeLabel}</span>
+              <div class="flex flex-wrap gap-2">
+                {heroScopeTags.map((tag) => (
+                  <span class="px-3 py-1.5 bg-cream rounded-(--radius-brand) font-display font-medium text-base text-ink">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTEXT / COMPARE ────────────────────────────────────────────────── -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-14">
+
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-end">
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-3 items-center font-display font-semibold uppercase tracking-[0.22em] text-[0.875rem] text-accent-dark">
+            <span class="w-10 h-[2px] bg-accent-dark shrink-0"></span>
+            <span>{ctxEyebrow}</span>
+          </div>
+          <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+            <span class="block font-light">{ctxH2Light}</span>
+            <span class="block font-semibold">{ctxH2Bold}</span>
+          </h2>
+        </div>
+        <p class="text-lg leading-relaxed text-slate-600">{ctxIntro}</p>
+      </div>
+
+      <div class="relative grid gap-6 sm:grid-cols-2">
+        <!-- Left card (cream) -->
+        <div class="bg-cream rounded-(--radius-brand-card) p-10 sm:p-12 flex flex-col gap-5">
+          <span class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-accent-dark">{ctxLeft.label}</span>
+          <h3 class="font-display font-semibold text-[2.5rem] leading-none text-ink">{ctxLeft.title}</h3>
+          <p class="text-lg leading-relaxed text-slate-600">{ctxLeft.tagline}</p>
+          <ul class="flex flex-col gap-3 pt-2">
+            {ctxLeft.bullets.map((item) => (
+              <li class="flex gap-3 items-start text-base leading-relaxed">
+                <svg class="shrink-0 mt-0.5 text-accent-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Right card (dark) -->
+        <div class="bg-ink text-white rounded-(--radius-brand-card) p-10 sm:p-12 flex flex-col gap-5">
+          <span class="font-display font-semibold uppercase tracking-[0.18em] text-xs text-accent-light">{ctxRight.label}</span>
+          <h3 class="font-display font-semibold text-[2.5rem] leading-none text-white">{ctxRight.title}</h3>
+          <p class="text-lg leading-relaxed text-white/60">{ctxRight.tagline}</p>
+          <ul class="flex flex-col gap-3 pt-2">
+            {ctxRight.bullets.map((item) => (
+              <li class="flex gap-3 items-start text-base leading-relaxed text-white/80">
+                <svg class="shrink-0 mt-0.5 text-accent-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- VS pill -->
+        <div class="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-[#DDD8CF] items-center justify-center font-display font-semibold text-sm text-ink shadow-sm z-10">VS</div>
+      </div>
+
+      {ctxBanner && (
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 px-8 py-6 border border-[#DDD8CF] rounded-(--radius-brand-card)">
+          <span class="text-lg leading-relaxed text-ink">{ctxBanner}</span>
+          <a href="/about" class="shrink-0 font-display font-semibold uppercase tracking-[0.1em] text-base text-ink border-b-2 border-accent pb-1 hover:text-accent transition-colors self-start sm:self-auto">About D&amp;D Land Works →</a>
+        </div>
+      )}
+
+    </div>
+  </section>
+
+  <!-- ─── WHAT'S INCLUDED ──────────────────────────────────────────────────── -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-14">
+
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-end">
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-3 items-center font-display font-semibold uppercase tracking-[0.22em] text-[0.875rem] text-accent-dark">
+            <span class="w-10 h-[2px] bg-accent-dark shrink-0"></span>
+            <span>{inclEyebrow}</span>
+          </div>
+          <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+            <span class="block font-light">{inclH2Light}</span>
+            <span class="block font-semibold">{inclH2Bold}</span>
+          </h2>
+        </div>
+        <p class="text-lg leading-relaxed text-slate-600">{inclIntro}</p>
+      </div>
+
+      <div class={`grid gap-5 sm:grid-cols-2 ${inclItems.length >= 5 ? 'lg:grid-cols-5' : inclItems.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+        {inclItems.map((item) => (
+          <div class={`bg-white rounded-(--radius-brand-card) p-8 flex flex-col gap-4 border-t-[3px] ${item.accent ? 'border-accent' : 'border-ink'}`}>
+            <span class="font-display font-light text-[2.5rem] leading-none text-[#B9B2A6]">{item.num}</span>
+            <h3 class="font-display font-semibold text-[1.4rem] leading-[1.1] text-ink">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-slate-600 flex-1">{item.desc}</p>
+            {item.href && (
+              <a href={item.href} class="mt-auto flex gap-2 items-center font-display font-semibold uppercase tracking-[0.1em] text-sm text-ink hover:text-accent transition-colors pt-2">
+                Learn more
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact" class="btn btn-cta">Request a Free Estimate</a>
+        <a href="/services" class="h-[52px] px-7 inline-flex items-center border border-ink rounded-(--radius-brand) font-display font-semibold uppercase tracking-[0.1em] text-sm text-ink hover:bg-ink hover:text-white transition-colors">Explore all services</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── PROBLEMS ─────────────────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
+      <div class="grid gap-14 lg:grid-cols-[5fr_7fr] lg:items-start">
+
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-3 items-center font-display font-semibold uppercase tracking-[0.22em] text-[0.875rem] text-accent-dark">
+            <span class="w-10 h-[2px] bg-accent-dark shrink-0"></span>
+            <span>We can help</span>
+          </div>
+          <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+            <span class="block font-light">{probH2Light}</span>
+            <span class="block font-semibold">{probH2Bold}</span>
+          </h2>
+          <p class="text-lg leading-relaxed text-slate-600">{probIntro}</p>
+          <img src={probImage} alt={`${probH2Bold} in Lane County Oregon`} class="w-full rounded-(--radius-brand-card) object-cover aspect-[4/3] mt-2" loading="lazy" />
+        </div>
+
+        <div class="flex flex-col border-b border-[#DDD8CF]">
+          {problems.map((p) => (
+            <div class="grid gap-5 py-9 border-t border-[#DDD8CF]" style="grid-template-columns: 64px 1fr;">
+              <span class="w-14 h-14 rounded-full bg-cream flex items-center justify-center font-display font-semibold text-xl text-accent-dark shrink-0">{p.num}</span>
+              <div class="flex flex-col gap-3">
+                <h3 class="font-display font-semibold text-[1.85rem] leading-[1.1] text-ink">{p.title}</h3>
+                <p class="text-base leading-relaxed text-slate-600">{p.desc}</p>
+                <a href={p.href} class="inline-flex gap-2 items-center self-start font-display font-semibold uppercase tracking-[0.1em] text-sm text-ink hover:text-accent transition-colors">
+                  <span class="text-slate-400">Related:</span> {p.link}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESS ─────────────────────────────────────────────────────────── -->
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-16">
+
+      <div class="text-center flex flex-col gap-5">
+        <div class="flex gap-4 items-center justify-center font-display font-semibold uppercase tracking-[0.22em] text-[0.875rem] text-accent-light">
+          <span class="w-10 h-[2px] bg-accent-light shrink-0"></span>
+          <span>How it works</span>
+          <span class="w-10 h-[2px] bg-accent-light shrink-0"></span>
+        </div>
+        <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+          <span class="block font-light">{procH2Light}</span>
+          <span class="block font-semibold">{procH2Bold}</span>
+        </h2>
+      </div>
+
+      <div class="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="hidden lg:block absolute left-8 right-8 top-8 h-[2px] bg-white/18 pointer-events-none"></div>
+        {processSteps.map((step) => (
+          <div class="flex flex-col gap-5">
+            <span class={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center font-display font-semibold text-2xl text-white shrink-0 ${step.accent ? 'bg-accent border-2 border-accent' : 'bg-ink border-2 border-white/35'}`}>{step.num}</span>
+            <h3 class="font-display font-semibold text-[1.75rem] leading-[1.1] text-white mt-2">{step.title}</h3>
+            <p class="text-base leading-relaxed text-white/60">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex justify-center">
+        <a href="/contact" class="btn btn-cta">Discuss Your Project</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── COST ────────────────────────────────────────────────────────────── -->
+  {costItems && costItems.length > 0 && (
+    <section class="bg-cream">
+      <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-14">
+
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-end">
+          <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+            <span class="block font-light">{costH2Light}</span>
+            <span class="block font-semibold">{costH2Bold}</span>
+          </h2>
+          {costIntro && <p class="text-lg leading-relaxed text-slate-600">{costIntro}</p>}
+        </div>
+
+        <div class={`grid gap-5 sm:grid-cols-2 ${costItems.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+          {costItems.map((item) => (
+            <div class="bg-white rounded-(--radius-brand-card) p-8 flex flex-col gap-4 border-t-[3px] border-ink">
+              <h3 class="font-display font-semibold text-[1.25rem] leading-[1.2] text-ink">{item.title}</h3>
+              <p class="text-sm leading-relaxed text-slate-600 flex-1">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {costClosing && (
+          <p class="text-base leading-relaxed text-slate-600 max-w-2xl">{costClosing}</p>
+        )}
+
+      </div>
+    </section>
+  )}
+
+  <!-- ─── TIMELINE ──────────────────────────────────────────────────────────── -->
+  {timelineItems && timelineItems.length > 0 && (
+    <section class="bg-white border-b border-slate-100">
+      <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-14">
+
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-end">
+          <h2 class="font-display leading-[1.0] text-[clamp(2rem,4.5vw,3.5rem)]">
+            <span class="block font-light">{timelineH2Light}</span>
+            <span class="block font-semibold">{timelineH2Bold}</span>
+          </h2>
+          {timelineIntro && <p class="text-lg leading-relaxed text-slate-600">{timelineIntro}</p>}
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {timelineItems.map((item) => (
+            <div class="flex flex-col gap-4 pt-7 border-t-[3px] border-ink">
+              <h3 class="font-display font-semibold text-[1.4rem] leading-[1.1] text-ink">{item.title}</h3>
+              <p class="text-base leading-relaxed text-slate-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  )}
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
+      <div class="grid gap-14 lg:grid-cols-[5fr_7fr] lg:items-start">
+
+        <div class="lg:sticky lg:top-10">
+          <p class="section-label text-accent-dark mb-6">Common Questions</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink mb-8">
+            <span class="block font-light">{faqH2Light}</span>
+            <span class="block font-semibold">{faqH2Bold ?? heroH1Bold}</span>
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-8">Have a question not listed here? Call David directly — he's happy to talk through your project.</p>
+          <a href="tel:5414018726" class="inline-flex items-center gap-3 group">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" /></svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-slate-500">Call or text anytime</p>
+              <p class="font-display font-semibold text-lg text-ink group-hover:text-accent transition-colors">541-401-8726</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex flex-col divide-y divide-slate-200">
+          {faqs.map((item) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-semibold text-base text-ink [&::-webkit-details-marker]:hidden">
+                {item.question}
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 group-open:border-accent group-open:text-accent transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" /></svg>
+                </span>
+              </summary>
+              <p class="mt-3 pr-12 text-sm text-slate-600 leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="relative bg-ink-deep text-white overflow-hidden">
+    <img src="/project-finished-landscaping.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-r from-ink-deep/95 via-ink-deep/80 to-ink-deep/50"></div>
+    <div class="relative mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 grid gap-14 lg:grid-cols-2 lg:items-center">
+
+      <div>
+        <p class="section-label text-accent-light mb-6">Free Estimate</p>
+        <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-white mb-6">
+          <span class="block font-light">{ctaH2Light}</span>
+          <span class="block font-semibold">{ctaH2Bold}</span>
+        </h2>
+        <p class="text-white/65 text-sm leading-relaxed mb-8 max-w-sm">{ctaSub}</p>
+        <div class="flex flex-col gap-3">
+          <a href="tel:5414018726" class="flex items-center gap-3 group">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" /></svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-white/50">Call or text</p>
+              <p class="font-display font-semibold text-lg text-white group-hover:text-accent-light transition-colors">541-401-8726</p>
+            </div>
+          </a>
+          <a href="mailto:david@ddlandworks.com" class="flex items-center gap-3 group">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-white/50">Email</p>
+              <p class="font-display font-semibold text-sm text-white group-hover:text-accent-light transition-colors">david@ddlandworks.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="bg-white rounded-(--radius-brand-card) p-8 shadow-2xl">
+        <p class="font-display font-semibold uppercase tracking-[0.12em] text-sm text-ink mb-6">Request a Free Estimate</p>
+        <form action="/contact" method="GET" class="flex flex-col gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="name" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="phone" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="541-xxx-xxxx" class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="town" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Town / Area</label>
+            <input type="text" id="town" name="town" placeholder="Eugene, Cottage Grove, etc." class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="description" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Tell us about the property</label>
+            <textarea id="description" name="description" rows="3" placeholder="What's going on, what you need done, any access notes…" class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="btn btn-cta w-full justify-center mt-1">Send Estimate Request</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

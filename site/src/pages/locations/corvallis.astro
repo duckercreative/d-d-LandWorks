@@ -1,45 +1,76 @@
-﻿---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import FAQ from '../../components/FAQ.astro';
-import CTABlock from '../../components/CTABlock.astro';
+---
+import LocationPageTemplate from '../../layouts/LocationPageTemplate.astro';
 
-const excavationTypes = [
-  { title: 'Site Preparation', description: 'Getting the ground ready for the next part of a project. Depending on the property, this may include clearing, digging, grading, or moving soil before work can begin.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
-  { title: 'Land Grading', description: 'Changing the shape and slope of the ground for a building area, driveway, drainage, or other planned use. Slope, ground conditions, and access can all affect the work.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Land Clearing', description: 'Removing brush, trees, debris, and overgrown areas from a property before excavation or other site work can begin. The amount of clearing needed can affect the rest of the project.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-  { title: 'Trenching', description: 'Digging a narrow path in the ground for underground lines, drainage, or other planned work. The depth, route, and purpose of the trench affect what the excavation involves.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
-  { title: 'Drainage Work', description: 'When water collects where it should not, excavation or grading may create a better path for it to move. The right approach depends on the property and where the water is coming from.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Residential Excavation', description: 'Excavation can be part of many home property projects, building-site preparation, grading, trenching, drainage, or other digging work depending on what the site needs.', href: '/excavation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5Z M9 21V12h6v9" />' },
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR' },
+  { label: 'Serving', value: 'Corvallis & Lane County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
 ];
 
-const whenCards = [
-  { title: 'Before Construction Begins', description: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on the current state of the property.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When the Ground Is Uneven', description: 'If an area is too high, too low, or uneven for its planned use, grading or excavation can reshape it to fit the project.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Water Is Collecting', description: 'Standing water around a home, driveway, or yard is often a drainage issue. Excavation or grading may create a path to move water where it needs to go.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Land Needs Clearing', description: 'Brush, trees, and overgrowth need to be removed before excavation or grading can begin. The amount of clearing affects the overall scope of the project.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Trenching Is Needed', description: 'If your project requires a path below ground for utilities, drainage, or other purposes, trenching is the type of excavation used to dig that path.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'For a Residential Property Project', description: 'Home properties can need excavation for many reasons, access improvements, drainage fixes, building prep, or other site work. Start by describing what you want to accomplish.', href: '/contact', linkLabel: 'Get an Estimate' },
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting land ready for a building or project. May include clearing, excavation, and grading to create a workable area for the next stage.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape and level of the ground. May be needed when an area is uneven, needs a new slope, or needs to be shaped for the planned use.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, and debris from an area before grading or excavation can begin. Clearing opens the work area so the ground can be prepared.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Drainage Excavation', desc: 'Excavation to create or improve a path for water. The existing ground, slope, and drainage conditions all affect the approach.', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Septic-Related Excavation', desc: 'D&D Land Works is DEQ certified for septic installation and repair. The excavation involved depends on the property and the septic project.', href: '/septic-installation-lane-county-or' },
+  { num: '06', title: 'Trenching', desc: 'Digging a narrow path for water, sewer, electrical conduit, irrigation, drainage, or other underground work depending on the project.', href: '/trenching-services-eugene-or' },
 ];
 
-const whyItems = [
-  { title: 'Call to Confirm Service Area', description: 'D&D Land Works is based in Springfield, not Corvallis. Call 541-401-8726 with your project location so we can confirm whether it fits the current service area before scheduling any work.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.338c0-.53.313-.988.741-1.212l8.25-4.125a1.5 1.5 0 0 1 1.518 0l8.25 4.125c.428.224.741.682.741 1.212v10.324c0 .53-.313.988-.741 1.212l-8.25 4.125a1.5 1.5 0 0 1-1.518 0l-8.25-4.125A1.365 1.365 0 0 1 2.25 16.662V6.338Z" />' },
-  { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
-  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects where the service area applies.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Free Estimates', description: 'D&D Land Works provides free estimates for applicable excavation and site preparation projects. David walks the property before quoting, pricing reflects actual site conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
-  { title: 'No Fixed Timeline, Real Scope', description: 'We do not promise the same timeline for every job. Property size, ground conditions, access, clearing, and complexity can all affect how long a project takes.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />' },
+const checklistItems = [
+  { title: 'Before Construction Begins', desc: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on what the property currently looks like.', href: '/contact' },
+  { title: 'When the Ground Needs Reshaping', desc: 'If an area is uneven, too high, or too low for the planned use, grading or excavation can reshape it to fit the project.', href: '/contact' },
+  { title: 'When Water Is Collecting', desc: 'Standing water around a home, driveway, or yard is often a drainage problem. Excavation can create a path to move water where it needs to go.', href: '/contact' },
+  { title: 'Before Underground Work', desc: 'Utility lines, irrigation, and drainage systems need a trench. The trench is sized and placed based on what will be installed and where.', href: '/contact' },
+  { title: 'For Septic Projects', desc: 'New septic systems and repairs may require excavation. D&D Land Works handles the digging connected with applicable septic work.', href: '/contact' },
+  { title: 'When the Driveway Needs Work', desc: 'Gravel driveways develop ruts, washouts, and uneven areas. Grading and excavation can reshape the ground and restore the surface.', href: '/driveway-excavation-grading-eugene-or' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell Us What You Need', desc: 'Tell us what you want to build, repair, clear, dig, or change on your Corvallis property.' },
+  { num: '2', title: 'Discuss the Property', desc: 'We can talk about where the work is, what the property looks like, access, slope, drainage, existing structures, and utilities that may affect the job.' },
+  { num: '3', title: 'Understand the Scope', desc: 'Once the property and project are understood, the required excavation or related site work can be discussed in plain terms.' },
+  { num: '4', title: 'Get an Estimate', desc: 'D&D Land Works provides free estimates for applicable excavation and site work projects in Corvallis and Lane County.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Licensed and bonded', desc: 'D&D Land Works is licensed and bonded under Oregon CCB #261742 — a credential you can verify at the CCB license lookup before calling.', dark: false },
+  { title: 'Free estimates', desc: 'Free estimates let the property, access, soil conditions, and planned scope be reviewed before a number is given. No phone estimates built from satellite imagery.', dark: false },
+  { title: 'Foundation excavation', desc: 'Foundation digs for new homes, ADUs, and commercial structures across Corvallis, Springfield, and Lane County. One crew handles clearing, grading, and the foundation box.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit, and drainage runs. 811 locates coordinated as a standard part of every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'D&D Land Works is DEQ certified for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/locations/eugene/' },
+  { label: 'Springfield', href: '/locations/springfield/' },
+  { label: 'Albany', href: '/locations/albany/' },
+  { label: 'Cottage Grove', href: '/locations/cottage-grove/' },
+  { label: 'Junction City', href: '/locations/junction-city/' },
+  { label: 'Creswell', href: '/locations/creswell/' },
+  { label: 'Veneta', href: '/locations/veneta/' },
+  { label: 'Florence', href: '/locations/florence/' },
+  { label: 'Oakridge', href: '/locations/oakridge/' },
+  { label: 'Coburg', href: '/locations/coburg/' },
+  { label: 'Lowell', href: '/locations/lowell/' },
 ];
 
 const faqs = [
-  { question: 'Do you serve the Corvallis area?', answer: 'D&D Land Works is based in Springfield, Oregon. If your property is near Corvallis, call 541-401-8726 with the project location so we can confirm whether it fits the current service area.' },
-  { question: 'What does an excavation contractor do?', answer: 'An excavation contractor digs, moves, and shapes soil to prepare a property for a project. The work may include site preparation, grading, clearing, trenching, drainage work, and other excavation tasks.' },
-  { question: 'Can you prepare my property near Corvallis?', answer: 'Site preparation may include clearing, digging, grading, or moving soil, depending on the property. Call to discuss the project and confirm whether your location is within the service area.' },
-  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects where the property is within the service area.' },
-  { question: 'What affects excavation cost near Corvallis?', answer: 'Size, depth, ground conditions, access, clearing, grading, drainage, material movement, and project complexity can all affect cost. The best way to discuss cost is to explain what you want done and share the basic details of the project.' },
+  { question: 'Do you provide excavation in Corvallis?', answer: 'Yes. D&D Land Works provides excavation and related site work for properties in Corvallis and the surrounding area. We are based in Springfield.' },
+  { question: 'What affects excavation cost?', answer: 'Cost can depend on project size, digging, ground conditions, slope, access, clearing, material movement, drainage needs, septic-related excavation, driveway work, and overall site complexity.' },
+  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified for septic work. Septic design and approval are separate parts of the project.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in Corvallis.' },
+  { question: 'Where is D&D Land Works based?', answer: 'D&D Land Works is headquartered in Springfield, Oregon, and provides excavation services throughout Lane County.' },
 ];
 
-const serviceSchema = {
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'Shaping land to the right slope for drainage and a level build pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Digging the footprint for foundations, footings, crawl spaces, and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales, and catch basins to correct standing water on Lane County properties.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -51,7 +82,7 @@ const serviceSchema = {
       email: 'david@ddlandworks.com',
       priceRange: '$$',
       areaServed: [
-        { '@type': 'City', name: 'Corvallis', sameAs: 'https://www.wikidata.org/wiki/Q188748' },
+        { '@type': 'City', name: 'Corvallis', 'addressRegion': 'OR' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
       hasCredential: [
@@ -71,327 +102,65 @@ const serviceSchema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
-        { '@type': 'ListItem', position: 3, name: 'Corvallis Area', item: 'https://www.ddlandworks.com/locations/corvallis/' },
+        { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.ddlandworks.com/locations/' },
+        { '@type': 'ListItem', position: 3, name: 'Corvallis', item: 'https://www.ddlandworks.com/locations/corvallis/' },
       ],
     },
   ],
 };
 ---
 
-<BaseLayout
-  title="Excavation Contractor near Corvallis, OR | D&D Land Works"
-  description="D&D Land Works provides excavation, land clearing, grading, trenching, and drainage work near Corvallis, OR. Based in Springfield, call to confirm service area. CCB #261742. Free estimates, 541-401-8726."
->
-
-  <Hero
-    eyebrow="Excavation Contractor near Corvallis, Oregon"
-    headline="Excavation Contractor near Corvallis, Oregon"
-    subheadline="D&D Land Works provides excavation and related site work for property projects. If your property is in or near the Corvallis area, call to discuss the work you need and confirm whether the project fits the current service area."
-    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
-    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
-  />
-
-  <!-- Local intro -->
-  <section class="relative bg-white overflow-hidden">
-    <div class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl" aria-hidden="true"></div>
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
-      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <div class="mb-4 flex items-center gap-2">
-            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
-            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              Excavation Work near Corvallis
-            </p>
-          </div>
-          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            Excavation and Site Work near Corvallis
-          </h2>
-          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Excavation means digging and moving earth to prepare a property for the next part of a project. You may need it before building, to shape land, clear an area, improve drainage, or run a trench for underground work.</p>
-            <p>Every property is different. The ground, access, size of the job, and type of work can all change what a project needs. A small area may need only a little digging; a larger property may need clearing, grading, or more site preparation before work can begin.</p>
-            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong>. We are based in Springfield, call to confirm whether your Corvallis-area property is within the current service area.</p>
-          </div>
-          <a href="tel:5414018726" class="btn-pill mt-8 inline-flex">
-            Call to Confirm Service Area
-            <span class="btn-pill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div class="relative pb-6">
-          <img
-            src="/project-excavation-bucket.webp"
-            alt="D&D Land Works excavation contractor serving the Corvallis, Oregon area"
-            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
-            loading="lazy"
-          />
-          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
-            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
-              </svg>
-            </span>
-            <div class="leading-tight">
-              <p class="font-display font-bold text-sm">CCB #261742</p>
-              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What kind of work -->
-  <section class="relative">
-    <div class="relative bg-ink overflow-hidden">
-      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
-      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
-      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Corvallis-Area Properties</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-          What Kind of Work Does Your Property Need?
-        </h2>
-        <p class="mt-5 text-slate-300 leading-relaxed">
-          You may not know the exact name for the work your property needs, that is okay. Start by explaining the problem you are trying to solve and what you want the land to do.
-        </p>
-      </div>
-    </div>
-    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {excavationTypes.map((item) => <ServiceCard {...item} />)}
-      </div>
-    </div>
-    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
-      <a href="tel:5414018726" class="btn btn-cta inline-flex">Call to Confirm Service Area</a>
-      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
-    </div>
-  </section>
-
-  <!-- When does a Corvallis property need excavation -->
-  <section class="bg-slate-50 border-y border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Corvallis-Area Excavation</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          When Does a Property Near Corvallis Need Excavation?
-        </h2>
-        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve.
-        </p>
-      </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {whenCards.map((card) => (
-          <div class="card flex flex-col gap-3">
-            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
-            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
-              {card.linkLabel}
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </a>
-          </div>
-        ))}
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/contact" class="btn-pill inline-flex">
-          Talk About Your Property
-          <span class="btn-pill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it gets started, process steps -->
-  <section class="relative bg-ink text-white overflow-hidden">
-    <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
-    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-16 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Getting Started</p>
-        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Your Corvallis-Area Project Gets Started
-        </h2>
-        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          You do not need to know the exact name of the work before you call. Start with what you want to do and where the property is located.
-        </p>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-        {[
-          { step: '1', title: 'Tell Us What You Need', detail: 'Tell us what you want to build, clear, grade, trench, or dig on your property near Corvallis. If you are not sure of the exact work, describe the problem you are trying to solve.' },
-          { step: '2', title: 'Confirm Service Area', detail: 'We confirm whether your property is within the current service area before scheduling any work. D&D Land Works is based in Springfield, Corvallis-area projects are confirmed case by case.' },
-          { step: '3', title: 'Understand the Scope', detail: 'Once the property and project are understood, the required excavation or related site work can be discussed in plain terms based on actual site conditions.' },
-          { step: '4', title: 'Get an Estimate', detail: 'D&D Land Works provides free estimates for applicable excavation and site work projects where the property falls within the service area.' },
-        ].map((item) => (
-          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
-              {item.step}
-            </span>
-            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="tel:5414018726" class="btn btn-cta">Call 541-401-8726</a>
-        <a href="/contact" class="btn btn-outline border-white/30 text-white hover:bg-white/10">Request a Free Estimate</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- What can D&D help with -->
-  <section class="bg-white border-b border-slate-100">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Excavation Services</p>
-          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Can D&D Land Works Help With?
-          </h2>
-          <p class="mt-5 text-slate-600 leading-relaxed">
-            D&D Land Works handles excavation and related site work for property projects. We look at the property itself and what it needs rather than assuming every site is the same.
-          </p>
-          <ul class="mt-10 flex flex-col gap-7">
-            {whyItems.map((item) => (
-              <li class="flex items-start gap-4">
-                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
-                </span>
-                <div>
-                  <p class="font-display font-bold text-ink">{item.title}</p>
-                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                  {item.link && (
-                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline">
-                      {item.link.label}
-                    </a>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-          <a href="tel:5414018726" class="btn-pill mt-10 inline-flex">
-            Call to Confirm Service Area
-            <span class="btn-pill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div class="relative">
-          <img
-            src="/project-grading-driveway.webp"
-            alt="D&D Land Works excavation and site work near Corvallis, Oregon"
-            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Areas -->
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Primary Service Area</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Based in Springfield, Serving Lane County
-        </h2>
-        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
-          <p>D&D Land Works is headquartered in Springfield and regularly serves Lane County communities. Corvallis is outside the primary service area, call to confirm whether your property can be included.</p>
-          <p>If your project is within the regular service area, contact us directly for a free estimate.</p>
-        </div>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
-        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-          <a href="/locations/corvallis" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-            </svg>
-            <span class="font-display font-bold uppercase tracking-wide text-sm">Corvallis Area (Call to Confirm)</span>
-          </a>
-          {[
-            { label: 'Eugene', href: '/locations/eugene' },
-            { label: 'Springfield', href: '/locations/springfield' },
-            { label: 'Junction City', href: '/locations/junction-city' },
-            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
-            { label: 'Creswell', href: '/locations/creswell' },
-            { label: 'Veneta', href: '/locations/veneta' },
-            { label: 'Florence', href: '/locations/florence' },
-            { label: 'Oakridge', href: '/locations/oakridge' },
-            { label: 'Coburg', href: '/locations/coburg' },
-            { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
-          ].map((area) => (
-            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-              </svg>
-              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
-            </a>
-          ))}
-        </div>
-        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
-          <iframe
-            title="D&D Land Works service area map, Lane County, Oregon"
-            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0; display:block;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <FAQ heading="Excavation near Corvallis, FAQs" items={faqs} />
-
-  <!-- Related Services -->
-  <section class="bg-white border-t border-slate-100">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
-      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
-        Related Services
-      </h2>
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          { title: 'Land Clearing', description: 'Removing brush, trees, and overgrowth from a property before site work begins.', href: '/land-clearing-services-eugene-oregon' },
-          { title: 'Site Preparation', description: 'Clearing, grading, and excavation to prepare a property for the next stage of work.', href: '/site-preparation-contractor-eugene-oregon' },
-          { title: 'Drainage Excavation', description: 'Excavating channels and trenches to manage water on your property.', href: '/drainage-installation-eugene-oregon' },
-          { title: 'Septic Installation & Repair', description: 'DEQ certified excavation for septic installation and repair in Lane County.', href: '/septic-installation-lane-county-oregon' },
-        ].map((item) => (
-          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
-            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
-              {item.title}
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
-            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
-              Learn More &#8594;
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <CTABlock
-    eyebrow="Talk With David"
-    headline="Have a Project near Corvallis?"
-    subheadline="Call D&D Land Works at 541-401-8726 and explain what you are working on. Share the property location, what you want done, the size of the area, and any access or ground concerns. We will confirm whether the project fits the current service area and provide a free estimate if it does."
-    ctaLabel="Call 541-401-8726"
-    ctaHref="tel:5414018726"
-    phone="541-401-8726"
-  />
-
-</BaseLayout>
-
-<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<LocationPageTemplate
+  pageTitle="Excavation Contractor in Corvallis, Oregon | D&D Land Works"
+  pageDescription="D&D Land Works serves Corvallis, Oregon with excavation, site preparation, land clearing, grading, drainage, and septic work. Based in Springfield. CCB #261742. Free estimates, 541-401-8726."
+  schema={schema}
+  cityState="Corvallis, Oregon"
+  heroH1Light="Excavation Contractor in"
+  heroH1Bold="Corvallis, Oregon"
+  heroSub="Foundation digging, trenching, utility excavation, drainage, and septic work from one licensed, bonded contractor. D&D Land Works serves Corvallis, Springfield, and all of Lane County — David walks every site before quoting."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Corvallis"
+  introEyebrow="Corvallis's Excavation Contractor"
+  introH2Light="Excavation Services for"
+  introH2Bold="Homes and Businesses in Corvallis"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Most construction and land projects in Corvallis start with a call to an excavation contractor. D&D Land Works handles the digging, trenching, and earth-moving work that comes before a foundation gets poured, a utility gets connected, or a drainage problem gets fixed. We serve homeowners and builders across Corvallis, Springfield, and Lane County."
+  introPara2="The jobs vary. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on. David Deggelman owns D&D Land Works and walks every site in person before quoting. Licensed and bonded under Oregon CCB #261742 and DEQ certified for septic."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our Services"
+  servicesH2Light="What Does Excavation"
+  servicesH2Bold="Include?"
+  servicesDesc="Excavation covers the digging and earth-moving work that gets a site ready for construction. The scope depends on the project — foundation depth, utility runs, drainage needs, and what the ground requires before a structure can go on it."
+  services={services}
+  whenEyebrow="Corvallis Excavation"
+  whenH2Light="When Does a Corvallis Property"
+  whenH2Bold="Need Excavation?"
+  whenDesc="You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve."
+  checklistItems={checklistItems}
+  processEyebrow="Getting Started"
+  processH2Light="How Your Corvallis Excavation"
+  processH2Bold="Project Gets Started"
+  processDesc="You do not need to know the exact name of the excavation service before you call. Start by explaining what you are trying to do and what is happening on your property."
+  processSteps={processSteps}
+  whyH2Light="Why Choose D&D Land Works for"
+  whyH2Bold="Excavation in Corvallis?"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Site work and grading on a Lane County property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our Service Area"
+  areaH2Light="Excavation Services in Corvallis"
+  areaH2Bold="and Lane County"
+  areaDesc="D&D Land Works serves Corvallis, Springfield, and surrounding Lane County communities for excavation, site preparation, and septic work."
+  areaLinks={areaLinks}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  relatedEyebrow="Related Services"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need Excavation Work"
+  ctaH2Bold="in Corvallis?"
+  ctaSub="If you have a project in Corvallis and are not sure what kind of excavation you need, call D&D Land Works at 541-401-8726. Tell us what you want to do, where the work is, and what problem you are trying to solve. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

@@ -1,0 +1,163 @@
+﻿---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Overgrown Brush', desc: 'Brush and shrubs can take over a property over time. Heavy growth may make areas difficult to access or use.', href: '/contact', accent: true },
+  { num: '02', title: 'Blackberries and Invasive Plants', desc: 'Blackberry vines and other invasive plants spread quickly and can be difficult to remove. They can also hide ground conditions underneath.', href: '/contact' },
+  { num: '03', title: 'Wooded and Overgrown Lots', desc: 'Lots with heavy brush, saplings, and undergrowth may need clearing before grading, building, or other site work can begin.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Fence Lines and Property Edges', desc: 'Brush growing along fence lines or property edges can be difficult to manage. Clearing these areas can improve access and visibility.', href: '/contact' },
+  { num: '05', title: 'Slope and Hillside Growth', desc: 'Brush on slopes can hide erosion or unstable ground. Clearing the vegetation can help assess the condition of the slope below.', href: '/slope-stabilization-eugene-or' },
+  { num: '06', title: 'Pre-Construction Clearing', desc: 'Before grading, excavation, or construction can begin, overgrown areas may need to be cleared. The extent of clearing depends on the property and project.', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Blackberry vines taking over the property', desc: 'Himalayan blackberry spreads fast in the Willamette Valley. Dense thorny growth makes land unusable and hides ground conditions. We clear it off and haul it away.', link: 'Brush Clearing', href: '/brush-clearing-eugene-or' },
+  { num: '02', title: 'Overgrown lot blocking site access', desc: "Heavy brush means equipment can't reach the work area. We open the access route first, then clear the main work area.", link: 'Access Clearing', href: '/brush-clearing-eugene-or' },
+  { num: '03', title: 'Brush on slopes hiding erosion', desc: 'Dense growth on a hillside can mask gullies, soft spots, or erosion underneath. Clearing exposes the slope so conditions can be properly assessed.', link: 'Slope Clearing', href: '/slope-stabilization-eugene-or' },
+  { num: '04', title: 'Pre-construction clearing needed', desc: 'Grading and excavation crews cannot work through heavy growth. Brush clearing is usually the first step before any site prep or construction begins.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Property walk and assessment', desc: 'David walks the area and evaluates brush type, density, slope, access, and ground conditions before deciding what work is needed.', accent: true },
+  { num: '2', title: 'Open the access route', desc: 'Clearing begins with the access path so equipment can reach the work area. Vegetation is removed using methods that depend on growth size and density.' },
+  { num: '3', title: 'Main clearing', desc: 'Brush, blackberry, and overgrowth cleared from the planned area. Saplings and stumps addressed based on project scope.' },
+  { num: '4', title: 'Disposal and cleanup', desc: 'Cleared material chipped, piled, or hauled off depending on the project and property. Site left open and accessible for grading, excavation, or construction.' },
+];
+
+const faqs = [
+  {
+    question: 'How much does brush clearing cost in Eugene or Lane County, Oregon?',
+    answer: 'Brush clearing cost depends on the size of the area, density of growth, access, and what the property requires. D&D Land Works can look at the property and provide a free estimate based on the actual work needed.',
+  },
+  {
+    question: 'Can D&D Land Works clear blackberry vines?',
+    answer: 'Blackberry vines are common on Oregon properties and can be cleared as part of a brush clearing project. The extent of the work depends on how dense the growth is and what the cleared area needs to be used for.',
+  },
+  {
+    question: 'Do I need a permit to clear brush on my property in Lane County?',
+    answer: 'Permit requirements can depend on the location, amount of clearing, and how the land will be used after. Properties near waterways or protected areas may have additional requirements. Check with Lane County before beginning work.',
+  },
+  {
+    question: 'What happens to the brush after it is cleared?',
+    answer: 'Cleared brush can be chipped, piled, or hauled off depending on the project and property. We can discuss disposal options when we look at the site.',
+  },
+  {
+    question: 'Can brush clearing be done before grading or excavation?',
+    answer: 'Yes, brush clearing is often one of the first steps before site grading or excavation can begin. Removing overgrowth gives equipment room to work and lets us assess the ground conditions underneath.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Brush Clearing', 'Land Clearing', 'Site Preparation', 'Grading', 'Excavation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/brush-clearing-eugene-or/#service',
+      name: 'Brush Clearing in Eugene, Oregon',
+      serviceType: 'Brush Clearing',
+      description: 'Brush clearing and overgrowth removal in Eugene, Oregon. Blackberry clearing, pre-construction clearing, and vegetation removal for residential and rural properties in Lane County. CCB #261742.',
+      url: 'https://www.ddlandworks.com/brush-clearing-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Brush Clearing', item: 'https://www.ddlandworks.com/brush-clearing-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Brush Clearing in Eugene, Oregon | D&D Land Works"
+  pageDescription="Brush clearing contractor in Eugene, Oregon. Blackberry removal, overgrowth clearing, and pre-construction vegetation clearing for Lane County properties. CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Brush Clearing"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="Brush clearing means removing overgrown vegetation from a property. This can include shrubs, blackberry vines, saplings, tall grass, and other undergrowth that has taken over an area."
+  heroImage="/service-land-clearing.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Blackberry Removal', 'Brush Clearing', 'Lot Clearing', 'Fence Lines', 'Pre-Construction']}
+  ctxEyebrow="What to know"
+  ctxH2Light="Brush Clearing vs."
+  ctxH2Bold="Full Land Clearing"
+  ctxIntro="Brush clearing targets what is growing above ground — vines, shrubs, and undergrowth. Full land clearing may also include sapling removal and debris haul-off. We do both."
+  ctxLeft={{
+    label: 'Brush Clearing',
+    title: 'Vines, Shrubs & Undergrowth',
+    tagline: 'Removing blackberry, scrub, and overgrown brush from the target area — leaving the ground open and accessible.',
+    bullets: [
+      'Blackberry vines and invasive plants',
+      'Overgrown shrubs and fence-line brush',
+      'Slope and hillside vegetation',
+      'Pre-construction footprint clearing',
+      'Faster and lower cost than full clearing',
+    ],
+  }}
+  ctxRight={{
+    label: 'Full Land Clearing',
+    title: 'Brush + Saplings + Debris',
+    tagline: 'A more complete scope that includes brush, small trees, debris, and haul-off — leaving bare ground ready for grading.',
+    bullets: [
+      'All brush plus saplings and undergrowth',
+      'Debris removal and haul-off',
+      'Ground exposed to bare dirt',
+      'Required before grading or excavation',
+      'Often combined with site preparation',
+    ],
+  }}
+  ctxBanner="D&D handles brush clearing alone or as the first phase of a larger site prep project — clearing, then grading, then compaction."
+  inclEyebrow="What we clear"
+  inclH2Light="Brush Clearing"
+  inclH2Bold="For Every Property Type"
+  inclIntro="D&D handles brush clearing for these six property situations in Eugene and Lane County."
+  inclItems={inclItems}
+  probH2Light="Brush Clearing Situations"
+  probH2Bold="We Handle Every Day"
+  probIntro="These four situations account for most brush clearing calls from Eugene and Lane County property owners. David walks the site before quoting."
+  probImage="/service-land-clearing.webp"
+  problems={problems}
+  procH2Light="How Brush Clearing"
+  procH2Bold="Gets Done on Your Property"
+  processSteps={processSteps}
+  faqH2Light="Common Questions About"
+  faqH2Bold="Brush Clearing in Eugene"
+  faqs={faqs}
+  ctaH2Light="Get a Free"
+  ctaH2Bold="Estimate From D&D Land Works"
+  ctaSub="Contact D&D Land Works to discuss your property and project scope. We provide free on-site estimates for residential and commercial projects across Lane County, Oregon."
+/>

@@ -1,0 +1,186 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Foundation Layout', desc: 'David uses the building plans to understand where the foundation will sit, how deep it needs to be, and where the excavation area will be.', href: '/contact', accent: true },
+  { num: '02', title: 'Excavation Depth', desc: 'The plans tell us how deep the foundation needs to go. David follows the project requirements for your property instead of using one standard depth.', href: '/contact' },
+  { num: '03', title: 'Site Access', desc: 'Equipment needs a clear path to reach the foundation area. David looks at driveways, lot width, slope, and nearby structures before the work is planned.', href: '/contact' },
+  { num: '04', title: 'Existing Ground', desc: 'The shape of the land affects how the excavation is approached. David looks at slope and elevation before the dig so the work fits what your property allows.', href: '/contact' },
+  { num: '05', title: 'Underground Utilities', desc: 'Underground utility lines need to be located before digging starts. Oregon law requires an 811 locate at least two business days before excavation begins.', href: '/contact' },
+  { num: '06', title: 'Site Boundaries', desc: 'The excavation needs to stay within the planned foundation footprint. David marks the area before digging so the work stays focused on the space your foundation requires.', href: '/contact' },
+];
+
+const problems = [
+  { num: '01', title: 'Soil', desc: 'In the Willamette Valley, clay-heavy soils behave differently than looser or drier ground. The soil on your lot can affect how equipment works and how the excavation is approached.', link: 'Site Assessment', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Slope', desc: 'A sloped lot can have different elevations across the foundation area. David looks at the existing grade to understand how the excavation needs to follow your foundation plans.', link: 'Land Grading', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Elevation', desc: 'An uneven lot may require more soil to be removed in some areas than others. The plans and existing grade guide where the excavation goes and how much needs to come out.', link: 'Site Planning', href: '/contact' },
+  { num: '04', title: 'Wet Ground', desc: 'Wet weather can saturate the ground and affect equipment access and excavation timing. David checks the site conditions before the work begins.', link: 'Foundation Excavation', href: '/foundation-excavation-eugene-or' },
+  { num: '05', title: 'Site Access', desc: 'Equipment needs a clear path to the foundation area. Tight driveways, fencing, neighboring structures, or a narrow lot can all affect how the work is planned.', link: 'Contact', href: '/contact' },
+  { num: '06', title: 'Existing Structures', desc: 'Excavating near a building already on the property requires extra care. David looks at where the new foundation sits relative to any existing structures before work begins.', link: 'Contact', href: '/contact' },
+];
+
+const costItems = [
+  { title: 'Rain and Wet Ground', desc: 'Wet ground can make equipment access harder and may affect when excavation can safely move forward. Weather can also change the work schedule.' },
+  { title: 'Clay and Soft Soil', desc: 'Soil conditions can vary from one property to another. Clay or soft ground may affect digging conditions and how equipment moves around the site.' },
+  { title: 'Sloped Lots', desc: 'A sloped lot can have different elevations across the foundation area. The plans and existing grade guide how the excavation is approached.' },
+  { title: 'Tight Lots and Hard-to-Reach Spots', desc: 'Limited access can make it harder to bring equipment into the foundation area. Nearby fences, driveways, or structures may also limit working space.' },
+  { title: 'Digging Close to an Existing Building', desc: 'Excavation near an existing building requires careful planning. The available space, ground conditions, and location of the new foundation all matter.' },
+  { title: 'Deeper Digs Need Extra Care', desc: 'Deeper excavations require more planning than a shallow foundation dig. The depth, soil, access, and site conditions all affect how the work is handled.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Marking the Foundation Area', desc: 'The foundation area is marked before digging starts. This shows where the excavation needs to go and keeps the work in line with the plans.', accent: true },
+  { num: '2', title: 'Digging to the Required Depth', desc: 'Soil is removed until the planned depth is reached. The depth depends on the foundation plans and the conditions found on the property.' },
+  { num: '3', title: 'Moving the Excavated Soil', desc: 'Digging leaves soil that needs to be managed. Depending on the property and project, some soil may stay on site or need to be moved elsewhere.' },
+  { num: '4', title: 'Checking the Finished Grade', desc: 'The excavation is checked against the planned depth and ground levels. This helps leave the foundation area ready for the next stage of construction.' },
+];
+
+const faqs = [
+  {
+    question: 'How deep do footings need to be in Eugene, Oregon?',
+    answer: "In Lane County, exterior footings must be placed at least 12 inches below finished grade on undisturbed soil, per Oregon Residential Specialty Code R403.1.4. Lane County's elevation sits in the 12-inch frost protection band per ORSC Table R301.2(1). This makes 12 inches the number that governs both the code minimum and the frost protection requirement for most Eugene-area projects. Saturated Willamette Valley clay at the 12-inch depth may require over-excavation to reach firm bearing soil; a site assessment before work begins accounts for this.",
+  },
+  {
+    question: 'What type of foundation is most common in Eugene?',
+    answer: "Crawl space foundations are the most common type in Eugene and Lane County, particularly in homes built before 2000, based on local Lane County real estate data. Slab-on-grade has become standard for newer construction and ADU projects. Full basements are the least common: Oregon's mild winters reduce the seasonal demand for basement space, and west Eugene's high winter water table complicates deep excavation and foundation drainage requirements.",
+  },
+  {
+    question: 'How much does foundation excavation cost in Eugene, Oregon?',
+    answer: 'Foundation excavation in Eugene typically ranges from $2,300 to $4,100 for a standard residential job (crawl space or slab, approximately 1 to 1.5 days of work) and $3,900 to $6,800 for full basement excavation. Hourly rates with excavator and operator run $190 to $340 per hour in Lane County. These are general market estimates based on HomeBlue data for the Eugene area. Call D&D Land Works at 541-401-8726 for a free on-site estimate.',
+  },
+  {
+    question: 'Is there bedrock in Eugene, Oregon?',
+    answer: "No. The Willamette Valley floor has no significant bedrock. Unlike Central Oregon, where volcanic basalt sits near the surface and rock ripping or blasting is a real cost line, Lane County's subsurface is Willamette Valley clay and alluvial soils deposited by the Missoula Floods. The primary excavation challenge in Eugene is clay behavior during wet season, not rock. National content that includes rock cost premiums does not reflect Lane County conditions.",
+  },
+  {
+    question: 'What is Malpass clay and does it affect foundation excavation?',
+    answer: "Malpass clay is a soil series found throughout west Eugene, documented in BLM Technical Note 447. It has high shrink-swell properties and very low permeability. In wet season (October through May), saturated Malpass clay at the 12-inch code-minimum footing depth can be too soft to support footing loads adequately, requiring over-excavation to reach firm bearing soil. D&D assesses site soil conditions before finalizing any foundation excavation quote.",
+  },
+  {
+    question: 'What happens when foundation excavation is needed near an existing building?',
+    answer: 'Excavation near an existing building requires careful planning. The available space, ground conditions, and location of the new foundation all matter. David reviews the site before starting work in these situations.',
+  },
+  {
+    question: 'Are deeper foundation excavations handled differently?',
+    answer: 'Deeper excavations require more planning than a shallow foundation dig. The depth, soil, access, and site conditions all affect how the work is handled.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Foundation Excavation', 'Land Clearing', 'Site Preparation', 'Grading', 'Septic Installation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/foundation-excavation-eugene-or/#service',
+      name: 'Foundation Excavation Services in Eugene, Oregon',
+      serviceType: 'Foundation Excavation',
+      description: 'Foundation excavation for new home construction in Eugene and Lane County, Oregon. D&D Land Works excavates to the depth and dimensions your plans call for, with footing trenching, soil haul-off, and rough grading.',
+      url: 'https://www.ddlandworks.com/foundation-excavation-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Foundation Excavation', item: 'https://www.ddlandworks.com/foundation-excavation-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Foundation Excavation in Eugene, Oregon | D&D Land Works"
+  pageDescription="Foundation excavation contractor in Eugene, Oregon. Crawl space, slab, and basement excavation for new construction in Lane County. Licensed CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Foundation Excavation Services in"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="Building a home starts with getting the ground ready. In Eugene and around Lane County, every property can be a little different. David looks at the plans, access, slope, and ground conditions before digging so the foundation excavation fits your property."
+  heroImage="/service-foundation-excavation.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Crawl Space', 'Slab-on-Grade', 'Full Basement', 'Footing Trenching', 'Soil Haul-Off']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What Is"
+  ctxH2Bold="Foundation Excavation?"
+  ctxIntro="Foundation excavation means digging the ground where a new home or other building foundation will go. The plans show where the foundation needs to go and how deep the excavation needs to be. In Eugene and Lane County, every lot is a little different. The slope, soil, and access can change how the excavation is approached. A crawl-space foundation may need a different depth and footprint than a slab or basement. David looks at the plans, the ground conditions, and site access before anything is quoted. The goal is to leave the foundation area ready for the next step of your build."
+  ctxLeft={{
+    label: 'Soil & Site Conditions',
+    title: 'What Affects the Dig',
+    tagline: 'In the Willamette Valley, clay-heavy soils, slope, and elevation vary across Lane County properties and affect how excavation is planned.',
+    bullets: [
+      'Clay-heavy soils behave differently than looser or drier ground',
+      'Sloped lots have different elevations across the foundation area',
+      'Uneven lots may need more soil removed in some areas',
+      'Soil type affects how equipment works and moves on site',
+      'Existing grade guides where excavation goes and how much comes out',
+    ],
+  }}
+  ctxRight={{
+    label: 'Access & Weather',
+    title: 'Conditions We Plan Around',
+    tagline: 'Wet ground, limited site access, and existing structures can all affect timing, equipment choices, and how the work is approached.',
+    bullets: [
+      'Wet weather can saturate ground and affect excavation timing',
+      'Tight driveways, fencing, or neighbors restrict equipment',
+      'Narrow lots can limit working space and access path',
+      'Nearby structures require extra planning and care',
+      'David checks site conditions before work begins',
+    ],
+  }}
+  ctxBanner="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  inclEyebrow="What is included"
+  inclH2Light="What Needs to Happen Before"
+  inclH2Bold="the Foundation Is Dug?"
+  inclIntro="Every Eugene property is different. Soil, slope, wet ground, and site access can change how the work is planned. Before digging, we look at the plans and the actual property so the excavation fits the job."
+  inclItems={inclItems}
+  probH2Light="How Do Soil, Slope, and Wet Ground"
+  probH2Bold="Affect Foundation Excavation?"
+  probIntro="Eugene-area properties can look very different from one lot to the next. David looks at the slope, soil, access, and wet ground conditions before digging because those details can change how your excavation needs to be done."
+  probImage="/service-foundation-excavation.webp"
+  problems={problems}
+  procH2Light="How Foundation Excavation"
+  procH2Bold="Gets Done Step by Step"
+  processSteps={processSteps}
+  costH2Light="What Can Make Foundation"
+  costH2Bold="Excavation More Difficult?"
+  costIntro="Every foundation dig is different. Rain, soil, slope, access, nearby buildings, and excavation depth can change how the work is planned and carried out."
+  costItems={costItems}
+  faqH2Light="Foundation Excavation FAQs"
+  faqH2Bold="in Eugene, Oregon"
+  faqs={faqs}
+  ctaH2Light="Talk With D&D Land Works About"
+  ctaH2Bold="Your Foundation Excavation"
+  ctaSub="If you are planning a new foundation, we can talk through the excavation, site access, and ground conditions. Call 541-401-8726 to discuss your project and request a free estimate. D&D Land Works is licensed and bonded, CCB #261742."
+/>

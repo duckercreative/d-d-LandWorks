@@ -1,0 +1,186 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Water Lines', desc: 'A water line may need a trench from the water source to a home or building. A new home or rural property may need a longer water-line trench from the service point to the building.', href: '/contact', accent: true },
+  { num: '02', title: 'Sewer Lines', desc: 'A sewer line may cross part of the property. The route can depend on the building location, required grade, and where the sewer or septic system is located.', href: '/contact' },
+  { num: '03', title: 'Electrical and Power Conduit', desc: 'Underground electrical service may require a trench from the service point to the building. The route, depth, and conduit requirements depend on the project and applicable electrical requirements.', href: '/contact' },
+  { num: '04', title: 'Underground Utility Routes', desc: 'A utility route may cross yards, driveways, or other parts of a property. Existing structures and underground lines can affect where excavation takes place.', href: '/contact' },
+  { num: '05', title: 'Utility Excavation', desc: 'D&D Land Works focuses on the excavation needed to create the utility trench. The utility provider or qualified professional handles work outside the excavation scope.', href: '/contact' },
+];
+
+const problems = [
+  { num: '01', title: 'Wet Ground', desc: 'After heavy rain, some Eugene-area properties can have wet ground that makes equipment access harder. We look at the ground and site conditions before trenching so the work fits the actual property.', link: 'Site Assessment', href: '/contact' },
+  { num: '02', title: 'Sloped Property', desc: 'A sloped lot can make the utility route more involved. The trench still needs to follow the project requirements while working with the shape of the property.', link: 'Trench Planning', href: '/contact' },
+  { num: '03', title: 'Driveway Crossings', desc: 'If a utility line needs to cross a driveway, the excavation has to account for the existing surface and access to the property.', link: 'Trench Planning', href: '/contact' },
+  { num: '04', title: 'Existing Utilities', desc: 'Water, sewer, electric, or other underground lines may already be on the property. Their location needs to be considered before excavation begins.', link: 'Oregon 811', href: '/contact' },
+  { num: '05', title: 'Long Utility Runs', desc: 'On some rural Lane County properties, a new building may sit farther from existing services. A longer trench means more excavation, soil movement, and site access to consider.', link: 'Utility Trenching', href: '/utility-trenching-eugene-or' },
+  { num: '06', title: 'How D&D Approaches the Site', desc: 'David looks at the property and the planned utility route before the digging starts. The goal is to understand the ground, access, and work area so the excavation fits the actual site.', link: 'Contact', href: '/contact' },
+];
+
+const costItems = [
+  { title: 'Why a Sewer Trench Needs a Steady Slope', desc: 'A sewer line may need a planned slope so wastewater can move as intended. The required grade comes from the project plans and applicable requirements.' },
+  { title: 'Sewer Lines to a Septic System', desc: 'On some Lane County properties, a sewer trench may run to a septic system rather than a public sewer connection. The route and depth depend on the system location and approved project requirements.' },
+  { title: 'Sewer Trenching on Sloped Property', desc: 'A sloped property can change the trench route and excavation depth. Existing grades and project plans help determine how the trench is laid out.' },
+  { title: 'What D&D Handles', desc: 'D&D Land Works handles the excavation for the planned sewer route. Plumbing, septic design, connections, and other specialized work may be handled separately.' },
+];
+
+const timelineItems = [
+  { title: 'Excavated Soil', desc: 'Digging creates soil that has to be managed during the project. The amount depends on the trench length, depth, and property.' },
+  { title: 'Backfilling', desc: 'Once the trench work is ready for the next stage, the excavated area can be backfilled as required by the project.' },
+  { title: 'Restoring the Work Area', desc: 'A yard, driveway, or access area may be disturbed during trenching. The amount of restoration work depends on what was excavated.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Route and depth planning', desc: 'David reviews your utility plan, site access, and existing underground lines to plan the trench route and required depths.', accent: true },
+  { num: '2', title: 'Call Oregon 811', desc: 'Required utility locate submitted at least two business days before digging. Equipment does not arrive until all marks are confirmed.' },
+  { num: '3', title: 'Trench excavation', desc: 'Trench dug to the required depth and width along the planned route, with soil stockpiled alongside for backfill.' },
+  { num: '4', title: 'Backfill and compaction', desc: 'After the utility contractor completes their work, trench is backfilled in lifts and compacted to prevent settling.' },
+];
+
+const faqs = [
+  {
+    question: 'How deep does a water service line need to be buried in Lane County, Oregon?',
+    answer: 'Water service lines must be buried at least 24 inches below grade in Lane County — 12 inches below the local 12-inch frost depth, as required by Oregon Plumbing Specialty Code 609.1. Deeper burial may be required under driveways, parking areas, or where the inspector specifies additional depth.',
+  },
+  {
+    question: 'How deep does a sewer lateral need to be buried?',
+    answer: 'Sanitary sewer laterals need at least 12 inches of cover above the pipe in Lane County (OPSC 718.1). The pipe must also slope at least 1/4 inch per foot toward the sewer main or septic tank to ensure gravity drainage. Inadequate slope is the most common cause of sewer lateral failure.',
+  },
+  {
+    question: 'How deep does electrical conduit need to be buried in Oregon?',
+    answer: "In Oregon, PVC electrical conduit must be at least 18 inches deep in open ground and 24 inches deep under driveways or parking areas, per NEC Table 300.5 (adopted by Oregon's Electrical Specialty Code). Rigid metal conduit can be as shallow as 6 inches in both conditions. Direct-burial cable requires 24 inches.",
+  },
+  {
+    question: 'How deep does a gas line need to be buried in Oregon?',
+    answer: 'Standard residential gas piping must be at least 18 inches below grade in Oregon (Oregon Residential Specialty Code G2415.12). Lines feeding portable outdoor appliances — generators, outdoor heaters, BBQ drops — can be as shallow as 8 inches under ORSC G2415.12.1.',
+  },
+  {
+    question: 'Can water, sewer, electrical, and gas go in the same trench?',
+    answer: "Yes — joint trenching is code-permitted in Lane County with modern pipe materials. The one key separation rule: where a water line crosses above a sewer line, the bottom of the water pipe must be at least 12 inches above the top of the sewer pipe (OPSC 720.1). Individual utility companies may have additional separation specifications beyond code minimums — confirm these when you initiate the service application.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Utility Trenching', 'Land Clearing', 'Site Preparation', 'Grading', 'Septic Installation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/utility-trenching-eugene-or/#service',
+      name: 'Utility Trenching Services in Eugene, Oregon',
+      serviceType: 'Utility Trenching',
+      description: 'Utility trenching for water, sewer, and electrical conduit on Eugene and Lane County properties. D&D Land Works digs utility trenches based on your plans, site conditions, and access. Licensed and bonded CCB #261742.',
+      url: 'https://www.ddlandworks.com/utility-trenching-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Utility Trenching', item: 'https://www.ddlandworks.com/utility-trenching-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Utility Trenching in Eugene, Oregon | D&D Land Works"
+  pageDescription="Utility trenching contractor in Eugene, Oregon. Water, sewer, electrical conduit, and gas line trenching for Lane County properties. Licensed CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Utility Trenching in"
+  heroH1Bold="Eugene, Oregon"
+  heroSub="Water, sewer, or power lines may need to cross your property before a new home or building can be used. D&D Land Works digs the utility trenches needed for these projects, based on your plans, site conditions, and access."
+  heroImage="/service-utility-trenching.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Water Lines', 'Sewer Laterals', 'Electrical Conduit', 'Gas Lines', 'Joint Trenching']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What Is"
+  ctxH2Bold="Utility Trenching?"
+  ctxIntro="Adding a water line, sewer line, or electrical conduit means creating a safe underground path for the utility. On Eugene-area properties, slope, wet ground, long utility runs, and site access can affect how that trench is approached. We look at the property and planned route before excavation begins. The trench follows a planned trench route based on the project requirements. Its depth and location can change with the utility type, soil, slope, wet ground, and site access. The excavation needs to follow the plans for the project. Once the utility work is ready, backfill may be used to fill the trench as part of the project. D&D Land Works handles the excavation side, while utility design, connections, and other specialized work may be handled by the proper utility professional. Trenching time depends on the length and depth of the excavation, soil, access, existing utilities, weather, and the overall project. Wet ground or difficult access can make the work take longer."
+  ctxLeft={{
+    label: 'Single Utility',
+    title: 'One Line, One Trench',
+    tagline: 'Dedicated trench for a single utility — simpler planning, faster execution, no utility company coordination required.',
+    bullets: [
+      'Simpler utility routing and depth',
+      'No coordination between utility contractors',
+      'Faster to excavate and backfill',
+      'Required when utilities run separate routes',
+      'Standard for water-only or electrical-only installs',
+    ],
+  }}
+  ctxRight={{
+    label: 'Joint Trenching',
+    title: 'Multiple Lines, One Trench',
+    tagline: 'Water, sewer, and electrical in one trench — code-permitted in Lane County with proper separation maintained.',
+    bullets: [
+      'Less site disruption and excavation',
+      'Lower combined cost vs. separate trenches',
+      'Requires proper utility separation per code',
+      'Water-over-sewer: 12-inch minimum clearance',
+      'Coordination between utility contractors needed',
+    ],
+  }}
+  ctxBanner="D&D handles the excavation for all utility types — the utility contractors and inspectors complete their own scopes."
+  inclEyebrow="What we trench"
+  inclH2Light="What Kind of Utility"
+  inclH2Bold="Needs a Trench?"
+  inclIntro="Water, sewer, and electrical lines each have their own depth and route requirements. If your new water or power line needs a trench, the utility type and property conditions both affect how the excavation is planned."
+  inclItems={inclItems}
+  probH2Light="What Can Make Utility"
+  probH2Bold="Trenching Harder?"
+  probIntro="A utility trench can be simple on an open lot, but every property is different. Around Eugene and Lane County, rain, wet ground, slopes, driveways, and existing underground lines can change how the work is planned."
+  probImage="/service-utility-trenching.webp"
+  problems={problems}
+  procH2Light="How Utility Trenching"
+  procH2Bold="Gets Done on Your Property"
+  processSteps={processSteps}
+  costH2Light="What About Sewer Line"
+  costH2Bold="Trenching in Eugene?"
+  costIntro="Sewer trenching can be part of a new home or property project. The route, grade, soil, and final connection all affect how the excavation is planned."
+  costItems={costItems}
+  costClosing="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  timelineH2Light="What Happens After the"
+  timelineH2Bold="Utility Trench Is Dug?"
+  timelineIntro="Digging a utility trench leaves soil beside the work area. What happens next depends on the trench, the soil, the project plans, and whether the material can be used again."
+  timelineItems={timelineItems}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  ctaH2Light="Need a"
+  ctaH2Bold="Utility Trench?"
+  ctaSub="If you need a trench for a water line, sewer line, or electrical conduit, we can look at the property and talk through the excavation needed. David can review the site, access, and project requirements with you. D&D Land Works serves Eugene, Springfield, and nearby Lane County areas."
+/>

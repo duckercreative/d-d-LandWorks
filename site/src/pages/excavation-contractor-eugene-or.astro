@@ -1,0 +1,164 @@
+---
+import LocationPageTemplate from '../layouts/LocationPageTemplate.astro';
+
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR (adjacent)' },
+  { label: 'Serving', value: 'Eugene & Lane County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
+];
+
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting land ready for a building or project. May include clearing, excavation, and grading to create a workable area for the next stage.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape and level of the ground. May be needed when an area is uneven, needs a new slope, or needs to be shaped for the planned use.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, and debris from an area before grading or excavation can begin. Clearing opens the work area so the ground can be prepared.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Drainage Excavation', desc: 'Excavation to create or improve a path for water. The existing ground, slope, and drainage conditions all affect the approach.', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Septic-Related Excavation', desc: 'D&D Land Works is DEQ certified for septic installation and repair. The excavation involved depends on the property and the septic project.', href: '/septic-installation-lane-county-or' },
+  { num: '06', title: 'Trenching', desc: 'Digging a narrow path for water, sewer, electrical conduit, irrigation, drainage, or other underground work depending on the project.', href: '/trenching-services-eugene-or' },
+];
+
+const checklistItems = [
+  { title: 'Before construction begins', desc: 'A building site may need clearing, grading or excavation before any other work can start. The scope depends on what the property currently looks like.', href: '/contact' },
+  { title: 'When the ground needs reshaping', desc: 'If an area is uneven, too high, or too low for the planned use, grading or excavation can reshape it to fit the project.', href: '/contact' },
+  { title: 'When water is collecting', desc: 'Standing water around a home, driveway, or yard is often a drainage problem. Excavation can create a path to move water where it needs to go.', href: '/contact' },
+  { title: 'Before underground work', desc: 'Utility lines, irrigation, and drainage systems need a trench. The trench is sized and placed based on what will be installed and where.', href: '/contact' },
+  { title: 'For septic projects', desc: 'New septic systems and repairs may require excavation. D&D Land Works handles the digging connected with applicable septic work.', href: '/contact' },
+  { title: 'When the driveway needs work', desc: 'Gravel driveways develop ruts, washouts, and uneven areas. Grading and excavation can reshape the ground and restore the surface.', href: '/driveway-excavation-grading-eugene-or' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell us what you need', desc: 'What you want to build, repair, clear, dig, or change on your Eugene property.' },
+  { num: '2', title: 'Discuss the property', desc: 'We can talk about where the work is, what the property looks like, access, slope, drainage, existing structures, and utilities that may affect the job.' },
+  { num: '3', title: 'Understand the scope', desc: 'Once the property and project are understood, the required excavation or related site work can be discussed in plain terms.' },
+  { num: '4', title: 'Get an estimate', desc: 'D&D Land Works provides free estimates for applicable excavation and site work projects in Eugene and Lane County.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Licensed and Bonded', desc: 'D&D Land Works is licensed and bonded under Oregon CCB #261742 — a credential you can verify at the CCB license lookup before calling.', dark: false },
+  { title: 'Free estimates', desc: 'Free estimates let the property, access, soil conditions, and planned scope be reviewed before a number is given. No phone estimates built from satellite imagery.', dark: true },
+  { title: 'Foundation excavation', desc: 'Foundation digs for new homes, ADUs, and commercial structures across Eugene, Springfield, and Lane County. One crew handles clearing, grading, and the foundation box.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit, and drainage runs. 811 locates coordinated as a standard part of every trench job.', dark: false },
+  { title: 'DEQ certified septic', desc: 'D&D Land Works is DEQ certified for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
+  { label: 'Veneta', href: '/excavation-contractor-veneta-or' },
+  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
+  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+];
+
+const faqs = [
+  { question: 'Do you provide excavation in Eugene?', answer: 'Yes. D&D Land Works serves Eugene-area properties for excavation and related site work. We are based in Springfield, nearby.' },
+  { question: 'What affects excavation cost?', answer: 'Cost can depend on project size, digging, ground conditions, slope, access, clearing, material movement, drainage needs, driveway work, septic-related excavation, and overall site complexity.' },
+  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified for septic work. Septic design and approval are separate parts of the project.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in Eugene.' },
+  { question: 'Where is D&D Land Works based?', answer: 'D&D Land Works is based in Springfield, Oregon, and provides excavation services throughout Lane County.' },
+];
+
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'Shaping land to the right slope for drainage and a level build pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Digging the footprint for foundations, footings, crawl spaces, and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales, and catch basins to correct standing water on Lane County properties.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q46197' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Eugene Excavation', item: 'https://www.ddlandworks.com/excavation-contractor-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<LocationPageTemplate
+  pageTitle="Excavation Contractor in Eugene, Oregon | D&D Land Works"
+  pageDescription="D&D Land Works provides excavation, grading, site prep, drainage, trenching, land clearing, and septic-related excavation for Eugene-area properties. CCB #261742. Free estimates, call 541-401-8726."
+  schema={schema}
+  cityState="Eugene, Oregon"
+  heroH1Light="Excavation contractor"
+  heroH1Bold="in Eugene, Oregon"
+  heroSub="Foundation digging, trenching, utility excavation, drainage, and septic work from one licensed, bonded contractor. D&D Land Works serves Eugene, Springfield, and all of Lane County — David walks every site before quoting."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Eugene"
+  introEyebrow="Eugene's Excavation Contractor"
+  introH2Light="Excavation Services for"
+  introH2Bold="Homes and Businesses in Eugene"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Most construction and land projects in Eugene start with a call to an excavation contractor. D&D Land Works handles the digging, trenching, and earth-moving work that comes before a foundation gets poured, a utility gets connected, or a drainage problem gets fixed. We serve homeowners and builders across Eugene, Springfield, and Lane County."
+  introPara2="The jobs vary. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our services"
+  servicesH2Light="What does excavation"
+  servicesH2Bold="include?"
+  servicesDesc="The scope depends on foundation depth, utility runs, drainage needs and what your ground requires before anything is built."
+  services={services}
+  whenEyebrow="Eugene excavation"
+  whenH2Light="When does a Eugene"
+  whenH2Bold="property need excavation?"
+  whenDesc="You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve."
+  checklistItems={checklistItems}
+  processEyebrow="Getting started"
+  processH2Light="How your Eugene"
+  processH2Bold="excavation project gets started"
+  processDesc="You do not need to know the exact name of the excavation service before you call. Start by explaining what you are trying to do and what is happening on your property."
+  processSteps={processSteps}
+  whyH2Light="Why choose D&D Land Works"
+  whyH2Bold="for excavation in Eugene?"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Excavation and grading work on a Lane County property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our service area"
+  areaH2Light="Excavation services in Eugene"
+  areaH2Bold="and Lane County"
+  areaDesc="D&D Land Works serves Eugene, Springfield, and surrounding Lane County communities for excavation, site preparation, and septic work. Nearby areas we also cover:"
+  areaLinks={areaLinks}
+  faqH2Light="Excavation in Eugene:"
+  faqH2Bold="common questions"
+  faqs={faqs}
+  relatedEyebrow="Related services in Eugene"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk With David"
+  ctaH2Light="Need excavation work"
+  ctaH2Bold="in Eugene?"
+  ctaSub="If you have a project in Eugene and are not sure what kind of excavation you need, call D&D Land Works at 541-401-8726. Tell us what you want to do, where the work is, and what problem you are trying to solve. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

@@ -1,114 +1,108 @@
 ﻿---
-/*
-  Homepage � promoted from home-v2.astro (2026-09-22).
-*/
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
-import CTABlock from '../components/CTABlock.astro';
 
 const services = [
-  { title: 'Site Preparation', description: 'Before construction starts, the property may need clearing, digging, grading, or other ground work. We prepare the area based on what your project and property require.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14" />' },
-  { title: 'Land & Brush Clearing', description: 'Brush, overgrowth, and unwanted vegetation can make it hard to use or work on a property. We clear areas so there is open ground for excavation, grading, or construction.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2 8 9h2l-3 6h3v6h4v-6h3l-3-6h2L12 2Z" />' },
-  { title: 'Grading & Leveling', description: 'Uneven ground can cause water to collect or make an area hard to use. We shape the ground to improve the surface and help water move where it should.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Foundation Excavation', description: 'A building project may need an area dug out before the foundation work begins. We excavate the foundation area based on the plans and site conditions.', href: '/foundation-excavation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z" />' },
-  { title: 'Drainage Excavation', description: 'Water can cause problems around buildings, driveways, and other parts of a property. We dig channels and trenches where needed to help move water away from problem areas.', href: '/drainage-installation-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />' },
-  { title: 'Utility Excavation', description: 'Water, sewer, electrical, and other underground lines may need a trench before installation. We excavate the path needed for the utility work.', href: '/utility-trenching-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1-5.6 5.6L4 17l3 3 5.1-5.1a4 4 0 0 1 5.6-5.6L21 6l-3-3-3.3 3.3Z" />' },
-  { title: 'Trenching & Backfill', description: 'A trench gives underground lines and other systems a place to go. We dig the trench and can backfill the area after the work is completed, based on the project scope.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />' },
-  { title: 'Septic Installation & Repair', description: 'Septic work can require excavation around the existing system or new system area. The work depends on the property, existing system, site conditions, and applicable requirements.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Driveway Repair', description: 'Gravel driveways can develop potholes, ruts, washouts, and uneven areas. We can regrade and repair problem areas based on the condition of the driveway and ground.', href: '/driveway-excavation-grading-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />' },
-  { title: 'Slope Stabilization', description: 'Slopes can change when soil moves or water causes erosion. We can excavate, reshape, and regrade areas where ground movement needs to be addressed.', href: '/slope-stabilization-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+  { num: '01', title: 'Site Preparation', desc: 'Clearing, cut and fill, and pad prep so your builder starts on solid, level ground.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land & Brush Clearing', desc: 'Blackberry, Scotch broom, stumps and overgrowth cleared back to usable ground.', href: '/land-clearing-services-eugene-or' },
+  { num: '03', title: 'Grading & Leveling', desc: 'Uneven ground reshaped so water drains away and the area is usable again.', href: '/land-grading-services-eugene-or' },
+  { num: '04', title: 'Foundation Excavation', desc: 'Footings, basements and shop pads dug to plan and ready for forms.', href: '/foundation-excavation-eugene-or' },
+  { num: '05', title: 'Drainage Excavation', desc: 'Channels and trenches that move winter water away from homes and driveways.', href: '/drainage-installation-eugene-or' },
+  { num: '06', title: 'Utility Excavation', desc: 'Trenches dug for water, sewer, power and other underground lines.', href: '/utility-trenching-eugene-or' },
+  { num: '07', title: 'Trenching & Backfill', desc: 'Trenches dug to depth, then backfilled and compacted once the work is in.', href: '/utility-trenching-eugene-or' },
+  { num: '08', title: 'Septic Installation & Repair', desc: 'DEQ certified excavation for new systems, repairs and drainfield work.', href: '/septic-installation-lane-county-or' },
+  { num: '09', title: 'Driveway Repair', desc: 'Potholes, ruts and washouts regraded and crowned so the drive sheds water.', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '10', title: 'Slope Stabilization', desc: 'Banks and hillsides reshaped and regraded where soil moves after heavy rain.', href: '/slope-stabilization-eugene-or' },
 ];
 
-const problemCards = [
+const problems = [
   {
+    tag: 'CLEARING & PREP',
     title: 'Land That Needs Clearing or Preparation',
-    description: 'If your property is covered with brush or has uneven ground, it may need some work before you can build or improve it. We can clear the area, excavate where needed, and prepare the ground for the next step.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />',
-    href: '/site-preparation-contractor-eugene-oregon',
-    linkLabel: 'Site Preparation',
+    desc: 'If your property is covered with brush or has uneven ground, it may need some work before you can build or improve it. We can clear the area, excavate where needed, and prepare the ground for the next step.',
+    link: 'Site Preparation',
+    href: '/site-preparation-contractor-eugene-or',
   },
   {
+    tag: 'STANDING WATER',
     title: 'Standing Water and Poor Grading',
-    description: 'Water that collects around your home, driveway, or yard can make the ground muddy and hard to use. We can reshape the ground and improve the way water moves across the property.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />',
-    href: '/land-grading-services-eugene-oregon',
-    linkLabel: 'Grading & Leveling',
+    desc: 'Water that collects around your home, driveway, or yard can make the ground muddy and hard to use. We can reshape the ground and improve the way water moves across the property.',
+    link: 'Grading & Leveling',
+    href: '/land-grading-services-eugene-or',
   },
   {
+    tag: 'SLOPES & RUNOFF',
     title: 'Drainage, Erosion, and Slopes',
-    description: 'Rain and runoff can move soil, damage slopes, and create wet areas. We can excavate, reshape, and regrade problem areas based on the ground and water conditions on your property.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />',
-    href: '/drainage-installation-eugene-oregon',
-    linkLabel: 'Drainage Excavation',
+    desc: 'Rain and runoff can move soil, damage slopes, and create wet areas. We can excavate, reshape, and regrade problem areas based on the ground and water conditions on your property.',
+    link: 'Drainage Excavation',
+    href: '/drainage-installation-eugene-or',
   },
   {
+    tag: 'DRIVEWAYS',
     title: 'Damaged Driveways and Site Access',
-    description: 'Ruts, washouts, uneven ground, or poor access can make it hard to use your property. We can repair gravel driveways, reshape access areas, and do the excavation needed to improve the site.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5" />',
-    href: '/driveway-excavation-grading-eugene-oregon',
-    linkLabel: 'Driveway Repair',
-  },
-];
-
-const whyItems = [
-  {
-    title: 'Licensed & Bonded',
-    description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. Customers can verify the license through the official Oregon Construction Contractors Board lookup.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />',
-    link: { label: 'Verify CCB License ?', href: 'https://search.ccb.state.or.us/search/' },
-  },
-  {
-    title: 'Free Estimates',
-    description: 'We provide free estimates for excavation and site preparation projects. The scope can be discussed around the property, access, existing conditions, and work you need completed.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />',
-  },
-  {
-    title: 'Residential Excavation',
-    description: 'We handle excavation and site preparation for homeowners and property owners throughout Eugene, Springfield, and surrounding Lane County communities.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />',
-  },
-  {
-    title: 'Commercial Excavation',
-    description: 'We also handle excavation and site preparation for commercial customers, builders, and other property projects based on the required scope and site conditions.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18" />',
-  },
-  {
-    title: 'DEQ Certified for Septic Work',
-    description: 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />',
+    desc: 'Ruts, washouts, and uneven ground make it hard to reach your property. We regrade and repair driveways and access roads so they drain properly and hold up through the wet season.',
+    link: 'Driveway Repair',
+    href: '/driveway-excavation-grading-eugene-or',
   },
 ];
 
 const processSteps = [
-  { step: '1', title: 'Talk About the Project', detail: 'We start by talking with you about your property and what you need done. We\'ll discuss the area, access, and the type of excavation or site work you have in mind.' },
-  { step: '2', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
-  { step: '3', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
-  { step: '4', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
+  { num: '01', title: 'Talk About the Project', detail: 'We start by talking with you about your property and what you need done. We\'ll discuss the area, access, and the type of excavation or site work you have in mind.' },
+  { num: '02', title: 'Look at the Property', detail: 'We look at the ground, slope, drainage, soil, access, and nearby structures or utilities. These conditions can change how the work needs to be done.' },
+  { num: '03', title: 'Do the Site Work', detail: 'Once we know what the property needs, we complete the planned clearing, excavation, grading, trenching, drainage, or related work.' },
+  { num: '04', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
+];
+
+const reviews = [
+  {
+    name: 'Matt H.',
+    location: 'Eugene, OR',
+    text: 'David came out the same week I called. He walked the whole slope with me, explained what was causing the erosion, and gave me a clear quote. Work was done in two days, exactly as described. Would hire again without hesitation.',
+    stars: 5,
+  },
+  {
+    name: 'Linda T.',
+    location: 'Cottage Grove, OR',
+    text: 'We needed a septic system replaced on a tight lot with poor access. D&D figured it out. David was straightforward about what he could and couldn\'t do and stayed within the estimate. Great work.',
+    stars: 5,
+  },
+  {
+    name: 'Jason R.',
+    location: 'Veneta, OR',
+    text: 'Driveway had been washing out every winter for three years. One afternoon of regrading and proper crowning and we\'ve had zero issues through two wet seasons. Should have called sooner.',
+    stars: 5,
+  },
+];
+
+const serviceAreas = [
+  { label: 'Eugene', href: '/excavation-contractor-eugene-or' },
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Veneta', href: '/excavation-contractor-veneta-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+  { label: 'Oakridge', href: '/locations/oakridge' },
+  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
+  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
 ];
 
 const faqs = [
   { question: 'What Does an Excavation Contractor Do?', answer: 'An excavation contractor prepares and changes ground for construction, drainage, utilities, foundations, access, septic work, and other property projects. D&D Land Works handles excavation, clearing, grading, trenching, driveway repair, septic work, and related site preparation throughout Lane County.' },
   { question: 'Does D&D Land Works Handle Septic Excavation?', answer: 'Yes. D&D Land Works handles septic installation and repair and is DEQ certified for applicable septic work. Excavation is part of most septic projects, including system installation, repair, and access work. The scope depends on the property, existing system conditions, site access, and applicable DEQ requirements.' },
-  { question: 'What Should I Have Ready Before Requesting an Excavation Estimate?', answer: 'It helps to know the property location, the type of work you need, site preparation, grading, foundation excavation, drainage, utility trenching, driveway repair, septic, or slope work, existing access conditions, and any project timing you\'re working around. If you have plans or project documents, those can help clarify the scope, but you can start by telling us about the property and the work you need.' },
+  { question: 'What Should I Have Ready Before Requesting an Estimate?', answer: 'It helps to know the property location, the type of work you need — site preparation, grading, foundation excavation, drainage, utility trenching, driveway repair, septic, or slope work — existing access conditions, and any project timing you\'re working around. If you have plans or project documents, those can help clarify the scope, but you can start by telling us about the property and the work you need.' },
   { question: 'Is D&D Land Works Licensed and Bonded?', answer: 'Yes. D&D Land Works is licensed and bonded in Oregon under Construction Contractors Board license #261742. Customers can verify Oregon contractor licensing through the Oregon CCB\'s official license lookup before hiring an excavation contractor for their project.' },
   { question: 'Does D&D Land Works Provide Free Estimates?', answer: 'Yes. D&D Land Works provides free estimates for excavation and site preparation projects. The estimate can be based on the property\'s existing conditions, access, planned work, excavation requirements, drainage, utilities, and other factors affecting the project scope.' },
 ];
 
-const anchorAreas = [
-  { label: 'Eugene', href: '/excavation-contractor-eugene-oregon' },
-  { label: 'Springfield', href: '/excavation-contractor-springfield-oregon' },
-];
-const otherAreas = [
-  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-oregon' },
-  { label: 'Junction City', href: '/excavation-contractor-junction-city-oregon' },
-  { label: 'Creswell', href: '/excavation-contractor-creswell-oregon' },
-  { label: 'Veneta', href: '/excavation-contractor-veneta-oregon' },
-  { label: 'Florence', href: '/excavation-contractor-florence-oregon' },
-  { label: 'Oakridge', href: '/locations/oakridge' },
-  { label: 'Coburg', href: '/excavation-contractor-coburg-oregon' },
-  { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
+const recentWork = [
+  { src: '/before-lot.webp', alt: 'Before: overgrown lot', label: 'Before' },
+  { src: '/after-lot.webp', alt: 'After: cleared and graded lot', label: 'After' },
+  { src: '/before-driveway.webp', alt: 'Before: rutted gravel driveway', label: 'Before' },
+  { src: '/after-driveway.webp', alt: 'After: regraded gravel driveway', label: 'After' },
+  { src: '/project-finished-grading.webp', alt: 'Finished grading project', label: 'Grading' },
+  { src: '/project-grading-driveway.webp', alt: 'Gravel driveway repair', label: 'Driveway' },
 ];
 
 const businessSchema = {
@@ -134,326 +128,453 @@ const businessSchema = {
 ---
 
 <BaseLayout
-	title="D&D Land Works | Excavation Contractor in Lane County, Oregon"
-	description="D&D Land Works is a licensed excavation contractor serving Lane County, Oregon. Site prep, grading, land clearing, septic, and drainage. CCB #261742. DEQ Certified. Call 541-401-8726 for a free quote."
+  title="D&D Land Works | Excavation Contractor in Lane County, Oregon"
+  description="D&D Land Works is a licensed excavation contractor serving Lane County, Oregon. Site prep, grading, land clearing, septic, and drainage. CCB #261742. DEQ Certified. Call 541-401-8726 for a free estimate."
 >
-	<!-- -- Hero ----------------------------------------------------------- -->
-	<Hero
-		eyebrow="Lane County, OR"
-		headline="Licensed Excavation Contractor in Lane County, Oregon"
-		subheadline="D&D Land Works is a licensed excavation contractor serving Eugene and Lane County, Oregon. We handle site preparation, grading, land clearing, foundation excavation, drainage, utility excavation, trenching, septic work, driveway repair, and slope stabilization for residential and commercial properties."
-		primaryCta={{ label: 'Request a Free Estimate', href: '/contact' }}
-		secondaryCta={{ label: 'Our Services', href: '#services' }}
-		backgroundImages={['/project-excavation-bucket.webp', '/project-grading-driveway.webp', '/project-finished-grading.webp']}
-	/>
 
-	<!-- -- About: Owner-Operated ------------------------------------------ -->
-	<section class="relative bg-white overflow-hidden">
-		<div
-			class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl"
-			aria-hidden="true"
-		></div>
+  <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+  <Hero
+    eyebrow="Lane County, OR"
+    headline="Licensed Excavation Contractor"
+    headlineAccent="in Lane County, Oregon"
+    subheadline="D&D Land Works is a licensed excavation contractor serving Eugene and Lane County, Oregon. We handle site preparation, grading, land clearing, foundation excavation, drainage, utility excavation, trenching, septic work, driveway repair, and slope stabilization for residential and commercial properties."
+    primaryCta={{ label: 'Request a Free Estimate', href: '/contact' }}
+    secondaryCta={{ label: 'Our Services', href: '#services' }}
+    backgroundImages={['/project-excavation-bucket.webp']}
+    fullBleed={true}
+    trustItems={[
+      { label: 'CCB #261742', sub: 'Licensed & Bonded' },
+      { label: 'DEQ Certified', sub: 'Septic Systems' },
+      { label: 'Free Estimates', sub: 'On-site, no obligation' },
+      { label: 'Residential & Commercial', sub: 'Lane County, OR' },
+    ]}
+  />
 
-		<div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
-			<div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+  <!-- ─── ABOUT / OWNER ──────────────────────────────────────────────────── -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 grid gap-14 lg:grid-cols-2 lg:items-center">
 
-				<!-- Text column -->
-				<div>
-					<div class="mb-4 flex items-center gap-2">
-						<img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
-						<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-							About D&amp;D Land Works
-						</p>
-					</div>
-					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-						Owner-Operated Excavation Contractor Serving Lane County, Oregon
-					</h2>
-					<div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-						<p>David Deggelman works directly with property owners to understand what needs to be done. Every property is different. The ground, access, drainage, slope, and existing work can all change the job. We look at those conditions before deciding what work is needed.</p>
-						<p>D&amp;D Land Works helps with excavation and site work across Lane County. This includes site preparation, brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic work, driveway repair, and slope stabilization.</p>
-						<p>We work with homeowners, property owners, builders, and commercial customers in Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell, and nearby Lane County communities. If you are not sure what your property needs, we can look at the site and talk through the work with you.</p>
-					</div>
-					<a href="/about" class="btn-pill mt-8 inline-flex">
-						Learn More About D&amp;D Land Works
-						<span class="btn-pill-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-							</svg>
-						</span>
-					</a>
-				</div>
+      <!-- Text -->
+      <div>
+        <p class="section-label text-accent-dark mb-6">About D&amp;D Land Works</p>
+        <h2 class="font-display leading-[1.05] text-[clamp(2.2rem,5vw,3.5rem)] text-ink">
+          <span class="block font-light">Owner-Operated Excavation</span>
+          <span class="block font-semibold">Contractor Serving Lane County</span>
+        </h2>
+        <div class="mt-6 flex flex-col gap-4 text-ink/70 leading-relaxed">
+          <p>David Deggelman works directly with property owners to understand what needs to be done. Every property is different. The ground, access, drainage, slope, and existing work can all change the job. We look at those conditions before deciding what work is needed.</p>
+          <p>D&D Land Works helps with excavation and site work across Lane County. This includes site preparation, brush clearing, grading, foundation excavation, drainage excavation, utility excavation, trenching, septic work, driveway repair, and slope stabilization.</p>
+          <p>We work with homeowners, property owners, builders, and commercial customers in Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, Lowell, and nearby Lane County communities. If you are not sure what your property needs, we can look at the site and talk through the work with you.</p>
+        </div>
+        <ul class="mt-7 flex flex-col gap-3">
+          {[
+            'Licensed &amp; Bonded — CCB #261742',
+            'DEQ Certified for septic installation &amp; repair',
+            'Serving Eugene, Springfield, and all of Lane County',
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-ink/70">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-accent text-accent mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span set:html={item} />
+            </li>
+          ))}
+        </ul>
+        <a href="/about" class="btn btn-cta mt-8 inline-flex">Learn More About D&amp;D Land Works</a>
+      </div>
 
-				<!-- Image column -->
-				<div class="relative pb-6">
-					<img
-						src="/project-excavation-bucket.webp"
-						alt="D&D Land Works excavation contractor working in Lane County, Oregon"
-						class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
-						loading="lazy"
-					/>
-					<div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
-						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
-							</svg>
-						</span>
-						<div class="leading-tight">
-							<p class="font-display font-bold text-sm">CCB #261742</p>
-							<p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
-						</div>
-					</div>
-				</div>
+      <!-- Image -->
+      <div class="relative">
+        <img
+          src="/project-site-excavation.webp"
+          alt="David Deggelman, owner of D&D Land Works, operating excavation equipment in Lane County Oregon"
+          class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3"
+          loading="lazy"
+        />
+        <div class="absolute bottom-6 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand) bg-ink px-4 py-3 text-white shadow-lg">
+          <div class="leading-tight">
+            <p class="font-display font-semibold text-sm">CCB #261742</p>
+            <p class="font-body text-xs text-white/60">Licensed &amp; Bonded · Oregon</p>
+          </div>
+        </div>
+      </div>
 
-			</div>
-		</div>
-	</section>
+    </div>
+  </section>
 
-	<!-- -- Services ------------------------------------------------------- -->
-	<section id="services" class="relative">
-		<div class="relative bg-ink overflow-hidden">
-			<img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
-			<div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
-			<div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Our Services</p>
-				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-					Complete Excavation &amp; Site Preparation Services
-				</h2>
-				<p class="mt-5 text-slate-300 leading-relaxed">
-					Every property has different ground, access, drainage, and site needs. We help with the digging, clearing, grading, and other site work needed to move a project forward.
-				</p>
-			</div>
-		</div>
+  <!-- ─── SERVICES ──────────────────────────────────────────────────────── -->
+  <section id="services" class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 flex flex-col gap-16 md:gap-20">
 
-		<div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
-			<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-				{services.map((service) => <ServiceCard {...service} />)}
-			</div>
-		</div>
+      <!-- Top: Image + Heading -->
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <img
+          src="/project-grading-driveway.webp"
+          alt="Excavation and grading work on a Lane County Oregon property"
+          class="w-full rounded-(--radius-brand-card) object-cover aspect-video lg:aspect-[4/3]"
+          loading="lazy"
+        />
+        <div class="flex flex-col gap-5">
+          <p class="section-label text-accent-light">Our Services</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2.2rem,5vw,3.5rem)] text-white">
+            <span class="block font-light">Complete Excavation &amp;</span>
+            <span class="block font-semibold">Site Preparation Services</span>
+          </h2>
+          <p class="text-white/60 text-base leading-relaxed max-w-md">
+            Every property has different ground, access and drainage. One owner-operated crew handles the digging, clearing and grading needed to move your project forward.
+          </p>
+        </div>
+      </div>
 
-		<div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
-			<a href="/services" class="btn btn-cta inline-flex">Explore Our Services</a>
-			<a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
-		</div>
-	</section>
+      <!-- Services 2-col grid: 01–05 left, 06–10 right -->
+      <div class="grid sm:grid-cols-2 border-b border-white/[0.14]" style="grid-template-rows: repeat(5, auto); grid-auto-flow: column;">
+        {services.map((service) => (
+          <a
+            href={service.href}
+            class="group grid items-start gap-5 py-7 border-t border-white/[0.14] hover:bg-white/5 px-2 -mx-2 transition-colors"
+            style="grid-template-columns: 52px 1fr 22px;"
+          >
+            <span class="font-display font-light text-[1.75rem] leading-none text-white/40 group-hover:text-accent-light transition-colors">
+              {service.num}
+            </span>
+            <span class="flex flex-col gap-2">
+              <span class="font-display font-semibold uppercase tracking-[0.06em] text-[1.05rem] leading-tight text-white group-hover:text-accent-light transition-colors">
+                {service.title}
+              </span>
+              <span class="text-sm leading-relaxed text-white/55">{service.desc}</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 opacity-50 group-hover:opacity-100 transition-opacity shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M8 7h9v9" />
+            </svg>
+          </a>
+        ))}
+      </div>
 
-	<!-- -- Common Property Problems --------------------------------------- -->
-	<section class="bg-slate-50 border-y border-slate-200">
-		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <!-- CTA -->
+      <div class="flex justify-center">
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+      </div>
 
-			<div class="mb-12 md:mb-14 text-center">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Common Property Problems</p>
-				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-					Problems We Help Property Owners Solve
-				</h2>
-				<p class="mt-4 text-slate-600 max-w-2xl mx-auto leading-relaxed">Every property has its own challenges. You may need to clear land, fix standing water, repair a driveway, or prepare an area for construction. We look at the ground and the work needed before deciding what should be done.</p>
-			</div>
+    </div>
+  </section>
 
-			<div class="grid gap-6 sm:grid-cols-2">
-				{problemCards.map((card) => (
-					<div class="card flex gap-5 items-start">
-						<span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={card.icon} />
-						</span>
-						<div>
-							<h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
-							<p class="mt-2 text-sm text-slate-600 leading-relaxed">{card.description}</p>
-							{card.href && (
-								<a href={card.href} class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
-									{card.linkLabel}
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-									</svg>
-								</a>
-							)}
-						</div>
-					</div>
-				))}
-			</div>
+  <!-- ─── PROBLEMS WE FIX ───────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
 
-			<div class="mt-12 text-center">
-				<a href="/contact" class="btn-pill inline-flex">
-					Talk With Us About Your Property
-					<span class="btn-pill-icon">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-						</svg>
-					</span>
-				</a>
-			</div>
+      <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 mb-14">
+        <div class="max-w-2xl">
+          <p class="section-label text-accent-dark mb-6">Common Property Problems</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink">
+            <span class="block font-light">Problems we help</span>
+            <span class="block font-semibold">property owners solve.</span>
+          </h2>
+        </div>
+        <p class="text-base text-slate-600 leading-relaxed max-w-xs lg:max-w-[320px] lg:text-right">Every property is different. If your situation doesn't fit these, call David and he'll come take a look.</p>
+      </div>
 
-		</div>
-	</section>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {problems.map((card) => (
+          <div class="flex flex-col gap-4 pt-7 border-t-[3px] border-ink">
+            <span class="font-display font-semibold uppercase tracking-[0.14em] text-sm text-accent-dark">{card.tag}</span>
+            <h3 class="font-display font-semibold text-[1.75rem] leading-[1.1] text-ink">{card.title}</h3>
+            <p class="text-base leading-relaxed text-slate-600 flex-1">{card.desc}</p>
+            <a href={card.href} class="font-display font-semibold uppercase tracking-[0.1em] text-sm text-ink border-b-2 border-accent self-start pb-1 hover:text-accent transition-colors">
+              {card.link}
+            </a>
+          </div>
+        ))}
+      </div>
 
-	<!-- -- What to Expect / Process --------------------------------------- -->
-	<section class="relative bg-ink text-white overflow-hidden">
-		<div
-			class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl"
-			aria-hidden="true"
-		></div>
+    </div>
+  </section>
 
-		<div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+  <!-- ─── RECENT WORK ───────────────────────────────────────────────────── -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
 
-			<div class="mb-12 md:mb-16 text-center">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">How It Works</p>
-				<h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-					How Your Excavation Project Gets Started
-				</h2>
-				<p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-					Every property is different. We start by talking with you, looking at the site, and understanding what needs to be done. Then we plan the work around the ground, access, drainage, and other site conditions.
-				</p>
-			</div>
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
+        <div>
+          <p class="section-label text-accent-dark mb-5">Our Work</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink">
+            <span class="block font-light">Excavation &amp; Site Work</span>
+            <span class="block font-semibold">Projects in Lane County</span>
+          </h2>
+        </div>
+        <a href="/contact" class="shrink-0 btn btn-outline">Get a Free Estimate</a>
+      </div>
 
-			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-				{processSteps.map((item) => (
-					<div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-						<span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
-							{item.step}
-						</span>
-						<p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-						<p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
-					</div>
-				))}
-			</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        {recentWork.map((item) => (
+          <div class="group relative overflow-hidden rounded-(--radius-brand-card) aspect-square">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent"></div>
+            <p class="absolute bottom-3 left-3 font-display font-semibold uppercase tracking-[0.12em] text-xs text-white">{item.label}</p>
+          </div>
+        ))}
+      </div>
 
-			<div class="mt-12 text-center">
-				<a href="/contact" class="btn btn-cta">Discuss Your Project</a>
-			</div>
-		</div>
-	</section>
+    </div>
+  </section>
 
-	<!-- -- Why Choose D&D Land Works -------------------------------------- -->
-	<section class="bg-white border-b border-slate-100">
-		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-			<div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
+  <!-- ─── PROCESS ───────────────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
 
-				<!-- Left: text + feature list -->
-				<div>
-					<h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-						Why Choose <span class="text-brand-blue">D&amp;D Land Works?</span>
-					</h2>
-					<p class="mt-5 text-slate-600 leading-relaxed">
-						Every excavation project has different site conditions, access requirements, and work involved. D&amp;D Land Works keeps the scope clear and brings relevant excavation, grading, and site preparation services together for residential and commercial projects.
-					</p>
+      <div class="text-center mb-16">
+        <p class="section-label text-accent-dark mb-6">How It Works</p>
+        <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink">
+          <span class="block font-light">How Your Excavation</span>
+          <span class="block font-semibold">Project Gets Started</span>
+        </h2>
+      </div>
 
-					<ul class="mt-10 flex flex-col gap-7">
-						{whyItems.map((item) => (
-							<li class="flex items-start gap-4">
-								<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
-								</span>
-								<div>
-									<p class="font-display font-bold text-ink">{item.title}</p>
-									<p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
-									{item.link && (
-										<a
-											href={item.link.href}
-											target="_blank"
-											rel="noopener noreferrer"
-											class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline"
-										>
-											{item.link.label}
-										</a>
-									)}
-								</div>
-							</li>
-						))}
-					</ul>
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map((step) => (
+          <div>
+            <span class="font-display font-light text-[5.5rem] leading-none text-accent/25 block">{step.num}</span>
+            <hr class="border-t border-slate-200 mt-3 mb-5" />
+            <p class="font-display font-semibold uppercase tracking-[0.08em] text-sm text-ink mb-3">{step.title}</p>
+            <p class="text-sm text-slate-600 leading-relaxed">{step.detail}</p>
+          </div>
+        ))}
+      </div>
 
-					<a href="/contact" class="btn-pill mt-10 inline-flex">
-						Request a Free Estimate
-						<span class="btn-pill-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-							</svg>
-						</span>
-					</a>
-				</div>
+      <div class="mt-14 flex justify-center">
+        <a href="/contact" class="btn btn-cta">Start the Conversation</a>
+      </div>
 
-				<!-- Right: image -->
-				<div class="relative">
-					<img
-						src="/project-grading-driveway.webp"
-						alt="D&D Land Works excavation and site work in Lane County, Oregon"
-						class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
-						loading="lazy"
-					/>
-				</div>
+    </div>
+  </section>
 
-			</div>
-		</div>
-	</section>
+  <!-- ─── REVIEWS ───────────────────────────────────────────────────────── -->
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
 
-	<!-- -- Local Service Areas --------------------------------------------- -->
-	<section class="bg-slate-50">
-		<div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <p class="section-label text-accent-light mb-6">What They Say</p>
+        <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-white">
+          <span class="block font-light">What customers</span>
+          <span class="block font-semibold">say about D&amp;D Land Works.</span>
+        </h2>
+      </div>
 
-			<div class="mb-12 md:mb-14 text-center">
-				<p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
-				<h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-					Excavation Services Throughout<br class="hidden sm:block" /> Lane County, Oregon
-				</h2>
-				<p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
-					D&amp;D Land Works provides excavation, grading, and site preparation for residential and commercial properties across Lane County, including Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell.
-				</p>
-			</div>
+      <div class="grid gap-5 sm:grid-cols-3">
+        {reviews.map((review) => (
+          <div class="bg-[#212528] rounded-(--radius-brand-card) p-7 flex flex-col gap-5">
+            <span class="font-display font-bold text-[3.5rem] leading-none text-accent-light/80 select-none">&ldquo;</span>
+            <p class="text-white/70 text-sm leading-relaxed flex-1 -mt-3">{review.text}</p>
+            <div class="pt-4 border-t border-white/10">
+              <p class="font-display font-semibold text-sm text-white">{review.name}</p>
+              <p class="font-body text-xs text-white/40 mt-0.5">{review.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-			<div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+    </div>
+  </section>
 
-				<!-- Dark location list -->
-				<div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-					<a href="/excavation-contractor-eugene-oregon" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-							<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-						</svg>
-						<span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
-					</a>
-					<a href="/excavation-contractor-springfield-oregon" class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-							<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-						</svg>
-						<span class="font-display font-bold uppercase tracking-wide text-sm">Springfield, OR</span>
-					</a>
-					{otherAreas.map((area) => (
-						<a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-								<circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-							</svg>
-							<span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
-						</a>
-					))}
-				</div>
+  <!-- ─── SERVICE AREA ──────────────────────────────────────────────────── -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
 
-				<!-- Google Map -->
-				<div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
-					<iframe
-						title="D&D Land Works service area map, Lane County, Oregon"
-						src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
-						width="100%"
-						height="100%"
-						style="border:0; display:block;"
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"
-					></iframe>
-				</div>
+      <div class="grid gap-14 lg:grid-cols-2 lg:items-start">
 
-			</div>
+        <div>
+          <p class="section-label text-accent-dark mb-6">Our Service Area</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink mb-6">
+            <span class="block font-light">Excavation Services</span>
+            <span class="block font-semibold">Throughout Lane County, Oregon</span>
+          </h2>
+          <p class="text-ink/60 text-sm leading-relaxed mb-8 max-w-sm">
+            D&D Land Works provides excavation, grading, and site preparation for residential and commercial properties across Lane County, including Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            {serviceAreas.map((area) => (
+              <a
+                href={area.href}
+                class="inline-flex items-center px-4 py-2 rounded-full border border-cream-border bg-white text-sm font-display font-semibold text-ink hover:border-accent hover:text-accent transition-colors"
+              >
+                {area.label}
+              </a>
+            ))}
+          </div>
+          <a href="/service-area" class="btn btn-cta">View Full Service Area</a>
+        </div>
 
-		</div>
-	</section>
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-cream-border shadow-sm min-h-[400px]">
+          <iframe
+            title="D&D Land Works service area — Lane County, Oregon"
+            src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block; min-height:400px;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
 
-	<!-- -- FAQ ------------------------------------------------------------ -->
-	<FAQ heading="Common Questions About Excavation Services" items={faqs} />
+      </div>
 
-	<!-- -- Final CTA Block ------------------------------------------------- -->
-	<CTABlock
-		headline="Get a Free Estimate From D&D Land Works"
-		subheadline="Planning excavation, site preparation, grading, land clearing, drainage, trenching, foundation excavation, driveway repair, or septic work in Lane County? Contact D&D Land Works to discuss your property and project scope. Call 541-401-8726 or email david@ddlandworks.com."
-		ctaLabel="Request Your Free Estimate"
-		ctaHref="/contact"
-		phone="541-401-8726"
-	/>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────────────────── -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28">
+
+      <div class="grid gap-14 lg:grid-cols-[5fr_7fr] lg:items-start">
+
+        <!-- Left: heading + call info -->
+        <div class="lg:sticky lg:top-10">
+          <p class="section-label text-accent-dark mb-6">Common Questions</p>
+          <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-ink mb-8">
+            <span class="block font-light">Common Questions About</span>
+            <span class="block font-semibold">Excavation Services</span>
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-8">Have a question not listed here? Call David directly — he's happy to talk through your project.</p>
+          <a href="tel:5414018726" class="inline-flex items-center gap-3 group">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" />
+              </svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-slate-500">Call or text anytime</p>
+              <p class="font-display font-semibold text-lg text-ink group-hover:text-accent transition-colors">541-401-8726</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: accordion -->
+        <div class="flex flex-col divide-y divide-slate-200">
+          {faqs.map((item) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-semibold text-base text-ink [&::-webkit-details-marker]:hidden">
+                {item.question}
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 group-open:border-accent group-open:text-accent transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </summary>
+              <p class="mt-3 pr-12 text-sm text-slate-600 leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── ESTIMATE CTA ──────────────────────────────────────────────────── -->
+  <section class="relative bg-ink-deep text-white overflow-hidden">
+    <img
+      src="/project-finished-landscaping.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 h-full w-full object-cover object-center opacity-30"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-ink-deep/95 via-ink-deep/80 to-ink-deep/50"></div>
+
+    <div class="relative mx-auto max-w-6xl px-6 sm:px-10 py-20 md:py-28 grid gap-14 lg:grid-cols-2 lg:items-center">
+
+      <!-- Left: copy -->
+      <div>
+        <p class="section-label text-accent-light mb-6">Free Estimate</p>
+        <h2 class="font-display leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-white mb-6">
+          <span class="block font-light">Get a Free Estimate</span>
+          <span class="block font-semibold">From D&amp;D Land Works</span>
+        </h2>
+        <p class="text-white/65 text-sm leading-relaxed mb-8 max-w-sm">
+          Planning excavation, site preparation, grading, land clearing, drainage, trenching, foundation excavation, driveway repair, or septic work in Lane County? Contact D&D Land Works to discuss your property and project scope.
+        </p>
+        <div class="flex flex-col gap-3">
+          <a href="tel:5414018726" class="flex items-center gap-3 group">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" />
+              </svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-white/50">Call or text</p>
+              <p class="font-display font-semibold text-lg text-white group-hover:text-accent-light transition-colors">541-401-8726</p>
+            </div>
+          </a>
+          <a href="mailto:david@ddlandworks.com" class="flex items-center gap-3 group">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </span>
+            <div>
+              <p class="font-body text-xs text-white/50">Email</p>
+              <p class="font-display font-semibold text-sm text-white group-hover:text-accent-light transition-colors">david@ddlandworks.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form card -->
+      <div class="bg-white rounded-(--radius-brand-card) p-8 shadow-2xl">
+        <p class="font-display font-semibold uppercase tracking-[0.12em] text-sm text-ink mb-6">Request a Free Estimate</p>
+        <form action="/contact" method="GET" class="flex flex-col gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="name" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name"
+                class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="phone" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="541-xxx-xxxx"
+                class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="town" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Town / Area</label>
+            <input type="text" id="town" name="town" placeholder="Eugene, Cottage Grove, etc."
+              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="project" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Project Type</label>
+            <select id="project" name="project"
+              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors">
+              <option value="">Select a service…</option>
+              <option>Site Preparation</option>
+              <option>Land Clearing</option>
+              <option>Grading & Drainage</option>
+              <option>Foundation Excavation</option>
+              <option>Septic Installation or Repair</option>
+              <option>Utility Trenching</option>
+              <option>Driveway Repair</option>
+              <option>Slope Stabilization</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="description" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Tell us about the property</label>
+            <textarea id="description" name="description" rows="3" placeholder="What's going on, what you need done, any access notes…"
+              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="btn btn-cta btn-lg w-full mt-1">Send My Request</button>
+          <p class="text-center text-xs text-slate-400">No spam. David will call you back directly.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
 </BaseLayout>
+
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

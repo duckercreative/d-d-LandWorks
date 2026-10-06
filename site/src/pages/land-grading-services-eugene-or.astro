@@ -1,0 +1,189 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Lot Grading and Leveling', desc: 'Lot grading shapes the ground across a property or the part you plan to use. It can smooth uneven areas, adjust elevations, and create a better starting point for construction, yards, or other site work.', href: '/land-grading-services-eugene-or', accent: true },
+  { num: '02', title: 'Building Pad Grading', desc: 'A building pad needs a suitable grade before construction can move forward. We shape the planned building area based on the existing ground, site elevations, access, and the requirements of your project.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Yard Grading', desc: 'Low spots, uneven ground, and poor surface flow can make a yard difficult to use. Yard grading reshapes the surface where needed and can help direct runoff based on the conditions of your property.', href: '/land-grading-services-eugene-or' },
+  { num: '04', title: 'Drainage Grading', desc: 'Grading can help control where surface water moves across a property. We shape the ground to create the needed slope and fall, while considering existing elevations, soil, drainage needs, and site conditions.', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Driveway and Access Grading', desc: 'A driveway or access area needs a practical grade for its intended use. We can shape and level the ground as part of site preparation, considering slope, existing conditions, drainage, and how vehicles will use the area.', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '06', title: 'Residential and Commercial Grading', desc: 'Grading needs vary between a home lot, commercial property, and larger development site. We provide grading and leveling for residential and commercial projects, with the scope based on the property\'s conditions and planned use.', href: '/site-preparation-contractor-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Wet Weather and Ground Conditions', desc: 'Rain can leave soil soft and harder to work. Wet ground may affect equipment access, material movement, and grading timing. We check the actual site conditions before deciding how the work should move forward.', link: 'Land Grading', href: '/land-grading-services-eugene-or' },
+  { num: '02', title: 'Soil Conditions', desc: 'Soil affects how easily the ground can be shaped and moved. Different soil conditions may change the grading approach, especially when the property needs leveling, filling, or material moved to another area.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+  { num: '03', title: 'Sloped Properties', desc: 'A sloped lot may need more careful planning than a fairly even property. Existing elevations help determine where material needs to be cut, where it may be placed, and what final grade the project requires.', link: 'Slope Stabilization', href: '/slope-stabilization-eugene-or' },
+  { num: '04', title: 'Drainage and Surface Water', desc: 'Water flow matters when shaping a property. Grading can help direct surface runoff, but the right approach depends on the existing drainage, low areas, slope, and other conditions around the property.', link: 'Drainage Installation', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Site Access', desc: 'Equipment needs a practical way to reach the areas being graded. Tight driveways, structures, utilities, or limited access can affect how material is moved and how the grading work is planned.', link: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
+  { num: '06', title: 'Lane County Property Conditions', desc: 'Properties across Lane County can have different terrain, drainage, soil, and access conditions. We look at the property itself rather than assuming every Eugene-area site needs the same grading approach.', link: 'Service Area', href: '/service-area' },
+];
+
+const costItems = [
+  { title: 'Licensed and Bonded', desc: 'Check that the contractor is licensed and bonded. D&D Land Works is licensed and bonded through the Oregon Construction Contractors Board under CCB #261742.' },
+  { title: 'Site Assessment', desc: "A proper estimate should consider the property's slope, existing grade, soil, drainage, and access. These conditions help define the grading scope before work begins." },
+  { title: 'Clear Project Scope', desc: 'Ask what the estimate includes. Material movement, grading, leveling, related site preparation, and other work should be clear so you know what is part of the project.' },
+  { title: 'Ground Conditions', desc: 'Ask how wet ground, soil conditions, slope, and weather may affect the work. Eugene properties can have different site conditions, so the plan should fit your property.' },
+  { title: 'Permit Requirements', desc: 'Ask whether your project may require permits or other local requirements. Permit needs can vary based on the property, project scope, and location.' },
+  { title: 'Related Site Work', desc: 'Grading may connect with drainage, excavation, driveway preparation, or other site work. A good contractor should explain when grading is only one part of the project.' },
+];
+
+const timelineItems = [
+  { title: '1. Size and Amount of Grading', desc: 'A small yard grading project may involve less work than preparing a larger building area. Grading can involve cutting high areas, filling low areas, or moving soil — the amount of material and area both affect how long the work takes.' },
+  { title: '2. Soil, Slope, and Ground Conditions', desc: 'Soil conditions can change how easily material can be moved and shaped. Steep slopes and larger changes in elevation can require more work, and wet ground may affect when grading can be completed.' },
+  { title: '3. Site Access', desc: 'Equipment needs room to reach the areas being graded. Narrow access, structures, utilities, or other site limits can affect how the work is planned and how efficiently material can be moved.' },
+  { title: '4. Weather and Related Work', desc: 'Rain and wet ground can affect grading conditions in Eugene and Lane County. Additional work such as drainage, excavation, or site preparation may also add time when included in the project scope.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Site and plan review', desc: 'David reviews your plans, existing grades, drainage patterns, and site conditions before any grading begins.', accent: true },
+  { num: '2', title: 'Call 811 utility locates', desc: 'Oregon law requires utility locates before any excavation or grading. We submit the request and confirm marks before equipment arrives.' },
+  { num: '3', title: 'Cut and fill grading', desc: 'Soil is cut from high areas and moved into low areas to bring the site to the planned elevations.' },
+  { num: '4', title: 'Finish grade and inspection', desc: 'Final surface is graded to drainage fall, compacted, and checked against the plan before handoff.' },
+];
+
+const faqs = [
+  {
+    question: 'Do I need a permit to grade my property in Lane County?',
+    answer: "Yes, if your project moves more than 50 cubic yards of earth or creates a cut or fill slope steeper than 2:1. Contact Lane County Land Management Division at 3050 N. Delta Hwy, Eugene (M–F 9am–3pm). Foundation excavation under an active building permit is generally exempt; driveway and landscaping grading is not. We handle permit guidance for Lane County projects — call before you start and we'll tell you what applies to your project.",
+  },
+  {
+    question: 'How much does land grading cost in Eugene, Oregon?',
+    answer: 'National cost ranges are $0.08–$2.00 per square foot for yard grading, $1,000–$5,125 for driveway grading, and $1,000–$6,700 for foundation prep. Eugene area projects vary based on lot size, soil type, slope, and whether fill material is needed. Malpass clay can add time on some sites, and we flag that during the site visit. Call 541-401-8726 for a free, itemized estimate.',
+  },
+  {
+    question: 'What is the difference between rough grading and finish grading?',
+    answer: 'Rough grading is the bulk earthmoving stage: we set the building pad elevation, strip topsoil, and rough in drainage falls, typically within ±0.1 foot of plan. Finish grading follows after underground utilities are installed. It brings the surface to ±0.5 inch precision and prepares the site for paving, planting, or final inspection. D&D handles both stages for new construction projects in Lane County.',
+  },
+  {
+    question: 'Do you call Oregon 811 before starting grading work?',
+    answer: 'Yes, always. Oregon law requires contractors to notify Oregon 811 (the Utility Notification Center) at least two business days before any excavation or grading begins. We submit the locate request before equipment arrives on your property. Utility companies mark underground lines, and we check that all marks are present before we start. Required by Oregon OSHA; standard on every D&D job.',
+  },
+  {
+    question: 'Can grading fix standing water in my Eugene yard?',
+    answer: "Usually yes. Water pooling in Willamette Valley yards is most often caused by flat or reverse-sloped grade, especially where Malpass clay slows drainage. We regrade to move water away from your home and toward proper outlets. On sites where slope correction alone won't drain fast enough through heavy clay, we recommend combining regrading with a French drain or swale. A free site visit will tell you which approach your property needs.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service land grading, lot leveling, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Land Grading', 'Lot Leveling', 'Building Pad Grading', 'Drainage Grading', 'Gravel Driveway Grading', 'Site Preparation'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification — Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/land-grading-services-eugene-or/#service',
+      name: 'Land Grading and Leveling Services in Eugene, Oregon',
+      serviceType: 'Land Grading',
+      description: 'Licensed land grading contractor in Eugene and Lane County, Oregon. Lot leveling, building pad grading, drainage grading, slope correction, and gravel driveway regrading. CCB #261742.',
+      url: 'https://www.ddlandworks.com/land-grading-services-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Land Grading', item: 'https://www.ddlandworks.com/land-grading-services-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Land Grading Services in Eugene, Oregon | D&D Land Works"
+  pageDescription="Land grading and lot leveling contractor in Eugene, Oregon. Building pad grading, yard leveling, drainage grading, and driveway regrading. Licensed CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Land Grading and Leveling"
+  heroH1Bold="Services in Eugene, Oregon"
+  heroSub="D&D Land Works helps homeowners and property owners shape uneven or sloped ground, improve drainage, and prepare land for yards, driveways, buildings, and other projects. David Deggelman handles estimates directly and looks at the property before deciding what grading work is needed."
+  heroImage="/service-grading-leveling.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['Lot Leveling', 'Building Pad', 'Drainage Grading', 'Yard Grading', 'Driveway Regrading']}
+  ctxEyebrow="What to know"
+  ctxH2Light="Is Your Land Uneven,"
+  ctxH2Bold="Sloped, or Holding Water?"
+  ctxIntro="Every property is different. You may have a sloped yard, low spots where water collects, or ground that is not ready for a home, driveway, shop, or other project. Before we start, we look at the ground, the slope, drainage, soil, and access to the property. We also look at what you want to do with the land. This helps us understand what needs to be moved, leveled, or shaped. We can then explain the work you may need and give you a clear estimate for your project."
+  ctxLeft={{
+    label: 'Rough Grading',
+    title: 'Bulk Earthmoving',
+    tagline: 'The heavy lifting: cut and fill, topsoil stripping, pad elevation, and drainage fall — within ±0.1 foot of plan.',
+    bullets: [
+      'Cut high spots, fill low spots',
+      'Set building pad elevation',
+      'Rough drainage slope and fall',
+      'Topsoil strip and stockpile',
+      'Happens before underground utilities',
+    ],
+  }}
+  ctxRight={{
+    label: 'Finish Grading',
+    title: 'Precision Surface',
+    tagline: 'After utilities are in — final grade to ±0.5 inch, ready for paving, planting, or inspection.',
+    bullets: [
+      'Precise surface to plan elevation',
+      'Final drainage pitch from structure',
+      'Ready for paving or landscaping',
+      'Follows underground utility install',
+      'Inspection-ready condition',
+    ],
+  }}
+  ctxBanner="D&D Land Works handles both rough and finish grading — in sequence, on the same project."
+  inclEyebrow="What is included"
+  inclH2Light="Types of Land Grading"
+  inclH2Bold="We Provide"
+  inclIntro="Land grading changes the shape and level of the ground for a specific use. The work depends on your property, existing slope, soil, access, drainage, and what you plan to build or use the space for."
+  inclItems={inclItems}
+  probH2Light="Eugene and Lane County Conditions"
+  probH2Bold="That Can Affect Grading"
+  probIntro="Grading can look different from one property to another. In Eugene and Lane County, rain, wet ground, soil, slopes, drainage, and site access can all affect how we plan the work and shape the final grade."
+  probImage="/service-grading-leveling.webp"
+  problems={problems}
+  procH2Light="How Your Grading"
+  procH2Bold="Project Gets Done"
+  processSteps={processSteps}
+  costH2Light="What to Check Before"
+  costH2Bold="Hiring a Grading Contractor"
+  costIntro="Before hiring a grading contractor in Eugene, ask a few practical questions. You want to know who will assess the site, what the estimate includes, how ground conditions may affect the work, and whether permits or related site work are needed."
+  costItems={costItems}
+  timelineH2Light="How Long Does Land"
+  timelineH2Bold="Grading Take?"
+  timelineIntro="The time needed for land grading depends on the size of the property, grading scope, existing slope, soil and ground conditions, site access, weather, and the amount of material that needs to be moved. Related site preparation can also affect the schedule."
+  timelineItems={timelineItems}
+  faqH2Light="Land Grading FAQs"
+  faqH2Bold="in Eugene, Oregon"
+  faqs={faqs}
+  ctaH2Light="Discuss Your Property"
+  ctaH2Bold="Grading Needs"
+  ctaSub="Every property has different grading needs. Tell us what you want to use the land for, and we can look at the existing slope, grade, drainage, access, and ground conditions. We provide free estimates for residential and commercial grading projects in Eugene and Lane County."
+/>

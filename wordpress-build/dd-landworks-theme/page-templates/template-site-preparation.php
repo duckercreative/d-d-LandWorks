@@ -2,7 +2,7 @@
 /**
  * Template Name: Site Preparation Page
  *
- * 1:1 port of site/src/pages/site-preparation-contractor-eugene-oregon.astro
+ * 1:1 port of site/src/pages/site-preparation-contractor-eugene-or.astro
  * All section text is editable from WP Admin via the
  * "Site Preparation — Page Content" meta box (inc/meta-site-preparation.php).
  */
@@ -92,7 +92,7 @@ $site_prep_items = array(
 	array(
 		'title' => sp_get( $pid, 'sp_svc_2_title' ),
 		'desc'  => sp_get( $pid, 'sp_svc_2_desc' ),
-		'href'  => home_url( '/site-preparation-contractor-eugene-oregon' ),
+		'href'  => home_url( '/site-preparation-contractor-eugene-or' ),
 		'icon'  => 'M9 20 4 18V4l5 2 6-2 5 2v14l-5-2-6 2Z M9 4v14M15 6v14',
 	),
 	array(
@@ -106,6 +106,12 @@ $site_prep_items = array(
 		'desc'  => sp_get( $pid, 'sp_svc_4_desc' ),
 		'href'  => home_url( '/services/grading-leveling' ),
 		'icon'  => 'M3 20 9 8l4 6 2-3 6 9H3Z',
+	),
+	array(
+		'title' => sp_get( $pid, 'sp_svc_5_title' ),
+		'desc'  => sp_get( $pid, 'sp_svc_5_desc' ),
+		'href'  => home_url( '/services/grading-leveling' ),
+		'icon'  => 'M4 6h16M4 10h16M4 14h8M4 18h8',
 	),
 );
 ?>
@@ -127,7 +133,7 @@ $site_prep_items = array(
 						<path stroke-linecap="round" stroke-linejoin="round" d="<?php echo esc_attr( $item['icon'] ); ?>"/>
 					</svg>
 				</span>
-				<h3 class="service-card__title"><?php echo esc_html( $item['title'] ); ?></h3>
+				<h3 class="service-card__title" style="font-size:1.125rem;"><?php echo esc_html( $item['title'] ); ?></h3>
 				<p class="service-card__desc"><?php echo esc_html( $item['desc'] ); ?></p>
 				<span class="service-card__arrow">Learn more &#8594;</span>
 			</a>
@@ -136,7 +142,7 @@ $site_prep_items = array(
 </div>
 <div style="text-align:center;padding:1rem 1.25rem 5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
 	<a href="<?php echo esc_url( home_url( '/services' ) ); ?>" class="btn btn-cta">Explore Our Services</a>
-	<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline-dark">Request a Free Estimate</a>
+	<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline">Request a Free Estimate</a>
 </div>
 
 <!-- ── 4. PROBLEMS WE HELP ADDRESS ───────────────────────────────────────────── -->
@@ -146,7 +152,7 @@ $problem_cards = array(
 		'title'      => sp_get( $pid, 'sp_prob_1_title' ),
 		'desc'       => sp_get( $pid, 'sp_prob_1_desc' ),
 		'icon'       => 'M3 20 9 8l4 6 2-3 6 9H3Z',
-		'href'       => home_url( '/site-preparation-contractor-eugene-oregon' ),
+		'href'       => home_url( '/site-preparation-contractor-eugene-or' ),
 		'link_label' => 'Site Preparation',
 	),
 	array(
@@ -279,7 +285,7 @@ $why_items = array(
 				<ul class="why-list">
 					<?php foreach ( $why_items as $item ) : ?>
 						<li class="why-list__item">
-							<span class="why-list__icon">
+							<span class="why-list__icon" style="display:flex;height:2.5rem;width:2.5rem;border-radius:999px;background:rgba(29,111,196,0.12);color:var(--color-brand-blue);align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="height:1.25rem;width:1.25rem;">
 									<path stroke-linecap="round" stroke-linejoin="round" d="<?php echo esc_attr( $item['icon'] ); ?>"/>
 								</svg>
@@ -306,7 +312,7 @@ $why_items = array(
 					src="<?php echo esc_url( ddlw_img( 'project-grading-driveway.webp' ) ); ?>"
 					alt="D&D Land Works site preparation work in Lane County, Oregon"
 					loading="lazy"
-					style="width:100%;border-radius:var(--radius-brand-card);object-fit:cover;aspect-ratio:3/4;box-shadow:0 20px 40px rgba(0,0,0,.15);"
+					style="width:100%;border-radius:var(--radius-brand-card);object-fit:cover;aspect-ratio:4/5;min-height:28rem;box-shadow:0 20px 40px rgba(0,0,0,.15);"
 				/>
 			</div>
 		</div>
@@ -316,15 +322,15 @@ $why_items = array(
 <!-- ── 7. SERVICE AREAS ───────────────────────────────────────────────────────── -->
 <?php
 $service_areas = array(
-	array( 'label' => 'Springfield',   'href' => home_url( '/locations/springfield' ) ),
-	array( 'label' => 'Cottage Grove', 'href' => home_url( '/locations/cottage-grove' ) ),
-	array( 'label' => 'Junction City', 'href' => home_url( '/locations/junction-city' ) ),
-	array( 'label' => 'Creswell',      'href' => home_url( '/locations/creswell' ) ),
-	array( 'label' => 'Veneta',        'href' => home_url( '/locations/veneta' ) ),
-	array( 'label' => 'Florence',      'href' => home_url( '/locations/florence' ) ),
-	array( 'label' => 'Oakridge',      'href' => home_url( '/locations/oakridge' ) ),
-	array( 'label' => 'Coburg',        'href' => home_url( '/locations/coburg' ) ),
-	array( 'label' => 'Lowell',        'href' => home_url( '/locations/lowell' ) ),
+	array( 'label' => 'Springfield',   'href' => ddlw_city_url( 'springfield' ) ),
+	array( 'label' => 'Cottage Grove', 'href' => ddlw_city_url( 'cottage-grove' ) ),
+	array( 'label' => 'Junction City', 'href' => ddlw_city_url( 'junction-city' ) ),
+	array( 'label' => 'Creswell',      'href' => ddlw_city_url( 'creswell' ) ),
+	array( 'label' => 'Veneta',        'href' => ddlw_city_url( 'veneta' ) ),
+	array( 'label' => 'Florence',      'href' => ddlw_city_url( 'florence' ) ),
+	array( 'label' => 'Oakridge',      'href' => ddlw_city_url( 'oakridge' ) ),
+	array( 'label' => 'Coburg',        'href' => ddlw_city_url( 'coburg' ) ),
+	array( 'label' => 'Lowell',        'href' => ddlw_city_url( 'lowell' ) ),
 );
 $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="height:1rem;width:1rem;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z"/><circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none"/></svg>';
 ?>
@@ -337,7 +343,7 @@ $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 		</div>
 		<div class="areas-grid">
 			<div class="areas-list">
-				<a href="<?php echo esc_url( home_url( '/locations/eugene' ) ); ?>" class="areas-list__primary">
+				<a href="<?php echo esc_url( ddlw_city_url( 'eugene' ) ); ?>" class="areas-list__primary">
 					<?php echo wp_kses_post( $pin_icon ); ?>
 					<span>Eugene, OR</span>
 				</a>
@@ -361,7 +367,31 @@ $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 	</div>
 </section>
 
-<!-- ── 8. FAQ ─────────────────────────────────────────────────────────────────── -->
+<!-- ── 8. RELATED SERVICES ────────────────────────────────────────────────────── -->
+<?php
+$related_services = array(
+	array( 'title' => 'Land Clearing',       'desc' => 'Removing brush, trees, and debris to open up usable land before site work begins.',        'href' => home_url( '/services/land-clearing' ) ),
+	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and building.',                           'href' => home_url( '/services/grading-leveling' ) ),
+	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging and leveling for footings and foundations.',                                     'href' => home_url( '/services/foundation-excavation' ) ),
+	array( 'title' => 'Drainage Excavation',  'desc' => 'Excavation and grading to correct standing water and poor drainage.',                     'href' => home_url( '/services/drainage-excavation' ) ),
+);
+?>
+<section style="background:#fff;border-top:1px solid var(--color-slate-100);padding-block:5rem;">
+	<div class="container">
+		<h2 class="section-title" style="text-align:center;margin-bottom:3rem;"><?php echo esc_html( sp_get( $pid, 'sp_related_heading' ) ); ?></h2>
+		<div class="service-card-grid">
+			<?php foreach ( $related_services as $item ) : ?>
+				<a href="<?php echo esc_url( $item['href'] ); ?>" class="service-card service-card--no-icon">
+					<h3 class="service-card__title"><?php echo wp_kses_post( $item['title'] ); ?></h3>
+					<p class="service-card__desc"><?php echo esc_html( $item['desc'] ); ?></p>
+					<span class="service-card__arrow">Learn More &#8594;</span>
+				</a>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+
+<!-- ── 9. FAQ ─────────────────────────────────────────────────────────────────── -->
 <?php
 $faqs = array(
 	array(
@@ -391,33 +421,9 @@ $faqs = array(
 );
 
 echo ddlw_faq( array( 'heading' => sp_get( $pid, 'sp_faq_heading' ) ), implode( '', array_map( function( $item ) {
-	return '[faq_item q="' . esc_attr( $item['q'] ) . '"]' . esc_html( $item['a'] ) . '[/faq_item]';
+	return '[faq_item question="' . esc_attr( $item['q'] ) . '"]' . esc_html( $item['a'] ) . '[/faq_item]';
 }, $faqs ) ) );
 ?>
-
-<!-- ── 9. RELATED SERVICES ────────────────────────────────────────────────────── -->
-<?php
-$related_services = array(
-	array( 'title' => 'Land Clearing',       'desc' => 'Removing brush, trees, and debris to open up usable land before site work begins.',        'href' => home_url( '/services/land-clearing' ) ),
-	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and building.',                           'href' => home_url( '/services/grading-leveling' ) ),
-	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging and leveling for footings and foundations.',                                     'href' => home_url( '/services/foundation-excavation' ) ),
-	array( 'title' => 'Drainage Excavation',  'desc' => 'Excavation and grading to correct standing water and poor drainage.',                     'href' => home_url( '/services/drainage-excavation' ) ),
-);
-?>
-<section style="background:#fff;border-top:1px solid var(--color-slate-100);padding-block:5rem;">
-	<div class="container">
-		<h2 class="section-title" style="text-align:center;margin-bottom:3rem;"><?php echo esc_html( sp_get( $pid, 'sp_related_heading' ) ); ?></h2>
-		<div class="service-card-grid">
-			<?php foreach ( $related_services as $item ) : ?>
-				<a href="<?php echo esc_url( $item['href'] ); ?>" class="service-card service-card--no-icon">
-					<h3 class="service-card__title"><?php echo wp_kses_post( $item['title'] ); ?></h3>
-					<p class="service-card__desc"><?php echo esc_html( $item['desc'] ); ?></p>
-					<span class="service-card__arrow">Learn More &#8594;</span>
-				</a>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</section>
 
 <!-- ── 10. CTA BLOCK ──────────────────────────────────────────────────────────── -->
 <?php

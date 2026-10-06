@@ -1,0 +1,162 @@
+﻿---
+import LocationPageTemplate from '../layouts/LocationPageTemplate.astro';
+
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR' },
+  { label: 'Serving', value: 'Albany & Linn County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
+];
+
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting the ground ready for the next part of a project. May include clearing, digging, grading, or moving soil depending on the property.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape and slope of the ground for a building area, driveway, drainage, or other planned use.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, debris, and overgrown areas from a property before excavation or grading can begin.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Trenching', desc: 'Digging a narrow path for utility work, drainage, water lines, or another project that needs something below the surface.', href: '/trenching-services-eugene-or' },
+  { num: '05', title: 'Drainage Work', desc: 'When water collects where it should not, excavation or grading may create a better path for it to move.', href: '/drainage-installation-eugene-or' },
+  { num: '06', title: 'Residential Excavation', desc: 'Excavation can be needed for building-site prep, grading, clearing, trenching, or drainage — residential or larger property.', href: '/excavation-contractor-eugene-or' },
+];
+
+const checklistItems = [
+  { title: 'Before construction begins', desc: 'A building site may need clearing, grading or excavation before any other work can start.', href: '/contact' },
+  { title: 'When the ground is uneven', desc: 'Areas that are too high, too low or uneven for the planned use get regraded to fit the project.', href: '/contact' },
+  { title: 'When water is collecting', desc: 'Standing water around home, driveway or yard is often a drainage issue. Excavation may create a path to move water.', href: '/contact' },
+  { title: 'When land needs clearing', desc: 'Brush, trees and overgrowth need to be removed before excavation or grading can begin.', href: '/contact' },
+  { title: 'When trenching is needed', desc: 'If your project requires a path below ground for utilities, drainage, or water lines, trenching is the excavation type used.', href: '/contact' },
+  { title: 'For a residential or larger property', desc: 'A home lot in Albany can have different needs from a larger property outside the city. Existing structures, slopes, access, and size all affect scope.', href: '/contact' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell us what you need', desc: 'What you want to build, repair, clear or dig on your Albany property.' },
+  { num: '2', title: 'Discuss the property', desc: 'Location, access, slope, drainage, structures and utilities that affect the job.' },
+  { num: '3', title: 'Understand the scope', desc: 'The excavation and site work explained in plain terms.' },
+  { num: '4', title: 'Get your estimate', desc: 'A free estimate once the property and project are understood.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Free estimates', desc: 'Property, access, soil and scope reviewed on site. No phone quotes off satellite photos.', dark: false },
+  { title: 'Foundation excavation', desc: 'New homes, ADUs and commercial builds. One crew for clearing, grading and the foundation.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit and drains, with 811 locates on every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'Tank, distribution box and drainfield excavation for applicable properties in the service area.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/excavation-contractor-eugene-or' },
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Corvallis', href: '/excavation-contractor-corvallis-or' },
+  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
+  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+];
+
+const faqs = [
+  { question: 'Do you serve the Albany area?', answer: 'Yes. Albany is included in the D&D Land Works service area. D&D is based in Springfield, Oregon. Call 541-401-8726 to discuss your property location and project.' },
+  { question: 'What does an excavation contractor do?', answer: 'An excavation contractor digs and moves soil for property and construction work. That may include site preparation, grading, land clearing, trenching, drainage-related excavation, and other digging work.' },
+  { question: 'Can you prepare my property near Albany?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on what your property needs and what you plan to do with it.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site preparation projects in Albany.' },
+  { question: 'What affects excavation cost near Albany?', answer: 'Project size, depth, ground conditions, access, clearing, grading, trenching, drainage, material movement, and project complexity can all affect cost.' },
+];
+
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading and compaction for raw lots.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'The right slope for drainage and a level pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Footprints, footings, crawl spaces and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales and catch basins.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Albany', sameAs: 'https://www.wikidata.org/wiki/Q466948' },
+        { '@type': 'AdministrativeArea', name: 'Linn County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Albany', item: 'https://www.ddlandworks.com/excavation-contractor-albany-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<LocationPageTemplate
+  pageTitle="Excavation Contractor in Albany, OR | D&D Land Works"
+  pageDescription="D&D Land Works provides excavation, land clearing, grading, trenching, drainage, and site preparation in Albany, OR. CCB #261742. Free estimates, call 541-401-8726."
+  schema={schema}
+  cityState="Albany, Oregon"
+  heroH1Light="Excavation contractor"
+  heroH1Bold="in Albany, Oregon"
+  heroSub="D&D Land Works provides excavation and related site work for property projects in the Albany area. Whether it is a residential lot or a larger piece of land, the right work depends on your site and what you plan to do."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Albany"
+  introEyebrow="Albany's excavation contractor"
+  introH2Light="Excavation and site work"
+  introH2Bold="in Albany, Oregon"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Excavation is the digging and moving of soil needed to prepare or change a property. You may need it for a building area, a driveway, drainage work, a trench, or general site preparation."
+  introPara2="Albany sits in the Willamette Valley with a mix of city residential properties and larger agricultural and wooded land around the area. A home site may need one type of work; a larger property outside the city may need clearing, grading, or more ground preparation before anything can begin."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our services"
+  servicesH2Light="What does excavation"
+  servicesH2Bold="include in Albany?"
+  servicesDesc="The scope depends on lot size, project type, ground conditions, and what the property requires before the next stage of work can begin."
+  services={services}
+  whenEyebrow="Albany excavation"
+  whenH2Light="When does your"
+  whenH2Bold="property need it?"
+  whenDesc="Check off what sounds like your property. If any of these fit, a free site walk is the next step."
+  checklistItems={checklistItems}
+  processEyebrow="Getting started"
+  processH2Light="How your Albany"
+  processH2Bold="project gets started"
+  processDesc="You don't need to know the name of the service before you call. Just explain what you're trying to do and what's happening on the property."
+  processSteps={processSteps}
+  whyH2Light="Why Albany calls"
+  whyH2Bold="D&D Land Works"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Grading and excavation work on a Willamette Valley property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our service area"
+  areaH2Light="Excavation in Albany"
+  areaH2Bold="and surrounding areas"
+  areaDesc="Based in Springfield and serving Albany and the Willamette Valley. Nearby areas we also cover:"
+  areaLinks={areaLinks}
+  faqH2Light="Excavation in Albany:"
+  faqH2Bold="common questions"
+  faqs={faqs}
+  relatedEyebrow="Related services in Albany"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need excavation work"
+  ctaH2Bold="in Albany?"
+  ctaSub="Not sure what kind of excavation you need? Tell David what you want to do, where the work is and what problem you're solving. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

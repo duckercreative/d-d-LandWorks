@@ -1,0 +1,185 @@
+---
+import ServicePageTemplate from '../layouts/ServicePageTemplate.astro';
+
+const inclItems = [
+  { num: '01', title: 'Rain and Runoff', desc: 'Rain can create runoff across the driveway. When water follows the same path, it may move gravel, create low spots, or wear away the surface.', href: '/contact', accent: true },
+  { num: '02', title: 'Slope and Grade', desc: "The driveway's slope affects where water goes. A driveway that is shaped poorly may let water collect in one area or run along the surface.", href: '/contact' },
+  { num: '03', title: 'Soil and Ground Conditions', desc: 'The ground under a driveway affects how it holds water and supports the surface. Wet or soft ground can make some driveway problems harder to fix.', href: '/contact' },
+  { num: '04', title: 'Traffic and Repeated Use', desc: 'Cars and trucks place repeated pressure on the driveway. Over time, this can contribute to ruts, potholes, and an uneven surface.', href: '/contact' },
+  { num: '05', title: 'Low Spots and Standing Water', desc: 'A low area can collect water after rain. When water stays in the same place, it can leave the driveway muddy and affect the gravel surface.', href: '/contact' },
+  { num: '06', title: 'Existing Drainage', desc: 'Ditches, slopes, and other drainage features can affect how water reaches the driveway. If water is a major part of the problem, related drainage work may need to be considered.', href: '/drainage-installation-eugene-or' },
+];
+
+const problems = [
+  { num: '01', title: 'Deeply Damaged Areas', desc: 'Some damaged areas may need more than surface grading. Excavation can help remove or reshape problem areas before the driveway is rebuilt.', link: 'Driveway Excavation', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '02', title: 'Preparing a New Driveway', desc: 'A new driveway may need ground preparation before the surface is added. Excavation can help prepare the area and establish the planned driveway shape.', link: 'New Driveway', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '03', title: 'When Grading Alone May Not Be Enough', desc: 'Grading can reshape the surface, but it may not fix deeper ground problems. If the issue is below the surface, more excavation may be needed.', link: 'Contact', href: '/contact' },
+  { num: '04', title: 'Removing Problem Areas', desc: 'Some parts of an existing driveway may be badly damaged or uneven. Those areas may need to be removed and reshaped before further driveway work.', link: 'Driveway Repair', href: '/driveway-excavation-grading-eugene-or' },
+  { num: '05', title: 'Working With the Existing Ground', desc: 'The existing soil and ground conditions can affect how much excavation is needed. We look at the property before deciding what work makes sense.', link: 'Site Assessment', href: '/contact' },
+  { num: '06', title: 'Access to the Driveway', desc: 'Equipment access can affect how excavation work is done. A long driveway, narrow access, or nearby structures may change how the work is approached.', link: 'Contact', href: '/contact' },
+];
+
+const costItems = [
+  { title: 'Licensed and Bonded in Oregon', desc: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the current license through the Oregon Construction Contractors Board.' },
+  { title: 'Drainage Is Part of the Look', desc: 'Water can be a big reason a driveway develops ruts, washouts, or soft spots. We look at how water moves across the driveway so grading or repair addresses the actual problem.' },
+  { title: 'DEQ Septic Certification', desc: 'D&D Land Works also carries Oregon DEQ certification for septic system installation and repair. When driveway work connects with septic or related excavation, that experience can be useful when planning the work.' },
+  { title: 'Free Estimates in Lane County', desc: 'We provide free estimates throughout Lane County. We can look at your driveway, talk through what you are seeing, and explain what the work may involve.' },
+  { title: 'Other Excavation Work', desc: 'When a driveway project connects with drainage, septic, or other excavation work, the site may involve more than the driveway surface itself. D&D can explain which excavation work falls within its scope and what may need another contractor.' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Looking at the Driveway', desc: 'We look at the surface, low spots, ruts, slope, gravel, and areas where water may be causing problems.', accent: true },
+  { num: '2', title: 'Preparing the Ground', desc: 'Where needed, problem areas can be excavated or reshaped. The amount of work depends on the driveway and existing ground conditions.' },
+  { num: '3', title: 'Grading and Reshaping', desc: 'Grading shapes the driveway surface and helps establish the needed slope. The goal is to create a better surface and improve how water moves.' },
+  { num: '4', title: 'Working With Existing Gravel', desc: 'If the driveway already has gravel, the existing material may be reshaped or worked with where appropriate. Additional gravel may be needed depending on the condition.' },
+];
+
+const faqs = [
+  {
+    question: 'How much does gravel driveway grading cost in Eugene or Lane County, Oregon?',
+    answer: 'Gravel driveway grading costs vary by driveway size, condition, slope, drainage, and the work required. Existing driveway regrading may cost less than new driveway excavation and preparation. D&D can inspect your driveway and provide a free estimate based on the actual work needed.',
+  },
+  {
+    question: 'Why does my gravel driveway keep washing out every winter?',
+    answer: "Your gravel driveway may wash out because rainwater is flowing across the driveway instead of away from it. Poor slope, low spots, missing drainage, or blocked culverts can contribute. Fixing the water flow may require grading, reshaping, drainage work, or additional gravel.",
+  },
+  {
+    question: 'How deep should a gravel driveway base be in Oregon?',
+    answer: "A gravel driveway does not have one required base depth for every property. The needed depth depends on soil, drainage, driveway use, ground conditions, and the project. D&D can assess the existing ground and determine what preparation the driveway may need.",
+  },
+  {
+    question: 'What kind of gravel is best for driveways in the Eugene area?',
+    answer: 'Crushed gravel with a mix of larger stone and smaller material is commonly used for driveway surfaces because it can compact into a firm layer. The right material depends on your ground, drainage, driveway use, and the condition of the existing surface.',
+  },
+  {
+    question: 'Do I need a permit to install a gravel driveway in Oregon?',
+    answer: 'You may need a permit if the work changes how your driveway connects to a public road. Work entirely on private property may have different requirements. Permit needs depend on the location and project, so confirm requirements before excavation or construction begins.',
+  },
+  {
+    question: 'When does a driveway need excavation instead of just grading?',
+    answer: 'Some damaged areas may need more than surface grading. Excavation helps remove or reshape problem areas before the driveway is rebuilt. A new driveway also needs ground preparation before the surface is added. If the issue is below the surface, grading alone may not be enough and excavation may be needed.',
+  },
+  {
+    question: 'Is D&D Land Works licensed for driveway excavation and grading in Oregon?',
+    answer: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the current license through the Oregon Construction Contractors Board. We also carry Oregon DEQ certification for septic system installation and repair, which can be useful when driveway work connects with septic or related excavation.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      description: 'Full-service excavation, grading, and site preparation contractor serving Eugene, Springfield, and Lane County, Oregon. Licensed and bonded CCB #261742, DEQ Certified.',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Eugene', sameAs: 'https://www.wikidata.org/wiki/Q49330' },
+        { '@type': 'City', name: 'Springfield', sameAs: 'https://www.wikidata.org/wiki/Q49431' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      knowsAbout: ['Driveway Excavation', 'Driveway Grading', 'Gravel Driveway Repair', 'Site Preparation', 'Land Clearing'],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+      sameAs: ['https://search.ccb.state.or.us/search/'],
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-or/#service',
+      name: 'Driveway Excavation & Grading Services in Eugene, Oregon',
+      serviceType: 'Driveway Excavation and Grading',
+      description: 'Driveway excavation and grading in Eugene, Oregon. Gravel driveway grading, new driveway preparation, leveling, and drainage-related work. Free estimates, 541-401-8726.',
+      url: 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-or/',
+      provider: { '@id': 'https://www.ddlandworks.com/#business' },
+      areaServed: ['Eugene, Oregon', 'Springfield, Oregon', 'Lane County, Oregon'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.ddlandworks.com/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Driveway Grading', item: 'https://www.ddlandworks.com/driveway-excavation-grading-eugene-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<ServicePageTemplate
+  pageTitle="Driveway Excavation & Grading in Eugene, Oregon | D&D Land Works"
+  pageDescription="Driveway excavation and grading contractor in Eugene, Oregon. Gravel driveway regrading, new driveway preparation, base repair, and drainage grading. CCB #261742. Free estimates — 541-401-8726."
+  schema={schema}
+  heroEyebrow="Eugene, Oregon"
+  heroH1Light="Driveway Excavation &"
+  heroH1Bold="Grading in Eugene, Oregon"
+  heroSub="On some Eugene-area driveways, rain can leave the ground wet and move gravel downhill. When David looks at the driveway, he checks the slope, low spots, water flow, and condition of the existing surface before deciding what work may be needed."
+  heroImage="/service-driveway-repair.webp"
+  heroScopeLabel="Typical scope"
+  heroScopeTags={['New Driveway', 'Regrading', 'Base Repair', 'Drainage', 'Gravel Prep']}
+  ctxEyebrow="What to know"
+  ctxH2Light="What Is Wrong With"
+  ctxH2Bold="Your Driveway?"
+  ctxIntro="A driveway can change over time. Potholes and ruts may form from traffic, while gravel can move when rainwater runs across the surface. Low spots may also hold water and leave the driveway muddy. If water keeps running down the driveway, it can move gravel and wear away the surface. Washouts can become worse when water follows the same path again and again. The slope and shape of the driveway matter. The right repair depends on what is happening on your property. Some driveways may need grading or leveling. Others may need excavation, gravel work, or changes to how water moves across the area."
+  ctxLeft={{
+    label: 'New Driveway',
+    title: 'Build From Scratch',
+    tagline: 'Raw ground excavated, base prepared, and graded — ready for gravel placement or paving.',
+    bullets: [
+      'Ground preparation before the surface is added',
+      'Excavation establishes the planned driveway shape',
+      'Soft topsoil removed and base prepared',
+      'Equipment access assessed before work begins',
+      'Ready for gravel placement or paving contractor',
+    ],
+  }}
+  ctxRight={{
+    label: 'Driveway Regrading',
+    title: 'Fix What Is There',
+    tagline: 'Existing driveway re-leveled, low spots filled, grade corrected to stop washouts and standing water.',
+    bullets: [
+      'Problem areas excavated and reshaped where needed',
+      'Grading corrects surface slope and drainage',
+      'Grading alone may not fix deeper ground problems',
+      'Existing gravel reshaped or worked with',
+      'Ground conditions determine scope of work',
+    ],
+  }}
+  ctxBanner="Free estimates, always. David comes out, walks the property, and tells you what the job takes. No charge for the visit and no pressure after it."
+  inclEyebrow="What we assess"
+  inclH2Light="What Is Causing"
+  inclH2Bold="the Driveway Problem?"
+  inclIntro="Rain, runoff, slope, soil, and repeated traffic can all affect a driveway. Understanding what is happening helps show whether grading, excavation, gravel work, or drainage may be needed."
+  inclItems={inclItems}
+  probH2Light="When Does a Driveway"
+  probH2Bold="Need Excavation?"
+  probIntro="Excavation may be needed when the ground under a driveway is damaged, uneven, or needs to be prepared for a new surface. The amount of work depends on the property."
+  probImage="/service-driveway-repair.webp"
+  problems={problems}
+  procH2Light="What Happens During Driveway"
+  procH2Bold="Grading and Excavation?"
+  processSteps={processSteps}
+  costH2Light="Why Hire D&D Land Works"
+  costH2Bold="in Eugene?"
+  costIntro="When David looks at your driveway, the goal is to understand the problem before deciding what work is needed. D&D Land Works focuses on the ground, gravel, slope, and water affecting your driveway."
+  costItems={costItems}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  ctaH2Light="Let's Talk About"
+  ctaH2Bold="Your Driveway"
+  ctaSub="Not sure if your driveway needs grading, excavation, or gravel work? Call 541-401-8726. We can discuss what you are seeing and help you understand what may be needed."
+/>

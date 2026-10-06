@@ -2,14 +2,15 @@
 /**
  * Template Name: Excavation Contractor Eugene Page
  *
- * 1:1 port of site/src/pages/excavation-contractor-eugene-oregon.astro
+ * 1:1 port of site/src/pages/excavation-contractor-eugene-or.astro
  * All section text is editable from WP Admin via the
  * "Excavation Contractor — Page Content" meta box (inc/meta-excavation-contractor.php).
  */
 
 get_header();
 
-$pid = get_the_ID();
+$pid  = get_the_ID();
+$city = function_exists( 'ec_city_from_slug' ) ? ec_city_from_slug( $pid ) : 'Eugene';
 
 // ── 1. HERO ──────────────────────────────────────────────────────────────────
 echo ddlw_hero( array(
@@ -81,38 +82,38 @@ $excavation_services = array(
 	array(
 		'title' => ec_get( $pid, 'ec_svc_1_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_1_desc' ),
-		'href'  => home_url( '/services/foundation-excavation' ),
+		'href'  => home_url( '/site-preparation-contractor-eugene-or' ),
 		'icon'  => 'M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4',
 	),
 	array(
 		'title' => ec_get( $pid, 'ec_svc_2_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_2_desc' ),
-		'href'  => home_url( '/services/trenching-backfill' ),
-		'icon'  => 'M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5',
+		'href'  => home_url( '/land-grading-services-eugene-or' ),
+		'icon'  => 'M3 17h4l4-9 4 5 3-4h3M17 6h3v3',
 	),
 	array(
 		'title' => ec_get( $pid, 'ec_svc_3_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_3_desc' ),
-		'href'  => home_url( '/services/utility-excavation' ),
-		'icon'  => 'M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3',
+		'href'  => home_url( '/land-clearing-services-eugene-or' ),
+		'icon'  => 'M3 20 9 8l4 6 2-3 6 9H3Z',
 	),
 	array(
 		'title' => ec_get( $pid, 'ec_svc_4_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_4_desc' ),
-		'href'  => home_url( '/site-preparation-contractor-eugene-oregon' ),
-		'icon'  => 'M3 20 9 8l4 6 2-3 6 9H3Z',
+		'href'  => home_url( '/drainage-installation-eugene-or' ),
+		'icon'  => 'M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z',
 	),
 	array(
 		'title' => ec_get( $pid, 'ec_svc_5_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_5_desc' ),
-		'href'  => home_url( '/services/drainage-excavation' ),
-		'icon'  => 'M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z',
+		'href'  => home_url( '/septic-installation-lane-county-or' ),
+		'icon'  => 'M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3',
 	),
 	array(
 		'title' => ec_get( $pid, 'ec_svc_6_title' ),
 		'desc'  => ec_get( $pid, 'ec_svc_6_desc' ),
-		'href'  => home_url( '/septic-installation-lane-county-oregon' ),
-		'icon'  => 'M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M9 21v-6h6v6M3 21h18',
+		'href'  => home_url( '/trenching-services-eugene-or' ),
+		'icon'  => 'M9 3 5 21M15 3l4 18M12 8v2.5m0 4v2.5',
 	),
 );
 ?>
@@ -157,26 +158,32 @@ $project_types = array(
 	array( 'title' => ec_get( $pid, 'ec_proj_6_title' ), 'desc' => ec_get( $pid, 'ec_proj_6_desc' ) ),
 );
 ?>
-<section class="problems-section">
-	<div class="container">
-		<div class="section-header section-header--center">
-			<p class="eyebrow"><?php echo esc_html( ec_get( $pid, 'ec_proj_eyebrow' ) ); ?></p>
-			<h2 class="section-title"><?php echo esc_html( ec_get( $pid, 'ec_proj_heading' ) ); ?></h2>
-			<p class="section-intro"><?php echo esc_html( ec_get( $pid, 'ec_proj_intro' ) ); ?></p>
+<section style="background:var(--color-slate-50,#f8fafc);border-top:1px solid var(--color-slate-200,#e2e8f0);border-bottom:1px solid var(--color-slate-200,#e2e8f0);padding:5rem 0;">
+	<div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+		<div style="text-align:center;margin-bottom:3rem;">
+			<p class="eyebrow" style="justify-content:center;"><?php echo esc_html( ec_get( $pid, 'ec_proj_eyebrow' ) ); ?></p>
+			<h2 class="section-title" style="margin-top:0.5rem;"><?php echo esc_html( ec_get( $pid, 'ec_proj_heading' ) ); ?></h2>
+			<p style="font-size:1rem;color:var(--color-slate-700,#374151);max-width:680px;margin:1rem auto 0;line-height:1.7;"><?php echo esc_html( ec_get( $pid, 'ec_proj_intro' ) ); ?></p>
 		</div>
-		<div class="problem-cards-grid problem-cards-grid--3">
+		<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
 			<?php foreach ( $project_types as $card ) : ?>
-				<div class="problem-card">
-					<div>
-						<h3 class="problem-card__title"><?php echo esc_html( $card['title'] ); ?></h3>
-						<p class="problem-card__desc"><?php echo esc_html( $card['desc'] ); ?></p>
-					</div>
-				</div>
+			<div class="card" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;">
+				<h3 style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:0.03em;font-size:1rem;color:var(--color-ink);margin:0;">
+					<?php echo esc_html( $card['title'] ); ?>
+				</h3>
+				<p style="font-size:.875rem;color:var(--color-slate-600,#475569);line-height:1.65;margin:0;flex:1;">
+					<?php echo esc_html( $card['desc'] ); ?>
+				</p>
+				<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" style="display:inline-flex;align-items:center;gap:4px;font-size:.875rem;font-weight:600;font-family:var(--font-display);color:var(--color-brand-blue);text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+					Get an Estimate
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="height:.875rem;width:.875rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+				</a>
+			</div>
 			<?php endforeach; ?>
 		</div>
 		<div style="text-align:center;margin-top:3rem;">
 			<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-pill" style="display:inline-flex;">
-				Talk About Your Project
+				Talk About Your Property
 				<span class="btn-pill-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="height:1rem;width:1rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
 			</a>
 		</div>
@@ -190,8 +197,6 @@ $process_steps = array(
 	array( 'step' => '2', 'title' => ec_get( $pid, 'ec_proc_2_title' ), 'desc' => ec_get( $pid, 'ec_proc_2_desc' ) ),
 	array( 'step' => '3', 'title' => ec_get( $pid, 'ec_proc_3_title' ), 'desc' => ec_get( $pid, 'ec_proc_3_desc' ) ),
 	array( 'step' => '4', 'title' => ec_get( $pid, 'ec_proc_4_title' ), 'desc' => ec_get( $pid, 'ec_proc_4_desc' ) ),
-	array( 'step' => '5', 'title' => ec_get( $pid, 'ec_proc_5_title' ), 'desc' => ec_get( $pid, 'ec_proc_5_desc' ) ),
-	array( 'step' => '6', 'title' => ec_get( $pid, 'ec_proc_6_title' ), 'desc' => ec_get( $pid, 'ec_proc_6_desc' ) ),
 );
 ?>
 <section class="process-section">
@@ -343,51 +348,39 @@ $pin_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 <?php
 $faqs = array(
 	array(
-		'q' => 'What does an excavation contractor do in Eugene?',
-		'a' => 'An excavation contractor handles the digging, trenching, and earth-moving work that happens before a structure gets built or a utility gets installed. In Eugene, that includes foundation excavation for new homes and ADUs, trenching for water, sewer, and conduit, drainage work, and septic excavation on rural Lane County lots. D&D Land Works is licensed and bonded under Oregon CCB #261742 and DEQ certified for septic work.',
+		'q' => 'Do you provide excavation in ' . $city . '?',
+		'a' => 'Yes. D&D Land Works provides excavation and related site work for properties in ' . $city . ' and the surrounding area. We are based in Springfield, nearby.',
 	),
 	array(
-		'q' => 'How much does excavation cost in Eugene, Oregon?',
-		'a' => 'Foundation excavation runs $3,000–$12,000 for a typical residential footprint. Trenching runs $20–$60 per linear foot. Septic excavation runs $2,000–$8,000. Drainage work runs $1,500–$10,000 or more. Full site preparation with clearing and grading runs $15,000–$50,000 depending on lot conditions. Malpass clay in west Eugene adds 25–50% to baseline cost on affected sites. A free on-site estimate is the accurate number for a specific project.',
+		'q' => 'What affects excavation cost?',
+		'a' => 'Cost can depend on project size, digging, ground conditions, slope, access, clearing, material movement, drainage needs, septic-related excavation, driveway work, and overall site complexity.',
 	),
 	array(
-		'q' => 'Do I need a permit for excavation in Eugene or Lane County?',
-		'a' => 'Foundation excavation under an active building permit is generally exempt from a separate grading permit. Trenching for utility connections may need right-of-way permits. Grading or fill work moving more than roughly 50 cubic yards triggers a Lane County Grading and Fill Permit. Projects disturbing 1 or more acres require an Oregon DEQ 1200-C Construction Stormwater Permit. Confirm with Lane County LMD at 541-682-4651 before work starts.',
+		'q' => 'Can you excavate for septic work?',
+		'a' => 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified for septic work. Septic design and approval are separate parts of the project.',
 	),
 	array(
-		'q' => 'How long does excavation take?',
-		'a' => 'A standard residential foundation excavation runs one to three days. Utility trenching depends on run length and soil conditions. Site preparation projects run three days to several weeks depending on scope. Eugene\'s clay soils and the wet season (October through May) can extend timelines when ground is saturated.',
+		'q' => 'Do you provide free estimates?',
+		'a' => 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in ' . $city . '.',
 	),
 	array(
-		'q' => 'What is the 811 utility locate requirement in Oregon?',
-		'a' => 'Oregon law requires calling 811 and waiting for all underground utilities to be marked before any digging begins. Allow two to three business days for locators to respond. D&D Land Works coordinates utility locates as a standard part of every job.',
-	),
-	array(
-		'q' => 'Does excavation work depend on the season in Eugene?',
-		'a' => 'Yes. Lane County\'s rainy season (October through May) saturates Willamette Valley clay quickly, making excavation slower and more expensive. Dry-season work (May through October) is generally faster and costs less. Wet-season jobs are possible but require tighter erosion controls and more schedule buffer.',
-	),
-	array(
-		'q' => 'Can D&D Land Works handle both excavation and site preparation on the same lot?',
-		'a' => 'Yes. Clearing, grading, foundation excavation, utility trenching, and drainage work often run in sequence on the same lot. One licensed crew handling the full scope avoids coordination gaps between contractors and ensures grades established during site prep carry through to the excavation elevations.',
-	),
-	array(
-		'q' => 'Does D&D Land Works serve Springfield and Lane County?',
-		'a' => 'Yes. D&D Land Works serves Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell across Lane County. Call 541-401-8726 to confirm coverage for a specific address.',
+		'q' => 'Where is D&D Land Works based?',
+		'a' => 'D&D Land Works is headquartered in Springfield, Oregon, and provides excavation services throughout Lane County.',
 	),
 );
 
 echo ddlw_faq( array( 'heading' => ec_get( $pid, 'ec_faq_heading' ) ), implode( '', array_map( function( $item ) {
-	return '[faq_item q="' . esc_attr( $item['q'] ) . '"]' . esc_html( $item['a'] ) . '[/faq_item]';
+	return '[faq_item question="' . esc_attr( $item['q'] ) . '"]' . esc_html( $item['a'] ) . '[/faq_item]';
 }, $faqs ) ) );
 ?>
 
 <!-- ── 9. RELATED SERVICES ──────────────────────────────────────────────── -->
 <?php
 $related_services = array(
-	array( 'title' => 'Site Preparation',      'desc' => 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.',              'href' => home_url( '/site-preparation-contractor-eugene-oregon' ) ),
-	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and a level build pad.',                               'href' => home_url( '/services/grading-leveling' ) ),
-	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging the footprint for foundations, footings, crawl spaces, and basements.',                      'href' => home_url( '/services/foundation-excavation' ) ),
-	array( 'title' => 'Drainage Excavation',   'desc' => 'French drains, swales, and catch basins to correct standing water on Lane County properties.',        'href' => home_url( '/services/drainage-excavation' ) ),
+	array( 'title' => 'Site Preparation',      'desc' => 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.',              'href' => home_url( '/site-preparation-contractor-eugene-or' ) ),
+	array( 'title' => 'Grading &amp; Leveling', 'desc' => 'Shaping land to the right slope for drainage and a level build pad.',                               'href' => home_url( '/land-grading-services-eugene-or' ) ),
+	array( 'title' => 'Foundation Excavation', 'desc' => 'Digging the footprint for foundations, footings, crawl spaces, and basements.',                      'href' => home_url( '/foundation-excavation-eugene-or' ) ),
+	array( 'title' => 'Drainage Excavation',   'desc' => 'French drains, swales, and catch basins to correct standing water on Lane County properties.',        'href' => home_url( '/drainage-installation-eugene-or' ) ),
 );
 ?>
 <section style="background:#fff;border-top:1px solid var(--color-slate-100);padding-block:5rem;">
@@ -407,9 +400,17 @@ $related_services = array(
 
 <!-- ── 10. CTA ──────────────────────────────────────────────────────────── -->
 <?php
+$city_display = str_replace( ', Oregon', '', ec_get( $pid, 'ec_hero_eyebrow' ) );
+$cta_headline = 'Need Excavation Work in ' . $city_display . '?';
+$cta_subtitle = ec_get( $pid, 'ec_cta_subtitle' );
+if ( ! $cta_subtitle ) {
+	$cta_subtitle = 'Call D&D Land Works at ' . ddlw_phone() . ' and tell us what you are working on. Free estimates, no obligation.';
+}
 echo ddlw_cta_block( array(
-	'title'    => ec_get( $pid, 'ec_cta_title' ),
-	'subtitle' => ec_get( $pid, 'ec_cta_subtitle' ),
+	'eyebrow'   => 'Talk With David',
+	'title'     => $cta_headline,
+	'subtitle'  => $cta_subtitle,
+	'cta_label' => 'Request a Free Estimate',
 ) );
 
 get_footer();

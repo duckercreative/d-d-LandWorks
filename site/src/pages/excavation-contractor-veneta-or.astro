@@ -1,0 +1,162 @@
+﻿---
+import LocationPageTemplate from '../layouts/LocationPageTemplate.astro';
+
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR' },
+  { label: 'Serving', value: 'Veneta — call to confirm' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
+];
+
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting the ground ready for a build or project. May include clearing, digging, grading, or moving soil.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape of the ground to level an area or create a different slope for the planned use.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, debris, or overgrown material before excavation can begin.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Septic Excavation', desc: 'If septic excavation is part of your project, D&D can discuss the excavation portion where the service area is confirmed.', href: '/septic-installation-lane-county-or' },
+  { num: '05', title: 'Drainage Work', desc: 'When water collects where it should not, excavation or grading may create a better path for it to move.', href: '/drainage-installation-eugene-or' },
+  { num: '06', title: 'Trenching', desc: 'Narrow runs for utility work, drainage, or other planned underground work on your property.', href: '/trenching-services-eugene-or' },
+];
+
+const checklistItems = [
+  { title: 'Before construction begins', desc: 'A building site may need clearing, grading or excavation before any other work can start.', href: '/contact' },
+  { title: 'When the ground is uneven', desc: 'Areas that are too high, too low or uneven for the planned use get regraded to fit the project.', href: '/contact' },
+  { title: 'When water is collecting', desc: 'Standing water around home, driveway or yard is a drainage problem with a dig-able fix.', href: '/contact' },
+  { title: 'When land needs clearing', desc: 'Brush, trees and overgrowth need to be removed before excavation or grading can begin.', href: '/contact' },
+  { title: 'For a septic project', desc: 'Septic systems may require excavation for the components that go into the ground. Confirm service area first.', href: '/contact' },
+  { title: 'For general site work', desc: 'Access, ground conditions, depth and size of the project all change what a west Lane County job involves.', href: '/contact' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell us what you need', desc: 'What you want to build, repair, clear or dig on your Veneta-area property.' },
+  { num: '2', title: 'Confirm service area', desc: 'West Lane County coverage is confirmed case by case — call with your property location before scheduling.' },
+  { num: '3', title: 'Understand the scope', desc: 'The excavation and site work explained in plain terms once coverage is confirmed.' },
+  { num: '4', title: 'Get your estimate', desc: 'A free estimate once the property and project are understood.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Call to confirm', desc: 'West Lane County coverage is confirmed case by case. Call 541-401-8726 with your property location before planning work.', dark: false },
+  { title: 'Foundation excavation', desc: 'New homes, ADUs and rural builds. One crew for clearing, grading and the foundation once coverage is confirmed.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit and drains, with 811 locates on every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'Tank, distribution box and drainfield excavation for applicable Lane County properties.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/excavation-contractor-eugene-or' },
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
+  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+];
+
+const faqs = [
+  { question: 'Do you serve the Veneta area?', answer: 'If you have a project near Veneta, contact D&D Land Works at 541-401-8726 to confirm service availability for your property. West Lane County coverage is confirmed based on the project and location.' },
+  { question: 'What does excavation involve?', answer: 'Excavation can include digging, moving soil, clearing an area, and preparing the ground for a project. The work depends on the property and what you are trying to accomplish.' },
+  { question: 'Can you prepare my property?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on what your project needs. Call to discuss the property and confirm whether it is within the service area.' },
+  { question: 'Can you help with septic excavation?', answer: 'If septic excavation is part of your project and the property is within the service area, D&D can discuss the excavation work involved. Septic design, engineering, permits, and approvals are separate.' },
+  { question: 'What affects excavation cost near Veneta?', answer: 'Project size, digging depth, ground conditions, property access, existing structures, utilities, clearing needs, and weather can all affect cost and timeline.' },
+];
+
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading and compaction for raw lots.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'The right slope for drainage and a level pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Footprints, footings, crawl spaces and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales and catch basins.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Veneta', sameAs: 'https://www.wikidata.org/wiki/Q1023742' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Veneta', item: 'https://www.ddlandworks.com/excavation-contractor-veneta-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<LocationPageTemplate
+  pageTitle="Excavation Contractor near Veneta, OR | D&D Land Works"
+  pageDescription="D&D Land Works provides excavation, land clearing, grading, drainage, and site preparation near Veneta, OR. Call to confirm service area. CCB #261742. Free estimates, 541-401-8726."
+  schema={schema}
+  cityState="Veneta, Oregon"
+  heroH1Light="Excavation contractor"
+  heroH1Bold="near Veneta, Oregon"
+  heroSub="D&D Land Works provides excavation and site work for west Lane County properties. Call 541-401-8726 with your property location to confirm service coverage before planning any work."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Veneta"
+  introEyebrow="Excavation work near Veneta"
+  introH2Light="Excavation and site work"
+  introH2Bold="near Veneta, Oregon"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Excavation near Veneta means clearing, grading, digging, or preparing the ground for the next stage of a project. The scope depends on the property, its access, and what you plan to do with it."
+  introPara2="West Lane County coverage is confirmed case by case. Call with your property location and a description of the work before scheduling — D&D Land Works will confirm whether the project fits the current service area."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our services"
+  servicesH2Light="What does excavation"
+  servicesH2Bold="include near Veneta?"
+  servicesDesc="Once service area is confirmed, the scope depends on your ground conditions, project type, and what the property requires."
+  services={services}
+  whenEyebrow="Veneta excavation"
+  whenH2Light="When does your"
+  whenH2Bold="property need it?"
+  whenDesc="Check off what sounds like your property. If any of these fit, call to confirm coverage first, then get a free site walk."
+  checklistItems={checklistItems}
+  processEyebrow="Getting started"
+  processH2Light="How a Veneta-area"
+  processH2Bold="project gets started"
+  processDesc="West Lane County coverage is confirmed case by case. The first step is always a call to confirm your property fits the current service area."
+  processSteps={processSteps}
+  whyH2Light="Why property owners"
+  whyH2Bold="call D&D Land Works"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Excavation and grading work on a Lane County property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our service area"
+  areaH2Light="Excavation near Veneta"
+  areaH2Bold="and west Lane County"
+  areaDesc="Based in Springfield. West Lane County coverage including Veneta is confirmed case by case. Other areas served regularly:"
+  areaLinks={areaLinks}
+  faqH2Light="Excavation near Veneta:"
+  faqH2Bold="common questions"
+  faqs={faqs}
+  relatedEyebrow="Related services"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need excavation work"
+  ctaH2Bold="near Veneta?"
+  ctaSub="Call first to confirm your property is within the current service area. Free estimates for confirmed locations, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

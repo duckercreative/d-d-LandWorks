@@ -1,0 +1,162 @@
+﻿---
+import LocationPageTemplate from '../layouts/LocationPageTemplate.astro';
+
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR (nearby)' },
+  { label: 'Serving', value: 'Coburg & north Lane County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
+];
+
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting the ground ready for the next part of a project. May include clearing, digging, grading, or moving soil before work can begin.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Shaping or leveling the ground to create the ground shape a project calls for.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, debris, or overgrowth before excavation or grading can begin.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Septic Excavation', desc: 'If septic excavation is part of your project, D&D can discuss the excavation portion. Design, permitting, and inspection are handled separately.', href: '/septic-installation-lane-county-or' },
+  { num: '05', title: 'Drainage Work', desc: 'When water collects where it should not, excavation or grading may create a better path for it to move.', href: '/drainage-installation-eugene-or' },
+  { num: '06', title: 'Trenching', desc: 'Digging a narrow path for utility work, drainage, or another project that needs something below the surface.', href: '/trenching-services-eugene-or' },
+];
+
+const checklistItems = [
+  { title: 'Before construction begins', desc: 'A building site may need clearing, grading or excavation before any other work can start.', href: '/contact' },
+  { title: 'When the ground is uneven', desc: 'Areas that are too high, too low or uneven for the planned use get regraded to fit the project.', href: '/contact' },
+  { title: 'When water is collecting', desc: 'Standing water around home, driveway or yard is often a drainage problem. Excavation may create a path to move it.', href: '/contact' },
+  { title: 'When land needs clearing', desc: 'Brush, trees and overgrowth need to be removed before excavation or grading can begin.', href: '/contact' },
+  { title: 'For a septic project', desc: 'Septic systems may require excavation for the components that go into the ground.', href: '/contact' },
+  { title: 'For general site work', desc: 'Access, ground conditions, depth of digging, and existing structures can all change what a Coburg project involves.', href: '/contact' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell us what you need', desc: 'What you want to build, repair, clear or dig on your Coburg-area property.' },
+  { num: '2', title: 'Discuss the property', desc: 'Location, access, slope, drainage, structures and utilities that affect the job.' },
+  { num: '3', title: 'Understand the scope', desc: 'The excavation and site work explained in plain terms.' },
+  { num: '4', title: 'Get your estimate', desc: 'A free estimate once the property and project are understood.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Free estimates', desc: 'Property, access, soil and scope reviewed on site. No phone quotes off satellite photos.', dark: false },
+  { title: 'Foundation excavation', desc: 'New homes, ADUs and commercial builds. One crew for clearing, grading and the foundation.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit and drains, with 811 locates on every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'Tank, distribution box and drainfield excavation on north Lane County lots.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/excavation-contractor-eugene-or' },
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
+  { label: 'Veneta', href: '/excavation-contractor-veneta-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+];
+
+const faqs = [
+  { question: 'Do you serve Coburg?', answer: 'D&D Land Works is based in Springfield, just a few miles from Coburg. Call 541-401-8726 with your project details so we can confirm service coverage for your property.' },
+  { question: 'What does excavation involve?', answer: 'Excavation can involve digging, removing material, preparing ground, and shaping a site for the next part of a project. The work depends on the property and what you are trying to accomplish.' },
+  { question: 'Can you prepare my property near Coburg?', answer: 'Site preparation may include clearing, digging, grading, and moving soil, depending on the project. Call to discuss the property and confirm whether it is within the service area.' },
+  { question: 'Can you help with septic excavation?', answer: 'If septic excavation is part of your project and the property is within the service area, D&D can discuss the excavation portion of the work. Septic design, permitting, and other technical work may be handled separately.' },
+  { question: 'What affects excavation cost near Coburg?', answer: 'Project size, ground conditions, property access, excavation depth, existing structures, utilities, clearing needs, and weather can all affect the cost and timeline.' },
+];
+
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading and compaction for raw lots.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'The right slope for drainage and a level pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Footprints, footings, crawl spaces and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales and catch basins.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Coburg', sameAs: 'https://www.wikidata.org/wiki/Q2399286' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Coburg', item: 'https://www.ddlandworks.com/excavation-contractor-coburg-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<LocationPageTemplate
+  pageTitle="Excavation Contractor near Coburg, OR | D&D Land Works"
+  pageDescription="D&D Land Works provides excavation, land clearing, grading, septic excavation, and site preparation near Coburg, OR. Based in Springfield. CCB #261742. Free estimates, call 541-401-8726."
+  schema={schema}
+  cityState="Coburg, Oregon"
+  heroH1Light="Excavation contractor"
+  heroH1Bold="near Coburg, Oregon"
+  heroSub="D&D Land Works is based in Springfield, just a few miles from Coburg. If you have a property in the area, call to discuss your project and confirm whether the work fits the current service area."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Coburg"
+  introEyebrow="Coburg's excavation contractor"
+  introH2Light="Excavation and site work"
+  introH2Bold="near Coburg, Oregon"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Excavation is more than digging a hole. It can include preparing and shaping the ground so a property is ready for the next stage of work. Depending on the project, that may mean digging, clearing, grading, or preparing an area for another installation."
+  introPara2="D&D Land Works is headquartered in Springfield, just a few miles from Coburg. Call to discuss your project and confirm service coverage for your property."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our services"
+  servicesH2Light="What does excavation"
+  servicesH2Bold="include near Coburg?"
+  servicesDesc="The scope depends on foundation depth, utility runs, drainage needs and what your ground requires before anything is built."
+  services={services}
+  whenEyebrow="Coburg excavation"
+  whenH2Light="When does your"
+  whenH2Bold="property need it?"
+  whenDesc="Check off what sounds like your property. If any of these fit, a free site walk is the next step."
+  checklistItems={checklistItems}
+  processEyebrow="Getting started"
+  processH2Light="How your Coburg"
+  processH2Bold="project gets started"
+  processDesc="You don't need to know the name of the service before you call. Just explain what you're trying to do and what's happening on the property."
+  processSteps={processSteps}
+  whyH2Light="Why Coburg calls"
+  whyH2Bold="D&D Land Works"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Grading and excavation work near Coburg, Oregon"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our service area"
+  areaH2Light="Excavation near Coburg"
+  areaH2Bold="and north Lane County"
+  areaDesc="Based in Springfield, just a few miles south of Coburg, serving the surrounding Lane County area. Nearby areas we also cover:"
+  areaLinks={areaLinks}
+  faqH2Light="Excavation near Coburg:"
+  faqH2Bold="common questions"
+  faqs={faqs}
+  relatedEyebrow="Related services near Coburg"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need excavation work"
+  ctaH2Bold="near Coburg?"
+  ctaSub="Not sure what kind of excavation you need? Tell David what you want to do, where the work is and what problem you're solving. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

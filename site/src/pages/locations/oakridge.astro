@@ -1,45 +1,76 @@
-﻿---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import FAQ from '../../components/FAQ.astro';
-import CTABlock from '../../components/CTABlock.astro';
+---
+import LocationPageTemplate from '../../layouts/LocationPageTemplate.astro';
 
-const excavationTypes = [
-  { title: 'Site Preparation', description: 'Getting mountain ground ready for a build or project. Oakridge properties often sit on slope with timber cover, site prep here involves more attention to drainage and terrain than a flat valley lot.', href: '/site-preparation-contractor-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
-  { title: 'Land Grading', description: 'Shaping and leveling sloped ground for a building area, driveway, or other planned use. Slope, ground conditions, and access can make grading more complex on Cascade foothill properties.', href: '/land-grading-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3" />' },
-  { title: 'Land Clearing', description: 'Removing brush, trees, and overgrowth from timbered properties before excavation or site work can begin. Clearing scope varies more property to property in the Oakridge area depending on timber cover and terrain.', href: '/land-clearing-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
-  { title: 'Driveway & Access Work', description: 'Regrading, repairing, and improving driveways and access roads. Washed-out or rutted access roads are a common reason for calls from Oakridge properties.', href: '/driveway-excavation-grading-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 17h4l4-9 4 5 3-4h3M17 6h3v3 M2 21h20" />' },
-  { title: 'Septic Excavation', description: 'If septic excavation is part of your Oakridge project, D&D can discuss the excavation portion. Septic design, permits, and site evaluation are separate and may involve other professionals.', href: '/septic-installation-lane-county-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Utility Trenching', description: 'Trenching for water, sewer, power, and other utility lines. Route, depth, ground conditions, and access all affect what trenching involves on a mountain property.', href: '/trenching-services-eugene-oregon', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M6 20V9l6-6 6 6v11M9 20v-6h6v6" />' },
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR' },
+  { label: 'Serving', value: 'Oakridge & Lane County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
 ];
 
-const whenCards = [
-  { title: 'Before a Build or Outbuilding', description: 'A mountain lot may need more clearing, grading, and slope management than a flat valley site before construction can begin.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When the Ground Is Sloped', description: 'Slope is the norm on Oakridge properties. If the ground needs to be shaped for a building area or driveway, grading can address the terrain.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When the Driveway Is Washed Out', description: 'Rutted or washed-out access roads are common in the Cascade foothills. Regrading and repair can restore access and prevent further erosion.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Land Needs Clearing', description: 'Timbered Oakridge properties may need more clearing than a valley lot. The amount of brush and timber cover affects how the rest of the project can proceed.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'When Water Is Collecting', description: 'Slope and soil conditions in the Cascades can create drainage issues. Excavation or grading may help redirect water away from structures and driveways.', href: '/contact', linkLabel: 'Get an Estimate' },
-  { title: 'For a Utility or Septic Project', description: 'Mountain properties often need trenching for utility lines or excavation for septic work. Discuss the full project so the scope and access requirements can be understood.', href: '/contact', linkLabel: 'Get an Estimate' },
+const services = [
+  { num: '01', title: 'Site Preparation', desc: 'Getting land ready for a building or project. May include clearing, excavation, and grading to create a workable area for the next stage.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape and level of the ground. May be needed when an area is uneven, needs a new slope, or needs to be shaped for the planned use.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, and debris from an area before grading or excavation can begin. Clearing opens the work area so the ground can be prepared.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Drainage Excavation', desc: 'Excavation to create or improve a path for water. The existing ground, slope, and drainage conditions all affect the approach.', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Septic-Related Excavation', desc: 'D&D Land Works is DEQ certified for septic installation and repair. The excavation involved depends on the property and the septic project.', href: '/septic-installation-lane-county-or' },
+  { num: '06', title: 'Trenching', desc: 'Digging a narrow path for water, sewer, electrical conduit, irrigation, drainage, or other underground work depending on the project.', href: '/trenching-services-eugene-or' },
 ];
 
-const whyItems = [
-  { title: 'Cascade Foothills, 40 Minutes from Eugene', description: 'D&D Land Works is based in Springfield and covers Oakridge as part of the regular Lane County service area. David scopes every job in person, accounting for Oakridge\'s slope, timber cover, and access, not a flat-valley average.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4" />' },
-  { title: 'Licensed and Bonded', description: 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the license through the Oregon Construction Contractors Board before hiring.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />', link: { label: 'Verify CCB License →', href: 'https://search.ccb.state.or.us/search/' } },
-  { title: 'DEQ Certified for Septic Work', description: 'D&D Land Works is DEQ certified for applicable septic installation and repair, including excavation associated with septic projects in Oakridge and east Lane County.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3v10c0 1.7-2.7 3-6 3s-6-1.3-6-3V7Z M6 7c0 1.7 2.7 3 6 3s6-1.3 6-3" />' },
-  { title: 'Free Estimates, In-Person Scoping', description: 'D&D Land Works provides free estimates for excavation and site preparation projects in Oakridge. David walks the property before quoting, pricing accounts for slope, timber cover, and access conditions.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z M7 6h10v14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V6Z M9 12.5l2 2 4-4.5" />' },
-  { title: 'Mountain Ground Is Different', description: 'Steep, timbered properties with long access roads require different planning than valley lots. Land clearing scope varies more property to property up here, it is worth a call to walk through what a specific parcel needs.', icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20 9 8l4 6 2-3 6 9H3Z" />' },
+const checklistItems = [
+  { title: 'Before Construction Begins', desc: 'A building site may need clearing, grading, or excavation before any other work can start. The scope depends on what the property currently looks like.', href: '/contact' },
+  { title: 'When the Ground Needs Reshaping', desc: 'If an area is uneven, too high, or too low for the planned use, grading or excavation can reshape it to fit the project.', href: '/contact' },
+  { title: 'When Water Is Collecting', desc: 'Standing water around a home, driveway, or yard is often a drainage problem. Excavation can create a path to move water where it needs to go.', href: '/contact' },
+  { title: 'Before Underground Work', desc: 'Utility lines, irrigation, and drainage systems need a trench. The trench is sized and placed based on what will be installed and where.', href: '/contact' },
+  { title: 'For Septic Projects', desc: 'New septic systems and repairs may require excavation. D&D Land Works handles the digging connected with applicable septic work.', href: '/contact' },
+  { title: 'When the Driveway Needs Work', desc: 'Gravel driveways develop ruts, washouts, and uneven areas. Grading and excavation can reshape the ground and restore the surface.', href: '/driveway-excavation-grading-eugene-or' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell Us What You Need', desc: 'Tell us what you want to build, repair, clear, dig, or change on your Oakridge property.' },
+  { num: '2', title: 'Discuss the Property', desc: 'We can talk about where the work is, what the property looks like, access, slope, drainage, existing structures, and utilities that may affect the job.' },
+  { num: '3', title: 'Understand the Scope', desc: 'Once the property and project are understood, the required excavation or related site work can be discussed in plain terms.' },
+  { num: '4', title: 'Get an Estimate', desc: 'D&D Land Works provides free estimates for applicable excavation and site work projects in Oakridge and Lane County.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Licensed and bonded', desc: 'D&D Land Works is licensed and bonded under Oregon CCB #261742 — a credential you can verify at the CCB license lookup before calling.', dark: false },
+  { title: 'Free estimates', desc: 'Free estimates let the property, access, soil conditions, and planned scope be reviewed before a number is given. No phone estimates built from satellite imagery.', dark: false },
+  { title: 'Foundation excavation', desc: 'Foundation digs for new homes, ADUs, and commercial structures across Oakridge, Springfield, and Lane County. One crew handles clearing, grading, and the foundation box.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit, and drainage runs. 811 locates coordinated as a standard part of every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'D&D Land Works is DEQ certified for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/locations/eugene/' },
+  { label: 'Springfield', href: '/locations/springfield/' },
+  { label: 'Corvallis', href: '/locations/corvallis/' },
+  { label: 'Albany', href: '/locations/albany/' },
+  { label: 'Cottage Grove', href: '/locations/cottage-grove/' },
+  { label: 'Junction City', href: '/locations/junction-city/' },
+  { label: 'Creswell', href: '/locations/creswell/' },
+  { label: 'Veneta', href: '/locations/veneta/' },
+  { label: 'Florence', href: '/locations/florence/' },
+  { label: 'Coburg', href: '/locations/coburg/' },
+  { label: 'Lowell', href: '/locations/lowell/' },
 ];
 
 const faqs = [
-  { question: 'Do you serve Oakridge?', answer: 'Yes. Oakridge is part of the D&D Land Works service area. D&D is based in Springfield, about 40 minutes from Oakridge on Highway 58. Call 541-401-8726 to discuss your property.' },
-  { question: 'Is excavation different on mountain properties?', answer: 'Yes. Oakridge properties often sit on slope, backed by timber, with access roads that have seen weather and use. Site prep here involves more attention to slope, drainage, and access than a flat Willamette Valley lot.' },
-  { question: 'Can you repair a washed-out driveway or access road?', answer: 'Regrading and repairing driveways and access roads is common work in the Oakridge area. The approach depends on the current condition of the road, the slope, and what access it needs to support.' },
-  { question: 'Do you provide free estimates in Oakridge?', answer: 'Yes. D&D Land Works provides free on-site estimates for applicable projects in Oakridge. David walks the property before quoting so pricing accounts for the actual site conditions.' },
-  { question: 'What affects excavation cost in Oakridge?', answer: 'Slope, timber cover, clearing needs, access road condition, digging depth, ground conditions, existing structures, and project size can all affect cost. Mountain properties often have more variables than valley sites.' },
+  { question: 'Do you provide excavation in Oakridge?', answer: 'Yes. D&D Land Works provides excavation and related site work for properties in Oakridge and the surrounding area. We are based in Springfield.' },
+  { question: 'What affects excavation cost?', answer: 'Cost can depend on project size, digging, ground conditions, slope, access, clearing, material movement, drainage needs, septic-related excavation, driveway work, and overall site complexity.' },
+  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified for septic work. Septic design and approval are separate parts of the project.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in Oakridge.' },
+  { question: 'Where is D&D Land Works based?', answer: 'D&D Land Works is headquartered in Springfield, Oregon, and provides excavation services throughout Lane County.' },
 ];
 
-const serviceSchema = {
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading, and compaction that gets a raw lot ready before excavation starts.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'Shaping land to the right slope for drainage and a level build pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Foundation Excavation', desc: 'Digging the footprint for foundations, footings, crawl spaces, and basements.', href: '/foundation-excavation-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales, and catch basins to correct standing water on Lane County properties.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -51,7 +82,7 @@ const serviceSchema = {
       email: 'david@ddlandworks.com',
       priceRange: '$$',
       areaServed: [
-        { '@type': 'City', name: 'Oakridge', sameAs: 'https://www.wikidata.org/wiki/Q1017504' },
+        { '@type': 'City', name: 'Oakridge', 'addressRegion': 'OR' },
         { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
       ],
       hasCredential: [
@@ -71,7 +102,7 @@ const serviceSchema = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
-        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.ddlandworks.com/locations/' },
         { '@type': 'ListItem', position: 3, name: 'Oakridge', item: 'https://www.ddlandworks.com/locations/oakridge/' },
       ],
     },
@@ -79,318 +110,57 @@ const serviceSchema = {
 };
 ---
 
-<BaseLayout
-  title="Excavation Contractor in Oakridge, OR | D&D Land Works"
-  description="D&D Land Works provides excavation, site prep, land clearing, driveway repair, and septic excavation for mountain properties in Oakridge, OR. CCB #261742. Free estimates, call 541-401-8726."
->
-
-  <Hero
-    eyebrow="Excavation Contractor in Oakridge, Oregon"
-    headline="Excavation Contractor in Oakridge, Oregon"
-    subheadline="About 40 minutes east of Eugene on Highway 58, Oakridge sits in the Cascade foothills surrounded by national forest. Steep, timbered ground and long access roads are the norm, and excavation work here accounts for that."
-    primaryCta={{ label: 'Call 541-401-8726', href: 'tel:5414018726' }}
-    secondaryCta={{ label: 'Free Estimate', href: '/contact' }}
-  />
-
-  <!-- Local intro -->
-  <section class="relative bg-white overflow-hidden">
-    <div class="pointer-events-none absolute -right-32 -top-16 h-96 w-96 rounded-full bg-brand-blue-light/40 blur-3xl" aria-hidden="true"></div>
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-32">
-      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <div class="mb-4 flex items-center gap-2">
-            <img src="/logo.png" alt="" class="h-6 w-auto" aria-hidden="true" />
-            <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">
-              Mountain Ground in Oakridge
-            </p>
-          </div>
-          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            Mountain Ground, Not Valley Ground in Oakridge
-          </h2>
-          <div class="mt-5 flex flex-col gap-4 text-slate-700 leading-relaxed">
-            <p>Oakridge properties tend to sit on slope, backed by timber, with an access road or driveway that has seen weather and use. Site prep for a build or an outbuilding here means more attention to slope and drainage than a flat Willamette Valley lot.</p>
-            <p>A washed-out or rutted access road is a common reason for a call from Oakridge. Land clearing scope varies more from property to property depending on timber cover and terrain, it is worth a call to walk through what a specific parcel needs before assuming the scope.</p>
-            <p>D&D Land Works is licensed and bonded under <strong class="font-semibold text-ink">CCB #261742</strong> and DEQ certified for applicable septic work. Oakridge is part of the regular Lane County service area.</p>
-          </div>
-          <a href="/contact" class="btn-pill mt-8 inline-flex">
-            Talk About Your Property
-            <span class="btn-pill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div class="relative pb-6">
-          <img
-            src="/project-excavation-bucket.webp"
-            alt="D&D Land Works excavation contractor working in Oakridge, Oregon"
-            class="w-full rounded-(--radius-brand-card) object-cover aspect-4/3 shadow-xl"
-            loading="lazy"
-          />
-          <div class="absolute bottom-10 left-4 sm:left-6 flex items-center gap-3 rounded-(--radius-brand-card) bg-brand-blue px-4 py-3 text-white shadow-lg">
-            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v5c0 5.25-3.5 10.15-8 11.5C7.5 21.15 4 16.25 4 11V6l8-3Z" />
-              </svg>
-            </span>
-            <div class="leading-tight">
-              <p class="font-display font-bold text-sm">CCB #261742</p>
-              <p class="font-body text-xs text-white/80">Licensed &amp; Bonded</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What kind of work -->
-  <section class="relative">
-    <div class="relative bg-ink overflow-hidden">
-      <img src="/project-site-excavation.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-45" loading="lazy" />
-      <div class="absolute inset-0 bg-linear-to-b from-ink/80 via-ink/70 to-ink"></div>
-      <div class="relative mx-auto max-w-3xl px-4 pt-20 pb-40 text-center md:pt-28 md:pb-52">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Oakridge Properties</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-white md:text-5xl">
-          What Kind of Work Does Your Property Need?
-        </h2>
-        <p class="mt-5 text-slate-300 leading-relaxed">
-          Mountain properties in the Cascade foothills have different needs than valley lots. Start by describing what you want to do and what the site currently looks like.
-        </p>
-      </div>
-    </div>
-    <div class="relative mx-auto max-w-6xl px-4 -mt-32 pb-6 md:-mt-40">
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {excavationTypes.map((item) => <ServiceCard {...item} />)}
-      </div>
-    </div>
-    <div class="mx-auto max-w-3xl px-4 pt-4 pb-20 md:pb-24 text-center flex flex-wrap justify-center gap-4">
-      <a href="/contact" class="btn btn-cta inline-flex">Talk Through Your Project</a>
-      <a href="/contact" class="btn btn-outline inline-flex">Request a Free Estimate</a>
-    </div>
-  </section>
-
-  <!-- When does an Oakridge property need excavation -->
-  <section class="bg-slate-50 border-y border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Oakridge Excavation</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-          When Does an Oakridge Property Need Excavation?
-        </h2>
-        <p class="mt-4 text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Mountain properties in the Cascades can need excavation for different reasons than a valley lot. Slope, access roads, timber cover, and drainage each add to the picture.
-        </p>
-      </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {whenCards.map((card) => (
-          <div class="card flex flex-col gap-3">
-            <h3 class="font-display font-bold uppercase tracking-wide text-base text-ink">{card.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{card.description}</p>
-            <a href={card.href} class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline">
-              {card.linkLabel}
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </a>
-          </div>
-        ))}
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/contact" class="btn-pill inline-flex">
-          Talk About Your Property
-          <span class="btn-pill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it gets started, process steps -->
-  <section class="relative bg-ink text-white overflow-hidden">
-    <div class="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true"></div>
-    <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-16 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue-light">Getting Started</p>
-        <h2 class="mt-2 font-display font-bold uppercase tracking-tight text-3xl text-white md:text-4xl">
-          How Your Oakridge Project Gets Started
-        </h2>
-        <p class="mt-4 text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Describe the site and what needs to happen. David will walk the property before quoting so the estimate accounts for slope, timber cover, and access, not a generic price.
-        </p>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-        {[
-          { step: '1', title: 'Describe the Site', detail: 'Tell us about the property, what needs to be cleared, graded, dug, or repaired. Mention the slope, access road, and what you want the site ready for.' },
-          { step: '2', title: 'Discuss the Property', detail: 'We talk through slope, timber cover, access road condition, drainage, existing structures, and utilities that may affect the job.' },
-          { step: '3', title: 'Understand the Scope', detail: 'Mountain properties have more variables than valley lots. Once the site is understood, the scope of the excavation or site work can be discussed clearly.' },
-          { step: '4', title: 'Get an Estimate', detail: 'D&D Land Works provides free on-site estimates for applicable projects in Oakridge. David walks every property before quoting.' },
-        ].map((item) => (
-          <div class="rounded-(--radius-brand-card) bg-white/5 border border-white/10 p-6 sm:p-7">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-safety-orange font-display font-bold text-white text-sm">
-              {item.step}
-            </span>
-            <p class="mt-4 font-display font-bold uppercase tracking-wide text-sm text-white">{item.title}</p>
-            <p class="mt-2 text-sm text-slate-300 leading-relaxed">{item.detail}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
-        <a href="tel:5414018726" class="btn btn-outline border-white/30 text-white hover:bg-white/10">Call 541-401-8726</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- What can D&D help with -->
-  <section class="bg-white border-b border-slate-100">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="grid gap-12 lg:gap-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue mb-4">Excavation Services</p>
-          <h2 class="font-display font-black uppercase tracking-tight text-3xl text-ink md:text-4xl">
-            What Can D&D Land Works Help With?
-          </h2>
-          <p class="mt-5 text-slate-600 leading-relaxed">
-            D&D Land Works handles excavation and related site work for property owners in Oakridge and east Lane County. Every estimate accounts for the actual site, slope, timber, access, and ground conditions.
-          </p>
-          <ul class="mt-10 flex flex-col gap-7">
-            {whyItems.map((item) => (
-              <li class="flex items-start gap-4">
-                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
-                </span>
-                <div>
-                  <p class="font-display font-bold text-ink">{item.title}</p>
-                  <p class="mt-1 text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                  {item.link && (
-                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" class="mt-1 inline-block text-sm font-semibold text-brand-blue hover:underline">
-                      {item.link.label}
-                    </a>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-          <a href="/contact" class="btn-pill mt-10 inline-flex">
-            Talk About Your Property
-            <span class="btn-pill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </span>
-          </a>
-        </div>
-        <div class="relative">
-          <img
-            src="/project-grading-driveway.webp"
-            alt="D&D Land Works excavation and site work in Oakridge, Oregon"
-            class="w-full rounded-(--radius-brand-card) object-cover aspect-3/4 shadow-xl"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Areas -->
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
-      <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Serving Local Properties</p>
-        <h2 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Excavation in Oakridge and East Lane County
-        </h2>
-        <div class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed flex flex-col gap-3">
-          <p>D&D Land Works is headquartered in Springfield and covers Oakridge as part of the regular Lane County service area. Oakridge is about 40 minutes east on Highway 58.</p>
-          <p>If your property is elsewhere in east Lane County, you can still contact us and explain what you need.</p>
-        </div>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
-        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-          <a href="/locations/oakridge" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-            </svg>
-            <span class="font-display font-bold uppercase tracking-wide text-sm">Oakridge, OR</span>
-          </a>
-          {[
-            { label: 'Eugene', href: '/locations/eugene' },
-            { label: 'Springfield', href: '/locations/springfield' },
-            { label: 'Lowell', href: '/excavation-contractor-lowell-oregon' },
-            { label: 'Cottage Grove', href: '/locations/cottage-grove' },
-            { label: 'Creswell', href: '/locations/creswell' },
-            { label: 'Junction City', href: '/locations/junction-city' },
-            { label: 'Veneta', href: '/locations/veneta' },
-            { label: 'Florence', href: '/locations/florence' },
-            { label: 'Coburg', href: '/locations/coburg' },
-          ].map((area) => (
-            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-              </svg>
-              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
-            </a>
-          ))}
-        </div>
-        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
-          <iframe
-            title="D&D Land Works service area map, east Lane County, Oregon"
-            src="https://maps.google.com/maps?q=Oakridge,+Oregon&z=11&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0; display:block;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <FAQ heading="Excavation in Oakridge, FAQs" items={faqs} />
-
-  <!-- Related Services -->
-  <section class="bg-white border-t border-slate-100">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
-      <h2 class="font-display font-black uppercase tracking-tight text-2xl text-ink text-center mb-12 md:text-3xl">
-        Related Services
-      </h2>
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          { title: 'Land Clearing', description: 'Removing brush and timber from mountain and rural properties before site work begins.', href: '/land-clearing-services-eugene-oregon' },
-          { title: 'Site Preparation', description: 'Clearing, grading, and excavation to prepare a property for the next stage of work.', href: '/site-preparation-contractor-eugene-oregon' },
-          { title: 'Driveway & Access Repair', description: 'Regrading and repairing washed-out driveways and access roads.', href: '/driveway-excavation-grading-eugene-oregon' },
-          { title: 'Septic Installation & Repair', description: 'DEQ certified excavation for septic installation and repair in Lane County.', href: '/septic-installation-lane-county-oregon' },
-        ].map((item) => (
-          <a href={item.href} class="card group flex flex-col gap-3 hover:border-brand-blue transition-colors">
-            <h3 class="font-display font-bold uppercase tracking-wide text-sm text-ink group-hover:text-brand-blue transition-colors">
-              {item.title}
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{item.description}</p>
-            <span class="text-xs font-display font-bold uppercase tracking-wide text-brand-blue">
-              Learn More &#8594;
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <CTABlock
-    eyebrow="Talk With David"
-    headline="Need Excavation Work in Oakridge?"
-    subheadline="Call D&D Land Works at 541-401-8726. Describe the site, the access, and what you need done, David will walk the property before quoting so the estimate accounts for the actual conditions, not a flat-valley average."
-    ctaLabel="Request a Free Estimate"
-    ctaHref="/contact"
-    phone="541-401-8726"
-  />
-
-</BaseLayout>
-
-<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<LocationPageTemplate
+  pageTitle="Excavation Contractor in Oakridge, Oregon | D&D Land Works"
+  pageDescription="D&D Land Works serves Oakridge, Oregon with excavation, site preparation, land clearing, grading, drainage, and septic work. Based in Springfield. CCB #261742. Free estimates, 541-401-8726."
+  schema={schema}
+  cityState="Oakridge, Oregon"
+  heroH1Light="Excavation Contractor in"
+  heroH1Bold="Oakridge, Oregon"
+  heroSub="Foundation digging, trenching, utility excavation, drainage, and septic work from one licensed, bonded contractor. D&D Land Works serves Oakridge, Springfield, and all of Lane County — David walks every site before quoting."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Oakridge"
+  introEyebrow="Oakridge's Excavation Contractor"
+  introH2Light="Excavation Services for"
+  introH2Bold="Homes and Businesses in Oakridge"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Most construction and land projects in Oakridge start with a call to an excavation contractor. D&D Land Works handles the digging, trenching, and earth-moving work that comes before a foundation gets poured, a utility gets connected, or a drainage problem gets fixed. We serve homeowners and builders across Oakridge, Springfield, and Lane County."
+  introPara2="The jobs vary. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on. David Deggelman owns D&D Land Works and walks every site in person before quoting. Licensed and bonded under Oregon CCB #261742 and DEQ certified for septic."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our Services"
+  servicesH2Light="What Does Excavation"
+  servicesH2Bold="Include?"
+  servicesDesc="Excavation covers the digging and earth-moving work that gets a site ready for construction. The scope depends on the project — foundation depth, utility runs, drainage needs, and what the ground requires before a structure can go on it."
+  services={services}
+  whenEyebrow="Oakridge Excavation"
+  whenH2Light="When Does an Oakridge Property"
+  whenH2Bold="Need Excavation?"
+  whenDesc="You may need excavation when the existing ground does not fit the work you want to do. The reason depends on the property and what you are trying to build, fix, or improve."
+  checklistItems={checklistItems}
+  processEyebrow="Getting Started"
+  processH2Light="How Your Oakridge Excavation"
+  processH2Bold="Project Gets Started"
+  processDesc="You do not need to know the exact name of the excavation service before you call. Start by explaining what you are trying to do and what is happening on your property."
+  processSteps={processSteps}
+  whyH2Light="Why Choose D&D Land Works for"
+  whyH2Bold="Excavation in Oakridge?"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Site work and grading on a Lane County property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our Service Area"
+  areaH2Light="Excavation Services in Oakridge"
+  areaH2Bold="and Lane County"
+  areaDesc="D&D Land Works serves Oakridge, Springfield, and surrounding Lane County communities for excavation, site preparation, and septic work."
+  areaLinks={areaLinks}
+  faqH2Light="Frequently Asked"
+  faqH2Bold="Questions"
+  faqs={faqs}
+  relatedEyebrow="Related Services"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need Excavation Work"
+  ctaH2Bold="in Oakridge?"
+  ctaSub="If you have a project in Oakridge and are not sure what kind of excavation you need, call D&D Land Works at 541-401-8726. Tell us what you want to do, where the work is, and what problem you are trying to solve. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>

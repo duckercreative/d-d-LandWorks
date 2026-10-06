@@ -40,7 +40,7 @@ function sp_defaults() {
 		/* About / Difference */
 		'sp_about_eyebrow' => 'Site Preparation vs. Excavation',
 		'sp_about_heading' => "What's the Difference Between Site Preparation and Excavation?",
-		'sp_about_body'    => "Site preparation is the broader work that gets a property ready for construction. It can include land clearing, topsoil stripping, cut and fill, grading, leveling, and compaction based on existing site conditions and planned construction.\n\nExcavation is more specific digging work. It may involve preparing areas for foundations, utilities, drainage, or other construction needs.\n\nThe two can occur on the same project. Site preparation establishes suitable ground conditions, while excavation addresses specific areas that must be dug for the next construction stage. The required scope depends on the property, construction plans, elevations, access, drainage, and existing ground conditions on site.",
+		'sp_about_body'    => "Site preparation is the work that gets your property ready for construction. It may include clearing brush, removing soil, grading the ground, leveling areas, or improving access.\n\nExcavation is more focused on digging. It can include digging for foundations, utilities, drainage, or other parts of a project.\n\nA project may need both. Site preparation gets the property ready, while excavation digs the areas needed for the next step. The work depends on your property, plans, ground conditions, access, and drainage.",
 
 		/* Services grid — section labels + 4 cards */
 		'sp_svc_eyebrow' => 'Our Services',
@@ -54,6 +54,8 @@ function sp_defaults() {
 		'sp_svc_3_desc'  => 'Cut and fill moves soil to change existing ground elevations. It helps shape building areas to planned grades when the property requires significant changes in elevation.',
 		'sp_svc_4_title' => 'Grading',
 		'sp_svc_4_desc'  => 'Grading adjusts existing ground elevations to meet planned site requirements. It shapes the construction area and establishes suitable grades for the building and surrounding ground.',
+		'sp_svc_5_title' => 'Compaction',
+		'sp_svc_5_desc'  => 'Mechanical compaction of soil, gravel, and sub-base materials achieves the density required for driveways, building pads, and structural foundations.',
 
 		/* Problems — section labels + 4 cards */
 		'sp_prob_eyebrow' => 'We Can Help',

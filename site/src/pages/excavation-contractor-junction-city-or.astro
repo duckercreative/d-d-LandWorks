@@ -1,0 +1,162 @@
+﻿---
+import LocationPageTemplate from '../layouts/LocationPageTemplate.astro';
+
+const factsBar = [
+  { label: 'Based in', value: 'Springfield, OR' },
+  { label: 'Serving', value: 'Junction City & north Lane County' },
+  { label: 'Licensed & bonded', value: 'CCB #261742' },
+  { label: 'Septic work', value: 'DEQ certified' },
+];
+
+const services = [
+  { num: '01', title: 'Site & Land Preparation', desc: 'Getting land ready before building or starting a project. May include clearing, excavation, grading, and moving soil.', href: '/site-preparation-contractor-eugene-or' },
+  { num: '02', title: 'Land Grading', desc: 'Changing the shape and slope of the ground for a building site, driveway, drainage work, or other land project.', href: '/land-grading-services-eugene-or' },
+  { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, debris, and overgrowth from areas that need to be prepared before excavation can begin.', href: '/land-clearing-services-eugene-or' },
+  { num: '04', title: 'Drainage Work', desc: 'When water collects where it should not, excavation or grading can help move it in a better direction.', href: '/drainage-installation-eugene-or' },
+  { num: '05', title: 'Farm & Rural Excavation', desc: 'Larger rural and agricultural properties may need more clearing, soil movement, and ground preparation.', href: '/excavation-contractor-eugene-or' },
+  { num: '06', title: 'Farm Pond Excavation', desc: 'Pond excavation can involve digging the planned area and moving soil. Design, permits, and water rights are separate.', href: '/contact' },
+];
+
+const checklistItems = [
+  { title: 'Before construction begins', desc: 'A building site may need clearing, grading or excavation before any other work can start.', href: '/contact' },
+  { title: 'When the ground is uneven', desc: 'Areas that are too high, too low or uneven for the planned use get regraded to fit the project.', href: '/contact' },
+  { title: 'When water is collecting', desc: 'Standing water around home, driveway or field is a drainage problem with a dig-able fix.', href: '/contact' },
+  { title: 'When land needs clearing', desc: 'Brush, trees and overgrowth on rural land need to be cleared before excavation or grading can begin.', href: '/contact' },
+  { title: 'For rural or agricultural projects', desc: 'Larger rural properties may need more clearing, digging, and soil movement than a small city lot.', href: '/contact' },
+  { title: 'For a pond or farm project', desc: 'Farm pond excavation and agricultural site work may be part of a larger rural project.', href: '/contact' },
+];
+
+const processSteps = [
+  { num: '1', title: 'Tell us what you need', desc: 'What you want to build, clear, dig, or prepare on your Junction City property.' },
+  { num: '2', title: 'Discuss the property', desc: 'Location, access, slope, drainage, structures and utilities that affect the job.' },
+  { num: '3', title: 'Understand the scope', desc: 'The excavation and site work explained in plain terms.' },
+  { num: '4', title: 'Get your estimate', desc: 'A free estimate once the property and project are understood.', dark: true },
+];
+
+const bentoFeatures = [
+  { title: 'Free estimates', desc: 'Property, access, soil and scope reviewed on site. No phone quotes off satellite photos.', dark: false },
+  { title: 'Rural & farm excavation', desc: 'Larger rural parcels, farm ponds, and agricultural land prep handled on a site-by-site basis.', dark: true },
+  { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit and drains, with 811 locates on every trench job.', dark: true },
+  { title: 'DEQ certified septic', desc: 'Tank, distribution box and drainfield excavation for Lane County rural properties.', dark: false },
+];
+
+const areaLinks = [
+  { label: 'Eugene', href: '/excavation-contractor-eugene-or' },
+  { label: 'Springfield', href: '/excavation-contractor-springfield-or' },
+  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
+  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
+  { label: 'Veneta', href: '/excavation-contractor-veneta-or' },
+  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
+  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
+  { label: 'Florence', href: '/excavation-contractor-florence-or' },
+];
+
+const faqs = [
+  { question: 'Do you provide excavation in Junction City?', answer: 'Yes. D&D Land Works is based in Springfield and serves Junction City as part of the regular Lane County service area. Call 541-401-8726 to discuss your project.' },
+  { question: 'Can you prepare rural or agricultural land?', answer: 'Rural land may need clearing, grading, digging, or other site work before a project can begin. The right work depends on the property and what you plan to do with it.' },
+  { question: 'Do you excavate farm ponds?', answer: 'Farm pond excavation may include digging and moving soil. Pond design, permits, water rights, engineering, and other requirements are separate from the excavation work itself.' },
+  { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in Junction City.' },
+  { question: 'What affects excavation cost in Junction City?', answer: 'Project size, digging depth, ground conditions, slope, access, clearing, grading, drainage, soil movement, and site complexity can all affect cost. Larger rural properties may have different needs than a small residential lot.' },
+];
+
+const relatedServices = [
+  { title: 'Site Preparation', desc: 'Clearing, grading and compaction for raw lots.', href: '/site-preparation-contractor-eugene-or' },
+  { title: 'Land Clearing', desc: 'Brush, trees and debris removed from rural properties.', href: '/land-clearing-services-eugene-or' },
+  { title: 'Grading & Leveling', desc: 'The right slope for drainage and a level pad.', href: '/land-grading-services-eugene-or' },
+  { title: 'Drainage Excavation', desc: 'French drains, swales and catch basins.', href: '/drainage-installation-eugene-or' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': 'https://www.ddlandworks.com/#business',
+      name: 'D&D Land Works',
+      url: 'https://www.ddlandworks.com/',
+      telephone: '+15414018726',
+      email: 'david@ddlandworks.com',
+      priceRange: '$$',
+      areaServed: [
+        { '@type': 'City', name: 'Junction City', sameAs: 'https://www.wikidata.org/wiki/Q1024588' },
+        { '@type': 'AdministrativeArea', name: 'Lane County, Oregon' },
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ddlandworks.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://www.ddlandworks.com/service-area/' },
+        { '@type': 'ListItem', position: 3, name: 'Junction City', item: 'https://www.ddlandworks.com/excavation-contractor-junction-city-or/' },
+      ],
+    },
+  ],
+};
+---
+
+<LocationPageTemplate
+  pageTitle="Excavation Contractor in Junction City, OR | D&D Land Works"
+  pageDescription="D&D Land Works provides excavation, land clearing, grading, drainage, farm pond excavation, and site prep in Junction City, OR. CCB #261742. Free estimates, call 541-401-8726."
+  schema={schema}
+  cityState="Junction City, Oregon"
+  heroH1Light="Excavation contractor"
+  heroH1Bold="in Junction City, Oregon"
+  heroSub="D&D Land Works serves Junction City and the surrounding north Lane County area. Rural residential, agricultural, and farm pond projects are part of the regular work."
+  heroImage="/service-site-preparation.webp"
+  factsBar={factsBar}
+  breadcrumbLabel="Junction City"
+  introEyebrow="Junction City's excavation contractor"
+  introH2Light="Excavation for rural and"
+  introH2Bold="residential properties in Junction City"
+  davidQuote="I walk every site in person before I quote it."
+  introPara1="Junction City sits in the flat north end of the Willamette Valley, with a mix of residential lots and larger rural and agricultural parcels. Site prep, clearing, grading, and drainage needs can vary widely depending on the property."
+  introPara2="Farm pond excavation, land clearing for rural builds, and drainage work on agricultural properties are all part of what D&D handles in this area. Each site is looked at on its own merits before quoting."
+  introImage="/project-excavation-bucket.webp"
+  servicesEyebrow="Our services"
+  servicesH2Light="What does excavation"
+  servicesH2Bold="include in Junction City?"
+  servicesDesc="The scope depends on whether it is a residential lot, a rural property, a farm, or an agricultural project that needs ground preparation."
+  services={services}
+  whenEyebrow="Junction City excavation"
+  whenH2Light="When does your"
+  whenH2Bold="property need it?"
+  whenDesc="Check off what sounds like your property. If any of these fit, a free site walk is the next step."
+  checklistItems={checklistItems}
+  processEyebrow="Getting started"
+  processH2Light="How your Junction City"
+  processH2Bold="project gets started"
+  processDesc="You don't need to know the name of the service before you call. Just explain what you're trying to do and what's happening on the property."
+  processSteps={processSteps}
+  whyH2Light="Why Junction City calls"
+  whyH2Bold="D&D Land Works"
+  bentoImage="/project-grading-driveway.webp"
+  bentoImageAlt="Grading and excavation on a rural Lane County property"
+  bentoFeatures={bentoFeatures}
+  areaEyebrow="Our service area"
+  areaH2Light="Excavation in Junction City"
+  areaH2Bold="and Lane County"
+  areaDesc="Based in Springfield and serving Junction City and the surrounding north Lane County rural area. Nearby areas we also cover:"
+  areaLinks={areaLinks}
+  faqH2Light="Excavation in Junction City:"
+  faqH2Bold="common questions"
+  faqs={faqs}
+  relatedEyebrow="Related services in Junction City"
+  relatedServices={relatedServices}
+  ctaEyebrow="Talk with David"
+  ctaH2Light="Need excavation work"
+  ctaH2Bold="in Junction City?"
+  ctaSub="Residential lot, rural property, or farm project — tell David what you want to do and what the property looks like. Free estimates, no obligation."
+  ctaImage="/service-site-preparation.webp"
+/>
