@@ -302,7 +302,7 @@ const {
         <p class="text-lg leading-relaxed text-slate-600">{inclIntro}</p>
       </div>
 
-      <div class={`grid gap-5 sm:grid-cols-2 ${inclItems.length >= 5 ? 'lg:grid-cols-5' : inclItems.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+      <div class={`grid gap-5 sm:grid-cols-2 ${inclItems.length === 6 ? 'lg:grid-cols-3' : inclItems.length >= 5 ? 'lg:grid-cols-5' : inclItems.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
         {inclItems.map((item) => (
           <div class={`bg-white rounded-(--radius-brand-card) p-8 flex flex-col gap-4 border-t-[3px] ${item.accent ? 'border-accent' : 'border-ink'}`}>
             <span class="font-display font-light text-[2.5rem] leading-none text-[#B9B2A6]">{item.num}</span>
