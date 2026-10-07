@@ -229,7 +229,7 @@ const businessSchema = {
       </div>
 
       <!-- Services 2-col grid: 01–05 left, 06–10 right -->
-      <div class="grid sm:grid-cols-2 border-b border-white/[0.14]" style="grid-template-rows: repeat(5, auto); grid-auto-flow: column;">
+      <div class="grid sm:grid-cols-2 sm:grid-flow-col sm:[grid-template-rows:repeat(5,minmax(0,1fr))] border-b border-white/[0.14]">
         {services.map((service) => (
           <a
             href={service.href}
