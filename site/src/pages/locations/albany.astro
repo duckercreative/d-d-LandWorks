@@ -1,11 +1,11 @@
----
+﻿---
 import LocationPageTemplate from '../../layouts/LocationPageTemplate.astro';
 
 const factsBar = [
   { label: 'Based in', value: 'Springfield, OR' },
   { label: 'Serving', value: 'Albany & Lane County' },
   { label: 'Licensed & bonded', value: 'CCB #261742' },
-  { label: 'Septic work', value: 'DEQ certified' },
+  { label: 'Septic work', value: 'Coming soon' },
 ];
 
 const services = [
@@ -13,7 +13,7 @@ const services = [
   { num: '02', title: 'Land Grading', desc: 'Changing the shape and level of the ground. May be needed when an area is uneven, needs a new slope, or needs to be shaped for the planned use.', href: '/land-grading-services-eugene-or' },
   { num: '03', title: 'Land Clearing', desc: 'Removing brush, trees, and debris from an area before grading or excavation can begin. Clearing opens the work area so the ground can be prepared.', href: '/land-clearing-services-eugene-or' },
   { num: '04', title: 'Drainage Excavation', desc: 'Excavation to create or improve a path for water. The existing ground, slope, and drainage conditions all affect the approach.', href: '/drainage-installation-eugene-or' },
-  { num: '05', title: 'Septic-Related Excavation', desc: 'D&D Land Works is DEQ certified for septic installation and repair. The excavation involved depends on the property and the septic project.', href: '/septic-installation-lane-county-or' },
+  { num: '05', title: 'Septic-Related Excavation', desc: 'D&D Land Works offers septic-related excavation. DEQ certification is in progress — the excavation involved depends on the property and the project.', href: '/septic-installation-lane-county-or' },
   { num: '06', title: 'Trenching', desc: 'Digging a narrow path for water, sewer, electrical conduit, irrigation, drainage, or other underground work depending on the project.', href: '/trenching-services-eugene-or' },
 ];
 
@@ -38,7 +38,7 @@ const bentoFeatures = [
   { title: 'Free estimates', desc: 'Free estimates let the property, access, soil conditions, and planned scope be reviewed before a number is given. No phone estimates built from satellite imagery.', dark: false },
   { title: 'Foundation excavation', desc: 'Foundation digs for new homes, ADUs, and commercial structures across Albany, Springfield, and Lane County. One crew handles clearing, grading, and the foundation box.', dark: true },
   { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit, and drainage runs. 811 locates coordinated as a standard part of every trench job.', dark: true },
-  { title: 'DEQ certified septic', desc: 'D&D Land Works is DEQ certified for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.', dark: false },
+  { title: 'DEQ septic — coming soon', desc: 'D&D Land Works is working toward DEQ certification for septic installation and repair. Septic-related excavation is available — certification coming soon.', dark: false },
 ];
 
 const areaLinks = [
@@ -58,7 +58,7 @@ const areaLinks = [
 const faqs = [
   { question: 'Do you provide excavation in Albany?', answer: 'Yes. D&D Land Works provides excavation and related site work for properties in Albany and the surrounding area. We are based in Springfield.' },
   { question: 'What affects excavation cost?', answer: 'Cost can depend on project size, digging, ground conditions, slope, access, clearing, material movement, drainage needs, septic-related excavation, driveway work, and overall site complexity.' },
-  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified for septic work. Septic design and approval are separate parts of the project.' },
+  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and handles septic-related excavation. DEQ certification is in progress. Septic design and approval are separate parts of the project.' },
   { question: 'Do you provide free estimates?', answer: 'Yes. D&D Land Works provides free estimates for applicable excavation and site work projects in Albany.' },
   { question: 'Where is D&D Land Works based?', answer: 'D&D Land Works is headquartered in Springfield, Oregon, and provides excavation services throughout Lane County.' },
 ];
@@ -87,7 +87,7 @@ const schema = {
       ],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+        
       ],
     },
     {
@@ -126,7 +126,7 @@ const schema = {
   introH2Bold="Homes and Businesses in Albany"
   davidQuote="I walk every site in person before I quote it."
   introPara1="Most construction and land projects in Albany start with a call to an excavation contractor. D&D Land Works handles the digging, trenching, and earth-moving work that comes before a foundation gets poured, a utility gets connected, or a drainage problem gets fixed. We serve homeowners and builders across Albany, Springfield, and Lane County."
-  introPara2="The jobs vary. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on. David Deggelman owns D&D Land Works and walks every site in person before quoting. Licensed and bonded under Oregon CCB #261742 and DEQ certified for septic."
+  introPara2="The jobs vary. Some calls are for a foundation footprint on a lot that's already cleared and graded. Others start with clearing brush off raw ground before anything can be dug. Some are smaller — a trench for a water service line, a French drain to fix the wet spot next to a crawl space, or a drainfield excavation on a rural parcel that needs a septic system before it can be built on. David Deggelman owns D&D Land Works and walks every site in person before quoting. Licensed and bonded under Oregon CCB #261742. DEQ certification for septic is in progress."
   introImage="/project-excavation-bucket.webp"
   servicesEyebrow="Our Services"
   servicesH2Light="What Does Excavation"

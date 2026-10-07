@@ -5,7 +5,7 @@ const factsBar = [
   { label: 'Home base', value: 'Springfield, OR' },
   { label: 'Serving', value: 'Springfield & Lane County' },
   { label: 'Licensed & bonded', value: 'CCB #261742' },
-  { label: 'Septic work', value: 'DEQ certified' },
+  { label: 'Septic work', value: 'Coming soon' },
 ];
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
   { num: '03', title: 'Land Clearing', desc: 'Brush, trees, vegetation and debris removed before grading or excavation begins.', href: '/land-clearing-services-eugene-or' },
   { num: '04', title: 'Trenching for Underground Work', desc: 'Water lines, conduit, irrigation, and drainage dug to the right size and depth for what goes in them.', href: '/trenching-services-eugene-or' },
   { num: '05', title: 'Drainage Excavation', desc: 'Channels and trenches to move water away from areas where it collects.', href: '/drainage-installation-eugene-or' },
-  { num: '06', title: 'Septic Excavation', desc: 'DEQ certified for septic work. Excavation for tanks, distribution boxes, and drainfields on Springfield properties.', href: '/septic-installation-lane-county-or' },
+  { num: '06', title: 'Septic Excavation', desc: 'working toward DEQ certification for septic work. Excavation for tanks, distribution boxes, and drainfields on Springfield properties.', href: '/septic-installation-lane-county-or' },
 ];
 
 const checklistItems = [
@@ -37,7 +37,7 @@ const bentoFeatures = [
   { title: 'Home base: Springfield', desc: 'Headquartered at 2741 33rd St., Springfield. Not a name on a service-area list — this is where we work from every day.', dark: false },
   { title: 'Foundation excavation', desc: 'New homes, ADUs and commercial builds. One crew for clearing, grading and the foundation.', dark: true },
   { title: 'Utility & trench work', desc: 'Water service, sewer lateral, conduit and drains, with 811 locates on every trench job.', dark: true },
-  { title: 'DEQ certified septic', desc: 'Tank, distribution box and drainfield excavation on Springfield and Lane County lots.', dark: false },
+  { title: 'DEQ septic — coming soon', desc: 'Tank, distribution box and drainfield excavation on Springfield and Lane County lots.', dark: false },
 ];
 
 const areaLinks = [
@@ -58,7 +58,7 @@ const faqs = [
   { question: 'Can you grade my property?', answer: 'Grading can shape or level ground. The work depends on the property\'s existing grade and what you need the ground to do.' },
   { question: 'Do you provide land clearing?', answer: 'Yes. Land clearing can remove brush, trees, vegetation, and debris where clearing is part of the project.' },
   { question: 'Can you help with drainage excavation?', answer: 'Yes. Drainage work may require excavation for trenches, channels, or other areas used to move water.' },
-  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects and is DEQ certified. Septic design and approval are separate parts of the project.' },
+  { question: 'Can you excavate for septic work?', answer: 'D&D Land Works handles excavation connected with applicable septic projects Septic design and approval are separate parts of the project.' },
   { question: 'Do you provide trenching?', answer: 'Yes. Trenching can be used for utilities, irrigation, drainage, and other underground work where excavation is needed.' },
   { question: 'Can you grade a driveway?', answer: 'Driveway work may include grading or excavation to reshape the ground or correct problem areas.' },
   { question: 'What affects excavation cost?', answer: 'Cost can depend on project size, digging depth, ground conditions, slope, access, clearing, material movement, drainage needs, septic work, and overall site complexity.' },
@@ -91,7 +91,7 @@ const schema = {
       ],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', credentialCategory: 'License', name: 'Oregon CCB License #261742' },
-        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Certification', name: 'Oregon DEQ Certification, Septic Install & Repair' },
+        
       ],
     },
     {

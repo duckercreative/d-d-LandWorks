@@ -7,6 +7,7 @@ interface Cta {
 interface TrustItem {
   label: string;
   sub?: string;
+  accent?: boolean;
 }
 
 interface Props {
@@ -80,8 +81,8 @@ const {
         <div class="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 py-4 flex flex-wrap justify-center gap-x-10 gap-y-3">
           {trustItems.map((item) => (
             <div class="flex flex-col gap-0.5 items-center text-center">
-              <span class="font-display font-semibold text-sm text-white leading-tight">{item.label}</span>
-              {item.sub && <span class="font-body text-xs text-white/55">{item.sub}</span>}
+              <span class:list={['font-display font-semibold text-sm leading-tight', item.accent ? 'text-accent-light' : 'text-white']}>{item.label}</span>
+              {item.sub && <span class:list={['font-body text-xs', item.accent ? 'text-accent-light/80' : 'text-white/55']}>{item.sub}</span>}
             </div>
           ))}
         </div>

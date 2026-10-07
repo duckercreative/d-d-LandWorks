@@ -11,7 +11,7 @@ const services = [
   { num: '05', title: 'Drainage Excavation', desc: 'Channels and trenches that move winter water away from homes and driveways.', href: '/drainage-installation-eugene-or' },
   { num: '06', title: 'Utility Excavation', desc: 'Trenches dug for water, sewer, power and other underground lines.', href: '/utility-trenching-eugene-or' },
   { num: '07', title: 'Trenching & Backfill', desc: 'Trenches dug to depth, then backfilled and compacted once the work is in.', href: '/utility-trenching-eugene-or' },
-  { num: '08', title: 'Septic Installation & Repair', desc: 'DEQ certified excavation for new systems, repairs and drainfield work.', href: '/septic-installation-lane-county-or' },
+  { num: '08', title: 'Septic Installation & Repair', desc: 'Excavation for new systems, repairs and drainfield work. DEQ certification in progress.', href: '/septic-installation-lane-county-or' },
   { num: '09', title: 'Driveway Repair', desc: 'Potholes, ruts and washouts regraded and crowned so the drive sheds water.', href: '/driveway-excavation-grading-eugene-or' },
   { num: '10', title: 'Slope Stabilization', desc: 'Banks and hillsides reshaped and regraded where soil moves after heavy rain.', href: '/slope-stabilization-eugene-or' },
 ];
@@ -90,7 +90,7 @@ const serviceAreas = [
 
 const faqs = [
   { question: 'What Does an Excavation Contractor Do?', answer: 'An excavation contractor prepares and changes ground for construction, drainage, utilities, foundations, access, septic work, and other property projects. D&D Land Works handles excavation, clearing, grading, trenching, driveway repair, septic work, and related site preparation throughout Lane County.' },
-  { question: 'Does D&D Land Works Handle Septic Excavation?', answer: 'Yes. D&D Land Works handles septic installation and repair and is DEQ certified for applicable septic work. Excavation is part of most septic projects, including system installation, repair, and access work. The scope depends on the property, existing system conditions, site access, and applicable DEQ requirements.' },
+  { question: 'Does D&D Land Works Handle Septic Excavation?', answer: 'Yes. D&D Land Works handles septic installation and repair and handles septic-related excavation. DEQ certification is in progress. Excavation is part of most septic projects, including system installation, repair, and access work. The scope depends on the property, existing system conditions, site access, and applicable DEQ requirements.' },
   { question: 'What Should I Have Ready Before Requesting an Estimate?', answer: 'It helps to know the property location, the type of work you need — site preparation, grading, foundation excavation, drainage, utility trenching, driveway repair, septic, or slope work — existing access conditions, and any project timing you\'re working around. If you have plans or project documents, those can help clarify the scope, but you can start by telling us about the property and the work you need.' },
   { question: 'Is D&D Land Works Licensed and Bonded?', answer: 'Yes. D&D Land Works is licensed and bonded in Oregon under Construction Contractors Board license #261742. Customers can verify Oregon contractor licensing through the Oregon CCB\'s official license lookup before hiring an excavation contractor for their project.' },
   { question: 'Does D&D Land Works Provide Free Estimates?', answer: 'Yes. D&D Land Works provides free estimates for excavation and site preparation projects. The estimate can be based on the property\'s existing conditions, access, planned work, excavation requirements, drainage, utilities, and other factors affecting the project scope.' },
@@ -118,9 +118,9 @@ const businessSchema = {
   identifier: { '@type': 'PropertyValue', propertyID: 'Oregon CCB License', value: '261742' },
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
-    credentialCategory: 'certification',
-    name: 'DEQ Certified',
-    recognizedBy: { '@type': 'GovernmentOrganization', name: 'Oregon Department of Environmental Quality' },
+    
+    
+    
   },
   address: { '@type': 'PostalAddress', addressRegion: 'OR', addressCountry: 'US' },
   areaServed: ['Lane County, Oregon', 'Eugene, Oregon', 'Springfield, Oregon', 'Cottage Grove, Oregon', 'Junction City, Oregon', 'Creswell, Oregon', 'Veneta, Oregon', 'Florence, Oregon', 'Oakridge, Oregon', 'Coburg, Oregon', 'Lowell, Oregon'],
@@ -129,7 +129,7 @@ const businessSchema = {
 
 <BaseLayout
   title="D&D Land Works | Excavation Contractor in Lane County, Oregon"
-  description="D&D Land Works is a licensed excavation contractor serving Lane County, Oregon. Site prep, grading, land clearing, septic, and drainage. CCB #261742. DEQ Certified. Call 541-401-8726 for a free estimate."
+  description="D&D Land Works is a licensed excavation contractor serving Lane County, Oregon. Site prep, grading, land clearing, septic, and drainage. CCB #261742. Call 541-401-8726 for a free estimate."
 >
 
   <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
@@ -144,7 +144,7 @@ const businessSchema = {
     fullBleed={true}
     trustItems={[
       { label: 'CCB #261742', sub: 'Licensed & Bonded' },
-      { label: 'DEQ Certified', sub: 'Septic Systems' },
+      { label: 'DEQ Septic', sub: 'Coming Soon', accent: true },
       { label: 'Free Estimates', sub: 'On-site, no obligation' },
       { label: 'Residential & Commercial', sub: 'Lane County, OR' },
     ]}
@@ -169,7 +169,7 @@ const businessSchema = {
         <ul class="mt-7 flex flex-col gap-3">
           {[
             'Licensed &amp; Bonded — CCB #261742',
-            'DEQ Certified for septic installation &amp; repair',
+            'Septic excavation available — DEQ certification in progress',
             'Serving Eugene, Springfield, and all of Lane County',
           ].map((item) => (
             <li class="flex items-start gap-3 text-sm text-ink/70">
