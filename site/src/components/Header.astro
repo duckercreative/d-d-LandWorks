@@ -1,10 +1,12 @@
 ﻿---
-const coreServices = [
+interface NavItem { label: string; href: string; comingSoon?: boolean; }
+
+const coreServices: NavItem[] = [
   { label: 'Site Preparation', href: '/site-preparation-contractor-eugene-or' },
   { label: 'Excavation', href: '/excavation-contractor-eugene-or' },
   { label: 'Land Clearing', href: '/land-clearing-services-eugene-or' },
   { label: 'Grading & Leveling', href: '/land-grading-services-eugene-or' },
-  { label: 'Septic Install & Repairs', href: '/septic-installation-lane-county-or' },
+  { label: 'Septic Install & Repairs', href: '/septic-installation-lane-county-or', comingSoon: true },
 ];
 
 const additionalServices = [
@@ -82,7 +84,12 @@ const furtherAreas = [
                 <p class="font-display font-bold uppercase tracking-[0.1em] text-xs text-accent mb-3">Core Services</p>
                 <ul class="flex flex-col gap-2">
                   {coreServices.map((service) => (
-                    <li><a href={service.href} class="block text-sm font-medium text-ink hover:text-accent transition-colors">{service.label}</a></li>
+                    <li>
+                      <a href={service.href} class="flex items-center gap-2 text-sm font-medium text-ink hover:text-accent transition-colors">
+                        {service.label}
+                        {service.comingSoon && <span class="rounded-full bg-[#f97316]/10 px-1.5 py-0.5 text-[0.55rem] font-bold uppercase tracking-wider text-[#f97316] border border-[#f97316]/25 leading-none">Soon</span>}
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -215,8 +222,9 @@ const furtherAreas = [
       <div class="pb-4 flex flex-col gap-3">
         <p class="font-display font-semibold uppercase tracking-[0.15em] text-xs text-accent-light mt-1">Core Services</p>
         {coreServices.map((service) => (
-          <a href={service.href} class="font-display font-semibold uppercase tracking-[0.08em] text-lg text-white/80 hover:text-accent-light transition-colors">
+          <a href={service.href} class="flex items-center gap-3 font-display font-semibold uppercase tracking-[0.08em] text-lg text-white/80 hover:text-accent-light transition-colors">
             {service.label}
+            {service.comingSoon && <span class="rounded-full bg-[#f97316]/15 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-widest text-[#f97316] border border-[#f97316]/25">Soon</span>}
           </a>
         ))}
         <p class="font-display font-semibold uppercase tracking-[0.15em] text-xs text-white/40 mt-2">Additional</p>

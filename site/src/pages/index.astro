@@ -11,7 +11,7 @@ const services = [
   { num: '05', title: 'Drainage Excavation', desc: 'Channels and trenches that move winter water away from homes and driveways.', href: '/drainage-installation-eugene-or' },
   { num: '06', title: 'Utility Excavation', desc: 'Trenches dug for water, sewer, power and other underground lines.', href: '/utility-trenching-eugene-or' },
   { num: '07', title: 'Trenching & Backfill', desc: 'Trenches dug to depth, then backfilled and compacted once the work is in.', href: '/utility-trenching-eugene-or' },
-  { num: '08', title: 'Septic Installation & Repair', desc: 'Excavation for new systems, repairs and drainfield work. DEQ certification in progress.', href: '/septic-installation-lane-county-or' },
+  { num: '08', title: 'Septic Installation & Repair', desc: 'Excavation for new systems, repairs and drainfield work. DEQ certification in progress.', href: '/septic-installation-lane-county-or', comingSoon: true },
   { num: '09', title: 'Driveway Repair', desc: 'Potholes, ruts and washouts regraded and crowned so the drive sheds water.', href: '/driveway-excavation-grading-eugene-or' },
   { num: '10', title: 'Slope Stabilization', desc: 'Banks and hillsides reshaped and regraded where soil moves after heavy rain.', href: '/slope-stabilization-eugene-or' },
 ];
@@ -240,8 +240,15 @@ const businessSchema = {
               {service.num}
             </span>
             <span class="flex flex-col gap-2">
-              <span class="font-display font-semibold uppercase tracking-[0.06em] text-[1.05rem] leading-tight text-white group-hover:text-accent-light transition-colors">
-                {service.title}
+              <span class="flex flex-wrap items-center gap-2">
+                <span class="font-display font-semibold uppercase tracking-[0.06em] text-[1.05rem] leading-tight text-white group-hover:text-accent-light transition-colors">
+                  {service.title}
+                </span>
+                {service.comingSoon && (
+                  <span class="rounded-full bg-[#f97316]/15 px-2 py-0.5 text-[0.6rem] font-display font-bold uppercase tracking-widest text-[#f97316] border border-[#f97316]/25">
+                    Coming Soon
+                  </span>
+                )}
               </span>
               <span class="text-sm leading-relaxed text-white/55">{service.desc}</span>
             </span>
