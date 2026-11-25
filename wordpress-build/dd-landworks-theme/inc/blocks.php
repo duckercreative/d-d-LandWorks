@@ -100,7 +100,7 @@ function ddlw_register_blocks() {
 			'item4_title' => array( 'type' => 'string', 'default' => 'Commercial Excavation' ),
 			'item4_desc'  => array( 'type' => 'string', 'default' => 'We also handle excavation and site preparation for commercial customers, builders, and other property projects based on the required scope and site conditions.' ),
 			'item5_title' => array( 'type' => 'string', 'default' => 'DEQ Certified for Septic Work' ),
-			'item5_desc'  => array( 'type' => 'string', 'default' => 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.' ),
+			'item5_desc'  => array( 'type' => 'string', 'default' => 'D&D Land Works is DEQ certified (PLC# 39996) for septic installation and repair, including excavation associated with applicable septic projects.' ),
 		),
 		'render_callback' => 'ddlw_block_why_choose',
 	) );
@@ -544,7 +544,7 @@ function ddlw_block_why_choose( $attrs ) {
 	$item3_desc  = isset( $attrs['item3_desc'] )  ? esc_html( $attrs['item3_desc'] )  : '';
 	$item4_title = isset( $attrs['item4_title'] ) ? esc_html( $attrs['item4_title'] ) : 'Commercial Excavation';
 	$item4_desc  = isset( $attrs['item4_desc'] )  ? esc_html( $attrs['item4_desc'] )  : '';
-	$item5_title = isset( $attrs['item5_title'] ) ? esc_html( $attrs['item5_title'] ) : 'DEQ Certified for Septic Work';
+	$item5_title = isset( $attrs['item5_title'] ) ? esc_html( $attrs['item5_title'] ) : 'DEQ Certified for Septic Work — PLC# 39996';
 	$item5_desc  = isset( $attrs['item5_desc'] )  ? esc_html( $attrs['item5_desc'] )  : '';
 
 	$why_items = array(

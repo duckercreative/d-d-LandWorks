@@ -451,7 +451,7 @@
 			item4_title: { type: 'string', default: 'Commercial Excavation' },
 			item4_desc:  { type: 'string', default: 'We also handle excavation and site preparation for commercial customers, builders, and other property projects based on the required scope and site conditions.' },
 			item5_title: { type: 'string', default: 'DEQ Certified for Septic Work' },
-			item5_desc:  { type: 'string', default: 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.' },
+			item5_desc:  { type: 'string', default: 'D&D Land Works is DEQ certified (PLC# 39996) for septic installation and repair, including excavation associated with applicable septic projects.' },
 		},
 		edit: function ( props ) {
 			var attrs = props.attributes;

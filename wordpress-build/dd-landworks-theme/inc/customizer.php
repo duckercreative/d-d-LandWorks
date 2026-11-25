@@ -19,7 +19,7 @@ function ddlw_customize_register( $wp_customize ) {
 		'ddlw_phone'       => '541-401-8726',
 		'ddlw_email'       => 'david@ddlandworks.com',
 		'ddlw_ccb_number'  => '261742',
-		'ddlw_deq_cert'    => 'DEQ Certified (Septic)',
+		'ddlw_deq_cert'    => 'DEQ Certified — PLC# 39996',
 		'ddlw_service_area' => 'Lane County, OR',
 	);
 
@@ -53,7 +53,7 @@ function ddlw_ccb_number() {
 }
 
 function ddlw_deq_cert() {
-	return get_theme_mod( 'ddlw_deq_cert', 'DEQ Certified (Septic)' );
+	return get_theme_mod( 'ddlw_deq_cert', 'DEQ Certified — PLC# 39996' );
 }
 
 function ddlw_service_area() {

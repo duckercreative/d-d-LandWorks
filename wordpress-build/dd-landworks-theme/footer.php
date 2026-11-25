@@ -74,7 +74,7 @@ $footer_areas    = array_merge(
 	<div class="site-footer__bottom">
 		<div class="container">
 			<p>&copy; <?php echo esc_html( date( 'Y' ) ); ?> D&amp;D Land Works. All rights reserved.</p>
-			<p>Licensed &amp; Bonded, DEQ Certified</p>
+			<p>Licensed &amp; Bonded — CCB #261742 &middot; DEQ Certified — PLC# 39996</p>
 		</div>
 	</div>
 </footer>

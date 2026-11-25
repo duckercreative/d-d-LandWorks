@@ -79,7 +79,7 @@ get_header();
 					</span>
 					<div style="line-height:1.2;">
 						<p style="font-family:var(--font-display);font-weight:700;font-size:0.875rem;">DEQ Certified</p>
-						<p style="font-size:0.75rem;color:rgba(255,255,255,.7);">Septic Install &amp; Repair</p>
+						<p style="font-size:0.75rem;color:rgba(255,255,255,.7);">PLC# 39996</p>
 					</div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@ get_header();
 			<?php
 			$apart_items = array(
 				array( 'num' => '01', 'title' => 'Free Estimates, In Person', 'body' => "David walks the property before quoting. Pricing reflects what's actually on the site, slope, access, ground conditions, and scope, not a flat rate." ),
-				array( 'num' => '02', 'title' => 'Licensed, Bonded & DEQ Certified', 'body' => 'CCB #261742 covers excavation and site prep. DEQ certification covers septic installation and repair. One contractor handles both without a second crew.' ),
+				array( 'num' => '02', 'title' => 'Licensed, Bonded & DEQ Certified', 'body' => 'CCB #261742 covers excavation and site prep. DEQ certification (PLC# 39996) covers septic installation and repair. One contractor handles both without a second crew.' ),
 				array( 'num' => '03', 'title' => 'Local Knowledge', 'body' => 'Lane County properties vary, flat farmland, steep hillsides, rural access roads, tight urban lots. David has worked them all and knows what each type of site actually needs.' ),
 				array( 'num' => '04', 'title' => 'Straight Communication', 'body' => 'The estimate describes the scope plainly. If conditions change during the job, the conversation happens before costs change, not after.' ),
 			);

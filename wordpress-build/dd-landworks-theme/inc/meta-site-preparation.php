@@ -105,8 +105,8 @@ function sp_defaults() {
 		'sp_why_3_desc'  => 'D&D Land Works provides site preparation for residential construction, including properties in Eugene, Springfield, and surrounding Lane County communities.',
 		'sp_why_4_title' => 'Commercial Projects',
 		'sp_why_4_desc'  => "Commercial site preparation is scoped around the property's conditions, access, planned construction, and earthwork requirements for the project.",
-		'sp_why_5_title' => 'DEQ Certified for Septic Work',
-		'sp_why_5_desc'  => 'D&D Land Works is DEQ certified for relevant septic installation and repair work, including excavation associated with applicable septic projects.',
+		'sp_why_5_title' => 'DEQ Certified for Septic Work — PLC# 39996',
+		'sp_why_5_desc'  => 'D&D Land Works is DEQ certified (PLC# 39996) for septic installation and repair, including excavation associated with applicable septic projects.',
 
 		/* CTA */
 		'sp_cta_title'    => 'Get a Free Site Preparation Estimate',

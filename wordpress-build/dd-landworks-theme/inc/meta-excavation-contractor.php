@@ -104,8 +104,8 @@ function ec_defaults() {
 		'ec_why_3_desc'   => 'Foundation digs for new homes, ADUs, and commercial structures across Eugene, Springfield, and Lane County. One crew handles clearing, grading, and the foundation box.',
 		'ec_why_4_title'  => 'Utility & Trench Work',
 		'ec_why_4_desc'   => 'Water service, sewer lateral, conduit, and drainage runs. 811 locates coordinated as a standard part of every trench job.',
-		'ec_why_5_title'  => 'DEQ Certified for Septic',
-		'ec_why_5_desc'   => 'D&D Land Works is DEQ certified for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.',
+		'ec_why_5_title'  => 'DEQ Certified for Septic — PLC# 39996',
+		'ec_why_5_desc'   => 'D&D Land Works is DEQ certified (PLC# 39996) for septic install and repair, covering tank, distribution box, and drainfield excavation on rural Lane County lots.',
 
 		/* Service Areas */
 		'ec_areas_eyebrow' => 'Our Service Area',

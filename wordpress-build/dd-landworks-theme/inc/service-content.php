@@ -88,7 +88,7 @@ function ddlw_service_content( $slug ) {
 						array( 'title' => 'Free Estimates',                  'desc' => 'We provide free estimates for site preparation work. We can look at the property, access, ground conditions, and planned work before the scope is set.' ),
 						array( 'title' => 'Residential Projects',            'desc' => 'We prepare residential properties for construction and other improvements in Eugene, Springfield, and nearby Lane County communities.' ),
 						array( 'title' => 'Commercial Projects',             'desc' => 'We also handle site preparation for commercial properties and construction projects. The work depends on the property and what needs to be prepared.' ),
-						array( 'title' => 'DEQ Certified for Septic Work',   'desc' => 'D&amp;D Land Works is DEQ certified for relevant septic installation and repair work, including excavation connected with applicable septic projects.' ),
+						array( 'title' => 'DEQ Certified for Septic Work',   'desc' => 'D&amp;D Land Works is DEQ certified (PLC# 39996) for septic installation and repair, including excavation connected with applicable septic projects.' ),
 					),
 				),
 

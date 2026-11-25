@@ -411,7 +411,7 @@ function ddlw_service_content_additional( $slug ) {
 					'items'   => array(
 						array( 'title' => 'Licensed and Bonded in Oregon', 'desc' => 'D&D Land Works is licensed and bonded in Oregon under CCB #261742. You can verify the current license through the Oregon Construction Contractors Board.' ),
 						array( 'title' => 'Drainage Is Part of the Look',  'desc' => 'Water can be a big reason a driveway develops ruts, washouts, or soft spots. We look at how water moves across the driveway so grading or repair addresses the actual problem.' ),
-						array( 'title' => 'DEQ Septic Certification',      'desc' => 'D&D Land Works also carries Oregon DEQ certification for septic system installation and repair. When driveway work connects with septic or related excavation, that experience can be useful when planning the work.' ),
+						array( 'title' => 'DEQ Septic Certification',      'desc' => 'D&D Land Works carries Oregon DEQ certification (PLC# 39996) for septic system installation and repair. When driveway work connects with septic or related excavation, that experience can be useful when planning the work.' ),
 						array( 'title' => 'Free Estimates in Lane County', 'desc' => 'We provide free estimates throughout Lane County. We can look at your driveway, talk through what you are seeing, and explain what the work may involve.' ),
 						array( 'title' => 'Other Excavation Work',         'desc' => 'When a driveway project connects with drainage, septic, or other excavation work, the site may involve more than the driveway surface itself. D&D can explain which excavation work falls within its scope and what may need another contractor.' ),
 					),
@@ -747,7 +747,7 @@ function ddlw_service_content_additional( $slug ) {
 						array( 'title' => 'Drainage Is Part of the Assessment', 'desc' => 'Slope erosion and drainage are often connected. We look at how water moves across the slope to understand whether drainage changes may be part of the solution.' ),
 						array( 'title' => 'Grading and Excavation Experience',  'desc' => 'Slope stabilization may involve regrading, excavation, or both. We have experience with grading and excavation work on sloped properties throughout Lane County.' ),
 						array( 'title' => 'Free Estimates in Lane County',      'desc' => 'We provide free estimates throughout Lane County. We can look at the slope, discuss what you are seeing, and explain what the work may involve.' ),
-						array( 'title' => 'DEQ Septic Certification',           'desc' => 'D&D Land Works carries Oregon DEQ certification for septic work. When slope projects intersect with septic system areas, that experience can be relevant to planning the work.' ),
+						array( 'title' => 'DEQ Septic Certification',           'desc' => 'D&D Land Works carries Oregon DEQ certification (PLC# 39996) for septic work. When slope projects intersect with septic system areas, that experience can be relevant to planning the work.' ),
 					),
 				),
 

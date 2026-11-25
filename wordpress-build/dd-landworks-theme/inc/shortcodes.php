@@ -77,7 +77,7 @@ add_shortcode( 'hero', 'ddlw_hero' );
 function ddlw_trust_bar() {
 	$items = array(
 		array( 'label' => 'Licensed & Bonded', 'detail' => 'CCB #' . ddlw_ccb_number(), 'icon' => 'M12 2 4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3Z' ),
-		array( 'label' => 'DEQ Certified', 'detail' => 'Septic install & repair', 'icon' => 'M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM7 21l2-5m8 5-2-5' ),
+		array( 'label' => 'DEQ Certified', 'detail' => 'PLC# 39996', 'icon' => 'M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM7 21l2-5m8 5-2-5' ),
 		array( 'label' => 'Free Estimates', 'detail' => 'On every job', 'icon' => 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 7h8m-8 3.5h5' ),
 		array( 'label' => 'Residential & Commercial', 'detail' => 'One crew, both', 'icon' => 'M5 21V7l7-4 7 4v14M3 21h18M9 21v-4h6v4' ),
 	);
@@ -203,7 +203,7 @@ function ddlw_achievement( $atts, $content = '' ) {
 	$default_desc = "Most crews that can grade your lot can't legally touch a septic system, and vice versa. D&amp;D Land Works holds both the general excavation license and the DEQ septic certification, so one contractor covers the full job from site prep through system install.";
 	$stats = array(
 		array( 'value' => 'CCB', 'label' => 'Licensed & Bonded (#' . ddlw_ccb_number() . ')' ),
-		array( 'value' => 'DEQ', 'label' => 'Certified for Septic' ),
+		array( 'value' => 'DEQ', 'label' => 'Certified Septic — PLC# 39996' ),
 		array( 'value' => '1', 'label' => 'Contractor for the Full Job' ),
 	);
 	ob_start();
