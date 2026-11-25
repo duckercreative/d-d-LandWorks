@@ -11,7 +11,7 @@ const services = [
   { num: '05', title: 'Drainage Excavation', desc: 'Channels and trenches that move winter water away from homes and driveways.', href: '/drainage-installation-eugene-or' },
   { num: '06', title: 'Utility Excavation', desc: 'Trenches dug for water, sewer, power and other underground lines.', href: '/utility-trenching-eugene-or' },
   { num: '07', title: 'Trenching & Backfill', desc: 'Trenches dug to depth, then backfilled and compacted once the work is in.', href: '/utility-trenching-eugene-or' },
-  { num: '08', title: 'Septic Installation & Repair', desc: 'Excavation for new systems, repairs and drainfield work. DEQ certification in progress.', href: '/septic-installation-lane-county-or', comingSoon: true },
+  { num: '08', title: 'Septic Installation & Repair', desc: 'Excavation for new systems, repairs and drainfield work. DEQ Certified, PLC# 39996.', href: '/septic-installation-lane-county-or' },
   { num: '09', title: 'Driveway Repair', desc: 'Potholes, ruts and washouts regraded and crowned so the drive sheds water.', href: '/driveway-excavation-grading-eugene-or' },
   { num: '10', title: 'Slope Stabilization', desc: 'Banks and hillsides reshaped and regraded where soil moves after heavy rain.', href: '/slope-stabilization-eugene-or' },
 ];
@@ -90,7 +90,7 @@ const serviceAreas = [
 
 const faqs = [
   { question: 'What Does an Excavation Contractor Do?', answer: 'An excavation contractor prepares and changes ground for construction, drainage, utilities, foundations, access, septic work, and other property projects. D&D Land Works handles excavation, clearing, grading, trenching, driveway repair, septic work, and related site preparation throughout Lane County.' },
-  { question: 'Does D&D Land Works Handle Septic Excavation?', answer: 'Yes. D&D Land Works handles septic installation and repair and handles septic-related excavation. DEQ certification is in progress. Excavation is part of most septic projects, including system installation, repair, and access work. The scope depends on the property, existing system conditions, site access, and applicable DEQ requirements.' },
+  { question: 'Does D&D Land Works Handle Septic Excavation?', answer: 'Yes. D&D Land Works handles septic installation and repair. D&D Land Works holds DEQ certification (PLC# 39996) for septic work. Excavation is part of most septic projects, including system installation, repair, and access work. The scope depends on the property, existing system conditions, site access, and applicable DEQ requirements.' },
   { question: 'What Should I Have Ready Before Requesting an Estimate?', answer: 'It helps to know the property location, the type of work you need — site preparation, grading, foundation excavation, drainage, utility trenching, driveway repair, septic, or slope work — existing access conditions, and any project timing you\'re working around. If you have plans or project documents, those can help clarify the scope, but you can start by telling us about the property and the work you need.' },
   { question: 'Is D&D Land Works Licensed and Bonded?', answer: 'Yes. D&D Land Works is licensed and bonded in Oregon under Construction Contractors Board license #261742. Customers can verify Oregon contractor licensing through the Oregon CCB\'s official license lookup before hiring an excavation contractor for their project.' },
   { question: 'Does D&D Land Works Provide Free Estimates?', answer: 'Yes. D&D Land Works provides free estimates for excavation and site preparation projects. The estimate can be based on the property\'s existing conditions, access, planned work, excavation requirements, drainage, utilities, and other factors affecting the project scope.' },
@@ -144,7 +144,7 @@ const businessSchema = {
     fullBleed={true}
     trustItems={[
       { label: 'CCB #261742', sub: 'Licensed & Bonded' },
-      { label: 'DEQ Septic', sub: 'Coming Soon', accent: true },
+      { label: 'DEQ Certified', sub: 'PLC# 39996' },
       { label: 'Free Estimates', sub: 'On-site, no obligation' },
       { label: 'Residential & Commercial', sub: 'Lane County, OR' },
     ]}
@@ -169,7 +169,7 @@ const businessSchema = {
         <ul class="mt-7 flex flex-col gap-3">
           {[
             'Licensed &amp; Bonded — CCB #261742',
-            'Septic excavation available — DEQ certification in progress',
+            'Septic installation &amp; repair — DEQ Certified, PLC# 39996',
             'Serving Eugene, Springfield, and all of Lane County',
           ].map((item) => (
             <li class="flex items-start gap-3 text-sm text-ink/70">
@@ -532,51 +532,22 @@ const businessSchema = {
         </div>
       </div>
 
-      <!-- Right: form card -->
-      <div class="bg-white rounded-(--radius-brand-card) p-8 shadow-2xl">
-        <p class="font-display font-semibold uppercase tracking-[0.12em] text-sm text-ink mb-6">Request a Free Estimate</p>
-        <form action="/contact" method="GET" class="flex flex-col gap-4">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="flex flex-col gap-1.5">
-              <label for="name" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name"
-                class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
-            </div>
-            <div class="flex flex-col gap-1.5">
-              <label for="phone" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="541-xxx-xxxx"
-                class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
-            </div>
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="town" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Town / Area</label>
-            <input type="text" id="town" name="town" placeholder="Eugene, Cottage Grove, etc."
-              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors" />
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="project" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Project Type</label>
-            <select id="project" name="project"
-              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors">
-              <option value="">Select a service…</option>
-              <option>Site Preparation</option>
-              <option>Land Clearing</option>
-              <option>Grading & Drainage</option>
-              <option>Foundation Excavation</option>
-              <option>Septic Installation or Repair</option>
-              <option>Utility Trenching</option>
-              <option>Driveway Repair</option>
-              <option>Slope Stabilization</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="description" class="text-xs font-display font-semibold uppercase tracking-[0.1em] text-slate-500">Tell us about the property</label>
-            <textarea id="description" name="description" rows="3" placeholder="What's going on, what you need done, any access notes…"
-              class="w-full rounded-(--radius-brand) border border-slate-200 px-3.5 py-2.5 text-sm text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors resize-none"></textarea>
-          </div>
-          <button type="submit" class="btn btn-cta btn-lg w-full mt-1">Send My Request</button>
-          <p class="text-center text-xs text-slate-400">No spam. David will call you back directly.</p>
-        </form>
+      <!-- Right: GHL form embed -->
+      <div class="bg-white rounded-(--radius-brand-card) shadow-2xl overflow-hidden">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/T6bHSpa74GUV6Yk5ypOW"
+          style="width:100%;height:650px;border:none;overflow:hidden;"
+          id="inline-T6bHSpa74GUV6Yk5ypOW"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Website Form"
+        ></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
       </div>
 
     </div>
