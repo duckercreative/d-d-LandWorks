@@ -1,80 +1,126 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const otherAreas = [
-  { label: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or' },
-  { label: 'Junction City', href: '/excavation-contractor-junction-city-or' },
-  { label: 'Creswell', href: '/excavation-contractor-creswell-or' },
-  { label: 'Veneta', href: '/excavation-contractor-veneta-or' },
-  { label: 'Florence', href: '/excavation-contractor-florence-or' },
-  { label: 'Oakridge', href: '/locations/oakridge' },
-  { label: 'Coburg', href: '/excavation-contractor-coburg-or' },
-  { label: 'Lowell', href: '/excavation-contractor-lowell-or' },
+const areaGroups = [
+  {
+    label: 'Primary Coverage',
+    cities: [
+      { city: 'Eugene', href: '/excavation-contractor-eugene-or', desc: 'Excavation, grading, site prep, drainage, and land clearing in Eugene, OR.' },
+      { city: 'Springfield', href: '/excavation-contractor-springfield-or', desc: 'Site preparation, excavation, and grading services in Springfield, OR.' },
+      { city: 'Lane County', href: '/service-area', desc: 'Full service coverage throughout Lane County, Oregon.' },
+    ],
+  },
+  {
+    label: 'Also Serving',
+    cities: [
+      { city: 'Cottage Grove', href: '/excavation-contractor-cottage-grove-or', desc: 'Excavation and site prep in Cottage Grove, OR.' },
+      { city: 'Junction City', href: '/excavation-contractor-junction-city-or', desc: 'Grading, clearing, and excavation in Junction City, OR.' },
+      { city: 'Creswell', href: '/excavation-contractor-creswell-or', desc: 'Site preparation and excavation in Creswell, OR.' },
+      { city: 'Veneta', href: '/excavation-contractor-veneta-or', desc: 'Land clearing and grading in Veneta, OR.' },
+    ],
+  },
+  {
+    label: 'Further Out',
+    cities: [
+      { city: 'Florence', href: '/excavation-contractor-florence-or', desc: 'Excavation services in Florence, OR.' },
+      { city: 'Oakridge', href: '/locations/oakridge', desc: 'Site work in Oakridge, OR.' },
+      { city: 'Coburg', href: '/excavation-contractor-coburg-or', desc: 'Grading and excavation in Coburg, OR.' },
+      { city: 'Lowell', href: '/excavation-contractor-lowell-or', desc: 'Site preparation in Lowell, OR.' },
+    ],
+  },
 ];
 ---
 
 <BaseLayout
   title="Service Areas | Lane County, OR Excavation Contractor | D&D Land Works"
-  description="D&D Land Works provides excavation, grading, trenching, drainage, and related site work across Eugene and surrounding Lane County communities."
+  description="D&D Land Works provides excavation, grading, land clearing, drainage, and site preparation for residential and commercial properties across Lane County."
 >
-  <!-- Service Areas Section (from homepage) -->
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 pb-20 md:pb-28">
 
-      <div class="mb-12 md:mb-14 text-center">
-        <p class="font-display font-semibold uppercase tracking-widest text-sm text-brand-blue">Our Service Area</p>
-        <h1 class="mt-2 font-display font-black uppercase tracking-tight text-3xl text-ink md:text-5xl">
-          Excavation Services Throughout<br class="hidden sm:block" /> Lane County, Oregon
-        </h1>
-        <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          D&amp;D Land Works provides excavation, grading, and site preparation for residential and commercial properties across Lane County, including Eugene, Springfield, Cottage Grove, Junction City, Creswell, Veneta, Florence, Oakridge, Coburg, and Lowell.
-        </p>
-      </div>
+  <!-- Hero -->
+  <section class="bg-ink text-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10">
+      <p class="section-label text-accent-light mb-6">D&amp;D Land Works</p>
+      <h1 class="font-display font-bold leading-[1.05] text-[clamp(2.2rem,5vw,3.5rem)] text-white max-w-3xl">
+        Excavation Services Throughout Lane County, Oregon
+      </h1>
+      <p class="mt-6 text-white/65 text-base leading-relaxed max-w-2xl">
+        D&amp;D Land Works provides excavation, grading, land clearing, drainage, and site preparation for residential and commercial properties across Lane County.
+      </p>
+    </div>
+  </section>
 
-      <div class="grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
+  <!-- Map + Intro -->
+  <section class="bg-cream">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-16 md:py-24">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
 
-        <!-- Dark location list -->
-        <div class="overflow-hidden rounded-(--radius-brand-card) bg-ink shadow-lg">
-          <a href="/excavation-contractor-eugene-or" class="flex items-center gap-3 bg-brand-blue px-6 py-4 text-white transition-opacity hover:opacity-90">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-            </svg>
-            <span class="font-display font-bold uppercase tracking-wide text-sm">Eugene, OR</span>
-          </a>
-          <a href="/excavation-contractor-springfield-or" class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-              <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-            </svg>
-            <span class="font-display font-bold uppercase tracking-wide text-sm">Springfield, OR</span>
-          </a>
-          {otherAreas.map((area) => (
-            <a href={area.href} class="flex items-center gap-3 border-t border-white/10 px-6 py-4 text-white/70 transition-colors hover:bg-white/5 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.4-3.4 7-7 7-10.5A7 7 0 0 0 5 10.5C5 14 7.6 17.6 12 21Z" />
-                <circle cx="12" cy="10.5" r="2" fill="currentColor" stroke="none" />
-              </svg>
-              <span class="font-display font-bold uppercase tracking-wide text-sm">{area.label}, OR</span>
-            </a>
-          ))}
+        <div>
+          <h2 class="font-display font-bold leading-[1.05] text-[clamp(1.8rem,4vw,2.75rem)] text-ink mb-4">
+            Lane County, Oregon
+          </h2>
+          <p class="text-ink/65 text-base leading-relaxed mb-8">
+            We serve Eugene, Springfield, and communities throughout Lane County, from Cottage Grove in the south to Coburg in the north, Florence on the coast, and Oakridge to the east.
+          </p>
+          <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
         </div>
 
-        <!-- Google Map -->
-        <div class="overflow-hidden rounded-(--radius-brand-card) border border-slate-200 shadow-md min-h-[400px]">
+        <div class="overflow-hidden rounded-(--radius-brand-card) border border-cream-border shadow-sm min-h-[380px]">
           <iframe
-            title="D&D Land Works service area map, Lane County, Oregon"
+            title="D&D Land Works service area — Lane County, Oregon"
             src="https://maps.google.com/maps?q=Lane+County,+Oregon&z=9&output=embed"
             width="100%"
             height="100%"
-            style="border:0; display:block;"
+            style="border:0; display:block; min-height:380px;"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Location Groups -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10 py-16 md:py-24 flex flex-col gap-14">
+
+      {areaGroups.map((group) => (
+        <div>
+          <p class="font-display font-semibold uppercase tracking-[0.14em] text-sm text-ink/40 mb-5">
+            {group.label}
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.cities.map((area) => (
+              <div class="rounded-(--radius-brand-card) border border-slate-200 bg-slate-50 p-6">
+                <h3 class="font-display font-bold text-lg text-ink mb-2">{area.city}, OR</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">{area.desc}</p>
+                <a href={area.href} class="font-display font-semibold text-sm text-accent-dark border-b border-accent-dark pb-0.5 hover:text-accent transition-colors">
+                  View details →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
 
     </div>
   </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-ink text-white py-16 md:py-24 text-center px-6">
+    <div class="max-w-2xl mx-auto">
+      <p class="section-label text-accent-light justify-center mb-6">Not sure if we cover your area?</p>
+      <h2 class="font-display font-bold leading-[1.05] text-[clamp(2rem,4.5vw,3rem)] text-white mb-6">
+        Call David and ask.
+      </h2>
+      <p class="text-white/65 text-base leading-relaxed mb-10">
+        If your project is in or near Lane County, chances are good we can help. Call or text 541-401-8726.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="tel:5414018726" class="btn btn-outline-white">Call 541-401-8726</a>
+        <a href="/contact" class="btn btn-cta">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
