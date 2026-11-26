@@ -54,24 +54,18 @@ const processSteps = [
   { num: '04', title: 'Check the Finished Work', detail: 'When the work is done, we look over the area with the planned work in mind. We make sure the completed work matches what was discussed for the project.' },
 ];
 
-const reviews = [
+const facebookReviews = [
   {
-    name: 'Matt H.',
-    location: 'Eugene, OR',
-    text: 'David came out the same week I called. He walked the whole slope with me, explained what was causing the erosion, and gave me a clear quote. Work was done in two days, exactly as described. Would hire again without hesitation.',
-    stars: 5,
+    src: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkris.hazelzimmerman%2Fposts%2Fpfbid02m1GKFzqvbS6zXQmBCkT4R4e9gDzPJztrnzm3RjKmJzxyv1m1BwhoT7F77zeFvKWl&show_text=true&width=500',
+    height: '400',
   },
   {
-    name: 'Linda T.',
-    location: 'Cottage Grove, OR',
-    text: 'We needed a septic system replaced on a tight lot with poor access. D&D figured it out. David was straightforward about what he could and couldn\'t do and stayed within the estimate. Great work.',
-    stars: 5,
+    src: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Flauren.zimmerman.9%2Fposts%2Fpfbid0sxmtPAyd9eZZ13kbPmRhahi7j2XJ4DbPTAz2dLiPYpYxz4RW8pw8aoCbGgUcjyzTl&show_text=true&width=500',
+    height: '500',
   },
   {
-    name: 'Jason R.',
-    location: 'Veneta, OR',
-    text: 'Driveway had been washing out every winter for three years. One afternoon of regrading and proper crowning and we\'ve had zero issues through two wet seasons. Should have called sooner.',
-    stars: 5,
+    src: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkurt.suzuki.2025%2Fposts%2Fpfbid02LWRFAPEKJdH8BsuE2rrP5dECRUpfY5S97ftW54RbPDzo4gTJbHLytSSdwnPj17frl&show_text=true&width=500',
+    height: '380',
   },
 ];
 
@@ -370,14 +364,19 @@ const businessSchema = {
       </div>
 
       <div class="grid gap-5 sm:grid-cols-3">
-        {reviews.map((review) => (
-          <div class="bg-[#212528] rounded-(--radius-brand-card) p-7 flex flex-col gap-5">
-            <span class="font-display font-bold text-[3.5rem] leading-none text-accent-light/80 select-none">&ldquo;</span>
-            <p class="text-white/70 text-sm leading-relaxed flex-1 -mt-3">{review.text}</p>
-            <div class="pt-4 border-t border-white/10">
-              <p class="font-display font-semibold text-sm text-white">{review.name}</p>
-              <p class="font-body text-xs text-white/40 mt-0.5">{review.location}</p>
-            </div>
+        {facebookReviews.map((review) => (
+          <div class="bg-white rounded-(--radius-brand-card) overflow-hidden">
+            <iframe
+              src={review.src}
+              width="500"
+              height={review.height}
+              style="border:none;overflow:hidden;width:100%;"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"
+            ></iframe>
           </div>
         ))}
       </div>
